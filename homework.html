@@ -137,8 +137,8 @@ function safePlay(){if(!player.hasAttribute('src'))return;const req=++homePlayRe
 homeRetry.onclick=()=>{const at=lyricSeek!==null?lyricSeek:(player.currentTime||0),rate=player.playbackRate;homePlayRequest++;clearTimeout(lyricStopTimer);lyricSeek=at;player.load();player.playbackRate=rate;safePlay()};
 player.addEventListener('waiting',homeBuffer);
 player.addEventListener('stalled',()=>{if(player.readyState<3)homeBuffer()});
-player.addEventListener('playing',()=>{clearTimeout(homeBufferTimer);homeBufferTimer=0;homeRetry.hidden=true;$('audio-status').textContent=lyricSelected>=0?'正在重听第 '+(lyricSelected+1)+' 句 句末自动暂停':'正在连续播放';lyricBoundary()});
-player.addEventListener('pause',()=>{clearTimeout(homeBufferTimer);homeBufferTimer=0});
+player.addEventListener('playing',()=>{if(player.paused)return;clearTimeout(homeBufferTimer);homeBufferTimer=0;homeRetry.hidden=true;$('audio-status').textContent=lyricSelected>=0?'正在重听第 '+(lyricSelected+1)+' 句 句末自动暂停':'正在连续播放';lyricBoundary()});
+player.addEventListener('pause',()=>{if(!player.paused)return;clearTimeout(homeBufferTimer);homeBufferTimer=0;if(player.hasAttribute('src')&&!player.error&&!player.ended&&$('audio-status').textContent.startsWith('正在'))$('audio-status').textContent='已暂停。'});
 function stamp(value){if(!Number.isFinite(value)||value<0)return '--:--';return Math.floor(value/60)+':'+String(Math.floor(value%60)).padStart(2,'0')}
 function updateTransport(){const ready=Number.isFinite(player.duration)&&player.duration>0;$('audio-current').textContent=stamp(player.currentTime||0);$('audio-duration').textContent=ready?stamp(player.duration):'--:--';$('audio-seek').disabled=!ready;$('audio-seek').value=ready?Math.round(player.currentTime/player.duration*1000):0;$('play-pause').textContent=player.paused?'播放':'暂停';$('play-pause').setAttribute('aria-label',player.paused?'播放':'暂停');$('audio-seek').setAttribute('aria-valuetext',stamp(player.currentTime||0)+' / '+stamp(player.duration))}
 ['timeupdate','durationchange','play','pause','ended','emptied','loadedmetadata'].forEach(event=>player.addEventListener(event,updateTransport));
