@@ -9,7 +9,7 @@ window.addEventListener('message',e=>{const d=e.data||{};if(e.source===parent&&p
 window.addEventListener('keydown',e=>{if(!granted)e.stopImmediatePropagation()},true);
 window.addEventListener('pageshow',e=>{if(e.persisted&&!store.get()){granted=false;document.documentElement.classList.add('teacher-locked');if(gate)gate.hidden=false}});
 if(store.get())grant();else if(parent!==window){try{if(parent.__UNLOCK_TEACHER_ENTRY)grant()}catch{}}
-document.addEventListener('DOMContentLoaded',()=>{gate=document.createElement('section');gate.id='teacher-gate';gate.setAttribute('role','dialog');gate.setAttribute('aria-modal','true');gate.setAttribute('aria-labelledby','gate-title');gate.innerHTML='<div class="gate-card"><div class="gate-kicker">UNLOCK 教学资料库</div><h1 id="gate-title">教师入口</h1><p>请输入教师密码，进入教学与讲评页面。</p><form id="gate-form"><label for="gate-password">教师密码</label><input id="gate-password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><p id="gate-error" class="gate-error" role="alert"></p><button type="submit">进入教师入口</button></form><a href="index.html?v=20261008-roles-final">返回首页</a></div>';document.body.append(gate);gate.hidden=granted;$('gate-form').onsubmit=e=>{e.preventDefault();if($('gate-password').value.trim().toLowerCase()==='qunxian888'){grant();$('gate-password').value=''}else{$('gate-error').textContent='密码不正确，请重新输入。';$('gate-password').focus()}};if(!granted&&parent===window)$('gate-password').focus();if(parent!==window)parent.postMessage({type:'unlock-entry-request'},'*');else{const tools=document.querySelector('.header-tools')||document.querySelector('.top-tools');if(tools){const home=document.createElement('button');home.type='button';home.textContent='返回首页';home.onclick=()=>location.href='index.html?v=20261008-roles-final';const out=document.createElement('button');out.id='teacher-exit';out.type='button';out.textContent='退出教师入口';out.onclick=()=>{clear();location.replace('index.html?v=20261008-roles-final')};tools.append(home,out)}}document.querySelectorAll('iframe').forEach(f=>f.addEventListener('load',()=>{if(granted)notifyChildren()}));if(granted)notifyChildren()});function $(id){return document.getElementById(id)}
+document.addEventListener('DOMContentLoaded',()=>{gate=document.createElement('section');gate.id='teacher-gate';gate.setAttribute('role','dialog');gate.setAttribute('aria-modal','true');gate.setAttribute('aria-labelledby','gate-title');gate.innerHTML='<div class="gate-card"><div class="gate-kicker">UNLOCK 教学资料库</div><h1 id="gate-title">教师入口</h1><p>请输入教师密码，进入教学与讲评页面。</p><form id="gate-form"><label for="gate-password">教师密码</label><input id="gate-password" type="password" autocomplete="current-password" autocapitalize="none" spellcheck="false" required><p id="gate-error" class="gate-error" role="alert"></p><button type="submit">进入教师入口</button></form><a href="index.html?v=20261019-review-grid">返回首页</a></div>';document.body.append(gate);gate.hidden=granted;$('gate-form').onsubmit=e=>{e.preventDefault();if($('gate-password').value.trim().toLowerCase()==='qunxian888'){grant();$('gate-password').value=''}else{$('gate-error').textContent='密码不正确，请重新输入。';$('gate-password').focus()}};if(!granted&&parent===window)$('gate-password').focus();if(parent!==window)parent.postMessage({type:'unlock-entry-request'},'*');else{const tools=document.querySelector('.header-tools')||document.querySelector('.top-tools');if(tools){const home=document.createElement('button');home.type='button';home.textContent='返回首页';home.onclick=()=>location.href='index.html?v=20261019-review-grid';const out=document.createElement('button');out.id='teacher-exit';out.type='button';out.textContent='退出教师入口';out.onclick=()=>{clear();location.replace('index.html?v=20261019-review-grid')};tools.append(home,out)}}document.querySelectorAll('iframe').forEach(f=>f.addEventListener('load',()=>{if(granted)notifyChildren()}));if(granted)notifyChildren()});function $(id){return document.getElementById(id)}
 })();</script>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <title>UNLOCK 教学资料库</title><style>:root{--ink:#17334e;--green:#18746b;--green-deep:#0e514e;--cream:#f6f3e9;--paper:#fffefa;--line:#d9dfd6;--red:#bd251f;--muted:#61717c;--shadow:0 10px 28px #12353614;font:16px/1.58 Arial,"Microsoft YaHei",sans-serif;color:var(--ink);background:var(--cream)}*{box-sizing:border-box}body{margin:0;background:var(--cream)}button,input,select{font:inherit}button{color:inherit;cursor:pointer}.skip{position:fixed;top:-99px;left:10px;z-index:9;background:#fff;padding:8px}.skip:focus{top:10px}.site-header{height:66px;display:flex;align-items:center;gap:30px;padding:0 clamp(16px,4vw,56px);background:var(--paper);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:4}.brand{display:flex;gap:8px;align-items:baseline;text-decoration:none;color:var(--ink);white-space:nowrap}.brand span{font-size:13px;font-weight:800;letter-spacing:1.5px;color:var(--green)}.brand strong{font-size:18px}.mode-tabs{display:flex;height:100%;gap:2px}.mode{border:0;background:transparent;padding:0 20px;font-weight:700;color:var(--muted);border-bottom:3px solid transparent}.mode.active{color:var(--green-deep);border-color:var(--green)}.header-tools{margin-left:auto;display:flex;gap:7px}.header-tools button,.segmented button,.pager button{border:1px solid var(--line);background:#fff;border-radius:7px;padding:5px 9px}.header-tools button:hover,.segmented button:hover,.pager button:hover{border-color:var(--green);color:var(--green-deep)}.app{display:grid;grid-template-columns:290px minmax(0,1fr);min-height:calc(100vh - 66px)}.class-sidebar{background:#edf2ef;border-right:1px solid var(--line);padding:20px 16px;position:sticky;top:66px;height:calc(100vh - 66px);overflow:auto}.sidebar-title{font-size:13px;letter-spacing:.1em;font-weight:800;color:var(--green-deep);margin-bottom:10px}.search input{width:100%;border:1px solid var(--line);border-radius:7px;padding:9px 11px;background:#fff}.segmented{display:flex;gap:5px;margin:12px 0}.segmented button{flex:1;padding:6px 4px;font-size:13px}.segmented button.active{background:var(--green);border-color:var(--green);color:#fff}.unit-picker{display:grid;grid-template-columns:repeat(4,1fr);gap:5px}.unit-picker button{padding:7px 2px;border:1px solid var(--line);border-radius:7px;background:#fff}.unit-picker button.active{background:var(--green-deep);color:#fff;border-color:var(--green-deep)}.small button{flex:initial;padding:5px 10px}.class-list{margin-top:14px;display:grid;gap:6px}.class-item{width:100%;text-align:left;border:1px solid transparent;border-radius:8px;background:transparent;padding:8px 9px}.class-item:hover{background:#fff}.class-item.active{background:#fff;border-color:#b8d5cc;box-shadow:0 3px 10px #163b3320}.class-item small{display:block;color:var(--muted);font-size:11px}.class-item strong{display:block;font-size:13px;line-height:1.35;margin-top:2px}main{min-width:0;padding:clamp(20px,4vw,54px)}.class-view{max-width:1040px;margin:auto}.crumbs{color:var(--green-deep);font-size:13px;font-weight:700;letter-spacing:.04em;margin-bottom:16px}.activity{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:clamp(22px,4vw,52px);box-shadow:var(--shadow)}.activity h1{font-size:clamp(25px,3.5vw,43px);line-height:1.15;margin:0 0 10px}.activity .module{color:#c34a0a;font-size:13px;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.activity .meta{color:var(--muted);font-size:13px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:23px}.question-html{font-size:clamp(17px,2vw,22px);line-height:1.62}.question-html img{max-width:100%;height:auto;border-radius:8px}.answer-toggle{margin:25px 0 10px;background:var(--green);border:0;border-radius:8px;color:white;font-weight:700;padding:10px 15px}.answer{margin-top:10px;padding:19px 20px;border-left:4px solid var(--red);background:#fff8f6}.answer[hidden]{display:none}.answer .red,.answer [style*="red"]{color:var(--red)!important;font-weight:700}.audio-card{border-top:1px solid var(--line);margin-top:26px;padding-top:22px}.audio-title{font-weight:800;margin-bottom:8px}.audio-card audio{display:none}.audio-controls{display:flex;align-items:center;flex-wrap:wrap;gap:8px}.audio-controls button,.transcript-tools button{border:1px solid #b8d5cc;background:#f5fbf8;border-radius:6px;padding:6px 10px}.audio-controls .play{background:var(--green-deep);border-color:var(--green-deep);color:#fff;font-weight:700}.time{font-variant-numeric:tabular-nums;font-size:13px;color:var(--muted)}.speed{margin-left:auto;font-size:13px}.speed select{border:1px solid var(--line);border-radius:5px;background:#fff;padding:4px}.seek{display:block;width:100%;margin:12px 0 8px;accent-color:var(--green)}.transcript-tools{display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin:10px 0}.transcript-tools label{font-size:13px;color:var(--muted)}.transcript{max-height:370px;overflow:auto;padding:6px 2px}.cue{width:100%;display:block;text-align:left;border:0;border-radius:7px;padding:9px 10px;margin:2px 0;background:transparent;line-height:1.55}.cue:hover{background:#edf5f1}.cue.active{background:#dcefe7;color:#0b4945}.word.active{background:#eac45d;border-radius:2px}.translation{display:block;color:#74746d;font-size:.9em;margin-top:3px}.transcript:not(.zh-visible) .translation{display:none}.audio-error{font-size:13px;color:var(--red)}.pager{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:20px 0}.pager span{font-size:13px;color:var(--muted)}.homework-view{height:calc(100vh - 66px);margin:-54px}.homework-view iframe{width:100%;height:100%;border:0;background:#f5f4ef}body.homework-mode .class-sidebar{display:none}body.homework-mode .app{display:block}body.homework-mode main{height:calc(100vh - 66px);padding:0}body.homework-mode .homework-view{display:block!important;margin:0;height:100%}body.projecting{--ink:#0e253c;--paper:#fff}body.projecting .class-sidebar{display:none}body.projecting .app{display:block}body.projecting .activity{max-width:1280px;box-shadow:none;border:0}body.projecting .site-header{height:54px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}@media(max-width:760px){.site-header{height:57px;padding:0 12px;gap:10px}.brand strong{font-size:14px}.header-tools button:not(#project){display:none}.mode{padding:0 10px}.app{display:block}.class-sidebar{position:relative;top:0;height:auto;border-right:0;padding:14px}.class-list{max-height:200px;overflow:auto}.class-item{padding:7px}.class-item strong{font-size:12px}main{padding:16px}.activity{padding:22px 16px;border-radius:10px}.homework-view{height:calc(100vh - 57px)}.audio-controls .speed{margin-left:0}.pager{font-size:13px}.pager button{padding:6px}.unit-picker{grid-template-columns:repeat(8,1fr)}body.projecting .class-sidebar{display:none}}@media(max-width:390px){.brand span{display:none}.header-tools{gap:3px}.header-tools button{padding:5px}.mode{padding:0 7px}.site-header{gap:6px}.question-html{font-size:16px}}
@@ -135,7 +135,7 @@ body .transcript .cue,body #audio-card .lyric-row{transform:none}
         <article id="activity" class="activity"></article>
         <nav class="pager"><button id="previous" type="button">上一项</button><span id="position"></span><button id="next" type="button">下一项</button></nav>
       </section>
-      <section id="homework-view" class="homework-view" hidden><iframe id="homework-frame" title="UNLOCK 课后答案与讲评" src="homework.html?v=20261008-roles-final" loading="eager"></iframe></section>
+      <section id="homework-view" class="homework-view" hidden><iframe id="homework-frame" title="UNLOCK 课后答案与讲评" src="homework.html?v=20261019-review-grid" loading="eager"></iframe></section>
     </main>
   </div>
   <template id="audio-template">
@@ -169,7 +169,7 @@ body .transcript .cue,body #audio-card .lyric-row{transform:none}
   function render(){renderPickers();renderList();if(state.mode==='class')renderActivity();}
   function renderActivity(){activePlayers.forEach(p=>p.dispose());activePlayers=[];const a=current(), host=$('#activity');if(!a){host.innerHTML='<p>课堂资料尚在准备中。</p>';return;}const d=a.deck||{};$('#crumbs').textContent=`Book ${a.book} Unit ${a.unit} ${a.skill}${a.module?` ${a.module}`:''}`;const page=a.bookPage?`教材第 ${esc(a.bookPage)} 页`:'';host.innerHTML=`<header class="lesson-heading"><div class="module">${esc(a.module||a.skill||'课堂活动')}</div><h1>${esc(a.title||d.title||'课堂活动')}</h1>${a.subtitle?`<p class="subheading">${esc(a.subtitle)}</p>`:''}<div class="meta">${esc((d.title||'UNLOCK').replace(/\s*·\s*/g,' '))}${page?`　${page}`:''}${a.slide?`　PPT 第 ${esc(a.slide)} 页`:''}</div></header><div class="lesson-grid"><section class="lesson-panel"><div class="panel-caption">题目与材料</div><div class="question-html">${a.questionHtml||'<p>本页题目待导入。</p>'}</div><div class="panel-actions">${a.answerHtml?'<button class="answer-toggle" type="button" aria-expanded="false">显示答案与解析</button>':''}</div></section><aside class="review-dock" data-pane="audio" aria-label="听力与讲评"><nav class="review-tabs" aria-label="讲评内容"><button type="button" data-pane="audio" class="active" aria-pressed="true">听力原文</button><button type="button" data-pane="answer" aria-pressed="false">答案解析</button></nav><div class="review-body review-audio"><div class="players"></div></div><div class="review-body review-answer"><div class="review-empty"><strong>讲评区</strong>点击“显示答案与解析”，对照题目进行讲评。</div>${a.answerHtml?'<section class="answer" hidden>'+a.answerHtml+'</section>':''}</div></aside></div>`;
     const ans=$('.answer',host),toggle=$('.answer-toggle',host),dock=$('.review-dock',host);function pane(name){dock.dataset.pane=name;$$('.review-tabs button',dock).forEach(b=>{const on=b.dataset.pane===name;b.classList.toggle('active',on);b.setAttribute('aria-pressed',String(on));});}if(toggle)toggle.addEventListener('click',()=>{const open=ans.hidden;ans.hidden=!open;toggle.textContent=open?'隐藏答案与解析':'显示答案与解析';toggle.setAttribute('aria-expanded',String(open));$('.review-empty',dock).hidden=open;pane('answer');});$('.review-tabs',dock).addEventListener('click',e=>{const b=e.target.closest('[data-pane]');if(!b)return;pane(b.dataset.pane);if(b.dataset.pane==='answer'&&ans?.hidden)toggle.click();});
-    activePlayers=[];(a.trackIds||[]).forEach((id,n)=>{const t=tracks[id];if(t)mountAudio($('.players',host),t,n===0?(state.startAt??a.start??a.startAt??0):0);});delete state.startAt;$$('img',host).forEach(img=>img.addEventListener('error',()=>imageFallback(img)));const index=activities.indexOf(a);$('#position').textContent=`${index+1} / ${activities.length}`;$('#previous').disabled=index<=0;$('#next').disabled=index>=activities.length-1;}
+    activePlayers=[];(a.trackIds||[]).forEach((id,n)=>{const t=tracks[id];if(t)mountAudio($('.players',host),t,n===0?(state.startAt??a.start??a.startAt??0):0);});delete state.startAt;$$('img',host).forEach(img=>img.addEventListener('error',()=>imageFallback(img)));const index=activities.indexOf(a);$('#position').textContent=`${index+1} / ${activities.length}`;$('#previous').disabled=index<=0;$('#next').disabled=index>=activities.length-1;window.UNLOCK_LAYOUT?.classRendered();}
   function imageFallback(img){if(img.dataset.fallback)return;img.dataset.fallback='1';const label=document.createElement('label');label.className='file-pick image-pick';label.textContent='图片无法载入：选择本地图片备用';const input=document.createElement('input');input.type='file';input.accept='image/*';input.addEventListener('change',()=>{const f=input.files?.[0];if(f)img.src=URL.createObjectURL(f)});label.appendChild(input);img.insertAdjacentElement('afterend',label);}
   function mountAudio(host,track,startAt){
     const el=$('#audio-template').content.firstElementChild.cloneNode(true);
@@ -1166,5 +1166,193 @@ body.apple-ui .apple-whole-subject-body{scrollbar-width:thin;scrollbar-color:#cc
   document.addEventListener('click',e=>{if(e.target.closest('.class-item,#numbers button'))setTimeout(()=>{document.body.classList.remove('ui-nav-open');dir.setAttribute('aria-expanded','false');},0);},true);
   document.addEventListener('keydown',e=>{if(e.key==='Escape'){context.querySelectorAll('details').forEach(d=>d.open=false);document.body.classList.remove('ui-nav-open');dir.setAttribute('aria-expanded','false');}if(e.key==='Tab'&&document.body.classList.contains('ui-nav-open')&&nav){const items=[...nav.querySelectorAll('input,select,button,a[href]')].filter(n=>!n.disabled&&n.getClientRects().length);if(!items.length)return;const first=items[0],last=items[items.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
   window.UNLOCK_APPLE_UI={sync,schedule,registered,context};sync();window.dispatchEvent(new Event('resize'));
+})();
+</script><style id="unlock-review-layout-css">/* Approved two-column review layout, 2026-10-19. Scoped to teacher pages. */
+body.apple-ui.apple-review-layout{--layout-qa:calc(24px + var(--apple-reading-offset,0px));--layout-stem:calc(26px + var(--apple-reading-offset,0px));--layout-review:calc(20px + var(--apple-reading-offset,0px))}
+body.apple-review-layout .lesson-grid,body.apple-review-layout #question-area,body.apple-review-layout #question-area.with-explanation{grid-template-columns:minmax(0,65fr) minmax(0,35fr);gap:40px}
+body.apple-review-layout #question,body.apple-review-layout #question.apple-short{height:100%;align-self:stretch;overflow:hidden;min-height:0}
+body.apple-review-layout #question .question-content,body.apple-review-layout #question.apple-short .question-content{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden;padding:10px 0 0}
+body.apple-review-layout #question>.section-head{padding-bottom:15px}
+body.apple-review-layout #sheet-title,body.apple-review-layout .activity h1{font-size:30px;line-height:1.25}
+body.apple-review-layout #question .card-top{padding-bottom:16px;min-height:30px}
+body.apple-review-layout .layout-viewport{position:relative;flex:1;min-height:0;overflow:hidden;width:100%}
+body.apple-review-layout #qbody,body.apple-review-layout #question.apple-short #qbody{box-sizing:border-box;font-size:var(--layout-qa);line-height:1.45;letter-spacing:0;margin:0;padding:0;width:100%;height:100%;column-fill:auto;column-gap:32px;column-width:var(--layout-column-width);overflow:visible;transition:none}
+body.apple-review-layout #qbody>*,body.apple-review-layout #explanation>*{margin-top:0}
+body.apple-review-layout #qbody .instruction,body.apple-review-layout #question.apple-short #qbody .instruction{font-size:16px;line-height:1.6;color:#66666d;margin:0 0 19px;break-inside:avoid}
+body.apple-review-layout #qbody .qtitle{font-size:var(--layout-stem);line-height:1.45;font-weight:550;margin:0 0 22px;break-inside:avoid}
+body.apple-review-layout #qbody .context,body.apple-review-layout #qbody .muted{font-size:var(--layout-qa);line-height:1.5;margin:0 0 16px}
+body.apple-review-layout #qbody .options{display:block;font-size:var(--layout-qa);line-height:1.45;margin:0;break-inside:auto}
+body.apple-review-layout #qbody .layout-option-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0 0 12px;break-inside:avoid}
+body.apple-review-layout #qbody .layout-option-row.layout-last-single{grid-template-columns:minmax(0,1fr)}
+body.apple-review-layout #qbody .option{display:flex;align-items:flex-start;gap:14px;padding:15px;border:1px solid #e8e8ed;border-radius:9px;background:#fff;font-size:var(--layout-qa);line-height:1.45;font-weight:400;min-width:0;min-height:88px;margin:0;break-inside:avoid;overflow-wrap:break-word}
+body.apple-review-layout #qbody .option .letter{flex:0 0 18px;display:block;font-size:13px;line-height:1.8;color:#6e6e73;font-weight:600;padding:0;min-width:0;background:transparent;border:0;border-radius:0}
+body.apple-review-layout #qbody .option>span:nth-child(2){min-width:0}
+body.apple-review-layout #qbody .option>span[aria-label]{font-size:12px;white-space:nowrap;margin-left:auto}
+body.apple-review-layout #qbody .option.correct{background:#fff8f8;border-color:#e8bfc6;color:#bc293b}
+body.apple-review-layout #qbody .option.correct .letter{color:#bc293b}
+body.apple-review-layout #qbody .layout-option-bank{grid-template-columns:repeat(var(--layout-bank-columns),minmax(0,1fr))}
+body.apple-review-layout #qbody .layout-option-bank .option{justify-content:center;align-items:center;text-align:center;min-height:62px;padding:14px 6px;gap:0}
+body.apple-review-layout #qbody .layout-option-bank .letter{font-size:var(--layout-qa);line-height:1.45;flex:initial;font-weight:500;color:inherit}
+body.apple-review-layout #qbody .layout-option-bank .option>span[aria-label]{display:none}
+body.apple-review-layout #qbody .photo{max-height:min(300px,38vh);width:auto;max-width:100%;object-fit:contain;break-inside:avoid}
+body.apple-review-layout #answer-extra.layout-original-extra{display:none!important}
+body.apple-review-layout .layout-answer-copy{font-size:var(--layout-qa);line-height:1.5;white-space:pre-wrap;margin-top:15px}
+body.apple-review-layout .layout-page-nav{flex-shrink:0;min-height:30px;display:flex;align-items:center;justify-content:flex-end;gap:16px;font-size:12px;color:#6e6e73;padding:7px 0 0}
+body.apple-review-layout .layout-page-nav button{border:0;background:transparent;color:#0071e3;font-size:13px;min-height:28px;padding:4px 0}
+body.apple-review-layout .layout-page-nav button:disabled{opacity:.35}
+body.apple-review-layout .question-actions{padding-top:14px;padding-bottom:4px;gap:18px}
+body.apple-review-layout .question-actions button{font-size:14px;min-height:40px}
+body.apple-review-layout #review-dock{padding:22px 23px;border-radius:18px}
+body.apple-review-layout #review-dock .review-tabs button{font-size:15px}
+body.apple-review-layout #review-dock .review-answer{flex-direction:column;overflow:hidden;padding-top:20px}
+body.apple-review-layout #review-dock[data-pane=answer] .review-answer{display:flex}
+body.apple-review-layout #explanation{font-size:var(--layout-review);line-height:1.55;margin:0;padding:0;width:100%;height:100%;column-fill:auto;column-gap:32px;column-width:var(--layout-column-width);overflow:visible;border:0;background:transparent}
+body.apple-review-layout #explanation .eyebrow,body.apple-review-layout #explanation>h3{display:none}
+body.apple-review-layout #explanation h4{font-size:13px;color:#0071e3;font-weight:600;line-height:1.5;margin:0 0 10px;break-after:avoid}
+body.apple-review-layout #explanation p{font-size:var(--layout-review);line-height:1.55;margin:0 0 20px;orphans:2;widows:2}
+body.apple-review-layout #explanation .evidence{font-size:var(--layout-review);line-height:1.55;max-height:none;padding:0 0 0 13px;border-left:2px solid #c5d6f6;background:transparent;border-radius:0;margin:0 0 22px;orphans:2;widows:2;overflow:visible}
+body.apple-review-layout #explanation .source-note{font-size:11px;color:#6e6e73;line-height:1.5;padding:12px 0 0;margin:0}
+body.apple-review-layout .layout-reader{box-sizing:border-box;width:min(1100px,90vw);height:min(790px,88vh);max-height:88vh;border:1px solid #e8e8ed;border-radius:17px;padding:26px 32px;background:#fff;color:#1d1d1f;box-shadow:0 15px 60px #0000001c;overflow:hidden}
+body.apple-review-layout .layout-reader::backdrop{background:#252a354d;backdrop-filter:blur(3px)}
+body.apple-review-layout .layout-reader[open]{display:flex;flex-direction:column;gap:18px}
+body.apple-review-layout .layout-reader-head{display:flex;justify-content:space-between;align-items:center;flex-shrink:0}
+body.apple-review-layout .layout-reader h2{font-size:25px;margin:0;color:#1d1d1f}
+body.apple-review-layout .layout-reader button{min-height:34px;font-size:14px;color:#0071e3;background:transparent;border:0;padding:6px 10px}
+body.apple-review-layout .layout-paragraph-tabs{display:flex;flex-wrap:wrap;gap:8px;border-bottom:1px solid #e8e8ed;padding-bottom:15px;flex-shrink:0}
+body.apple-review-layout .layout-paragraph-tabs button{border-radius:6px;background:#f5f5f7;color:#1d1d1f;min-width:36px}
+body.apple-review-layout .layout-paragraph-tabs button[aria-pressed=true]{background:#0071e3;color:#fff}
+body.apple-review-layout .layout-reader-label{font-size:12px;font-weight:600;color:#0071e3;flex-shrink:0}
+body.apple-review-layout .layout-reader-flow{font-size:calc(23px + var(--apple-reading-offset,0px));line-height:1.8;width:100%;height:100%;column-fill:auto;column-gap:32px;column-width:var(--layout-column-width)}
+body.apple-review-layout .layout-reader-flow mark{background:#fff0b3;color:inherit}
+body.apple-review-layout .layout-class-flow{flex:none;margin:0;padding:0;width:100%;height:100%;font-size:var(--layout-qa);line-height:1.5;column-fill:auto;column-gap:32px;column-width:var(--layout-column-width);overflow:visible}
+body.apple-review-layout .layout-class-answer{font-size:var(--layout-review)}
+body.apple-review-layout .review-dock .review-answer{flex-direction:column;overflow:hidden}
+body.apple-review-layout .review-dock[data-pane=answer] .review-answer{display:flex}
+body.apple-review-layout .lesson-panel{min-height:0}
+body.apple-review-layout .layout-class-flow img{max-height:min(360px,40vh);object-fit:contain;break-inside:avoid}
+body.apple-review-layout .layout-class-flow .table-scroll{overflow:visible}
+body.apple-review-layout .layout-table{margin:0 0 18px;border-top:1px solid #dedee5}
+body.apple-review-layout .layout-table-row{display:grid;grid-template-columns:repeat(var(--layout-table-columns),minmax(0,1fr));break-inside:avoid}
+body.apple-review-layout .layout-table-cell{border:1px solid #dedee5;border-top:0;padding:10px;min-width:0;overflow-wrap:anywhere;line-height:1.5}
+body.apple-review-layout .layout-table-row.layout-stacked-row{display:block;break-inside:auto}
+body.apple-review-layout .layout-table-row.layout-stacked-row .layout-table-cell{break-inside:auto}
+body.apple-review-layout .layout-reader-foot{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:12px;color:#6e6e73;flex-shrink:0}
+@media(min-width:1100px){body.apple-review-layout .app,body.apple-review-layout .layout{max-width:none;margin:0 58px}body.apple-review-layout.homework-mode .app{margin:0}body.apple-review-layout #main{padding-top:28px}body.apple-review-layout.embedded #main{padding-top:24px}body.apple-review-layout .class-view,body.apple-review-layout #library{height:calc(100% - 100px);gap:14px;grid-template-rows:minmax(0,1fr) 32px}body.apple-review-layout:not(.has-apple-audio) .class-view,body.apple-review-layout:not(.has-apple-audio) #library{height:calc(100% - 24px)}body.apple-review-layout .apple-playerbar{left:58px;right:58px}}
+@media(min-width:1100px) and (max-height:850px){body.apple-review-layout #main,body.apple-review-layout.embedded #main{padding-top:16px}body.apple-review-layout #question>.section-head{padding-bottom:10px}body.apple-review-layout #question .card-top{padding-bottom:10px}body.apple-review-layout #qbody .instruction{margin-bottom:14px}body.apple-review-layout #qbody .qtitle{margin-bottom:17px}body.apple-review-layout #qbody .option{padding:12px;min-height:74px}body.apple-review-layout #qbody .layout-option-bank .option{min-height:56px}body.apple-review-layout #review-dock{padding:18px 20px}}
+@media(max-width:1099px){body.apple-review-layout .lesson-grid,body.apple-review-layout #question-area,body.apple-review-layout #question-area.with-explanation{grid-template-columns:minmax(0,1fr);gap:24px;height:auto}body.apple-review-layout #question,body.apple-review-layout #question.apple-short{height:auto;overflow:visible}body.apple-review-layout #question .question-content,body.apple-review-layout #question.apple-short .question-content{height:auto;overflow:visible;flex:auto}body.apple-review-layout .layout-viewport{min-height:0;overflow:visible;flex:auto}body.apple-review-layout #qbody,body.apple-review-layout #question.apple-short #qbody,body.apple-review-layout #explanation{height:auto;columns:auto;transform:none!important;overflow:visible}body.apple-review-layout #review-dock{height:auto;min-height:240px}body.apple-review-layout .layout-page-nav{display:none}body.apple-review-layout .layout-reader .layout-viewport{overflow:hidden;flex:1}body.apple-review-layout .layout-reader-flow{column-width:var(--layout-column-width)}body.apple-review-layout #qbody .option{min-height:74px}body.apple-review-layout .layout-reader{padding:22px}}
+@media(max-width:1099px){body.apple-review-layout .layout-class-flow{height:auto;columns:auto;transform:none!important;overflow:visible}}
+@media(max-width:700px){body.apple-review-layout #qbody .layout-option-row{grid-template-columns:minmax(0,1fr)}body.apple-review-layout #qbody .layout-option-bank{grid-template-columns:repeat(3,minmax(0,1fr))}body.apple-review-layout #qbody .option{font-size:var(--layout-qa)}body.apple-review-layout .layout-reader{width:95vw;height:90vh;max-height:90vh;padding:18px}}
+</style><script id="unlock-review-layout-js">(()=>{'use strict';
+const $=id=>document.getElementById(id),home=!!$('library');
+document.body.classList.add('apple-review-layout');
+function node(tag,cls,txt){const n=document.createElement(tag);if(cls)n.className=cls;if(txt!==undefined)n.textContent=txt;return n;}
+const flows=[];
+function makeFlow(content,host,label,always=false){
+ const viewport=node('div','layout-viewport'),nav=node('nav','layout-page-nav');nav.setAttribute('aria-label',label+'分页');
+ const prev=node('button','','上一页'),position=node('span'),next=node('button','','下一页');prev.type=next.type='button';nav.append(prev,position,next);
+ content.before(viewport);viewport.append(content);host.append(nav);
+ const flow={content,viewport,nav,prev,next,position,page:0,total:1,always};flows.push(flow);
+ function turn(delta){flow.page=Math.max(0,Math.min(flow.total-1,flow.page+delta));paint(flow);}
+ prev.onclick=()=>turn(-1);next.onclick=()=>turn(1);return flow;
+}
+function paint(f){const width=f.viewport.clientWidth;f.content.style.transform=f.total>1?'translateX(-'+f.page*(width+32)+'px)':'';f.position.textContent=(f.page+1)+' / '+f.total;f.prev.disabled=f.page===0;f.next.disabled=f.page>=f.total-1;f.nav.hidden=f.total<=1;}
+function fit(f,reset=false){
+ if(!f.viewport.getClientRects().length)return;
+ if(!f.always&&innerWidth<1100){f.total=1;f.page=0;f.content.style.transform='';f.content.style.removeProperty('--layout-column-width');f.nav.hidden=true;return;}
+ if(reset)f.page=0;
+ // Reserve pagination space even before overflow is known: controls never overlay text.
+ f.nav.hidden=false;f.nav.style.visibility='hidden';
+ const width=f.viewport.clientWidth;f.content.style.setProperty('--layout-column-width',width+'px');f.content.style.transform='';
+ f.content.querySelectorAll('.layout-table-row').forEach(row=>{row.classList.remove('layout-stacked-row');if(row.getBoundingClientRect().height>f.viewport.clientHeight-16)row.classList.add('layout-stacked-row');});
+ f.total=Math.max(1,Math.round((f.content.scrollWidth+32)/(width+32)));f.page=Math.min(f.page,f.total-1);f.nav.style.visibility='';paint(f);
+}
+function layoutAll(reset=false){for(const f of flows)fit(f,reset);}
+const stop=new Set(('the a an and or of to in on for with as at is are was were be been being it its this that these those from by not no only all any some have has had do does did can could would should will must may might more most than then which what how why who when where they their them he she his her we our you your i me us one two each such into about because through without before after during also very much many other same following statement statements sentence sentences answer answers option options paragraph passage text says stated according correct incorrect true false given').split(' '));
+const stem=s=>s.toLowerCase().replace(/[^a-z]/g,'').replace(/(?:ing|ed|es|s)$/,'');
+function terms(text){return new Set((String(text).match(/[A-Za-z]+/g)||[]).filter(w=>w.length>3&&!stop.has(w.toLowerCase())).map(stem));}
+function questionTerms(q){let a=Array.isArray(q.answer)?q.answer:[q.answer];const opts=q.options||{};return terms([q.stem,q.prompt,...a.map(k=>opts[k]||k),q.reason].filter(Boolean).join(' '));}
+function sentences(text){return String(text).match(/[^.!?]+(?:[.!?]+(?=\s|$)|$)/g)?.map(x=>x.trim()).filter(Boolean)||[String(text)];}
+const excerptCache=new Map();
+function excerpt(text,q){
+ const key=q.id+'|'+text;if(excerptCache.has(key))return excerptCache.get(key);
+ const ss=sentences(text);if(ss.length<=3||text.length<420){excerptCache.set(key,text);return text;}
+ const target=questionTerms(q),scored=ss.map((s,i)=>({i,score:[...terms(s)].filter(t=>target.has(t)).length})).sort((a,b)=>b.score-a.score||a.i-b.i);
+ let result=text;
+ // A low-overlap passage stays complete and paginates; never invent evidence.
+ if(scored[0]?.score>=2){
+  const selected=new Set();
+  // Cover each correct option independently so a strong match for one answer
+  // cannot suppress another answer's evidence in a multi-answer question.
+  const keys=Array.isArray(q.answer)?q.answer:[q.answer];
+  for(const key of keys){const option=q.options?.[key];if(!option)continue;const ts=terms(option),ranked=ss.map((s,i)=>({i,score:[...terms(s)].filter(t=>ts.has(t)).length})).sort((a,b)=>b.score-a.score||a.i-b.i);if(ranked[0]?.score>=2)ranked.filter(x=>x.score>=Math.max(2,ranked[0].score*.6)).slice(0,2).forEach(x=>selected.add(x.i));}
+  if(!selected.size)scored.filter(x=>x.score>=Math.max(2,scored[0].score*.55)).slice(0,3).forEach(x=>selected.add(x.i));
+  for(const i of [...selected])if(i>0&&(/^(?:It|They|This|These|Those|Such|He|She)\b/i.test(ss[i])||/\b(?:these pictures|this (?:process|approach|method|change)|their (?:work|time))\b/i.test(ss[i])))selected.add(i-1);
+  result=[...selected].sort((a,b)=>a-b).map(i=>ss[i]).join('\n\n');
+ }
+ excerptCache.set(key,result);return result;
+}
+let reader=null,readerFlow=null,readerSheet=null,readerQuestion=null,readerIndex=0,lastFocus=null;
+function highlightText(text,q){const frag=document.createDocumentFragment(),wanted=questionTerms(q);for(const part of String(text).split(/([A-Za-z]+)/)){if(/[A-Za-z]/.test(part)&&part.length>3&&wanted.has(stem(part)))frag.append(node('mark','',part));else frag.append(document.createTextNode(part));}return frag;}
+function selectParagraph(i){
+ readerIndex=Math.max(0,Math.min(readerSheet.passages.length-1,i));const p=readerSheet.passages[readerIndex];
+ reader.querySelector('.layout-reader-label').textContent='Paragraph '+p.label;readerFlow.content.replaceChildren(highlightText(p.text,readerQuestion));
+ reader.querySelectorAll('[data-paragraph]').forEach((b,j)=>b.setAttribute('aria-pressed',String(j===readerIndex)));
+ reader.querySelector('.layout-reader-previous').disabled=readerIndex===0;reader.querySelector('.layout-reader-next').disabled=readerIndex===readerSheet.passages.length-1;
+ reader.querySelector('.layout-reader-count').textContent=(readerIndex+1)+' / '+readerSheet.passages.length+' 段';fit(readerFlow,true);
+}
+function openReader(sheet,q,label){
+ if(!sheet.passages?.length)return;
+ if(!reader){
+  reader=node('dialog','layout-reader');reader.id='layout-reader';reader.setAttribute('aria-labelledby','layout-reader-title');
+  const head=node('div','layout-reader-head'),title=node('h2','','阅读原文');title.id='layout-reader-title';const close=node('button','','关闭');close.type='button';close.onclick=()=>reader.close();head.append(title,close);
+  const tabs=node('nav','layout-paragraph-tabs');tabs.setAttribute('aria-label','原文段落');const labelNode=node('div','layout-reader-label'),body=node('div','layout-reader-flow'),foot=node('div','layout-reader-foot');
+  const prev=node('button','layout-reader-previous','上一段'),count=node('span','layout-reader-count'),next=node('button','layout-reader-next','下一段');prev.type=next.type='button';prev.onclick=()=>selectParagraph(readerIndex-1);next.onclick=()=>selectParagraph(readerIndex+1);foot.append(prev,count,next);
+  reader.append(head,tabs,labelNode,body);readerFlow=makeFlow(body,reader,'原文',true);reader.append(foot);document.body.append(reader);reader.addEventListener('close',()=>lastFocus?.focus());
+ }
+ readerSheet=sheet;readerQuestion=q;lastFocus=document.activeElement;
+ const tabs=reader.querySelector('.layout-paragraph-tabs');tabs.replaceChildren();sheet.passages.forEach((p,i)=>{const b=node('button','',p.label);b.type='button';b.dataset.paragraph=p.label;b.onclick=()=>selectParagraph(i);tabs.append(b);});
+ if(!reader.open)reader.showModal();selectParagraph(Math.max(0,sheet.passages.findIndex(p=>p.label===(label||q.section))));
+}
+window.UNLOCK_REVIEW_READER={open:openReader,excerpt};
+let left=null,right=null,sourceHTML='',extraHTML='',sourceQuestion='';
+function groupOptions(){
+ for(const bank of $('qbody').querySelectorAll('.options')){
+  const options=[...bank.children];if(!options.length||!options.every(x=>x.classList.contains('option')))continue;
+  const isBank=options.every(x=>!x.children[1]?.textContent.trim());bank.replaceChildren();
+  if(isBank){const row=node('div','layout-option-row layout-option-bank');row.style.setProperty('--layout-bank-columns',String(Math.min(options.length,7)));row.append(...options);bank.append(row);}
+  else for(let i=0;i<options.length;i+=2){const row=node('div','layout-option-row'+(i===options.length-1?' layout-last-single':''));row.append(...options.slice(i,i+2));bank.append(row);}
+ }
+}
+function questionRendered(){
+ if(!home||!left)return;
+ sourceQuestion=window.UNLOCK_TEST.question.id;sourceHTML=$('qbody').innerHTML;extraHTML=$('answer-extra').hidden?'':$('answer-extra').innerHTML;
+ groupOptions();if(extraHTML){const extra=node('div','layout-answer-copy');extra.innerHTML=extraHTML;$('qbody').append(extra);}
+ $('answer-extra').classList.add('layout-original-extra');
+ left.page=0;right.page=0;layoutAll(true);
+ requestFit();
+}
+let pending=false;function requestFit(){if(!pending){pending=true;requestAnimationFrame(()=>{pending=false;layoutAll();});}}
+let ro=null;
+function classRendered(){
+ if(home)return;const content=document.querySelector('.question-html'),answer=document.querySelector('.review-answer .answer');if(!content||content.closest('.layout-viewport'))return;
+ for(let i=flows.length-1;i>=0;i--)if(!flows[i].content.isConnected){ro?.unobserve(flows[i].viewport);flows.splice(i,1);}
+ function tables(host){for(const table of host.querySelectorAll('table')){const replacement=node('div','layout-table');replacement.setAttribute('role','table');for(const row of table.rows){const r=node('div','layout-table-row');r.setAttribute('role','row');r.style.setProperty('--layout-table-columns',row.cells.length);for(const cell of row.cells){const c=node('div','layout-table-cell');c.setAttribute('role',cell.tagName==='TH'?'columnheader':'cell');c.innerHTML=cell.innerHTML;r.append(c);}replacement.append(r);}table.replaceWith(replacement);}}
+ tables(content);content.classList.add('layout-class-flow');left=makeFlow(content,content.parentElement,'题目');ro?.observe(left.viewport);
+ if(answer){tables(answer);answer.classList.add('layout-class-flow','layout-class-answer');right=makeFlow(answer,answer.parentElement,'讲评');ro?.observe(right.viewport);}
+ layoutAll(true);requestFit();
+}
+if(home){
+ const body=$('qbody'),host=body.closest('.question-content');left=makeFlow(body,host,'题目');
+ const exp=$('explanation'),review=exp.closest('.review-answer');right=makeFlow(exp,review,'讲评');
+ $('material').textContent='阅读原文';
+ $('copy').onclick=async()=>{const q=UNLOCK_TEST.question,s=UNLOCK_TEST.state,copy=document.createElement('div');copy.innerHTML=sourceHTML;copy.querySelectorAll('br').forEach(n=>n.replaceWith(document.createTextNode('\n')));copy.querySelectorAll('p,.option').forEach(n=>n.append(document.createTextNode('\n')));const answer=Array.isArray(q.answer)?q.answer.join(', '):String(q.answer??'');const value=`Book ${s.b} Unit ${s.u} ${s.s}_H${s.h} Q${q.number}\n${copy.textContent}\n${q.answer_kind}：${answer}\n${q.reason||q.boundary||''}\n${q.quote||''}`;try{await navigator.clipboard.writeText(value);const notice=$('toast');if(notice){notice.textContent='已复制本题讲评';notice.classList.add('show');setTimeout(()=>notice.classList.remove('show'),1800);}}catch{$('copy-text').value=value;$('copy-dialog').showModal();$('copy-text').focus();$('copy-text').select();}};
+ window.UNLOCK_LAYOUT={questionRendered,refresh:()=>layoutAll(),flows,get source(){return {id:sourceQuestion,html:sourceHTML,extra:extraHTML};}};
+ questionRendered();
+}else{window.UNLOCK_LAYOUT={refresh:()=>layoutAll(),classRendered,flows};classRendered();}
+ro=new ResizeObserver(requestFit);if(left)ro.observe(left.viewport);if(right)ro.observe(right.viewport);
+let layoutState=document.body.className+'|'+document.body.getAttribute('style');
+new MutationObserver(()=>{const state=document.body.className+'|'+document.body.getAttribute('style');if(state!==layoutState){layoutState=state;requestFit();}}).observe(document.body,{attributes:true,attributeFilter:['style','class']});
+if(home)new MutationObserver(requestFit).observe($('review-dock'),{attributes:true,attributeFilter:['data-pane']});
+window.addEventListener('resize',requestFit);document.addEventListener('click',requestFit);document.addEventListener('load',requestFit,true);
 })();
 </script></body></html>
