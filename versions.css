@@ -1,0 +1,7 @@
+.unlock-version-field{display:flex;align-items:center;gap:6px;flex:none;font-size:12px;color:#6e6e73;white-space:nowrap}
+.unlock-version-field select{border:0;border-radius:10px;min-width:72px;height:36px;padding:6px 9px;background:#f5f5f7;color:#1d1d1f;font:14px/1.4 -apple-system,BlinkMacSystemFont,Arial,"Microsoft YaHei",sans-serif;cursor:pointer}
+.unlock-version-field select:focus-visible{outline:2px solid #0071e3;outline-offset:3px}
+body>header>.unlock-version-field{margin-left:20px}
+body.embedded .unlock-version-field{display:none!important}
+@media(min-width:1100px) and (max-width:1500px){body.apple-ui .apple-onebar{gap:12px}body.apple-ui .apple-onebar .brand strong{display:none}body.apple-ui .apple-navigation{gap:7px}body.apple-ui .apple-select-field{gap:4px}body.apple-ui .apple-select-field select{font-size:12px;padding:6px 7px;max-width:90px}.unlock-version-field select{min-width:64px}}
+@media(max-width:700px){.unlock-version-hide-small{display:none}.unlock-version-field{font-size:11px;gap:4px}.unlock-version-field select{min-width:62px;height:31px;font-size:12px}}
