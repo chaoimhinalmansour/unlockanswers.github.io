@@ -5,17 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>学生平台写作复盘</title>
   <link rel="stylesheet" href="writing-review.css?v=assessment-3">
-  <script src="writing-samples.js?v=assessment-3" defer></script>
-  <script src="writing-review.js?v=assessment-3" defer></script>
+  <script src="writing-review-gate.js?v=20261116-4" defer></script>
+  <style>
+    #writing-review-content[hidden],#writing-entry[hidden]{display:none!important}
+    .writing-entry {padding-top:32px}
+    .writing-entry h1 {font-size:clamp(28px,4vw,38px);margin:0 0 14px}
+    .writing-password-form {max-width:600px;background:#f5f5f7;border-radius:22px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+    .writing-password-form label {grid-column:1/-1;font-weight:600}
+    .writing-password-form input {width:100%;min-height:44px;padding:9px 12px;font:inherit;border:1px solid #d2d2d7;background:#fff;color:#1d1d1f;border-radius:9px}
+    .writing-password-form button {border:0;background:#0071e3;color:#fff;min-height:44px;padding:9px 18px;border-radius:22px;font:inherit;cursor:pointer}
+    .writing-password-form :is(input,button):focus-visible {outline:3px solid #0071e3;outline-offset:3px}
+    .writing-password-form button:disabled {opacity:.55}
+    #writing-entry-message {grid-column:1/-1;font-size:14px;margin:0;color:#983344}
+    #writing-entry-message:empty {display:none}
+    @media(max-width:480px){.writing-password-form{grid-template-columns:1fr;padding:18px}.writing-password-form button{justify-self:start}}
+  </style>
 </head>
 <body>
   <header class="site-header">
     <div><a href="index.html">学生平台</a><span>Student Platform</span></div>
   </header>
-  <main class="page">
+  <main class="page writing-entry" id="writing-entry">
+    <h1>写作复盘</h1>
+    <form class="writing-password-form" id="writing-password-form">
+      <label for="writing-password">请输入访问密码</label>
+      <input id="writing-password" type="password" required autocomplete="current-password">
+      <button type="submit">进入复盘</button>
+      <p id="writing-entry-message" role="status"></p>
+    </form>
+    <noscript>请启用 JavaScript 后验证密码。</noscript>
+  </main>
+  <main class="page" id="writing-review-content" hidden>
     <section class="hero">
       <p class="kicker">IELTS Academic Writing</p>
-      <h1>写作复盘</h1>
+      <h1 id="writing-review-title" tabindex="-1">写作复盘</h1>
       <p>从原文批注回看思路和表达，找出下一稿要练的地方。</p>
     </section>
     <nav class="sample-list" aria-label="写作复盘样例">
