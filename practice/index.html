@@ -3,39 +3,53 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="UNLOCK 学生在线练习">
-  <title>UNLOCK 在线练习</title>
-  <link rel="stylesheet" href="practice.css?v=20261116-3">
-  <link rel="stylesheet" href="workbench.css?v=20261116-5">
-  <script defer src="rules.js?v=20261116"></script>
+  <meta name="description" content="UNLOCK 学生单元练习">
+  <title>UNLOCK 单元练习</title>
+  <link rel="stylesheet" href="practice.css?v=20261116-7">
+  <link rel="stylesheet" href="workbench.css?v=20261117-5">
+  <link rel="stylesheet" href="one-screen.css?v=20261116-7">
+  <link rel="stylesheet" href="listening-study.css?v=20261116-9">
+  <link rel="stylesheet" href="dictation.css?v=20261117-6">
+  <script defer src="rules.js?v=20261117-5"></script>
   <script defer src="students.js?v=20261116"></script>
   <script defer src="data/catalog.js?v=20261116"></script>
-  <script defer src="recordings.js?v=20261116-3"></script>
-  <script defer src="question-view.js?v=20261116-5"></script>
+  <script defer src="data/stp1116/catalog.js?v=20261117-5"></script>
+  <script defer src="data/stp1116/dictation.js?v=20261117-6"></script>
+  <script defer src="recordings.js?v=20261117-5"></script>
+  <script defer src="screen-pages.js?v=20261116-6"></script>
+  <script defer src="question-view.js?v=20261117-5"></script>
   <script defer src="report.js?v=20261116-3"></script>
-  <script defer src="workbench.js?v=20261116-5"></script>
-  <script defer src="listening-player.js?v=20261116-4"></script>
-  <script defer src="subject-app.js?v=20261116-5"></script>
+  <script defer src="workbench.js?v=20261117-6"></script>
+  <script defer src="listening-study.js?v=20261117-5"></script>
+  <script defer src="listening-player.js?v=20261117-5"></script>
+  <script defer src="catalog-view.js?v=20261117-5"></script>
+  <script defer src="dictation-playback.js?v=20261117-6"></script>
+  <script defer src="subject-app.js?v=20261117-6"></script>
 </head>
 <body>
   <div id="practice-surface">
     <header class="masthead">
       <div class="masthead-inner">
-        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学生平台首页">UNLOCK</a><span>在线练习</span></div>
+        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学生平台首页">UNLOCK</a><span>单元练习</span></div>
         <div class="header-actions">
           <div id="practice-account"></div>
           <nav class="site-links" aria-label="学生端导航">
-            <a href="../student.html?v=20261023-current">听力精听</a>
             <a href="../index.html">返回首页</a>
           </nav>
         </div>
       </div>
     </header>
     <main id="app" class="site-main" tabindex="-1"></main>
-    <noscript><p class="site-main">请在浏览器中开启 JavaScript 后再打开在线练习。</p></noscript>
+    <noscript><p class="site-main">请在浏览器中开启 JavaScript 后再打开单元练习。</p></noscript>
     <div id="practice-docks" hidden>
       <div class="dock-contents">
         <div id="practice-operations" aria-label="练习操作"></div>
+        <section id="dictation-dock" aria-label="整组听写录音" hidden>
+          <audio preload="none"></audio>
+          <button type="button" class="button" data-dictation-start>播放听写</button>
+          <p data-dictation-status role="status"></p>
+          <progress max="1" value="0" aria-label="听写播放进度" hidden></progress>
+        </section>
         <section id="listening-dock" aria-label="听力播放条" hidden>
           <audio preload="metadata"></audio>
           <button type="button" class="button" data-listen-play>播放</button>

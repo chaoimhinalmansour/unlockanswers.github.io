@@ -3,8 +3,12 @@
 (function () {
   const { isAnswered, judge, escapeHTML: esc } = window.UnlockRules;
   const { sectionName, renderOrder, voiceHTML } = window.UnlockWorksheet;
-  const { render: renderWorkbench, applyQuestionState } = window.UnlockWorkbench;
+  const { render: renderWorkbench, applyQuestionState, isDictation, questionStops } = window.UnlockWorkbench;
+  const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory, loadUnit } =
+    window.UnlockPracticeCatalog;
   const listening = window.UnlockListening;
+  const dictation = window.UnlockDictation;
+  const screens = window.UnlockScreens;
   const recordings = window.UnlockRecordings;
   const report = window.UnlockReport;
   const surface = document.getElementById("practice-surface");
@@ -13,17 +17,15 @@
   const dock = document.getElementById("practice-docks");
   const operations = document.getElementById("practice-operations");
   const students = window.UNLOCK_STUDENTS;
-  const catalog = window.UNLOCK_CATALOG;
   const books = { L1: 2, L2: 3 };
-  const subjects = { L: "Listening", S: "Speaking", R: "Reading", W: "Writing" };
-  const remembered = "unlock.practice.navigation.v4";
+  const remembered = "unlock.practice.navigation.v5";
   const cache = new Map();
   const printPreviews = new Map();
   let voiceJob = null;
 
   const state = {
     student: null, unit: 1, worksheet: null, attempt: null, focus: null,
-    all: false, readingOpen: true, largePicture: false,
+    all: false, readingOffset: 0, largePicture: false,
     notice: "", loading: false, storageWorks: true, navigation: 0
   };
 
@@ -113,28 +115,20 @@
 
   function currentAttempt(meta, code) {
     const saved = getAttempt(attemptKey(meta, code));
-    return saved.sequence ? saved : fromLegacy(meta, code);
+    return saved.sequence || meta.unit === specialUnit ? saved : fromLegacy(meta, code);
   }
 
   function saveNavigation() {
     try {
       sessionStorage.setItem(remembered, JSON.stringify({
         student: state.student?.name, unit: state.unit, code: state.worksheet?.code,
-        focus: state.focus, all: state.all, readingOpen: state.readingOpen
+        focus: state.focus, all: state.all
       }));
     } catch {}
   }
 
   function currentMeta() {
-    return catalog.find(item => item.book === books[state.student?.level] && item.unit === state.unit);
-  }
-
-  function unitNumber(unit) {
-    return String(unit).padStart(2, "0");
-  }
-
-  function practiceTitle(meta, code) {
-    return "Book " + meta.book + " Unit " + unitNumber(meta.unit) + " " + subjects[code[0]] + " " + code.slice(2);
+    return findMeta(books[state.student?.level], state.unit);
   }
 
   function status(attempt) {
@@ -149,11 +143,15 @@
   function entry() {
     const options = students.map(student => '<option value="' + esc(student.name) + '">' +
       esc(student.name) + "</option>").join("");
-    return '<section class="entry-layout"><div class="entry-intro"><h1>在线练习</h1>' +
-      '<p>选择姓名，查看适合你的练习。</p></div><form id="identity-form" class="identity-form">' +
+    return '<section class="entry-layout"><div class="entry-intro"><h1>单元练习</h1>' +
+      '<p>选择姓名，并用括号里的英文名登录。</p></div><form id="identity-form" class="identity-form">' +
       '<div><label for="student" class="field-label">选择姓名</label>' +
       '<select id="student" required><option value="">请选择你的姓名</option>' + options +
-      '</select></div><button type="submit" class="button">进入练习</button></form></section>';
+      '</select></div><div><label for="student-password" class="field-label">密码</label>' +
+      '<input id="student-password" class="text-input" type="password" required autocomplete="off" ' +
+      'autocapitalize="none" spellcheck="false" aria-describedby="identity-message"></div>' +
+      '<button type="submit" class="button">登录</button><p id="identity-message" class="feedback" role="status" hidden>' +
+      '密码与所选姓名不匹配，请重新输入。</p></form></section>';
   }
 
 
@@ -166,36 +164,13 @@
       'data-action="identity">切换学生</button>';
   }
 
-  function taskButton(meta, code) {
-    const activity = status(currentAttempt(meta, code));
-    return '<button type="button" class="assignment-button' + (activity.style ? " started" : "") +
-      '" data-task="' + esc(code) + '"><strong>' + esc(code.slice(2)) + '</strong><span class="mini-status ' +
-      activity.style + '">' + activity.name + "</span></button>";
-  }
-
-  function subjectCard(meta, skill, name) {
-    return '<section class="track" aria-label="' + esc(name) + '"><h2>' + esc(name) +
-      '</h2><p class="track-caption">' + sectionName(skill) + '</p><div class="assignment-list">' +
-      [1, 2, 3].map(h => taskButton(meta, skill + "_H" + h)).join("") +
-      "</div></section>";
-  }
-
   function directory() {
     const meta = currentMeta();
     if (!meta) return '<section class="empty-state panel"><h1>练习暂未开放</h1><p>' +
-      esc(state.student.level) + " 暂未开放在线练习。</p></section>";
-    const units = catalog.filter(item => item.book === meta.book);
-    const buttons = units.map(item => '<button type="button" data-unit="' + item.unit +
-      '" aria-pressed="' + String(item.unit === state.unit) + '">Unit ' + unitNumber(item.unit) +
-      "</button>").join("");
-    return '<section class="catalog"><div class="catalog-head"><h1>Book ' + meta.book +
-      ' 作业目录</h1><p>选择一个科目，打开对应的 H1、H2 或 H3。</p></div>' +
-      '<nav class="unit-picker" aria-label="选择单元">' + buttons + '</nav><div class="unit-heading">' +
-      '<span>Unit ' + unitNumber(meta.unit) + '</span><h2>' + esc(meta.topic) +
-      '</h2></div><div class="catalog-grid">' +
-      Object.entries(subjects).map(([skill, title]) => subjectCard(meta, skill, title)).join("") +
-      "</div></section>";
+      esc(state.student.level) + " 暂未开放单元练习。</p></section>";
+    return renderDirectory(meta, code => status(currentAttempt(meta, code)));
   }
+
 
   function questionsInView() {
     const { attempt, worksheet, all } = state;
@@ -258,7 +233,7 @@
     if (meter) meter.innerHTML = progressHTML(progress());
     const storage = document.getElementById("storage-note");
     if (storage) storage.hidden = state.storageWorks;
-    for (const button of app.querySelectorAll(".question-chip")) {
+    for (const button of app.querySelectorAll(".question-chip:not([data-dictation-nav])")) {
       const question = state.worksheet.byNumber.get(Number(button.dataset.questionNumber));
       applyQuestionState(button, question, state.attempt, question.number === state.focus, hasResponse(question));
     }
@@ -322,30 +297,41 @@
     const finished = Boolean(attempt.second);
     const correction = Boolean(attempt.first) && !finished;
     const phase = finished ? "已完成" : correction ? "订正" : "首次作答";
-    const context = "Book " + worksheet.unit.book + " Unit " + unitNumber(worksheet.unit.unit);
-    const title = subjects[worksheet.code[0]] + " " + worksheet.code.slice(2);
+    const context = unitLabel(worksheet.unit);
+    const title = subjectTitle(worksheet.code);
     const panel = renderWorkbench(worksheet, attempt, {
-      current: focusedQuestion(), visible: questionsInView(), all: state.all, readingOpen: state.readingOpen,
+      current: focusedQuestion(), visible: questionsInView(), all: state.all,
       largePicture: state.largePicture, answered: hasResponse, editable
     });
-    return '<div class="quiz-header"><button type="button" class="text-action subtle-action" data-action="directory">' +
-      '返回作业目录</button><div class="session-top"><div><p class="page-context">' + esc(context) +
-      '</p><div class="session-title"><h1>' + esc(title) + '</h1><span class="state-label' +
-      (correction ? " correction" : "") + '">' + phase + '</span></div></div><div id="work-progress" class="work-progress" ' +
-      'aria-live="polite">' + progressHTML(progress()) + '</div></div>' +
-      (finished ? finalActions() : "") + "</div>" + panel;
+    return '<div class="quiz-header"><div class="session-top"><div><div class="quiz-location">' +
+      '<button type="button" class="text-action subtle-action" data-action="directory">作业目录</button>' +
+      '<p class="page-context">' + esc(context) + '</p></div><div class="session-title"><h1>' + esc(title) +
+      '</h1><span class="state-label' + (correction ? " correction" : "") + '">' + phase +
+      '</span></div></div><div class="session-tools"><div id="work-progress" class="work-progress" ' +
+      'aria-live="polite">' + progressHTML(progress()) + "</div>" +
+      (finished ? finalActions() : "") + "</div></div></div>" + panel;
+  }
+
+  function navigationPosition() {
+    const stops = questionStops(state.worksheet, questionsInView());
+    const current = focusedQuestion();
+    const index = isDictation(state.worksheet, current) ? 0 : stops.indexOf(current);
+    return { stops, index };
   }
 
   function renderDocks() {
     const working = Boolean(state.worksheet) && !state.loading;
+    const worksheet = working ? state.worksheet : null;
+    const current = working ? focusedQuestion() : null;
+    const groupShown = isDictation(worksheet, current);
     dock.hidden = !working;
-    listening.update(working ? state.worksheet : null, working ? focusedQuestion() : null);
+    const playing = dictation.update(worksheet, groupShown, working && !state.attempt.first);
+    listening.update(worksheet, groupShown || playing ? null : current, state.student);
     if (!working) {
       operations.innerHTML = "";
       return;
     }
-    const visible = questionsInView();
-    const i = visible.findIndex(q => q.number === state.focus);
+    const { stops, index } = navigationPosition();
     function step(direction, label, enabled) {
       return '<button type="button" class="button secondary" data-step="' + direction + '"' +
         (enabled ? "" : " disabled") + ">" + label + "</button>";
@@ -353,9 +339,11 @@
     const actions = state.attempt.second
       ? '<button type="button" class="button secondary" data-action="directory">返回目录</button>'
       : '<button type="button" class="button" data-action="' +
-        (state.attempt.first ? 'submit-second">再次提交' : 'submit-first">首次提交') + "</button>";
-    operations.innerHTML = '<div class="step-actions">' + step(-1, "上一题", i > 0) +
-      step(1, "下一题", i >= 0 && i < visible.length - 1) + "</div>" + actions;
+        (state.attempt.first ? "submit-second" : "submit-first") + '"' + (playing ? " disabled" : "") + ">" +
+        (state.attempt.first ? "再次提交" : "首次提交") + "</button>";
+    const previous = isDictation(worksheet, stops[index - 1]) ? "返回听写" : "上一题";
+    operations.innerHTML = '<div class="step-actions">' + step(-1, previous, index > 0) +
+      step(1, "下一题", index >= 0 && index < stops.length - 1) + "</div>" + actions;
   }
 
   function render(scrollTop = false) {
@@ -368,40 +356,32 @@
     else if (state.loading) content = '<p class="empty-state panel" role="status">正在打开练习。</p>';
     else if (state.worksheet) content = quiz();
     else content = directory();
-    const readingOffset = app.querySelector("#reading-material[open] .reading-text")?.scrollTop || 0;
+    const working = Boolean(state.worksheet) && !state.loading;
+    const priorPassage = app.querySelector("#reading-screen");
+    if (priorPassage) state.readingOffset = priorPassage.scrollTop;
+    const questionOffset = scrollTop ? 0 : app.querySelector("#question-screen")?.scrollTop || 0;
+    surface.classList.toggle("in-worksheet", working);
     app.innerHTML = notice + storage + content;
-    const passage = app.querySelector("#reading-material[open] .reading-text");
-    if (passage) passage.scrollTop = readingOffset;
     renderDocks();
     hydrateAudio(app);
     syncVoiceControls();
+    screens.connect(app);
+    const passage = app.querySelector("#reading-screen");
+    const question = app.querySelector("#question-screen");
+    if (passage) {
+      if (passage.dataset.readingArticle !== priorPassage?.dataset.readingArticle) state.readingOffset = 0;
+      passage.scrollTop = state.readingOffset;
+    }
+    if (question) question.scrollTop = questionOffset;
     if (scrollTop) {
       window.scrollTo(0, 0);
       app.focus({ preventScroll: true });
     }
   }
 
-  function loadUnit(meta) {
-    const current = window.UNLOCK_UNITS[meta.id];
-    if (current?.revision === meta.revision) return Promise.resolve(current);
-
-    return new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = "data/alpha-a4/" + meta.id.toLowerCase() + ".js?v=" + meta.revision;
-      script.addEventListener("error", () => reject(new Error("Cannot load unit")), { once: true });
-      script.addEventListener("load", () => {
-        const unit = window.UNLOCK_UNITS[meta.id];
-        if (unit?.revision === meta.revision) resolve(unit);
-        else reject(new Error("Unit revision mismatch"));
-      }, { once: true });
-      document.head.append(script);
-    });
-  }
-
-
   async function openWorksheet(code, rememberedView = {}) {
     const meta = currentMeta();
-    if (!meta || !/^[LSRW]_H[123]$/.test(code) || state.loading) return;
+    if (!allowsWorksheet(meta, code) || state.loading) return;
     const ticket = ++state.navigation;
     state.loading = true;
     state.notice = "";
@@ -414,14 +394,15 @@
       if (!questions?.length) throw new Error("Worksheet unavailable");
       const key = attemptKey(meta, code);
       state.worksheet = {
-        key, code, title: practiceTitle(meta, code), unit, sheet,
+        key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
+        dictation: window.UNLOCK_DICTATION?.[meta.id]?.[code],
         sections: [sheet], questions, byId: new Map(questions.map(q => [q.id, q])),
         byNumber: new Map(questions.map(q => [q.number, q]))
       };
       state.attempt = currentAttempt(meta, code);
       state.all = Boolean(rememberedView.all);
       state.largePicture = false;
-      state.readingOpen = rememberedView.readingOpen ?? matchMedia("(min-width: 850px)").matches;
+      state.readingOffset = 0;
       pickFocus(rememberedView.focus);
       saveNavigation();
     } catch {
@@ -454,7 +435,11 @@
     state.focus = number;
     saveNavigation();
     render(true);
-    document.getElementById("item-" + question.id)?.focus({ preventScroll: true });
+    const item = document.getElementById("item-" + question.id);
+    const field = item?.querySelector("[data-dictation-answer]");
+    (field || item)?.focus({ preventScroll: true });
+    const activeBlank = field || item?.querySelector(".summary-blank.current input");
+    if (activeBlank) screens.reveal(activeBlank);
   }
 
   function editable(question) {
@@ -712,9 +697,12 @@
     const control = item.querySelector(".control");
     control.innerHTML = renderOrder(q, chosen);
     const property = orderRemove ? "orderAdd" : "orderRemove";
-    Array.from(control.querySelectorAll("button"))
-      .find(candidate => candidate.dataset[property] === (orderAdd || orderRemove || part))
-      ?.focus({ preventScroll: true });
+    const next = Array.from(control.querySelectorAll("button"))
+      .find(candidate => candidate.dataset[property] === (orderAdd || orderRemove || part));
+    if (next) {
+      next.focus({ preventScroll: true });
+      screens.reveal(next);
+    }
   }
 
   surface.addEventListener("submit", event => {
@@ -722,7 +710,15 @@
     event.preventDefault();
     const name = document.getElementById("student").value;
     const student = students.find(person => person.name === name);
-    if (!student) return;
+    const password = document.getElementById("student-password");
+    const expected = student?.name.match(/（([^）]+)）$/)?.[1];
+    if (!expected || password.value.trim() !== expected) {
+      document.getElementById("identity-message").hidden = false;
+      password.setAttribute("aria-invalid", "true");
+      password.focus();
+      password.select();
+      return;
+    }
     state.student = student;
     state.unit = 1;
     backToDirectory();
@@ -730,10 +726,29 @@
 
   app.addEventListener("input", event => {
     const input = event.target;
+    if (input.id === "student" || input.id === "student-password") {
+      const password = document.getElementById("student-password");
+      if (input.id === "student") password.value = "";
+      password.removeAttribute("aria-invalid");
+      document.getElementById("identity-message").hidden = true;
+      return;
+    }
     if (!input.matches("input[data-answer],textarea[data-answer]") ||
         (input instanceof HTMLInputElement && input.type !== "text")) return;
     updateAnswer(state.worksheet?.byId.get(input.dataset.answer), input.value);
   });
+
+  app.addEventListener("keydown", event => {
+    if (event.key !== "Enter" || event.isComposing || !event.target.matches("[data-dictation-answer]")) return;
+    const fields = Array.from(app.querySelectorAll("[data-dictation-answer]"));
+    const next = fields[fields.indexOf(event.target) + 1];
+    if (!next) return;
+    event.preventDefault();
+    next.focus({ preventScroll: true });
+    screens.reveal(next);
+  });
+
+  document.addEventListener("dictation-playback-change", renderDocks);
 
   app.addEventListener("change", event => {
     const input = event.target;
@@ -751,12 +766,6 @@
     }
   });
 
-  app.addEventListener("toggle", event => {
-    if (event.target.id === "reading-material") {
-      state.readingOpen = event.target.open;
-      saveNavigation();
-    }
-  }, true);
 
   surface.addEventListener("click", event => {
     const button = event.target.closest("button");
@@ -775,14 +784,20 @@
       saveNavigation();
       render();
       app.querySelector('[data-unit="' + d.unit + '"]')?.focus({ preventScroll: true });
+    } else if (d.action === "special") {
+      state.unit = specialUnit;
+      state.notice = "";
+      saveNavigation();
+      render();
+      app.querySelector('[data-action="special"]')?.focus({ preventScroll: true });
     } else if (d.task) {
       openWorksheet(d.task);
     } else if (d.questionNumber) {
       goToQuestion(Number(d.questionNumber));
     } else if (d.step) {
-      const visible = questionsInView();
-      const position = visible.findIndex(q => q.number === state.focus) + Number(d.step);
-      if (visible[position]) goToQuestion(visible[position].number);
+      const { stops, index } = navigationPosition();
+      const target = stops[index + Number(d.step)];
+      if (target) goToQuestion(target.number);
     } else if (d.orderAdd || d.orderRemove || d.orderShift) {
       changeOrder(button);
     } else if (d.action === "identity") {
@@ -835,20 +850,14 @@
   function restore() {
     try {
       const current = JSON.parse(sessionStorage.getItem(remembered) || "null");
-      const previous = current || JSON.parse(sessionStorage.getItem("unlock.practice.navigation.v1") || "null");
-      const student = students.find(person => person.name === previous?.student);
+      const student = students.find(person => person.name === current?.student);
       if (!student) return;
       state.student = student;
-      if (Number.isInteger(previous.unit) && previous.unit >= 1 && previous.unit <= 8) state.unit = previous.unit;
-      const task = current ? current.code : previous.section;
-      if (task) openWorksheet(task, current || {});
+      if (findMeta(books[student.level], current.unit)) state.unit = current.unit;
+      if (current.code) openWorksheet(current.code, current);
     } catch {}
   }
 
-  if ("ResizeObserver" in window) {
-    new ResizeObserver(() => surface.style.setProperty("--dock-height", (Math.ceil(dock.getBoundingClientRect().height) + 16) + "px"))
-      .observe(dock);
-  }
 
   restore();
   render();

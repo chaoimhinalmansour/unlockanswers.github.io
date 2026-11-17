@@ -6,7 +6,7 @@
   let connection;
 
   function isSpeaking(question) {
-    return /\/S_H[123]\//.test(question.id);
+    return /\/S_(?:H[123]|STP)\//.test(question.id);
   }
 
   function openDatabase() {

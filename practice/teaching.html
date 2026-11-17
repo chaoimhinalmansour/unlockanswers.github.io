@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="UNLOCK 教学与讲评">
+  <title>UNLOCK 教学与讲评</title>
+  <link rel="stylesheet" href="practice.css?v=20261116-7">
+  <link rel="stylesheet" href="workbench.css?v=20261117-5">
+  <link rel="stylesheet" href="one-screen.css?v=20261116-7">
+  <link rel="stylesheet" href="teaching.css?v=20261117-4">
+  <link rel="stylesheet" href="listening-study.css?v=20261116-9">
+  <script defer src="rules.js?v=20261117-5"></script>
+  <script defer src="data/catalog.js?v=20261116"></script>
+  <script defer src="data/stp1116/catalog.js?v=20261117-5"></script>
+  <script defer src="recordings.js?v=20261117-5"></script>
+  <script defer src="screen-pages.js?v=20261116-6"></script>
+  <script defer src="question-view.js?v=20261117-5"></script>
+  <script defer src="workbench.js?v=20261117-6"></script>
+  <script defer src="listening-study.js?v=20261117-5"></script>
+  <script defer src="listening-player.js?v=20261117-5"></script>
+  <script defer src="catalog-view.js?v=20261117-5"></script>
+  <script defer src="teaching-app.js?v=20261117-5"></script>
+</head>
+<body>
+  <div id="practice-surface">
+    <header class="masthead">
+      <div class="masthead-inner">
+        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学生平台首页">UNLOCK</a><span>教学与讲评</span></div>
+        <div class="header-actions">
+          <div id="practice-account"></div>
+          <nav class="site-links" aria-label="教师端导航">
+            <a href="../index.html">返回首页</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main id="app" class="site-main" tabindex="-1"></main>
+    <noscript><p class="site-main">请在浏览器中开启 JavaScript 后再打开教学与讲评。</p></noscript>
+    <div id="practice-docks" hidden>
+      <div class="dock-contents">
+        <div id="practice-operations" aria-label="讲评操作"></div>
+        <section id="listening-dock" aria-label="听力播放条" data-listen-study-access="direct" hidden>
+          <audio preload="metadata"></audio>
+          <button type="button" class="button" data-listen-play>播放</button>
+          <div><p class="recording-name" data-listen-label></p><p class="small">本题录音</p></div>
+          <div class="listen-range">
+            <input type="range" aria-label="听力播放进度" min="0" max="1" step="0.01" value="0" data-listen-range disabled>
+            <output data-listen-time aria-live="off">0:00 / 0:00</output>
+          </div>
+          <div class="listen-extras">
+            <button type="button" class="button secondary" data-listen-back>后退 5 秒</button>
+            <select aria-label="听力播放速度" data-listen-speed>
+              <option value="1">1 倍</option><option value="0.75">0.75 倍</option><option value="1.25">1.25 倍</option>
+            </select>
+          </div>
+          <div class="candidate-tracks" hidden><label for="listen-track">候选录音</label><select id="listen-track" data-listen-track></select></div>
+          <p class="listen-warning" data-listen-warning role="status" hidden>音频暂时无法播放，请重试。</p>
+        </section>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

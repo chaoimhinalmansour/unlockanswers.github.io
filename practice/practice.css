@@ -44,10 +44,11 @@ h3 { font-size: 18px; }
 .entry-layout { max-width: 660px; }
 .entry-intro p { color: var(--muted); margin-top: 8px; }
 .identity-form {
-  display: grid; grid-template-columns: minmax(0, 1fr) auto;
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
   align-items: end; gap: 12px; padding: 28px; margin-top: 25px; border-radius: 24px;
   background: var(--surface);
 }
+.identity-form .feedback { grid-column: 1 / -1; margin: 0; }
 .field-label { display: block; margin-bottom: 6px; font-size: 14px; font-weight: 650; }
 select, .text-input, textarea {
   width: 100%; background: var(--paper); border: 1px solid #c7c7d0;

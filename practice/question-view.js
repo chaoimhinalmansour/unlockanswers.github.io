@@ -4,6 +4,7 @@
   const { escapeHTML: esc, displayAnswer, displayKeys } = window.UnlockRules;
 
   const { isSpeaking, clipTime } = window.UnlockRecordings;
+  const { controls: screenControls } = window.UnlockScreens;
   const discipline = { L: "听力", S: "口语", R: "阅读", W: "写作" };
   const outcomes = { correct: "答对", incorrect: "答错", blank: "未作答", ungraded: "只记录作答" };
 
@@ -40,10 +41,13 @@
         '<span class="shift-buttons">' + shift(-1, index === 0, "前移") +
         shift(1, index === current.length - 1, "后移") + "</span></li>";
     }).join("");
+    const start = question.fixedStart
+      ? '<strong class="fixed-response-start" aria-label="给定句首">' + esc(question.fixedStart) + "</strong>"
+      : "";
     return '<div class="order-wrap' + (question.orderedSentences ? ' sentences' : '') +
       '" role="group" aria-labelledby="stem-' + esc(question.id) +
       '"><p class="small">点选词块后，可以前移、后移或点击撤回。</p><div class="part-pool">' +
-      buttons + '</div><div class="part-sequence" aria-label="已选顺序">' +
+      buttons + '</div><div class="part-sequence" aria-label="已选顺序">' + start +
       (selected ? '<ol class="selected-parts">' + selected + "</ol>" : '<span class="order-label">作答顺序</span>') + "</div></div>";
   }
 
@@ -57,8 +61,12 @@
     if (question.type === "open") {
       const speaking = isSpeaking(question);
       const accessibleName = speaking ? ' aria-label="口语笔记（可选）"' : label;
-      const field = '<textarea' + accessibleName + ' data-answer="' + id +
-        '" spellcheck="false">\n' + esc(value) + "</textarea>";
+      const prefix = question.responsePrefix
+        ? '<p id="response-prefix" class="fixed-response-start" lang="en">' + esc(question.responsePrefix) + "</p>"
+        : "";
+      const description = prefix ? ' aria-describedby="response-prefix"' : "";
+      const field = prefix + '<textarea id="response-screen" data-screen-view' + accessibleName + description +
+        ' data-answer="' + id + '" spellcheck="false">\n' + esc(value) + "</textarea>" + screenControls("response-screen", "作答文字");
       if (!speaking) return field;
       return '<details class="optional-notes-box"' + (value?.trim() ? " open" : "") +
         '><summary>口语笔记（可选）</summary>' + field + "</details>";
@@ -84,9 +92,9 @@
   }
 
   function savedClip(clip, label) {
-    return '<p class="clip-label">' + esc(label) + '　' +
+    return '<div class="voice-clip"><p class="clip-label">' + esc(label) + "　" +
       clipTime(clip.durationMs) + '</p><audio controls preload="none" data-clip="' +
-      esc(clip.id) + '" aria-label="' + esc(label) + '"></audio>';
+      esc(clip.id) + '" aria-label="' + esc(label) + '"></audio></div>';
   }
 
   function voiceHTML(question, attempt) {
@@ -110,6 +118,70 @@
       controls + '<p class="voice-message" data-voice-message role="status" hidden></p></div>';
   }
 
+  function promptHTML(question, prompt = question.prompt) {
+    return '<h2 class="q-prompt" id="stem-' + esc(question.id) + '">' + esc(prompt) + "</h2>";
+  }
+
+  function questionDetails(question) {
+    const notes = question.notes?.length ? '<div class="q-notes">' +
+      question.notes.map(note => '<p class="q-note">' + esc(note) + "</p>").join("") + "</div>" : "";
+    const bank = question.bank ? '<ol class="bank" type="A">' +
+      question.bank.map(([, sentence]) => "<li>" + esc(sentence) + "</li>").join("") + "</ol>" : "";
+    const instruction = question.instruction ? '<p class="question-instruction" lang="en">' +
+      esc(question.instruction) + "</p>" : "";
+    return notes + bank + instruction;
+  }
+
+  function card(question, unit, status, statusClass, content, footer = "") {
+    const audioLabel = question.audio?.length === 1 ? "录音 " + (question.audioLabel || unit.audio[question.audio[0]].label)
+      : question.audio?.length ? question.audio.length + " 段候选录音" : "";
+    return '<article class="question question-card" tabindex="-1" id="item-' + esc(question.id) +
+      '" data-question="' + esc(question.id) + '"><div class="question-meta"><span class="q-number">第 ' +
+      question.number + " 题 " + esc(question.kind) + '</span><div class="question-tags">' +
+      (audioLabel ? '<span class="q-status ungraded">' + esc(audioLabel) + "</span>" : "") +
+      (status ? '<span class="q-status ' + statusClass + '">' + esc(status) + "</span>" : "") +
+      '</div></div><div class="question-pane"><div id="question-screen" class="screen-view" data-screen-view ' +
+      'tabindex="0" aria-label="当前题内容"><div class="screen-content">' + content +
+      "</div></div>" + screenControls("question-screen", "当前题") + "</div>" + footer + "</article>";
+  }
+
+  function markEvidence(paragraph, text, ranges, className) {
+    if (!ranges.length) {
+      if (paragraph.childElementCount) paragraph.textContent = text;
+      return;
+    }
+    const parts = [];
+    let offset = 0;
+    for (const [, start, end] of ranges) {
+      const mark = document.createElement("mark");
+      mark.className = className;
+      mark.textContent = text.slice(start, end);
+      parts.push(text.slice(offset, start), mark);
+      offset = end;
+    }
+    paragraph.replaceChildren(...parts, text.slice(offset));
+  }
+
+  function renderSolution(question, guide) {
+    const answer = answerLine(question.type === "open" ? "参考答案" : "答案", guide.answer, "key teaching-answer");
+    const reasons = '<section class="teaching-explanation"><h3 class="aside-title">解析</h3>' +
+      guide.explanation.map(line => "<p>" + esc(line) + "</p>").join("") +
+      guide.evidence.map(line => "<blockquote>" + esc(line) + "</blockquote>").join("") + "</section>";
+    return answer + reasons;
+  }
+
+  function renderReviewQuestion(question, unit, summary) {
+    const options = question.options?.length
+      ? '<ul class="teaching-options" aria-label="题目选项">' +
+        question.options.map(([key]) => "<li>" + esc(displayAnswer(question, key)) + "</li>").join("") + "</ul>"
+      : "";
+    const prefix = question.responsePrefix
+      ? '<p class="fixed-response-start" lang="en">' + esc(question.responsePrefix) + "</p>" : "";
+    const content = promptHTML(question) + questionDetails(question) + summary + options + prefix +
+      '<div id="teaching-solution" hidden></div>';
+    return card(question, unit, "", "", content);
+  }
+
   function renderQuestion(question, unit, attempt, summary = "") {
     const { first, second, draft } = attempt;
     const firstResult = first?.results[question.id];
@@ -124,34 +196,25 @@
       : question.type === "open" ? "开放题" : "";
     const statusClass = result || firstResult || "ungraded";
 
-    const notes = question.notes?.length ? '<div class="q-notes">' +
-      question.notes.map(note => '<p class="q-note">' + esc(note) + "</p>").join("") + "</div>" : "";
-    const bank = question.bank ? '<ol class="bank" type="A">' +
-      question.bank.map(([, sentence]) => "<li>" + esc(sentence) + "</li>").join("") + "</ol>" : "";
-    const audioLabel = question.audio?.length === 1 ? "录音 " + (question.audioLabel || unit.audio[question.audio[0]].label)
-      : question.audio?.length ? question.audio.length + " 段候选录音" : "";
-    const instruction = question.instruction ? '<p class="question-instruction" lang="en">' +
-      esc(question.instruction) + "</p>" : "";
     const firstValue = first?.answers[question.id];
     const firstLine = first && (!notesOnly || firstValue)
       ? answerLine(notesOnly ? "首次口语笔记" : "首次作答", displayAnswer(question, firstValue)) : "";
     const secondLine = second && (!notesOnly || value)
       ? answerLine(notesOnly ? "二次口语笔记" : "二次作答", displayAnswer(question, value)) : "";
+    const lengthyDraft = question.type === "open" && firstValue &&
+      (firstValue.length > 220 || firstValue.split("\n").length > 4);
+    const priorResponse = lengthyDraft ? '<details class="previous-draft"><summary>' +
+      (notesOnly ? "查看首次口语笔记" : "查看首次作答") + "</summary><p>" +
+      esc(displayAnswer(question, firstValue)) + "</p></details>" : firstLine;
     const comparison = second ? '<div class="answer-comparison">' + firstLine + secondLine +
       (question.type === "open" ? "" : answerLine("正确答案", displayKeys(question), "key")) + "</div>"
-      : firstLine;
+      : priorResponse;
     const field = locked || second ? "" : '<div class="control">' +
       (summary ? summary : renderInput(question, value)) + "</div>";
-    const voice = voiceHTML(question, attempt);
-    return '<article class="question question-card" tabindex="-1" id="item-' + esc(question.id) +
-      '" data-question="' + esc(question.id) + '"><div class="question-meta"><span class="q-number">第 ' +
-      question.number + " 题 " + esc(question.kind) + '</span><div class="question-tags">' +
-      (audioLabel ? '<span class="q-status ungraded">' + esc(audioLabel) + "</span>" : "") +
-      (status ? '<span class="q-status ' + statusClass + '">' + esc(status) + "</span>" : "") +
-      '</div></div><h2 class="q-prompt" id="stem-' + esc(question.id) +
-      '">' + esc(summary && !locked && !second ? "摘要填空" : question.prompt) + "</h2>" +
-      notes + bank + instruction + comparison + (notesOnly ? voice + field : field + voice) + "</article>";
+    const prompt = promptHTML(question, summary && !locked && !second ? "摘要填空" : question.prompt);
+    const content = prompt + questionDetails(question) + comparison + field;
+    return card(question, unit, status, statusClass, content, voiceHTML(question, attempt));
   }
 
-  window.UnlockWorksheet = { sectionName, renderQuestion, renderOrder, voiceHTML };
+  window.UnlockWorksheet = { sectionName, renderQuestion, renderReviewQuestion, renderSolution, markEvidence, renderOrder, voiceHTML };
 })();

@@ -62,11 +62,16 @@
   function displayAnswer(question, value) {
     if (Array.isArray(value)) {
       if (question.type === "order") {
-        return value.map(key => optionText(question, key)).join(question.orderedSentences ? " / " : " ");
+        const sequence = value.map(key => optionText(question, key)).join(question.orderedSentences ? " / " : " ");
+        return question.fixedStart && sequence ? question.fixedStart + " " + sequence : sequence;
       }
       return value.map(key => optionText(question, key)).join("\n");
     }
     if (value === "" || value == null) return "";
+    if (question.responsePrefix && typeof value === "string" && value.trim() &&
+        !normalized(value).startsWith(normalized(question.responsePrefix))) {
+      return question.responsePrefix + " " + value.trimStart();
+    }
     return question.options ? optionText(question, value) : value;
   }
 

@@ -11,6 +11,13 @@
   const range = dock.querySelector("[data-listen-range]");
   const time = dock.querySelector("[data-listen-time]");
   const warning = dock.querySelector("[data-listen-warning]");
+  const speed = dock.querySelector("[data-listen-speed]");
+  const study = window.UnlockListeningStudy;
+  const teacher = dock.dataset.listenStudyAccess === "direct";
+  let questionId;
+  let questionTracks = [];
+  let learner = null;
+  let unit = null;
   let worksheetKey;
   let tracks = [];
   let selected = "";
@@ -35,55 +42,94 @@
     if (!track) return;
     label.textContent = track.label;
     selector.value = id;
-    if (id === selected) return;
-    player.pause();
-    selected = id;
-    warning.hidden = true;
-    player.src = "../" + track.file;
-    showTime();
+    if (id !== selected) {
+      const source = "../" + track.file;
+      if (!selected || player.getAttribute("src") !== source) {
+        player.pause();
+        warning.hidden = true;
+        player.src = source;
+        player.playbackRate = Number(speed.value);
+        showTime();
+      }
+      selected = id;
+    }
+    study?.update(learner, unit, track.file);
   }
 
-  function update(worksheet, question) {
-    const offered = worksheet?.code.startsWith("L_") ? question?.audio || [] : [];
-    dock.hidden = !offered.length;
-    if (worksheetKey !== worksheet?.key) {
-      player.pause();
-      selected = "";
-      tracks = [];
-      worksheetKey = worksheet?.key;
-    }
-    if (!offered.length) {
-      player.pause();
-      return;
-    }
-    audioIndex = worksheet.unit.audio;
+  function offerTracks(offered, preferred = selected) {
     if (offered.join("|") !== tracks.join("|")) {
       tracks = offered;
       selector.innerHTML = tracks.map(id =>
         '<option value="' + esc(id) + '">' + esc(audioIndex[id].label) + "</option>").join("");
       picker.hidden = tracks.length < 2;
     }
-    selectTrack(tracks.includes(selected) ? selected : tracks[0]);
+    if (tracks.length) selectTrack(tracks.includes(preferred) ? preferred : tracks[0]);
+  }
+
+  function setEvidence(recordings) {
+    if (!teacher || !study?.setEvidence) return;
+    if (!recordings.length) {
+      study.setEvidence([]);
+      offerTracks(questionTracks);
+      return;
+    }
+    const available = [...new Set([...questionTracks, ...Object.keys(audioIndex)])];
+    const targets = recordings.map(recording => available.find(id => audioIndex[id].file === recording.file))
+      .filter(Boolean);
+    const preferred = targets.includes(selected) ? selected : targets[0];
+    offerTracks([...new Set([...questionTracks, ...targets])], preferred);
+    study.setEvidence(recordings);
+  }
+
+  function update(worksheet, question, student) {
+    if (teacher && questionId !== question?.id) {
+      questionId = question?.id;
+      study?.setEvidence?.([]);
+    }
+    learner = student;
+    unit = worksheet?.unit;
+    questionTracks = worksheet ? question?.audio || [] : [];
+    dock.hidden = !questionTracks.length;
+    if (worksheetKey !== worksheet?.key) {
+      player.pause();
+      selected = "";
+      tracks = [];
+      worksheetKey = worksheet?.key;
+      study?.update(null);
+    }
+    if (!questionTracks.length) {
+      player.pause();
+      if (study) {
+        selected = "";
+        study.update(null);
+      }
+      return;
+    }
+    audioIndex = worksheet.unit.audio;
+    offerTracks(questionTracks);
   }
 
   play.addEventListener("click", () => {
     if (!player.paused) { player.pause(); return; }
+    study?.restartPassIfEnded();
     player.play().catch(() => { warning.hidden = false; });
   });
   selector.addEventListener("change", () => selectTrack(selector.value));
-  range.addEventListener("input", () => {
-    if (Number.isFinite(player.duration)) player.currentTime = Number(range.value);
-  });
+  function seek(seconds) {
+    if (!Number.isFinite(player.duration)) return;
+    study?.restartPassIfEnded();
+    player.currentTime = seconds;
+  }
+
+  range.addEventListener("input", () => seek(Number(range.value)));
   dock.querySelector("[data-listen-back]").addEventListener("click", () => {
-    player.currentTime = Math.max(0, player.currentTime - 5);
+    seek(Math.max(0, player.currentTime - 5));
   });
-  dock.querySelector("[data-listen-speed]").addEventListener("change", event => {
-    player.playbackRate = Number(event.target.value);
-  });
+  speed.addEventListener("change", () => { player.playbackRate = Number(speed.value); });
   for (const type of ["loadedmetadata", "timeupdate", "play", "pause", "ended"]) {
     player.addEventListener(type, showTime);
   }
   player.addEventListener("error", () => { warning.hidden = false; });
 
-  window.UnlockListening = { update, player };
+  window.UnlockListening = { update, setEvidence, player };
 })();

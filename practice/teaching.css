@@ -1,0 +1,41 @@
+#practice-surface .teacher-login { grid-template-columns: minmax(0, 1fr) auto; }
+#practice-surface .catalog .book-picker {
+  grid-template-columns: repeat(2, minmax(102px, 138px));
+  justify-content: start;
+}
+.teaching-answer p { font-size: 18px; font-weight: 650; }
+.reading-text .reading-evidence,
+.listen-study-line .listening-evidence { background: #ffe685; color: inherit; }
+.teaching-explanation {
+  margin-top: 9px;
+  padding: 11px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+.teaching-explanation p { margin-top: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.teaching-explanation blockquote {
+  margin: 9px 0 0;
+  padding: 7px 9px;
+  border-left: 3px solid #c8ddf7;
+  background: var(--surface);
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+.teaching-options {
+  margin: 9px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5px;
+  list-style: none;
+}
+.teaching-options li {
+  padding: 5px 9px;
+  background: var(--surface);
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+@media (max-width: 560px) {
+  #practice-surface .teacher-login { grid-template-columns: minmax(0, 1fr); }
+  .teaching-options { grid-template-columns: minmax(0, 1fr); }
+}

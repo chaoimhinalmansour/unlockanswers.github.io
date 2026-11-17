@@ -1,0 +1,64 @@
+.in-worksheet .question-chips .dictation-chip {
+  width: auto;
+  min-width: max-content;
+  padding-inline: 9px;
+}
+.dictation-intro { margin: 4px 0 12px; color: var(--muted); font-size: 14px; }
+.dictation-fields {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px 12px;
+  margin: 0;
+  padding: 3px;
+  list-style: none;
+}
+.dictation-fields.is-result { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.dictation-item {
+  display: grid;
+  grid-template-columns: 2ch minmax(0, 1fr);
+  align-content: start;
+  align-items: baseline;
+  gap: 4px 8px;
+  min-width: 0;
+}
+.dictation-number { text-align: right; color: var(--muted); font-weight: 650; font-variant-numeric: tabular-nums; }
+.dictation-item .text-input { min-height: 40px; min-width: 0; padding: 7px 9px; }
+.dictation-item .text-input:focus-visible { outline-offset: 1px; }
+.dictation-item .dictation-answers {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 2px 6px;
+  grid-column: 2;
+  margin: 0;
+  font-size: 13px;
+}
+.dictation-answers dt { color: var(--muted); }
+.dictation-answers dd { margin: 0; overflow-wrap: anywhere; }
+.dictation-answers dd.dictation-key { color: var(--accent-dark); }
+.dictation-locked {
+  min-height: 40px;
+  padding: 7px 9px;
+  border-radius: 9px;
+  background: var(--surface);
+  overflow-wrap: anywhere;
+}
+.dictation-locked small { display: block; color: var(--muted); }
+#dictation-dock {
+  display: flex;
+  align-items: center;
+  gap: 8px 16px;
+  flex-wrap: wrap;
+  margin-top: 5px;
+  padding: 6px 10px;
+  border-radius: 12px;
+  background: var(--surface);
+}
+#dictation-dock button { min-height: 36px; padding-block: 5px; }
+#dictation-dock p { font-size: 14px; }
+#dictation-dock progress { flex: 1; min-width: 90px; accent-color: var(--accent); }
+@media (max-width: 760px) {
+  .dictation-fields, .dictation-fields.is-result { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 470px) {
+  .dictation-fields, .dictation-fields.is-result { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

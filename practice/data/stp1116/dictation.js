@@ -1,0 +1,1 @@
+window.UNLOCK_DICTATION = {"B2STP1116":{"L_STP":{"file":"assets/stp1116/audio/b2l-dictation.mp3","count":15},"R_STP":{"file":"assets/stp1116/audio/b2r-dictation.mp3","count":10}},"B3STP1116":{"L_STP":{"file":"assets/stp1116/audio/b3l-dictation.mp3","count":15},"R_STP":{"file":"assets/stp1116/audio/b3r-dictation.mp3","count":10}}};
