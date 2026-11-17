@@ -187,6 +187,11 @@
     if (current && (current.key !== key || !canPlay)) park(current);
     if (key !== (current?.key || null)) {
       if (current) release(current);
+      if (loadedKey) {
+        loadedKey = null;
+        player.removeAttribute("src");
+        player.load();
+      }
       current = config ? { key, file: config.file, shown: false, playing: false, offset: 0, run: 0 } : null;
     }
     if (current) current.shown = show && canPlay;
