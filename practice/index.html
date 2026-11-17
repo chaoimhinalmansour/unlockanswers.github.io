@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="workbench.css?v=20261117-5">
   <link rel="stylesheet" href="one-screen.css?v=20261116-7">
   <link rel="stylesheet" href="listening-study.css?v=20261116-9">
-  <link rel="stylesheet" href="dictation.css?v=20261117-6">
+  <link rel="stylesheet" href="dictation.css?v=20261117-8">
   <script defer src="rules.js?v=20261117-5"></script>
   <script defer src="students.js?v=20261116"></script>
   <script defer src="data/catalog.js?v=20261116"></script>
@@ -23,8 +23,8 @@
   <script defer src="listening-study.js?v=20261117-5"></script>
   <script defer src="listening-player.js?v=20261117-5"></script>
   <script defer src="catalog-view.js?v=20261117-5"></script>
-  <script defer src="dictation-playback.js?v=20261117-6"></script>
-  <script defer src="subject-app.js?v=20261117-6"></script>
+  <script defer src="dictation-playback.js?v=20261117-8"></script>
+  <script defer src="subject-app.js?v=20261117-7"></script>
 </head>
 <body>
   <div id="practice-surface">
@@ -40,6 +40,10 @@
       </div>
     </header>
     <main id="app" class="site-main" tabindex="-1"></main>
+    <dialog id="dictation-countdown" class="dictation-countdown" aria-label="听写倒计时" aria-describedby="dictation-countdown-message">
+      <p class="dictation-countdown-number" role="timer" aria-label="剩余秒数" data-countdown-number>5</p>
+      <p id="dictation-countdown-message">倒计时后开始播放音频，音频可以中途暂停</p>
+    </dialog>
     <noscript><p class="site-main">请在浏览器中开启 JavaScript 后再打开单元练习。</p></noscript>
     <div id="practice-docks" hidden>
       <div class="dock-contents">

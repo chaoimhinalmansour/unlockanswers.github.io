@@ -56,6 +56,32 @@
 #dictation-dock button { min-height: 36px; padding-block: 5px; }
 #dictation-dock p { font-size: 14px; }
 #dictation-dock progress { flex: 1; min-width: 90px; accent-color: var(--accent); }
+
+.dictation-countdown {
+  position: fixed;
+  inset: 0;
+  width: min(460px, calc(100% - 36px));
+  height: fit-content;
+  margin: auto;
+  padding: clamp(24px, 6vh, 46px) 24px;
+  background: var(--paper);
+  text-align: center;
+  box-shadow: 0 12px 46px #1d1d1f29;
+}
+.dictation-countdown:not([open]) { display: none; }
+.dictation-countdown-number {
+  margin: 0;
+  color: var(--accent-dark);
+  font-size: clamp(68px, 15vmin, 112px);
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.dictation-countdown #dictation-countdown-message {
+  margin: 16px 0 0;
+  font-size: 17px;
+  line-height: 1.5;
+}
 @media (max-width: 760px) {
   .dictation-fields, .dictation-fields.is-result { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }

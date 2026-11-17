@@ -20,6 +20,7 @@
   const books = { L1: 2, L2: 3 };
   const remembered = "unlock.practice.navigation.v5";
   const cache = new Map();
+  const activeAttempts = new Map();
   const printPreviews = new Map();
   let voiceJob = null;
 
@@ -40,6 +41,28 @@
 
   function attemptKey(meta, code) {
     return "unlock.practice.subject.v1:" + userKey(meta) + ":" + code;
+  }
+
+  function attemptPointer(baseKey) {
+    return "unlock.practice.current-attempt.v1:" + baseKey;
+  }
+
+  function attemptRunKey(baseKey, token) {
+    return baseKey + ":run:" + token;
+  }
+
+  function activeAttemptKey(baseKey) {
+    if (state.storageWorks) {
+      try {
+        const token = localStorage.getItem(attemptPointer(baseKey));
+        const key = token && /^[a-z0-9-]{1,80}$/.test(token) ? attemptRunKey(baseKey, token) : baseKey;
+        activeAttempts.set(baseKey, key);
+        return key;
+      } catch {
+        state.storageWorks = false;
+      }
+    }
+    return activeAttempts.get(baseKey) || baseKey;
   }
 
   function storedAttempt(key) {
@@ -63,7 +86,12 @@
   }
 
   function saveAttempt(next) {
-    const key = state.worksheet.key;
+    const { key, baseKey } = state.worksheet;
+    const active = activeAttemptKey(baseKey);
+    if (active !== key) {
+      showAttempt(active, "这份练习已在另一个窗口重置。");
+      return false;
+    }
     if (state.storageWorks) {
       try {
         const latest = storedAttempt(key) || newAttempt();
@@ -113,9 +141,12 @@
     return { sequence: 0, draft: scoped(previous.draft), draftRecordings: scoped(previous.draftRecordings), first, second };
   }
 
-  function currentAttempt(meta, code) {
-    const saved = getAttempt(attemptKey(meta, code));
-    return saved.sequence || meta.unit === specialUnit ? saved : fromLegacy(meta, code);
+  function worksheetAttempt(meta, code) {
+    const baseKey = attemptKey(meta, code);
+    const key = activeAttemptKey(baseKey);
+    const saved = getAttempt(key);
+    const attempt = key !== baseKey || saved.sequence || meta.unit === specialUnit ? saved : fromLegacy(meta, code);
+    return { baseKey, key, attempt };
   }
 
   function saveNavigation() {
@@ -168,7 +199,7 @@
     const meta = currentMeta();
     if (!meta) return '<section class="empty-state panel"><h1>练习暂未开放</h1><p>' +
       esc(state.student.level) + " 暂未开放单元练习。</p></section>";
-    return renderDirectory(meta, code => status(currentAttempt(meta, code)));
+    return renderDirectory(meta, code => status(worksheetAttempt(meta, code).attempt));
   }
 
 
@@ -305,7 +336,9 @@
     });
     return '<div class="quiz-header"><div class="session-top"><div><div class="quiz-location">' +
       '<button type="button" class="text-action subtle-action" data-action="directory">作业目录</button>' +
-      '<p class="page-context">' + esc(context) + '</p></div><div class="session-title"><h1>' + esc(title) +
+      '<p class="page-context">' + esc(context) + '</p>' +
+      '<button type="button" class="text-action subtle-action" data-action="reset-exercise">重置练习</button>' +
+      '</div><div class="session-title"><h1>' + esc(title) +
       '</h1><span class="state-label' + (correction ? " correction" : "") + '">' + phase +
       '</span></div></div><div class="session-tools"><div id="work-progress" class="work-progress" ' +
       'aria-live="polite">' + progressHTML(progress()) + "</div>" +
@@ -392,14 +425,14 @@
       const sheet = { ...unit.sheets[code], key: code };
       const questions = sheet.questions;
       if (!questions?.length) throw new Error("Worksheet unavailable");
-      const key = attemptKey(meta, code);
+      const { baseKey, key, attempt } = worksheetAttempt(meta, code);
       state.worksheet = {
-        key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
+        baseKey, key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
         dictation: window.UNLOCK_DICTATION?.[meta.id]?.[code],
         sections: [sheet], questions, byId: new Map(questions.map(q => [q.id, q])),
         byNumber: new Map(questions.map(q => [q.number, q]))
       };
-      state.attempt = currentAttempt(meta, code);
+      state.attempt = attempt;
       state.all = Boolean(rememberedView.all);
       state.largePicture = false;
       state.readingOffset = 0;
@@ -424,6 +457,57 @@
     state.notice = "";
     saveNavigation();
     render(true);
+  }
+
+  function showAttempt(key, notice = "") {
+    state.worksheet.key = key;
+    state.attempt = getAttempt(key);
+    state.all = false;
+    state.largePicture = false;
+    state.readingOffset = 0;
+    state.notice = notice;
+    pickFocus();
+    saveNavigation();
+    render(true);
+  }
+
+  function resetExercise() {
+    if (!state.worksheet || voiceJob) return;
+    const { key, baseKey } = state.worksheet;
+    const current = activeAttemptKey(baseKey);
+    if (current !== key) {
+      showAttempt(current, "这份练习已在另一个窗口重置。");
+      return;
+    }
+    const token = globalThis.crypto?.randomUUID?.() || Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
+    const next = attemptRunKey(baseKey, token);
+    if (state.storageWorks) {
+      try { localStorage.setItem(attemptPointer(baseKey), token); }
+      catch { state.storageWorks = false; }
+    }
+    // Switch to a new attempt key and keep the previous answers and recordings available in storage.
+    activeAttempts.set(baseKey, next);
+    showAttempt(next);
+  }
+
+  function requestReset() {
+    if (!state.worksheet || voiceJob) return;
+    dictation.pause();
+    const message = "练习会回到首次作答，当前答案、提交结果和录音会从作答页面清空。" +
+      (state.worksheet.dictation ? "整组听写可以重新播放。" : "");
+    const dialog = document.createElement("dialog");
+    if (typeof dialog.showModal !== "function") {
+      if (window.confirm(message)) resetExercise();
+      return;
+    }
+    dialog.setAttribute("aria-labelledby", "reset-title");
+    dialog.setAttribute("aria-describedby", "reset-description");
+    dialog.innerHTML = '<h2 id="reset-title">重置练习？</h2><p id="reset-description">' + esc(message) +
+      '</p><div class="dialog-actions"><button type="button" class="button secondary" data-action="cancel-reset" autofocus>' +
+      '继续作答</button><button type="button" class="button" data-action="confirm-reset">重置练习</button></div>';
+    dialog.addEventListener("close", () => dialog.remove(), { once: true });
+    app.append(dialog);
+    dialog.showModal();
   }
 
   function goToQuestion(number, keepNotice = false) {
@@ -815,8 +899,10 @@
       state.largePicture = !state.largePicture;
       render();
       app.querySelector('[data-action="expand-photo"]')?.focus({ preventScroll: true });
-    } else if (d.action === "submit-first") requestFirst();
-    else if (d.action === "cancel-submit") button.closest("dialog").close();
+    } else if (d.action === "reset-exercise") requestReset();
+    else if (d.action === "confirm-reset") resetExercise();
+    else if (d.action === "submit-first") requestFirst();
+    else if (d.action === "cancel-submit" || d.action === "cancel-reset") button.closest("dialog").close();
     else if (d.action === "confirm-submit") commitFirst();
     else if (d.action === "submit-second") commitSecond();
     else if (d.action === "retry-report") {
@@ -837,7 +923,14 @@
   }, true);
 
   window.addEventListener("storage", event => {
-    if (voiceJob || !state.worksheet || event.key !== state.worksheet.key) return;
+    const worksheet = state.worksheet;
+    if (voiceJob || !worksheet) return;
+    if (event.key === attemptPointer(worksheet.baseKey)) {
+      const key = activeAttemptKey(worksheet.baseKey);
+      if (key !== worksheet.key) showAttempt(key, "这份练习已在另一个窗口重置。");
+      return;
+    }
+    if (event.key !== worksheet.key) return;
     const updated = getAttempt(event.key);
     if (updated.sequence !== state.attempt.sequence) {
       state.attempt = updated;
