@@ -77,6 +77,58 @@
 .question-tags { display:flex; gap:6px; align-items:center; flex-wrap:wrap; justify-content:flex-end; }
 #practice-surface .q-prompt { font-size:clamp(19px,2.7vw,26px); line-height:1.32; }
 .question-instruction { color:var(--muted); margin-top:8px; font-size:14px; }
+.opinion-context { margin-top:7px; font-size:15px; line-height:1.48; overflow-wrap:anywhere; }
+.opinion-sides {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:8px 12px;
+  margin-top:9px;
+}
+.opinion-side {
+  min-width:0;
+  padding:8px 11px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:var(--surface);
+  overflow-wrap:anywhere;
+}
+.opinion-side h3 { margin:0 0 4px; font-size:15px; line-height:1.35; }
+.opinion-side ul { list-style:none; margin:0; padding:0; font-size:14px; line-height:1.42; }
+.opinion-side li + li { margin-top:3px; }
+.in-worksheet .question-card:has(.opinion-editor) .question-pane { flex:0 1 auto; }
+.in-worksheet .opinion-editor {
+  display:flex;
+  flex-direction:column;
+  flex:1 0 auto;
+  margin-top:8px;
+  padding:8px 3px 0;
+  border-top:1px solid var(--line);
+}
+.in-worksheet .opinion-editor textarea[data-screen-view] {
+  flex:1 1 auto;
+  min-height:0;
+  height:clamp(96px,calc(var(--screen-height,100dvh) * .2),210px);
+}
+@media (max-width:600px) {
+  .opinion-sides { grid-template-columns:minmax(0,1fr); }
+  #practice-surface.in-worksheet > #app:has(.opinion-sides) {
+    overflow-y:auto;
+    overscroll-behavior-y:contain;
+  }
+  .in-worksheet .workspace:has(.opinion-sides) {
+    flex:0 0 auto;
+    grid-template-rows:auto auto;
+  }
+  .in-worksheet .question-card:has(.opinion-sides) { height:auto; overflow:visible; }
+  .in-worksheet .question-card:has(.opinion-sides) .question-pane {
+    flex:0 0 auto;
+    grid-template-rows:auto auto;
+  }
+  .in-worksheet .question-card:has(.opinion-sides) #question-screen { overflow:visible; }
+  .in-worksheet .opinion-editor textarea[data-screen-view] {
+    height:clamp(144px,calc(var(--screen-height,100dvh) * .23),210px);
+  }
+}
 .question-card .option { padding:9px 11px; line-height:1.42; min-height:43px; }
 .question-card .answer-line { border-left:3px solid #b9c3d0; margin-top:11px; }
 .question-card .answer-line.key { border-left-color:var(--accent); }

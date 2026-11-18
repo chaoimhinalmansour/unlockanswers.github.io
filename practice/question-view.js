@@ -122,9 +122,25 @@
     return '<h2 class="q-prompt" id="stem-' + esc(question.id) + '">' + esc(prompt) + "</h2>";
   }
 
-  function questionDetails(question) {
-    const notes = question.notes?.length ? '<div class="q-notes">' +
-      question.notes.map(note => '<p class="q-note">' + esc(note) + "</p>").join("") + "</div>" : "";
+  function opinionNotes(question) {
+    const { notes } = question;
+    if (question.type !== "open" || question.kind !== "观点写作" || !notes?.length) return "";
+    const pros = notes.findIndex(note => note.startsWith("Pros:"));
+    const cons = notes.findIndex(note => note.startsWith("Cons:"));
+    if (pros < 0 || cons <= pros + 1 || cons >= notes.length - 1) return "";
+
+    const renderSide = (heading, end) => '<section class="opinion-side"><h3>' + esc(notes[heading]) +
+      "</h3><ul>" + notes.slice(heading + 1, end).map(note => "<li>" + esc(note) + "</li>").join("") +
+      "</ul></section>";
+    const context = notes.slice(0, pros).map(note =>
+      '<p class="opinion-context" lang="en">' + esc(note) + "</p>").join("");
+    return context + '<div class="opinion-sides" lang="en">' +
+      renderSide(pros, cons) + renderSide(cons, notes.length) + "</div>";
+  }
+
+  function questionDetails(question, formattedNotes = "") {
+    const notes = formattedNotes || (question.notes?.length ? '<div class="q-notes">' +
+      question.notes.map(note => '<p class="q-note">' + esc(note) + "</p>").join("") + "</div>" : "");
     const bank = question.bank ? '<ol class="bank" type="A">' +
       question.bank.map(([, sentence]) => "<li>" + esc(sentence) + "</li>").join("") + "</ol>" : "";
     const instruction = question.instruction ? '<p class="question-instruction" lang="en">' +
@@ -217,11 +233,14 @@
     const comparison = second ? '<div class="answer-comparison">' + firstLine + secondLine +
       (question.type === "open" ? "" : answerLine("正确答案", displayKeys(question), "key")) + "</div>"
       : priorResponse;
-    const field = locked || second ? "" : '<div class="control">' +
-      (summary ? summary : renderInput(question, value)) + "</div>";
+    const opinion = opinionNotes(question);
+    const editorBelow = Boolean(opinion && !locked && !second);
+    const field = locked || second ? "" : '<div class="control' + (editorBelow ? " opinion-editor" : "") + '">' +
+      (summary || renderInput(question, value)) + "</div>";
     const prompt = promptHTML(question, summary && !locked && !second ? "摘要填空" : question.prompt);
-    const content = prompt + questionDetails(question) + comparison + partialFeedback + field;
-    return card(question, unit, status, statusClass, content, voiceHTML(question, attempt));
+    const content = prompt + questionDetails(question, opinion) + comparison + partialFeedback + (editorBelow ? "" : field);
+    const footer = (editorBelow ? field : "") + voiceHTML(question, attempt);
+    return card(question, unit, status, statusClass, content, footer);
   }
 
   window.UnlockWorksheet = { sectionName, renderQuestion, renderReviewQuestion, renderSolution, markEvidence, renderOrder, voiceHTML };
