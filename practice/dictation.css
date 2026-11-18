@@ -24,6 +24,17 @@
 .dictation-number { text-align: right; color: var(--muted); font-weight: 650; font-variant-numeric: tabular-nums; }
 .dictation-item .text-input { min-height: 40px; min-width: 0; padding: 7px 9px; }
 .dictation-item .text-input:focus-visible { outline-offset: 1px; }
+.dictation-item .dictation-replay {
+  grid-column: 2;
+  justify-self: start;
+  min-height: 36px;
+  white-space: nowrap;
+}
+.dictation-item .dictation-replay:disabled {
+  color: var(--muted);
+  cursor: default;
+  text-decoration: none;
+}
 .dictation-item .dictation-answers {
   display: grid;
   grid-template-columns: max-content minmax(0, 1fr);

@@ -12,6 +12,8 @@
   // The first 209 frames of each countdown MP3 are silent so playback can start in the click handler.
   const audioLeadIn = 5.016;
   const namespace = "unlock.practice.dictation.v1:";
+  const replayNamespace = "unlock.practice.dictation-replay.v1:";
+  let session = null;
   let current = null;
   let loadedKey;
 
@@ -42,7 +44,7 @@
   }
 
   function position(entry) {
-    return loadedKey === entry.key ? Math.max(entry.offset, player.currentTime - audioLeadIn) : entry.offset;
+    return loadedKey === entry.key ? Math.max(entry.offset, player.currentTime - entry.leadIn) : entry.offset;
   }
 
   function checkpoint(entry, force) {
@@ -53,21 +55,18 @@
   }
 
   function updateProgress() {
-    const duration = player.duration - audioLeadIn;
+    const leadIn = current?.leadIn ?? 0;
+    const duration = player.duration - leadIn;
     const time = current ? position(current) : 0;
-    progress.hidden = !current || loadedKey !== current.key || current.counting ||
+    progress.hidden = !leadIn || loadedKey !== current.key || current.counting ||
       !Number.isFinite(duration) || duration <= 0 || (!current.playing && !time);
     if (!progress.hidden) progress.value = Math.min(1, time / duration);
   }
 
-  function paint() {
-    const entry = current;
-    dock.hidden = !(entry?.shown || entry?.playing);
-    if (dock.hidden) return;
+  function paintGroup(entry, waiting) {
     const { state } = stored(entry);
-    const waiting = navigator.locks && !entry.withoutLock && !entry.reservation?.release;
     button.hidden = !entry.playing && !canStart(state);
-    button.disabled = !entry.playing && (!canStart(state) || Boolean(waiting) || document.hidden);
+    button.disabled = !entry.playing && (!canStart(state) || waiting || document.hidden);
     const label = entry.playing ? "暂停" : state === "resume" ? "继续播放" : "播放听写";
     if (button.textContent !== label) button.textContent = label;
     const message = entry.counting ? "正在倒计时。"
@@ -78,43 +77,70 @@
       : waiting ? "正在准备播放听写。"
       : entry.retry ? "录音未能播放。请重试。"
       : state === "resume" ? "听写已暂停，可以从原位置继续。"
-      : "整组只播放一次，播放中可以暂停。";
+      : "首次作答可以播放整组一次。播放中可以暂停。";
     if (status.textContent !== message) status.textContent = message;
     updateProgress();
   }
 
-  function release(entry) {
-    const reservation = entry.reservation;
+  function paintReplays(waiting) {
+    for (const control of document.querySelectorAll("[data-dictation-replay]")) {
+      const entry = session.replays.get(control.dataset.dictationReplay);
+      const state = entry ? stored(entry).state : "unavailable";
+      const playing = Boolean(entry?.playing);
+      const label = playing ? "暂停"
+        : state === "resume" ? "继续听"
+        : state === "done" ? "已重听"
+        : state === "unavailable" ? "无法播放"
+        : entry?.retry ? "重试" : "重听";
+      control.disabled = !playing && (!canStart(state) || waiting || document.hidden);
+      if (control.textContent !== label) {
+        control.textContent = label;
+        control.setAttribute("aria-label", label + "第 " + control.dataset.replayNumber + " 题听写");
+      }
+    }
+  }
+
+  function paint() {
+    const group = session?.group;
+    const waiting = Boolean(navigator.locks && session && !session.withoutLock && !session.reservation?.release);
+    dock.hidden = !(group && (session.shown || group.playing));
+    if (!dock.hidden) paintGroup(group, waiting);
+    if (session?.shown && !group) paintReplays(waiting);
+  }
+
+  function release(playback) {
+    const reservation = playback.reservation;
     if (!reservation) return;
-    entry.reservation = null;
+    playback.reservation = null;
     reservation.controller.abort();
     reservation.release?.();
   }
 
-  function reserve(entry) {
+  function reserve(playback) {
     const reservation = { controller: new AbortController(), release: null };
-    entry.reservation = reservation;
+    playback.reservation = reservation;
     // Acquire before the click so that play() runs inside the browser's user gesture.
-    navigator.locks.request(entry.key, { signal: reservation.controller.signal }, () => {
-      if (entry !== current || entry.reservation !== reservation) return;
+    navigator.locks.request(playback.key, { signal: reservation.controller.signal }, () => {
+      if (playback !== session || playback.reservation !== reservation) return;
       return new Promise(resolve => {
         reservation.release = resolve;
         paint();
       });
     }).catch(() => {
-      if (entry !== current || entry.reservation !== reservation) return;
-      entry.reservation = null;
-      entry.withoutLock = true;
+      if (playback !== session || playback.reservation !== reservation) return;
+      playback.reservation = null;
+      playback.withoutLock = true;
       paint();
     });
   }
 
   function sync() {
-    const entry = current;
-    if (entry && navigator.locks && !entry.withoutLock) {
-      const needsLock = entry.playing || (entry.shown && !document.hidden && canStart(stored(entry).state));
-      if (needsLock && !entry.reservation) reserve(entry);
-      if (!needsLock) release(entry);
+    if (session && navigator.locks && !session.withoutLock) {
+      const tracks = session.group ? [session.group] : Array.from(session.replays.values());
+      const needsLock = current?.playing || (session.shown && !document.hidden &&
+        tracks.some(entry => canStart(stored(entry).state)));
+      if (needsLock && !session.reservation) reserve(session);
+      if (!needsLock) release(session);
     }
     paint();
   }
@@ -181,28 +207,44 @@
     announce();
   }
 
-  function update(worksheet, show, canPlay) {
+  function track(key, file, leadIn = 0) {
+    return { key, file, leadIn, playing: false, offset: 0, run: 0 };
+  }
+
+  function update(worksheet, show, firstRound, replayQuestions) {
     const config = worksheet?.dictation;
-    const key = config ? namespace + worksheet.key : null;
-    if (current && (current.key !== key || !canPlay)) park(current);
-    if (key !== (current?.key || null)) {
-      if (current) release(current);
+    let key = null;
+    if (config && firstRound) key = namespace + worksheet.key;
+    else if (config && replayQuestions.length) key = replayNamespace + worksheet.key;
+
+    if (key !== (session?.key || null)) {
+      if (current) park(current);
+      if (session) release(session);
       if (loadedKey) {
         loadedKey = null;
         player.removeAttribute("src");
         player.load();
       }
-      current = config ? { key, file: config.file, shown: false, playing: false, offset: 0, run: 0 } : null;
+      const group = key && firstRound
+        ? track(key, config.file.replace(/\.mp3$/, "-countdown.mp3"), audioLeadIn) : null;
+      const replays = new Map();
+      for (const question of replayQuestions) {
+        const file = worksheet.unit.audio[question.audio?.[0]]?.file;
+        if (file) replays.set(question.id, track(key + ":" + encodeURIComponent(question.id), file));
+      }
+      session = key ? { key, group, replays, shown: false } : null;
+      current = group;
     }
-    if (current) current.shown = show && canPlay;
+    if (session) {
+      session.shown = show;
+      if (!session.group && !show && current) park(current);
+    }
     sync();
     return Boolean(current?.playing);
   }
 
-  button.addEventListener("click", () => {
-    const entry = current;
-    if (entry?.playing) { pause(); return; }
-    if (!entry?.shown || button.disabled) return;
+  function start(entry) {
+    if (entry.playing) { pause(); return; }
     const { state, time } = stored(entry);
     if (!canStart(state)) { sync(); return; }
     const firstPlay = state === "ready";
@@ -210,24 +252,38 @@
       sync();
       return;
     }
+    if (current && current !== entry) park(current);
+    current = entry;
     entry.firstPlay = firstPlay;
     entry.offset = time;
     entry.playing = true;
     const run = ++entry.run;
     if (loadedKey !== entry.key || player.error) {
-      player.src = "../" + entry.file.replace(/\.mp3$/, "-countdown.mp3");
+      player.src = "../" + entry.file;
       loadedKey = entry.key;
     }
     if (firstPlay) {
       player.currentTime = 0;
-      openCountdown(entry);
-    } else if (player.currentTime < audioLeadIn + time) {
-      player.currentTime = audioLeadIn + time;
+      if (entry.leadIn) openCountdown(entry);
+    } else if (player.currentTime < entry.leadIn + time) {
+      player.currentTime = entry.leadIn + time;
     }
     const pending = player.play();
     sync();
     announce();
     pending.catch(() => { if (entry === current && run === entry.run) pause(true); });
+  }
+
+  button.addEventListener("click", () => {
+    const entry = session?.group;
+    if (entry && (entry.playing || (session.shown && !button.disabled))) start(entry);
+  });
+
+  document.addEventListener("click", event => {
+    const control = event.target.closest?.("[data-dictation-replay]");
+    if (!control || control.disabled || !session?.shown) return;
+    const entry = session.replays.get(control.dataset.dictationReplay);
+    if (entry) start(entry);
   });
 
   countdown.addEventListener("cancel", event => {
@@ -249,13 +305,12 @@
     else sync();
   });
   window.addEventListener("pagehide", () => {
-    if (!current) return;
-    park(current);
-    release(current);
+    if (current) park(current);
+    if (session) release(session);
   });
   window.addEventListener("pageshow", () => { sync(); announce(); });
   window.addEventListener("storage", event => {
-    if (current && event.key === current.key) sync();
+    if (session && (event.key === session.key || event.key?.startsWith(session.key + ":"))) sync();
   });
 
   window.UnlockDictation = { update, pause };

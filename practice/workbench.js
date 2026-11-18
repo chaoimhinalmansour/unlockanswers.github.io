@@ -128,7 +128,7 @@
   function dictationCard(worksheet, attempt, visible, editable) {
     const { first, second, draft } = attempt;
     const intro = second ? "查看两次作答和正确答案。" : first
-      ? "根据首次作答订正听写。"
+      ? "每道待订正题可单独重听一次。"
       : "音频会报题号，每个单词读两次。听到题号后，在对应的答题框填写一个单词。";
     const items = visible.filter(q => isDictation(worksheet, q)).map(q => {
       const id = esc(q.id);
@@ -141,11 +141,13 @@
           dictationAnswer("二次", second.answers[q.id]) +
           dictationAnswer("答案", displayKeys(q), "dictation-key") + "</dl>";
       } else if (editable(q)) {
+        const replay = first ? '<button type="button" class="text-action dictation-replay" data-dictation-replay="' +
+          id + '" data-replay-number="' + q.number + '" aria-label="重听第 ' + q.number + ' 题听写" disabled>重听</button>' : "";
         field = '<label class="dictation-number" for="dictation-' + id + '">' + q.number + "</label>" +
           '<input id="dictation-' + id + '" class="text-input" type="text" aria-label="听写第 ' + q.number +
           ' 题" lang="en" data-dictation-answer data-answer="' + id +
           '" autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="next" value="' +
-          esc(draft[q.id]) + '">' + (first ? '<dl class="dictation-answers">' + firstAnswer + "</dl>" : "");
+          esc(draft[q.id]) + '">' + (first ? '<dl class="dictation-answers">' + firstAnswer + "</dl>" : "") + replay;
       } else {
         field = number + '<div class="dictation-locked"><span lang="en">' + esc(before) + "</span><small>已锁定</small></div>";
       }

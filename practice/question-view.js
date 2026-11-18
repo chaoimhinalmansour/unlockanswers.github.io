@@ -197,6 +197,14 @@
     const statusClass = result || firstResult || "ungraded";
 
     const firstValue = first?.answers[question.id];
+    let partialFeedback = "";
+    if (!second && !locked && question.type === "multi" && Array.isArray(firstValue)) {
+      const matched = Math.max(0, ...question.keys.map(key => key.filter(option => firstValue.includes(option)).length));
+      if (matched) {
+        partialFeedback = '<p class="question-instruction" data-multi-feedback>首次选对 <strong>' +
+          matched + " 项</strong>，本题需选 " + esc(question.pick) + " 项。</p>";
+      }
+    }
     const firstLine = first && (!notesOnly || firstValue)
       ? answerLine(notesOnly ? "首次口语笔记" : "首次作答", displayAnswer(question, firstValue)) : "";
     const secondLine = second && (!notesOnly || value)
@@ -212,7 +220,7 @@
     const field = locked || second ? "" : '<div class="control">' +
       (summary ? summary : renderInput(question, value)) + "</div>";
     const prompt = promptHTML(question, summary && !locked && !second ? "摘要填空" : question.prompt);
-    const content = prompt + questionDetails(question) + comparison + field;
+    const content = prompt + questionDetails(question) + comparison + partialFeedback + field;
     return card(question, unit, status, statusClass, content, voiceHTML(question, attempt));
   }
 

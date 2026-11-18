@@ -358,7 +358,10 @@
     const current = working ? focusedQuestion() : null;
     const groupShown = isDictation(worksheet, current);
     dock.hidden = !working;
-    const playing = dictation.update(worksheet, groupShown, working && !state.attempt.first);
+    const firstDictation = Boolean(worksheet?.dictation && !state.attempt.first);
+    const replayQuestions = worksheet?.dictation && state.attempt.first && !state.attempt.second
+      ? worksheet.questions.filter(q => isDictation(worksheet, q) && editable(q)) : [];
+    const playing = dictation.update(worksheet, groupShown, firstDictation, replayQuestions);
     listening.update(worksheet, groupShown || playing ? null : current, state.student);
     if (!working) {
       operations.innerHTML = "";
