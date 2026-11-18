@@ -4,6 +4,7 @@
   const surface = document.getElementById("practice-surface");
   const { escapeHTML: esc } = window.UnlockRules;
   const panes = new Map();
+  let currentNotes = null;
   const observer = typeof ResizeObserver === "function" ? new ResizeObserver(refresh) : null;
 
   function controls(id, label) {
@@ -41,7 +42,30 @@
     for (const [pane, nav] of panes) update(pane, nav);
   }
 
+  function openNotesIfRoom() {
+    const notes = currentNotes;
+    if (!notes || notes.dataset.notesManual || notes.contains(document.activeElement)) return;
+    if (notes.querySelector("textarea").value.trim()) return;
+    const pane = notes.closest("[data-screen-view]");
+    const nav = panes.get(pane);
+    if (!pane?.clientHeight || !nav) return;
+
+    const scrollTop = pane.scrollTop;
+    // Measure the expanded notes against the space available without outer paging controls.
+    const available = pane.clientHeight + nav.getBoundingClientRect().height;
+    notes.open = true;
+    if (pane.scrollHeight > available + 1) notes.open = false;
+    if (pane.scrollTop !== scrollTop) pane.scrollTop = scrollTop;
+  }
+
   function connect(root) {
+    const previous = currentNotes;
+    currentNotes = root.querySelector("[data-notes-fit]");
+    if (currentNotes && previous?.dataset.notesManual &&
+      currentNotes.dataset.notesFit === previous.dataset.notesFit) {
+      currentNotes.open = previous.open;
+      currentNotes.dataset.notesManual = "true";
+    }
     observer?.disconnect();
     panes.clear();
     for (const nav of root.querySelectorAll("[data-screen-controls]")) {
@@ -52,6 +76,7 @@
       const content = pane.querySelector(":scope > .screen-content");
       if (content) observer?.observe(content);
     }
+    openNotesIfRoom();
     refresh();
   }
 
@@ -66,6 +91,8 @@
   }
 
   surface.addEventListener("click", event => {
+    const summary = event.target.closest("[data-notes-fit] > summary");
+    if (summary && summary.parentElement === currentNotes) currentNotes.dataset.notesManual = "true";
     const button = event.target.closest("[data-screen-step]");
     if (!button || button.disabled) return;
     const pane = document.getElementById(button.getAttribute("aria-controls"));
@@ -95,6 +122,7 @@
     surface.style.setProperty("--screen-height", height + "px");
     surface.classList.toggle("short-workspace", height < 680);
     surface.classList.toggle("tight-workspace", height < 480);
+    openNotesIfRoom();
     refresh();
   }
 

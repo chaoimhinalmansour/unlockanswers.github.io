@@ -7,6 +7,11 @@
   const { controls: screenControls } = window.UnlockScreens;
   const discipline = { L: "听力", S: "口语", R: "阅读", W: "写作" };
   const outcomes = { correct: "答对", incorrect: "答错", blank: "未作答", ungraded: "只记录作答" };
+  const speakingNotesHint = "可记下关键词、回答顺序和一个例子，录音时用这些笔记提醒自己。";
+  const readingAloudHints = {
+    朗读单词: "可记下容易读错的音和单词重音，录音前用这些笔记提醒自己。",
+    朗读句子: "可记下容易读错的词，并标出重音和停顿，帮助你先练一遍。"
+  };
 
   function sectionName(key) {
     return discipline[key[0]];
@@ -65,10 +70,13 @@
         ? '<p id="response-prefix" class="fixed-response-start" lang="en">' + esc(question.responsePrefix) + "</p>"
         : "";
       const description = prefix ? ' aria-describedby="response-prefix"' : "";
+      const hint = speaking ? esc(readingAloudHints[question.kind] ?? speakingNotesHint) : "";
+      const hintAttributes = speaking ? ' placeholder="' + hint + '" aria-description="' + hint + '"' : "";
       const field = prefix + '<textarea id="response-screen" data-screen-view' + accessibleName + description +
-        ' data-answer="' + id + '" spellcheck="false">\n' + esc(value) + "</textarea>" + screenControls("response-screen", "作答文字");
+        hintAttributes + ' data-answer="' + id + '" spellcheck="false">\n' + esc(value) + "</textarea>" +
+        screenControls("response-screen", speaking ? "口语笔记" : "作答文字");
       if (!speaking) return field;
-      return '<details class="optional-notes-box"' + (value?.trim() ? " open" : "") +
+      return '<details class="optional-notes-box" data-notes-fit="' + id + '"' + (value?.trim() ? " open" : "") +
         '><summary>口语笔记（可选）</summary>' + field + "</details>";
     }
     if (question.type === "order") return renderOrder(question, value);

@@ -135,8 +135,9 @@
 .answer-comparison { display:grid; grid-template-columns:repeat(auto-fit,minmax(164px,1fr)); gap:8px; }
 .answer-comparison .answer-line { min-width:0; }
 .question-card:not(:has(.voice-field)) textarea { min-height:218px; }
-.optional-notes-box summary { color:var(--accent-dark); min-height:34px; line-height:34px; cursor:pointer; font-size:14px; }
+.optional-notes-box summary { color:var(--subtle); min-height:34px; line-height:34px; cursor:pointer; font-size:14px; }
 .optional-notes-box textarea { margin-top:5px; }
+.optional-notes-box textarea::placeholder { color:var(--subtle); opacity:1; }
 .question-card .voice-field { border:0; background:var(--surface); }
 .question-card .voice-field .clip-label { font-size:15px; }
 .question-card .voice-field [data-record-start] { background:#fff; color:var(--accent-dark); border-color:#cae0fa; }
