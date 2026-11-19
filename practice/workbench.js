@@ -29,11 +29,13 @@
   }
 
   function isDictation(worksheet, question) {
-    return Boolean(worksheet?.dictation && question && question.number <= worksheet.dictation.count);
+    if (!question) return false;
+    if (worksheet?.dictationItems?.length) return worksheet.dictationItems.some(item => item.id === question.id);
+    return Boolean(worksheet?.dictation && question.number <= worksheet.dictation.count);
   }
 
   function questionStops(worksheet, visible) {
-    if (!worksheet.dictation) return visible;
+    if (!worksheet.dictation && !worksheet.dictationItems?.length) return visible;
     const first = visible.find(q => isDictation(worksheet, q));
     return visible.filter(q => q === first || !isDictation(worksheet, q));
   }
@@ -47,7 +49,9 @@
       (all ? "只看" + restrictedTitle : "查看全部题目") + "</button>" : "";
     const chips = questionStops(worksheet, visible).map(q => {
       if (isDictation(worksheet, q)) {
-        const range = "听写 1 至 " + worksheet.dictation.count;
+        const beginning = worksheet.dictationItems?.[0]?.number ?? 1;
+        const ending = worksheet.dictationItems?.at(-1)?.number ?? worksheet.dictation.count;
+        const range = "听写 " + beginning + (ending === beginning ? "" : " 至 " + ending);
         const active = isDictation(worksheet, current) ? ' aria-current="step"' : "";
         return '<button type="button" class="question-chip dictation-chip" data-dictation-nav data-question-number="' +
           q.number + '"' + active + ">" + range + "</button>";
@@ -163,10 +167,13 @@
 
   function render(worksheet, attempt, view) {
     const { current, visible, all, largePicture, answered, editable, teaching } = view;
-    const source = material(worksheet, current, { largePicture });
+    const wordMode = view.wordDictation && isDictation(worksheet, current);
+    const source = wordMode ? "" : material(worksheet, current, { largePicture });
     const rail = navigation(worksheet, visible, attempt, current, all, answered);
     const summary = current ? summaryBlock(worksheet.questions, current, attempt, editable) : "";
     const question = teaching ? renderReviewQuestion(current, worksheet.unit, summary) :
+      wordMode ? '<section class="question-card word-dictation-card" aria-label="逐词听写">' +
+        '<div class="word-dictation" data-word-dictation tabindex="0"></div></section>' :
       isDictation(worksheet, current) ? dictationCard(worksheet, attempt, visible, editable) :
       current ? renderQuestion(current, worksheet.unit, attempt, summary) :
       '<section class="question-card empty-question"><h2>本份作业无需订正</h2><p>可以查看全部题目，或再次提交。</p></section>';

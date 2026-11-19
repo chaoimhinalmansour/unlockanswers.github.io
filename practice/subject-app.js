@@ -8,6 +8,7 @@
     window.UnlockPracticeCatalog;
   const listening = window.UnlockListening;
   const dictation = window.UnlockDictation;
+  const words = window.UnlockWordDictation;
   const screens = window.UnlockScreens;
   const recordings = window.UnlockRecordings;
   const report = window.UnlockReport;
@@ -23,6 +24,7 @@
   const activeAttempts = new Map();
   const printPreviews = new Map();
   let voiceJob = null;
+  let unmountWordPanel = null;
 
   const state = {
     student: null, unit: 1, worksheet: null, attempt: null, focus: null,
@@ -165,7 +167,8 @@
   function status(attempt) {
     if (attempt.second) return { name: "已完成", style: "finished" };
     if (attempt.first) return { name: "待订正", style: "correction" };
-    if (Object.keys(attempt.draft).length || Object.keys(attempt.draftRecordings || {}).length) {
+    if (Object.keys(attempt.draft).length || Object.keys(attempt.draftRecordings || {}).length ||
+        Object.keys(attempt.wordDictation || {}).length) {
       return { name: "作答中", style: "in-progress" };
     }
     return { name: "未开始", style: "" };
@@ -203,10 +206,15 @@
   }
 
 
+  function usesWordDictation() {
+    const { worksheet, attempt } = state;
+    return Boolean(worksheet?.dictationItems.length && (!attempt.first || attempt.wordDictation));
+  }
+
   function questionsInView() {
     const { attempt, worksheet, all } = state;
     if (!attempt.first || attempt.second || all) return worksheet.questions;
-    return worksheet.questions.filter(q => q.type === "open" || attempt.first.results[q.id] !== "correct");
+    return worksheet.questions.filter(q => isRequired(q) || q.type === "open");
   }
 
   function focusedQuestion() {
@@ -220,6 +228,9 @@
   }
 
   function hasResponse(question) {
+    if (usesWordDictation() && isDictation(state.worksheet, question)) {
+      return words.complete(question, state.attempt.wordDictation);
+    }
     const written = isAnswered(question, state.attempt.draft[question.id]);
     if (!recordings.isSpeaking(question)) return written;
     const clip = state.attempt.draftRecordings?.[question.id];
@@ -228,6 +239,7 @@
 
   function isRequired(question) {
     const first = state.attempt.first;
+    if (first && usesWordDictation() && isDictation(state.worksheet, question)) return false;
     return !first || (question.type !== "open" && first.results[question.id] !== "correct");
   }
 
@@ -237,7 +249,8 @@
     if (attempt.second) {
       const stats = report.summary(worksheet.questions, attempt);
       return { label: "客观题答对", now: stats.second, max: stats.objective,
-        detail: "首次 " + stats.first + " / " + stats.objective + "，二次 " + stats.second + " / " + stats.objective };
+        detail: "首次 " + stats.first + " / " + stats.objective + "，二次 " + stats.second + " / " + stats.objective +
+          (usesWordDictation() ? "（听写按完整拼写计）" : "") };
     }
     if (attempt.first) {
       const wrong = worksheet.questions.filter(isRequired);
@@ -272,7 +285,7 @@
 
   function reportURL(worksheet, attempt, student, audio = {}) {
     const printable = report.html({
-      student, title: worksheet.title, attempt, audio,
+      student, title: worksheet.title, attempt, audio, dictationItems: worksheet.dictationItems,
       sections: worksheet.sections.map(section => ({
         name: sectionName(section.key), questions: section.questions
       }))
@@ -332,7 +345,7 @@
     const title = subjectTitle(worksheet.code);
     const panel = renderWorkbench(worksheet, attempt, {
       current: focusedQuestion(), visible: questionsInView(), all: state.all,
-      largePicture: state.largePicture, answered: hasResponse, editable
+      largePicture: state.largePicture, answered: hasResponse, editable, wordDictation: usesWordDictation()
     });
     return '<div class="quiz-header"><div class="session-top"><div><div class="quiz-location">' +
       '<button type="button" class="text-action subtle-action" data-action="directory">作业目录</button>' +
@@ -348,7 +361,8 @@
   function navigationPosition() {
     const stops = questionStops(state.worksheet, questionsInView());
     const current = focusedQuestion();
-    const index = isDictation(state.worksheet, current) ? 0 : stops.indexOf(current);
+    const index = isDictation(state.worksheet, current)
+      ? stops.findIndex(q => isDictation(state.worksheet, q)) : stops.indexOf(current);
     return { stops, index };
   }
 
@@ -358,10 +372,11 @@
     const current = working ? focusedQuestion() : null;
     const groupShown = isDictation(worksheet, current);
     dock.hidden = !working;
-    const firstDictation = Boolean(worksheet?.dictation && !state.attempt.first);
-    const replayQuestions = worksheet?.dictation && state.attempt.first && !state.attempt.second
+    const legacyDictation = !usesWordDictation() && worksheet?.dictation ? worksheet : null;
+    const firstDictation = Boolean(legacyDictation && !state.attempt.first);
+    const replayQuestions = legacyDictation && state.attempt.first && !state.attempt.second
       ? worksheet.questions.filter(q => isDictation(worksheet, q) && editable(q)) : [];
-    const playing = dictation.update(worksheet, groupShown, firstDictation, replayQuestions);
+    const playing = dictation.update(legacyDictation, Boolean(legacyDictation && groupShown), firstDictation, replayQuestions);
     listening.update(worksheet, groupShown || playing ? null : current, state.student);
     if (!working) {
       operations.innerHTML = "";
@@ -382,7 +397,32 @@
       step(1, "下一题", index >= 0 && index < stops.length - 1) + "</div>" + actions;
   }
 
+  function mountWordPanel() {
+    const panel = app.querySelector("[data-word-dictation]");
+    if (!panel) return;
+    const { dictationItems: items, questions } = state.worksheet;
+    unmountWordPanel = words.mount(panel, {
+      items, read: () => state.attempt.wordDictation,
+      draft: item => state.attempt.draft[item.id],
+      save: (item, record) => saveAttempt({
+        ...state.attempt,
+        sequence: state.attempt.sequence + 1,
+        wordDictation: { ...state.attempt.wordDictation, [item.id]: record }
+      }),
+      onProgress: updateProgress,
+      onFinish: feedback => {
+        const next = questions.find(q => q.number > items.at(-1).number && !isDictation(state.worksheet, q));
+        if (!next) return false;
+        state.notice = feedback;
+        goToQuestion(next.number, true);
+        return true;
+      }
+    });
+  }
+
   function render(scrollTop = false) {
+    unmountWordPanel?.();
+    unmountWordPanel = null;
     account.innerHTML = identityBar();
     const notice = state.notice ? '<p class="feedback" role="status">' + esc(state.notice) + "</p>" : "";
     const storage = '<p class="feedback" id="storage-note" role="status"' +
@@ -398,6 +438,7 @@
     const questionOffset = scrollTop ? 0 : app.querySelector("#question-screen")?.scrollTop || 0;
     surface.classList.toggle("in-worksheet", working);
     app.innerHTML = notice + storage + content;
+    mountWordPanel();
     renderDocks();
     hydrateAudio(app);
     syncVoiceControls();
@@ -432,6 +473,8 @@
       state.worksheet = {
         baseKey, key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
         dictation: window.UNLOCK_DICTATION?.[meta.id]?.[code],
+        dictationItems: questions.filter(q => q.kind === "单词听写")
+          .map(q => words.makeItem(q.id, q.number, q.keys[0], q.keys)),
         sections: [sheet], questions, byId: new Map(questions.map(q => [q.id, q])),
         byNumber: new Map(questions.map(q => [q.number, q]))
       };
@@ -497,7 +540,7 @@
     if (!state.worksheet || voiceJob) return;
     dictation.pause();
     const message = "练习会回到首次作答，当前答案、提交结果和录音会从作答页面清空。" +
-      (state.worksheet.dictation ? "整组听写可以重新播放。" : "");
+      (state.worksheet.dictationItems.length ? "听写会从第一题开始。" : "");
     const dialog = document.createElement("dialog");
     if (typeof dialog.showModal !== "function") {
       if (window.confirm(message)) resetExercise();
@@ -524,13 +567,15 @@
     render(true);
     const item = document.getElementById("item-" + question.id);
     const field = item?.querySelector("[data-dictation-answer]");
-    (field || item)?.focus({ preventScroll: true });
+    const wordControl = app.querySelector("[data-wd-play], .wd-review h2");
+    (wordControl || field || item)?.focus({ preventScroll: true });
     const activeBlank = field || item?.querySelector(".summary-blank.current input");
     if (activeBlank) screens.reveal(activeBlank);
   }
 
   function editable(question) {
     return question && state.attempt && !state.attempt.second &&
+      !(usesWordDictation() && isDictation(state.worksheet, question)) &&
       state.attempt.first?.results[question.id] !== "correct";
   }
 
@@ -550,15 +595,30 @@
     return state.attempt.draft[question.id];
   }
 
-  function capture(draft, clips = {}) {
+  function capture(draft, clips = {}, round = 0) {
     const answers = {};
     const results = {};
     for (const question of state.worksheet.questions) {
+      if (usesWordDictation() && isDictation(state.worksheet, question)) {
+        const checked = words.spellingRound(state.attempt.wordDictation?.[question.id], round);
+        answers[question.id] = checked?.text ?? "";
+        results[question.id] = checked?.result === "correct" ? "correct" : "incorrect";
+        continue;
+      }
       const value = draft[question.id] ?? (["multi", "order"].includes(question.type) ? [] : "");
       answers[question.id] = Array.isArray(value) ? [...value] : value;
       results[question.id] = judge(question, value);
     }
     return { time: new Date().toISOString(), answers, results, recordings: { ...clips } };
+  }
+
+  function needsMoreDictation() {
+    if (!usesWordDictation()) return false;
+    const missing = state.worksheet.dictationItems.find(item => !words.complete(item, state.attempt.wordDictation));
+    if (!missing) return false;
+    state.notice = "请完成本组听写后再提交练习。";
+    goToQuestion(missing.number, true);
+    return true;
   }
 
   function needsMoreVoice() {
@@ -571,10 +631,11 @@
   }
 
   function commitFirst() {
-    if (!state.attempt || state.attempt.first || needsMoreVoice()) return;
+    if (!state.attempt || state.attempt.first || needsMoreDictation() || needsMoreVoice()) return;
     const first = capture(state.attempt.draft, state.attempt.draftRecordings);
     const remaining = state.worksheet.questions.filter(q =>
-      q.type !== "open" && first.results[q.id] !== "correct");
+      q.type !== "open" && first.results[q.id] !== "correct" &&
+      !(usesWordDictation() && isDictation(state.worksheet, q)));
     const draft = {};
     const draftRecordings = {};
     for (const q of state.worksheet.questions) {
@@ -593,7 +654,7 @@
   }
 
   function requestFirst() {
-    if (!state.attempt || state.attempt.first || needsMoreVoice()) return;
+    if (!state.attempt || state.attempt.first || needsMoreDictation() || needsMoreVoice()) return;
     const missing = state.worksheet.questions.filter(q => !hasResponse(q)).length;
     if (!missing) {
       commitFirst();
@@ -630,7 +691,7 @@
         if (clip) clips[question.id] = clip;
       }
     }
-    const second = capture(draft, clips);
+    const second = capture(draft, clips, 1);
     if (!saveAttempt({
       ...state.attempt, sequence: state.attempt.sequence + 1, second, draft: {}, draftRecordings: {}
     })) return;

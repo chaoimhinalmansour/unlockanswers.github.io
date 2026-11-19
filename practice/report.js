@@ -28,6 +28,11 @@
     ".answers .item{min-width:0;border-top:1px solid #e6e6eb;padding-top:4px}",
     ".item-title{font-weight:bold;font-size:8.7pt;color:#515154;break-after:avoid}",
     ".value{white-space:pre-wrap;overflow-wrap:anywhere;orphans:2;widows:2}",
+    ".wd-record h3 span{font-size:10pt;color:#1d1d1f}.wd-record header p{font-size:9pt;color:#515154}",
+    ".wd-report-steps{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}",
+    ".wd-report-steps div{border-top:1px solid #e6e6eb;padding-top:4px;min-width:0}",
+    ".wd-report-steps dd{white-space:pre-wrap}.wd-report-steps .wd-report-check{color:#515154;font-size:8.5pt;font-weight:400}",
+    "@media screen and (max-width:520px){.wd-report-steps{grid-template-columns:1fr}}",
     ".item .status{margin-top:2px;font-size:8.5pt;color:#6e6e73}.item .status.needs{color:#a42b3b}",
     ".item .clip{margin-top:4px;font-size:8.5pt;color:#515154;break-inside:avoid}.item audio{width:100%;height:34px;margin-top:2px}",
     ".open .answers{display:block}.open .item+.item{margin-top:5px}.open .item-title{margin-bottom:2px}",
@@ -108,22 +113,37 @@
       '</script>';
   }
 
-  function html({ student, title, sections, attempt, audio = {} }) {
-    const { first, second } = attempt;
-    const totals = summary(sections.flatMap(section => section.questions), attempt);
+  function html({ student, title, sections, attempt, audio = {}, dictationItems = [] }) {
+    const { first, second, wordDictation, completedAt } = attempt;
+    const words = window.UnlockWordDictation;
+    const wordItems = wordDictation ? dictationItems.filter(item => words.complete(item, wordDictation)) : [];
+    const wordsById = new Map(wordItems.map(item => [item.id, item]));
+    const totals = first && second ? summary(sections.flatMap(section => section.questions), attempt) : null;
     const fields = [
-      ["姓名", student.name], ["英语学习阶段", student.level], ["行政班", student.adminClass],
-      ["首次提交", dateFormat.format(new Date(first.time))],
-      ["二次提交", dateFormat.format(new Date(second.time))], ["时间", "北京时间"]
+      ["姓名", student.name], ["英语学习阶段", student.level], ["行政班", student.adminClass]
     ];
+    if (totals) {
+      fields.push(["首次提交", dateFormat.format(new Date(first.time))],
+        ["二次提交", dateFormat.format(new Date(second.time))], ["时间", "北京时间"]);
+    } else if (completedAt) {
+      fields.push(["完成时间", dateFormat.format(new Date(completedAt))], ["时间", "北京时间"]);
+    }
     const details = fields.map(([name, value]) =>
       "<div><dt>" + esc(name) + "</dt><dd>" + esc(value) + "</dd></div>").join("");
-    const score = "客观题首次答对 " + totals.first + " / " + totals.objective +
-      "，二次答对 " + totals.second + " / " + totals.objective +
-      (totals.open ? "。开放题 " + totals.open + " 道，记录两次作答。" : "。");
+    const scores = [];
+    if (totals) {
+      scores.push("客观题首次答对 " + totals.first + " / " + totals.objective +
+        "，二次答对 " + totals.second + " / " + totals.objective +
+        (wordItems.length ? "（听写按完整拼写计）。" : "。"));
+      if (totals.open) scores.push("开放题 " + totals.open + " 道，记录两次作答。");
+    }
+    if (wordItems.length) scores.push("听写" + words.summary(wordItems, wordDictation));
     const groups = sections.map(section =>
       '<section class="paper-section"><h2>' + esc(section.name) + "</h2>" +
-      section.questions.map(q => record(q, first, second)).join("") + "</section>").join("");
+      section.questions.map(q => {
+        const item = wordsById.get(q.id);
+        return item ? words.recordHTML(item, wordDictation[item.id]) : record(q, first, second);
+      }).join("") + "</section>").join("");
 
     return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">' +
       '<meta name="viewport" content="width=device-width,initial-scale=1">' +
@@ -134,7 +154,7 @@
       '<button type="button" onclick="window.print()">打印或保存为 PDF</button></div>' +
       '<main class="paper"><header class="report-head"><h1>UNLOCK 作答单</h1><p>' +
       esc(title) + '</p></header><dl class="meta">' + details + '</dl><p class="summary">' +
-      esc(score) + "</p>" + groups + "</main>" + embeddedRecordings(audio) + "</body></html>";
+      scores.map(esc).join("<br>") + "</p>" + groups + "</main>" + embeddedRecordings(audio) + "</body></html>";
   }
 
   window.UnlockReport = { html, summary };
