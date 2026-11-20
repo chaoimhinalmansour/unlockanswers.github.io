@@ -1,35 +1,43 @@
 "use strict";
 
 (function () {
+  const session = window.UnlockSession;
+  const activeSession = session.requireSession("student");
+  if (!activeSession) return;
+  const student = session.student(activeSession);
+  if (!student) {
+    session.signOut("student", location.href);
+    return;
+  }
   const { isAnswered, judge, escapeHTML: esc } = window.UnlockRules;
   const { sectionName, renderOrder, voiceHTML } = window.UnlockWorksheet;
   const { render: renderWorkbench, applyQuestionState, isDictation, questionStops } = window.UnlockWorkbench;
-  const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory, loadUnit } =
-    window.UnlockPracticeCatalog;
+  const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory,
+    createOpening, renderOpening, loadUnit } = window.UnlockPracticeCatalog;
   const listening = window.UnlockListening;
   const dictation = window.UnlockDictation;
   const words = window.UnlockWordDictation;
+  const motion = window.UnlockMotion;
   const screens = window.UnlockScreens;
   const recordings = window.UnlockRecordings;
   const report = window.UnlockReport;
+  const download = window.UnlockWorkPackage.downloadControl("button");
   const surface = document.getElementById("practice-surface");
   const app = document.getElementById("app");
   const account = document.getElementById("practice-account");
   const dock = document.getElementById("practice-docks");
   const operations = document.getElementById("practice-operations");
-  const students = window.UNLOCK_STUDENTS;
   const books = { L1: 2, L2: 3 };
   const remembered = "unlock.practice.navigation.v5";
   const cache = new Map();
   const activeAttempts = new Map();
-  const printPreviews = new Map();
   let voiceJob = null;
   let unmountWordPanel = null;
 
   const state = {
-    student: null, unit: 1, worksheet: null, attempt: null, focus: null,
+    student, unit: 1, worksheet: null, attempt: null, focus: null,
     all: false, readingOffset: 0, largePicture: false,
-    notice: "", loading: false, storageWorks: true, navigation: 0
+    notice: "", opening: null, storageWorks: true
   };
 
   function newAttempt() {
@@ -37,7 +45,7 @@
   }
 
   function userKey(meta) {
-    return [state.student.name, state.student.level, state.student.adminClass, meta.id, meta.revision]
+    return [state.student.storageName ?? state.student.name, state.student.level, state.student.adminClass, meta.id, meta.revision]
       .map(encodeURIComponent).join(":");
   }
 
@@ -164,9 +172,15 @@
     return findMeta(books[state.student?.level], state.unit);
   }
 
-  function status(attempt) {
+  function status(attempt, code) {
     if (attempt.second) return { name: "已完成", style: "finished" };
-    if (attempt.first) return { name: "待订正", style: "correction" };
+    if (attempt.first) {
+      const entries = Object.entries(attempt.first.results);
+      const check = code[0] === "S" || entries.some(([, result]) => result === "ungraded");
+      const correct = entries.some(([id, result]) =>
+        (result === "incorrect" || result === "blank") && !attempt.wordDictation?.[id]);
+      return { name: check && !correct ? "待自检" : "待订正", style: "correction" };
+    }
     if (Object.keys(attempt.draft).length || Object.keys(attempt.draftRecordings || {}).length ||
         Object.keys(attempt.wordDictation || {}).length) {
       return { name: "作答中", style: "in-progress" };
@@ -174,35 +188,19 @@
     return { name: "未开始", style: "" };
   }
 
-  function entry() {
-    const options = students.map(student => '<option value="' + esc(student.name) + '">' +
-      esc(student.name) + "</option>").join("");
-    return '<section class="entry-layout"><div class="entry-intro"><h1>单元练习</h1>' +
-      '<p>选择姓名，并用括号里的英文名登录。</p></div><form id="identity-form" class="identity-form">' +
-      '<div><label for="student" class="field-label">选择姓名</label>' +
-      '<select id="student" required><option value="">请选择你的姓名</option>' + options +
-      '</select></div><div><label for="student-password" class="field-label">密码</label>' +
-      '<input id="student-password" class="text-input" type="password" required autocomplete="off" ' +
-      'autocapitalize="none" spellcheck="false" aria-describedby="identity-message"></div>' +
-      '<button type="submit" class="button">登录</button><p id="identity-message" class="feedback" role="status" hidden>' +
-      '密码与所选姓名不匹配，请重新输入。</p></form></section>';
-  }
-
-
   function identityBar() {
     const student = state.student;
-    if (!student) return "";
     return '<div class="identity-info"><strong>' + esc(student.name) +
       '</strong><span>' + esc(student.level) + '</span><span class="class-label">' +
       esc(student.adminClass) + '</span></div><button type="button" class="text-action subtle-action" ' +
-      'data-action="identity">切换学生</button>';
+      'data-action="identity">退出登录</button>';
   }
 
   function directory() {
     const meta = currentMeta();
     if (!meta) return '<section class="empty-state panel"><h1>练习暂未开放</h1><p>' +
       esc(state.student.level) + " 暂未开放单元练习。</p></section>";
-    return renderDirectory(meta, code => status(worksheetAttempt(meta, code).attempt));
+    return renderDirectory(meta, code => status(worksheetAttempt(meta, code).attempt, code));
   }
 
 
@@ -214,7 +212,7 @@
   function questionsInView() {
     const { attempt, worksheet, all } = state;
     if (!attempt.first || attempt.second || all) return worksheet.questions;
-    return worksheet.questions.filter(q => isRequired(q) || q.type === "open");
+    return worksheet.questions.filter(q => isRequired(q) || selfCheckQuestion(q));
   }
 
   function focusedQuestion() {
@@ -233,7 +231,7 @@
     }
     const written = isAnswered(question, state.attempt.draft[question.id]);
     if (!recordings.isSpeaking(question)) return written;
-    const clip = state.attempt.draftRecordings?.[question.id];
+    const clip = state.attempt.draftRecordings?.[question.id] || state.attempt.first?.recordings?.[question.id];
     return Boolean(clip && (question.type === "open" || written));
   }
 
@@ -243,18 +241,32 @@
     return !first || (question.type !== "open" && first.results[question.id] !== "correct");
   }
 
+  function selfCheckQuestion(question) {
+    return question.type === "open" || recordings.isSpeaking(question);
+  }
+
+  function review() {
+    const { worksheet } = state;
+    const check = worksheet.questions.some(selfCheckQuestion);
+    const correction = worksheet.questions.some(isRequired);
+    const detail = !check ? "" : worksheet.code[0] === "S"
+      ? "回听录音，想一想是否答到题目要求。可以沿用录音或主动重录。"
+      : "回读自己的答案，想一想是否答到题目要求。可以保留原稿或主动修改。";
+    return { check, correction, detail };
+  }
 
   function progress() {
     const { worksheet, attempt } = state;
     if (attempt.second) {
       const stats = report.summary(worksheet.questions, attempt);
+      if (!stats.objective) return { max: 0, detail: attempt.selfCheckedAt ? "已完成自检。" : "已记录作答。" };
       return { label: "客观题答对", now: stats.second, max: stats.objective,
         detail: "首次 " + stats.first + " / " + stats.objective + "，二次 " + stats.second + " / " + stats.objective +
           (usesWordDictation() ? "（听写按完整拼写计）" : "") };
     }
     if (attempt.first) {
       const wrong = worksheet.questions.filter(isRequired);
-      return { label: "本轮已答", now: wrong.filter(hasResponse).length, max: wrong.length };
+      return { label: "已填写订正", now: wrong.filter(hasResponse).length, max: wrong.length, detail: review().detail };
     }
     if (worksheet.code[0] === "S") {
       return { label: "已录音", now: Object.keys(attempt.draftRecordings || {}).length, max: worksheet.questions.length };
@@ -263,7 +275,7 @@
   }
 
   function progressHTML(p) {
-    if (!p.max) return '<p class="small">没有待订正的客观题。</p>';
+    if (!p.max) return '<p class="small">' + esc(p.detail || "没有待订正的客观题。") + "</p>";
     const percent = Math.round(p.now / p.max * 100);
     return '<div class="work-progress-line"><span>' + esc(p.label) + '</span><strong>' + p.now + " / " +
       p.max + '</strong></div><div class="work-meter" role="progressbar" aria-label="' + esc(p.label) +
@@ -283,56 +295,23 @@
     }
   }
 
-  function reportURL(worksheet, attempt, student, audio = {}) {
-    const printable = report.html({
-      student, title: worksheet.title, attempt, audio, dictationItems: worksheet.dictationItems,
-      sections: worksheet.sections.map(section => ({
-        name: sectionName(section.key), questions: section.questions
-      }))
-    });
-    return URL.createObjectURL(new Blob([printable], { type: "text/html;charset=utf-8" }));
-  }
-
-  function reportKey() {
-    return state.worksheet.key + ":" + state.attempt.second.time;
-  }
-
-  function exportLinks(entry) {
-    if (entry.error) return '<p class="small" role="status">录音暂时无法读取。请在原作答浏览器中重试。</p>' +
-      '<button type="button" class="button secondary" data-action="retry-report">重新生成作答单</button>';
-    if (!entry.url) return '<p class="small" role="status">正在把录音放入作答单。</p>';
-    const filename = state.worksheet.title + " 作答单 " + state.student.name + ".html";
-    return '<a class="button" href="' + esc(entry.url) +
-      '">导出作答</a><a class="button secondary" download="' + esc(filename) +
-      '" href="' + esc(entry.url) + '">保存 HTML</a>';
-  }
-
-  function prepareReport(key) {
-    const { worksheet, attempt, student } = state;
-    const ids = [...new Set([attempt.first, attempt.second].flatMap(round =>
-      Object.values(round.recordings || {}).map(clip => clip.id)))];
-    const entry = {};
-    printPreviews.set(key, entry);
-    if (!ids.length) {
-      entry.url = reportURL(worksheet, attempt, student);
-      return entry;
+  function mountDownload() {
+    const panel = app.querySelector("[data-report-actions]");
+    if (!panel) {
+      download.clear();
+      return;
     }
-    Promise.all(ids.map(async id => [id, await recordings.dataURL(id)]))
-      .then(data => { entry.url = reportURL(worksheet, attempt, student, Object.fromEntries(data)); })
-      .catch(() => { entry.error = true; })
-      .finally(() => {
-        const panel = app.querySelector("[data-report-actions]");
-        if (panel && panel.dataset.reportActions === key && printPreviews.get(key) === entry) {
-          panel.innerHTML = exportLinks(entry);
-        }
-      });
-    return entry;
-  }
-
-  function finalActions() {
-    const key = reportKey();
-    const entry = printPreviews.get(key) || prepareReport(key);
-    return '<div class="final-actions" data-report-actions="' + esc(key) + '">' + exportLinks(entry) + "</div>";
+    const { worksheet, attempt, student } = state;
+    const { id, revision, book, unit, audio } = worksheet.unit;
+    const key = worksheet.key + ":" + attempt.sequence + ":" + attempt.second.time;
+    const wordMode = usesWordDictation();
+    download.show(panel, key, () => report.prepare({
+      student, title: worksheet.title, attempt, tracks: audio,
+      worksheet: { id, revision, book, unit, code: worksheet.code },
+      dictationItems: worksheet.dictationItems,
+      groupAudio: wordMode ? undefined : worksheet.dictation?.file.replace(/\.mp3$/, "-countdown.mp3"),
+      sections: worksheet.sections.map(section => ({ ...section, name: sectionName(section.key) }))
+    }));
   }
 
 
@@ -340,7 +319,9 @@
     const { worksheet, attempt } = state;
     const finished = Boolean(attempt.second);
     const correction = Boolean(attempt.first) && !finished;
-    const phase = finished ? "已完成" : correction ? "订正" : "首次作答";
+    const pending = correction ? review() : null;
+    const phase = finished ? "已完成" : !pending ? "首次作答"
+      : pending.check ? (pending.correction ? "订正和自检" : "自检") : "订正";
     const context = unitLabel(worksheet.unit);
     const title = subjectTitle(worksheet.code);
     const panel = renderWorkbench(worksheet, attempt, {
@@ -355,7 +336,7 @@
       '</h1><span class="state-label' + (correction ? " correction" : "") + '">' + phase +
       '</span></div></div><div class="session-tools"><div id="work-progress" class="work-progress" ' +
       'aria-live="polite">' + progressHTML(progress()) + "</div>" +
-      (finished ? finalActions() : "") + "</div></div></div>" + panel;
+      (finished ? '<div class="final-actions" data-report-actions></div>' : "") + "</div></div></div>" + panel;
   }
 
   function navigationPosition() {
@@ -367,7 +348,7 @@
   }
 
   function renderDocks() {
-    const working = Boolean(state.worksheet) && !state.loading;
+    const working = Boolean(state.worksheet && !state.opening);
     const worksheet = working ? state.worksheet : null;
     const current = working ? focusedQuestion() : null;
     const groupShown = isDictation(worksheet, current);
@@ -387,11 +368,14 @@
       return '<button type="button" class="button secondary" data-step="' + direction + '"' +
         (enabled ? "" : " disabled") + ">" + label + "</button>";
     }
+    const pending = state.attempt.first && !state.attempt.second ? review() : null;
+    const submitLabel = !pending ? "首次提交" : pending.check
+      ? (pending.correction ? "完成订正和自检" : "完成自检") : "提交订正";
     const actions = state.attempt.second
       ? '<button type="button" class="button secondary" data-action="directory">返回目录</button>'
       : '<button type="button" class="button" data-action="' +
         (state.attempt.first ? "submit-second" : "submit-first") + '"' + (playing ? " disabled" : "") + ">" +
-        (state.attempt.first ? "再次提交" : "首次提交") + "</button>";
+        submitLabel + "</button>";
     const previous = isDictation(worksheet, stops[index - 1]) ? "返回听写" : "上一题";
     operations.innerHTML = '<div class="step-actions">' + step(-1, previous, index > 0) +
       step(1, "下一题", index >= 0 && index < stops.length - 1) + "</div>" + actions;
@@ -428,16 +412,17 @@
     const storage = '<p class="feedback" id="storage-note" role="status"' +
       (state.storageWorks ? " hidden" : "") + ">此浏览器无法保存进度。请在当前页面完成作答和导出。</p>";
     let content;
-    if (!state.student) content = entry();
-    else if (state.loading) content = '<p class="empty-state panel" role="status">正在打开练习。</p>';
+    if (state.opening) content = renderOpening(state.opening);
     else if (state.worksheet) content = quiz();
     else content = directory();
-    const working = Boolean(state.worksheet) && !state.loading;
+    const working = Boolean(state.worksheet && !state.opening);
     const priorPassage = app.querySelector("#reading-screen");
     if (priorPassage) state.readingOffset = priorPassage.scrollTop;
     const questionOffset = scrollTop ? 0 : app.querySelector("#question-screen")?.scrollTop || 0;
     surface.classList.toggle("in-worksheet", working);
     app.innerHTML = notice + storage + content;
+    mountDownload();
+    if (working && scrollTop) app.querySelector(".workspace-question .screen-content")?.classList.add("unlock-card-enter");
     mountWordPanel();
     renderDocks();
     hydrateAudio(app);
@@ -458,14 +443,14 @@
 
   async function openWorksheet(code, rememberedView = {}) {
     const meta = currentMeta();
-    if (!allowsWorksheet(meta, code) || state.loading) return;
-    const ticket = ++state.navigation;
-    state.loading = true;
+    if (!allowsWorksheet(meta, code) || (state.opening && !state.opening.failed)) return;
+    const opening = createOpening(meta, code, rememberedView);
+    state.opening = opening;
     state.notice = "";
     render(true);
     try {
-      const unit = await loadUnit(meta);
-      if (ticket !== state.navigation) return;
+      const unit = await loadUnit(meta, opening.signal);
+      if (opening !== state.opening) return;
       const sheet = { ...unit.sheets[code], key: code };
       const questions = sheet.questions;
       if (!questions?.length) throw new Error("Worksheet unavailable");
@@ -485,24 +470,33 @@
       pickFocus(rememberedView.focus);
       saveNavigation();
     } catch {
-      if (ticket === state.navigation) state.notice = "这份练习暂时打不开，请返回目录后重试。";
+      if (opening === state.opening) {
+        opening.failed = true;
+        opening.cancel();
+        state.worksheet = null;
+        state.attempt = null;
+      }
     } finally {
-      if (ticket === state.navigation) {
-        state.loading = false;
+      opening.finish();
+      if (opening === state.opening) {
+        if (!opening.failed) state.opening = null;
         render(true);
+        if (opening.failed) app.querySelector('[data-action="retry-open"]')?.focus({ preventScroll: true });
       }
     }
   }
 
   function backToDirectory() {
-    state.navigation++;
-    state.loading = false;
+    const code = state.worksheet?.code || state.opening?.code;
+    state.opening?.cancel();
+    state.opening = null;
     state.worksheet = null;
     state.attempt = null;
     state.focus = null;
     state.notice = "";
     saveNavigation();
     render(true);
+    if (code) app.querySelector('[data-task="' + code + '"]')?.focus({ preventScroll: true });
   }
 
   function showAttempt(key, notice = "") {
@@ -637,15 +631,14 @@
       q.type !== "open" && first.results[q.id] !== "correct" &&
       !(usesWordDictation() && isDictation(state.worksheet, q)));
     const draft = {};
-    const draftRecordings = {};
+    const draftRecordings = { ...first.recordings };
     for (const q of state.worksheet.questions) {
       if (q.type === "open" || first.results[q.id] === "correct") {
         draft[q.id] = first.answers[q.id];
-        if (first.recordings[q.id]) draftRecordings[q.id] = first.recordings[q.id];
       }
     }
     if (!saveAttempt({ ...state.attempt, sequence: state.attempt.sequence + 1, first, draft, draftRecordings })) return;
-    const next = remaining[0] || state.worksheet.questions.find(q => q.type === "open");
+    const next = remaining[0] || state.worksheet.questions.find(selfCheckQuestion);
     state.notice = "";
     state.all = false;
     pickFocus(next?.number);
@@ -675,7 +668,7 @@
   }
 
   function commitSecond() {
-    if (!state.attempt?.first || state.attempt.second || needsMoreVoice()) return;
+    if (!state.attempt?.first || state.attempt.second) return;
     const missing = state.worksheet.questions.find(q => isRequired(q) && !hasResponse(q));
     if (missing) {
       state.notice = "请完成所有待订正的客观题，再次提交。";
@@ -683,17 +676,16 @@
       return;
     }
     const draft = { ...state.attempt.draft };
-    const clips = { ...state.attempt.draftRecordings };
+    const clips = { ...state.attempt.first.recordings, ...state.attempt.draftRecordings };
     for (const question of state.worksheet.questions) {
       if (state.attempt.first.results[question.id] === "correct") {
         draft[question.id] = state.attempt.first.answers[question.id];
-        const clip = state.attempt.first.recordings?.[question.id];
-        if (clip) clips[question.id] = clip;
       }
     }
     const second = capture(draft, clips, 1);
+    const selfCheckedAt = state.worksheet.questions.some(selfCheckQuestion) ? second.time : undefined;
     if (!saveAttempt({
-      ...state.attempt, sequence: state.attempt.sequence + 1, second, draft: {}, draftRecordings: {}
+      ...state.attempt, sequence: state.attempt.sequence + 1, second, selfCheckedAt, draft: {}, draftRecordings: {}
     })) return;
     state.notice = "";
     state.all = false;
@@ -754,7 +746,7 @@
   }
 
   function saveVoice(question, clip) {
-    if (!editable(question)) return;
+    if (!state.attempt || state.attempt.second) return;
     const next = {
       ...state.attempt,
       sequence: state.attempt.sequence + 1,
@@ -776,7 +768,7 @@
     if (voiceJob) return;
     const id = button.closest("[data-voice-question]").dataset.voiceQuestion;
     const question = state.worksheet?.byId.get(id);
-    if (!editable(question) || !recordings.isSpeaking(question)) return;
+    if (!question || !state.attempt || state.attempt.second || !recordings.isSpeaking(question)) return;
     for (const player of app.querySelectorAll("audio")) player.pause();
 
     const job = { id, phase: "permission", handle: null, timer: null };
@@ -828,6 +820,7 @@
     if (!editable(q)) return;
     const prior = getDraft(q) || [];
     const { orderAdd, orderRemove, orderShift, part } = button.dataset;
+    const origin = orderAdd ? button.getBoundingClientRect() : undefined;
     let chosen;
     if (orderShift) {
       const from = prior.indexOf(part);
@@ -850,37 +843,12 @@
     if (next) {
       next.focus({ preventScroll: true });
       screens.reveal(next);
+      if (origin) motion.place(next, origin);
     }
   }
 
-  surface.addEventListener("submit", event => {
-    if (event.target.id !== "identity-form") return;
-    event.preventDefault();
-    const name = document.getElementById("student").value;
-    const student = students.find(person => person.name === name);
-    const password = document.getElementById("student-password");
-    const expected = student?.name.match(/（([^）]+)）$/)?.[1];
-    if (!expected || password.value.trim() !== expected) {
-      document.getElementById("identity-message").hidden = false;
-      password.setAttribute("aria-invalid", "true");
-      password.focus();
-      password.select();
-      return;
-    }
-    state.student = student;
-    state.unit = 1;
-    backToDirectory();
-  });
-
   app.addEventListener("input", event => {
     const input = event.target;
-    if (input.id === "student" || input.id === "student-password") {
-      const password = document.getElementById("student-password");
-      if (input.id === "student") password.value = "";
-      password.removeAttribute("aria-invalid");
-      document.getElementById("identity-message").hidden = true;
-      return;
-    }
     if (!input.matches("input[data-answer],textarea[data-answer]") ||
         (input instanceof HTMLInputElement && input.type !== "text")) return;
     updateAnswer(state.worksheet?.byId.get(input.dataset.answer), input.value);
@@ -940,6 +908,8 @@
       app.querySelector('[data-action="special"]')?.focus({ preventScroll: true });
     } else if (d.task) {
       openWorksheet(d.task);
+    } else if (d.action === "retry-open" && state.opening?.failed) {
+      openWorksheet(state.opening.code, state.opening.view);
     } else if (d.questionNumber) {
       goToQuestion(Number(d.questionNumber));
     } else if (d.step) {
@@ -949,8 +919,7 @@
     } else if (d.orderAdd || d.orderRemove || d.orderShift) {
       changeOrder(button);
     } else if (d.action === "identity") {
-      state.student = null;
-      backToDirectory();
+      session.signOut();
     } else if (d.action === "directory") {
       backToDirectory();
     } else if (d.action === "toggle-all") {
@@ -969,10 +938,6 @@
     else if (d.action === "cancel-submit" || d.action === "cancel-reset") button.closest("dialog").close();
     else if (d.action === "confirm-submit") commitFirst();
     else if (d.action === "submit-second") commitSecond();
-    else if (d.action === "retry-report") {
-      prepareReport(reportKey());
-      render();
-    }
   });
 
   surface.addEventListener("play", event => {
@@ -1007,9 +972,7 @@
   function restore() {
     try {
       const current = JSON.parse(sessionStorage.getItem(remembered) || "null");
-      const student = students.find(person => person.name === current?.student);
-      if (!student) return;
-      state.student = student;
+      if (!current?.student || ![student.name, student.storageName].includes(current.student)) return;
       if (findMeta(books[student.level], current.unit)) state.unit = current.unit;
       if (current.code) openWorksheet(current.code, current);
     } catch {}

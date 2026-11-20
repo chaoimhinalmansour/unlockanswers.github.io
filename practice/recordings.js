@@ -195,5 +195,5 @@
     }
   }
 
-  window.UnlockRecordings = { isSpeaking, begin, timeText, clipTime, url, dataURL };
+  window.UnlockRecordings = { isSpeaking, begin, timeText, clipTime, url, dataURL, read };
 })();

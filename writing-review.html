@@ -1,40 +1,52 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+  <link rel="stylesheet" href="assets/theme.css?v=20261119-tcd-1">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>学生平台写作复盘</title>
-  <link rel="stylesheet" href="writing-review.css?v=assessment-3">
-  <script src="writing-review-gate.js?v=20261116-4" defer></script>
+  <title>写作复盘 | UNLOCK</title>
+  <link rel="stylesheet" href="writing-review.css?v=20261119-tcd-1">
+  <script defer src="practice/students.js?v=20261118-roster"></script>
+  <script defer src="assets/session.js?v=20261120-session"></script>
+  <script defer src="writing-review-gate.js?v=20261120-session"></script>
   <style>
     #writing-review-content[hidden],#writing-entry[hidden]{display:none!important}
     .writing-entry {padding-top:32px}
     .writing-entry h1 {font-size:clamp(28px,4vw,38px);margin:0 0 14px}
-    .writing-password-form {max-width:600px;background:#f5f5f7;border-radius:22px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
+    .review-account {display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:4px 14px}
+    .review-account[hidden]{display:none}
+    #review-sign-out {font:inherit;font-size:14px;color:var(--unlock-blue);background:none;border:0;padding:8px 0;cursor:pointer}
+    .writing-password-form {max-width:600px;background:var(--unlock-shell);border-radius:22px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
     .writing-password-form label {grid-column:1/-1;font-weight:600}
-    .writing-password-form input {width:100%;min-height:44px;padding:9px 12px;font:inherit;border:1px solid #d2d2d7;background:#fff;color:#1d1d1f;border-radius:9px}
-    .writing-password-form button {border:0;background:#0071e3;color:#fff;min-height:44px;padding:9px 18px;border-radius:22px;font:inherit;cursor:pointer}
-    .writing-password-form :is(input,button):focus-visible {outline:3px solid #0071e3;outline-offset:3px}
+    .writing-password-form input {width:100%;min-height:44px;padding:9px 12px;font:inherit;border:1px solid var(--unlock-line);background:var(--unlock-white);color:var(--unlock-ink);border-radius:9px}
+    .writing-password-form button {border:0;background:var(--unlock-blue);color:var(--unlock-white);min-height:44px;padding:9px 18px;border-radius:22px;font:inherit;cursor:pointer}
+    .writing-password-form :is(input,button):focus-visible {outline:3px solid var(--unlock-blue);outline-offset:3px}
     .writing-password-form button:disabled {opacity:.55}
-    #writing-entry-message {grid-column:1/-1;font-size:14px;margin:0;color:#983344}
+    #writing-entry-message {grid-column:1/-1;font-size:14px;margin:0;color:var(--unlock-ink)}
     #writing-entry-message:empty {display:none}
     @media(max-width:480px){.writing-password-form{grid-template-columns:1fr;padding:18px}.writing-password-form button{justify-self:start}}
   </style>
 </head>
 <body>
   <header class="site-header">
-    <div><a href="index.html">学生平台</a><span>Student Platform</span></div>
+    <div>
+      <a href="index.html">返回工作区</a>
+      <nav class="review-account" id="review-account" aria-label="登录信息" hidden>
+        <span id="review-account-name"></span>
+        <button type="button" id="review-sign-out">退出登录</button>
+      </nav>
+    </div>
   </header>
-  <main class="page writing-entry" id="writing-entry">
+  <main class="page writing-entry" id="writing-entry" hidden>
     <h1>写作复盘</h1>
     <form class="writing-password-form" id="writing-password-form">
-      <label for="writing-password">请输入访问密码</label>
+      <label for="writing-password">资料密码</label>
       <input id="writing-password" type="password" required autocomplete="current-password">
       <button type="submit">进入复盘</button>
       <p id="writing-entry-message" role="status"></p>
     </form>
-    <noscript>请启用 JavaScript 后验证密码。</noscript>
   </main>
+  <noscript><p class="page">请启用 JavaScript 后打开写作复盘。</p></noscript>
   <main class="page" id="writing-review-content" hidden>
     <section class="hero">
       <p class="kicker">IELTS Academic Writing</p>

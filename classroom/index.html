@@ -1,22 +1,27 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+  <link rel="stylesheet" href="../assets/theme.css?v=20261119-tcd-1">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>单元课堂课前听写</title>
-  <link rel="stylesheet" href="classroom.css">
-  <link rel="stylesheet" href="unit-dictation.css?v=20261119">
-  <script defer src="../practice/students.js?v=20261118-roster"></script>
-  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-1">
+  <link rel="stylesheet" href="classroom.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="unit-dictation.css?v=20261120-work-package">
+<script defer src="../practice/students.js?v=20261120-portraits"></script>
+  <script defer src="../assets/session.js?v=20261120-session"></script>
+  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-tcd-1">
   <script defer src="../practice/rules.js?v=20261117-5"></script>
   <script defer src="../assets/word-dictation-items.js?v=20261119-1"></script>
-  <script defer src="../assets/word-dictation.js?v=20261119-2"></script>
-  <script defer src="../practice/recordings.js?v=20261117-5"></script>
-  <script defer src="../practice/report.js?v=20261119-word-dictation"></script>
+  <script defer src="../assets/soft-motion.js?v=20261119-tcd-1"></script>
+  <script defer src="../assets/word-dictation.js?v=20261120-work-package"></script>
+  <script defer src="../practice/recordings.js?v=20261120-work-package"></script>
+  <script defer src="../practice/report.js?v=20261120-work-package"></script>
+  <script defer src="../assets/vendor/fflate-0.8.2.min.js"></script>
+  <script defer src="../assets/work-package.js?v=20261120-work-package"></script>
   <script defer src="../practice/screen-pages.js?v=20261119-speaking-notes"></script>
   <script defer src="unit-dictation-data.js?v=20261119"></script>
   <script defer src="../practice/dictation-playback.js?v=20261118-item-replay"></script>
-  <script defer src="unit-dictation.js?v=20261119-word-dictation"></script>
+<script defer src="unit-dictation.js?v=20261120-legacy-audio"></script>
 </head>
 <body id="practice-surface">
   <header class="top">
@@ -24,9 +29,9 @@
       <a class="brand" href="../index.html">UNLOCK</a>
       <div id="account" class="account" hidden>
         <span id="student-name"></span>
-        <button id="switch-student" class="text-button" type="button">切换学生</button>
+        <button id="classroom-sign-out" class="text-button" type="button">退出登录</button>
       </div>
-      <a class="home-link" href="../index.html">返回首页</a>
+      <a class="home-link" href="../index.html">返回工作区</a>
     </div>
   </header>
   <main>
@@ -35,27 +40,14 @@
       <h1>课前听写</h1>
       <p>选一个单元，逐词完成听写和订正。</p>
     </section>
-    <section id="login" class="card login-card" aria-labelledby="login-title">
-      <h2 id="login-title">学生登录</h2>
-      <form id="login-form">
-        <label for="student-select">姓名</label>
-        <select id="student-select" required>
-          <option value="">请选择姓名</option>
-        </select>
-        <label for="student-password">英文名密码</label>
-        <input id="student-password" type="password" required autocomplete="off">
-        <button class="primary" type="submit">登录</button>
-        <p id="login-message" class="notice" role="status"></p>
-      </form>
-    </section>
     <div id="classwork" hidden>
       <section id="picker" class="card picker" aria-label="选择单元">
         <p id="book-label" class="book-label"></p>
         <form id="unit-form">
-          <div>
-            <label for="unit-select">单元</label>
-            <select id="unit-select"></select>
-          </div>
+          <fieldset class="unit-select-field">
+            <legend>单元</legend>
+            <div id="unit-options" class="unit-options"></div>
+          </fieldset>
           <button class="primary" type="submit">打开听写</button>
         </form>
         <p id="availability" class="notice" role="status"></p>
@@ -65,7 +57,7 @@
         <p id="set-title" class="eyebrow"></p>
         <h2 id="phase-title" tabindex="-1"></h2>
         <p id="directions" class="muted directions"></p>
-        <a id="classroom-report" class="primary" hidden>导出作答单</a>
+        <div id="classroom-report" hidden></div>
         <div id="classroom-word-panel" class="word-dictation" hidden></div>
         <div id="legacy-unit-attempt" hidden>
           <div class="attempt-toolbar">

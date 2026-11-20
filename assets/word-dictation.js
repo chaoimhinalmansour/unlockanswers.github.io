@@ -2,6 +2,7 @@
 
 (function () {
   const { normalized, escapeHTML: esc } = window.UnlockRules;
+  const motion = window.UnlockMotion;
   const source = window.UNLOCK_WORD_DICTATION_ITEMS;
   const outcomes = {
     first: "首次拼写正确",
@@ -16,6 +17,10 @@
     const prepared = source[normalized(keys[0])];
     if (!prepared) throw new Error("Missing dictation audio or syllables for " + id);
     return { id, number, word, keys, audio: prepared.audio, parts: prepared.parts };
+  }
+
+  function audioPath(item) {
+    return "assets/word-dictation-v1/" + item.audio + ".wav";
   }
 
   function checkSpelling(item, typed) {
@@ -71,7 +76,7 @@
     return Object.entries(counts).map(([result, n]) => outcomes[result] + " " + n + " 题").join("，") + "。";
   }
 
-  function recordHTML(item, record) {
+  function recordHTML(item, record, links = "") {
     if (!record) return "";
     const result = outcome(record);
     const field = (label, value, status) => '<div><dt>' + label + '</dt><dd lang="en">' +
@@ -85,7 +90,7 @@
       field("首次拼写", first?.text, checks[first?.result]) +
       field("二次拼写", second?.text, checks[second?.result]) +
       field("音节选择顺序", syllables?.parts.join("、"), checks[syllables?.result]) +
-      "</dl></article>";
+      "</dl>" + links + "</article>";
   }
 
   function reviewHTML(items, records) {
@@ -110,11 +115,22 @@
       return true;
     }
 
-    function updateSyllables(focusNext = false) {
+    function updateSyllables(focusNext = false, origin) {
       const { offered, order } = record();
       const buttons = root.querySelectorAll("[data-wd-piece]");
       for (const button of buttons) button.disabled = order.includes(Number(button.dataset.wdPiece));
-      root.querySelector("[data-wd-choice]").textContent = assemble(current, order) || "请选择音节";
+      const output = root.querySelector("[data-wd-choice]");
+      const spelling = assemble(current, order);
+      if (origin && order.length) {
+        const added = current.parts[order.at(-1)].trim();
+        const piece = document.createElement("span");
+        piece.className = "wd-added-piece";
+        piece.textContent = added;
+        output.replaceChildren(spelling.slice(0, spelling.length - added.length), piece);
+        motion.place(piece, origin);
+      } else {
+        output.textContent = spelling || "请选择音节";
+      }
       root.querySelector("[data-wd-undo]").disabled = !order.length;
       const submit = root.querySelector("[data-wd-submit]");
       submit.disabled = order.length !== offered.length;
@@ -149,25 +165,32 @@
           'autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="160" required ' +
           'aria-describedby="wd-case" value="' + esc(state.draft) + '">' +
           '<p id="wd-case" class="wd-note">可用全小写、全大写或仅首字母大写。</p>';
-      root.innerHTML = '<form class="wd-question" data-word-number="' + current.number +
+      root.innerHTML = '<form class="wd-question' + (focus ? " unlock-card-enter" : "") +
+        '" data-word-number="' + current.number +
         '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading"><p class="wd-position">第 ' +
         (items.indexOf(current) + 1) +
         ' 题，共 ' + items.length + ' 题</p><h2 id="wd-heading">' +
         (syllableStep ? "拼接音节" : attemptNo ? "再拼写一次" : "听音拼写") +
         '</h2><p class="wd-feedback" role="status">' + esc(feedback) + '</p>' +
-        '<div class="wd-listen"><audio hidden preload="none" src="../assets/word-dictation-v1/' + esc(current.audio) + '.wav"></audio>' +
+        '<div class="wd-listen"><audio hidden preload="none" src="../' + esc(audioPath(current)) + '"></audio>' +
         '<button type="button" class="wd-button wd-play" data-wd-play>播放音频</button>' +
         '<p class="wd-note" data-wd-play-note role="status">每次播放一遍，可重复听。</p></div>' +
         '<div class="wd-fields">' + fields + '</div>' +
         '<button type="submit" class="wd-button wd-primary" data-wd-submit>提交</button></form>';
       const player = root.querySelector("audio");
       audio = player;
+      const playButton = root.querySelector("[data-wd-play]");
+      player.addEventListener("timeupdate", () => {
+        if (player !== audio || !Number.isFinite(player.duration) || player.duration <= 0) return;
+        const fraction = Math.min(1, player.currentTime / player.duration);
+        playButton.style.setProperty("--wd-audio-progress", String(fraction));
+      }, options);
       const resetPlay = () => {
         if (player !== audio) return;
         playing = false;
-        const button = root.querySelector("[data-wd-play]");
-        button.textContent = "播放音频";
-        button.removeAttribute("aria-disabled");
+        if (player.ended) playButton.style.setProperty("--wd-audio-progress", "1");
+        playButton.textContent = "播放音频";
+        playButton.removeAttribute("aria-disabled");
       };
       player.addEventListener("ended", resetPlay, options);
       player.addEventListener("pause", resetPlay, options);
@@ -185,6 +208,7 @@
       const note = root.querySelector("[data-wd-play-note]");
       starting = true;
       button.setAttribute("aria-disabled", "true");
+      button.style.setProperty("--wd-audio-progress", "0");
       try {
         if (player.error) player.load();
         player.currentTime = 0;
@@ -220,9 +244,10 @@
       if (!button.hasAttribute("data-wd-piece") && !button.hasAttribute("data-wd-undo")) return;
       const state = record();
       const piece = Number(button.dataset.wdPiece);
-      const order = button.hasAttribute("data-wd-undo") ? state.order.slice(0, -1)
-        : [...state.order, piece];
-      if (saveRecord({ ...state, order })) updateSyllables(!button.hasAttribute("data-wd-undo") || !order.length);
+      const undo = button.hasAttribute("data-wd-undo");
+      const origin = undo ? undefined : button.getBoundingClientRect();
+      const order = undo ? state.order.slice(0, -1) : [...state.order, piece];
+      if (saveRecord({ ...state, order })) updateSyllables(!undo || !order.length, origin);
     }, options);
 
     root.addEventListener("submit", event => {
@@ -266,5 +291,5 @@
     };
   }
 
-  window.UnlockWordDictation = { makeItem, checkSpelling, complete, spellingRound, summary, recordHTML, mount };
+  window.UnlockWordDictation = { makeItem, audioPath, checkSpelling, complete, outcome, spellingRound, summary, recordHTML, mount };
 })();

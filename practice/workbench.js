@@ -43,9 +43,10 @@
   function navigation(worksheet, visible, attempt, current, all, answered) {
     const correction = attempt?.first && !attempt.second;
     const hasOpen = visible.some(q => q.type === "open");
-    const restrictedTitle = hasOpen ? "待订正与开放题" : "待订正题号";
-    const title = correction && !all ? restrictedTitle : "题号";
-    const toggle = correction ? '<button type="button" class="text-action subtle-action" data-action="toggle-all">' +
+    const speakingReview = correction && worksheet.code?.startsWith("S");
+    const restrictedTitle = hasOpen ? "待订正和自检题号" : "待订正题号";
+    const title = speakingReview ? "自检题号" : correction && !all ? restrictedTitle : "题号";
+    const toggle = correction && !speakingReview ? '<button type="button" class="text-action subtle-action" data-action="toggle-all">' +
       (all ? "只看" + restrictedTitle : "查看全部题目") + "</button>" : "";
     const chips = questionStops(worksheet, visible).map(q => {
       if (isDictation(worksheet, q)) {

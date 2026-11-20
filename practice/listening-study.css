@@ -3,7 +3,7 @@
   align-items: center;
   gap: 7px;
   padding-inline-start: 9px;
-  border-inline-start: 1px solid #d8d8de;
+  border-inline-start: 1px solid var(--unlock-line);
 }
 #listening-dock [data-listen-passes] {
   color: var(--muted);
@@ -18,7 +18,7 @@
 }
 #listening-dock [data-listen-study]:not(:disabled) {
   background: var(--tint);
-  border-color: #c8ddf7;
+  border-color: var(--unlock-line);
 }
 .in-worksheet .listening-study-panel {
   overflow: hidden;
@@ -51,7 +51,7 @@
 .listen-study-actions button:hover { background: var(--surface); }
 .listen-study-actions [aria-pressed="true"] {
   color: var(--accent-dark);
-  border-color: #c8ddf7;
+  border-color: var(--unlock-line);
   background: var(--tint);
 }
 .listen-study-actions button:disabled { opacity: .6; }

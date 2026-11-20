@@ -1,43 +1,48 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
+  <link rel="stylesheet" href="../assets/theme.css?v=20261119-tcd-1">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="UNLOCK 学生单元练习">
   <title>UNLOCK 单元练习</title>
-  <link rel="stylesheet" href="practice.css?v=20261116-7">
-  <link rel="stylesheet" href="workbench.css?v=20261119-speaking-notes">
-  <link rel="stylesheet" href="one-screen.css?v=20261116-7">
-  <link rel="stylesheet" href="listening-study.css?v=20261116-9">
-  <link rel="stylesheet" href="dictation.css?v=20261118-item-replay">
-  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-1">
+  <link rel="stylesheet" href="practice.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="workbench.css?v=20261120-work-package">
+  <link rel="stylesheet" href="one-screen.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="listening-study.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="dictation.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-tcd-1">
   <script defer src="rules.js?v=20261117-5"></script>
   <script defer src="../assets/word-dictation-items.js?v=20261119-1"></script>
-  <script defer src="../assets/word-dictation.js?v=20261119-2"></script>
-  <script defer src="students.js?v=20261116"></script>
+  <script defer src="../assets/soft-motion.js?v=20261119-tcd-1"></script>
+  <script defer src="../assets/word-dictation.js?v=20261120-work-package"></script>
+  <script defer src="students.js?v=20261118-roster"></script>
+  <script defer src="../assets/session.js?v=20261120-session"></script>
   <script defer src="data/catalog.js?v=20261116"></script>
   <script defer src="data/stp1116/catalog.js?v=20261117-5"></script>
   <script defer src="data/stp1116/dictation.js?v=20261117-6"></script>
-  <script defer src="recordings.js?v=20261117-5"></script>
-  <script defer src="screen-pages.js?v=20261119-speaking-notes"></script>
-  <script defer src="question-view.js?v=20261119-speaking-notes"></script>
-  <script defer src="report.js?v=20261119-word-dictation"></script>
-  <script defer src="workbench.js?v=20261119-word-dictation"></script>
+  <script defer src="recordings.js?v=20261120-work-package"></script>
+  <script defer src="screen-pages.js?v=20261118-speaking-notes"></script>
+  <script defer src="question-view.js?v=20261120-work-package"></script>
+  <script defer src="report.js?v=20261120-work-package"></script>
+  <script defer src="../assets/vendor/fflate-0.8.2.min.js"></script>
+  <script defer src="../assets/work-package.js?v=20261120-work-package"></script>
+  <script defer src="workbench.js?v=20261120-work-package"></script>
   <script defer src="listening-study.js?v=20261117-5"></script>
-  <script defer src="listening-player.js?v=20261117-5"></script>
-  <script defer src="catalog-view.js?v=20261117-5"></script>
+  <script defer src="listening-player.js?v=20261117-10"></script>
+  <script defer src="catalog-view.js?v=20261117-10"></script>
   <script defer src="dictation-playback.js?v=20261118-item-replay"></script>
-  <script defer src="subject-app.js?v=20261119-word-dictation"></script>
+  <script defer src="subject-app.js?v=20261120-session"></script>
 </head>
 <body>
   <div id="practice-surface">
     <header class="masthead">
       <div class="masthead-inner">
-        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学生平台首页">UNLOCK</a><span>单元练习</span></div>
+        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学习平台首页">UNLOCK</a><span>单元练习</span></div>
         <div class="header-actions">
           <div id="practice-account"></div>
           <nav class="site-links" aria-label="学生端导航">
-            <a href="../index.html">返回首页</a>
+            <a href="../index.html">返回工作区</a>
           </nav>
         </div>
       </div>
@@ -52,7 +57,7 @@
       <div class="dock-contents">
         <div id="practice-operations" aria-label="练习操作"></div>
         <section id="dictation-dock" aria-label="整组听写录音" hidden>
-          <audio preload="none"></audio>
+          <audio preload="metadata"></audio>
           <button type="button" class="button" data-dictation-start>播放听写</button>
           <p data-dictation-status role="status"></p>
           <progress max="1" value="0" aria-label="听写播放进度" hidden></progress>

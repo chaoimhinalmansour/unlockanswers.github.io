@@ -5,7 +5,11 @@
 }
 .teaching-answer p { font-size: 18px; font-weight: 650; }
 .reading-text .reading-evidence,
-.listen-study-line .listening-evidence { background: #ffe685; color: inherit; }
+.listen-study-line .listening-evidence {
+  background: var(--unlock-selected);
+  color: inherit;
+  box-shadow: inset 0 -1px var(--unlock-blue);
+}
 .teaching-explanation {
   margin-top: 9px;
   padding: 11px;
@@ -16,7 +20,7 @@
 .teaching-explanation blockquote {
   margin: 9px 0 0;
   padding: 7px 9px;
-  border-left: 3px solid #c8ddf7;
+  border-left: 3px solid var(--unlock-line);
   background: var(--surface);
   color: var(--muted);
   overflow-wrap: anywhere;

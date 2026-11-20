@@ -1,12 +1,24 @@
 "use strict";
 
 (function () {
+  const session = window.UnlockSession;
+  const active = session.requireSession();
+  if (!active) return;
+  const student = session.student(active);
+  if (active.role === "student" && !student) {
+    session.signOut("student", location.href);
+    return;
+  }
   const key = "unlock-writing-review-v1";
   const expected = "1f81fc017f9006f147330dd5e9072b98074791e9e759d3fbddfc16cab073950d";
   const form = document.getElementById("writing-password-form");
   const input = document.getElementById("writing-password");
   const submit = form.querySelector("button");
   const notice = document.getElementById("writing-entry-message");
+  const entry = document.getElementById("writing-entry");
+  document.getElementById("review-account-name").textContent = student?.name || "教师";
+  document.getElementById("review-account").hidden = false;
+  document.getElementById("review-sign-out").addEventListener("click", () => session.signOut());
   let opening = false;
 
   function loadScript(url) {
@@ -26,13 +38,15 @@
     try {
       if (!window.studentPlatformSamples) await loadScript("writing-samples.js?v=assessment-3");
       await loadScript("writing-review.js?v=assessment-3");
-      document.getElementById("writing-entry").hidden = true;
+      if (session.current()?.id !== active.id) return;
+      entry.hidden = true;
       document.getElementById("writing-review-content").hidden = false;
       notice.textContent = "";
-      try { sessionStorage.setItem(key, "1"); } catch {}
+      try { sessionStorage.setItem(key, active.id); } catch {}
       window.dispatchEvent(new Event("resize"));
       document.getElementById("writing-review-title").focus();
     } catch {
+      entry.hidden = false;
       notice.textContent = "复盘内容暂时打不开，请重试。";
       opening = false;
       submit.disabled = false;
@@ -45,10 +59,7 @@
     submit.disabled = true;
     notice.textContent = "";
     try {
-      const bytes = new TextEncoder().encode(input.value.trim());
-      const value = await crypto.subtle.digest("SHA-256", bytes);
-      const hash = Array.from(new Uint8Array(value), byte => byte.toString(16).padStart(2, "0")).join("");
-      if (hash !== expected) {
+      if (!await session.matchesPassword(input.value, expected)) {
         notice.textContent = "密码不正确，请重新输入。";
         input.select();
         return;
@@ -62,5 +73,8 @@
     }
   });
 
-  try { if (sessionStorage.getItem(key) === "1") openReview(); } catch {}
+  let allowed = false;
+  try { allowed = sessionStorage.getItem(key) === active.id; } catch {}
+  if (allowed) openReview();
+  else entry.hidden = false;
 })();

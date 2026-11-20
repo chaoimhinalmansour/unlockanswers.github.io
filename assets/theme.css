@@ -1,0 +1,41 @@
+:root {
+  color-scheme: light;
+  --unlock-white: #fff;
+  --unlock-blue: #0569b9;
+  --unlock-shell: #f3f8fc;
+  --unlock-selected: #e6f0f8;
+  --unlock-line: #c1daee;
+  --unlock-ink: #111;
+  --unlock-secondary: #555;
+  --unlock-card-radius: 18px;
+  --unlock-control-radius: 10px;
+  --unlock-card-depth: 0 2px 0 var(--unlock-selected);
+  --unlock-float-shadow: 0 6px 22px rgb(17 17 17 / 10%);
+  --unlock-scrim: rgb(17 17 17 / 33%);
+  --unlock-motion: 250ms;
+  --unlock-ease: cubic-bezier(.18, .72, .23, 1);
+  accent-color: var(--unlock-blue);
+}
+
+@keyframes unlock-card-arrival {
+  from { opacity: .86; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  :where(button, a.button, .entry a, #classroom-report) {
+    transition:
+      transform var(--unlock-motion) var(--unlock-ease),
+      background-color 150ms ease,
+      border-color 150ms ease,
+      box-shadow var(--unlock-motion) var(--unlock-ease);
+  }
+
+  :where(button:not(:disabled), a.button, .entry a, #classroom-report):active {
+    transform: translateY(1px) scale(.98);
+  }
+
+  .unlock-card-enter {
+    animation: unlock-card-arrival var(--unlock-motion) var(--unlock-ease);
+  }
+}

@@ -77,7 +77,7 @@
   padding: clamp(24px, 6vh, 46px) 24px;
   background: var(--paper);
   text-align: center;
-  box-shadow: 0 12px 46px #1d1d1f29;
+  box-shadow: 0 12px 46px rgb(17 17 17 / 16%);
 }
 .dictation-countdown:not([open]) { display: none; }
 .dictation-countdown-number {

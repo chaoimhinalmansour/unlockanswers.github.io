@@ -109,20 +109,20 @@
     if (!isSpeaking(question)) return "";
     const { first, second, draftRecordings } = attempt;
     const before = first?.recordings?.[question.id];
-    const locked = first?.results[question.id] === "correct";
     const current = second ? second.recordings?.[question.id]
-      : locked ? before : draftRecordings?.[question.id];
-    const previous = before && (second || !locked) && before.id !== current?.id
+      : draftRecordings?.[question.id] || before;
+    const previous = before && before.id !== current?.id
       ? savedClip(before, "首次录音") : "";
-    const status = locked && !second ? "首次录音" : current && before?.id === current.id
-      ? "沿用首次录音" : first ? "二次录音" : "本题录音";
-    const controls = second || locked ? "" : '<div class="voice-controls">' +
+    const revisedLabel = second && !attempt.selfCheckedAt ? "二次录音" : "主动重录";
+    const status = current && before?.id === current.id
+      ? "沿用首次录音" : first ? revisedLabel : "本题录音";
+    const controls = second ? "" : '<div class="voice-controls">' +
       '<button type="button" class="button secondary" data-record-start>' +
       (current ? "重录本题" : "开始录音") + '</button>' +
       '<button type="button" class="button" data-record-stop hidden>结束录音</button>' +
       '<span class="voice-timer" data-voice-timer hidden>0:00</span></div>';
     return '<div class="voice-field" data-voice-question="' + esc(question.id) + '">' + previous +
-      (current ? savedClip(current, status) : second || locked ? '<p>这次作答没有录音。</p>' : "") +
+      (current ? savedClip(current, status) : second ? '<p>这次作答没有录音。</p>' : "") +
       controls + '<p class="voice-message" data-voice-message role="status" hidden></p></div>';
   }
 

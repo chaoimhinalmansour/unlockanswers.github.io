@@ -1,22 +1,27 @@
 "use strict";
 
 (function () {
+  const account = window.UnlockSession;
+  const activeSession = account.requireSession("student");
+  if (!activeSession) return;
+  const student = account.student(activeSession);
+  if (!student) {
+    account.signOut("student", location.href);
+    return;
+  }
   const $ = id => document.getElementById(id);
-  const students = window.UNLOCK_STUDENTS || [];
   const data = window.UNLOCK_CLASSROOM_UNITS;
   const playback = window.UnlockDictation;
   const words = window.UnlockWordDictation;
   const intro = document.querySelector(".intro");
   const { judge } = window.UnlockRules;
+  const download = window.UnlockWorkPackage.downloadControl("primary");
   const books = { L1: 2, L2: 3 };
-  const studentSession = "unlock.classroom.student.v1";
-  const unitSession = "unlock.classroom.unit.v2";
+  const unitSession = "unlock.classroom.unit.v3:" + encodeURIComponent(storageName(student));
   const drafts = new Map();
   const maxAnswerLength = 160;
-  let student = null;
   let current = null;
   let unmountWordPanel = null;
-  let reportUrl = "";
 
   function element(tag, text, className) {
     const node = document.createElement(tag);
@@ -104,7 +109,7 @@
     const attempt = current?.attempt;
     const first = Boolean(attempt && !attempt.first);
     const replays = attempt?.first && !attempt.second ? required().map(index => ({
-      id: String(index + 1), audio: [current.unit.items[index].audio]
+      id: current.wordItems[index].id, audio: [current.wordItems[index].id]
     })) : [];
     const worksheet = attempt?.first ? current.worksheet : null;
     const playing = playback.update(worksheet, Boolean(worksheet && !attempt.second), first, replays);
@@ -114,9 +119,7 @@
   function closeWordPanel() {
     unmountWordPanel?.();
     unmountWordPanel = null;
-    if (reportUrl) URL.revokeObjectURL(reportUrl);
-    reportUrl = "";
-    $("classroom-report").hidden = true;
+    download.clear();
   }
 
   function showPicker() {
@@ -129,32 +132,46 @@
     remember(unitSession, "");
   }
 
-  function openStudent(person, restoreUnit = false) {
-    const rememberedUnit = Number(session(unitSession));
-    student = person;
+  function unitChoice(unit, selected) {
+    const label = element("label", undefined, "unit-choice");
+    const input = element("input");
+    input.type = "radio";
+    input.name = "unit";
+    input.value = String(unit.number);
+    input.checked = unit.number === selected;
+    const card = element("span", undefined, "unit-choice-body");
+    card.lang = "en";
+    const number = element("span", "Unit " + String(unit.number).padStart(2, "0"), "unit-choice-number");
+    card.append(number, element("strong", unit.topic));
+    label.append(input, card);
+    return label;
+  }
+
+  function selectedUnit() {
+    return $("unit-options").querySelector('input[name="unit"]:checked');
+  }
+
+  function openClassroom() {
+    const previousName = session("unlock.classroom.student.v1");
+    const sameStudent = previousName && [student.name, student.storageName].includes(previousName);
+    const historicUnit = sameStudent ? session("unlock.classroom.unit.v2") : null;
+    const rememberedUnit = Number(session(unitSession) ?? historicUnit);
     showPicker();
-    remember(studentSession, person?.name || "");
-    $("login").hidden = Boolean(person);
-    $("classwork").hidden = !person;
-    $("account").hidden = !person;
+    $("classwork").hidden = false;
+    $("account").hidden = false;
     $("availability").textContent = "";
-    if (!person) {
-      $("student-select").value = "";
-      $("student-password").value = "";
-      $("student-select").focus();
-      return;
-    }
-    $("student-name").textContent = person.name;
-    const book = books[person.level];
+    $("student-name").textContent = student.name;
+    const book = books[student.level];
     const units = data.books[book]?.units || [];
-    $("book-label").textContent = book ? "Book " + book : person.level;
+    $("book-label").textContent = book ? "Book " + book : student.level;
     $("unit-form").hidden = !units.length;
     if (!units.length) {
       $("availability").textContent = "当前级别暂无可用的课前听写。";
       return;
     }
-    $("unit-select").replaceChildren(...units.map(unit => new Option(unitLabel(unit), unit.number)));
-    const unit = restoreUnit && units.find(item => item.number === rememberedUnit);
+    const unit = units.find(item => item.number === rememberedUnit);
+    const selected = unit?.number || units[0].number;
+    $("unit-options").replaceChildren(...units.map(item => unitChoice(item, selected)));
     if (unit) openUnit(unit);
   }
 
@@ -162,10 +179,13 @@
     const book = books[student.level];
     const name = [storageName(student), student.level, student.adminClass].map(encodeURIComponent).join(":");
     const key = ["unlock.classroom.whole-dictation.v2", name, book, unit.number, unit.revision].join(":");
+    const wordItems = unit.items.map((item, index) => words.makeItem(String(index + 1), index + 1, item.word, item.keys));
+    const audio = Object.fromEntries(wordItems.map(item => [item.id, {
+      file: words.audioPath(item), label: "第 " + item.number + " 题单词音频"
+    }]));
     current = {
       key, unit, showAll: false, attempt: loadAttempt(key, unit.items.length),
-      wordItems: unit.items.map((item, index) => words.makeItem(String(index + 1), index + 1, item.word, item.keys)),
-      worksheet: { key, dictation: { file: unit.file, count: unit.items.length }, unit: { audio: data.audio } }
+      wordItems, worksheet: { key, dictation: { file: unit.file, count: unit.items.length }, unit: { audio } }
     };
     remember(unitSession, String(unit.number));
     intro.hidden = true;
@@ -175,6 +195,7 @@
     $("save-status").textContent = "";
     render();
     const play = $("classroom-word-panel").querySelector("[data-wd-play]");
+    play?.closest(".wd-question").classList.add("unlock-card-enter");
     const focus = !current.attempt.first && play ? play : $("phase-title");
     focus.focus({ preventScroll: true });
   }
@@ -243,18 +264,35 @@
   }
 
   function updateWordReport() {
-    const { wordItems, attempt } = current;
-    if (!wordItems.every(item => words.complete(item, attempt.wordDictation)) || reportUrl) return;
+    const { key, unit, wordItems, attempt, worksheet: playbackSheet } = current;
+    const legacy = Boolean(attempt.first);
+    if (legacy ? !attempt.second : !wordItems.every(item => words.complete(item, attempt.wordDictation))) return;
     const title = $("set-title").textContent + " 课前听写";
-    const printable = window.UnlockReport.html({
-      student, title, attempt, dictationItems: wordItems,
-      sections: [{ name: "听写作答记录", questions: wordItems }]
+    const learner = student;
+    const book = books[learner.level];
+    const worksheet = { id: "B" + book + "U" + String(unit.number).padStart(2, "0"),
+      revision: unit.revision, book, unit: unit.number, code: "CLASSROOM_DICTATION" };
+    download.show($("classroom-report"), key + ":" + attempt.sequence, () => {
+      if (!legacy) {
+        return window.UnlockReport.prepare({
+          student: learner, title, worksheet, attempt, dictationItems: wordItems,
+          sections: [{ name: "听写作答记录", questions: wordItems }]
+        });
+      }
+      const questions = wordItems.map(item => ({
+        id: item.id, number: item.number, kind: "单词听写", prompt: "听写第 " + item.number + " 题",
+        type: "text", keys: item.keys, audio: [item.id]
+      }));
+      const capture = (values, time) => ({
+        time, answers: Object.fromEntries(questions.map((q, index) => [q.id, values[index]])),
+        results: Object.fromEntries(questions.map((q, index) => [q.id, judge(q, values[index])]))
+      });
+      return window.UnlockReport.prepare({
+        student: learner, title, worksheet, tracks: playbackSheet.unit.audio,
+        attempt: { completedAt: attempt.completedAt, first: capture(attempt.first), second: capture(attempt.second, attempt.completedAt) },
+        sections: [{ name: "听写作答记录", questions }]
+      });
     });
-    reportUrl = URL.createObjectURL(new Blob([printable], { type: "text/html;charset=utf-8" }));
-    const link = $("classroom-report");
-    link.href = reportUrl;
-    link.download = title + " " + student.name + " 作答单.html";
-    link.hidden = false;
   }
 
   function render() {
@@ -301,6 +339,7 @@
     $("submit").textContent = !attempt.first ? "首次提交" : active.size ? "提交订正" : "查看结果";
     updateProgress();
     updatePlayback();
+    updateWordReport();
   }
 
   function commitFirst() {
@@ -334,7 +373,7 @@
       return;
     }
     const second = attempt.draft.map((value, index) => right(index, attempt.first[index]) ? attempt.first[index] : value);
-    if (saveAttempt({ second })) {
+    if (saveAttempt({ second, completedAt: new Date().toISOString() })) {
       render();
       $("phase-title").focus();
     }
@@ -373,42 +412,17 @@
     $("save-status").textContent = "这份听写已在另一个窗口更新。";
   });
 
-  for (const person of students) $("student-select").add(new Option(person.name, person.name));
-  $("login-form").addEventListener("submit", event => {
-    event.preventDefault();
-    const person = students.find(entry => entry.name === $("student-select").value);
-    const password = $("student-password");
-    const expected = person?.name.match(/（([^）]+)）$/)?.[1];
-    if (!expected || password.value.trim() !== expected) {
-      $("login-message").textContent = "请检查所选姓名和英文名密码。";
-      password.setAttribute("aria-invalid", "true");
-      password.focus();
-      password.select();
-      return;
-    }
-    password.value = "";
-    $("login-message").textContent = "";
-    password.removeAttribute("aria-invalid");
-    openStudent(person);
-    if (!$("unit-form").hidden) $("unit-select").focus();
-  });
-  for (const field of ["student-select", "student-password"]) $(field).addEventListener("input", () => {
-    if (field === "student-select") $("student-password").value = "";
-    $("student-password").removeAttribute("aria-invalid");
-    $("login-message").textContent = "";
-  });
   $("unit-form").addEventListener("submit", event => {
     event.preventDefault();
-    const unit = data.books[books[student?.level]]?.units.find(item => item.number === Number($("unit-select").value));
+    const number = Number(selectedUnit()?.value);
+    const unit = data.books[books[student?.level]]?.units.find(item => item.number === number);
     if (unit) openUnit(unit);
   });
   $("back-units").addEventListener("click", () => {
     showPicker();
-    $("unit-select").focus();
+    selectedUnit()?.focus();
   });
-  $("switch-student").addEventListener("click", () => openStudent(null));
-  const name = session(studentSession);
-  const previous = name && students.find(person => person.name === name || person.storageName === name);
-  if (previous) openStudent(previous, true);
+  $("classroom-sign-out").addEventListener("click", () => account.signOut());
+  openClassroom();
 })();
 

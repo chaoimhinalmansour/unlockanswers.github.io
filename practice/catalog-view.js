@@ -72,22 +72,60 @@
       Object.entries(subjects).map(([skill, title]) => subjectCard(skill, title, activityFor, isSpecial)).join("") + "</div></section>";
   }
 
-  function loadUnit(meta) {
-    const current = window.UNLOCK_UNITS[meta.id];
-    if (current?.revision === meta.revision) return Promise.resolve(current);
-
-    return new Promise((resolve, reject) => {
-      const script = document.createElement("script");
-      script.src = (meta.scriptPath || "data/alpha-a4/" + meta.id.toLowerCase() + ".js") + "?v=" + meta.revision;
-      script.addEventListener("error", () => reject(new Error("Cannot load unit")), { once: true });
-      script.addEventListener("load", () => {
-        const unit = window.UNLOCK_UNITS[meta.id];
-        if (unit?.revision === meta.revision) resolve(unit);
-        else reject(new Error("Unit revision mismatch"));
-      }, { once: true });
-      document.head.append(script);
-    });
+  function createOpening(meta, code, view) {
+    const controller = new AbortController();
+    const timer = window.setTimeout(() => controller.abort(), 15000);
+    const finish = () => window.clearTimeout(timer);
+    return {
+      meta, code, view, failed: false, signal: controller.signal, finish,
+      cancel() {
+        finish();
+        controller.abort();
+      }
+    };
   }
 
-  window.UnlockPracticeCatalog = { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory, loadUnit };
+  function renderOpening(opening, teaching = false) {
+    const { meta, code, failed } = opening;
+    const title = unitLabel(meta) + " " + subjectTitle(code);
+    const mode = teaching ? "讲评" : "练习";
+    return '<section class="empty-state unit-opening' + (failed ? "" : " is-loading") +
+      '" aria-labelledby="opening-title"><h1 id="opening-title">' + esc(title) + "</h1>" +
+      '<p class="unit-opening-status" role="status">' +
+      (failed ? "暂时无法载入这份" + mode + "。" : "正在载入" + mode + "。") + '</p>' +
+      '<div class="unit-opening-actions">' +
+      (failed ? '<button type="button" class="button" data-action="retry-open">重试</button>' : "") +
+      '<button type="button" class="button secondary" data-action="directory">返回目录</button></div></section>';
+  }
+
+  async function readResource(path, signal) {
+    const response = await fetch(path, { signal });
+    if (!response.ok) throw new Error("Cannot load resource");
+    return response;
+  }
+
+  async function loadUnit(meta, signal) {
+    const current = window.UNLOCK_UNITS[meta.id];
+    if (current?.revision === meta.revision) return current;
+
+    const path = (meta.scriptPath || "data/alpha-a4/" + meta.id.toLowerCase() + ".js") + "?v=" + meta.revision;
+    const response = await readResource(path, signal);
+    const source = (await response.text()).trim();
+    // The data files wrap generated JSON in one assignment to this unit.
+    const prefix = "window.UNLOCK_UNITS[" + JSON.stringify(meta.id) + "]";
+    const assignment = source.slice(prefix.length).trimStart();
+    if (!source.startsWith(prefix) || !assignment.startsWith("=") || !assignment.endsWith(";")) {
+      throw new Error("Unexpected unit data format");
+    }
+    const unit = JSON.parse(assignment.slice(1, -1));
+    if (unit?.id !== meta.id || unit.revision !== meta.revision) throw new Error("Unit revision mismatch");
+    if (signal?.aborted) throw new Error("Unit loading cancelled");
+    window.UNLOCK_UNITS[meta.id] = unit;
+    return unit;
+  }
+
+  window.UnlockPracticeCatalog = {
+    specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory,
+    createOpening, renderOpening, readResource, loadUnit
+  };
 })();

@@ -1,9 +1,11 @@
 "use strict";
 
 (function () {
+  const session = window.UnlockSession;
+  if (!session.requireSession("teacher")) return;
   const { escapeHTML: esc } = window.UnlockRules;
-  const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory, loadUnit } =
-    window.UnlockPracticeCatalog;
+  const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory,
+    createOpening, renderOpening, readResource, loadUnit } = window.UnlockPracticeCatalog;
   const { render: renderWorkbench, readingSource } = window.UnlockWorkbench;
   const { renderSolution, markEvidence } = window.UnlockWorksheet;
   const screens = window.UnlockScreens;
@@ -13,24 +15,12 @@
   const account = document.getElementById("practice-account");
   const dock = document.getElementById("practice-docks");
   const operations = document.getElementById("practice-operations");
-  const sessionKey = "unlock.practice.teaching.v1";
-  const expected = "1f81fc017f9006f147330dd5e9072b98074791e9e759d3fbddfc16cab073950d";
   const guides = new Map();
-  const evidenceLoads = new Map();
+  const evidenceCache = new Map();
   const state = {
-    authorized: false, book: 2, unit: 1, worksheet: null,
-    focus: 0, solutionShown: false, largePicture: false, readingOffset: 0, loading: false,
-    notice: "", navigation: 0
+    book: 2, unit: 1, worksheet: null,
+    focus: 0, solutionShown: false, largePicture: false, readingOffset: 0, opening: null
   };
-
-  function entry() {
-    return '<section class="entry-layout"><h1>教学与讲评</h1>' +
-      '<form id="teacher-form" class="identity-form teacher-login">' +
-      '<div><label for="teacher-password" class="field-label">教师密码</label>' +
-      '<input id="teacher-password" class="text-input" type="password" autocomplete="off" required ' +
-      'aria-describedby="teacher-message"></div><button type="submit" class="button">进入讲评</button>' +
-      '<p id="teacher-message" class="feedback" role="status" hidden></p></form></section>';
-  }
 
   function currentMeta() {
     return findMeta(state.book, state.unit);
@@ -100,17 +90,14 @@
   }
 
   function render() {
-    const working = Boolean(state.authorized && state.worksheet && !state.loading);
+    const working = Boolean(state.worksheet && !state.opening);
     const priorPassage = app.querySelector("#reading-screen");
     if (priorPassage) state.readingOffset = priorPassage.scrollTop;
-    const notice = state.notice ? '<p class="feedback" role="status">' + esc(state.notice) + "</p>" : "";
-    const content = !state.authorized ? entry()
-      : state.loading ? '<p class="empty-state panel" role="status">正在打开讲评。</p>'
+    const content = state.opening ? renderOpening(state.opening, true)
       : working ? review() : renderDirectory(currentMeta());
     surface.classList.toggle("in-worksheet", working);
-    account.innerHTML = state.authorized
-      ? '<button type="button" class="text-action subtle-action" data-action="sign-out">退出讲评</button>' : "";
-    app.innerHTML = notice + content;
+    app.innerHTML = content;
+    if (working) app.querySelector(".workspace-question .screen-content")?.classList.add("unlock-card-enter");
     renderDocks(working);
     const passage = app.querySelector("#reading-screen");
     if (passage) {
@@ -121,50 +108,49 @@
     else screens.connect(app);
   }
 
-  async function loadGuide(meta) {
+  async function loadGuide(meta, signal) {
     const saved = guides.get(meta.id);
-    if (saved) return saved;
+    if (saved?.revision === meta.revision) return saved;
     const path = meta.guidePath || "data/alpha-a4-teaching/" + meta.id.toLowerCase() + ".json";
-    const response = await fetch(path + "?v=" + (meta.guidePath ? meta.revision : "20261116-8"));
-    if (!response.ok) throw new Error("Teacher source unavailable");
+    const response = await readResource(path + "?v=" + (meta.guidePath ? meta.revision : "20261116-8"), signal);
     const result = await response.json();
     if (result.id !== meta.id || result.revision !== meta.revision) throw new Error("Teacher source revision mismatch");
     guides.set(meta.id, result);
     return result;
   }
 
-  async function loadEvidence(meta, code) {
+  async function loadEvidence(meta, code, signal) {
     const skill = { R: "reading", L: "listening" }[code[0]];
     if (meta.unit === specialUnit || !skill) return null;
-    if (!evidenceLoads.has(skill)) {
-      const asset = "data/alpha-a4-teaching/" + skill + "-evidence.json?v=20261117-4";
-      evidenceLoads.set(skill, fetch(asset).then(response => {
-        if (!response.ok) throw new Error("Teaching evidence unavailable");
-        return response.json();
-      }));
-    }
     try {
-      const unit = (await evidenceLoads.get(skill))[meta.id];
+      let data = evidenceCache.get(skill);
+      if (!data) {
+        const asset = "data/alpha-a4-teaching/" + skill + "-evidence.json?v=20261117-4";
+        const response = await readResource(asset, signal);
+        data = await response.json();
+      }
+      const unit = data[meta.id];
       if (unit?.revision !== meta.revision) throw new Error("Teaching evidence revision mismatch");
+      evidenceCache.set(skill, data);
       return unit.sheets[code];
     } catch {
-      evidenceLoads.delete(skill);
+      if (!signal.aborted) evidenceCache.delete(skill);
       return null;
     }
   }
 
   async function openReview(code) {
     const meta = currentMeta();
-    if (!state.authorized || state.loading || !allowsWorksheet(meta, code)) return;
-    const ticket = ++state.navigation;
-    state.loading = true;
-    state.notice = "";
+    if ((state.opening && !state.opening.failed) || !allowsWorksheet(meta, code)) return;
+    const opening = createOpening(meta, code);
+    state.opening = opening;
     render();
+    app.focus({ preventScroll: true });
     try {
       const [unit, bank, evidence] = await Promise.all([
-        loadUnit(meta), loadGuide(meta), loadEvidence(meta, code)
+        loadUnit(meta, opening.signal), loadGuide(meta, opening.signal), loadEvidence(meta, code, opening.signal)
       ]);
-      if (ticket !== state.navigation) return;
+      if (opening !== state.opening) return;
       const sheet = unit.sheets[code];
       const guide = bank.sheets[code];
       if (guide.length !== sheet.questions.length ||
@@ -181,26 +167,33 @@
       state.largePicture = false;
       state.readingOffset = 0;
     } catch {
-      if (ticket === state.navigation) state.notice = "这份讲评暂时打不开，请从目录重试。";
+      if (opening === state.opening) {
+        opening.failed = true;
+        opening.cancel();
+        state.worksheet = null;
+      }
     } finally {
-      if (ticket === state.navigation) {
-        state.loading = false;
+      opening.finish();
+      if (opening === state.opening) {
+        if (!opening.failed) state.opening = null;
         render();
         window.scrollTo(0, 0);
-        app.focus({ preventScroll: true });
+        const focusTarget = opening.failed ? app.querySelector('[data-action="retry-open"]') : app;
+        focusTarget?.focus({ preventScroll: true });
       }
     }
   }
 
-  function resetView() {
-    state.navigation++;
-    state.loading = false;
+  function resetView(returnToTask = false) {
+    const code = returnToTask && (state.worksheet?.code || state.opening?.code);
+    state.opening?.cancel();
+    state.opening = null;
     state.worksheet = null;
     state.solutionShown = false;
-    state.notice = "";
     render();
     window.scrollTo(0, 0);
-    app.focus({ preventScroll: true });
+    const focusTarget = code ? app.querySelector('[data-task="' + code + '"]') : app;
+    focusTarget?.focus({ preventScroll: true });
   }
 
   function go(index) {
@@ -213,39 +206,9 @@
     document.getElementById("item-" + question.id)?.focus({ preventScroll: true });
   }
 
-  surface.addEventListener("submit", async event => {
-    const form = event.target;
-    if (form.id !== "teacher-form") return;
-    event.preventDefault();
-    const button = form.querySelector("button");
-    if (button.disabled) return;
-    const input = form.querySelector("input");
-    const message = document.getElementById("teacher-message");
-    button.disabled = true;
-    message.hidden = true;
-    try {
-      const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(input.value.trim()));
-      const supplied = Array.from(new Uint8Array(digest), value => value.toString(16).padStart(2, "0")).join("");
-      if (supplied !== expected) {
-        message.textContent = "密码不正确，请重新输入。";
-        message.hidden = false;
-        input.select();
-        return;
-      }
-      try { sessionStorage.setItem(sessionKey, "1"); } catch {}
-      state.authorized = true;
-      resetView();
-    } catch {
-      message.textContent = "请从网站或本机预览地址打开后重试。";
-      message.hidden = false;
-    } finally {
-      button.disabled = false;
-    }
-  });
-
   surface.addEventListener("click", event => {
     const button = event.target.closest("button");
-    if (!state.authorized || !button) return;
+    if (!button) return;
     const { book, unit, task, questionNumber, step, action } = button.dataset;
     if (book) {
       state.book = Number(book);
@@ -254,16 +217,16 @@
       app.querySelector('[data-book="' + book + '"]')?.focus();
     } else if (unit) {
       state.unit = Number(unit);
-      state.notice = "";
       render();
       app.querySelector('[data-unit="' + unit + '"]')?.focus();
     } else if (action === "special") {
       state.unit = specialUnit;
-      state.notice = "";
       render();
       app.querySelector('[data-action="special"]')?.focus({ preventScroll: true });
     } else if (task) {
       openReview(task);
+    } else if (action === "retry-open" && state.opening?.failed) {
+      openReview(state.opening.code);
     } else if (questionNumber) {
       go(Number(questionNumber) - 1);
     } else if (step) {
@@ -275,14 +238,13 @@
       render();
       app.querySelector('[data-action="expand-photo"]')?.focus({ preventScroll: true });
     } else if (action === "directory") {
-      resetView();
+      resetView(true);
     } else if (action === "sign-out") {
-      try { sessionStorage.setItem(sessionKey, ""); } catch {}
-      state.authorized = false;
-      resetView();
+      session.signOut();
     }
   });
 
-  try { state.authorized = sessionStorage.getItem(sessionKey) === "1"; } catch {}
+  account.innerHTML = '<div class="identity-info"><strong>教师</strong></div>' +
+    '<button type="button" class="text-action subtle-action" data-action="sign-out">退出登录</button>';
   render();
 })();

@@ -223,10 +223,12 @@ html:has(#practice-surface.in-worksheet) {
   .in-worksheet:not(.tight-workspace) .question-chip { min-width: 38px; min-height: 38px; }
   .screen-pages button { min-height: 32px; }
 }
-@media (max-width: 860px) {
+@media (670px < width <= 860px) {
   .in-worksheet .workspace.with-material:not(.wide-picture) {
     grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr);
   }
+}
+@media (max-width: 860px) {
   .in-worksheet .question-card { padding-inline: 12px; }
   #practice-surface.in-worksheet .question-pane .q-prompt { font-size: 21px; }
   .in-worksheet .question-card .options:has(.option:nth-child(6)):not(:has(.option:nth-child(9))) { column-gap: 5px; }
