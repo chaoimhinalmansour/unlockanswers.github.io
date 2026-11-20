@@ -54,7 +54,7 @@
   border-color: var(--unlock-line);
   background: var(--tint);
 }
-.listen-study-actions button:disabled { opacity: .6; }
+.listen-study-actions button:disabled { border-style: dashed; }
 [data-listen-study-message] { margin: 12px; color: var(--muted); font-size: 14px; }
 .listen-study-lines {
   flex: 1;

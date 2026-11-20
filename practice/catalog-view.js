@@ -7,6 +7,8 @@
   const specials = window.UNLOCK_SPECIALS || [];
   const specialUnit = "STP1116";
   const subjects = { L: "Listening", S: "Speaking", R: "Reading", W: "Writing" };
+  const ui = window.UnlockStudentUI;
+  const label = (en, zh) => ui ? ui.label(en, zh) : esc(zh || en);
 
   function unitNumber(unit) {
     return String(unit).padStart(2, "0");
@@ -22,8 +24,8 @@
   }
 
   function unitLabel(meta) {
-    const label = meta.unit === specialUnit ? meta.topic : "Unit " + unitNumber(meta.unit);
-    return "Book " + meta.book + " " + label;
+    const name = meta.unit === specialUnit ? meta.topic : "Unit " + unitNumber(meta.unit);
+    return "Book " + meta.book + " " + name;
   }
 
   function subjectTitle(code) {
@@ -32,9 +34,11 @@
 
   function taskButton(code, title, activityFor) {
     const activity = activityFor?.(code);
-    const label = activity ? '<span class="mini-status ' + activity.style + '">' + activity.name + "</span>" : "";
+    const status = activity ? '<span class="mini-status ' + activity.style + '">' +
+      label(activity.english, activity.name) + "</span>" : "";
+    const name = activity && code.endsWith("_STP") ? label("Open Practice", title) : esc(title);
     return '<button type="button" class="assignment-button' + (activity?.style ? " started" : "") +
-      '" data-task="' + esc(code) + '"><strong>' + esc(title) + "</strong>" + label + "</button>";
+      '" data-task="' + esc(code) + '"><strong>' + name + "</strong>" + status + "</button>";
   }
 
   function subjectCard(skill, title, activityFor, isSpecial) {
@@ -50,9 +54,8 @@
     const teaching = !activityFor;
     const special = findMeta(meta.book, specialUnit);
     const isSpecial = meta.unit === specialUnit;
-    const specialButton = special ? '<nav class="unit-picker special-picker" aria-label="特别练习">' +
-      '<button type="button" data-action="special" aria-pressed="' + isSpecial + '">' +
-      esc(special.topic) + '</button></nav>' : "";
+    const specialButton = special ? '<button type="button" data-action="special" aria-pressed="' + isSpecial + '">' +
+      (teaching ? esc(special.topic) : label("Midterm Practice", "期中特别练习")) + '</button>' : "";
     const section = isSpecial ? "Book " + meta.book : "Unit " + unitNumber(meta.unit);
     const units = catalog.filter(item => item.book === meta.book).map(item =>
       '<button type="button" data-unit="' + item.unit + '" aria-pressed="' + (item.unit === meta.unit) +
@@ -63,11 +66,22 @@
         '<button type="button" data-book="' + book + '" aria-pressed="' + (book === meta.book) +
         '">Book ' + book + "</button>"
       ).join("") + "</nav>" : "";
+    if (!teaching) {
+      const topic = isSpecial ? label("Midterm Practice", "期中特别练习")
+        : label(section + " " + meta.topic, ui?.topicTranslation(meta.topic));
+      return '<section class="catalog"><div class="catalog-head"><h1 class="ui-page-title">' +
+        label("Unit Practice", "单元练习") + '</h1><p>Book ' + meta.book + '</p></div>' +
+        '<nav class="unit-picker directory-picker" aria-label="Units 单元">' + units + specialButton + '</nav>' +
+        '<div class="unit-heading"><h2>' + topic + '</h2></div><div class="catalog-grid">' +
+        Object.entries(subjects).map(([skill, title]) => subjectCard(skill, title, activityFor, isSpecial)).join("") +
+        "</div></section>";
+    }
     return '<section class="catalog"><div class="catalog-head"><h1>Book ' + meta.book +
       (teaching ? " 讲评目录" : " 作业目录") + "</h1><p>" +
       (teaching ? "选择练习和科目，打开讲评。" : "选择练习和科目，开始作答。") +
       '</p></div>' + books + '<nav class="unit-picker" aria-label="选择单元">' + units + '</nav>' +
-      specialButton + '<div class="unit-heading"><span>' + esc(section) + "</span><h2>" +
+      (specialButton ? '<nav class="unit-picker special-picker" aria-label="特别练习">' + specialButton + '</nav>' : "") +
+      '<div class="unit-heading"><span>' + esc(section) + "</span><h2>" +
       esc(meta.topic) + '</h2></div><div class="catalog-grid">' +
       Object.entries(subjects).map(([skill, title]) => subjectCard(skill, title, activityFor, isSpecial)).join("") + "</div></section>";
   }
@@ -85,10 +99,25 @@
     };
   }
 
+  function renderDirectoryBack() {
+    return '<button type="button" class="ui-nav ui-back" data-action="directory" ' +
+      'aria-label="Back to the Unit Practice directory 返回单元练习目录">' + label("Back", "返回上一级") + '</button>';
+  }
+
   function renderOpening(opening, teaching = false) {
     const { meta, code, failed } = opening;
-    const title = unitLabel(meta) + " " + subjectTitle(code);
+    const context = ui && !teaching && meta.unit === specialUnit ? "Book " + meta.book + " Midterm Practice" : unitLabel(meta);
+    const title = context + " " + subjectTitle(code);
     const mode = teaching ? "讲评" : "练习";
+    if (ui && !teaching) {
+      return '<section class="empty-state unit-opening' + (failed ? "" : " is-loading") +
+        '" aria-labelledby="opening-title">' + renderDirectoryBack() + '<h1 id="opening-title">' + esc(title) + '</h1>' +
+        '<p class="unit-opening-status" role="status">' +
+        (failed ? label("Practice could not load.", "暂时无法载入这份练习。") : label("Loading practice", "正在载入练习")) +
+        '</p>' +
+        (failed ? '<button type="button" class="button ui-action ui-primary" data-action="retry-open">' +
+          label("Retry", "重试") + '</button>' : '') + '</section>';
+    }
     return '<section class="empty-state unit-opening' + (failed ? "" : " is-loading") +
       '" aria-labelledby="opening-title"><h1 id="opening-title">' + esc(title) + "</h1>" +
       '<p class="unit-opening-status" role="status">' +
@@ -126,6 +155,6 @@
 
   window.UnlockPracticeCatalog = {
     specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory,
-    createOpening, renderOpening, readResource, loadUnit
+    createOpening, renderOpening, renderDirectoryBack, readResource, loadUnit
   };
 })();

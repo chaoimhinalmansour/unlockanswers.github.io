@@ -9,11 +9,13 @@
     session.signOut("student", location.href);
     return;
   }
+  const { label, setLabel } = window.UnlockStudentUI;
+  const resetNotice = label("This exercise was reset in another window.", "这份练习已在另一个窗口重置。");
   const { isAnswered, judge, escapeHTML: esc } = window.UnlockRules;
   const { sectionName, renderOrder, voiceHTML } = window.UnlockWorksheet;
   const { render: renderWorkbench, applyQuestionState, isDictation, questionStops } = window.UnlockWorkbench;
   const { specialUnit, findMeta, allowsWorksheet, unitLabel, subjectTitle, renderDirectory,
-    createOpening, renderOpening, loadUnit } = window.UnlockPracticeCatalog;
+    createOpening, renderOpening, renderDirectoryBack, loadUnit } = window.UnlockPracticeCatalog;
   const listening = window.UnlockListening;
   const dictation = window.UnlockDictation;
   const words = window.UnlockWordDictation;
@@ -99,7 +101,7 @@
     const { key, baseKey } = state.worksheet;
     const active = activeAttemptKey(baseKey);
     if (active !== key) {
-      showAttempt(active, "这份练习已在另一个窗口重置。");
+      showAttempt(active, resetNotice);
       return false;
     }
     if (state.storageWorks) {
@@ -108,7 +110,7 @@
         if (latest.sequence !== state.attempt.sequence) {
           state.attempt = latest;
           pickFocus(state.focus);
-          state.notice = "这个练习已在另一个窗口更新。已载入最新作答。";
+          state.notice = label("The latest responses from another window have loaded.", "这个练习已在另一个窗口更新。已载入最新作答。");
           render();
           return false;
         }
@@ -173,33 +175,34 @@
   }
 
   function status(attempt, code) {
-    if (attempt.second) return { name: "已完成", style: "finished" };
+    if (attempt.second) return { name: "已完成", english: "Completed", style: "finished" };
     if (attempt.first) {
       const entries = Object.entries(attempt.first.results);
       const check = code[0] === "S" || entries.some(([, result]) => result === "ungraded");
       const correct = entries.some(([id, result]) =>
         (result === "incorrect" || result === "blank") && !attempt.wordDictation?.[id]);
-      return { name: check && !correct ? "待自检" : "待订正", style: "correction" };
+      return check && !correct
+        ? { name: "待自检", english: "Self-Check", style: "correction" }
+        : { name: "待订正", english: "Needs Correction", style: "correction" };
     }
     if (Object.keys(attempt.draft).length || Object.keys(attempt.draftRecordings || {}).length ||
         Object.keys(attempt.wordDictation || {}).length) {
-      return { name: "作答中", style: "in-progress" };
+      return { name: "作答中", english: "In Progress", style: "in-progress" };
     }
-    return { name: "未开始", style: "" };
+    return { name: "未开始", english: "Not Started", style: "" };
   }
 
   function identityBar() {
     const student = state.student;
     return '<div class="identity-info"><strong>' + esc(student.name) +
       '</strong><span>' + esc(student.level) + '</span><span class="class-label">' +
-      esc(student.adminClass) + '</span></div><button type="button" class="text-action subtle-action" ' +
-      'data-action="identity">退出登录</button>';
+      esc(student.adminClass) + '</span></div>';
   }
 
   function directory() {
     const meta = currentMeta();
-    if (!meta) return '<section class="empty-state panel"><h1>练习暂未开放</h1><p>' +
-      esc(state.student.level) + " 暂未开放单元练习。</p></section>";
+    if (!meta) return '<section class="empty-state panel"><h1>' + label("Practice Unavailable", "练习暂未开放") +
+      "</h1><p>" + label("No unit practice for " + state.student.level + " yet.", state.student.level + " 暂未开放单元练习。") + "</p></section>";
     return renderDirectory(meta, code => status(worksheetAttempt(meta, code).attempt, code));
   }
 
@@ -250,8 +253,10 @@
     const check = worksheet.questions.some(selfCheckQuestion);
     const correction = worksheet.questions.some(isRequired);
     const detail = !check ? "" : worksheet.code[0] === "S"
-      ? "回听录音，想一想是否答到题目要求。可以沿用录音或主动重录。"
-      : "回读自己的答案，想一想是否答到题目要求。可以保留原稿或主动修改。";
+      ? label("Listen back and check whether you answered the question. You can keep the recording or record again.",
+        "回听录音，想一想是否答到题目要求。可以沿用录音或主动重录。")
+      : label("Reread your answer and check whether it addresses the question. You can keep it or revise it.",
+        "回读自己的答案，想一想是否答到题目要求。可以保留原稿或主动修改。");
     return { check, correction, detail };
   }
 
@@ -259,29 +264,33 @@
     const { worksheet, attempt } = state;
     if (attempt.second) {
       const stats = report.summary(worksheet.questions, attempt);
-      if (!stats.objective) return { max: 0, detail: attempt.selfCheckedAt ? "已完成自检。" : "已记录作答。" };
-      return { label: "客观题答对", now: stats.second, max: stats.objective,
-        detail: "首次 " + stats.first + " / " + stats.objective + "，二次 " + stats.second + " / " + stats.objective +
-          (usesWordDictation() ? "（听写按完整拼写计）" : "") };
+      if (!stats.objective) return { max: 0, detail: attempt.selfCheckedAt
+        ? label("Self-check complete.", "已完成自检。") : label("Responses saved.", "已记录作答。") };
+      const first = stats.first + " / " + stats.objective;
+      const second = stats.second + " / " + stats.objective;
+      const dictationNote = usesWordDictation();
+      return { name: "客观题答对", english: "Objective Items Correct", now: stats.second, max: stats.objective,
+        detail: label("First " + first + ", second " + second + (dictationNote ? " (full spellings count)" : ""),
+          "首次 " + first + "，二次 " + second + (dictationNote ? "（听写按完整拼写计）" : "")) };
     }
     if (attempt.first) {
       const wrong = worksheet.questions.filter(isRequired);
-      return { label: "已填写订正", now: wrong.filter(hasResponse).length, max: wrong.length, detail: review().detail };
+      return { name: "已填写订正", english: "Corrections Entered", now: wrong.filter(hasResponse).length, max: wrong.length, detail: review().detail };
     }
     if (worksheet.code[0] === "S") {
-      return { label: "已录音", now: Object.keys(attempt.draftRecordings || {}).length, max: worksheet.questions.length };
+      return { name: "已录音", english: "Recordings", now: Object.keys(attempt.draftRecordings || {}).length, max: worksheet.questions.length };
     }
-    return { label: "已作答", now: worksheet.questions.filter(hasResponse).length, max: worksheet.questions.length };
+    return { name: "已作答", english: "Answered", now: worksheet.questions.filter(hasResponse).length, max: worksheet.questions.length };
   }
 
   function progressHTML(p) {
-    if (!p.max) return '<p class="small">' + esc(p.detail || "没有待订正的客观题。") + "</p>";
+    if (!p.max) return '<p class="small">' + (p.detail || label("No objective items to correct.", "没有待订正的客观题。")) + "</p>";
     const percent = Math.round(p.now / p.max * 100);
-    return '<div class="work-progress-line"><span>' + esc(p.label) + '</span><strong>' + p.now + " / " +
-      p.max + '</strong></div><div class="work-meter" role="progressbar" aria-label="' + esc(p.label) +
+    return '<div class="work-progress-line">' + label(p.english, p.name) + '<strong>' + p.now + " / " +
+      p.max + '</strong></div><div class="work-meter" role="progressbar" aria-label="' + esc(p.english) +
       '" aria-valuenow="' + p.now + '" aria-valuemin="0" aria-valuemax="' + (p.max || 1) +
       '"><span style="width:' + percent + '%"></span></div>' +
-      (p.detail ? '<p class="small progress-detail">' + esc(p.detail) + "</p>" : "");
+      (p.detail ? '<p class="small progress-detail">' + p.detail + "</p>" : "");
   }
 
   function updateProgress() {
@@ -320,18 +329,20 @@
     const finished = Boolean(attempt.second);
     const correction = Boolean(attempt.first) && !finished;
     const pending = correction ? review() : null;
-    const phase = finished ? "已完成" : !pending ? "首次作答"
-      : pending.check ? (pending.correction ? "订正和自检" : "自检") : "订正";
-    const context = unitLabel(worksheet.unit);
+    const phase = finished ? label("Completed", "已完成") : !pending ? label("First Attempt", "首次作答")
+      : pending.check ? (pending.correction ? label("Correction and Self-Check", "订正和自检")
+        : label("Self-Check", "自检")) : label("Correction", "订正");
+    const context = worksheet.unit.unit === specialUnit
+      ? label("Book " + worksheet.unit.book + " Midterm Practice", "期中特别练习") : esc(unitLabel(worksheet.unit));
     const title = subjectTitle(worksheet.code);
     const panel = renderWorkbench(worksheet, attempt, {
       current: focusedQuestion(), visible: questionsInView(), all: state.all,
       largePicture: state.largePicture, answered: hasResponse, editable, wordDictation: usesWordDictation()
     });
     return '<div class="quiz-header"><div class="session-top"><div><div class="quiz-location">' +
-      '<button type="button" class="text-action subtle-action" data-action="directory">作业目录</button>' +
-      '<p class="page-context">' + esc(context) + '</p>' +
-      '<button type="button" class="text-action subtle-action" data-action="reset-exercise">重置练习</button>' +
+      renderDirectoryBack() +
+      '<p class="page-context">' + context + '</p>' +
+      '<button type="button" class="text-action subtle-action" data-action="reset-exercise">' + label("Reset Exercise", "重置练习") + '</button>' +
       '</div><div class="session-title"><h1>' + esc(title) +
       '</h1><span class="state-label' + (correction ? " correction" : "") + '">' + phase +
       '</span></div></div><div class="session-tools"><div id="work-progress" class="work-progress" ' +
@@ -364,21 +375,20 @@
       return;
     }
     const { stops, index } = navigationPosition();
-    function step(direction, label, enabled) {
-      return '<button type="button" class="button secondary" data-step="' + direction + '"' +
-        (enabled ? "" : " disabled") + ">" + label + "</button>";
+    function step(direction, name, enabled) {
+      return '<button type="button" class="button secondary ui-action" data-step="' + direction + '"' +
+        (enabled ? "" : " disabled") + ">" + name + "</button>";
     }
     const pending = state.attempt.first && !state.attempt.second ? review() : null;
-    const submitLabel = !pending ? "首次提交" : pending.check
-      ? (pending.correction ? "完成订正和自检" : "完成自检") : "提交订正";
-    const actions = state.attempt.second
-      ? '<button type="button" class="button secondary" data-action="directory">返回目录</button>'
-      : '<button type="button" class="button" data-action="' +
+    const submitLabel = !pending ? label("Submit", "首次提交") : pending.check
+      ? (pending.correction ? label("Finish Review", "完成订正和自检") : label("Finish Self-Check", "完成自检"))
+      : label("Submit Corrections", "提交订正");
+    const actions = state.attempt.second ? "" : '<button type="button" class="button ui-action ui-primary" data-action="' +
         (state.attempt.first ? "submit-second" : "submit-first") + '"' + (playing ? " disabled" : "") + ">" +
         submitLabel + "</button>";
-    const previous = isDictation(worksheet, stops[index - 1]) ? "返回听写" : "上一题";
+    const previous = isDictation(worksheet, stops[index - 1]) ? label("Back to Dictation", "返回听写") : label("Previous", "上一题");
     operations.innerHTML = '<div class="step-actions">' + step(-1, previous, index > 0) +
-      step(1, "下一题", index >= 0 && index < stops.length - 1) + "</div>" + actions;
+      step(1, label("Next", "下一题"), index >= 0 && index < stops.length - 1) + "</div>" + actions;
   }
 
   function mountWordPanel() {
@@ -394,10 +404,10 @@
         wordDictation: { ...state.attempt.wordDictation, [item.id]: record }
       }),
       onProgress: updateProgress,
-      onFinish: feedback => {
+      onFinish: (feedback, english) => {
         const next = questions.find(q => q.number > items.at(-1).number && !isDictation(state.worksheet, q));
         if (!next) return false;
-        state.notice = feedback;
+        state.notice = label(english, feedback);
         goToQuestion(next.number, true);
         return true;
       }
@@ -408,9 +418,11 @@
     unmountWordPanel?.();
     unmountWordPanel = null;
     account.innerHTML = identityBar();
-    const notice = state.notice ? '<p class="feedback" role="status">' + esc(state.notice) + "</p>" : "";
+    const notice = state.notice ? '<p class="feedback" role="status">' + state.notice + "</p>" : "";
     const storage = '<p class="feedback" id="storage-note" role="status"' +
-      (state.storageWorks ? " hidden" : "") + ">此浏览器无法保存进度。请在当前页面完成作答和导出。</p>";
+      (state.storageWorks ? " hidden" : "") + ">" +
+      label("This browser cannot save your progress. Finish and export your work on this page.",
+        "此浏览器无法保存进度。请在当前页面完成作答和导出。") + "</p>";
     let content;
     if (state.opening) content = renderOpening(state.opening);
     else if (state.worksheet) content = quiz();
@@ -428,6 +440,13 @@
     hydrateAudio(app);
     syncVoiceControls();
     screens.connect(app);
+    const activeChip = app.querySelector(".question-chip[aria-current=step]");
+    if (activeChip) {
+      const rail = activeChip.parentElement;
+      const bounds = rail.getBoundingClientRect();
+      const chip = activeChip.getBoundingClientRect();
+      if (chip.right > bounds.right) rail.scrollLeft += chip.right - bounds.right + 2;
+    }
     const passage = app.querySelector("#reading-screen");
     const question = app.querySelector("#question-screen");
     if (passage) {
@@ -496,7 +515,11 @@
     state.notice = "";
     saveNavigation();
     render(true);
-    if (code) app.querySelector('[data-task="' + code + '"]')?.focus({ preventScroll: true });
+    const task = code && app.querySelector('[data-task="' + code + '"]');
+    if (task) {
+      task.focus({ preventScroll: true });
+      task.scrollIntoView({ block: "nearest" });
+    }
   }
 
   function showAttempt(key, notice = "") {
@@ -516,7 +539,7 @@
     const { key, baseKey } = state.worksheet;
     const current = activeAttemptKey(baseKey);
     if (current !== key) {
-      showAttempt(current, "这份练习已在另一个窗口重置。");
+      showAttempt(current, resetNotice);
       return;
     }
     const token = globalThis.crypto?.randomUUID?.() || Date.now().toString(36) + "-" + Math.random().toString(36).slice(2);
@@ -542,9 +565,13 @@
     }
     dialog.setAttribute("aria-labelledby", "reset-title");
     dialog.setAttribute("aria-describedby", "reset-description");
-    dialog.innerHTML = '<h2 id="reset-title">重置练习？</h2><p id="reset-description">' + esc(message) +
-      '</p><div class="dialog-actions"><button type="button" class="button secondary" data-action="cancel-reset" autofocus>' +
-      '继续作答</button><button type="button" class="button" data-action="confirm-reset">重置练习</button></div>';
+    const english = "The exercise will restart and clear the current answers and recordings from this page." +
+      (state.worksheet.dictationItems.length ? " Dictation starts at the first word." : "");
+    dialog.innerHTML = '<h2 id="reset-title">' + label("Reset This Exercise?", "重置练习？") +
+      '</h2><p id="reset-description">' + label(english, message) +
+      '</p><div class="dialog-actions"><button type="button" class="button secondary ui-action" data-action="cancel-reset" autofocus>' +
+      label("Continue", "继续作答") + '</button><button type="button" class="button ui-action ui-primary" data-action="confirm-reset">' +
+      label("Reset Exercise", "重置练习") + '</button></div>';
     dialog.addEventListener("close", () => dialog.remove(), { once: true });
     app.append(dialog);
     dialog.showModal();
@@ -610,7 +637,7 @@
     if (!usesWordDictation()) return false;
     const missing = state.worksheet.dictationItems.find(item => !words.complete(item, state.attempt.wordDictation));
     if (!missing) return false;
-    state.notice = "请完成本组听写后再提交练习。";
+    state.notice = label("Finish the dictation before submitting.", "请完成本组听写后再提交练习。");
     goToQuestion(missing.number, true);
     return true;
   }
@@ -619,7 +646,8 @@
     const missing = state.worksheet.questions.filter(question => recordings.isSpeaking(question) &&
       !state.attempt.draftRecordings?.[question.id]);
     if (!missing.length) return false;
-    state.notice = "还有 " + missing.length + " 道口语题需要录音。请录完后提交。";
+    state.notice = label("Record the remaining " + missing.length + " speaking responses before submitting.",
+      "还有 " + missing.length + " 道口语题需要录音。请录完后提交。");
     goToQuestion(missing[0].number, true);
     return true;
   }
@@ -656,10 +684,12 @@
 
     const dialog = document.createElement("dialog");
     dialog.setAttribute("aria-labelledby", "submit-title");
-    dialog.innerHTML = '<h2 id="submit-title">还有题目未完成</h2><p>有 ' + missing +
-      ' 道题尚未完成。可以返回作答，也可以按当前内容提交。</p>' +
-      '<div class="dialog-actions"><button type="button" class="button secondary" data-action="cancel-submit">' +
-      '返回作答</button><button type="button" class="button" data-action="confirm-submit">提交当前作答</button></div>';
+    dialog.innerHTML = '<h2 id="submit-title">' + label("Unanswered Questions", "还有题目未完成") + '</h2><p>' +
+      label(missing + " questions are unanswered. You can keep working or submit now.",
+        "有 " + missing + " 道题尚未完成。可以返回作答，也可以按当前内容提交。") +
+      '</p><div class="dialog-actions"><button type="button" class="button secondary ui-action" data-action="cancel-submit">' +
+      label("Keep Working", "返回作答") + '</button><button type="button" class="button ui-action ui-primary" data-action="confirm-submit">' +
+      label("Submit", "提交当前作答") + '</button></div>';
     dialog.addEventListener("close", () => dialog.remove(), { once: true });
     app.append(dialog);
     if (typeof dialog.showModal === "function") dialog.showModal();
@@ -671,7 +701,7 @@
     if (!state.attempt?.first || state.attempt.second) return;
     const missing = state.worksheet.questions.find(q => isRequired(q) && !hasResponse(q));
     if (missing) {
-      state.notice = "请完成所有待订正的客观题，再次提交。";
+      state.notice = label("Finish the required corrections before submitting.", "请完成所有待订正的客观题，再次提交。");
       goToQuestion(missing.number, true);
       return;
     }
@@ -698,10 +728,32 @@
     return document.getElementById("item-" + id)?.querySelector("[data-voice-question]");
   }
 
+  const voiceMessages = {
+    "请在浏览器提示中允许使用麦克风。": "Allow microphone access when your browser asks.",
+    "正在保存录音。": "Saving your recording.",
+    "请先结束当前录音，再切换或提交。": "Stop recording before moving on or submitting.",
+    "请结束录音后再播放音频。": "Stop recording before playing the audio.",
+    "当前浏览器无法保存录音。": "This browser could not save the recording.",
+    "请关闭其他练习页面后再试。": "Close other practice tabs and try again.",
+    "录音保存失败。请检查设备空间后重录。": "Check your available storage and record again.",
+    "这段录音在当前浏览器中无法读取。": "This browser could not open the recording.",
+    "录音读取失败。": "The recording could not be opened.",
+    "生成随作答单携带的录音失败。": "The recording could not be prepared for export.",
+    "请在浏览器里允许访问麦克风，再点击开始录音。": "Allow microphone access in your browser settings and try again.",
+    "没有找到麦克风。请连接麦克风后重试。": "Connect a microphone and try again.",
+    "麦克风暂时无法使用。请检查设备或关闭正在使用麦克风的程序。": "Check the microphone and close other apps using it.",
+    "当前浏览器暂时无法使用麦克风。": "The microphone is unavailable in this browser.",
+    "请在支持录音的浏览器中打开 HTTPS 页面或本机预览。": "Use a browser that supports recording over HTTPS or open the local preview.",
+    "录音中断，请重录。": "Recording was interrupted. Record again.",
+    "没录到有效音频，请重录。": "Record again to capture your response.",
+    "设备无法开始录音。请重新打开练习后再试。": "The device could not record. Reopen the exercise and try again.",
+    "当前浏览器无法启动录音。": "This browser could not start recording."
+  };
+
   function voiceMessage(id, message) {
     const element = voiceField(id)?.querySelector("[data-voice-message]");
     if (!element) return;
-    element.textContent = message;
+    setLabel(element, message ? voiceMessages[message] || "Recording is unavailable. Try again." : "", message);
     element.hidden = !message;
   }
 
@@ -725,7 +777,9 @@
       start.disabled = Boolean(voiceJob);
       start.hidden = active;
       stop.hidden = !active || voiceJob.phase === "saving";
-      stop.textContent = active && voiceJob.phase === "permission" ? "取消" : "结束录音";
+      const waiting = active && voiceJob.phase === "permission";
+      const stopLabel = waiting ? "Cancel" : "Stop Recording";
+      if (stop.querySelector(".ui-en")?.textContent !== stopLabel) setLabel(stop, stopLabel, waiting ? "取消" : "结束录音");
       timer.hidden = !active || voiceJob.phase !== "recording";
       if (!timer.hidden) timer.textContent = recordings.timeText(performance.now() - voiceJob.handle.startedAt);
     }
@@ -956,7 +1010,7 @@
     if (voiceJob || !worksheet) return;
     if (event.key === attemptPointer(worksheet.baseKey)) {
       const key = activeAttemptKey(worksheet.baseKey);
-      if (key !== worksheet.key) showAttempt(key, "这份练习已在另一个窗口重置。");
+      if (key !== worksheet.key) showAttempt(key, resetNotice);
       return;
     }
     if (event.key !== worksheet.key) return;
@@ -964,7 +1018,7 @@
     if (updated.sequence !== state.attempt.sequence) {
       state.attempt = updated;
       pickFocus(state.focus);
-      state.notice = "这份作业已在另一个窗口更新。";
+      state.notice = label("This assignment was updated in another window.", "这份作业已在另一个窗口更新。");
       render();
     }
   });

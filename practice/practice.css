@@ -58,12 +58,12 @@ textarea { min-height: 112px; resize: vertical; display: block; }
 .button {
   display: inline-flex; justify-content: center; align-items: center; min-height: 43px;
   padding: 9px 19px; border: 1px solid transparent; border-radius: 24px;
-  background: var(--accent); color: var(--unlock-white); font-weight: 500; text-decoration: none; text-align: center;
+  background: var(--ink); color: var(--unlock-white); font-weight: 500; text-decoration: none; text-align: center;
 }
-.button:hover:not(:disabled) { box-shadow: var(--unlock-card-depth); }
-.button.secondary { color: var(--ink); background: var(--paper); border-color: var(--accent); }
-.button.secondary:hover { background: var(--tint); }
-.button:disabled { opacity: .58; }
+.button:hover:not(:disabled) { border-color: var(--accent); }
+.button.secondary { color: var(--ink); background: var(--paper); border-color: var(--line); }
+.button.secondary:hover:not(:disabled) { border-color: var(--accent); }
+.button:disabled { background: var(--paper); color: var(--ink); border: 1px dashed var(--line); }
 .text-action {
   background: none; border: 0; padding: 5px 0; color: var(--accent-dark); text-align: start;
 }
@@ -152,7 +152,7 @@ textarea { min-height: 112px; resize: vertical; display: block; }
 .q-photo { display: block; max-width: 100%; max-height: 310px; object-fit: contain; margin: 9px 0; border-radius: 9px; }
 .question-audio { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px; }
 .question-audio button, .part-button {
-  padding: 6px 10px; min-height: 36px; border: 1px solid transparent; border-radius: 9px;
+  padding: 6px 10px; min-height: 36px; border: 1px solid var(--line); border-radius: 9px;
   color: var(--ink); background: var(--surface); text-align: left;
 }
 .question-audio button { color: var(--accent-dark); }
@@ -169,6 +169,23 @@ textarea { min-height: 112px; resize: vertical; display: block; }
   box-shadow: var(--unlock-card-depth);
 }
 .option input { margin: 5px 0 0; accent-color: var(--accent); flex: 0 0 auto; }
+@media (forced-colors: none) {
+  .option input:is([type="radio"], [type="checkbox"]) {
+    appearance: none;
+    inline-size: 16px;
+    block-size: 16px;
+    border: 1px solid var(--ink);
+    background: var(--paper);
+  }
+  .option input[type="radio"] { border-radius: 50%; }
+  .option input[type="checkbox"] { border-radius: 3px; }
+  .option input:checked {
+    border-color: var(--accent);
+    background: var(--accent);
+    box-shadow: inset 0 0 0 3px var(--paper);
+  }
+  .option input:disabled { border-style: dashed; }
+}
 @media (prefers-reduced-motion: no-preference) {
   .option {
     transition: background-color 150ms ease, border-color 150ms ease,
@@ -178,7 +195,7 @@ textarea { min-height: 112px; resize: vertical; display: block; }
 .bank { margin: 9px 0 0; padding-left: 24px; }
 .bank li + li { margin-top: 4px; }
 .part-pool, .part-sequence { display: flex; flex-wrap: wrap; align-items: center; gap: 7px; }
-.part-button:disabled { opacity: .48; }
+.part-button:disabled { border-style: dashed; color: var(--ink); }
 .part-sequence { margin-top: 8px; min-height: 45px; padding: 6px; background: var(--surface); border: 1px dashed var(--unlock-line); border-radius: 9px; }
 .part-sequence .part-button { background: var(--paper); }
 .order-label { font-size: 13px; color: var(--subtle); padding-left: 4px; }

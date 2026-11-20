@@ -130,7 +130,7 @@ body:has(#login:not([hidden])) { min-height: 0; }
   font-weight: 650;
   cursor: pointer;
 }
-.login-submit:disabled { opacity: .6; cursor: wait; }
+.login-submit:disabled { cursor: wait; }
 .login-message {
   min-block-size: var(--login-message-height);
   padding-block-start: 8px;

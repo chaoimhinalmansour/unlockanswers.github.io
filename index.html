@@ -1,22 +1,24 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>登录 | UNLOCK</title>
-  <link rel="stylesheet" href="assets/theme.css?v=20261119-tcd-1">
-  <link rel="stylesheet" href="assets/portal.css?v=20261120-portrait-shading">
+  <title>Sign In | UNLOCK</title>
+  <link rel="stylesheet" href="assets/theme.css?v=20261120-black-white">
+  <link rel="stylesheet" href="assets/portal.css?v=20261120-black-white">
+  <link rel="stylesheet" href="assets/student-ui.css?v=20261120-black-white">
+  <script defer src="assets/student-ui.js?v=20261120-student-ui"></script>
   <script defer src="practice/students.js?v=20261120-portraits"></script>
   <script defer src="assets/session.js?v=20261120-session"></script>
-  <script defer src="assets/portal.js?v=20261120-portrait-shading"></script>
+  <script defer src="assets/portal.js?v=20261120-student-ui"></script>
 </head>
-<body>
+<body class="student-ui">
   <header class="portal-header" hidden>
     <div class="portal-bar">
-      <a class="portal-brand" href="index.html">UNLOCK <span>学习平台</span></a>
+      <a class="portal-brand" href="index.html">UNLOCK <span class="ui-label"><span class="ui-en" lang="en">Learning Platform</span><small class="ui-zh" lang="zh-CN">学习平台</small></span></a>
       <div id="portal-account" class="portal-account" hidden>
         <strong id="account-name"></strong>
-        <button type="button" class="text-button" id="portal-sign-out">退出登录</button>
+        <button type="button" class="text-button" id="portal-sign-out"><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh" lang="zh-CN">退出登录</small></span></button>
       </div>
     </div>
   </header>
@@ -24,28 +26,30 @@
     <section id="login" aria-labelledby="login-title" hidden>
       <form id="login-form">
         <div class="login-entry">
-          <h1 id="login-title">UNLOCK<span class="visually-hidden"> 登录</span></h1>
+          <h1 id="login-title">UNLOCK<span class="visually-hidden"> Sign in 登录</span></h1>
           <div class="login-strip">
-            <label for="login-password" class="visually-hidden">密码</label>
-            <input id="login-password" name="password" type="password" required autocomplete="current-password"
-              placeholder="请输入密码" autocapitalize="none" spellcheck="false" aria-describedby="login-message">
-            <button class="login-submit" type="submit">登录</button>
+            <label class="login-password-field">
+              <input id="login-password" name="password" type="password" required autocomplete="current-password"
+                placeholder=" " aria-label="Password 密码" autocapitalize="none" spellcheck="false" aria-describedby="login-message">
+              <span class="ui-label"><span class="ui-en" lang="en">Password</span><small class="ui-zh" lang="zh-CN">密码</small></span>
+            </label>
+            <button class="login-submit ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Sign In</span><small class="ui-zh" lang="zh-CN">登录</small></span></button>
           </div>
           <p id="login-message" class="login-message" role="status"></p>
         </div>
         <fieldset class="portrait-stage">
-          <legend class="visually-hidden">选择学生人物</legend>
+          <legend class="visually-hidden">Choose a student 选择学生</legend>
           <canvas id="portrait-shading" class="portrait-shading" width="1536" height="504" aria-hidden="true"></canvas>
           <div id="student-portraits" class="portrait-options"></div>
         </fieldset>
       </form>
     </section>
     <section id="workspace" class="workspace-home" aria-labelledby="workspace-title" hidden>
-      <h1 id="workspace-title"></h1>
+      <h1 id="workspace-title" class="ui-page-title"></h1>
       <p id="workspace-notice" class="workspace-notice" role="status" hidden></p>
-      <nav id="workspace-cards" class="workspace-cards" aria-label="工作区功能"></nav>
+      <nav id="workspace-cards" class="workspace-cards" aria-label="Workspace 工作区"></nav>
     </section>
-    <noscript><p>请启用 JavaScript 后登录学习平台。</p></noscript>
+    <noscript><p><span class="ui-label"><span class="ui-en" lang="en">Enable JavaScript to sign in.</span><small class="ui-zh" lang="zh-CN">请启用 JavaScript 后登录学习平台。</small></span></p></noscript>
   </main>
 </body>
 </html>

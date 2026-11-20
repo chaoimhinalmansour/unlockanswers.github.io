@@ -2,6 +2,7 @@
 
 (function () {
   const session = window.UnlockSession;
+  const { setLabel } = window.UnlockStudentUI;
   const expectedTeacher = "1f81fc017f9006f147330dd5e9072b98074791e9e759d3fbddfc16cab073950d";
   const form = document.getElementById("login-form");
   const login = document.getElementById("login");
@@ -21,9 +22,9 @@
   const writing = { title: "写作复盘", text: "使用资料密码查看原文批注和讲评。", url: "writing-review.html" };
   const cards = {
     student: [
-      { title: "单元课堂", text: "按单元完成课前听写。", url: "classroom/index.html" },
-      { title: "单元练习", text: "完成练习、订正和自检，下载作业 ZIP。", url: "practice/index.html" },
-      writing
+      { english: "Classroom", title: "单元课堂", description: "In-class exercises by unit.", text: "各单元的课堂练习。", url: "classroom/index.html" },
+      { english: "Unit Practice", title: "单元练习", description: "After-class assignments by unit.", text: "各单元的课后任务。", url: "practice/index.html" },
+      { ...writing, english: "Writing Review", description: "Read annotated drafts and feedback.", text: "查看原文批注和讲评。" }
     ],
     teacher: [
       { title: "教学与讲评", text: "按册、单元和科目查看答案与解析。", url: "practice/teaching.html" },
@@ -206,7 +207,7 @@
     choice.type = "radio";
     choice.name = "student";
     choice.value = person.name;
-    choice.setAttribute("aria-label", "选择" + name);
+    choice.setAttribute("aria-label", name);
     const focus = document.createElement("span");
     focus.className = "portrait-focus";
     focus.setAttribute("aria-hidden", "true");
@@ -253,9 +254,9 @@
     shadeContext.restore();
   }
 
-  function showMessage(text) {
-    message.textContent = text;
-    if (!text) password.removeAttribute("aria-invalid");
+  function showMessage(english, chinese) {
+    setLabel(message, english, chinese);
+    if (!english) password.removeAttribute("aria-invalid");
   }
 
   function workspaceCard(item) {
@@ -263,9 +264,14 @@
     card.className = "workspace-card";
     card.href = item.url;
     const title = document.createElement("h2");
-    title.textContent = item.title;
     const text = document.createElement("p");
-    text.textContent = item.text;
+    if (item.english) {
+      setLabel(title, item.english, item.title);
+      setLabel(text, item.description, item.text);
+    } else {
+      title.textContent = item.title;
+      text.textContent = item.text;
+    }
     card.append(title, text);
     return card;
   }
@@ -289,15 +295,18 @@
       header.hidden = false;
       account.hidden = false;
       document.getElementById("account-name").textContent = teacher ? "教师" : person.name;
-      document.getElementById("workspace-title").textContent = teacher ? "教师工作区" : "学生工作区";
+      workspace.dataset.role = active.role;
+      const title = document.getElementById("workspace-title");
+      if (teacher) title.textContent = "教师工作区";
+      else setLabel(title, "Student Workspace", "学生工作区");
       document.getElementById("workspace-cards").replaceChildren(...cards[active.role].map(workspaceCard));
       const notice = document.getElementById("workspace-notice");
       const otherRole = /^(student|teacher)$/.test(requestedRole) && requestedRole !== active.role;
-      notice.textContent = otherRole
-        ? "此页面需要" + (requestedRole === "teacher" ? "教师" : "学生") + "身份。请先退出当前账号。"
-        : "";
+      const needsTeacher = requestedRole === "teacher";
+      setLabel(notice, otherRole ? "Sign out to use a " + (needsTeacher ? "teacher" : "student") + " account." : "",
+        "请退出当前账号后以" + (needsTeacher ? "教师" : "学生") + "身份登录。");
       notice.hidden = !otherRole;
-      document.title = (teacher ? "教师工作区" : "学生工作区") + " | UNLOCK";
+      document.title = (teacher ? "教师工作区" : "Student Workspace") + " | UNLOCK";
     } else {
       workspace.hidden = true;
       header.hidden = true;
@@ -329,7 +338,10 @@
       const person = teacher ? undefined : roster.find(item => item.name === name);
       const studentPassword = englishName(person);
       if (!teacher && (!studentPassword || entered.trim() !== studentPassword)) {
-        showMessage(person ? "请检查所选人物和英文名密码。" : "学生请先选人物，教师请检查密码。");
+        showMessage(
+          person ? "Check your selected portrait and password." : "Students, select a portrait. Teachers, check your password.",
+          person ? "请检查所选人物和英文名密码。" : "学生请先选人物，教师请检查密码。"
+        );
         password.setAttribute("aria-invalid", "true");
         password.focus();
         password.select();
@@ -337,13 +349,13 @@
       }
       const role = teacher ? "teacher" : "student";
       if (!session.signIn(role, person)) {
-        showMessage("请允许此网站保存登录状态，再试一次。");
+        showMessage("Allow this site to save your login and try again.", "请允许此网站保存登录状态，再试一次。");
         return;
       }
       password.value = "";
       location.replace(session.destination(next, role) || session.signInUrl());
     } catch {
-      showMessage("请通过网站或本机预览地址登录。");
+      showMessage("Open the website or local preview to sign in.", "请通过网站或本机预览地址登录。");
     } finally {
       submit.disabled = false;
     }

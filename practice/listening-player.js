@@ -14,6 +14,7 @@
   const speed = dock.querySelector("[data-listen-speed]");
   const study = window.UnlockListeningStudy;
   const teacher = dock.dataset.listenStudyAccess === "direct";
+  const ui = window.UnlockStudentUI;
   let questionId;
   let questionTracks = [];
   let learner = null;
@@ -33,8 +34,15 @@
     range.disabled = !seconds;
     range.max = String(seconds || 1);
     range.value = String(player.currentTime);
-    time.textContent = clock(player.currentTime) + " / " + clock(seconds);
-    play.textContent = player.paused ? "播放" : "暂停";
+    time.textContent = !seconds && player.hasAttribute("src")
+      ? (ui ? "Loading audio" : "正在载入音频") : clock(player.currentTime) + " / " + clock(seconds);
+    const chinese = player.paused ? "播放" : "暂停";
+    if (ui) {
+      const english = player.paused ? "Play" : "Pause";
+      if (play.querySelector(".ui-en")?.textContent !== english) ui.setLabel(play, english, chinese);
+    } else {
+      play.textContent = chinese;
+    }
   }
 
   function selectTrack(id) {
@@ -81,6 +89,17 @@
     study.setEvidence(recordings);
   }
 
+  function releaseTrack() {
+    if (player.hasAttribute("src")) {
+      player.pause();
+      player.removeAttribute("src");
+      player.load();
+    }
+    selected = "";
+    tracks = [];
+    warning.hidden = true;
+  }
+
   function update(worksheet, question, student) {
     if (teacher && questionId !== question?.id) {
       questionId = question?.id;
@@ -90,29 +109,28 @@
     unit = worksheet?.unit;
     questionTracks = worksheet ? question?.audio || [] : [];
     dock.hidden = !questionTracks.length;
-    if (worksheetKey !== worksheet?.key) {
-      player.pause();
-      selected = "";
-      tracks = [];
+    if (worksheetKey !== worksheet?.key || !questionTracks.length) {
+      releaseTrack();
       worksheetKey = worksheet?.key;
       study?.update(null);
     }
-    if (!questionTracks.length) {
-      player.pause();
-      if (study) {
-        selected = "";
-        study.update(null);
-      }
-      return;
-    }
+    if (!questionTracks.length) return;
     audioIndex = worksheet.unit.audio;
     offerTracks(questionTracks);
   }
 
   play.addEventListener("click", () => {
     if (!player.paused) { player.pause(); return; }
+    const source = player.getAttribute("src");
+    warning.hidden = true;
+    if (player.error) {
+      player.load();
+      player.playbackRate = Number(speed.value);
+    }
     study?.restartPassIfEnded();
-    player.play().catch(() => { warning.hidden = false; });
+    player.play().catch(error => {
+      if (error.name !== "AbortError" && player.getAttribute("src") === source) warning.hidden = false;
+    });
   });
   selector.addEventListener("change", () => selectTrack(selector.value));
   function seek(seconds) {
@@ -129,7 +147,9 @@
   for (const type of ["loadedmetadata", "timeupdate", "play", "pause", "ended"]) {
     player.addEventListener(type, showTime);
   }
-  player.addEventListener("error", () => { warning.hidden = false; });
+  player.addEventListener("error", () => {
+    if (player.error && player.hasAttribute("src")) warning.hidden = false;
+  });
 
   window.UnlockListening = { update, setEvidence, player };
 })();

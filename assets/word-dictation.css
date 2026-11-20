@@ -60,7 +60,7 @@
 .wd-button:hover:not(:disabled):not([aria-disabled="true"]) { background: var(--unlock-shell); }
 .wd-button.wd-primary { border-color: var(--wd-blue); background: var(--wd-blue); color: var(--unlock-white); }
 .wd-button.wd-primary:hover:not(:disabled) { box-shadow: var(--unlock-card-depth); }
-.wd-button:disabled { background: var(--unlock-selected); border-color: var(--wd-rule); color: var(--unlock-secondary); cursor: default; }
+.wd-button:disabled { background: var(--unlock-white); border: 1px dashed var(--wd-rule); color: var(--unlock-ink); cursor: default; }
 .wd-play {
   position: relative;
   overflow: hidden;
@@ -89,8 +89,9 @@
   width: 100%;
   padding: 7px 12px;
   border-radius: 10px;
-  background: var(--unlock-selected);
+  background: var(--unlock-white);
   color: var(--unlock-ink);
+  box-shadow: inset 0 0 0 1px var(--wd-rule);
   font-size: 17px;
   overflow-wrap: anywhere;
   white-space: pre-wrap;
@@ -106,7 +107,7 @@
   cursor: pointer;
   text-decoration: underline;
 }
-.wd-undo:disabled { opacity: .52; cursor: default; }
+.wd-undo:disabled { cursor: default; }
 .wd-review { max-width: 54rem; margin: auto; }
 .wd-review h2 { margin: 0 0 6px; }
 .wd-summary { margin: 0 0 12px; color: var(--unlock-secondary); }

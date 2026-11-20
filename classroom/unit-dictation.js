@@ -10,6 +10,8 @@
     return;
   }
   const $ = id => document.getElementById(id);
+  const { setLabel, topicTranslation } = window.UnlockStudentUI;
+  const copy = (id, english, chinese) => setLabel($(id), english, chinese);
   const data = window.UNLOCK_CLASSROOM_UNITS;
   const playback = window.UnlockDictation;
   const words = window.UnlockWordDictation;
@@ -46,6 +48,11 @@
     return "Unit " + String(unit.number).padStart(2, "0") + " " + unit.topic;
   }
 
+  function attemptKey(unit) {
+    const name = [storageName(student), student.level, student.adminClass].map(encodeURIComponent).join(":");
+    return ["unlock.classroom.whole-dictation.v2", name, books[student.level], unit.number, unit.revision].join(":");
+  }
+
   function answers(value, count) {
     return Array.from({ length: count }, (_, index) =>
       typeof value?.[index] === "string" ? value[index].slice(0, maxAnswerLength) : "");
@@ -80,7 +87,7 @@
     if (latest.sequence !== attempt.sequence) {
       current.attempt = latest;
       render();
-      $("save-status").textContent = "这份听写已在另一个窗口更新。";
+      copy("save-status", "This dictation was updated in another window.", "这份听写已在另一个窗口更新。");
       return false;
     }
     const next = { ...attempt, ...updates, sequence: attempt.sequence + 1 };
@@ -90,7 +97,8 @@
       localStorage.setItem(key, JSON.stringify(next));
       $("save-status").textContent = "";
     } catch {
-      $("save-status").textContent = "当前浏览器无法保存这次作答。请在此页面完成听写。";
+      copy("save-status", "This browser cannot save your progress. Finish this dictation on this page.",
+        "当前浏览器无法保存这次作答。请在此页面完成听写。");
     }
     return true;
   }
@@ -130,6 +138,7 @@
     $("practice").hidden = true;
     $("picker").hidden = false;
     remember(unitSession, "");
+    updateUnitPreview();
   }
 
   function unitChoice(unit, selected) {
@@ -142,13 +151,34 @@
     const card = element("span", undefined, "unit-choice-body");
     card.lang = "en";
     const number = element("span", "Unit " + String(unit.number).padStart(2, "0"), "unit-choice-number");
-    card.append(number, element("strong", unit.topic));
+    const topic = element("strong");
+    setLabel(topic, unit.topic, topicTranslation(unit.topic));
+    card.append(number, topic);
     label.append(input, card);
     return label;
   }
 
   function selectedUnit() {
     return $("unit-options").querySelector('input[name="unit"]:checked');
+  }
+
+  function selectedUnitData() {
+    const number = Number(selectedUnit()?.value);
+    return data.books[books[student.level]]?.units.find(unit => unit.number === number);
+  }
+
+  function updateUnitPreview() {
+    const unit = selectedUnitData();
+    if (!unit) return;
+    copy("unit-preview-title", unitLabel(unit), topicTranslation(unit.topic));
+    const count = unit.items.length;
+    copy("unit-word-count", count + " words and phrases", "共 " + count + " 个单词和短语");
+    const attempt = loadAttempt(attemptKey(unit), count);
+    const completed = attempt.second || unit.items.every((_, i) => words.outcome(attempt.wordDictation?.[String(i + 1)]));
+    const action = $("unit-form").querySelector("button");
+    if (completed) setLabel(action, "View Report", "查看结果");
+    else if (attempt.sequence) setLabel(action, "Resume Dictation", "继续听写");
+    else setLabel(action, "Start Dictation", "开始听写");
   }
 
   function openClassroom() {
@@ -166,19 +196,19 @@
     $("book-label").textContent = book ? "Book " + book : student.level;
     $("unit-form").hidden = !units.length;
     if (!units.length) {
-      $("availability").textContent = "当前级别暂无可用的课前听写。";
+      copy("availability", "No pre-class dictation for this level yet.", "当前级别暂无可用的课前听写。");
       return;
     }
     const unit = units.find(item => item.number === rememberedUnit);
     const selected = unit?.number || units[0].number;
     $("unit-options").replaceChildren(...units.map(item => unitChoice(item, selected)));
+    updateUnitPreview();
     if (unit) openUnit(unit);
   }
 
   function openUnit(unit) {
     const book = books[student.level];
-    const name = [storageName(student), student.level, student.adminClass].map(encodeURIComponent).join(":");
-    const key = ["unlock.classroom.whole-dictation.v2", name, book, unit.number, unit.revision].join(":");
+    const key = attemptKey(unit);
     const wordItems = unit.items.map((item, index) => words.makeItem(String(index + 1), index + 1, item.word, item.keys));
     const audio = Object.fromEntries(wordItems.map(item => [item.id, {
       file: words.audioPath(item), label: "第 " + item.number + " 题单词音频"
@@ -239,7 +269,8 @@
       label.htmlFor = input.id;
       row.append(label, input);
       if (attempt.first) {
-        const replay = element("button", "重听", "small-button");
+        const replay = element("button", undefined, "small-button ui-action");
+        setLabel(replay, "Replay Word", "重听");
         replay.type = "button";
         replay.disabled = true;
         replay.dataset.dictationReplay = String(number);
@@ -306,7 +337,7 @@
       return;
     }
     updatePlayback();
-    $("phase-title").textContent = "课前听写";
+    copy("phase-title", "Pre-Class Dictation", "课前听写");
     const { wordItems } = current;
     unmountWordPanel = words.mount($("classroom-word-panel"), {
       items: wordItems, read: () => current.attempt.wordDictation,
@@ -325,18 +356,22 @@
   function renderLegacy() {
     const { attempt, unit, showAll } = current;
     const active = new Set(required());
-    const title = attempt.second ? "听写结果" : attempt.first ? "订正" : "首次作答";
-    $("phase-title").textContent = title;
-    $("directions").textContent = attempt.second ? "对照两次作答和词表答案。"
-      : attempt.first && active.size ? "订正首次答错或空着的题。每道待订正题可单独重听一次。"
-      : attempt.first ? "首次作答全对，可以直接查看结果。"
-      : "音频按题号读完整个单元，每个单词或短语读两遍。请按题号填写英文。";
+    copy("phase-title", ...(attempt.second ? ["Dictation Report", "听写结果"]
+      : attempt.first ? ["Correction", "订正"] : ["First Attempt", "首次作答"]));
+    const directions = attempt.second ? ["Compare both attempts with the answer key.", "对照两次作答和词表答案。"]
+      : attempt.first && active.size ? ["Correct the incorrect and unanswered items. Replay each word once.",
+        "订正首次答错或空着的题。每道待订正题可单独重听一次。"]
+      : attempt.first ? ["All answers were correct. Open the report to review them.", "首次作答全对，可以直接查看结果。"]
+      : ["Listen for the question number. Each word or phrase is read twice. Type your answer in English.",
+        "音频按题号读完整个单元，每个单词或短语读两遍。请按题号填写英文。"];
+    copy("directions", ...directions);
     $("answer-list").replaceChildren(...unit.items.flatMap((_, index) =>
       !attempt.first || attempt.second || active.has(index) || showAll ? [answerRow(index, active.has(index))] : []));
     $("toggle-correct").hidden = !attempt.first || Boolean(attempt.second) || active.size === unit.items.length;
-    $("toggle-correct").textContent = showAll ? "只看待订正题" : "查看全部题目";
+    copy("toggle-correct", ...(showAll ? ["Show Corrections", "只看待订正题"] : ["Show All", "查看全部题目"]));
     $("submit").hidden = Boolean(attempt.second);
-    $("submit").textContent = !attempt.first ? "首次提交" : active.size ? "提交订正" : "查看结果";
+    copy("submit", ...(!attempt.first ? ["Submit", "首次提交"] : active.size
+      ? ["Submit Corrections", "提交订正"] : ["View Report", "查看结果"]));
     updateProgress();
     updatePlayback();
     updateWordReport();
@@ -361,14 +396,14 @@
         commitFirst();
       } else {
         const message = "还有 " + missing.length + " 道题未填写。可以返回作答，也可以提交当前作答。";
-        $("submit-message").textContent = message;
+        copy("submit-message", missing.length + " answers are blank. You can keep working or submit now.", message);
         if (typeof $("submit-confirm").showModal === "function") $("submit-confirm").showModal();
         else if (window.confirm(message)) commitFirst();
       }
       return;
     }
     if (missing.length) {
-      $("save-status").textContent = "请填写所有待订正题，再提交订正。";
+      copy("save-status", "Complete each correction before submitting.", "请填写所有待订正题，再提交订正。");
       $("answer-" + (missing[0] + 1))?.focus();
       return;
     }
@@ -409,13 +444,13 @@
     if (!next || next.sequence <= current.attempt.sequence) return;
     current.attempt = next;
     render();
-    $("save-status").textContent = "这份听写已在另一个窗口更新。";
+    copy("save-status", "This dictation was updated in another window.", "这份听写已在另一个窗口更新。");
   });
 
+  $("unit-options").addEventListener("change", updateUnitPreview);
   $("unit-form").addEventListener("submit", event => {
     event.preventDefault();
-    const number = Number(selectedUnit()?.value);
-    const unit = data.books[books[student?.level]]?.units.find(item => item.number === number);
+    const unit = selectedUnitData();
     if (unit) openUnit(unit);
   });
   $("back-units").addEventListener("click", () => {

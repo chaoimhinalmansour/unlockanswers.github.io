@@ -3,6 +3,9 @@
 (function () {
   const { normalized, escapeHTML: esc } = window.UnlockRules;
   const motion = window.UnlockMotion;
+  const ui = window.UnlockStudentUI;
+  const label = (english, chinese) => ui ? ui.label(english, chinese) : esc(chinese);
+  const setLabel = ui?.setLabel || ((node, english, chinese) => { node.textContent = chinese; });
   const source = window.UNLOCK_WORD_DICTATION_ITEMS;
   const outcomes = {
     first: "首次拼写正确",
@@ -11,6 +14,13 @@
     incorrect: "音节拼接仍有误"
   };
   const checks = { correct: "正确", incorrect: "有误", case: "大小写形式有误" };
+  const englishOutcomes = {
+    first: "Correct on first spelling",
+    second: "Correct on second spelling",
+    assisted: "Correct with syllables",
+    incorrect: "Syllable order incorrect"
+  };
+  const englishChecks = { correct: "Correct", incorrect: "Incorrect", case: "Capitalization error" };
   const empty = { plays: 0, draft: "", attempts: [] };
 
   function makeItem(id, number, word, keys) {
@@ -67,36 +77,48 @@
     return order;
   }
 
-  function summary(items, records) {
+  function outcomeCounts(items, records) {
     const counts = { first: 0, second: 0, assisted: 0, incorrect: 0 };
     for (const item of items) {
       const result = outcome(records?.[item.id]);
       if (result) counts[result]++;
     }
-    return Object.entries(counts).map(([result, n]) => outcomes[result] + " " + n + " 题").join("，") + "。";
+    return Object.entries(counts);
   }
 
-  function recordHTML(item, record, links = "") {
+  function summary(items, records) {
+    return outcomeCounts(items, records).map(([result, n]) => outcomes[result] + " " + n + " 题").join("，") + "。";
+  }
+
+  function recordHTML(item, record, links = "", bilingual = false) {
     if (!record) return "";
+    const copy = bilingual ? label : (english, chinese) => esc(chinese);
     const result = outcome(record);
-    const field = (label, value, status) => '<div><dt>' + label + '</dt><dd lang="en">' +
-      esc(value || "未进入此步") + '</dd>' + (status ? '<dd class="wd-report-check">' + esc(status) + '</dd>' : "") + "</div>";
+    const field = (english, chinese, value, status) => '<div><dt>' + copy(english, chinese) +
+      '</dt><dd lang="en">' + (value ? esc(value) : copy("Step not reached", "未进入此步")) +
+      '</dd>' + (status ? '<dd class="wd-report-check">' + copy(englishChecks[status], checks[status]) + '</dd>' : "") + "</div>";
     const [first, second] = record.attempts;
     const syllables = record.syllables;
+    const plays = Number(record.plays) || 0;
+    const heading = bilingual
+      ? copy("Word " + item.number + " " + item.word, "第 " + item.number + " 题")
+      : '第 ' + item.number + ' 题 <span lang="en">' + esc(item.word) + '</span>';
     return '<article class="record objective wd-record" data-question="' + esc(item.id) + '">' +
-      '<header><h3>第 ' + item.number + ' 题 <span lang="en">' + esc(item.word) + '</span></h3><p>' +
-      esc(outcomes[result] || "作答中") + '，播放 ' + (Number(record.plays) || 0) + ' 次</p></header>' +
+      '<header><h3>' + heading + '</h3><p>' +
+      copy((englishOutcomes[result] || "In progress") + ", played " + plays + " times",
+        (outcomes[result] || "作答中") + "，播放 " + plays + " 次") + '</p></header>' +
       '<dl class="wd-report-steps">' +
-      field("首次拼写", first?.text, checks[first?.result]) +
-      field("二次拼写", second?.text, checks[second?.result]) +
-      field("音节选择顺序", syllables?.parts.join("、"), checks[syllables?.result]) +
+      field("First Spelling", "首次拼写", first?.text, first?.result) +
+      field("Second Spelling", "二次拼写", second?.text, second?.result) +
+      field("Syllable Order", "音节选择顺序", syllables?.parts.join("、"), syllables?.result) +
       "</dl>" + links + "</article>";
   }
 
   function reviewHTML(items, records) {
-    return '<div class="wd-review"><h2 tabindex="-1">听写报告</h2><p class="wd-summary">' +
-      esc(summary(items, records)) + "</p>" +
-      items.map(item => recordHTML(item, records?.[item.id])).join("") + "</div>";
+    const english = outcomeCounts(items, records).map(([result, n]) => englishOutcomes[result] + " " + n).join(", ");
+    return '<div class="wd-review"><h2 tabindex="-1">' + label("Dictation Report", "听写报告") +
+      '</h2><p class="wd-summary">' + label(english, summary(items, records)) + "</p>" +
+      items.map(item => recordHTML(item, records?.[item.id], "", Boolean(ui))).join("") + "</div>";
   }
 
   function mount(root, { items, read, draft = () => "", save, onProgress, onFinish }) {
@@ -104,6 +126,7 @@
     const options = { signal: listeners.signal };
     let current, audio, starting, playing;
     let previous = "";
+    let previousEnglish = "";
 
     function record() {
       return read()?.[current.id] || { ...empty, draft: draft(current) || "" };
@@ -129,7 +152,8 @@
         output.replaceChildren(spelling.slice(0, spelling.length - added.length), piece);
         motion.place(piece, origin);
       } else {
-        output.textContent = spelling || "请选择音节";
+        if (spelling) output.textContent = spelling;
+        else setLabel(output, "Select syllables", "请选择音节");
       }
       root.querySelector("[data-wd-undo]").disabled = !order.length;
       const submit = root.querySelector("[data-wd-submit]");
@@ -152,31 +176,36 @@
       const attemptNo = state.attempts.length;
       const syllableStep = attemptNo === 2;
       const last = state.attempts.at(-1);
-      let feedback = previous;
-      if (syllableStep) feedback = "两次拼写未通过，请按顺序选出音节。";
+      let feedback = previous ? label(previousEnglish, previous) : "";
+      if (syllableStep) feedback = label("Choose the syllables in order.", "两次拼写未通过，请按顺序选出音节。");
       else if (attemptNo) feedback = last.result === "case"
-        ? "上一次大小写形式有误，请再拼写一次。" : "上一次拼写有误，请再试一次。";
+        ? label("Check capitalization and try again.", "上一次大小写形式有误，请再拼写一次。")
+        : label("That spelling was incorrect. Try again.", "上一次拼写有误，请再试一次。");
       const fields = syllableStep
         ? '<div class="wd-pieces" aria-label="可选音节">' + state.offered.map(index =>
           '<button type="button" class="wd-button wd-piece" lang="en" data-wd-piece="' + index + '">' +
-          esc(current.parts[index].trim()) + "</button>").join("") + '</div><output class="wd-choice" lang="en" ' +
-          'aria-live="polite" data-wd-choice></output><button type="button" class="wd-undo" data-wd-undo>撤销上一步</button>'
-        : '<label for="wd-input">完整拼写</label><input id="wd-input" data-wd-input lang="en" type="text" ' +
+          esc(current.parts[index].trim()) + "</button>").join("") + '</div><div class="wd-assembly">' +
+          '<output class="wd-choice" lang="en" aria-live="polite" data-wd-choice></output>' +
+          '<button type="button" class="wd-undo ui-action" data-wd-undo>' + label("Undo", "撤销上一步") + '</button></div>'
+        : '<label for="wd-input">' + label("Full Spelling", "完整拼写") + '</label><input id="wd-input" data-wd-input lang="en" type="text" ' +
           'autocomplete="off" autocapitalize="none" spellcheck="false" enterkeyhint="done" maxlength="160" required ' +
           'aria-describedby="wd-case" value="' + esc(state.draft) + '">' +
-          '<p id="wd-case" class="wd-note">可用全小写、全大写或仅首字母大写。</p>';
+          '<p id="wd-case" class="wd-note">' +
+          label("Use lowercase, uppercase, or an initial capital.", "可用全小写、全大写或仅首字母大写。") + '</p>';
       root.innerHTML = '<form class="wd-question' + (focus ? " unlock-card-enter" : "") +
         '" data-word-number="' + current.number +
-        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading"><p class="wd-position">第 ' +
-        (items.indexOf(current) + 1) +
-        ' 题，共 ' + items.length + ' 题</p><h2 id="wd-heading">' +
-        (syllableStep ? "拼接音节" : attemptNo ? "再拼写一次" : "听音拼写") +
-        '</h2><p class="wd-feedback" role="status">' + esc(feedback) + '</p>' +
+        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading"><p class="wd-position">' +
+        label("Word " + (items.indexOf(current) + 1) + " of " + items.length,
+          "第 " + (items.indexOf(current) + 1) + " 题，共 " + items.length + " 题") +
+        '</p><div class="wd-heading-line"><h2 id="wd-heading">' +
+        (syllableStep ? label("Arrange Syllables", "拼接音节") : attemptNo ? label("Try Again", "再拼写一次")
+          : label("Listen and Spell", "听音拼写")) +
+        '</h2><p class="wd-feedback" role="status">' + feedback + '</p></div>' +
         '<div class="wd-listen"><audio hidden preload="none" src="../' + esc(audioPath(current)) + '"></audio>' +
-        '<button type="button" class="wd-button wd-play" data-wd-play>播放音频</button>' +
-        '<p class="wd-note" data-wd-play-note role="status">每次播放一遍，可重复听。</p></div>' +
+        '<button type="button" class="wd-button wd-play ui-action" data-wd-play>' + label("Play Audio", "播放音频") + '</button>' +
+        '<p class="wd-note" data-wd-play-note role="status">' + label("Replay anytime.", "可重复播放。") + '</p></div>' +
         '<div class="wd-fields">' + fields + '</div>' +
-        '<button type="submit" class="wd-button wd-primary" data-wd-submit>提交</button></form>';
+        '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' + label("Submit", "提交") + '</button></form>';
       const player = root.querySelector("audio");
       audio = player;
       const playButton = root.querySelector("[data-wd-play]");
@@ -189,7 +218,7 @@
         if (player !== audio) return;
         playing = false;
         if (player.ended) playButton.style.setProperty("--wd-audio-progress", "1");
-        playButton.textContent = "播放音频";
+        setLabel(playButton, "Play Audio", "播放音频");
         playButton.removeAttribute("aria-disabled");
       };
       player.addEventListener("ended", resetPlay, options);
@@ -215,12 +244,12 @@
         await player.play();
         if (player !== audio || listeners.signal.aborted) return;
         playing = !player.paused && !player.ended;
-        button.textContent = playing ? "播放中" : "播放音频";
-        note.textContent = "每次播放一遍，可重复听。";
+        setLabel(button, playing ? "Playing" : "Play Audio", playing ? "播放中" : "播放音频");
+        setLabel(note, "Replay anytime.", "可重复播放。");
         const state = record();
         saveRecord({ ...state, plays: state.plays + 1 });
       } catch {
-        if (player === audio) note.textContent = "音频未能播放，请重试。";
+        if (player === audio) setLabel(note, "The audio could not play. Try again.", "音频未能播放，请重试。");
       } finally {
         if (player === audio) {
           starting = false;
@@ -278,7 +307,8 @@
       if (!saveRecord(next)) return;
       if (result) {
         previous = "第 " + current.number + " 题" + outcomes[result] + "。";
-        if (items.every(item => complete(item, read())) && onFinish?.(previous)) return;
+        previousEnglish = "Word " + current.number + ". " + englishOutcomes[result] + ".";
+        if (items.every(item => complete(item, read())) && onFinish?.(previous, previousEnglish)) return;
       }
       paint(true);
     }, options);

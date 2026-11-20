@@ -1,6 +1,8 @@
 'use strict';
 
 const samples = window.studentPlatformSamples;
+const translations = window.UnlockWritingEnglish;
+const { label, setLabel } = window.UnlockStudentUI;
 const views = ['source', 'thought', 'language', 'summary'];
 const byId = id => document.getElementById(id);
 const tabs = Array.from(document.querySelectorAll('[data-view]'));
@@ -11,6 +13,7 @@ const chars = {'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39
 const escapeHtml = text => String(text).replace(/[&<>"']/g, char => chars[char]);
 const noteFor = id => sample.issues.find(note => note.id === id);
 let sample;
+let english;
 let selected;
 let frame;
 let mapFrame;
@@ -36,12 +39,13 @@ function reveal(node) {
 
 function drawFigures() {
   const figures = sample.figures || [];
-  byId('material-title').textContent = figures.length ? '题目与图表' : '写作题目';
+  setLabel(byId('material-title'), figures.length ? 'Task and Charts' : 'Writing Prompt',
+    figures.length ? '题目与图表' : '写作题目');
   byId('task-prompt').textContent = sample.prompt;
   figurePanel.innerHTML = figures.map((figure, index) => {
     const head = figure.years.map(year => `<th scope="col">${year}</th>`).join('');
     const rows = figure.series.map(series => `<tr><th scope="row">${escapeHtml(series.name)}</th>${series.values.map(value => `<td>${value}</td>`).join('')}</tr>`).join('');
-    return `<figure id="figure-${index + 1}"><figcaption>${escapeHtml(figure.title)}</figcaption><img class="question-chart" src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.title)}"><details class="figure-values"><summary>查看数据表</summary><table><thead><tr><th scope="col">${escapeHtml(figure.unit)}</th>${head}</tr></thead><tbody>${rows}</tbody></table></details></figure>`;
+    return `<figure id="figure-${index + 1}"><figcaption>${label(english.figures[index], figure.title)}</figcaption><img class="question-chart" src="${escapeHtml(figure.src)}" alt="${escapeHtml(figure.title)}"><details class="figure-values"><summary>${label('View Data Table', '查看数据表')}</summary><table><thead><tr><th scope="col">${figure.unit === '分钟' ? label('Minutes', figure.unit) : escapeHtml(figure.unit)}</th>${head}</tr></thead><tbody>${rows}</tbody></table></details></figure>`;
   }).join('');
 }
 
@@ -68,31 +72,32 @@ function drawParagraph(text, index) {
 
 function drawAssessment() {
   const criterionNames = {
-    TA: '任务完成情况',
-    TR: '任务回应',
-    CC: '连贯与衔接',
-    LR: '词汇资源',
-    GRA: '语法多样性与准确性'
+    TA: ['Task Achievement', '任务完成情况'],
+    TR: ['Task Response', '任务回应'],
+    CC: ['Coherence and Cohesion', '连贯与衔接'],
+    LR: ['Lexical Resource', '词汇资源'],
+    GRA: ['Grammatical Range and Accuracy', '语法多样性与准确性']
   };
   const wordStatus = sample.minimumMet ? '达到' : '未达到';
   const rows = sample.assessment.criteria.map(item => `
     <tr>
       <th scope="row">
-        <span class="criterion-name">${criterionNames[item.code]}</span>
+        <span class="criterion-name">${label(...criterionNames[item.code])}</span>
         <span class="criterion-code" lang="en">${item.code}</span>
       </th>
       <td class="criterion-score"><span>${item.score}</span></td>
-      <td class="criterion-feedback">${escapeHtml(item.text)}</td>
+      <td class="criterion-feedback">${label(english.criteria[item.code], item.text)}</td>
     </tr>`).join('');
   return `
     <section class="assessment" aria-labelledby="assessment-heading">
       <header class="assessment-title">
         <div>
-          <h3 id="assessment-heading">四项评价</h3>
-          <p>原文 ${sample.wordCount} 词，${wordStatus} ${sample.minimum} 词要求。</p>
+          <h3 id="assessment-heading">${label('Assessment', '四项评价')}</h3>
+          <p>${label(`${sample.wordCount} words. ${sample.minimumMet ? 'Meets' : 'Below'} the ${sample.minimum}-word minimum.`,
+            `原文 ${sample.wordCount} 词，${wordStatus} ${sample.minimum} 词要求。`)}</p>
         </div>
         <div class="assessment-total">
-          <span>单篇估分</span>
+          <span>${label('Estimated Band', '单篇估分')}</span>
           <strong>${sample.assessment.band}</strong>
         </div>
       </header>
@@ -101,7 +106,7 @@ function drawAssessment() {
           <caption class="sr-only">分项评分与评语</caption>
           <colgroup><col class="criterion-col"><col class="score-col"><col></colgroup>
           <thead>
-            <tr><th scope="col">评分项</th><th scope="col" class="criterion-score">分数</th><th scope="col">评语</th></tr>
+            <tr><th scope="col">${label('Criterion', '评分项')}</th><th scope="col" class="criterion-score">${label('Score', '分数')}</th><th scope="col">${label('Feedback', '评语')}</th></tr>
           </thead>
           <tbody>${rows}</tbody>
         </table>
@@ -111,10 +116,11 @@ function drawAssessment() {
 
 function drawSource() {
   const notes = sample.issues.map(issue => {
-    const caption = issue.track === 'thought' ? '看思维复盘' : '看表达讲评';
-    return `<article class="margin-note" data-note-card="${issue.id}" id="note-${issue.id}"><button class="note-body" type="button" data-note="${issue.id}" aria-pressed="false" aria-controls="paragraph-${issue.paragraph}"><span class="number">${issue.id}</span><span><strong>${escapeHtml(issue.label)}</strong><span>${escapeHtml(issue.text)}</span></span></button><button class="text-button note-more" type="button" data-lesson="${issue.id}">${caption}</button></article>`;
+    const caption = issue.track === 'thought' ? label('View Reasoning', '看思维复盘') : label('View Language Notes', '看表达讲评');
+    const [heading, text] = english.issues[issue.id];
+    return `<article class="margin-note" data-note-card="${issue.id}" id="note-${issue.id}"><button class="note-body" type="button" data-note="${issue.id}" aria-pressed="false" aria-controls="paragraph-${issue.paragraph}"><span class="number">${issue.id}</span><span><strong>${label(heading, issue.label)}</strong><span>${label(text, issue.text)}</span></span></button><button class="text-button note-more" type="button" data-lesson="${issue.id}">${caption}</button></article>`;
   }).join('');
-  sourcePanel.innerHTML = `<div class="reading"><article class="paper"><header class="paper-top"><h3>学生原文</h3><span>${sample.wordCount} 词</span></header>${sample.paragraphs.map(drawParagraph).join('')}</article><aside aria-label="页边批注"><header class="margin-top"><h3>页边批注</h3><span>${sample.issues.length} 处</span></header><div class="notes">${notes}</div></aside></div>${drawAssessment()}`;
+  sourcePanel.innerHTML = `<div class="reading"><article class="paper"><header class="paper-top"><h3>${label('Original Draft', '学生原文')}</h3><span>${label(sample.wordCount + ' words', sample.wordCount + ' 词')}</span></header>${sample.paragraphs.map(drawParagraph).join('')}</article><aside aria-label="页边批注"><header class="margin-top"><h3>${label('Margin Notes', '页边批注')}</h3><span>${label(sample.issues.length + ' notes', sample.issues.length + ' 处')}</span></header><div class="notes">${notes}</div></aside></div>${drawAssessment()}`;
   resize.disconnect();
   resize.observe(sourcePanel.querySelector('.paper'));
 }
@@ -151,24 +157,28 @@ function selectIssue(id) {
   for (const control of sourcePanel.querySelectorAll('[data-note]')) control.setAttribute('aria-pressed', String(control.dataset.note === id));
   for (const card of sourcePanel.querySelectorAll('[data-note-card]')) card.classList.toggle('is-selected', card.dataset.noteCard === id);
   for (const anchor of sourcePanel.querySelectorAll('.phrase')) anchor.classList.toggle('is-selected', anchor.dataset.anchor === id);
-  byId('review-status').textContent = `已选中批注${id}，${noteFor(id).label}`;
+  setLabel(byId('review-status'), `Reviewing note ${id}. ${english.issues[id][0]}`, `已选中批注${id}，${noteFor(id).label}`);
   scheduleNotes();
 }
 
 function drawThought() {
   const map = sample.mindmap;
-  const outline = sample.outline ? `<details class="outline mindmap-outline"><summary>样稿的原始中文提纲</summary><ul>${sample.outline.map(row => `<li><strong>${escapeHtml(row.title)}</strong>　${escapeHtml(row.text)}</li>`).join('')}</ul></details>` : '';
+  const outline = sample.outline ? `<details class="outline mindmap-outline"><summary>${label('Original Chinese Outline', '样稿的原始中文提纲')}</summary>
+    <ul>${sample.outline.map((row, i) => `<li><strong>${label(english.outline[i][0], row.title)}</strong><p>${label(english.outline[i][1], row.text)}</p></li>`).join('')}</ul></details>` : '';
   const branches = map.branches.map(branch => {
+    const [branchLabel, branchTitle] = english.branches[branch.id];
     const nodes = branch.nodes.map((node, i) => {
+      const [nodeLabel, nodeTitle] = english.nodes[node.id];
       const follows = branch.sequence && i > 0;
       const parent = follows ? `node-${branch.nodes[i - 1].id}` : `branch-${branch.id}`;
       const flag = node.issue ? `<span class="map-number">${node.issue}</span>` : '';
-      return `<li><button class="map-node${node.issue ? ' map-gap' : ''}" type="button" id="mind-node-${node.id}" data-mind-node="${node.id}" data-key="node-${node.id}" data-parent="${parent}"${follows ? ' data-vertical' : ''} aria-controls="mind-inspector" aria-pressed="false"><span class="map-node-label">${flag}${escapeHtml(node.label)}</span><strong>${escapeHtml(node.title)}</strong></button></li>`;
+      return `<li><button class="map-node${node.issue ? ' map-gap' : ''}" type="button" id="mind-node-${node.id}" data-mind-node="${node.id}" data-key="node-${node.id}" data-parent="${parent}"${follows ? ' data-vertical' : ''} aria-controls="mind-inspector" aria-pressed="false"><span class="map-node-label">${flag}${label(nodeLabel, node.label)}</span><strong>${label(nodeTitle, node.title)}</strong></button></li>`;
     }).join('');
-    return `<section class="map-branch"><div class="map-topic" data-key="branch-${branch.id}" data-parent="root"><span>${escapeHtml(branch.label)}</span><strong>${escapeHtml(branch.title)}</strong></div><ul class="map-leaves${branch.sequence ? ' map-sequence' : ''}">${nodes}</ul></section>`;
+    return `<section class="map-branch"><div class="map-topic" data-key="branch-${branch.id}" data-parent="root"><span>${label(branchLabel, branch.label)}</span><strong>${label(branchTitle, branch.title)}</strong></div><ul class="map-leaves${branch.sequence ? ' map-sequence' : ''}">${nodes}</ul></section>`;
   }).join('');
   const issues = map.branches.flatMap(branch => branch.nodes).filter(node => node.issue).length;
-  thoughtPanel.innerHTML = `<header class="mindmap-heading"><div><h3>思维导图</h3><p>点带编号的节点，查看这一步哪里有问题、怎么想、怎么做。</p></div><span class="map-total">${issues} 处待复盘</span></header><div class="mindmap-layout"><div id="mind-board" class="mind-board" aria-label="${escapeHtml(map.title)}"><svg class="map-wires" aria-hidden="true"></svg><div class="map-root" data-key="root"><span>${escapeHtml(sample.label)}</span><strong>${escapeHtml(map.title)}</strong><p>${escapeHtml(map.note)}</p></div><div class="map-branches">${branches}</div></div><aside id="mind-inspector" class="mind-inspector" aria-label="选中节点的讲评" aria-live="polite"></aside></div>${outline}`;
+  thoughtPanel.innerHTML = `<header class="mindmap-heading"><div><h3>${label('Reasoning Map', '思维导图')}</h3><p>${label('Select a numbered step to see what to improve and how to practise.',
+    '点带编号的节点，查看这一步哪里有问题、怎么想、怎么做。')}</p></div><span class="map-total">${label(issues + ' points to review', issues + ' 处待复盘')}</span></header><div class="mindmap-layout"><div id="mind-board" class="mind-board" aria-label="${escapeHtml(map.title)}"><svg class="map-wires" aria-hidden="true"></svg><div class="map-root" data-key="root"><span>${escapeHtml(sample.label)}</span><strong>${label(english.map[0], map.title)}</strong><p>${label(english.map[1], map.note)}</p></div><div class="map-branches">${branches}</div></div><aside id="mind-inspector" class="mind-inspector" aria-label="选中节点的讲评" aria-live="polite"></aside></div>${outline}`;
   mapResize.disconnect();
   mapResize.observe(byId('mind-board'));
   selectMindNode(map.initial);
@@ -215,30 +225,44 @@ function selectMindNode(id) {
   const map = sample.mindmap;
   const branch = map.branches.find(group => group.nodes.some(node => node.id === id));
   const node = branch.nodes.find(item => item.id === id);
+  const [nodeLabel, nodeTitle, detail, think, action] = english.nodes[id];
+  const [branchLabel, branchTitle] = english.branches[branch.id];
   const issue = node.issue && noteFor(node.issue);
   for (const button of thoughtPanel.querySelectorAll('[data-mind-node]')) button.setAttribute('aria-pressed', String(button.dataset.mindNode === id));
   const badge = issue ? `<span class="map-number">${issue.id}</span>` : '';
   const quote = node.quote || (issue && issue.quote);
-  const evidence = quote ? `<blockquote class="map-evidence"><span>成稿原句</span><p lang="en">${escapeHtml(quote)}</p></blockquote>` : '';
-  const outline = node.outline !== undefined ? `<blockquote class="map-evidence"><span>中文提纲</span><p>${escapeHtml(sample.outline[node.outline].text)}</p></blockquote>` : '';
-  const coaching = issue ? `<dl class="map-coaching"><div><dt>哪里没做好</dt><dd>${escapeHtml(node.detail)}</dd></div><div><dt>怎么想</dt><dd>${escapeHtml(node.think)}</dd></div><div><dt>怎么做</dt><dd>${escapeHtml(node.action)}</dd></div></dl>` : `<p class="map-proof">${escapeHtml(node.detail)}</p>`;
-  const source = issue ? `<button class="text-button" type="button" data-return="${issue.id}">回到原文批注 ${issue.id}</button>` : node.paragraph ? `<button class="text-button" type="button" data-paragraph="${node.paragraph}">看原文第 ${node.paragraph} 段</button>` : '';
-  const figure = node.figure ? `<button class="text-button" type="button" data-figure="${node.figure}">查看图 ${node.figure}</button>` : '';
+  const evidence = quote ? `<blockquote class="map-evidence"><span>${label('From the Draft', '成稿原句')}</span><p lang="en">${escapeHtml(quote)}</p></blockquote>` : '';
+  const outline = node.outline !== undefined ? `<blockquote class="map-evidence"><span>${label('Chinese Outline', '中文提纲')}</span><p>${label(english.outline[node.outline][1], sample.outline[node.outline].text)}</p></blockquote>` : '';
+  const coaching = issue ? `<dl class="map-coaching"><div><dt>${label('What to Improve', '哪里没做好')}</dt><dd>${label(detail, node.detail)}</dd></div>
+    <div><dt>${label('How to Think It Through', '怎么想')}</dt><dd>${label(think, node.think)}</dd></div>
+    <div><dt>${label('How to Practise', '怎么做')}</dt><dd>${label(action, node.action)}</dd></div></dl>` : `<p class="map-proof">${label(detail, node.detail)}</p>`;
+  const source = issue ? `<button class="text-button" type="button" data-return="${issue.id}">${label('Back to Note ' + issue.id, '回到原文批注 ' + issue.id)}</button>` : node.paragraph ? `<button class="text-button" type="button" data-paragraph="${node.paragraph}">${label('Read Paragraph ' + node.paragraph, '看原文第 ' + node.paragraph + ' 段')}</button>` : '';
+  const figure = node.figure ? `<button class="text-button" type="button" data-figure="${node.figure}">${label('View Figure ' + node.figure, '查看图 ' + node.figure)}</button>` : '';
   const panel = byId('mind-inspector');
   panel.classList.toggle('inspect-gap', Boolean(issue));
   panel.dataset.currentNode = id;
-  panel.innerHTML = `<p class="map-breadcrumb">${escapeHtml(branch.label)} ${escapeHtml(branch.title)}</p><p class="map-inspector-label">${badge}${escapeHtml(node.label)}</p><h3>${escapeHtml(node.title)}</h3>${evidence}${outline}${coaching}<div class="map-links">${source}${figure}<button class="text-button map-back" type="button" data-map-back>回到导图</button></div>`;
+  panel.innerHTML = `<p class="map-breadcrumb">${label(branchLabel + ' ' + branchTitle, branch.label + ' ' + branch.title)}</p><p class="map-inspector-label">${badge}${label(nodeLabel, node.label)}</p><h3>${label(nodeTitle, node.title)}</h3>${evidence}${outline}${coaching}<div class="map-links">${source}${figure}<button class="text-button map-back" type="button" data-map-back>${label('Back to Map', '回到导图')}</button></div>`;
   drawMapWires();
 }
 
 function drawLessons() {
   const language = sample.issues.filter(issue => issue.track === 'language');
-  byId('panel-language').innerHTML = `<p class="section-intro">每条讲评都对应一处原文批注。先看这句想表达什么，再记一个可以迁移的搭配。</p>${language.map(issue => `<section class="lesson" id="lesson-${issue.id}"><h3><span class="number">${issue.id}</span>　${escapeHtml(issue.label)}</h3><p class="quote" lang="en">${escapeHtml(issue.quote)}</p><p>${escapeHtml(issue.text)}</p><p class="example" lang="en">${escapeHtml(issue.example)}</p><p>${escapeHtml(issue.use)}</p><button class="text-button" type="button" data-return="${issue.id}">回到原文批注 ${issue.id}</button></section>`).join('')}`;
+  byId('panel-language').innerHTML = `<p class="section-intro">${label('Each note links to a line in the draft. Check the intended meaning, then take away a phrase you can reuse.',
+    '每条讲评都对应一处原文批注。先看这句想表达什么，再记一个可以迁移的搭配。')}</p>${language.map(issue => `<section class="lesson" id="lesson-${issue.id}"><h3><span class="number">${issue.id}</span> ${label(english.issues[issue.id][0], issue.label)}</h3><p class="quote" lang="en">${escapeHtml(issue.quote)}</p><p>${label(english.issues[issue.id][1], issue.text)}</p><p class="example" lang="en">${escapeHtml(issue.example)}</p><p>${label(english.issues[issue.id][2], issue.use)}</p><button class="text-button" type="button" data-return="${issue.id}">${label('Back to Note ' + issue.id, '回到原文批注 ' + issue.id)}</button></section>`).join('')}`;
 }
 
 function drawSummary() {
-  const items = (rows, type) => rows.map(row => `<li><strong>${escapeHtml(row.title || row.phrase)}</strong><p>${escapeHtml(row.text)}</p><button class="text-button" type="button" data-lesson="${row.issue}">${type}</button></li>`).join('');
-  byId('panel-summary').innerHTML = `<div class="summary-grid"><section class="summary-box"><h3>下一稿练什么思维动作</h3><ul>${items(sample.thoughtSummary, '回看推导')}</ul></section><section class="summary-box"><h3>本次积累的表达</h3><ul>${items(sample.languageSummary, '回看讲评')}</ul></section></div>`;
+  const items = (rows, translationsByIssue, action) => rows.map(row => {
+    const [title, description] = translationsByIssue[row.issue];
+    const original = row.title || row.phrase;
+    return `<li><strong>${label(title, title === original ? "" : original)}</strong><p>${label(description, row.text)}</p>
+      <button class="text-button" type="button" data-lesson="${row.issue}">${action}</button></li>`;
+  }).join('');
+  byId('panel-summary').innerHTML = `<div class="summary-grid">
+    <section class="summary-box"><h3>${label('Reasoning for the Next Draft', '下一稿练什么思维动作')}</h3>
+      <ul>${items(sample.thoughtSummary, english.thought, label('Review Reasoning', '回看推导'))}</ul></section>
+    <section class="summary-box"><h3>${label('Phrases to Reuse', '本次积累的表达')}</h3>
+      <ul>${items(sample.languageSummary, english.language, label('Review Note', '回看讲评'))}</ul></section></div>`;
 }
 
 function openLesson(id) {
@@ -255,9 +279,10 @@ function openLesson(id) {
 function openSample() {
   const [id, requestedView] = location.hash.slice(1).split('/');
   sample = samples.find(item => item.id === id) || samples[0];
+  english = translations[sample.id];
   for (const button of document.querySelectorAll('[data-sample]')) button.setAttribute('aria-pressed', String(button.dataset.sample === sample.id));
-  byId('task-label').textContent = `${sample.label} ${sample.type}`;
-  byId('task-title').textContent = sample.title;
+  setLabel(byId('task-label'), `${sample.label} ${english.type}`, sample.type);
+  setLabel(byId('task-title'), english.title, sample.title);
   drawFigures();
   drawSource();
   drawThought();

@@ -1,48 +1,51 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="../assets/theme.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="UNLOCK 学生单元练习">
-  <title>UNLOCK 单元练习</title>
-  <link rel="stylesheet" href="practice.css?v=20261119-tcd-1">
-  <link rel="stylesheet" href="workbench.css?v=20261120-work-package">
-  <link rel="stylesheet" href="one-screen.css?v=20261119-tcd-1">
-  <link rel="stylesheet" href="listening-study.css?v=20261119-tcd-1">
+  <title>Unit Practice | UNLOCK</title>
+  <link rel="stylesheet" href="practice.css?v=20261120-black-white">
+  <link rel="stylesheet" href="workbench.css?v=20261120-black-white">
+  <link rel="stylesheet" href="one-screen.css?v=20261120-black-white">
+  <link rel="stylesheet" href="listening-study.css?v=20261120-black-white">
   <link rel="stylesheet" href="dictation.css?v=20261119-tcd-1">
-  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261120-black-white">
+  <link rel="stylesheet" href="../assets/student-ui.css?v=20261120-black-white">
+  <script defer src="../assets/student-ui.js?v=20261120-student-ui"></script>
   <script defer src="rules.js?v=20261117-5"></script>
   <script defer src="../assets/word-dictation-items.js?v=20261119-1"></script>
   <script defer src="../assets/soft-motion.js?v=20261119-tcd-1"></script>
-  <script defer src="../assets/word-dictation.js?v=20261120-work-package"></script>
+  <script defer src="../assets/word-dictation.js?v=20261120-student-ui"></script>
   <script defer src="students.js?v=20261118-roster"></script>
   <script defer src="../assets/session.js?v=20261120-session"></script>
   <script defer src="data/catalog.js?v=20261116"></script>
   <script defer src="data/stp1116/catalog.js?v=20261117-5"></script>
   <script defer src="data/stp1116/dictation.js?v=20261117-6"></script>
   <script defer src="recordings.js?v=20261120-work-package"></script>
-  <script defer src="screen-pages.js?v=20261118-speaking-notes"></script>
-  <script defer src="question-view.js?v=20261120-work-package"></script>
+  <script defer src="screen-pages.js?v=20261120-student-ui"></script>
+  <script defer src="question-view.js?v=20261120-student-ui"></script>
   <script defer src="report.js?v=20261120-work-package"></script>
   <script defer src="../assets/vendor/fflate-0.8.2.min.js"></script>
-  <script defer src="../assets/work-package.js?v=20261120-work-package"></script>
-  <script defer src="workbench.js?v=20261120-work-package"></script>
-  <script defer src="listening-study.js?v=20261117-5"></script>
-  <script defer src="listening-player.js?v=20261117-10"></script>
-  <script defer src="catalog-view.js?v=20261117-10"></script>
-  <script defer src="dictation-playback.js?v=20261118-item-replay"></script>
-  <script defer src="subject-app.js?v=20261120-session"></script>
+  <script defer src="../assets/work-package.js?v=20261120-student-ui"></script>
+  <script defer src="workbench.js?v=20261120-student-ui"></script>
+  <script defer src="listening-study.js?v=20261120-student-ui"></script>
+  <script defer src="listening-player.js?v=20261120-student-ui"></script>
+  <script defer src="catalog-view.js?v=20261120-navigation"></script>
+  <script defer src="dictation-playback.js?v=20261120-student-ui"></script>
+  <script defer src="subject-app.js?v=20261120-navigation"></script>
 </head>
-<body>
+<body class="student-ui student-practice">
   <div id="practice-surface">
     <header class="masthead">
       <div class="masthead-inner">
-        <div class="brandline"><a href="../index.html" aria-label="UNLOCK 学习平台首页">UNLOCK</a><span>单元练习</span></div>
+        <div class="brandline"><span class="ui-brand">UNLOCK</span><span class="section-label"><span class="ui-label"><span class="ui-en" lang="en">Unit Practice</span><small class="ui-zh" lang="zh-CN">单元练习</small></span></span></div>
         <div class="header-actions">
           <div id="practice-account"></div>
-          <nav class="site-links" aria-label="学生端导航">
-            <a href="../index.html">返回工作区</a>
+          <nav class="site-links ui-site-nav" aria-label="Platform navigation 平台导航">
+            <a class="ui-nav" href="../index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh" lang="zh-CN">返回工作区</small></span></a>
+            <button type="button" class="ui-nav" data-action="identity"><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh" lang="zh-CN">退出登录</small></span></button>
           </nav>
         </div>
       </div>
@@ -50,34 +53,41 @@
     <main id="app" class="site-main" tabindex="-1"></main>
     <dialog id="dictation-countdown" class="dictation-countdown" aria-label="听写倒计时" aria-describedby="dictation-countdown-message">
       <p class="dictation-countdown-number" role="timer" aria-label="剩余秒数" data-countdown-number>5</p>
-      <p id="dictation-countdown-message">倒计时后开始播放音频，音频可以中途暂停</p>
+      <p id="dictation-countdown-message"><span class="ui-label"><span class="ui-en" lang="en">The recording will start after the countdown. You can pause it at any time.</span><small class="ui-zh" lang="zh-CN">倒计时后开始播放音频，音频可以中途暂停</small></span></p>
     </dialog>
-    <noscript><p class="site-main">请在浏览器中开启 JavaScript 后再打开单元练习。</p></noscript>
+    <noscript><p class="site-main"><span class="ui-label"><span class="ui-en" lang="en">Enable JavaScript to open Unit Practice.</span><small class="ui-zh" lang="zh-CN">请在浏览器中开启 JavaScript 后再打开单元练习。</small></span></p></noscript>
     <div id="practice-docks" hidden>
       <div class="dock-contents">
         <div id="practice-operations" aria-label="练习操作"></div>
         <section id="dictation-dock" aria-label="整组听写录音" hidden>
           <audio preload="metadata"></audio>
-          <button type="button" class="button" data-dictation-start>播放听写</button>
+          <button type="button" class="button ui-action" data-dictation-start><span class="ui-label"><span class="ui-en" lang="en">Play Dictation</span><small class="ui-zh" lang="zh-CN">播放听写</small></span></button>
           <p data-dictation-status role="status"></p>
           <progress max="1" value="0" aria-label="听写播放进度" hidden></progress>
         </section>
         <section id="listening-dock" aria-label="听力播放条" hidden>
           <audio preload="metadata"></audio>
-          <button type="button" class="button" data-listen-play>播放</button>
-          <div><p class="recording-name" data-listen-label></p><p class="small">本题录音</p></div>
-          <div class="listen-range">
-            <input type="range" aria-label="听力播放进度" min="0" max="1" step="0.01" value="0" data-listen-range disabled>
-            <output data-listen-time aria-live="off">0:00 / 0:00</output>
+          <button type="button" class="button ui-action" data-listen-play><span class="ui-label"><span class="ui-en" lang="en">Play</span><small class="ui-zh" lang="zh-CN">播放</small></span></button>
+          <div class="listen-controls">
+            <p class="recording-name" data-listen-label></p>
+            <div class="candidate-tracks" hidden>
+              <label for="listen-track"><span class="ui-label"><span class="ui-en" lang="en">Audio Track</span><small class="ui-zh" lang="zh-CN">候选录音</small></span></label>
+              <select id="listen-track" aria-label="Audio Track 候选录音" data-listen-track></select>
+            </div>
+            <div class="listen-range">
+              <input type="range" aria-label="Audio progress 听力播放进度" min="0" max="1" step="0.01" value="0" data-listen-range disabled>
+              <output data-listen-time aria-live="off">0:00 / 0:00</output>
+            </div>
+            <label class="listen-speed-label">
+              <span class="ui-label"><span class="ui-en" lang="en">Speed</span><small class="ui-zh" lang="zh-CN">语速</small></span>
+              <select aria-label="Playback speed 播放速度" data-listen-speed>
+                <option value="1">1×</option><option value="0.75">0.75×</option><option value="1.25">1.25×</option>
+              </select>
+            </label>
           </div>
-          <div class="listen-extras">
-            <button type="button" class="button secondary" data-listen-back>后退 5 秒</button>
-            <select aria-label="听力播放速度" data-listen-speed>
-              <option value="1">1 倍</option><option value="0.75">0.75 倍</option><option value="1.25">1.25 倍</option>
-            </select>
-          </div>
-          <div class="candidate-tracks" hidden><label for="listen-track">候选录音</label><select id="listen-track" data-listen-track></select></div>
-          <p class="listen-warning" data-listen-warning role="status" hidden>音频暂时无法播放，请重试。</p>
+          <button type="button" class="button secondary ui-action" data-listen-back><span class="ui-label"><span class="ui-en" lang="en">Back 5s</span><small class="ui-zh" lang="zh-CN">后退 5 秒</small></span></button>
+          <div class="listen-extras"></div>
+          <p class="listen-warning" data-listen-warning role="status" hidden><span class="ui-label"><span class="ui-en" lang="en">The audio could not play. Try again.</span><small class="ui-zh" lang="zh-CN">音频暂时无法播放，请重试。</small></span></p>
         </section>
       </div>
     </div>

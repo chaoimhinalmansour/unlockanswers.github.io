@@ -63,12 +63,35 @@
     if (!progress.hidden) progress.value = Math.min(1, time / duration);
   }
 
+  const ui = window.UnlockStudentUI;
+  const playbackLabels = {
+    "暂停": "Pause", "继续播放": "Resume", "播放听写": "Play Dictation", "继续听": "Resume",
+    "已重听": "Replay Complete", "无法播放": "Unavailable", "重试": "Retry", "重听": "Replay Word",
+    "正在倒计时。": "Get ready.",
+    "听写录音播放中。": "Playing the dictation.",
+    "听写已播完。可以继续填写或检查。": "Playback has ended. Finish or review your answers.",
+    "浏览器无法保存播放状态，请检查本地存储设置。": "Allow local storage to save playback progress.",
+    "本组的播放机会已使用。": "This recording has been played.",
+    "正在准备播放听写。": "Preparing the recording.",
+    "录音未能播放。请重试。": "The recording could not play. Try again.",
+    "听写已暂停，可以从原位置继续。": "Playback paused. Resume from the same point.",
+    "首次作答可以播放整组一次。播放中可以暂停。": "Play the full dictation once. You can pause the recording."
+  };
+
+  function showPlaybackLabel(node, chinese) {
+    if (!ui) {
+      if (node.textContent !== chinese) node.textContent = chinese;
+    } else if (node.querySelector(".ui-zh")?.textContent !== chinese) {
+      ui.setLabel(node, playbackLabels[chinese], chinese);
+    }
+  }
+
   function paintGroup(entry, waiting) {
     const { state } = stored(entry);
     button.hidden = !entry.playing && !canStart(state);
     button.disabled = !entry.playing && (!canStart(state) || waiting || document.hidden);
     const label = entry.playing ? "暂停" : state === "resume" ? "继续播放" : "播放听写";
-    if (button.textContent !== label) button.textContent = label;
+    showPlaybackLabel(button, label);
     const message = entry.counting ? "正在倒计时。"
       : entry.playing ? "听写录音播放中。"
       : state === "done" ? "听写已播完。可以继续填写或检查。"
@@ -78,7 +101,7 @@
       : entry.retry ? "录音未能播放。请重试。"
       : state === "resume" ? "听写已暂停，可以从原位置继续。"
       : "首次作答可以播放整组一次。播放中可以暂停。";
-    if (status.textContent !== message) status.textContent = message;
+    showPlaybackLabel(status, message);
     updateProgress();
   }
 
@@ -93,10 +116,10 @@
         : state === "unavailable" ? "无法播放"
         : entry?.retry ? "重试" : "重听";
       control.disabled = !playing && (!canStart(state) || waiting || document.hidden);
-      if (control.textContent !== label) {
-        control.textContent = label;
-        control.setAttribute("aria-label", label + "第 " + control.dataset.replayNumber + " 题听写");
-      }
+      showPlaybackLabel(control, label);
+      const chinese = label + "第 " + control.dataset.replayNumber + " 题听写";
+      const accessible = ui ? playbackLabels[label] + ", word " + control.dataset.replayNumber + " " + chinese : chinese;
+      if (control.getAttribute("aria-label") !== accessible) control.setAttribute("aria-label", accessible);
     }
   }
 
@@ -207,6 +230,11 @@
     announce();
   }
 
+  function prepareTrack(entry) {
+    player.src = "../" + entry.file;
+    loadedKey = entry.key;
+  }
+
   function track(key, file, leadIn = 0) {
     return { key, file, leadIn, playing: false, offset: 0, run: 0 };
   }
@@ -237,7 +265,11 @@
     }
     if (session) {
       session.shown = show;
-      if (!session.group && !show && current) park(current);
+      const group = session.group;
+      if (group && show && loadedKey !== group.key && !document.hidden && canStart(stored(group).state)) {
+        prepareTrack(group);
+      }
+      if (!group && !show && current) park(current);
     }
     sync();
     return Boolean(current?.playing);
@@ -258,10 +290,7 @@
     entry.offset = time;
     entry.playing = true;
     const run = ++entry.run;
-    if (loadedKey !== entry.key || player.error) {
-      player.src = "../" + entry.file;
-      loadedKey = entry.key;
-    }
+    if (loadedKey !== entry.key || player.error) prepareTrack(entry);
     if (firstPlay) {
       player.currentTime = 0;
       if (entry.leadIn) openCountdown(entry);

@@ -145,14 +145,14 @@ figcaption { font-size: .91rem; font-weight: 650; }
 .map-wires path.wire-gap { stroke: var(--unlock-blue); stroke-dasharray: 4 3; }
 .map-wires path.wire-active { stroke: var(--unlock-blue); stroke-width: 2.5; }
 .map-root, .map-topic, .map-node { position: relative; z-index: 1; border-radius: 12px; overflow-wrap: anywhere; }
-.map-root { padding: 12px 11px; background: var(--light-blue); color: var(--ink); border: 1px solid var(--line); }
+.map-root { padding: 12px 11px; background: var(--unlock-white); color: var(--ink); border: 1px solid var(--line); }
 .map-root > span { font-size: .72rem; letter-spacing: .04em; color: var(--unlock-secondary); }
 .map-root > strong, .map-topic > strong, .map-node > strong { display: block; line-height: 1.38; }
 .map-root > strong { font-size: .98rem; margin-top: 3px; }
 .map-root > p { font-size: .76rem; line-height: 1.52; color: var(--unlock-secondary); margin-top: 6px; }
 .map-branches { display: grid; gap: 24px; min-width: 0; }
 .map-branch { display: grid; grid-template-columns: minmax(102px, .91fr) minmax(0, 1.68fr); align-items: center; gap: 25px; }
-.map-topic { border: 1px solid var(--unlock-line); background: var(--unlock-selected); color: var(--unlock-ink); padding: 9px 10px; }
+.map-topic { border: 1px solid var(--unlock-line); background: var(--unlock-white); color: var(--unlock-ink); padding: 9px 10px; }
 .map-topic > span { display: block; font-size: .76rem; margin-bottom: 2px; }
 .map-topic > strong { font-size: .88rem; }
 .map-leaves { display: grid; gap: 8px; list-style: none; margin: 0; padding: 0; min-width: 0; }

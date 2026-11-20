@@ -3,6 +3,7 @@
 (function () {
   const surface = document.getElementById("practice-surface");
   const { escapeHTML: esc } = window.UnlockRules;
+  const ui = window.UnlockStudentUI;
   const panes = new Map();
   let currentNotes = null;
   const observer = typeof ResizeObserver === "function" ? new ResizeObserver(refresh) : null;
@@ -10,10 +11,12 @@
   function controls(id, label) {
     const target = esc(id);
     const name = esc(label);
+    const previous = ui ? ui.label("Previous", "上一屏") : "上一屏";
+    const next = ui ? ui.label("Next", "下一屏") : "下一屏";
     return '<nav class="screen-pages" data-screen-controls="' + target + '" aria-label="' + name + '翻屏" hidden>' +
-      '<button type="button" data-screen-step="-1" aria-controls="' + target + '" aria-label="' + name + '上一屏">上一屏</button>' +
+      '<button type="button" data-screen-step="-1" aria-controls="' + target + '" aria-label="' + name + '上一屏">' + previous + '</button>' +
       '<output></output>' +
-      '<button type="button" data-screen-step="1" aria-controls="' + target + '" aria-label="' + name + '下一屏">下一屏</button></nav>';
+      '<button type="button" data-screen-step="1" aria-controls="' + target + '" aria-label="' + name + '下一屏">' + next + '</button></nav>';
   }
 
   function position(pane) {
@@ -33,7 +36,11 @@
     if (nav.hidden) return;
 
     const { end, current, last } = position(pane);
-    nav.querySelector("output").textContent = "第 " + (current + 1) + " 屏，共 " + (last + 1) + " 屏";
+    const output = nav.querySelector("output");
+    const chinese = "第 " + (current + 1) + " 屏，共 " + (last + 1) + " 屏";
+    if (ui) {
+      if (output.querySelector(".ui-zh")?.textContent !== chinese) ui.setLabel(output, (current + 1) + " / " + (last + 1), chinese);
+    } else output.textContent = chinese;
     nav.querySelector('[data-screen-step="-1"]').disabled = pane.scrollTop < 1;
     nav.querySelector('[data-screen-step="1"]').disabled = pane.scrollTop >= end - 1;
   }

@@ -6,19 +6,21 @@
   const dock = document.getElementById("listening-dock");
   const player = dock.querySelector("audio");
   const directAccess = dock.dataset.listenStudyAccess === "direct";
+  const ui = window.UnlockStudentUI;
+  const label = (en, zh) => ui ? ui.label(en, zh) : esc(zh);
   const template = document.createElement("template");
   template.innerHTML = `
     <div class="listen-study-controls" hidden>
       <output id="listen-pass-count" data-listen-passes role="status"></output>
-      <button type="button" class="button secondary" data-listen-study aria-expanded="false"
-        aria-controls="listening-study" disabled>音频精听</button>
+      <button type="button" class="button secondary ui-action" data-listen-study aria-expanded="false"
+        aria-controls="listening-study" disabled>${label("Audio Study", "音频精听")}</button>
     </div>
     <aside id="listening-study" class="workspace-source listening-study-panel" aria-labelledby="listen-study-title">
       <header class="listen-study-head">
-        <h2 id="listen-study-title">音频精听</h2>
+        <h2 id="listen-study-title">${label("Audio Study", "音频精听")}</h2>
         <div class="listen-study-actions">
-          <button type="button" data-listen-translation aria-pressed="false" disabled>中文字幕</button>
-          <button type="button" data-close-listen-study aria-label="收起音频精听">收起</button>
+          <button type="button" data-listen-translation aria-pressed="false" disabled>${label("Chinese Captions", "中文字幕")}</button>
+          <button type="button" data-close-listen-study aria-label="收起音频精听">${label("Close", "收起")}</button>
         </div>
       </header>
       <p data-listen-study-message role="status" hidden></p>
@@ -71,7 +73,10 @@
     button.disabled = !active || (!directAccess && count < required);
     if (!directAccess) {
       const status = count === required ? "已解锁" : "完整收听 " + count + " / " + required + " 次";
-      if (passText.textContent !== status) passText.textContent = status;
+      if (ui) {
+        const english = count === required ? "Unlocked" : "Full plays " + count + " / " + required;
+        if (passText.querySelector(".ui-en")?.textContent !== english) ui.setLabel(passText, english, status);
+      } else if (passText.textContent !== status) passText.textContent = status;
     }
     if (button.disabled && panelOpen) hidePanel();
   }
@@ -214,7 +219,7 @@
     lines.hidden = true;
     translation.disabled = true;
     showTranslation(false);
-    message.textContent = "正在加载听力原文。";
+    message.innerHTML = label("Loading transcript", "正在加载听力原文。");
     message.hidden = false;
     mountPanel();
     if (focusClose) close.focus({ preventScroll: true });
@@ -233,7 +238,8 @@
       sync(true);
       if (evidence.length) paintEvidence(true);
     } catch {
-      if (ticket === request) message.textContent = "听力原文暂时无法加载。请收起后重新打开。";
+      if (ticket === request) message.innerHTML = label("Close and reopen Audio Study to load the transcript.",
+        "听力原文暂时无法加载。请收起后重新打开。");
     }
   }
 

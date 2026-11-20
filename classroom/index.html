@@ -1,59 +1,64 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
-  <link rel="stylesheet" href="../assets/theme.css?v=20261119-tcd-1">
+  <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>单元课堂课前听写</title>
-  <link rel="stylesheet" href="classroom.css?v=20261119-tcd-1">
+  <title>Classroom | UNLOCK</title>
+  <link rel="stylesheet" href="classroom.css?v=20261120-black-white">
   <link rel="stylesheet" href="unit-dictation.css?v=20261120-work-package">
-<script defer src="../practice/students.js?v=20261120-portraits"></script>
+  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261120-black-white">
+  <link rel="stylesheet" href="../assets/student-ui.css?v=20261120-black-white">
+  <script defer src="../assets/student-ui.js?v=20261120-student-ui"></script>
+  <script defer src="../practice/students.js?v=20261120-portraits"></script>
   <script defer src="../assets/session.js?v=20261120-session"></script>
-  <link rel="stylesheet" href="../assets/word-dictation.css?v=20261119-tcd-1">
   <script defer src="../practice/rules.js?v=20261117-5"></script>
   <script defer src="../assets/word-dictation-items.js?v=20261119-1"></script>
   <script defer src="../assets/soft-motion.js?v=20261119-tcd-1"></script>
-  <script defer src="../assets/word-dictation.js?v=20261120-work-package"></script>
+  <script defer src="../assets/word-dictation.js?v=20261120-student-ui"></script>
   <script defer src="../practice/recordings.js?v=20261120-work-package"></script>
   <script defer src="../practice/report.js?v=20261120-work-package"></script>
   <script defer src="../assets/vendor/fflate-0.8.2.min.js"></script>
-  <script defer src="../assets/work-package.js?v=20261120-work-package"></script>
-  <script defer src="../practice/screen-pages.js?v=20261119-speaking-notes"></script>
+  <script defer src="../assets/work-package.js?v=20261120-student-ui"></script>
+  <script defer src="../practice/screen-pages.js?v=20261120-student-ui"></script>
   <script defer src="unit-dictation-data.js?v=20261119"></script>
-  <script defer src="../practice/dictation-playback.js?v=20261118-item-replay"></script>
-<script defer src="unit-dictation.js?v=20261120-legacy-audio"></script>
+  <script defer src="../practice/dictation-playback.js?v=20261120-student-ui"></script>
+  <script defer src="unit-dictation.js?v=20261120-student-ui"></script>
 </head>
-<body id="practice-surface">
+<body id="practice-surface" class="student-ui student-classroom">
   <header class="top">
     <div class="top-inner">
-      <a class="brand" href="../index.html">UNLOCK</a>
-      <div id="account" class="account" hidden>
+      <span class="brand ui-brand">UNLOCK</span>
+      <nav id="account" class="account ui-site-nav" aria-label="Platform navigation 平台导航" hidden>
         <span id="student-name"></span>
-        <button id="classroom-sign-out" class="text-button" type="button">退出登录</button>
-      </div>
-      <a class="home-link" href="../index.html">返回工作区</a>
+        <a class="ui-nav" href="../index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh" lang="zh-CN">返回工作区</small></span></a>
+        <button id="classroom-sign-out" class="ui-nav" type="button"><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh" lang="zh-CN">退出登录</small></span></button>
+      </nav>
     </div>
   </header>
   <main>
     <section class="intro">
-      <p class="eyebrow">单元课堂</p>
-      <h1>课前听写</h1>
-      <p>选一个单元，逐词完成听写和订正。</p>
+      <h1 class="ui-page-title"><span class="ui-label"><span class="ui-en" lang="en">Classroom</span><small class="ui-zh" lang="zh-CN">单元课堂</small></span></h1>
     </section>
     <div id="classwork" hidden>
       <section id="picker" class="card picker" aria-label="选择单元">
         <p id="book-label" class="book-label"></p>
         <form id="unit-form">
           <fieldset class="unit-select-field">
-            <legend>单元</legend>
+            <legend><span class="ui-label"><span class="ui-en" lang="en">Units</span><small class="ui-zh" lang="zh-CN">单元</small></span></legend>
             <div id="unit-options" class="unit-options"></div>
           </fieldset>
-          <button class="primary" type="submit">打开听写</button>
+          <div class="unit-preview">
+            <h2 id="unit-preview-title"></h2>
+            <h3><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
+            <p id="unit-word-count" class="muted"></p>
+            <button class="primary ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Start Dictation</span><small class="ui-zh" lang="zh-CN">开始听写</small></span></button>
+          </div>
         </form>
         <p id="availability" class="notice" role="status"></p>
       </section>
       <section id="practice" class="card worksheet" hidden aria-labelledby="phase-title">
-        <button id="back-units" type="button" class="text-button back-units">返回单元</button>
+        <button id="back-units" type="button" class="ui-nav ui-back back-units" aria-label="Back to the Classroom unit list 返回单元课堂目录"><span class="ui-label"><span class="ui-en" lang="en">Back</span><small class="ui-zh" lang="zh-CN">返回上一级</small></span></button>
         <p id="set-title" class="eyebrow"></p>
         <h2 id="phase-title" tabindex="-1"></h2>
         <p id="directions" class="muted directions"></p>
@@ -63,14 +68,14 @@
           <div class="attempt-toolbar">
             <section id="dictation-dock" aria-label="整组听写录音" hidden>
               <audio preload="metadata" hidden></audio>
-              <button type="button" class="primary" data-dictation-start>播放听写</button>
+              <button type="button" class="primary ui-action" data-dictation-start><span class="ui-label"><span class="ui-en" lang="en">Play Dictation</span><small class="ui-zh" lang="zh-CN">播放听写</small></span></button>
               <p data-dictation-status class="muted" role="status"></p>
               <progress max="1" value="0" aria-label="听写播放进度" hidden></progress>
             </section>
             <div class="attempt-actions">
               <p id="progress" class="muted"></p>
-              <button id="toggle-correct" type="button" class="text-button" hidden>查看全部题目</button>
-              <button id="submit" type="button" class="primary">首次提交</button>
+              <button id="toggle-correct" type="button" class="text-button" hidden><span class="ui-label"><span class="ui-en" lang="en">Show All</span><small class="ui-zh" lang="zh-CN">查看全部题目</small></span></button>
+              <button id="submit" type="button" class="primary ui-action ui-primary"><span class="ui-label"><span class="ui-en" lang="en">Submit</span><small class="ui-zh" lang="zh-CN">首次提交</small></span></button>
             </div>
           </div>
           <ol id="answer-list" class="answer-list" aria-label="听写题目"></ol>
@@ -78,19 +83,19 @@
         <p id="save-status" class="notice" role="status"></p>
       </section>
     </div>
-    <noscript><p class="card">请启用浏览器脚本后再使用课前听写。</p></noscript>
+    <noscript><p class="card"><span class="ui-label"><span class="ui-en" lang="en">Enable JavaScript to start dictation.</span><small class="ui-zh" lang="zh-CN">请启用浏览器脚本后再使用课前听写。</small></span></p></noscript>
   </main>
   <dialog id="dictation-countdown" class="unit-dialog countdown" aria-label="听写倒计时"
       aria-describedby="dictation-countdown-message">
     <p class="countdown-number" role="timer" aria-label="剩余秒数" data-countdown-number>5</p>
-    <p id="dictation-countdown-message">倒计时结束后开始播放整组听写。</p>
+    <p id="dictation-countdown-message"><span class="ui-label"><span class="ui-en" lang="en">The recording will start after the countdown.</span><small class="ui-zh" lang="zh-CN">倒计时结束后开始播放整组听写。</small></span></p>
   </dialog>
   <dialog id="submit-confirm" class="unit-dialog" aria-labelledby="confirm-title">
-    <h2 id="confirm-title">确认首次提交</h2>
+    <h2 id="confirm-title"><span class="ui-label"><span class="ui-en" lang="en">Submit First Attempt?</span><small class="ui-zh" lang="zh-CN">确认首次提交</small></span></h2>
     <p id="submit-message"></p>
     <form method="dialog" class="dialog-actions">
-      <button type="submit" class="secondary" autofocus>返回作答</button>
-      <button id="confirm-first" type="button" class="primary">提交当前作答</button>
+      <button type="submit" class="secondary ui-action" autofocus><span class="ui-label"><span class="ui-en" lang="en">Keep Working</span><small class="ui-zh" lang="zh-CN">返回作答</small></span></button>
+      <button id="confirm-first" type="button" class="primary ui-action ui-primary"><span class="ui-label"><span class="ui-en" lang="en">Submit</span><small class="ui-zh" lang="zh-CN">提交当前作答</small></span></button>
     </form>
   </dialog>
 </body>

@@ -72,6 +72,7 @@
   }
 
   function downloadControl(className) {
+    const ui = window.UnlockStudentUI;
     let current;
     let host;
 
@@ -88,7 +89,11 @@
       const action = document.createElement(ready ? "a" : "button");
       action.className = className;
       action.dataset.packageDownload = "";
-      action.textContent = current.error ? "重试下载 ZIP" : "下载作业 ZIP";
+      const chinese = current.error ? "重试下载 ZIP" : "下载作业 ZIP";
+      if (ui) {
+        action.classList.add("ui-action", "ui-primary");
+        ui.setLabel(action, current.error ? "Retry Download" : "Download ZIP", chinese);
+      } else action.textContent = chinese;
       if (ready) {
         action.href = current.url;
         action.download = current.filename;
@@ -101,7 +106,9 @@
       status.className = "package-status";
       status.dataset.packageStatus = "";
       status.setAttribute("role", "status");
-      status.textContent = current.error || current.message || "";
+      if (ui) ui.setLabel(status, current.error ? "Could not prepare the ZIP. Try again." : current.english,
+        current.error || current.message);
+      else status.textContent = current.error || current.message || "";
       status.hidden = !status.textContent;
       host.replaceChildren(action, status);
       host.hidden = false;
@@ -113,18 +120,23 @@
       job.controller = new AbortController();
       job.error = "";
       job.message = "正在准备作答单";
+      job.english = "Preparing your work";
       render();
       try {
         const plan = job.prepare();
         const blob = await archive(plan, (count, total) => {
           if (current !== job) return;
           job.message = "正在打包附件 " + count + " / " + total;
-          host.querySelector("[data-package-status]").textContent = job.message;
+          job.english = "Packing attachments " + count + " / " + total;
+          const status = host.querySelector("[data-package-status]");
+          if (ui) ui.setLabel(status, job.english, job.message);
+          else status.textContent = job.message;
         }, job.controller.signal);
         if (current !== job) return;
         job.filename = filename(plan.data);
         job.url = URL.createObjectURL(blob);
         job.message = "请完整解压后打开作答单";
+        job.english = "Extract the ZIP before opening the answer sheet.";
         render().click();
       } catch (error) {
         if (current !== job) return;

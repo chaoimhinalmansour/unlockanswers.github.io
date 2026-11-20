@@ -62,7 +62,10 @@
 .work-progress { min-width:156px; }
 .work-progress-line { display:flex; justify-content:space-between; gap:15px; font-size:13px; color:var(--muted); }
 .work-progress-line strong { color:var(--ink); }
-.work-meter { border-radius:5px; overflow:hidden; background:var(--unlock-line); height:4px; margin-top:5px; }
+.work-meter {
+  border-radius:5px; overflow:hidden; background:var(--paper); box-shadow:inset 0 0 0 1px var(--ink);
+  height:4px; margin-top:5px;
+}
 .work-meter span { display:block; background:var(--accent); height:100%; }
 .work-progress .progress-detail { margin-top:5px; font-size:12px; }
 .work-progress .small, .work-progress .progress-detail { max-width:26rem; }
@@ -201,12 +204,12 @@
 .selected-parts .part-button { margin-right:7px; }
 .shift-buttons { display:inline-flex; gap:3px; align-items:center; }
 .part-shift { font:inherit; font-size:13px; border:0; color:var(--accent-dark); background:var(--unlock-white); border-radius:6px; min-height:34px; padding:4px 8px; }
-.part-shift:disabled { color:var(--subtle); opacity:.5; }
+.part-shift:disabled { color:var(--ink); text-decoration:underline dashed; }
 .empty-question { font-size:16px; }
 .empty-question h2 { font-size:21px; margin-bottom:5px; }
 #practice-docks {
   position:fixed; z-index:8; bottom:0; inset-inline:0; background:var(--paper);
-  border-top:1px solid var(--line); box-shadow:0 -3px 12px rgb(17 17 17 / 4%);
+  border-top:1px solid var(--line);
 }
 .dock-contents { max-width:1320px; margin-inline:auto; padding:9px 42px max(9px,env(safe-area-inset-bottom)); }
 #practice-operations { display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
@@ -219,6 +222,22 @@
 #listening-dock .recording-name { font-weight:650; font-size:14px; white-space:nowrap; }
 #listening-dock .listen-range { display:flex; gap:7px; align-items:center; min-width:0; }
 #listening-dock .listen-range input { accent-color:var(--accent); width:100%; min-width:35px; }
+@media (forced-colors: none) {
+  #listening-dock .listen-range input[type="range"] { appearance:none; height:18px; background:var(--paper); }
+  #listening-dock .listen-range input::-webkit-slider-runnable-track {
+    height:3px; border-radius:3px; background:var(--ink);
+  }
+  #listening-dock .listen-range input::-webkit-slider-thumb {
+    appearance:none; width:14px; height:14px; margin-top:-5.5px;
+    background:var(--accent); border:0; border-radius:50%;
+  }
+  #listening-dock .listen-range input::-moz-range-track { height:3px; border-radius:3px; background:var(--ink); }
+  #listening-dock .listen-range input::-moz-range-thumb {
+    width:14px; height:14px; background:var(--accent); border:0; border-radius:50%;
+  }
+  #listening-dock .listen-range input:disabled::-webkit-slider-thumb { background:var(--paper); border:1px dashed var(--ink); }
+  #listening-dock .listen-range input:disabled::-moz-range-thumb { background:var(--paper); border:1px dashed var(--ink); }
+}
 #listening-dock .listen-range output { white-space:nowrap; color:var(--muted); font-size:13px; font-variant-numeric:tabular-nums; }
 #listening-dock .listen-extras { display:flex; align-items:center; flex-wrap:wrap; gap:7px; }
 #listening-dock .listen-extras button { padding:5px 11px; min-height:36px; white-space:nowrap; }

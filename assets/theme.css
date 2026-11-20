@@ -2,20 +2,25 @@
   color-scheme: light;
   --unlock-white: #fff;
   --unlock-blue: #0569b9;
-  --unlock-shell: #f3f8fc;
+  --unlock-ink: #000;
+  --unlock-shell: var(--unlock-white);
   --unlock-selected: #e6f0f8;
-  --unlock-line: #c1daee;
-  --unlock-ink: #111;
-  --unlock-secondary: #555;
+  --unlock-line: var(--unlock-ink);
+  --unlock-secondary: var(--unlock-ink);
   --unlock-card-radius: 18px;
   --unlock-control-radius: 10px;
-  --unlock-card-depth: 0 2px 0 var(--unlock-selected);
+  --unlock-card-depth: none;
   --unlock-float-shadow: 0 6px 22px rgb(17 17 17 / 10%);
   --unlock-scrim: rgb(17 17 17 / 33%);
   --unlock-motion: 250ms;
   --unlock-ease: cubic-bezier(.18, .72, .23, 1);
   accent-color: var(--unlock-blue);
+  scrollbar-color: var(--unlock-ink) var(--unlock-white);
 }
+
+:where(input, textarea)::placeholder { color: var(--unlock-ink); opacity: 1; }
+audio[controls]::-webkit-media-controls-panel { background-color: var(--unlock-white); }
+audio[controls]::-webkit-media-controls-enclosure { background-color: var(--unlock-white); }
 
 @keyframes unlock-card-arrival {
   from { opacity: .86; transform: translateY(6px); }
