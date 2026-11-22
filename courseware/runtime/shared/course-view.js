@@ -378,17 +378,24 @@ function courseWatchPhotoTask(c,body) {
  const id=c.id.split(":").at(-1);
  const scale=picture.width/772;
  const crop=(src,box,alt)=>cropHTML({src,nativeWidth:picture.width,box:box.map(n=>n*scale),alt});
+ if(id==="b3915"){
+  const glossary=classroom.byId.get("B02-RW-U07-classroom:resource:b3916")?.flow.pages.flat()??[];
+  const terms=glossary.map(({term,pos,definition})=>'<dt><strong>'+esc(term)+'</strong> '+
+   '<small>'+esc(pos)+'</small></dt><dd>'+esc(definition)+'</dd>').join("");
+  body='<h3>Glossary</h3><dl class="course-photo-glossary">'+terms+'</dl>';
+ }
  const copy='<div class="course-exercise-copy">'+body+'</div>';
  if(id==="b2754"){
   const globe=crop(picture.src,[333,525,230,210],"Diagram of Earth with five regions labelled a to e");
   return '<div class="course-split">'+copy+'<figure class="course-globe-figure">'+globe+'</figure></div>';
  }
  const boxes=[[48,71,332,214],[396,71,330,214]];
- if(id==="b5042"){
-  const pair=boxes.map((box,i)=>crop(picture.src,box,[
-   "Photo 1. The sun",
-   "Photo 2. A radiation warning sign at a nuclear power station"
-  ][i])).join("");
+ const description=["Photo 1. The sun","Photo 2. A radiation warning sign at a nuclear power station"];
+ if(id==="b5042"||id==="b3064"||id==="b3915"){
+  const pair=boxes.map((box,i)=>crop(picture.src,box,
+   id==="b5042"?description[i]:"Photo "+(i+1)+" from the video")).join("");
+  if(id==="b3915")return '<div class="course-split course-watch-photo-split">'+copy+
+   '<div class="course-discussion-stack">'+pair+'</div></div>';
   return '<div class="course-discussion-photos course-discussion-pair">'+pair+'</div>'+copy;
  }
  const next=classroom.source(c,picture.page+1)?.image;
@@ -396,15 +403,67 @@ function courseWatchPhotoTask(c,body) {
  const photos=[picture.src,next].flatMap((src,page)=>boxes.map((box,index)=>
   crop(src,box,"Photo "+(2*page+index+1)+" from the video"))).join("");
  const gallery='<div class="course-discussion-photos course-discussion-quad">'+photos+'</div>';
- if(id==="b3915"){
-  const glossary=classroom.byId.get("B02-RW-U07-classroom:resource:b3916")?.flow.pages.flat()??[];
-  const terms=glossary.map(({term,pos,definition})=>'<dt><strong>'+esc(term)+'</strong> '+
-   '<small>'+esc(pos)+'</small></dt><dd>'+esc(definition)+'</dd>').join("");
-  return '<div class="course-split course-watch-photo-split"><div class="course-exercise-copy">'+
-   '<h3>Glossary</h3><dl class="course-photo-glossary">'+terms+'</dl></div>'+gallery+'</div>';
- }
  return body?'<div class="course-split course-watch-photo-split">'+copy+gallery+'</div>':
   '<div class="course-discussion-full">'+gallery+'</div>';
+}
+
+const courseReadingFigures={
+ "B02-RW-U05-classroom:material:RW-M04":{
+  page:111,marker:"[IMAGE_1]",box:[278,455,289,154],alt:"The six stages of the Tough Guy race",
+  labels:["mud run","nets","high dive and swim","field of fire","water tunnel","nettles"]
+ },
+ "B02-RW-U07-classroom:material:RW-M03":{
+  page:151,marker:"[IMAGE_3]",box:[397,644,339,323],alt:"Ben Underwood walking with other students"
+ },
+ "B03-RW-U04-classroom:material:RW-M03":{
+  page:86,marker:"[IMAGE_2]",box:[386,713,386,327],alt:"Two men greeting each other with a handshake",className:" course-reading-greeting"
+ }
+};
+
+function courseReadingFigureHTML(c,page,origin) {
+ const figure=courseReadingFigures[c.id];
+ if(!figure||page.sourcePage!==figure.page||page.body.trim()!==figure.marker)return "";
+ const legend=figure.labels?'<figcaption><ol>'+figure.labels.map(label=>'<li>'+esc(label)+'</li>').join("")+'</ol></figcaption>':"";
+ return '<figure class="course-reading-figure'+(figure.className??"")+(legend?' course-reading-diagram':'')+'">'+
+  cropHTML({...figure,src:origin.src,nativeWidth:origin.width})+legend+'</figure>';
+}
+
+function courseReadingActivityPhotos(c,body) {
+ if(c.id==="B03-RW-U05-question:b4964"){
+  const src=classroom.source(c,106)?.image;
+  if(!src)return "";
+  const activities=["Ice skating","Table tennis","Housework","Yoga","Dancing","Running","Swimming","Cycling"];
+  const photos=activities.map((alt,i)=>{
+   const box=[185+128*(i%4),738+124*Math.floor(i/4),121,96];
+   const label=String.fromCharCode(97+i);
+   return '<figure>'+cropHTML({src,box,alt,nativeWidth:772})+'<figcaption>'+label+'</figcaption></figure>';
+  }).join("");
+  return '<div class="course-reading-activities">'+photos+'</div><div class="course-exercise-copy">'+body+'</div>';
+ }
+ if(c.id==="B03-RW-U05-question:b4969"){
+  const src=classroom.source(c,109)?.image;
+  if(!src)return "";
+  const photo=cropHTML({src,box:[331,751,240,230],nativeWidth:772,alt:"A person standing on a bathroom scale"});
+  return '<div class="course-split"><div class="course-exercise-copy">'+body+
+   '</div><figure class="course-news-figure">'+photo+'</figure></div>';
+ }
+ return "";
+}
+
+function revisedCourseReadingScreens(entry,pages) {
+ const omittedPages={
+  "B03-RW-U01-classroom:material:RW-M04":22,
+  "B03-RW-U05-classroom:material:RW-M03":109
+ };
+ const page=omittedPages[entry.id];
+ if(!page)return pages;
+ const filtered=pages.filter(part=>part.sourcePage!==page||part.body.trim()!=="[IMAGE_1]");
+ if(page===109&&filtered.length<pages.length){
+  entry.sourceImages=entry.sourceImages.filter((_,i)=>entry.pages[i]!==109);
+  entry.pages=entry.pages.filter(value=>value!==109);
+  entry.courseReading.pages=entry.courseReading.pages.filter(origin=>origin.page!==109);
+ }
+ return filtered;
 }
 
 function courseTaskHTML(c,p) {
@@ -421,7 +480,7 @@ function courseTaskHTML(c,p) {
   if(!percentages||block.kind!=="text") return courseBlockHTML(block);
   return courseBlockHTML({...block,text:block.text.replace(/\[IMAGE_(\d+)\]/g,(found,n)=>percentages[Number(n)-1]??found)});
  }).join("");
- const visualTask=courseWatchPhotoTask(c,body);
+ const visualTask=courseWatchPhotoTask(c,body)||courseReadingActivityPhotos(c,body);
  if(visualTask)return visualTask;
  const verified=coursePrintedPhotos[id];
  const projectedPhoto=coursePublishedAnswers[c.id]?.photos?.[p];
@@ -457,7 +516,8 @@ function courseReadingHTML(c,p) {
  const title=coursePrintedReadingTitles[c.id]??info.title??info.label;
  const blocks=page.blocks?.filter(block=>block.kind!=="text"||coursePlainSource(block.text).trim());
  const paras=blocks?blocks.map(courseBlockHTML).join(""):page.body.split(/\n+/).map(courseText).filter(Boolean).map(line=>'<p>'+line+'</p>').join("");
- if(!paras)return '<div class="course-picture-only">'+courseSourceImage(origin,"阅读材料原页")+'</div>';
+ if(!paras)return courseReadingFigureHTML(c,page,origin)||
+  '<div class="course-picture-only">'+courseSourceImage(origin,"阅读材料原页")+'</div>';
  const repeats=page.body.trim().split("\n")[0].replace(/^#+\s*/,"")===title;
  return '<div class="course-reading'+(blocks?.some(block=>block.kind==="table")?' course-reading-table':'')+'"><section class="course-reading-copy">'+
    (repeats||!title?"":'<h1>'+courseText(title)+'</h1>')+
@@ -922,7 +982,7 @@ buildClassroomModel=function(data) {
  }
   for(const entry of data.lessonFlow?.entries??[]){
    const pages=courseReadingPagination[entry.id];
-   if(pages)entry.flow.pages=pages;
+   if(pages)entry.flow.pages=revisedCourseReadingScreens(entry,pages);
   }
   reviseCourseVocabulary(data);
   bindCourseCardPictures(data);

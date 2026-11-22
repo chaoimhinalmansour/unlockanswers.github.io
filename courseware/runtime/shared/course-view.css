@@ -99,6 +99,8 @@
 .course-discussion-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-width:0;align-self:center}
 .course-discussion-pair{width:min(100%,850px);flex:none}
 .course-discussion-pair .native-view{height:235px}
+.course-discussion-stack{display:grid;gap:12px}
+.course-discussion-stack .native-view{height:210px}
 .course-discussion-quad .native-view{aspect-ratio:332 / 214}
 .course-discussion-full{width:min(100%,720px);min-height:0;align-self:center}
 .course-watch-photo-split{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:start}
@@ -107,3 +109,13 @@
 .course-photo-glossary{margin:9px 0 0}
 .course-photo-glossary dt{margin-top:8px}
 .course-photo-glossary dd{margin:1px 0 0}
+.course-reading-figure{flex:1;min-height:0;width:min(100%,940px);display:grid;align-self:center;grid-template:1fr / 1fr}
+.course-reading-greeting .native-crop{clip-path:polygon(0 0,100% 0,100% 100%,29% 100%,29% 62%,0 62%)}
+.course-reading-diagram{grid-template-columns:minmax(0,2.3fr) minmax(165px,1fr);column-gap:24px}
+.course-reading-diagram figcaption{align-self:center;font-size:21px;line-height:1.6}
+.course-reading-diagram figcaption ol{padding-left:1.75em}
+.course-reading-activities{width:min(100%,815px);align-self:center;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px 13px}
+.course-reading-activities .native-view{aspect-ratio:121 / 96}
+.course-reading-activities figcaption{font-weight:700;color:var(--blue);font-size:18px;line-height:1.2}
+.course-news-figure{width:min(100%,365px);height:355px;justify-self:center}
+.course-news-figure .native-view{height:100%;width:100%}
