@@ -88,7 +88,7 @@
 
 .course-chart-answers{width:400px;max-width:100%;height:490px;margin:0 auto}
 
-.instruction.course-numbered-instruction{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:.55em;align-items:baseline;font-weight:700}
+.instruction.course-numbered-instruction{display:grid;grid-template-columns:minmax(1.4em,max-content) minmax(0,1fr);gap:.55em;align-items:baseline;font-weight:700}
 .course-rewatch-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;min-height:0}
 .course-rewatch-columns>.course-exercise-copy{min-width:0}
 .course-rewatch-matching{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
@@ -119,3 +119,134 @@
 .course-reading-activities figcaption{font-weight:700;color:var(--blue);font-size:18px;line-height:1.2}
 .course-news-figure{width:min(100%,365px);height:355px;justify-self:center}
 .course-news-figure .native-view{height:100%;width:100%}
+
+
+.course-unit-video {
+ --course-caption-en:19px;
+ --course-caption-zh:18px;
+ min-width:0;
+ min-height:0;
+ width:100%;
+ flex:1;
+ display:grid;
+ grid-template-rows:auto minmax(0,1fr) auto;
+ gap:6px;
+}
+.content:has(.course-unit-video) {
+ gap:9px;
+ padding-top:18px;
+ padding-bottom:18px;
+}
+.course-cinema-tools {
+ display:flex;
+ justify-content:flex-end;
+ align-items:center;
+ gap:10px;
+}
+.course-cinema-tools button {
+ padding:.3em .65em;
+ border:1px solid currentColor;
+ border-radius:7px;
+ background:var(--paper);
+ color:var(--ink);
+ font:inherit;
+ line-height:1.25;
+ cursor:pointer;
+}
+.course-cinema-tools button[aria-pressed=true] {
+ background:var(--ink);
+ color:var(--paper);
+ font-weight:var(--bold);
+}
+.course-cinema-tools [data-course-video-chinese],
+.course-cinema-tools [data-course-video-fullscreen],
+.course-cinema-window-status {
+ display:none;
+}
+.course-cinema-media {
+ container-type:size;
+ display:grid;
+ place-items:center;
+ min-width:0;
+ min-height:0;
+}
+.course-cinema-picture {
+ width:min(100cqw,calc(100cqh * var(--course-picture-ratio,1.77778)));
+ aspect-ratio:var(--course-picture-ratio,1.77778);
+ position:relative;
+ overflow:hidden;
+ border-radius:8px;
+ background:#111;
+}
+.course-cinema-picture video {
+ display:block;
+ position:absolute;
+ inset:0;
+ width:100%;
+ height:100%;
+ object-fit:cover;
+ object-position:center;
+}
+.course-cinema-picture video::-webkit-media-controls-fullscreen-button {display:none}
+.course-cinema-captions {
+ display:grid;
+ grid-template-rows:calc(var(--course-caption-en) * 1.25 * var(--course-caption-en-rows,2))
+                    calc(var(--course-caption-zh) * 1.25 * var(--course-caption-zh-rows,2));
+ text-align:center;
+}
+.course-cinema-captions p {
+ align-content:center;
+ margin:0;
+ padding:0 14px;
+ line-height:1.22;
+ overflow-wrap:anywhere;
+ text-wrap:balance;
+ font-size:var(--course-caption-en);
+}
+.course-cinema-captions p[lang=zh-CN] {font-size:var(--course-caption-zh)}
+.course-cinema-error {color:var(--red)}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) {
+ --course-caption-en:clamp(20px,2.7vh,34px);
+ --course-caption-zh:clamp(18px,2.45vh,30px);
+ box-sizing:border-box;
+ width:100vw;
+ height:100vh;
+ padding:6px 12px;
+ gap:5px;
+ background:#111;
+ color:#fff;
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools {
+ font-size:clamp(16px,1.8vh,21px);
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools button {
+ background:#111;
+ color:#fff;
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools button[aria-pressed=true] {
+ background:#fff;
+ color:#111;
+ border-color:#fff;
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools [data-course-video-chinese],
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools [data-course-video-fullscreen] {
+ display:inline-block;
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-tools [data-course-video-chinese]{
+ margin-right:auto;
+}
+:is(.course-unit-video:fullscreen,.course-unit-video.course-cinema-fill) .course-cinema-picture {border-radius:0}
+.course-unit-video.course-cinema-fill {position:fixed;inset:0;z-index:100}
+.course-unit-video.course-cinema-fill .course-cinema-window-status {display:block;font-size:.78em}
+
+.exercise-glossary .flow-glossary {
+ --glossary-row-height:115px;
+ column-gap:44px;
+}
+.exercise-glossary .flow-glossary-head {
+ grid-template-columns:minmax(0,1fr) 48px;
+ gap:8px;
+}
+.exercise-glossary .flow-glossary-controls {grid-template-columns:48px}
+.exercise-glossary .flow-glossary-term strong {font-size:33px}
+.exercise-glossary .flow-glossary-entry dd:empty {display:none}

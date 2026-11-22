@@ -351,7 +351,7 @@ function alignGalleryAnswers(doc){
 
 function wireLessonControls(doc,c,resume){
  alignGalleryAnswers(doc);
- const playback=wirePlayback(doc);
+ const playback=wirePlayback(doc)??courseProofVideo(doc,c);
  if(resume)playback?.open(resume.offset,resume.playing);
  if(c.flow?.kind==="video")playback?.open();
  if(c.presentation?.kind==="classification-diagram")drawClassification(doc,c.presentation);

@@ -83,13 +83,25 @@ function wireReader(doc,c) {
  });
 }
 
-function instructionHTML(c) {
- const watchExercise=c.coursePages&&c.module==="WATCH AND LISTEN"&&/^\d+[a-z]?$/i.test(c.ex);
- const wording=watchExercise?c.instruction.replace(/^\s*[▶►]\s*/,""):c.instruction;
+function classroomExerciseNumber(c) {
+ const number=String(c.ex??"");
+ // Unit opener item numbers are part of its questions, not a printed exercise number.
+ if (!c.id.includes("-question:") || c.module==="UNLOCK YOUR KNOWLEDGE") return "";
+ return /^\d+[a-z]?(?:[-–]\d+[a-z]?)?$/i.test(number) ? number : "";
+}
+
+function instructionHTML(c,showNumber=true) {
+ if (c.exerciseVocabulary) return "";
+ const number=classroomExerciseNumber(c);
+ let wording=c.instruction??"";
+ if (c.module==="WATCH AND LISTEN") wording=wording.replace(/^\s*[▶►]\s*/,"");
+ // Retain track references such as 6.1, including when a track starts the instruction.
+ const prefixed=wording.match(/^\s*(\d+[a-z]?(?:[-–]\d+[a-z]?)?)(?:[.)])?\s+/i);
+ if (number && prefixed?.[1].toLowerCase()===number.toLowerCase()) wording=wording.slice(prefixed[0].length);
  const instruction=esc(wording).replace(/(Student [A-Z]:)/g,"<strong>$1</strong>");
- if(!watchExercise)return '<p class="instruction" data-original-instruction>'+instruction+'</p>';
+ if (!showNumber || !number) return '<p class="instruction" data-original-instruction>'+instruction+'</p>';
  return '<p class="instruction course-numbered-instruction"><span class="course-exercise-number" aria-label="Exercise '+
-  esc(c.ex)+'">'+esc(c.ex)+'</span><span data-original-instruction>'+instruction+'</span></p>';
+  esc(number)+'">'+esc(number)+'</span><span data-original-instruction>'+instruction+'</span></p>';
 }
 
 function workRecordKey(c,deck) {
@@ -313,11 +325,13 @@ function flowGlossaryHTML(entries) {
  const cards=window.UNLOCK_WORD_PRONUNCIATION, recordings=window.UNLOCK_TASK_GLOSSARY_AUDIO;
  const body=entries.map((entry,i)=>{
   const {term,pos,definition,wordAudio,cardWord}=entry;
-  const wordClip=cardWord?cards.entries[wordAudio].audio:recordings.words[wordAudio];
-  const word=wordCardAudioHTML("word","Word","Play word pronunciation for "+term,wordClip);
+  const wordClip=entry.pronunciation ? courseVoice(entry.pronunciation) :
+   entry.exerciseClip ? classroomVocabularyData.clips[entry.exerciseClip] :
+   cardWord ? cards.entries[wordAudio]?.audio : recordings.words[wordAudio];
+  const word=wordClip ? wordCardAudioHTML("word","Word","Play word pronunciation for "+term,wordClip) : "";
   return '<div class="flow-glossary-entry"'+(i%rows===0?' data-column-start':"")+'>'+
    '<dt class="flow-glossary-head"><span class="flow-glossary-term"><strong>'+esc(term)+'</strong> <small>'+esc(pos)+'</small></span>'+
-   '<span class="flow-glossary-controls" role="group" aria-label="British English audio">'+word+'</span></dt>'+
+   (word?'<span class="flow-glossary-controls" role="group" aria-label="Word pronunciation">'+word+'</span>':"")+'</dt>'+
    '<dd>'+esc(definition)+'</dd></div>';
  }).join("");
  return '<dl class="flow-glossary" lang="en-GB" data-rows="'+rows+'" style="--glossary-rows:'+rows+'">'+body+'</dl>'+

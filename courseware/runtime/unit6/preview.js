@@ -154,18 +154,11 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
     }
   }
 
-  function isNumbered(c) {
-    return c.id.startsWith(unit + "-question:") && c.id !== knowledgeId && /^\d+[a-z]?$/i.test(c.ex);
-  }
-
   function numberedInstruction(c) {
-    if (!isNumbered(c)) return instructionHTML(c);
-    const label = '<span class="u6-ex-number" aria-label="Exercise '+esc(c.ex)+'">'+esc(c.ex)+'</span>';
-    const formatted = instructionHTML(c);
-    const clean = c.module === "WATCH AND LISTEN"
-      ? formatted.replace(/(data-original-instruction>)\s*[▶►]\s*/, "$1")
-      : formatted;
-    return '<div class="u6-instruction">'+label+clean+'</div>';
+    const number=classroomExerciseNumber(c);
+    if (!number) return instructionHTML(c);
+    const label = '<span class="u6-ex-number" aria-label="Exercise '+esc(number)+'">'+esc(number)+'</span>';
+    return '<div class="u6-instruction">'+label+instructionHTML(c,false)+'</div>';
   }
 
   function projectionInstruction(c) {
