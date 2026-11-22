@@ -1,0 +1,170 @@
+.top-source .stage-screen-count {
+  display:block;
+  margin-top:2px;
+  font-size:12px;
+  line-height:1.1;
+}
+
+.rail [data-stage-return] {
+  line-height:1.3;
+}
+
+.content.stage-skill-content {
+  min-height:0;
+}
+
+.stage-original-skill {
+  flex:1;
+  min-height:0;
+  position:relative;
+  margin:0;
+  width:100%;
+}
+
+.stage-original-skill img {
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:top center;
+}
+
+.stage-skill-title {
+  font-size:30px;
+  line-height:1.3;
+  margin:0 0 20px;
+  font-weight:700;
+}
+
+.stage-skill-copy {
+  min-width:0;
+  max-width:1080px;
+  font-size:23px;
+  line-height:1.48;
+}
+
+.stage-skill-copy p {
+  white-space:pre-wrap;
+  margin:0 0 14px;
+}
+
+.stage-skill-copy table {
+  width:100%;
+  border-collapse:collapse;
+}
+
+.stage-skill-copy :is(td,th) {
+  white-space:pre-wrap;
+  vertical-align:top;
+  border:1px solid #000;
+  padding:8px 10px;
+}
+
+.shell { --stage-divider:1px solid #000; }
+
+.rail {
+  position:relative;
+  background:#fff;
+  border-right-color:transparent;
+}
+
+/* Center the rule in the space between the buttons and the content inset. */
+.rail::after {
+  content:"";
+  position:absolute;
+  inset-block:0;
+  inset-inline-start:calc(100% + 17px);
+  border-inline-start:var(--stage-divider);
+  pointer-events:none;
+}
+.rail button { color:#000; background:#fff; border-color:#000 }
+.rail button:is([aria-pressed=true],[aria-expanded=true]) { color:#fff; background:#000; border-color:#000 }
+.top { background:#fff; border-bottom:var(--stage-divider) }
+
+.stage-skill-clipped { container-type:size; }
+
+.stage-skill-strip {
+  position:relative;
+  width:min(100cqw, calc(100cqh * var(--skill-strip-ratio)));
+  aspect-ratio:var(--skill-strip-ratio);
+  margin-inline:auto;
+  overflow:hidden;
+}
+
+.stage-skill-strip img {
+  position:absolute;
+  inset:var(--skill-strip-shift) auto auto 0;
+  height:auto;
+}
+
+.stage-native-lesson {
+  max-width:100%;
+  font-size:24px;
+  line-height:1.45;
+}
+
+.stage-definition-list {
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr);
+  column-gap:26px;
+  row-gap:17px;
+  align-items:baseline;
+  margin:24px 0 0;
+}
+
+.stage-definition-list dt { font-weight:700; }
+.stage-definition-list dd { margin:0; }
+.stage-native-lesson :is(p,dd) strong { color:#174da8; }
+
+.stage-native-lesson > :is(.stage-examples, dl, table) + p { margin-top:20px; }
+.stage-native-lesson .stage-examples p { margin:0 0 8px; }
+.stage-native-lesson .stage-examples p:last-child { margin-bottom:0; }
+.stage-native-lesson table { font-size:22px; line-height:1.35; }
+.stage-native-lesson table th { text-align:left; }
+.stage-native-lesson :is(p,dd,td) strong { color:#174da8; }
+
+.stage-native-lesson h2 {
+  color:#000;
+  margin:14px 0 7px;
+  font-size:23px;
+  line-height:1.28;
+}
+
+.stage-native-lesson table { margin:0 0 14px; table-layout:fixed; }
+.stage-native-lesson :is(th, td) { overflow-wrap:anywhere; }
+.stage-native-lesson th { background:#fff; color:#000; }
+
+.stage-native-columns {
+  display:grid;
+  align-items:start;
+  gap:16px;
+  margin:0 0 14px;
+}
+.stage-native-columns > p { margin:0; overflow-wrap:anywhere; }
+.stage-native-grid {
+  position:relative;
+  container-type:inline-size;
+  margin:0 0 14px;
+}
+.stage-grid-rule,.stage-grid-cell { position:absolute; }
+.stage-grid-rule { pointer-events:none; color:#000; }
+.stage-grid-rule-h { border-top:1px solid currentColor; }
+.stage-grid-rule-v { border-left:1px solid currentColor; }
+.stage-grid-cell { line-height:1.15; white-space:nowrap; color:#000; }
+.stage-grid-cell strong { color:#174da8; }
+
+.stage-teaching-figure { margin:10px 0 14px; }
+.stage-teaching-figure .native-view { width:100%; height:100%; }
+.stage-teaching-figure .native-crop { border-radius:0; }
+
+/* Let long phase titles wrap in the existing header before they reach other columns. */
+.top-task {
+  white-space:normal;
+  overflow-wrap:anywhere;
+  gap:2px;
+  line-height:1.04;
+}
+
+/* A gallery in a previous-exercise drawer has no fixed task-row height. */
+.reference-sheet > .native-gallery { min-height:260px; }

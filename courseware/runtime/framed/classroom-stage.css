@@ -1,0 +1,112 @@
+body.classroom-host {
+  height:100vh;
+  height:100dvh;
+  margin:0;
+  overflow:hidden;
+  background:#fff;
+  color:#000;
+}
+
+.classroom-host .review-head,
+.classroom-host .review-main > .review-actions {
+  display:none;
+}
+
+.classroom-host .review-grid {
+  height:100%;
+  min-height:0;
+  grid-template-columns:clamp(176px, 16vw, 270px) minmax(0,1fr);
+}
+
+.classroom-host .review-nav {
+  height:100%;
+  min-height:0;
+  position:static;
+  overflow:auto;
+  overscroll-behavior:contain;
+  scrollbar-width:thin;
+  scrollbar-color:#000 #fff;
+  padding:16px 14px;
+  background:#fff;
+  border:0;
+}
+
+.stage-nav-tools {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:8px 12px;
+  margin-bottom:12px;
+}
+
+.stage-nav-tools a { color:#000; }
+.stage-nav-tools button,
+.classroom-host .filters select,
+.classroom-host .source-top :is(button,a) {
+  color:#000;
+  background:#fff;
+  border:1px solid #000;
+}
+
+.stage-nav-tools button {
+  padding:4px 8px;
+  border-radius:5px;
+}
+
+.classroom-host .nav-step {
+  background:#fff;
+  color:#000;
+  border:1px solid transparent;
+  border-left:3px solid transparent;
+}
+.classroom-host .nav-step:hover { text-decoration:underline; }
+.classroom-host .nav-step.active {
+  border-left-color:#000;
+  font-weight:700;
+}
+.classroom-host :is(button,select,a):focus-visible {
+  outline:2px solid #000;
+  outline-offset:2px;
+}
+
+.classroom-host .review-main {
+  min-width:0;
+  min-height:0;
+  padding:0;
+}
+
+.classroom-host .preview-wrap {
+  height:100%;
+  overflow:hidden;
+  display:grid;
+  place-items:center;
+  padding:12px 16px;
+  background:#fff;
+  border-radius:0;
+}
+
+.classroom-host .preview-size {
+  margin:0;
+  border:2px solid #000;
+  background:#fff;
+}
+
+.classroom-host .source-modal {
+  position:absolute;
+  padding:10px;
+  overflow:hidden;
+  background:#fff;
+  border-radius:0;
+}
+
+.classroom-host .source-top {
+  flex-wrap:wrap;
+  flex:none;
+  gap:6px 10px;
+  padding:6px;
+  border-radius:0;
+}
+
+.classroom-host[data-stage-only] .review-grid { grid-template-columns:minmax(0,1fr); }
+.classroom-host[data-stage-only] .review-nav { display:none; }
+.classroom-host[data-stage-only] .preview-wrap { padding:0; }

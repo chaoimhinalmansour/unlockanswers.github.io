@@ -336,3 +336,12 @@ body:has(#login:not([hidden])) { min-height: 0; }
   .portal-main { padding: 36px 16px; }
   .workspace-card { min-height: 108px; padding: 20px; }
 }
+
+.workspace-home[data-role="teacher"] .workspace-cards {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+@media (max-width: 560px) {
+  .workspace-home[data-role="teacher"] .workspace-cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

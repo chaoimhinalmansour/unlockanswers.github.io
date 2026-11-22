@@ -8,6 +8,7 @@
     ["practice/index.html", ["student"]],
     ["classroom/index.html", ["student"]],
     ["practice/teaching.html", ["teacher"]],
+    ["courseware/index.html", ["teacher"]],
     ["writing-review.html", roles]
   ]);
   const storage = (() => {
@@ -56,7 +57,8 @@
       const file = url.pathname.slice(site.pathname.length);
       const canonical = file === "practice/" ? "practice/index.html"
         : file === "classroom/" ? "classroom/index.html" : file;
-      const permitted = pages.get(canonical);
+      const coursewareUnit = /^courseware\/units\/B(?:0[1-4]-(?:LS|RW)-U0[1-8]|05-(?:LS|RW)-U(?:0[1-9]|10))\.html$/.test(canonical);
+      const permitted = pages.get(canonical) ?? (coursewareUnit ? ["teacher"] : null);
       return permitted && (!role || permitted.includes(role)) ? url : null;
     } catch {
       return null;

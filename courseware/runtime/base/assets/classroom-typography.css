@@ -1,0 +1,7 @@
+/* Black is used for reading text, instructions and headings.
+   Blue marks actions, focus words and revealed answers.
+   Red calls attention to errors that need a correction. */
+:root{--ink:#000;--blue:#2355b1;--red:#a12626;--bold:700}
+a:any-link{color:var(--blue)}
+h1,h2,h3,h4,h5,h6,strong,b,th{font-weight:var(--bold)}
+[data-original-instruction]{color:var(--ink);font-weight:var(--bold)}
