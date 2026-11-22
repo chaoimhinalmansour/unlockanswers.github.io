@@ -18,6 +18,51 @@
 "use strict";
 const V=JSON.parse(document.getElementById("fixture-data").textContent);
 const classroom=buildClassroomModel(V);
+{
+ const grammar=classroom.byId.get("B03-RW-U06-classroom:teaching:B03-RW-p135-01");
+ grammar.instruction="MAKING PREDICTIONS WITH MODALS AND ADVERBS OF CERTAINTY";
+ grammar.flow.pages=[{blocks:[
+  {kind:"paragraph",text:"Use the modals <em>will</em>, <em>could</em> and <em>won’t</em> with an adverb of certainty (<em>definitely</em>, <em>probably</em>, etc.) before the main verb to talk about future predictions. For example:"},
+  {kind:"definitions",rows:[
+   ["100% = <em>will definitely</em>","<em>Cars <strong>will definitely</strong> become more efficient in the future.</em>"],
+   ["90% = <em>will probably</em>","<em>The next generation <strong>will probably</strong> use more digital devices.</em>"],
+   ["50% = <em>could possibly</em>","<em>We <strong>could possibly</strong> see humans walking on Mars soon.</em>"],
+   ["20% = <em>probably won’t</em>","<em>We <strong>probably won’t</strong> have flying cars.</em>"],
+   ["0% = <em>definitely won’t</em>","<em>We <strong>definitely won’t</strong> be travelling to the stars.</em>"]
+  ]}
+ ]}];
+
+ const underline=classroom.byId.get("B03-RW-U06-question:b5088");
+ underline.coursePages=[underline.coursePages.flat().map(({text,answer},i)=>{
+  const label=String(i+1);
+  const prefix=label+" ";
+  const parts=answer.parts.map(part=>({
+   ...part,start:part.start-prefix.length,end:part.end-prefix.length
+  }));
+  return {kind:"item",id:"b5088.time-"+label,label,prompt:text.slice(prefix.length),options:[],
+   answer:{mode:"indexed-mark",parts}};
+ })];
+
+ const prefixes=classroom.byId.get("B03-RW-U06-question:b5092");
+ const rows=prefixes.coursePages.flat().filter(block=>block.kind==="table").flatMap(block=>block.rows);
+ const [header,...entries]=rows;
+ prefixes.coursePages=[[{kind:"table",rows:[
+  header.map(cell=>({...cell,header:true})),
+  ...entries.map(([prefix,meaning,example])=>[
+   {...prefix,text:"<em>"+prefix.text+"</em>"},
+   meaning,
+   {...example,text:example.text.replaceAll("____","____________")}
+  ])
+ ]}]];
+
+ const compare=classroom.byId.get("B03-RW-U06-question:b5093");
+ const emphasis=["unsafe","rethink","dehumanizes","translate","disorganized","enlarge"];
+ compare.coursePages=[compare.coursePages.flat().map((item,i)=>{
+  const [first,second]=item.prompt.split(" / ");
+  const term=emphasis[i];
+  return {...item,prompt:first.replace(term,"**"+term+"**")+"\n"+second,dialogue:true};
+ })];
+}
 const primary=V.fixtures, cases=classroom.cases;
 const frame=document.getElementById("preview");
 const sequenceView=document.getElementById("sequence-view");
