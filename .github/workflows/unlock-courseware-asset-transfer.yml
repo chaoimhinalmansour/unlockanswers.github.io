@@ -1,0 +1,81 @@
+name: Import verified UNLOCK courseware assets
+on:
+  push:
+    branches: ['codex/unlock-courseware-transfer-20261122']
+    paths: ['.github/workflows/unlock-courseware-asset-transfer.yml']
+permissions:
+  contents: write
+jobs:
+  import-assets:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Verify and publish the staged courseware assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+          ASSET_PLAN: '{"base":"fc92910af047acd8dff035d390a90b887914c338","target":"refs/heads/codex/unlock-courseware-assets-20261122","end":"c735105a953f4d8574afdae6c989e097094dd043","files":9294,"bytes":2992547212,"draftTag":"unlock-courseware-asset-transfer-20261122","bundles":[{"name":"unlock-assets-01.bundle","bytes":502350230,"sha256":"58cd117dafd2bb004d35e550b3a4368bb51ca44d61ea733cf74727980b5294b3","ref":"refs/heads/codex/unlock-courseware-transfer-01","commit":"600d129c4466c26e4e10538bc74847f653987fbd"},{"name":"unlock-assets-02.bundle","bytes":500274667,"sha256":"c7ee5a774834b88c23b126c1d0cb4353b605b7473be3a28ef14cfb2c9d1593ef","ref":"refs/heads/codex/unlock-courseware-transfer-02","commit":"4caaba19a4bed255aa9b0326b156ef9077d077b9"},{"name":"unlock-assets-03.bundle","bytes":507768247,"sha256":"e11af06b48e8050c361118f046a1f6e348b1c95bbd1f94c94d5390414bbb6a76","ref":"refs/heads/codex/unlock-courseware-transfer-03","commit":"99add80470ec29862d66a3a0c6f076fdf32c373e"},{"name":"unlock-assets-04.bundle","bytes":501972492,"sha256":"d01c09a151046ec9631cfa508f4fc1ddb12e4727f34e9df0d6fa1209f3c09e08","ref":"refs/heads/codex/unlock-courseware-transfer-04","commit":"6eac7f0fc8ce44a7b2fd0098ca858169ad52df26"},{"name":"unlock-assets-05.bundle","bytes":255817181,"sha256":"9217b40f1e9e379926aea6baa8a7107f7d231f2836fa5aaeb24b4ed0d01663d6","ref":"refs/heads/codex/unlock-courseware-transfer-05","commit":"c735105a953f4d8574afdae6c989e097094dd043"}]}'
+        run: |
+          python3 - <<'PYTHON'
+          import hashlib
+          import json
+          import os
+          import subprocess
+          from pathlib import Path
+
+          repo = "chaoimhinalmansour/unlockanswers.github.io"
+          assert os.environ["GITHUB_REPOSITORY"] == repo
+          plan = json.loads(os.environ["ASSET_PLAN"])
+          target = "refs/heads/codex/unlock-courseware-assets-20261122"
+          assert plan["target"] == target
+          folder = Path(os.environ["RUNNER_TEMP"]) / "unlock-courseware-asset-transfer"
+          folder.mkdir()
+          store = folder / "bundles"
+          store.mkdir()
+          subprocess.run([
+              "gh", "release", "download", plan["draftTag"], "--repo", repo,
+              "--pattern", "*.bundle", "--dir", str(store),
+          ], check=True)
+
+          gitdir = folder / "assets.git"
+          subprocess.run(["git", "init", "--bare", str(gitdir)], check=True)
+
+          def git(*args):
+              output = subprocess.check_output([
+                  "git", "-C", str(gitdir),
+                  "-c", "gc.auto=0", "-c", "maintenance.auto=false",
+                  "-c", "credential.helper=", "-c", "credential.helper=!gh auth git-credential",
+                  *args,
+              ], encoding="utf-8")
+              return output.strip()
+
+          git("remote", "add", "origin", "https://github.com/" + repo + ".git")
+          git("fetch", "--no-tags", "origin", target + ":" + target)
+          current = git("rev-parse", target)
+          chain = [plan["base"]] + [part["commit"] for part in plan["bundles"]]
+          assert current in chain
+          for number, part in enumerate(plan["bundles"], start=1):
+              if number <= chain.index(current):
+                  continue
+              asset = store / part["name"]
+              assert asset.is_file() and asset.stat().st_size == part["bytes"]
+              with asset.open("rb") as stream:
+                  digest = hashlib.file_digest(stream, "sha256").hexdigest()
+              assert digest == part["sha256"]
+              git("bundle", "verify", str(asset))
+              git("fetch", "--no-tags", str(asset), part["ref"])
+              candidate = git("rev-parse", "FETCH_HEAD")
+              assert candidate == part["commit"]
+              assert git("rev-parse", candidate + "^") == current
+              for line in git("diff-tree", "-r", "--no-commit-id", "--name-status", current, candidate).splitlines():
+                  assert line.startswith("A\tcontent/")
+              git("push", "--porcelain", "origin", candidate + ":" + target)
+              assert git("ls-remote", "--heads", "origin", target).split("\t")[0] == candidate
+              current = candidate
+              print(f"Verified {number}/{len(plan['bundles'])}: {current}", flush=True)
+
+          assert current == plan["end"]
+          files = git("ls-tree", "-l", "-r", current).splitlines()
+          assert len(files) == plan["files"]
+          assert sum(int(line.split("\t", 1)[0].split()[-1]) for line in files) == plan["bytes"]
+          print(f"Verified all {len(files)} files at {current}", flush=True)
+          PYTHON
