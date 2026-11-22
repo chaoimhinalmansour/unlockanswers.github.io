@@ -1,48 +1,6 @@
 "use strict";
 
 const unit6PilotAssetRoot = new URL(".", document.currentScript.src);
-const unit6Subtitles = [
-  {"start": 1.22, "end": 4.48, "text": "Being a research scientist can be an exciting career.", "zh": "从事科研工作可以是一项令人兴奋的职业。"},
-  {"start": 5.39, "end": 6.9, "text": "But what skills are needed?", "zh": "那么，需要具备哪些技能呢？"},
-  {"start": 8.16, "end": 11.87, "text": "Research scientists have a strong interest in their chosen area,", "zh": "科研人员对自己选择的领域有浓厚兴趣，"},
-  {"start": 12.15, "end": 14.27, "text": "normally one of the STEM subjects.", "zh": "通常是 STEM 学科中的一门。"},
-  {"start": 15.67, "end": 18.49, "text": "Science, technology, engineering, or math.", "zh": "也就是科学、技术、工程或数学。"},
-  {"start": 19.69, "end": 22.31, "text": "Asking why and how things happen,", "zh": "追问事情为什么发生、怎样发生，"},
-  {"start": 22.94, "end": 25.44, "text": "testing ideas and evaluating solutions,", "zh": "检验想法并评估解决办法。"},
-  {"start": 25.99, "end": 27.27, "text": "or critical thinking,", "zh": "这就是批判性思维，"},
-  {"start": 27.35, "end": 29.12, "text": "is fundamental to science.", "zh": "也是科学的基础。"},
-  {"start": 30.52, "end": 32.8, "text": "Mental flexibility is essential too,", "zh": "思维灵活也很重要，"},
-  {"start": 33.06, "end": 38.36, "text": "the ability to move from one task to another and think of more than one solution to a problem.", "zh": "也就是能在不同任务之间转换，并为同一个问题想出不止一种解决办法。"},
-  {"start": 40.51, "end": 43.78, "text": "The inventor of the most popular vacuum cleaner in the UK,", "zh": "发明了英国最畅销的吸尘器的人，"},
-  {"start": 43.87, "end": 44.89, "text": "James Dyson,", "zh": "詹姆斯·戴森，"},
-  {"start": 45.04, "end": 47.79, "text": "made over 5,000 unsuccessful attempts,", "zh": "经历了五千多次失败的尝试。"},
-  {"start": 48.08, "end": 51.12, "text": "the first of which were made with just cardboard and sticky tape.", "zh": "最早几次试制只用了纸板和胶带。"},
-  {"start": 52.51, "end": 55.15, "text": "But he succeeded in producing a vacuum cleaner", "zh": "但他成功做出了一台吸尘器，"},
-  {"start": 55.15, "end": 58.68, "text": "that worked differently from all the others on the market at the time.", "zh": "它的工作方式与当时市面上其他吸尘器都不同。"},
-  {"start": 60.56, "end": 63.91, "text": "Flexibility helps in adapting to different environments too.", "zh": "灵活性也有助于适应不同的工作环境。"},
-  {"start": 64.3, "end": 66.87, "text": "Research scientists may work in a laboratory,", "zh": "科研人员可能在实验室工作，"},
-  {"start": 67.86, "end": 68.87, "text": "a lecture hall,", "zh": "也可能在报告厅、"},
-  {"start": 69.97, "end": 70.94, "text": "underwater,", "zh": "水下、"},
-  {"start": 72.05, "end": 73.06, "text": "outdoors,", "zh": "户外，"},
-  {"start": 73.66, "end": 75.0, "text": "or even in space.", "zh": "甚至太空中工作。"},
-  {"start": 76.38, "end": 81.99, "text": "Successful scientists take the initiative and want to make a real difference to people's lives.", "zh": "成功的科学家会主动行动，希望真正改变他人的生活。"},
-  {"start": 83.69, "end": 88.01, "text": "The laser -faco probe is a device which is used to remove cataracts.", "zh": "激光乳化探针是一种用于去除白内障的设备。"},
-  {"start": 89.13, "end": 91.55, "text": "It was invented by Dr. Patricia Bath,", "zh": "它是由帕特里夏·巴斯博士发明的。"},
-  {"start": 91.79, "end": 97.38, "text": "who noticed that her African-American patients in New York were more likely to lose their sight.", "zh": "她发现，自己在纽约诊治的非裔美国患者更容易失明。"},
-  {"start": 98.4, "end": 101.06, "text": "Her invention is now used in many countries.", "zh": "如今，许多国家都在使用她的发明。"},
-  {"start": 102.34, "end": 106.54, "text": "Research scientists also need to be good at teamwork and collaboration.", "zh": "科研人员也需要擅长团队合作。"},
-  {"start": 107.99, "end": 112.34, "text": "The company BioNTech was started by scientists Ouzlem Tureci,", "zh": "BioNTech 公司由厄兹莱姆·图雷奇、"},
-  {"start": 112.48, "end": 116.56, "text": "Uğur Şahin, and Christoph Huber to research treatment for cancer.", "zh": "乌尔·萨欣和克里斯托夫·胡贝尔共同创立，目的是研究癌症治疗。"},
-  {"start": 117.93, "end": 120.6, "text": "This involved research into the immune system,", "zh": "这涉及对免疫系统的研究。"},
-  {"start": 120.9, "end": 125.14, "text": "and during the pandemic they were able to partner with the drug company Pfizer", "zh": "疫情期间，他们与辉瑞制药公司合作，"},
-  {"start": 125.16, "end": 128.57, "text": "to produce a successful vaccine against COVID-19.", "zh": "成功研制出新冠疫苗。"},
-  {"start": 130.18, "end": 133.92, "text": "So if you have a special interest and are keen to develop the skills,", "zh": "所以，如果你对某个领域特别感兴趣，也愿意培养一些技能，"},
-  {"start": 133.98, "end": 136.14, "text": "among others, of critical thinking,", "zh": "比如批判性思维、"},
-  {"start": 136.26, "end": 139.46, "text": "flexibility, taking initiative, and collaboration,", "zh": "灵活应变、主动性和协作能力，"},
-  {"start": 139.58, "end": 142.28, "text": "research science may be the career for you.", "zh": "科研也许就是适合你的职业。"},
-  {"start": 143.42, "end": 145.79, "text": "Who knows what you may invent?", "zh": "谁知道你将来会发明些什么呢？"},
-];
-
 const unit6Track61 = [
   {"start": 0.0, "end": 3.4, "en": "Unit six, six point one.", "zh": "第六单元，音轨 6.1。"},
   {"start": 3.4, "end": 6.68, "en": "Welcome to the Museum of Science.", "zh": "欢迎来到科学博物馆。"},
@@ -86,7 +44,7 @@ const unit6Track61 = [
   {"start": 284.28, "end": 289.4, "en": "Now, let's move to the next room, which is all about medieval medicine.", "zh": "现在，我们去下一个展室，那里介绍的是中世纪医学。"}
 ];
 
-function createUnit6Pilot({cases, frame, currentCase, show}) {
+function createUnit6Pilot({cases}) {
   const unit = "B03-LS-U06";
   const knowledgeId = unit + "-question:b4639";
   const photoId = unit + "-question:b4642";
@@ -104,8 +62,6 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
   const listeningNotesId = unit + "-question:b4657";
   const listeningReferencesId = unit + "-question:b4661";
   const rewatchId = unit + "-question:b4648";
-  const videoId = unit + "-classroom:video";
-  const videoCase = cases.find(c => c.id === videoId);
   const rewatchCase = cases.find(c => c.id === rewatchId);
   const wholeRewatch = rewatchCase.coursePages.flatMap((_, p) => coursePageBlocks(rewatchCase, p));
   const inventions = cases.find(c => c.id === inventionsId);
@@ -119,8 +75,8 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
       listeningRows.some(row => row.answer?.mode !== "gap")) {
     throw new Error("Listening 1 Ex 2 的词库或答位已经变化。");
   }
-  if (wholeRewatch.length !== 4 || videoCase.playback.captions.length !== 38) {
-    throw new Error("Unit 6 试排的题目或字幕来源已变化。");
+  if (wholeRewatch.length !== 4) {
+    throw new Error("Unit 6 试排的复看题已变化。");
   }
 
   const listeningMatch = cases.find(c => c.id === listeningMatchId);
@@ -137,9 +93,6 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
   const listeningNotes = cases.find(c => c.id === listeningNotesId);
   const listeningNotesBlocks = listeningNotes.coursePages.flatMap((_,p) => coursePageBlocks(listeningNotes,p));
 
-  let pendingOrigin = null;
-  let videoOrigin = null;
-  let savedPlayback = null;
 
   const cards = cases.filter(c => c.flow?.kind === "cards").flatMap(c => c.flow.pages.flat());
   const allow = cards.find(w => w.term === "allow");
@@ -166,10 +119,7 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
       return '<h1 class="instruction u6-skill-title" data-original-instruction lang="en-GB">'+esc(c.instruction)+'</h1>';
     }
     if (c.id === knowledgeId || c.id === photoId) return "";
-    if (c.id !== videoId) return numberedInstruction(c);
-    return '<div class="u6-video-instruction">'+instructionHTML(c)
-      +(videoOrigin ? '<button type="button" class="u6-tool" data-u6-return>返回题目</button>' : "")
-      +'</div>';
+    return numberedInstruction(c);
   }
 
   function split(copy, visual, variant) {
@@ -255,21 +205,7 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
       +'<p class="flow-glossary-audio-error" data-card-audio-error role="status" hidden></p>';
   }
 
-  function videoProjection() {
-    return '<section class="u6-video" aria-label="单元视频"><div class="u6-cinema-tools">'
-      +'<button class="u6-tool" type="button" data-u6-chinese aria-pressed="false">中文字幕</button>'
-      +'<button class="u6-tool" type="button" data-u6-fullscreen>退出全屏</button>'
-      +'<span class="u6-fullscreen-status" role="status">已铺满浏览器窗口。按 F11 可隐藏工具栏。</span>'
-      +(videoOrigin ? '<button class="u6-tool" type="button" data-u6-return>返回题目</button>' : '')
-      +'</div><div class="u6-video-media"><div class="u6-video-picture">'
-      +'<video src="'+esc(videoCase.playback.src)+'" controls controlslist="nofullscreen noremoteplayback"'
-      +' disablepictureinpicture playsinline preload="metadata" aria-label="Watch and listen"></video></div></div>'
-      +'<div class="u6-subtitles" aria-label="字幕"><p lang="en" data-u6-caption="en"></p>'
-      +'<p lang="zh-CN" data-u6-caption="zh"></p></div></section>';
-  }
-
   function flow(c,p) {
-    if (c.id === videoId) return videoProjection();
     if (c.flow.kind === "unit-opening") {
       const opening = c.flow.pages[p];
       return split(unitOpeningHTML(c, {...opening, photo: null}), originalPage(c), "opening");
@@ -338,125 +274,6 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
     const left = '<div class="u6-split-copy">'+numberedInstruction(c)+'<div class="course-exercise-copy">'+content+'</div></div>';
     return split(left,c.id === photoId ? photos(c) : originalPage(c),c.id === photoId ? "photos" : "knowledge");
   }
-
-  function panels(c,p) {
-    if (c.id === videoId) {
-      return {rail:'<button type="button" data-u6-chinese aria-pressed="false">中文字幕</button>'
-        +'<button type="button" data-u6-fullscreen>全屏</button>',panels:"",media:[]};
-    }
-    const unitVideo = c.courseMedia?.some(m => m.type === "video" && m.src === videoCase.playback.src);
-    if (!unitVideo) return coursePanels(c,p);
-    const audio = c.courseMedia.filter(m => m.type !== "video" || m.src !== videoCase.playback.src);
-    const outcome = coursePanels({...c, courseMedia:audio},p);
-    outcome.rail += '<button type="button" data-u6-open-video>视频</button>';
-    return outcome;
-  }
-
-  function beforeDisplay(c) {
-    frame.classList.remove("u6-window-fullscreen");
-    videoOrigin = c.id === videoId ? pendingOrigin : null;
-    pendingOrigin = null;
-    if (c.id !== videoId && savedPlayback?.id !== c.id) savedPlayback = null;
-  }
-
-  async function playFromQuestion(doc) {
-    const {id,page} = currentCase();
-    const reveal = doc.querySelector("[data-course-reveal]");
-    pendingOrigin = {
-      id,page,
-      reviewSteps:Number(reveal?.dataset.u6ReviewSteps ?? (reveal?.getAttribute("aria-pressed") === "true" ? 1 : 0)),
-      time:savedPlayback?.id === id ? savedPlayback.time : 0
-    };
-    await show(videoId,0);
-    frame.contentDocument.querySelector("video")?.focus({preventScroll:true});
-  }
-
-  async function returnToQuestion(player, doc, origin) {
-    if (!origin) return;
-    savedPlayback = {id:origin.id,time:player.ended ? 0 : player.currentTime};
-    player.pause();
-    if (doc.fullscreenElement) await doc.exitFullscreen();
-    frame.classList.remove("u6-window-fullscreen");
-    await show(origin.id,origin.page);
-    const targetDoc = frame.contentDocument;
-    const reveal=targetDoc.querySelector("[data-course-reveal]");
-    for (let step = 0; step < origin.reviewSteps; step++) reveal?.click();
-    targetDoc.querySelector("[data-u6-open-video]")?.focus({preventScroll:true});
-  }
-
-  function bindVideo(doc) {
-    const region = doc.querySelector(".u6-video");
-    const player = region.querySelector("video");
-    const english = region.querySelector('[data-u6-caption="en"]');
-    const chinese = region.querySelector('[data-u6-caption="zh"]');
-    const choices = [...doc.querySelectorAll("[data-u6-chinese]")];
-    const origin = videoOrigin;
-    let showChinese = false;
-    const refresh = () => {
-      const clock = player.currentTime;
-      const cue = unit6Subtitles.find(line => line.start <= clock && clock < line.end);
-      const en = cue?.text ?? "";
-      const zh = showChinese ? cue?.zh ?? "" : "";
-      if (english.textContent !== en) english.textContent = en;
-      if (chinese.textContent !== zh) chinese.textContent = zh;
-    };
-    for (const event of ["loadedmetadata","timeupdate","seeking","seeked","play","pause","ended"]) {
-      player.addEventListener(event,refresh);
-    }
-    if (typeof player.requestVideoFrameCallback === "function") {
-      let frameId = null;
-      const stop = () => {
-        if (frameId !== null) player.cancelVideoFrameCallback(frameId);
-        frameId = null;
-      };
-      const nextFrame = () => {
-        frameId = null;
-        refresh();
-        schedule();
-      };
-      const schedule = () => {
-        if (frameId === null && !player.paused && !player.ended) {
-          frameId = player.requestVideoFrameCallback(nextFrame);
-        }
-      };
-      player.addEventListener("playing",schedule);
-      player.addEventListener("seeked",schedule);
-      player.addEventListener("pause",stop);
-      player.addEventListener("ended",stop);
-      doc.defaultView.addEventListener("pagehide",stop,{once:true});
-      schedule();
-    }
-    if (origin?.time > 0) {
-      const restore = () => {player.currentTime = Math.min(origin.time,player.duration);};
-      if (player.readyState >= 1) restore();
-      else player.addEventListener("loadedmetadata",restore,{once:true});
-    }
-    for (const control of choices) control.addEventListener("click", () => {
-      showChinese = !showChinese;
-      for (const button of choices) button.setAttribute("aria-pressed",String(showChinese));
-      refresh();
-    });
-    const fillWindow = enabled => {
-      region.classList.toggle("u6-fill-window",enabled);
-      frame.classList.toggle("u6-window-fullscreen",enabled);
-    };
-    for (const control of doc.querySelectorAll("[data-u6-fullscreen]")) control.addEventListener("click",async () => {
-      if (region.classList.contains("u6-fill-window")) fillWindow(false);
-      else if (doc.fullscreenElement) await doc.exitFullscreen();
-      else {
-        try { await region.requestFullscreen({navigationUI:"hide"}); }
-        catch { fillWindow(true); }
-      }
-    });
-    doc.addEventListener("keydown",event=>{
-      if (event.key==="Escape" && region.classList.contains("u6-fill-window")) fillWindow(false);
-    });
-    for (const control of doc.querySelectorAll("[data-u6-return]")) control.addEventListener("click",async () => {
-      await returnToQuestion(player,doc,origin);
-    });
-    refresh();
-  }
-
 
   function bindTrackScript(doc) {
     const audio = [...doc.querySelectorAll("[data-course-panel=media] .course-media-entry audio")]
@@ -590,10 +407,10 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
     });
   }
 
-  function bindSequentialReview(doc,c) {
+  function bindSequentialReview(doc,c,p) {
     const button = doc.querySelector("[data-course-reveal]");
     if (!button || !c.coursePages) return;
-    const blocks = coursePageBlocks(c,currentCase().page);
+    const blocks = coursePageBlocks(c,p);
     const answered = blocks.filter(block => block.answer);
     const modes = c.id === listeningReferencesId ? ["indexed-mark"] : ["gap","blanks","choice"];
     if (!answered.length || answered.some(block => !modes.includes(block.answer.mode))) return;
@@ -690,11 +507,9 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
     }
   }
 
-  function wire(doc,c) {
+  function wire(doc,c,p) {
     alignQuestionNumbers(doc,c);
-    bindSequentialReview(doc,c);
-    doc.querySelector("[data-u6-open-video]")?.addEventListener("click",() => playFromQuestion(doc));
-    if (c.id === videoId) bindVideo(doc);
+    bindSequentialReview(doc,c,p);
     if (c.id === listeningMainId || c.id === listeningNotesId) bindTrackScript(doc);
   }
 
@@ -714,8 +529,7 @@ function createUnit6Pilot({cases, frame, currentCase, show}) {
     navLabel:step=>step.id===knowledgeId ? "UNLOCK YOUR KNOWLEDGE" : step.label,
     children: (c,p) => c.coursePages ? task(c,p) : flow(c,p),
     instruction:projectionInstruction,
-    panels,
-    beforeDisplay,
+    panels:coursePanels,
     wire
   };
 }

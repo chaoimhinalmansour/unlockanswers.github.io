@@ -303,7 +303,7 @@ function lessonRailHTML(c){
  const material=c.presentation?.sourcePage?'<button type="button" data-task-source="'+c.presentation.sourcePage+'">'+esc(c.presentation.sourceLabel??"材料")+'</button>':"";
  const player=c.playback?'<button type="button" data-playback-toggle aria-expanded="false">'+(c.playback.type==="video"?"视频":"录音")+'</button>':"";
  const check=inlineRows(c.feedback).length?inlineCheckControls():"";
- const numberMarks=c.numberMarks?'<button type="button" data-number-marks aria-pressed="false">圈画</button>':"";
+ const numberMarks=c.numberMarks&&!c.readingView?'<button type="button" data-number-marks aria-pressed="false">圈画</button>':"";
  return check+material+player+numberMarks;
 }
 

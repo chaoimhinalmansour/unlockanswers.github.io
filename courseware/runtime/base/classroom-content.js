@@ -2,30 +2,10 @@
 
 const classroomRecords = new Map();
 
-function readingText(text, marks) {
- return numberMarkup(text, marks).replace(/\*\*([^*]+)\*\*/g, "<mark>$1</mark>");
-}
-
-function readingScreen(c, page, showInstruction = true) {
- const text = value => readingText(value, c.numberMarks);
- const lines = page.body.split(/\n+/).filter(Boolean).map(line => {
-  const numbered = /^(\d+|[A-Z])\s+(.+)$/.exec(line);
-  return numbered
-   ? '<div class="line"><span class="num">'+esc(numbered[1])+'</span><p>'+text(numbered[2])+'</p></div>'
-   : '<p>'+text(line)+'</p>';
- }).join("");
- const style = page.background ? ' style="background-image:url(&quot;'+esc(page.background)+'&quot;)"' : "";
- const title = page.title === page.articleTitle ? "" : '<h2>'+esc(page.title)+'</h2>';
- const subtitle = page.subtitle ? '<p class="reading-subtitle">'+esc(page.subtitle)+'</p>' : "";
- const lead = page.lead ? '<p class="reading-definition">'+text(page.lead)+'</p>' : "";
- const photo = page.photo && !page.background
-  ? '<figure class="reading-picture"><img src="'+esc(page.photo)+'" alt="'+esc(page.alt)+'"></figure>' : "";
- const notes = (page.notes ?? []).map(note => '<p class="minor">'+esc(note)+'</p>').join("");
- return '<section class="reading '+(page.background ? 'scene' : 'textbook-reading')+'"'+style+'><div class="content reading-content">'+
-  (showInstruction ? instructionHTML(c) : "")+
-  '<div class="reading-heading"><h1>'+esc(page.articleTitle)+'</h1>'+title+subtitle+'</div>'+
-  '<div class="reading-main'+(photo ? ' with-picture' : '')+'"><div class="reading-copy">'+lead+
-  '<div class="paragraphs">'+lines+'</div>'+notes+'</div>'+photo+'</div></div></section>';
+function readingScreen(c,page,showInstruction=true) {
+ const guide=showInstruction&&c.readingView?instructionHTML(c):"";
+ return '<section class="reading course-original-view"><div class="content">'+
+  guide+courseOriginalReadingHTML(c,page.sourcePage)+'</div></section>';
 }
 
 function readerHTML(c) {
@@ -35,8 +15,8 @@ function readerHTML(c) {
  return '<section class="reader-panel" data-reader-panel hidden aria-label="原文阅读">'+
   pages.map((page,i) => '<div class="reader-sheet" data-reader-page="'+i+'"'+(i ? ' hidden' : '')+'>'+
    readingScreen(c,page,false)+'</div>').join("")+
-  '<div class="reader-tools"><button type="button" data-reader-prev>上段</button>'+
-  '<span data-reader-count aria-live="polite"></span><button type="button" data-reader-next>下段</button>'+
+  '<div class="reader-tools"><button type="button" data-reader-prev>上一页</button>'+
+  '<span data-reader-count aria-live="polite"></span><button type="button" data-reader-next>下一页</button>'+
   '<button type="button" data-reader-source>材料原页</button><button type="button" data-reader-close>返回题目</button></div></section>';
 }
 
@@ -67,7 +47,7 @@ function wireReader(doc,c) {
   if (!panel.hidden) return dismiss();
   const section = doc.querySelector("[data-deck-card]:not([hidden])")?.dataset.readingSection ??
    doc.querySelector("[data-relation-card]:not([hidden])")?.dataset.readingSection;
-  const index = pages.findIndex(page => page.id === section);
+  const index = pages.findIndex(page => page.id === section || page.sections?.includes(section));
   if (index >= 0) selected = index;
   show(selected);
   panel.hidden = false;
@@ -91,7 +71,7 @@ function classroomExerciseNumber(c) {
 }
 
 function instructionHTML(c,showNumber=true) {
- if (c.exerciseVocabulary) return "";
+ if (c.exerciseVocabulary||c.classroomVideo||c.flow?.kind==="reading") return "";
  const number=classroomExerciseNumber(c);
  let wording=c.instruction??"";
  if (c.module==="WATCH AND LISTEN") wording=wording.replace(/^\s*[▶►]\s*/,"");
@@ -164,6 +144,8 @@ function wireWorkRecord(doc,c) {
 }
 
 function materialCardHTML(card, feedback, attributes = "") {
+ if (card.reading) return '<section class="material-card"'+attributes+'>'+
+  courseOriginalPageImage(courseOriginalKey(card.reading,card.sourcePage),"教材第 "+card.sourcePage+" 页",true)+'</section>';
  return '<section class="material-card"'+attributes+'>'+
   '<h2>'+esc(card.title)+'</h2>'+(card.subtitle ? '<p class="material-subtitle">'+esc(card.subtitle)+'</p>' : "")+
   '<div class="material-body">'+(card.photo ? '<img class="material-photo" src="'+esc(card.photo)+'" alt="'+esc(card.alt)+'">' : "")+

@@ -52,17 +52,36 @@ function buildClassroomModel(data) {
   return page ? {...page, reading:ref.reading, articleTitle:reading.title} : null;
  }
 
+ function distinctReadingPrintPages(pages) {
+  const seen = new Map();
+  const result=[];
+  for (const page of pages) {
+   if (!page.reading) {
+    result.push(page);
+    continue;
+   }
+   const key=page.reading+"/"+page.sourcePage;
+   if (!seen.has(key)) {
+    const primary={...page,sections:[]};
+    seen.set(key,primary);
+    result.push(primary);
+   }
+   seen.get(key).sections.push(page.id);
+  }
+  return result;
+ }
+
  function readingPages(view) {
   const reading = readings.get(view.reading);
   if (!reading) return [];
   const ids = view.sections ?? reading.pages.map(page => page.id);
-  return ids.map(section => readingPage({reading:view.reading, section})).filter(Boolean);
+  return distinctReadingPrintPages(ids.map(section => readingPage({reading:view.reading, section})).filter(Boolean));
  }
 
  function materialDecks(c) {
   return (c.materialDecks ?? []).map(deck => ({
    label:deck.label,
-   pages:deck.pages.map(page => page.reading ? readingPage(page) : page).filter(Boolean)
+   pages:distinctReadingPrintPages(deck.pages.map(page => page.reading ? readingPage(page) : page).filter(Boolean))
   }));
  }
 
@@ -144,7 +163,7 @@ function buildClassroomModel(data) {
   const pages = [...c.pages];
   if (c.readingView) {
    const view = readingPages(c.readingView);
-   if (!view.length || (c.readingView.sections && view.length !== c.readingView.sections.length)) reasons.push("阅读内容缺少对应原文。");
+   if (!view.length || c.readingView.sections?.some(section=>!readingPage({reading:c.readingView.reading,section}))) reasons.push("阅读内容缺少对应原文。");
    pages.push(...view.map(page => page.sourcePage));
   }
   if (reader(c)) {
@@ -153,7 +172,7 @@ function buildClassroomModel(data) {
    pages.push(...full.map(page => page.sourcePage));
   }
   materialDecks(c).forEach((deck, i) => {
-   if (!deck.pages.length || deck.pages.length !== c.materialDecks[i].pages.length) reasons.push("课堂材料缺少对应段落。");
+   if (!deck.pages.length || c.materialDecks[i].pages.some(page=>page.reading&&!readingPage(page))) reasons.push("课堂材料缺少对应段落。");
    pages.push(...deck.pages.map(page => page.sourcePage));
   });
   pages.push(c.presentation?.sourcePage, ...(c.feedback?.rows ?? []).map(row => row.sourcePage));
