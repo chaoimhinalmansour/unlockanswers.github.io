@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1020" viewBox="0 0 1200 1020" role="img" aria-labelledby="title desc">
+  <title id="title">University of Beta school-adapted Student A map</title>
+  <desc id="desc">A school-redrawn campus map for B01-LS-U04 page 99 Exercise 6. Five target locations are marked A to E. This is not official corrected artwork.</desc>
+  <style>
+    .page{fill:#fffdf7}.banner{fill:#fff0c9;stroke:#b36b00;stroke-width:2}.bannerText{font:700 20px Arial,sans-serif;fill:#743f00}.title{font:700 36px Arial,sans-serif;fill:#153a63}.sub{font:18px Arial,sans-serif;fill:#34495e}.road{stroke:#d7dde3;stroke-width:42;stroke-linecap:square}.roadEdge{stroke:#7c8792;stroke-width:2;fill:none}.roadName{font:700 15px Arial,sans-serif;fill:#47515a}.building{fill:#eadfbd;stroke:#655b46;stroke-width:3}.service{fill:#d7e7ef;stroke:#526d7b;stroke-width:3}.park{fill:#a7d57d;stroke:#4d8b3e;stroke-width:3}.tree{fill:#4e9a45;stroke:#2e6b2f;stroke-width:2}.label{font:700 17px Arial,sans-serif;fill:#2d2d2d;text-anchor:middle}.small{font:15px Arial,sans-serif;fill:#2d2d2d;text-anchor:middle}.marker{fill:#f7c600;stroke:#493900;stroke-width:4}.markerText{font:700 30px Arial,sans-serif;fill:#1f2f3f;text-anchor:middle;dominant-baseline:middle}.start{fill:#c33446;stroke:#7c1420;stroke-width:3}.startText{font:700 17px Arial,sans-serif;fill:#8b1421;text-anchor:middle}.question{font:21px Arial,sans-serif;fill:#222}.blank{stroke:#222;stroke-width:2}.note{font:15px Arial,sans-serif;fill:#6b4b00}.bridge{stroke:#333;stroke-width:9}.path{stroke:#eee4ba;stroke-width:18;fill:none;stroke-linecap:round}
+  </style>
+  <rect class="page" width="1200" height="920"/>
+  <rect class="banner" x="30" y="22" width="1140" height="48" rx="8"/>
+  <text class="bannerText" x="600" y="53" text-anchor="middle">校内重绘 / SCHOOL ADAPTATION — NOT OFFICIAL CORRECTED ARTWORK</text>
+  <text class="title" x="600" y="112" text-anchor="middle">The University of Beta</text>
+  <text class="sub" x="600" y="140" text-anchor="middle">Student A: ask for directions, then write A–E next to places 1–5.</text>
+
+  <g transform="translate(0 100)">
+
+  <!-- Roads -->
+  <line class="road" x1="445" y1="210" x2="445" y2="670"/><line class="roadEdge" x1="424" y1="210" x2="424" y2="670"/><line class="roadEdge" x1="466" y1="210" x2="466" y2="670"/>
+  <line class="road" x1="65" y1="510" x2="1140" y2="510"/><line class="roadEdge" x1="65" y1="489" x2="1140" y2="489"/><line class="roadEdge" x1="65" y1="531" x2="1140" y2="531"/>
+  <line class="road" x1="555" y1="185" x2="1140" y2="185"/><line class="roadEdge" x1="555" y1="164" x2="1140" y2="164"/><line class="roadEdge" x1="555" y1="206" x2="1140" y2="206"/>
+  <line class="road" x1="745" y1="185" x2="745" y2="510"/><line class="roadEdge" x1="724" y1="185" x2="724" y2="510"/><line class="roadEdge" x1="766" y1="185" x2="766" y2="510"/>
+  <line class="road" x1="1020" y1="80" x2="1020" y2="510"/><line class="roadEdge" x1="999" y1="80" x2="999" y2="510"/><line class="roadEdge" x1="1041" y1="80" x2="1041" y2="510"/>
+  <line class="road" x1="635" y1="510" x2="635" y2="720"/><line class="roadEdge" x1="614" y1="510" x2="614" y2="720"/><line class="roadEdge" x1="656" y1="510" x2="656" y2="720"/>
+  <line class="road" x1="875" y1="510" x2="875" y2="675"/><line class="roadEdge" x1="854" y1="510" x2="854" y2="675"/><line class="roadEdge" x1="896" y1="510" x2="896" y2="675"/>
+  <line class="road" x1="945" y1="510" x2="945" y2="675"/><line class="roadEdge" x1="924" y1="510" x2="924" y2="675"/><line class="roadEdge" x1="966" y1="510" x2="966" y2="675"/>
+  <line class="road" x1="1140" y1="185" x2="1140" y2="510"/><line class="roadEdge" x1="1119" y1="185" x2="1119" y2="510"/>
+
+  <text class="roadName" x="458" y="385" transform="rotate(90 458 385)">Green Street</text>
+  <text class="roadName" x="590" y="502">Main Road West</text>
+  <text class="roadName" x="840" y="178">Blue Road</text>
+  <text class="roadName" x="758" y="365" transform="rotate(90 758 365)">Royal Street</text>
+  <text class="roadName" x="1033" y="350" transform="rotate(90 1033 350)">New Road</text>
+  <text class="roadName" x="648" y="625" transform="rotate(90 648 625)">Picasso Street</text>
+  <text class="roadName" x="888" y="610" transform="rotate(90 888 610)">Old Road</text>
+  <text class="roadName" x="1130" y="350" transform="rotate(90 1130 350)">Big Street</text>
+
+  <!-- North-west campus -->
+  <rect class="building" x="60" y="185" width="170" height="100" rx="8"/><text class="label" x="145" y="242">Student Centre</text>
+  <rect class="building" x="285" y="185" width="130" height="72" rx="8"/><text class="small" x="350" y="227">supermarket</text>
+  <rect class="building" x="355" y="300" width="70" height="70" rx="8"/><text class="small" x="390" y="341">bank</text>
+  <rect class="building" x="60" y="355" width="180" height="105" rx="8"/><text class="label" x="150" y="414">library</text>
+  <rect class="building" x="345" y="388" width="80" height="72" rx="8"/><text class="small" x="385" y="431">café</text>
+
+  <!-- Green Square / start -->
+  <rect class="park" x="260" y="270" width="80" height="105" rx="12"/><circle class="tree" cx="278" cy="292" r="10"/><circle class="tree" cx="320" cy="318" r="12"/><circle class="tree" cx="278" cy="353" r="11"/>
+  <circle class="start" cx="300" cy="405" r="18"/><text class="startText" x="300" y="444">YOU ARE HERE</text><text class="small" x="300" y="260">Green Square</text>
+
+  <!-- Central/north-east campus -->
+  <rect class="building" x="500" y="85" width="170" height="74" rx="8"/><text class="label" x="585" y="130">Chemistry</text>
+  <rect class="park" x="500" y="220" width="200" height="230" rx="14"/><text class="label" x="600" y="260">Alpha Park</text>
+  <circle class="tree" cx="535" cy="300" r="15"/><circle class="tree" cx="655" cy="330" r="17"/><circle class="tree" cx="560" cy="400" r="14"/>
+  <rect class="service" x="835" y="85" width="140" height="74" rx="8"/><text class="small" x="905" y="130">car park</text>
+  <rect class="marker" x="1060" y="88" width="115" height="68" rx="10"/><text class="markerText" x="1117" y="123">D</text>
+  <rect class="building" x="790" y="225" width="180" height="64" rx="8"/><text class="small" x="880" y="263">Biology</text>
+  <rect class="building" x="790" y="330" width="95" height="100" rx="8"/><text class="small" x="837" y="386">Maths</text>
+  <rect class="marker" x="890" y="330" width="100" height="100" rx="8"/><text class="markerText" x="940" y="382">C</text>
+  <rect class="building" x="1055" y="225" width="120" height="86" rx="8"/><text class="small" x="1115" y="264">Business</text><text class="small" x="1115" y="284">School</text>
+  <rect class="building" x="1055" y="330" width="120" height="100" rx="8"/><text class="small" x="1115" y="386">Language Centre</text>
+
+  <!-- South campus -->
+  <rect class="marker" x="70" y="565" width="180" height="95" rx="8"/><text class="markerText" x="160" y="614">A</text>
+  <rect class="building" x="330" y="565" width="220" height="95" rx="8"/><text class="label" x="440" y="619">Arts</text>
+  <rect class="marker" x="680" y="565" width="165" height="88" rx="8"/><text class="markerText" x="762" y="611">B</text>
+  <rect class="service" x="680" y="675" width="165" height="58" rx="8"/><text class="small" x="762" y="710">car park</text>
+  <path class="path" d="M1060 525 C1070 550,1080 570,1088 600 S1110 650,1135 675"/>
+  <rect class="marker" x="1050" y="585" width="125" height="105" rx="18"/><text class="markerText" x="1112" y="639">E</text>
+
+  <!-- Bridge cue on Main Road -->
+  <line class="bridge" x1="902" y1="482" x2="902" y2="538"/><line class="bridge" x1="916" y1="482" x2="916" y2="538"/>
+
+  <!-- Student response list -->
+  <text class="question" x="70" y="780">1  the train station</text><line class="blank" x1="275" y1="786" x2="340" y2="786"/>
+  <text class="question" x="70" y="825">2  the gym</text><line class="blank" x1="205" y1="831" x2="270" y2="831"/>
+  <text class="question" x="70" y="870">3  the bus station</text><line class="blank" x1="250" y1="876" x2="315" y2="876"/>
+  <text class="question" x="620" y="780">4  the History building</text><line class="blank" x1="855" y1="786" x2="920" y2="786"/>
+  <text class="question" x="620" y="825">5  the Physics building</text><line class="blank" x1="850" y1="831" x2="915" y2="831"/>
+  <text class="note" x="620" y="875">Ask: “Can you tell me how to get to …?” Listen, then write one letter.</text>
+  </g>
+</svg>
