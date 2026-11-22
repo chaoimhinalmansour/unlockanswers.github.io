@@ -87,3 +87,23 @@
 .course-chart-answer-label{position:absolute;transform:translate(-50%,-50%);background:var(--paper,#fff);padding:0 2px;line-height:1.1;min-width:22px;text-align:center}
 
 .course-chart-answers{width:400px;max-width:100%;height:490px;margin:0 auto}
+
+.instruction.course-numbered-instruction{display:grid;grid-template-columns:1.4em minmax(0,1fr);gap:.55em;align-items:baseline;font-weight:700}
+.course-rewatch-columns{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px;min-height:0}
+.course-rewatch-columns>.course-exercise-copy{min-width:0}
+.course-rewatch-matching{grid-template-columns:minmax(0,1.4fr) minmax(0,1fr)}
+.course-shared-options,.course-student-notes{padding-left:1.55em}
+.course-shared-options>li,.course-student-notes>li{padding-left:.2em;margin-bottom:.35em}
+.course-shared-options>li::marker,.course-student-notes>li::marker{color:var(--blue)}
+.course-rewatch-matching .course-gap{min-width:2.2em}
+.course-discussion-photos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;min-width:0;align-self:center}
+.course-discussion-pair{width:min(100%,850px);flex:none}
+.course-discussion-pair .native-view{height:235px}
+.course-discussion-quad .native-view{aspect-ratio:332 / 214}
+.course-discussion-full{width:min(100%,720px);min-height:0;align-self:center}
+.course-watch-photo-split{grid-template-columns:minmax(0,1.12fr) minmax(0,1fr);align-items:start}
+.course-globe-figure{width:min(100%,350px);height:320px;justify-self:center}
+.course-globe-figure .native-view{width:100%;height:100%}
+.course-photo-glossary{margin:9px 0 0}
+.course-photo-glossary dt{margin-top:8px}
+.course-photo-glossary dd{margin:1px 0 0}
