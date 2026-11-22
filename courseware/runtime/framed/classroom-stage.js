@@ -185,6 +185,18 @@ const classroomStage = (() => {
   }
 
   function connect(doc) {
+    const courseware = window.UnlockCourseware;
+    const rail = courseware?.classroom ? doc.querySelector(".rail") : null;
+    if (rail && !rail.querySelector("[data-stage-workspace-return]")) {
+      const workspace = new URL("../index.html", courseware.catalog);
+      const button = doc.createElement("button");
+      button.type = "button";
+      button.dataset.stageWorkspaceReturn = "";
+      button.textContent = "返回";
+      button.setAttribute("aria-label", "返回教师工作区");
+      button.addEventListener("click", () => location.assign(workspace.href));
+      rail.prepend(button);
+    }
     doc.querySelector("[data-stage-return]")?.addEventListener("click", returnToTask);
     doc.addEventListener("keydown", exitStage, true);
   }
