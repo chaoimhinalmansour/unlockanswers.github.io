@@ -170,6 +170,7 @@ body:has(#login:not([hidden])) { min-height: 0; }
 .portrait-painting {
   background: var(--portrait-art) center bottom / 100% auto no-repeat;
   filter: brightness(1.16);
+  -webkit-mask-image: radial-gradient(ellipse 11.5% 46% at var(--light-center) 43%, #000 28%, transparent 100%);
   mask-image: radial-gradient(ellipse 11.5% 46% at var(--light-center) 43%, #000 28%, transparent 100%);
 }
 .portrait-shading {
@@ -181,15 +182,14 @@ body:has(#login:not([hidden])) { min-height: 0; }
 .portrait-stage:has(.portrait-hit:checked) .portrait-shading {
   opacity: .5;
 }
-.portrait-hit {
+.portrait-target {
   position: absolute;
-  inset-block: 8% 10%;
+  inset-block: 0;
   inset-inline-start: var(--hit-start);
   inline-size: var(--hit-width);
   z-index: 1;
-  margin: 0;
-  opacity: 0;
   pointer-events: auto;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
@@ -230,15 +230,16 @@ body:has(#login:not([hidden])) { min-height: 0; }
   white-space: nowrap;
 }
 .portrait-hit:checked ~ .portrait-focus,
-.portrait-options:not(:has(.portrait-hit:checked)) .portrait-hit:focus-visible ~ .portrait-focus,
-.portrait-hit:is(:checked, :focus-visible) ~ .portrait-label { opacity: 1; }
+.portrait-hit:checked ~ .portrait-label { opacity: 1; }
+.portrait-hit:focus-visible ~ .portrait-label { opacity: 1; }
+.portrait-options:not(:has(.portrait-hit:checked)) .portrait-hit:focus-visible ~ .portrait-focus { opacity: 1; }
 .portrait-hit:focus-visible ~ .portrait-label .portrait-name {
   outline: 2px solid var(--unlock-ink);
   outline-offset: 2px;
 }
 @media (hover: hover) {
-  .portrait-options:not(:has(.portrait-hit:checked)) .portrait-hit:hover ~ .portrait-focus,
-  .portrait-hit:hover ~ .portrait-label { opacity: 1; }
+  .portrait-target:hover ~ .portrait-label { opacity: 1; }
+  .portrait-options:not(:has(.portrait-hit:checked)) .portrait-target:hover ~ .portrait-focus { opacity: 1; }
 }
 @media (prefers-reduced-motion: no-preference) {
   .portrait-focus, .portrait-shading, .portrait-label { transition: opacity 170ms ease; }

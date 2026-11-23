@@ -200,16 +200,20 @@
   }
 
   function portraitOption(person, index) {
-    const option = document.createElement("label");
+    const option = document.createElement("div");
     option.className = "portrait-option";
     option.dataset.portraitSlot = String(person.loginPortrait ?? index + 1);
     const name = englishName(person) || person.name;
     const choice = document.createElement("input");
-    choice.className = "portrait-hit";
+    choice.className = "portrait-hit visually-hidden";
+    choice.id = "portrait-choice-" + (index + 1);
     choice.type = "radio";
     choice.name = "student";
     choice.value = person.name;
     choice.setAttribute("aria-label", name);
+    const target = document.createElement("label");
+    target.className = "portrait-target";
+    target.htmlFor = choice.id;
     const focus = document.createElement("span");
     focus.className = "portrait-focus";
     focus.setAttribute("aria-hidden", "true");
@@ -224,7 +228,7 @@
     caption.lang = "en";
     caption.textContent = name;
     pointer.append(caption);
-    option.append(choice, focus, pointer);
+    option.append(choice, target, focus, pointer);
     return option;
   }
 
