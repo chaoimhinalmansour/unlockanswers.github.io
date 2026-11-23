@@ -301,3 +301,11 @@
 }
 .reader-sheet .course-original-reading {padding:5px 8px 54px}
 .course-original-page:not(:has(img[hidden])) .course-page-status {display:none}
+
+.course-event-poster{line-height:1.34}
+.course-exercise-copy.course-event-poster .course-copy{margin-block:0 5px}
+
+.course-inline-task-figure{display:grid;margin:8px auto 0}
+.course-source-crop .native-view{width:100%;height:100%}
+.course-source-crop .native-crop img{height:auto;object-fit:initial}
+.course-table-arranged :is(th,td){white-space:pre-line;overflow-wrap:normal;padding:4px 8px;font-size:18px;line-height:1.25}
