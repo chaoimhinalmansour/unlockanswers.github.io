@@ -16,6 +16,7 @@
   const previousUnits = window.UNLOCK_CLASSROOM_UNITS.books;
   const playback = window.UnlockDictation;
   const words = window.UnlockWordDictation;
+  const { buildQuestions } = window.UnlockMeaningChoice;
   const intro = document.querySelector(".intro");
   const { judge } = window.UnlockRules;
   const download = window.UnlockWorkPackage.downloadControl("primary");
@@ -70,8 +71,12 @@
       const first = Array.isArray(record.first) ? answers(record.first, count) : null;
       const second = first && Array.isArray(record.second) ? answers(record.second, count) : null;
       const wordDictation = record.wordDictation && typeof record.wordDictation === "object" ? record.wordDictation : undefined;
+      const { meaningPlan } = record;
+      const validPlan = Number.isInteger(meaningPlan?.seed) && meaningPlan.seed >= 0 && meaningPlan.seed <= 0xffffffff &&
+        Number.isInteger(meaningPlan.startAt) && meaningPlan.startAt >= 0 && meaningPlan.startAt < count;
       return { sequence: record.sequence, draft: answers(record.draft, count), first, second,
-        wordDictation, completedAt: record.completedAt, correctionLocale: record.correctionLocale };
+        wordDictation, completedAt: record.completedAt, correctionLocale: record.correctionLocale,
+        meaningPlan: validPlan ? meaningPlan : undefined };
     } catch {
       return null;
     }
@@ -232,7 +237,8 @@
     const count = unit.items.length;
     copy("unit-word-count", count + " words and phrases", "共 " + count + " 个单词和短语");
     const attempt = loadAttempt(attemptKey(unit), count);
-    const completed = unit.items.every(item => words.complete(item, attempt.wordDictation));
+    const completed = attempt.completedAt || (!attempt.meaningPlan &&
+      unit.items.every(item => words.complete(item, attempt.wordDictation)));
     if (completed) setLabel(action, "View Report", "查看结果");
     else if (attempt.sequence) setLabel(action, "Resume Dictation", "继续听写");
     else setLabel(action, "Start Dictation", "开始听写");
@@ -279,7 +285,8 @@
     }]));
     current = {
       key, unit, showAll: false, attempt: loadAttempt(key, unit.items.length),
-      wordItems, worksheet: { key, dictation: { file: unit.file, count: unit.items.length }, unit: { audio } }
+      baseWordItems: wordItems, wordItems,
+      worksheet: { key, dictation: { file: unit.file, count: unit.items.length }, unit: { audio } }
     };
     if (updateUrl) {
       const url = new URL(location.href);
@@ -307,9 +314,10 @@
     }
     $("save-status").textContent = "";
     render();
-    const play = $("classroom-word-panel").querySelector("[data-wd-play]");
-    play?.closest(".wd-question").classList.add("unlock-card-enter");
-    const focus = !current.attempt.first && play ? play : $("phase-title");
+    const panel = $("classroom-word-panel");
+    const card = panel.querySelector(".wd-question");
+    card?.classList.add("unlock-card-enter");
+    const focus = card?.querySelector("[data-wd-play]") || card?.querySelector("#wd-heading") || $("phase-title");
     focus.focus({ preventScroll: true });
   }
 
@@ -415,6 +423,25 @@
     });
   }
 
+  function assignMeaningQuestions() {
+    const { unit, baseWordItems, attempt } = current;
+    let plan = attempt.meaningPlan;
+    if (!plan && unit.track && !attempt.completedAt) {
+      const startAt = baseWordItems.findIndex(item => !words.complete(item, attempt.wordDictation));
+      if (startAt !== -1) plan = { startAt, seed: crypto.getRandomValues(new Uint32Array(1))[0] };
+    }
+    current.meaningPlan = plan;
+    if (!plan || !unit.track) {
+      current.wordItems = baseWordItems;
+      return;
+    }
+    const questions = buildQuestions(unit, baseWordItems.slice(plan.startAt), plan.seed);
+    current.wordItems = baseWordItems.map(item => {
+      const meaningQuestion = questions.get(item.id);
+      return meaningQuestion ? { ...item, meaningQuestion } : item;
+    });
+  }
+
   function render() {
     closeWordPanel();
     const legacy = Boolean(current.attempt.first);
@@ -427,6 +454,7 @@
     }
     updatePlayback();
     copy("phase-title", "Pre-Class Dictation", "课前听写");
+    assignMeaningQuestions();
     const { wordItems } = current;
     unmountWordPanel = words.mount($("classroom-word-panel"), {
       items: wordItems, read: () => current.attempt.wordDictation,
@@ -436,7 +464,7 @@
         const wordDictation = { ...current.attempt.wordDictation, [item.id]: record };
         const completedAt = wordItems.every(term => words.complete(term, wordDictation))
           ? new Date().toISOString() : undefined;
-        return saveAttempt({ wordDictation, completedAt });
+        return saveAttempt({ wordDictation, completedAt, meaningPlan: current.meaningPlan });
       },
       onProgress: updateWordReport
     });

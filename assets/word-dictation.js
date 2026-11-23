@@ -61,7 +61,8 @@
   }
 
   function complete(item, records) {
-    return Boolean(outcome(records?.[item.id]));
+    const record = records?.[item.id];
+    return Boolean(outcome(record) && (!item.meaningQuestion || record.meaning?.result));
   }
 
   function spellingRound(record, round) {
@@ -102,8 +103,15 @@
     return Object.entries(counts);
   }
 
+  function meaningScore(items, records) {
+    const results = items.map(item => records?.[item.id]?.meaning?.result).filter(Boolean);
+    return results.length ? results.filter(result => result === "correct").length + " / " + results.length : "";
+  }
+
   function summary(items, records) {
-    return outcomeCounts(items, records).map(([result, n]) => outcomes[result] + " " + n + " 题").join("，") + "。";
+    const score = meaningScore(items, records);
+    const spelling = outcomeCounts(items, records).map(([result, n]) => outcomes[result] + " " + n + " 题").join("，") + "。";
+    return spelling + (score ? "中文义答对 " + score + " 题。" : "");
   }
 
   function recordHTML(item, record, links = "", bilingual = false) {
@@ -114,7 +122,12 @@
       '</dt><dd lang="en">' + (value ? esc(value) : copy("Step not reached", "未进入此步")) +
       '</dd>' + (status ? '<dd class="wd-report-check">' + copy(englishChecks[status], checks[status]) + '</dd>' : "") + "</div>";
     const [first, second] = record.attempts;
-    const syllables = record.syllables;
+    const { syllables, meaning } = record;
+    const meaningField = meaning ? '<div class="wd-report-meaning"><dt>' +
+      copy("Chinese Meaning", "中文义选择") + '</dt><dd lang="zh-CN">' +
+      copy("Selected", "所选") + " " + esc(meaning.selected) + '</dd><dd lang="zh-CN">' +
+      copy("Answer", "正确义项") + " " + esc(meaning.answer) + '</dd><dd class="wd-report-check">' +
+      copy(englishChecks[meaning.result], checks[meaning.result]) + "</dd></div>" : "";
     const plays = Number(record.plays) || 0;
     item = recordedItem(item, record);
     const heading = bilingual
@@ -128,11 +141,13 @@
       field("First Spelling", "首次拼写", first?.text, first?.result) +
       field("Second Spelling", "二次拼写", second?.text, second?.result) +
       field("Syllable Order", "音节选择顺序", syllables?.parts.join("、"), syllables?.result) +
-      "</dl>" + links + "</article>";
+      meaningField + "</dl>" + links + "</article>";
   }
 
   function reviewHTML(items, records) {
-    const english = outcomeCounts(items, records).map(([result, n]) => englishOutcomes[result] + " " + n).join(", ");
+    const score = meaningScore(items, records);
+    const results = outcomeCounts(items, records).map(([result, n]) => englishOutcomes[result] + " " + n).join(", ");
+    const english = results + (score ? ". Chinese meanings correct " + score + "." : "");
     return '<div class="wd-review"><h2 tabindex="-1">' + label("Dictation Report", "听写报告") +
       '</h2><p class="wd-summary">' + label(english, summary(items, records)) + "</p>" +
       items.map(item => recordHTML(item, records?.[item.id], "", Boolean(ui))).join("") + "</div>";
@@ -147,7 +162,7 @@
 
     function record() {
       const saved = read()?.[current.id] || { ...empty, draft: draft(current) || "" };
-      if (saved.attempts.length !== 2 || saved.syllables) return saved;
+      if (saved.attempts.length !== 2 || outcome(saved)) return saved;
       const partsChanged = saved.partsKey == null
         ? current.revisedParts
         : saved.partsKey !== current.parts.join("|");
@@ -185,6 +200,30 @@
       if (focusNext) (root.querySelector("[data-wd-piece]:not(:disabled)") || submit).focus({ preventScroll: true });
     }
 
+    function questionHeader(heading, position, focus, className = "") {
+      return '<form class="wd-question' + className + (focus ? " unlock-card-enter" : "") +
+        '" data-word-number="' + current.number +
+        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading">' +
+        (positionTarget ? "" : '<p class="wd-position">' + position + "</p>") +
+        '<div class="wd-heading-line"><h2 id="wd-heading" tabindex="-1">' + heading + "</h2>";
+    }
+
+    function paintMeaning(state, position, focus) {
+      const heading = label("Choose the Chinese Meaning", "选择中文义");
+      const spelling = outcome(state);
+      const options = current.meaningQuestion.options.map(option =>
+        '<label class="wd-meaning-option"><input type="radio" name="wd-meaning" value="' + esc(option.id) +
+        '" data-wd-meaning required' + (state.meaningDraft === option.id ? " checked" : "") +
+        '><span lang="zh-CN"><b lang="en">' + esc(option.pos) + "</b> " + esc(option.text) + "</span></label>").join("");
+      root.innerHTML = questionHeader(heading, position, focus, " wd-meaning-question") +
+        '<p class="wd-feedback">' + label(englishOutcomes[spelling], outcomes[spelling]) + '</p></div>' +
+        '<p lang="en" class="wd-meaning-term">' + esc(current.word) + '</p>' +
+        '<fieldset class="wd-meaning-choices" aria-label="中文释义选项">' + options + '</fieldset>' +
+        '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' +
+        label("Submit Meaning", "提交词义") + "</button></form>";
+      if (focus) root.querySelector("#wd-heading").focus({ preventScroll: true });
+    }
+
     function paint(focus) {
       audio?.pause();
       audio = null;
@@ -199,6 +238,17 @@
         return;
       }
       const state = record();
+      const number = items.indexOf(current) + 1;
+      const position = label("Word " + number + " of " + items.length,
+        "第 " + number + " 题，共 " + items.length + " 题");
+      if (positionTarget) {
+        if (positionTarget.innerHTML !== position) positionTarget.innerHTML = position;
+        positionTarget.hidden = false;
+      }
+      if (current.meaningQuestion && outcome(state)) {
+        paintMeaning(state, position, focus);
+        return;
+      }
       const attemptNo = state.attempts.length;
       const syllableStep = attemptNo === 2;
       const last = state.attempts.at(-1);
@@ -218,21 +268,10 @@
           'aria-describedby="wd-case" value="' + esc(state.draft) + '">' +
           '<p id="wd-case" class="wd-note">' +
           label("Use lowercase, uppercase, or an initial capital.", "可用全小写、全大写或仅首字母大写。") + '</p>';
-      const number = items.indexOf(current) + 1;
-      const position = label("Word " + number + " of " + items.length,
-        "第 " + number + " 题，共 " + items.length + " 题");
-      if (positionTarget) {
-        if (positionTarget.innerHTML !== position) positionTarget.innerHTML = position;
-        positionTarget.hidden = false;
-      }
-      root.innerHTML = '<form class="wd-question' + (focus ? " unlock-card-enter" : "") +
-        '" data-word-number="' + current.number +
-        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading">' +
-        (positionTarget ? "" : '<p class="wd-position">' + position + "</p>") +
-        '<div class="wd-heading-line"><h2 id="wd-heading">' +
-        (syllableStep ? label("Arrange Syllables", "拼接音节") : attemptNo ? label("Try Again", "再拼写一次")
-          : label("Listen and Spell", "听音拼写")) +
-        '</h2><p class="wd-feedback" role="status">' + feedback + '</p></div>' +
+      const heading = syllableStep ? label("Arrange Syllables", "拼接音节") : attemptNo
+        ? label("Try Again", "再拼写一次") : label("Listen and Spell", "听音拼写");
+      root.innerHTML = questionHeader(heading, position, focus) +
+        '<p class="wd-feedback" role="status">' + feedback + '</p></div>' +
         '<div class="wd-listen"><audio hidden preload="none" src="../' + esc(audioPath(current)) + '"></audio>' +
         '<button type="button" class="wd-button wd-play ui-action" data-wd-play>' + label("Play Audio", "播放音频") + '</button>' +
         '<p class="wd-note" data-wd-play-note role="status">' + label("Replay anytime.", "可重复播放。") + '</p></div>' +
@@ -295,6 +334,12 @@
       saveRecord({ ...record(), draft: event.target.value });
     }, options);
 
+    root.addEventListener("change", event => {
+      if (event.target.matches("[data-wd-meaning]")) {
+        saveRecord({ ...record(), meaningDraft: event.target.value });
+      }
+    }, options);
+
     root.addEventListener("click", event => {
       const button = event.target.closest("button");
       if (!current || !button) return;
@@ -317,7 +362,16 @@
       if (!current || starting) return;
       const state = record();
       let next;
-      if (state.attempts.length < 2) {
+      const meaning = current.meaningQuestion;
+      if (meaning && outcome(state)) {
+        const value = root.querySelector("[data-wd-meaning]:checked")?.value;
+        const selected = meaning.options.find(option => option.id === value);
+        if (!selected) return;
+        const answer = meaning.options.find(option => option.id === meaning.answerId);
+        next = { ...state, meaningDraft: "", meaning: {
+          selected: selected.label, answer: answer.label, result: selected.id === answer.id ? "correct" : "incorrect"
+        } };
+      } else if (state.attempts.length < 2) {
         const typed = root.querySelector("[data-wd-input]").value;
         if (!typed.trim()) return;
         const result = checkSpelling(current, typed);
@@ -334,11 +388,14 @@
           result: text === current.parts.join("") ? "correct" : "incorrect"
         } };
       }
-      const result = outcome(next);
       if (!saveRecord(next)) return;
-      if (result) {
-        previous = "第 " + current.number + " 题" + outcomes[result] + "。";
-        previousEnglish = "Word " + current.number + ". " + englishOutcomes[result] + ".";
+      if (complete(current, read())) {
+        const result = outcome(next);
+        const meaningResult = next.meaning?.result;
+        previous = "第 " + current.number + " 题" + (meaningResult === "correct" ? "中文义答对。"
+          : meaningResult === "incorrect" ? "的正确中文义是「" + next.meaning.answer + "」。" : outcomes[result] + "。");
+        previousEnglish = "Word " + current.number + ". " + (meaningResult === "correct" ? "Correct meaning."
+          : meaningResult === "incorrect" ? "The correct meaning is " + next.meaning.answer + "." : englishOutcomes[result] + ".");
         if (items.every(item => complete(item, read())) && onFinish?.(previous, previousEnglish)) return;
       }
       paint(true);

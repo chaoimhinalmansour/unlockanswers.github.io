@@ -30,6 +30,7 @@
     ".value{white-space:pre-wrap;overflow-wrap:anywhere;orphans:2;widows:2}",
     ".wd-record h3 span{font-size:10pt;color:var(--unlock-ink)}.wd-record header p{font-size:9pt;color:var(--unlock-secondary)}",
     ".wd-report-steps{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}",
+    ".wd-report-meaning{grid-column:1/-1}",
     ".wd-report-steps div{border-top:1px solid var(--unlock-line);padding-top:4px;min-width:0}",
     ".wd-report-steps dd{white-space:pre-wrap}.wd-report-steps .wd-report-check{color:var(--unlock-secondary);font-size:8.5pt;font-weight:400}",
     "@media screen and (max-width:520px){.wd-report-steps{grid-template-columns:1fr}}",
@@ -174,7 +175,8 @@
             id, number, type: "dictation", kind: "单词听写", prompt: item.word,
             answerKey: { accepted: item.keys, text: item.word, ipa: item.ipa, language: item.locale }, materialIds,
             dictation: { attempts: dictation.attempts, syllables: dictation.syllables ?? null,
-              plays: Number(dictation.plays) || 0, outcome: words.outcome(dictation) }
+              plays: Number(dictation.plays) || 0, outcome: words.outcome(dictation),
+              ...(dictation.meaning ? { meaning: dictation.meaning } : {}) }
           };
         }
         const open = question.type === "open";
