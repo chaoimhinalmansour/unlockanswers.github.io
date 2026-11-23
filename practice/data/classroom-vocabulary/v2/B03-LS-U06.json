@@ -1,0 +1,664 @@
+{
+  "unitId": "B3U06",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U06",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-LS-U06-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U06-W-6452e7c5a",
+      "term": "allow",
+      "pos": "(v)",
+      "ipa": "/əlˈaʊ/",
+      "definition": "to make it possible for somebody to do something",
+      "example": "Apps allow people to communicate.",
+      "exampleMark": "allow",
+      "picture": "practice/data/classroom-vocabulary/media/0d0933eb3d2e78c3945e076c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0634.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/892e5430d4e5b9a65d0279bc.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-7d1043473",
+      "term": "app",
+      "pos": "(n)",
+      "ipa": "/ˈæp/",
+      "definition": "(abbreviation for application) software designed for a particular purpose which you can download onto a smartphone or other mobile device",
+      "example": "This app helps me organize my notes.",
+      "exampleMark": "app",
+      "picture": "practice/data/classroom-vocabulary/media/d662c338ff38e75330e2cee2.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0095.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/405b03fa2c59f13aeec52682.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-6a411c761",
+      "term": "contribution",
+      "pos": "(n)",
+      "ipa": "/ˌkɒn.trɪˈbjuː.ʃən/",
+      "definition": "something that you do to help produce or develop something, or to help make something successful",
+      "example": "Her discovery made a contribution to science.",
+      "exampleMark": "contribution",
+      "picture": "practice/data/classroom-vocabulary/media/0c094e5b36a518e1c471125f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0635.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dca82772c0f10abe2a97c293.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-9b7c68a91",
+      "term": "create",
+      "pos": "(v)",
+      "ipa": "/krɪˈeɪt/",
+      "definition": "to make something new or invent something",
+      "example": "They create a wooden shelf together.",
+      "exampleMark": "create",
+      "picture": "practice/data/classroom-vocabulary/media/2f9389d9a882c5733d6a0a42.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0502.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/328c8bb385975c6a11245c8e.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-f3a929b33",
+      "term": "device",
+      "pos": "(n)",
+      "ipa": "/dɪˈvaɪs/",
+      "definition": "a piece of equipment which is used for a particular purpose",
+      "example": "A smartphone is a useful device for studying.",
+      "exampleMark": "device",
+      "picture": "practice/data/classroom-vocabulary/media/ef2890c1b4190ed3ebfe91e1.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0148.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2573bf577e662d743cad9261.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-873709359",
+      "term": "diagram",
+      "pos": "(n)",
+      "ipa": "/ˈdaɪ.ə.ɡræm/",
+      "definition": "a simple picture which shows how something works or what it looks like",
+      "example": "The diagram shows the parts of a leaf.",
+      "exampleMark": "diagram",
+      "picture": "practice/data/classroom-vocabulary/media/0213d28309b4d68e1b7ee9df.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0636.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/48e714ce5105568f7b6c375f.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-c2c45258c",
+      "term": "discovery",
+      "pos": "(n)",
+      "ipa": "/dɪˈskʌv.ər.i/",
+      "definition": "an occasion when somebody discovers something",
+      "example": "The discovery changed their understanding of the world.",
+      "exampleMark": "discovery",
+      "picture": "practice/data/classroom-vocabulary/media/3fbee66e37ef22cf142ecc01.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0637.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/eb37328ab3f85879c2ea3106.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-1984337fc",
+      "term": "industry",
+      "pos": "(n)",
+      "ipa": "/ˈɪn.dəs.tri/",
+      "definition": "the companies and activities involved in the process of producing goods for sale",
+      "example": "The technology industry develops new devices.",
+      "exampleMark": "industry",
+      "picture": "practice/data/classroom-vocabulary/media/ad425e52ce550645d659367c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0287.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2d231e62e6b554ee360aa27d.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-0a79d647a",
+      "term": "make a comparison",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ə kəmˈpær.ɪ.sən/",
+      "definition": "to consider the similarities between two things",
+      "example": "Now, let's make a comparison with the same trip today.",
+      "exampleMark": "make a comparison",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0639.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6d2b601025cdba51c5ca72ed.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-cc80f9391",
+      "term": "make a contribution",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ə ˌkɒn.trɪˈbjuː.ʃən/",
+      "definition": "to help to make something successful",
+      "example": "Everyone can make a contribution to the community garden.",
+      "exampleMark": "make a contribution",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0640.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3548f2014b22359885b07fc3.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-b09d08b82",
+      "term": "make a decision",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ə dɪˈsɪ.ʒən/",
+      "definition": "to choose",
+      "example": "We need to make a decision before the tickets sell out.",
+      "exampleMark": "make a decision",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0641.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c4896afff6ab9ff5eca65663.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-ebc4e9f5a",
+      "term": "make a difference",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ə ˈdɪf.ər.əns/",
+      "definition": "to change something",
+      "example": "A small invention can make a difference.",
+      "exampleMark": "make a difference",
+      "picture": "practice/data/classroom-vocabulary/media/53869d67bb009f7d7154c261.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0642.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/00e6c766eb8bc3c20fcf57d6.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-073bafd64",
+      "term": "make an investment",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ən ɪnˈvest.mənt/",
+      "definition": "to put money into something to make a profit",
+      "example": "The company plans to make an investment in solar energy.",
+      "exampleMark": "make an investment",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0643.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6a40f88e89f60f204550d183.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-5e597b908",
+      "term": "make attempts",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ətˈempts/",
+      "definition": "to try",
+      "example": "The birds often make attempts to build nests in the same tree.",
+      "exampleMark": "make attempts",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0644.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f5b6bf884490a9fc95186547.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-c2fae2800",
+      "term": "make improvements",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ɪmˈpruːv.mənts/",
+      "definition": "to make something better",
+      "example": "The hotel plans to make improvements to its rooms this winter.",
+      "exampleMark": "make improvements",
+      "picture": "practice/data/classroom-vocabulary/media/cf24c3100a77dfcef2cc4219.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0645.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/778c47892b9084ea5c3f609b.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-87cf71420",
+      "term": "make public",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ˈpʌb.lɪk/",
+      "definition": "to share information about something",
+      "example": "The council agreed to make public the results of the survey.",
+      "exampleMark": "make public",
+      "picture": "practice/data/classroom-vocabulary/media/b55c9e84255e793243429647.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0646.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d0ea601799cab2a27ec3e80e.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-dfcb43ff4",
+      "term": "outcome",
+      "pos": "(n)",
+      "ipa": "/ˈaʊt.kʌm/",
+      "definition": "the final result of an activity or a process",
+      "example": "Careful work can improve the outcome of a repair.",
+      "exampleMark": "outcome",
+      "picture": "practice/data/classroom-vocabulary/media/9bcc7ae3bb5c5da7437450a4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0647.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b738803003431373594314a1.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-025dfb550",
+      "term": "scholar",
+      "pos": "(n)",
+      "ipa": "/ˈskɒ.lə/",
+      "definition": "somebody who has studied a subject and knows a lot about it",
+      "example": "The scholar studies medieval science.",
+      "exampleMark": "scholar",
+      "picture": "practice/data/classroom-vocabulary/media/83ad3da4bb9f0ffaa473431d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0648.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5298610e57d307c255808658.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-30f7a16c5",
+      "term": "technology",
+      "pos": "(n)",
+      "ipa": "/tekˈnɒl.ə.dʒi/",
+      "definition": "knowledge, equipment and methods used in science and industry",
+      "example": "Technology helps us build machines.",
+      "exampleMark": "Technology",
+      "picture": "practice/data/classroom-vocabulary/media/890286676a9db8399341be19.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0649.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/715b21bd8d71081566d26ec5.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-12dea96fe",
+      "term": "user",
+      "pos": "(n)",
+      "ipa": "/ˈjuː.zə/",
+      "definition": "somebody who uses a product, machine or service",
+      "example": "The user enters a password.",
+      "exampleMark": "user",
+      "picture": "practice/data/classroom-vocabulary/media/a32fdfa6404f21d1899c65b8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0650.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/98f09be6edea16d2d1e9a8c1.mp3"
+    },
+    {
+      "id": "B03-LS-U06-W-395d3b4c7",
+      "term": "weapon",
+      "pos": "(n)",
+      "ipa": "/ˈwe.pən/",
+      "definition": "an object used in fighting",
+      "example": "The museum displays an old weapon.",
+      "exampleMark": "weapon",
+      "picture": "practice/data/classroom-vocabulary/media/7f6e795fbaf999b4fcb8b3db.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0651.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8f0290f513da070eeb00a95e.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d662c338ff38e75330e2cee2.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/0c094e5b36a518e1c471125f.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2f9389d9a882c5733d6a0a42.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/0d0933eb3d2e78c3945e076c.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-6452e7c5a",
+          "prompt": "Apps allow people to communicate.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U06-W-7d1043473",
+          "prompt": "This app helps me organize my notes.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U06-W-6a411c761",
+          "prompt": "Her discovery made a contribution to science.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U06-W-9b7c68a91",
+          "prompt": "They create a wooden shelf together.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/3fbee66e37ef22cf142ecc01.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/ad425e52ce550645d659367c.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/ef2890c1b4190ed3ebfe91e1.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/0213d28309b4d68e1b7ee9df.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-f3a929b33",
+          "prompt": "A smartphone is a useful device for studying.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U06-W-873709359",
+          "prompt": "The diagram shows the parts of a leaf.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U06-W-c2c45258c",
+          "prompt": "The discovery changed their understanding of the world.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U06-W-1984337fc",
+          "prompt": "The technology industry develops new devices.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/53869d67bb009f7d7154c261.webp"
+        },
+        {
+          "key": "B",
+          "text": "to consider the similarities between two things"
+        },
+        {
+          "key": "C",
+          "text": "to help to make something successful"
+        },
+        {
+          "key": "D",
+          "text": "to choose"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-0a79d647a",
+          "prompt": "Now, let's make a comparison with the same trip today.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U06-W-cc80f9391",
+          "prompt": "Everyone can make a contribution to the community garden.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U06-W-b09d08b82",
+          "prompt": "We need to make a decision before the tickets sell out.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U06-W-ebc4e9f5a",
+          "prompt": "A small invention can make a difference.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to make something better"
+        },
+        {
+          "key": "B",
+          "text": "to put money into something to make a profit"
+        },
+        {
+          "key": "C",
+          "text": "to try"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-073bafd64",
+          "prompt": "The company plans to make an investment in solar energy.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U06-W-5e597b908",
+          "prompt": "The birds often make attempts to build nests in the same tree.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U06-W-c2fae2800",
+          "prompt": "The hotel plans to make improvements to its rooms this winter.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/9bcc7ae3bb5c5da7437450a4.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/83ad3da4bb9f0ffaa473431d.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/b55c9e84255e793243429647.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-87cf71420",
+          "prompt": "The council agreed to make public the results of the survey.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U06-W-dfcb43ff4",
+          "prompt": "Careful work can improve the outcome of a repair.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U06-W-025dfb550",
+          "prompt": "The scholar studies medieval science.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/7f6e795fbaf999b4fcb8b3db.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/890286676a9db8399341be19.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/a32fdfa6404f21d1899c65b8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-30f7a16c5",
+          "prompt": "Technology helps us build machines.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U06-W-12dea96fe",
+          "prompt": "The user enters a password.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U06-W-395d3b4c7",
+          "prompt": "The museum displays an old weapon.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "diagram",
+        "device",
+        "create",
+        "contribution",
+        "app",
+        "allow"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-6452e7c5a",
+          "before": "Apps ",
+          "after": " people to communicate.",
+          "answer": "allow"
+        },
+        {
+          "id": "B03-LS-U06-W-7d1043473",
+          "before": "This ",
+          "after": " helps me organize my notes.",
+          "answer": "app"
+        },
+        {
+          "id": "B03-LS-U06-W-6a411c761",
+          "before": "Her discovery made a ",
+          "after": " to science.",
+          "answer": "contribution"
+        },
+        {
+          "id": "B03-LS-U06-W-9b7c68a91",
+          "before": "They ",
+          "after": " a wooden shelf together.",
+          "answer": "create"
+        },
+        {
+          "id": "B03-LS-U06-W-f3a929b33",
+          "before": "A smartphone is a useful ",
+          "after": " for studying.",
+          "answer": "device"
+        },
+        {
+          "id": "B03-LS-U06-W-873709359",
+          "before": "The ",
+          "after": " shows the parts of a leaf.",
+          "answer": "diagram"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "make a decision",
+        "make a contribution",
+        "make a comparison",
+        "industry",
+        "discovery"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-c2c45258c",
+          "before": "The ",
+          "after": " changed their understanding of the world.",
+          "answer": "discovery"
+        },
+        {
+          "id": "B03-LS-U06-W-1984337fc",
+          "before": "The technology ",
+          "after": " develops new devices.",
+          "answer": "industry"
+        },
+        {
+          "id": "B03-LS-U06-W-0a79d647a",
+          "before": "Now, let's ",
+          "after": " with the same trip today.",
+          "answer": "make a comparison"
+        },
+        {
+          "id": "B03-LS-U06-W-cc80f9391",
+          "before": "Everyone can ",
+          "after": " to the community garden.",
+          "answer": "make a contribution"
+        },
+        {
+          "id": "B03-LS-U06-W-b09d08b82",
+          "before": "We need to ",
+          "after": " before the tickets sell out.",
+          "answer": "make a decision"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "make public",
+        "make improvements",
+        "make attempts",
+        "make an investment",
+        "make a difference"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-ebc4e9f5a",
+          "before": "A small invention can ",
+          "after": ".",
+          "answer": "make a difference"
+        },
+        {
+          "id": "B03-LS-U06-W-073bafd64",
+          "before": "The company plans to ",
+          "after": " in solar energy.",
+          "answer": "make an investment"
+        },
+        {
+          "id": "B03-LS-U06-W-5e597b908",
+          "before": "The birds often ",
+          "after": " to build nests in the same tree.",
+          "answer": "make attempts"
+        },
+        {
+          "id": "B03-LS-U06-W-c2fae2800",
+          "before": "The hotel plans to ",
+          "after": " to its rooms this winter.",
+          "answer": "make improvements"
+        },
+        {
+          "id": "B03-LS-U06-W-87cf71420",
+          "before": "The council agreed to ",
+          "after": " the results of the survey.",
+          "answer": "make public"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "weapon",
+        "user",
+        "Technology",
+        "scholar",
+        "outcome"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U06-W-dfcb43ff4",
+          "before": "Careful work can improve the ",
+          "after": " of a repair.",
+          "answer": "outcome"
+        },
+        {
+          "id": "B03-LS-U06-W-025dfb550",
+          "before": "The ",
+          "after": " studies medieval science.",
+          "answer": "scholar"
+        },
+        {
+          "id": "B03-LS-U06-W-30f7a16c5",
+          "before": "",
+          "after": " helps us build machines.",
+          "answer": "Technology"
+        },
+        {
+          "id": "B03-LS-U06-W-12dea96fe",
+          "before": "The ",
+          "after": " enters a password.",
+          "answer": "user"
+        },
+        {
+          "id": "B03-LS-U06-W-395d3b4c7",
+          "before": "The museum displays an old ",
+          "after": ".",
+          "answer": "weapon"
+        }
+      ]
+    }
+  ]
+}

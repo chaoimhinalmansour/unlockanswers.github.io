@@ -51,7 +51,13 @@
       ? label(hasOpen ? "Corrections and Self-Check" : "Corrections", restrictedTitle) : label("Questions", "题号");
     const toggle = correction && !speakingReview ? '<button type="button" class="text-action subtle-action" data-action="toggle-all">' +
       (all ? label("Show Corrections", "只看" + restrictedTitle) : label("Show All", "查看全部题目")) + "</button>" : "";
-    const chips = questionStops(worksheet, visible).map(q => {
+    const firstVocabulary = visible.find(q => q.vocabulary);
+    const vocabulary = attempt?.first ? firstVocabulary :
+      visible.find(q => q.vocabulary && !answered(q)) || firstVocabulary;
+    const activeVocabulary = current?.vocabulary ? ' aria-current="step"' : "";
+    const vocabularyChip = vocabulary ? '<button type="button" class="question-chip vocabulary-chip" data-question-id="' +
+      esc(vocabulary.id) + '"' + activeVocabulary + ">" + label("Vocabulary", "词汇学练") + "</button>" : "";
+    const chips = questionStops(worksheet, visible).filter(q => !q.vocabulary).map(q => {
       if (isDictation(worksheet, q)) {
         const beginning = worksheet.dictationItems?.[0]?.number ?? 1;
         const ending = worksheet.dictationItems?.at(-1)?.number ?? worksheet.dictation.count;
@@ -78,7 +84,7 @@
       label("First Score " + score, "首次答对 " + score) + "</p>" : "";
     return '<section class="question-rail"><div class="rail-head"><h2 class="aside-title">' + title + "</h2>" +
       toggle + "</div>" + firstScore + '<nav class="question-chips" aria-label="' +
-      (attempt ? "作答题号" : "讲评题号") + '">' + chips + "</nav></section>";
+      (attempt ? "作答题号" : "讲评题号") + '">' + vocabularyChip + chips + "</nav></section>";
   }
 
   function readingSource(worksheet, question) {
@@ -87,6 +93,7 @@
   }
 
   function material(worksheet, question, preferences) {
+    if (question?.vocabulary) return "";
     if (question?.picture) {
       const numbers = worksheet.questions.filter(q => q.picture === question.picture).map(q => q.number);
       const range = numbers.length > 1 ? "第 " + numbers[0] + " 至 " + numbers.at(-1) + " 题共用图片"

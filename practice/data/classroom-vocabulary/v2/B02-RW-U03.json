@@ -1,0 +1,422 @@
+{
+  "unitId": "B2U03",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U03",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B02-RW-U03-L1"
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U03-W-c821b09bc",
+      "term": "advert",
+      "pos": "(n)",
+      "ipa": "/ˈæd.vəːt/",
+      "definition": "a picture, short film, etc. that tells people about something they can buy",
+      "example": "She saw an advert for a new phone on television.",
+      "exampleMark": "advert",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0130.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2841a7b54c82877eb1e35e3f.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-b3d0a8449",
+      "term": "collect",
+      "pos": "(v)",
+      "ipa": "/kəlˈekt/",
+      "definition": "to get things from different places and bring them together",
+      "example": "The website can collect information about visitors.",
+      "exampleMark": "collect",
+      "picture": "practice/data/classroom-vocabulary/media/bc834b9ed645b3771d5cc7d5.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0100.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/caff047abe2d5a5054da1fca.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-4cf604791",
+      "term": "computer program",
+      "pos": "(n)",
+      "ipa": "/kəmˈpjuː.tə ˈprəʊ.ɡræm/",
+      "definition": "a set of instructions that you put into a computer to make it do something",
+      "example": "He wrote a computer program that can sort the names in a list.",
+      "exampleMark": "computer program",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0131.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dc2f8149051a0de60cd550f8.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-3496eb3dc",
+      "term": "email address",
+      "pos": "(n)",
+      "ipa": "/ˈiː.meɪl ədˈres/",
+      "definition": "a series of letters, numbers and symbols used to send and receive email",
+      "example": "Please check my email address before you send the message.",
+      "exampleMark": "email address",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0135.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7ed547cf739f14a62b91086d.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-4ff88aadd",
+      "term": "free",
+      "pos": "(adj)",
+      "ipa": "/ˈfriː/",
+      "definition": "costing no money",
+      "example": "This app is free.",
+      "exampleMark": "free",
+      "picture": "practice/data/classroom-vocabulary/media/665177a2152122f08e8640f8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0136.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2eb3d5e8f078792eb494010d.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-5e8aa8dfe",
+      "term": "interest",
+      "pos": "(n)",
+      "ipa": "/ˈɪn.trɪst/",
+      "definition": "something you enjoy doing or learning about",
+      "example": "Cooking became a new interest after she learned to make pasta.",
+      "exampleMark": "interest",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0139.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/94b3802dba55375ec503ae2b.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-384a8a9f6",
+      "term": "keyboard",
+      "pos": "(n)",
+      "ipa": "/ˈkiː.bɔːd/",
+      "definition": "a set of keys on a computer that you press to make it work",
+      "example": "She typed the message on the keyboard.",
+      "exampleMark": "keyboard",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0109.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d6d8d0c11f42b5098883397c.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-275a70007",
+      "term": "record",
+      "pos": "(v)",
+      "ipa": "/rɪˈkɔːd/",
+      "definition": "to store sounds, pictures or information on a camera or computer so that they can be used in the future",
+      "example": "The simple job of a cookie is to record your online activities.",
+      "exampleMark": "record",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/lesson-dictation-audio-v1/c235ce21b7d577b554b5.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/571ea757a18a14291914bdea.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-e5e9fa1ba",
+      "term": "secret",
+      "pos": "(adj)",
+      "ipa": "/ˈsiː.krɪt/",
+      "definition": "not known or seen by other people",
+      "example": "Keep your password secret.",
+      "exampleMark": "secret",
+      "picture": "practice/data/classroom-vocabulary/media/18568e7a5d37fe41ad046d7d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0141.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b6f43fbd391e5c745ab17d1e.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-8eec7bc46",
+      "term": "security",
+      "pos": "(n)",
+      "ipa": "/sɪˈkjʊə.rɪ.ti/",
+      "definition": "the things that are done to keep somebody or something safe",
+      "example": "Good security helps protect personal information.",
+      "exampleMark": "security",
+      "picture": "practice/data/classroom-vocabulary/media/f081b9c0c2ec67f41c5c0675.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0142.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4b64545d774b741105b6b17c.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-b520dff52",
+      "term": "smartphone",
+      "pos": "(n)",
+      "ipa": "/ˈsmɑːt.fəʊn/",
+      "definition": "a mobile phone that can be used as a small computer and that connects to the internet",
+      "example": "For example, you browsed the internet one day for a new smartphone.",
+      "exampleMark": "smartphone",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0143.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/36d4864991c7f849894faea9.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-9a016389b",
+      "term": "touch screen",
+      "pos": "(n)",
+      "ipa": "/ˈtʌtʃ ˈskriːn/",
+      "definition": "a screen on a computer, phone, etc. that you touch, rather than using a keyboard or keypad",
+      "example": "Tap the icon on the touch screen to open the map.",
+      "exampleMark": "touch screen",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0144.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b204593d6c1cd8b60557f084.mp3"
+    },
+    {
+      "id": "B02-RW-U03-W-3ab3e0b02",
+      "term": "website",
+      "pos": "(n)",
+      "ipa": "/ˈweb.saɪt/",
+      "definition": "a set of pages of information on the internet about a particular subject",
+      "example": "It keeps you signed in and follows you as you use the website.",
+      "exampleMark": "website",
+      "picture": "practice/data/classroom-vocabulary/media/0d03d9da3cb83003d20adfc8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0145.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a9f10046b655e61d5fc70e72.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/bc834b9ed645b3771d5cc7d5.webp"
+        },
+        {
+          "key": "B",
+          "text": "a set of instructions that you put into a computer to make it do something"
+        },
+        {
+          "key": "C",
+          "text": "a series of letters, numbers and symbols used to send and receive email"
+        },
+        {
+          "key": "D",
+          "text": "a picture, short film, etc. that tells people about something they can buy"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-c821b09bc",
+          "prompt": "She saw an advert for a new phone on television.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U03-W-b3d0a8449",
+          "prompt": "The website can collect information about visitors.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U03-W-4cf604791",
+          "prompt": "He wrote a computer program that can sort the names in a list.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U03-W-3496eb3dc",
+          "prompt": "Please check my email address before you send the message.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a set of keys on a computer that you press to make it work"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/665177a2152122f08e8640f8.webp"
+        },
+        {
+          "key": "C",
+          "text": "something you enjoy doing or learning about"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-4ff88aadd",
+          "prompt": "This app is free.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U03-W-5e8aa8dfe",
+          "prompt": "Cooking became a new interest after she learned to make pasta.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U03-W-384a8a9f6",
+          "prompt": "She typed the message on the keyboard.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/18568e7a5d37fe41ad046d7d.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/f081b9c0c2ec67f41c5c0675.webp"
+        },
+        {
+          "key": "C",
+          "text": "to store sounds, pictures or information on a camera or computer so that they can be used in the future"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-275a70007",
+          "prompt": "The simple job of a cookie is to record your online activities.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U03-W-e5e9fa1ba",
+          "prompt": "Keep your password secret.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U03-W-8eec7bc46",
+          "prompt": "Good security helps protect personal information.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a set of pages of information on the internet about a particular subject"
+        },
+        {
+          "key": "B",
+          "text": "a mobile phone that can be used as a small computer and that connects to the internet"
+        },
+        {
+          "key": "C",
+          "text": "a screen on a computer, phone, etc. that you touch, rather than using a keyboard or keypad"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-b520dff52",
+          "prompt": "For example, you browsed the internet one day for a new smartphone.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U03-W-9a016389b",
+          "prompt": "Tap the icon on the touch screen to open the map.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U03-W-3ab3e0b02",
+          "prompt": "It keeps you signed in and follows you as you use the website.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "free",
+        "email address",
+        "computer program",
+        "collect",
+        "advert"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-c821b09bc",
+          "before": "She saw an ",
+          "after": " for a new phone on television.",
+          "answer": "advert"
+        },
+        {
+          "id": "B02-RW-U03-W-b3d0a8449",
+          "before": "The website can ",
+          "after": " information about visitors.",
+          "answer": "collect"
+        },
+        {
+          "id": "B02-RW-U03-W-4cf604791",
+          "before": "He wrote a ",
+          "after": " that can sort the names in a list.",
+          "answer": "computer program"
+        },
+        {
+          "id": "B02-RW-U03-W-3496eb3dc",
+          "before": "Please check my ",
+          "after": " before you send the message.",
+          "answer": "email address"
+        },
+        {
+          "id": "B02-RW-U03-W-4ff88aadd",
+          "before": "This app is ",
+          "after": ".",
+          "answer": "free"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "secret",
+        "record",
+        "keyboard",
+        "interest"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-5e8aa8dfe",
+          "before": "Cooking became a new ",
+          "after": " after she learned to make pasta.",
+          "answer": "interest"
+        },
+        {
+          "id": "B02-RW-U03-W-384a8a9f6",
+          "before": "She typed the message on the ",
+          "after": ".",
+          "answer": "keyboard"
+        },
+        {
+          "id": "B02-RW-U03-W-275a70007",
+          "before": "The simple job of a cookie is to ",
+          "after": " your online activities.",
+          "answer": "record"
+        },
+        {
+          "id": "B02-RW-U03-W-e5e9fa1ba",
+          "before": "Keep your password ",
+          "after": ".",
+          "answer": "secret"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "website",
+        "touch screen",
+        "smartphone",
+        "security"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U03-W-8eec7bc46",
+          "before": "Good ",
+          "after": " helps protect personal information.",
+          "answer": "security"
+        },
+        {
+          "id": "B02-RW-U03-W-b520dff52",
+          "before": "For example, you browsed the internet one day for a new ",
+          "after": ".",
+          "answer": "smartphone"
+        },
+        {
+          "id": "B02-RW-U03-W-9a016389b",
+          "before": "Tap the icon on the ",
+          "after": " to open the map.",
+          "answer": "touch screen"
+        },
+        {
+          "id": "B02-RW-U03-W-3ab3e0b02",
+          "before": "It keeps you signed in and follows you as you use the ",
+          "after": ".",
+          "answer": "website"
+        }
+      ]
+    }
+  ]
+}

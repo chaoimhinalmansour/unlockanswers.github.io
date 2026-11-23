@@ -1,0 +1,1022 @@
+{
+  "unitId": "B2U03",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U03",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U03-W-f2b195dca",
+      "term": "accident",
+      "pos": "(n)",
+      "ipa": "/ˈæksɪdənt/",
+      "definition": "something bad that happens, that is not on purpose and which causes injury or damage",
+      "example": "When Jamila was 25, she had an accident.",
+      "exampleMark": "accident",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/be146172acb612131373fc00.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/150dbeca0cdabdb12dea2c67.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-7d1043473",
+      "term": "app",
+      "pos": "(n)",
+      "ipa": "/ˈæp/",
+      "definition": "a computer program with a particular purpose",
+      "example": "Thanks to the advice you gave me, I knew which app to use.",
+      "exampleMark": "app",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f3823edacadcc47ca037741e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5535cbe3e79b6e5736bf786a.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-27a9612b3",
+      "term": "assistant",
+      "pos": "(n)",
+      "ipa": "/ɐsˈɪstənt/",
+      "definition": "somebody who helps another person do a job",
+      "example": "Instead, she has a small robot assistant.",
+      "exampleMark": "assistant",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c7006003f1b1ba7975099981.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/556f5c4b59df91827032d312.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-3f3c58ae4",
+      "term": "battery",
+      "pos": "(n)",
+      "ipa": "/bˈætərɪ/",
+      "definition": "an object that provides electricity for things such as radios, toys or cars",
+      "example": "The toy stopped working when the battery ran out.",
+      "exampleMark": "battery",
+      "picture": "practice/data/classroom-vocabulary/media/d49524e59a742568d7c4bdfe.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2024b9e21dd128617e34e769.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2f0c11c06d616f439fcf27ba.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-5ea9c348e",
+      "term": "charge",
+      "pos": "(v)",
+      "ipa": "/tʃˈɑːdʒ/",
+      "definition": "to put electricity into something",
+      "example": "I charge my phone at home.",
+      "exampleMark": "charge",
+      "picture": "practice/data/classroom-vocabulary/media/f65460ef7513a3f4c5bdaf18.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/17806a047a25f7b949e98df1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/06b2c02c3806ebbfb98a3a59.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-e2faa9211",
+      "term": "charger",
+      "pos": "(n)",
+      "ipa": "/tʃˈɑːdʒɐ/",
+      "definition": "a piece of equipment used for putting electricity in a battery",
+      "example": "I keep a charger in my bag.",
+      "exampleMark": "charger",
+      "picture": "practice/data/classroom-vocabulary/media/60da0d0fdad8a2f255e4a021.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/da255c552bafed227c0e9b22.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c7c6bb3fa458218addb68b26.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-b3d0a8449",
+      "term": "collect",
+      "pos": "(v)",
+      "ipa": "/kəlˈɛkt/",
+      "definition": "to get things from different places and bring them together",
+      "example": "Scientists collect information from sensors.",
+      "exampleMark": "collect",
+      "picture": "practice/data/classroom-vocabulary/media/576fd96fe0cae08f331152a7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/af0fd0cdf1adf5df0d60c360.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/01611ea0907793095e7372f1.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-c60266a8a",
+      "term": "computer",
+      "pos": "(n)",
+      "ipa": "/kəmpjˈuːtɐ/",
+      "definition": "an electronic machine that is used for storing, organizing, and finding words, numbers, and pictures, for doing calculations, and for controlling other machines",
+      "example": "Sometimes the information on my computer is damaged.",
+      "exampleMark": "computer",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/495dafeac9770783357ff01a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/54fc9dcc9ecbb4c650a906ac.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-c3a71b151",
+      "term": "deliver",
+      "pos": "(v)",
+      "ipa": "/dɪlˈɪvɐ/",
+      "definition": "to take things to a person or place",
+      "example": "They might need help from robots that can carry things around the house or deliver medicine on time.",
+      "exampleMark": "deliver",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5c2d944d9f4c456e802f7c40.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/838dae8cd243346405a3e972.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-418a6bc4d",
+      "term": "develop",
+      "pos": "(v)",
+      "ipa": "/dɪvˈɛləp/",
+      "definition": "to make something new",
+      "example": "The team plans to develop a new app for bus passengers.",
+      "exampleMark": "develop",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7e7b442e89671da1481a11a2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8a39f0c3c7728e386b2cfa2c.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-0af28746b",
+      "term": "disability",
+      "pos": "(n)",
+      "ipa": "/dˌɪsɐbˈɪlətɪ/",
+      "definition": "an illness or injury that makes it difficult to do the things that other people can do",
+      "example": "Even with this disability, Jamila is able to stay in her home.",
+      "exampleMark": "disability",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/455bfd53f6f82ca4db947ebb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6e41bd8bf813a1575d4727ea.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-971c419dd",
+      "term": "file",
+      "pos": "(n)",
+      "ipa": "/fˈaɪl/",
+      "definition": "a collection of information stored in one place on a computer",
+      "example": "I saved the report in a file.",
+      "exampleMark": "file",
+      "picture": "practice/data/classroom-vocabulary/media/be9870f1f9c405413194acba.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7ec316c3dbe4eb005807726e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/83290722a86c25b40d5edb1c.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-90439bbc7",
+      "term": "go online",
+      "pos": "(phr)",
+      "ipa": "/ɡˌəʊ ˈɒnlaɪn/",
+      "definition": "to spend time connected to the internet",
+      "example": "We go online to check the train times.",
+      "exampleMark": "go online",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/19e342a04ab7bfcce37642fe.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/24fd3849d0809d49a502320c.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-83dd9d6af",
+      "term": "information",
+      "pos": "(n)",
+      "ipa": "/ˌɪnfəˈmeɪʃən/",
+      "definition": "facts about a situation, person, event, etc.",
+      "example": "The app gives us information about the weather.",
+      "exampleMark": "information",
+      "picture": "practice/data/classroom-vocabulary/media/54d79e6714d7d8a5508ed7b6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4d7deb61791f5f5b1f2963d2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/81ac6a0862586d923f315116.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-a62f2225b",
+      "term": "key",
+      "pos": "(n)",
+      "ipa": "/kˈiː/",
+      "definition": "one of the parts you press on a computer keyboard to produce letters and numbers",
+      "example": "Press the key marked Enter to start a new line.",
+      "exampleMark": "key",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6278c7480c7a6b8f6de546d0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4ff7eee87883ea41843030cc.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-384a8a9f6",
+      "term": "keyboard",
+      "pos": "(n)",
+      "ipa": "/kˈiːbɔːd/",
+      "definition": "a set of keys on a computer that you press to make it work",
+      "example": "She typed the message on the keyboard.",
+      "exampleMark": "keyboard",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3b2a361724aa17e4186b4c7f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d6d8d0c11f42b5098883397c.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-e068381bb",
+      "term": "laptop",
+      "pos": "(n)",
+      "ipa": "/lˈæptɒp/",
+      "definition": "a small computer that you can carry around with you",
+      "example": "He carried his laptop to class in a small bag.",
+      "exampleMark": "laptop",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a77c6582ec59aa0e37fe1069.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/470071d776c2c15eac6d0385.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-fdb746461",
+      "term": "log in",
+      "pos": "(phr v)",
+      "ipa": "/lˈɒɡ ˈɪn/",
+      "definition": "to connect a computer to a system of computers by typing your name and a password",
+      "example": "You need to log in before you can read your messages.",
+      "exampleMark": "log in",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/433ca0e4dbf2be30981044d7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2572935bc02e81b0ad5f2c36.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-6d490228d",
+      "term": "look after",
+      "pos": "(phr v)",
+      "ipa": "/lˈʊk ˈɑːftɐ/",
+      "definition": "to take care of somebody or something",
+      "example": "Robots can help people look after their homes.",
+      "exampleMark": "look after",
+      "picture": "practice/data/classroom-vocabulary/media/e93276f253146d391ec27cb0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d48b8b038457a6b2a46d006a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d1982a75633940717f848bbd.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-3d76b2726",
+      "term": "mobile device",
+      "pos": "(n)",
+      "ipa": "/mˈəʊbaɪl dɪvˈaɪs/",
+      "definition": "any piece of electronic equipment such as a phone or small computer that you can use in different places",
+      "example": "A tablet is a mobile device.",
+      "exampleMark": "mobile device",
+      "picture": "practice/data/classroom-vocabulary/media/ed35ed2ad4a7e9c126af1de7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/10cb02302fd34617d4b12623.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/93051a30a741fc3163a33ab7.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-9e05e6832",
+      "term": "mouse",
+      "pos": "(n)",
+      "ipa": "/mˈaʊs/",
+      "definition": "a thing that you move with your hand to control what a computer does",
+      "example": "Move the mouse to move the arrow on the screen.",
+      "exampleMark": "mouse",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9eeb28731137e2d945d7c063.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f984b18d0db192257dca91c7.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-5baa61e4c",
+      "term": "password",
+      "pos": "(n)",
+      "ipa": "/pˈɑːswɜːd/",
+      "definition": "a secret word or combination of letters or numbers, used for communicating with another person or with a computer to prove who you are",
+      "example": "Choose a password that other people cannot easily guess.",
+      "exampleMark": "password",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/31263a625327eee5418d83f5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/272eda1120cde8b31d38bf38.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-f6be6ca91",
+      "term": "phone",
+      "pos": "(n)",
+      "ipa": "/fˈəʊn/",
+      "definition": "a device that uses either a system of wires along which electrical signals are sent or a system of radio signals to make it possible for you to speak to somebody in another place who has a similar device",
+      "example": "Do you use your phone to find an answer?",
+      "exampleMark": "phone",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d1938b8e6cf34d70a6e9767c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2874d46e0bf8f8f7a4c272fc.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-2c7bf1b77",
+      "term": "research",
+      "pos": "(n)",
+      "ipa": "/rɪsˈɜːtʃ/",
+      "definition": "a detailed study of a subject to learn more about it",
+      "example": "Her research is about robots in hospitals.",
+      "exampleMark": "research",
+      "picture": "practice/data/classroom-vocabulary/media/18b0fae3631e263abd993d95.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4aecd89894ea512cf65be6a7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6f0c82c90ed5d4ff4e3e4309.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-22dd0e3b8",
+      "term": "shut down",
+      "pos": "(phr v)",
+      "ipa": "/ʃˈʌt dˈaʊn/",
+      "definition": "if a computer shuts down or somebody shuts it down, it stops operating",
+      "example": "Please shut down the computer before you leave.",
+      "exampleMark": "shut down",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/875006490edc7dccdee43872.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5a97c2afa04a45ef16443dd6.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-52b4cddb8",
+      "term": "social media",
+      "pos": "(n)",
+      "ipa": "/sˈəʊʃəl mˈiːdiːɐ/",
+      "definition": "websites and computer programs that allow people to communicate and share information on the internet",
+      "example": "We share photos on social media.",
+      "exampleMark": "social media",
+      "picture": "practice/data/classroom-vocabulary/media/1997c5e4c598ddc6d26df722.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/83551e61155f887e53f36c99.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0057a1096ed7d60b4f08e23c.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-8baf8c4f2",
+      "term": "surf the internet",
+      "pos": "(phr)",
+      "ipa": "/sˈɜːf ðɪ ˈɪntənˌɛt/",
+      "definition": "to look at information on the internet by moving from one page to another",
+      "example": "We surf the internet when we look for ideas for our trip.",
+      "exampleMark": "surf the internet",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d5644551f5339bcd21e20eba.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/34d9bbe79c8f011e0986a8ac.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-6f4d3f36e",
+      "term": "tablet",
+      "pos": "(n)",
+      "ipa": "/tˈæblət/",
+      "definition": "a small, flat computer that is controlled by touching the screen or by using a special pen",
+      "example": "She reads a book on her tablet.",
+      "exampleMark": "tablet",
+      "picture": "practice/data/classroom-vocabulary/media/0635fe4e2a1fb37bb9d5ca9b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/061f0deeb74293396c4b97b2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/26aaf43b8709548f75a8c279.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-372ea08ca",
+      "term": "text",
+      "pos": "(n, v)",
+      "ipa": "/tˈɛkst/",
+      "definition": "名词指手机短信。动词指给某人发短信。",
+      "example": "She sent me a text to say that the train was late.",
+      "exampleMark": "text",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/00925840113b47c62798d036.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/61816ea09bb7fb9872f80cee.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-b1aa23605",
+      "term": "the cloud",
+      "pos": "(n)",
+      "ipa": "/ðə klˈaʊd/",
+      "definition": "a computer network where files and programs can be stored, especially the internet",
+      "example": "So I save my files in the cloud, too.",
+      "exampleMark": "the cloud",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5059c2bef5c1c7a71b23e431.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/828327deeeb7b101904a1d71.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-ff5e957e9",
+      "term": "turn off",
+      "pos": "(phr v)",
+      "ipa": "/tˈɜːn ˈɒf/",
+      "definition": "to move the switch on a machine, light, etc. so that it stops working, or to stop the supply of water, electricity, etc.",
+      "example": "Remember to turn off the lights when you leave.",
+      "exampleMark": "turn off",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7be12b2da0440bde340470d3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/85273f3475db9b2f5f979f71.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-2d1f77d03",
+      "term": "turn on",
+      "pos": "(phr v)",
+      "ipa": "/tˈɜːn ˈɒn/",
+      "definition": "to move the switch on a machine, light, etc. so that it starts working, or to start the supply of water, electricity, etc.",
+      "example": "Please turn on the lamp so I can read.",
+      "exampleMark": "turn on",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/130288ecfd052d26a912e268.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0518f8a0f2c657adefe82892.mp3"
+    },
+    {
+      "id": "B02-LS-U03-W-fcd500891",
+      "term": "Wi-Fi",
+      "pos": "(n)",
+      "ipa": "/wˈaɪfˌaɪ/",
+      "definition": "a system used for connecting computers and other electronic equipment to the internet without using wires",
+      "example": "Is there Wi-Fi in the library so I can go online?",
+      "exampleMark": "Wi-Fi",
+      "picture": "practice/data/classroom-vocabulary/media/2385d0ebf9fe0482d5f360a5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e3a14bce6b95310d55231138.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d6c5e62fa6f1a3c5143c1574.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a computer program with a particular purpose"
+        },
+        {
+          "key": "B",
+          "text": "something bad that happens, that is not on purpose and which causes injury or damage"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d49524e59a742568d7c4bdfe.webp"
+        },
+        {
+          "key": "D",
+          "text": "somebody who helps another person do a job"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-f2b195dca",
+          "prompt": "When Jamila was 25, she had an accident.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-7d1043473",
+          "prompt": "Thanks to the advice you gave me, I knew which app to use.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-27a9612b3",
+          "prompt": "Instead, she has a small robot assistant.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-3f3c58ae4",
+          "prompt": "The toy stopped working when the battery ran out.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/60da0d0fdad8a2f255e4a021.webp"
+        },
+        {
+          "key": "B",
+          "text": "an electronic machine that is used for storing, organizing, and finding words, numbers, and pictures, for doing calculations, and for controlling other machines"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/f65460ef7513a3f4c5bdaf18.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/576fd96fe0cae08f331152a7.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-5ea9c348e",
+          "prompt": "I charge my phone at home.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U03-W-e2faa9211",
+          "prompt": "I keep a charger in my bag.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-b3d0a8449",
+          "prompt": "Scientists collect information from sensors.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-c60266a8a",
+          "prompt": "Sometimes the information on my computer is damaged.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to take things to a person or place"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/be9870f1f9c405413194acba.webp"
+        },
+        {
+          "key": "C",
+          "text": "an illness or injury that makes it difficult to do the things that other people can do"
+        },
+        {
+          "key": "D",
+          "text": "to make something new"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-c3a71b151",
+          "prompt": "They might need help from robots that can carry things around the house or deliver medicine on time.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-418a6bc4d",
+          "prompt": "The team plans to develop a new app for bus passengers.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-0af28746b",
+          "prompt": "Even with this disability, Jamila is able to stay in her home.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U03-W-971c419dd",
+          "prompt": "I saved the report in a file.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "one of the parts you press on a computer keyboard to produce letters and numbers"
+        },
+        {
+          "key": "B",
+          "text": "a set of keys on a computer that you press to make it work"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/54d79e6714d7d8a5508ed7b6.webp"
+        },
+        {
+          "key": "D",
+          "text": "to spend time connected to the internet"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-90439bbc7",
+          "prompt": "We go online to check the train times.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-83dd9d6af",
+          "prompt": "The app gives us information about the weather.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U03-W-a62f2225b",
+          "prompt": "Press the key marked Enter to start a new line.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-384a8a9f6",
+          "prompt": "She typed the message on the keyboard.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to connect a computer to a system of computers by typing your name and a password"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/e93276f253146d391ec27cb0.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/ed35ed2ad4a7e9c126af1de7.webp"
+        },
+        {
+          "key": "D",
+          "text": "a small computer that you can carry around with you"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-e068381bb",
+          "prompt": "He carried his laptop to class in a small bag.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-fdb746461",
+          "prompt": "You need to log in before you can read your messages.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-6d490228d",
+          "prompt": "Robots can help people look after their homes.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-3d76b2726",
+          "prompt": "A tablet is a mobile device.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a device that uses either a system of wires along which electrical signals are sent or a system of radio signals to make it possible for you to speak to somebody in another place who has a similar device"
+        },
+        {
+          "key": "B",
+          "text": "a secret word or combination of letters or numbers, used for communicating with another person or with a computer to prove who you are"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/18b0fae3631e263abd993d95.webp"
+        },
+        {
+          "key": "D",
+          "text": "a thing that you move with your hand to control what a computer does"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-9e05e6832",
+          "prompt": "Move the mouse to move the arrow on the screen.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U03-W-5baa61e4c",
+          "prompt": "Choose a password that other people cannot easily guess.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-f6be6ca91",
+          "prompt": "Do you use your phone to find an answer?",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-2c7bf1b77",
+          "prompt": "Her research is about robots in hospitals.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to look at information on the internet by moving from one page to another"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/1997c5e4c598ddc6d26df722.webp"
+        },
+        {
+          "key": "C",
+          "text": "if a computer shuts down or somebody shuts it down, it stops operating"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-22dd0e3b8",
+          "prompt": "Please shut down the computer before you leave.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U03-W-52b4cddb8",
+          "prompt": "We share photos on social media.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-8baf8c4f2",
+          "prompt": "We surf the internet when we look for ideas for our trip.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/0635fe4e2a1fb37bb9d5ca9b.webp"
+        },
+        {
+          "key": "B",
+          "text": "名词指手机短信。动词指给某人发短信。"
+        },
+        {
+          "key": "C",
+          "text": "a computer network where files and programs can be stored, especially the internet"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-6f4d3f36e",
+          "prompt": "She reads a book on her tablet.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U03-W-372ea08ca",
+          "prompt": "She sent me a text to say that the train was late.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-b1aa23605",
+          "prompt": "So I save my files in the cloud, too.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a system used for connecting computers and other electronic equipment to the internet without using wires"
+        },
+        {
+          "key": "B",
+          "text": "to move the switch on a machine, light, etc. so that it starts working, or to start the supply of water, electricity, etc."
+        },
+        {
+          "key": "C",
+          "text": "to move the switch on a machine, light, etc. so that it stops working, or to stop the supply of water, electricity, etc."
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-ff5e957e9",
+          "prompt": "Remember to turn off the lights when you leave.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U03-W-2d1f77d03",
+          "prompt": "Please turn on the lamp so I can read.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U03-W-fcd500891",
+          "prompt": "Is there Wi-Fi in the library so I can go online?",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "accident",
+        "battery",
+        "app",
+        "assistant",
+        "collect",
+        "charger",
+        "charge"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-f2b195dca",
+          "before": "When Jamila was 25, she had an ",
+          "after": ".",
+          "answer": "accident"
+        },
+        {
+          "id": "B02-LS-U03-W-7d1043473",
+          "before": "Thanks to the advice you gave me, I knew which ",
+          "after": " to use.",
+          "answer": "app"
+        },
+        {
+          "id": "B02-LS-U03-W-27a9612b3",
+          "before": "Instead, she has a small robot ",
+          "after": ".",
+          "answer": "assistant"
+        },
+        {
+          "id": "B02-LS-U03-W-3f3c58ae4",
+          "before": "The toy stopped working when the ",
+          "after": " ran out.",
+          "answer": "battery"
+        },
+        {
+          "id": "B02-LS-U03-W-5ea9c348e",
+          "before": "I ",
+          "after": " my phone at home.",
+          "answer": "charge"
+        },
+        {
+          "id": "B02-LS-U03-W-e2faa9211",
+          "before": "I keep a ",
+          "after": " in my bag.",
+          "answer": "charger"
+        },
+        {
+          "id": "B02-LS-U03-W-b3d0a8449",
+          "before": "Scientists ",
+          "after": " information from sensors.",
+          "answer": "collect"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "computer",
+        "file",
+        "develop",
+        "deliver",
+        "go online",
+        "disability",
+        "information"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-c60266a8a",
+          "before": "Sometimes the information on my ",
+          "after": " is damaged.",
+          "answer": "computer"
+        },
+        {
+          "id": "B02-LS-U03-W-c3a71b151",
+          "before": "They might need help from robots that can carry things around the house or ",
+          "after": " medicine on time.",
+          "answer": "deliver"
+        },
+        {
+          "id": "B02-LS-U03-W-418a6bc4d",
+          "before": "The team plans to ",
+          "after": " a new app for bus passengers.",
+          "answer": "develop"
+        },
+        {
+          "id": "B02-LS-U03-W-0af28746b",
+          "before": "Even with this ",
+          "after": ", Jamila is able to stay in her home.",
+          "answer": "disability"
+        },
+        {
+          "id": "B02-LS-U03-W-971c419dd",
+          "before": "I saved the report in a ",
+          "after": ".",
+          "answer": "file"
+        },
+        {
+          "id": "B02-LS-U03-W-90439bbc7",
+          "before": "We ",
+          "after": " to check the train times.",
+          "answer": "go online"
+        },
+        {
+          "id": "B02-LS-U03-W-83dd9d6af",
+          "before": "The app gives us ",
+          "after": " about the weather.",
+          "answer": "information"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "log in",
+        "look after",
+        "mouse",
+        "mobile device",
+        "laptop",
+        "key",
+        "keyboard"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-a62f2225b",
+          "before": "Press the ",
+          "after": " marked Enter to start a new line.",
+          "answer": "key"
+        },
+        {
+          "id": "B02-LS-U03-W-384a8a9f6",
+          "before": "She typed the message on the ",
+          "after": ".",
+          "answer": "keyboard"
+        },
+        {
+          "id": "B02-LS-U03-W-e068381bb",
+          "before": "He carried his ",
+          "after": " to class in a small bag.",
+          "answer": "laptop"
+        },
+        {
+          "id": "B02-LS-U03-W-fdb746461",
+          "before": "You need to ",
+          "after": " before you can read your messages.",
+          "answer": "log in"
+        },
+        {
+          "id": "B02-LS-U03-W-6d490228d",
+          "before": "Robots can help people ",
+          "after": " their homes.",
+          "answer": "look after"
+        },
+        {
+          "id": "B02-LS-U03-W-3d76b2726",
+          "before": "A tablet is a ",
+          "after": ".",
+          "answer": "mobile device"
+        },
+        {
+          "id": "B02-LS-U03-W-9e05e6832",
+          "before": "Move the ",
+          "after": " to move the arrow on the screen.",
+          "answer": "mouse"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "research",
+        "shut down",
+        "surf the internet",
+        "phone",
+        "social media",
+        "password"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-5baa61e4c",
+          "before": "Choose a ",
+          "after": " that other people cannot easily guess.",
+          "answer": "password"
+        },
+        {
+          "id": "B02-LS-U03-W-f6be6ca91",
+          "before": "Do you use your ",
+          "after": " to find an answer?",
+          "answer": "phone"
+        },
+        {
+          "id": "B02-LS-U03-W-2c7bf1b77",
+          "before": "Her ",
+          "after": " is about robots in hospitals.",
+          "answer": "research"
+        },
+        {
+          "id": "B02-LS-U03-W-22dd0e3b8",
+          "before": "Please ",
+          "after": " the computer before you leave.",
+          "answer": "shut down"
+        },
+        {
+          "id": "B02-LS-U03-W-52b4cddb8",
+          "before": "We share photos on ",
+          "after": ".",
+          "answer": "social media"
+        },
+        {
+          "id": "B02-LS-U03-W-8baf8c4f2",
+          "before": "We ",
+          "after": " when we look for ideas for our trip.",
+          "answer": "surf the internet"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "Wi-Fi",
+        "the cloud",
+        "turn off",
+        "turn on",
+        "text",
+        "tablet"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U03-W-6f4d3f36e",
+          "before": "She reads a book on her ",
+          "after": ".",
+          "answer": "tablet"
+        },
+        {
+          "id": "B02-LS-U03-W-372ea08ca",
+          "before": "She sent me a ",
+          "after": " to say that the train was late.",
+          "answer": "text"
+        },
+        {
+          "id": "B02-LS-U03-W-b1aa23605",
+          "before": "So I save my files in ",
+          "after": ", too.",
+          "answer": "the cloud"
+        },
+        {
+          "id": "B02-LS-U03-W-ff5e957e9",
+          "before": "Remember to ",
+          "after": " the lights when you leave.",
+          "answer": "turn off"
+        },
+        {
+          "id": "B02-LS-U03-W-2d1f77d03",
+          "before": "Please ",
+          "after": " the lamp so I can read.",
+          "answer": "turn on"
+        },
+        {
+          "id": "B02-LS-U03-W-fcd500891",
+          "before": "Is there ",
+          "after": " in the library so I can go online?",
+          "answer": "Wi-Fi"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,442 @@
+{
+  "unitId": "B2U08",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U08",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U08-W-6ef7c4c19",
+      "term": "advance",
+      "pos": "(n)",
+      "ipa": "/ɐdvˈæns/",
+      "definition": "step in the development or improvement of something",
+      "example": "The new battery is an important advance in electric transport.",
+      "exampleMark": "advance",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/41379d40ecb93df7789d3987.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e38e1765a6d69fb6853c939c.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-94ec44c4f",
+      "term": "believe",
+      "pos": "(v)",
+      "ipa": "/bɪlˈiːv/",
+      "definition": "to think that something is true, or that what somebody says is true",
+      "example": "Some scientists believe that there must be life on other planets because the universe is so big.",
+      "exampleMark": "believe",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/934683031350659cbe75686c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/aaca06ab10b4a9968a197390.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-754159999",
+      "term": "beyond",
+      "pos": "(prep)",
+      "ipa": "/bɪjˈɒnd/",
+      "definition": "on the farther side of. at a farther distance than",
+      "example": "Astronauts have not set foot beyond the moon.",
+      "exampleMark": "beyond",
+      "picture": "practice/data/classroom-vocabulary/media/d8fba6cab69a5df726660c41.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a663cd0b9d78b678ce0c8548.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ac39c6bb629914a91356369b.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-2fc7f1452",
+      "term": "crash",
+      "pos": "(v)",
+      "ipa": "/krˈæʃ/",
+      "definition": "to be involved in an accident, especially in a vehicle",
+      "example": "A driver can crash if they look at their phone on the road.",
+      "exampleMark": "crash",
+      "picture": "practice/data/classroom-vocabulary/media/d5f11210871f16125e9cb29b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fb7d9cf47ba5fc31d18b53e9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c104180bd1f2379456bb3c51.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-306631de5",
+      "term": "entrepreneur",
+      "pos": "(n)",
+      "ipa": "/ˌɒntrɪprənjˈɔː/",
+      "definition": "somebody who starts their own business",
+      "example": "An entrepreneur must understand the risks of a new business.",
+      "exampleMark": "entrepreneur",
+      "picture": "practice/data/classroom-vocabulary/media/8a131cb4b5d2fc0707c3d4c2.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e14ef1b0df116bab06fa0042.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d3fb902b0a463106d236b840.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-100ec4462",
+      "term": "evidence",
+      "pos": "(n)",
+      "ipa": "/ˈɛvɪdəns/",
+      "definition": "something that makes you believe something is true",
+      "example": "However, there is no evidence that there is life on Kepler -22b.",
+      "exampleMark": "evidence",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0b3d88ed90e5e5691f8c0dd0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/91a29c413de8b4e80ab6f857.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-9dda9754b",
+      "term": "explore",
+      "pos": "(v)",
+      "ipa": "/ɪksplˈɔː/",
+      "definition": "to travel to a new place to learn about it",
+      "example": "Mariam loves to explore new places.",
+      "exampleMark": "explore",
+      "picture": "practice/data/classroom-vocabulary/media/37bcbbe514059791a4bc5919.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/136b827160a96fa89beb8b45.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e2b6712c1aca10002c0903b6.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-e80721793",
+      "term": "private",
+      "pos": "(adj)",
+      "ipa": "/prˈaɪvət/",
+      "definition": "related to money or services controlled or supplied by a person or a company and not by the government",
+      "example": "Private companies, instead of public government organizations, are entering the space race.",
+      "exampleMark": "Private",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/aaef16fc0b78d665747f75e8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7125de6e83deeaa34d681f2e.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-61c9b2b17",
+      "term": "public",
+      "pos": "(adj)",
+      "ipa": "/pˈʌblɪk/",
+      "definition": "related to money or services controlled or supplied by the government and not by a person or a company",
+      "example": "Some people don't think we should use public money, like taxes, to pay for space travel.",
+      "exampleMark": "public",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8f403a32759048d983bb70bc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f72b8d2b8a89444c255b6587.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-a27297bde",
+      "term": "report",
+      "pos": "(n)",
+      "ipa": "/rɪpˈɔːt/",
+      "definition": "a document that tells us about a subject in detail",
+      "example": "The report explains how much traffic uses the new bridge.",
+      "exampleMark": "report",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fb2dc16534edf365b6ccb4c1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2536911346d04e3d3d94c0d5.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-2c7bf1b77",
+      "term": "research",
+      "pos": "(n)",
+      "ipa": "/rɪsˈɜːtʃ/",
+      "definition": "the detailed investigation of a subject to discover new information or reach a new understanding",
+      "example": "Until research shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+      "exampleMark": "research",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4aecd89894ea512cf65be6a7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/183d453ec50a2c815ceb03b0.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-885534c19",
+      "term": "study",
+      "pos": "(v)",
+      "ipa": "/stˈʌdɪ/",
+      "definition": "the activity of examining a subject in detail to discover new information",
+      "example": "For example, a Japanese study found that a drug made from sea sponges helps treat several types of cancer.",
+      "exampleMark": "study",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3848abda43b2b7b4cd6aa67a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/134f079f873a581db9af0b19.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-fd0a4950b",
+      "term": "suggest",
+      "pos": "(v)",
+      "ipa": "/sədʒˈɛst/",
+      "definition": "to express an idea or plan for somebody to consider",
+      "example": "Some experts suggest + that clause.",
+      "exampleMark": "suggest",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d07390ca608b641940220ace.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7fb7113eae3957d83c6818ff.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-5bdcd3c0d",
+      "term": "support",
+      "pos": "(v)",
+      "ipa": "/səpˈɔːt/",
+      "definition": "help show that something is true",
+      "example": "In the end, there are no facts that support the idea of life on other planets.",
+      "exampleMark": "support",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/65c77060ee3a3004c236c403.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/923e9ada0433b85eaf6f1bae.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d5f11210871f16125e9cb29b.webp"
+        },
+        {
+          "key": "B",
+          "text": "to think that something is true, or that what somebody says is true"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d8fba6cab69a5df726660c41.webp"
+        },
+        {
+          "key": "D",
+          "text": "step in the development or improvement of something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-6ef7c4c19",
+          "prompt": "The new battery is an important advance in electric transport.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-94ec44c4f",
+          "prompt": "Some scientists believe that there must be life on other planets because the universe is so big.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-754159999",
+          "prompt": "Astronauts have not set foot beyond the moon.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-2fc7f1452",
+          "prompt": "A driver can crash if they look at their phone on the road.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "related to money or services controlled or supplied by a person or a company and not by the government"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/37bcbbe514059791a4bc5919.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/8a131cb4b5d2fc0707c3d4c2.webp"
+        },
+        {
+          "key": "D",
+          "text": "somebody that makes you believe something is true"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-306631de5",
+          "prompt": "An entrepreneur must understand the risks of a new business.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-100ec4462",
+          "prompt": "However, there is no evidence that there is life on Kepler -22b.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-9dda9754b",
+          "prompt": "Mariam loves to explore new places.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-e80721793",
+          "prompt": "Private companies, instead of public government organizations, are entering the space race.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the detailed investigation of a subject to discover new information or reach a new understanding"
+        },
+        {
+          "key": "B",
+          "text": "a document that tells us about a subject in detail"
+        },
+        {
+          "key": "C",
+          "text": "related to money or services controlled or supplied by the government and not by a person or a company"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-61c9b2b17",
+          "prompt": "Some people don't think we should use public money, like taxes, to pay for space travel.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-a27297bde",
+          "prompt": "The report explains how much traffic uses the new bridge.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-2c7bf1b77",
+          "prompt": "Until research shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the activity of examining a subject in detail to discover new information"
+        },
+        {
+          "key": "B",
+          "text": "to express an idea or plan for somebody to consider"
+        },
+        {
+          "key": "C",
+          "text": "help show that something is true"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-885534c19",
+          "prompt": "For example, a Japanese study found that a drug made from sea sponges helps treat several types of cancer.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U08-W-fd0a4950b",
+          "prompt": "Some experts suggest + that clause.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-5bdcd3c0d",
+          "prompt": "In the end, there are no facts that support the idea of life on other planets.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "beyond",
+        "advance",
+        "entrepreneur",
+        "explore",
+        "evidence",
+        "believe",
+        "crash"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-6ef7c4c19",
+          "before": "The new battery is an important ",
+          "after": " in electric transport.",
+          "answer": "advance"
+        },
+        {
+          "id": "B02-RW-U08-W-94ec44c4f",
+          "before": "Some scientists ",
+          "after": " that there must be life on other planets because the universe is so big.",
+          "answer": "believe"
+        },
+        {
+          "id": "B02-RW-U08-W-754159999",
+          "before": "Astronauts have not set foot ",
+          "after": " the moon.",
+          "answer": "beyond"
+        },
+        {
+          "id": "B02-RW-U08-W-2fc7f1452",
+          "before": "A driver can ",
+          "after": " if they look at their phone on the road.",
+          "answer": "crash"
+        },
+        {
+          "id": "B02-RW-U08-W-306631de5",
+          "before": "An ",
+          "after": " must understand the risks of a new business.",
+          "answer": "entrepreneur"
+        },
+        {
+          "id": "B02-RW-U08-W-100ec4462",
+          "before": "However, there is no ",
+          "after": " that there is life on Kepler -22b.",
+          "answer": "evidence"
+        },
+        {
+          "id": "B02-RW-U08-W-9dda9754b",
+          "before": "Mariam loves to ",
+          "after": " new places.",
+          "answer": "explore"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "report",
+        "study",
+        "suggest",
+        "research",
+        "Private",
+        "public",
+        "support"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-e80721793",
+          "before": "",
+          "after": " companies, instead of public government organizations, are entering the space race.",
+          "answer": "Private"
+        },
+        {
+          "id": "B02-RW-U08-W-61c9b2b17",
+          "before": "Some people don't think we should use ",
+          "after": " money, like taxes, to pay for space travel.",
+          "answer": "public"
+        },
+        {
+          "id": "B02-RW-U08-W-a27297bde",
+          "before": "The ",
+          "after": " explains how much traffic uses the new bridge.",
+          "answer": "report"
+        },
+        {
+          "id": "B02-RW-U08-W-2c7bf1b77",
+          "before": "Until ",
+          "after": " shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+          "answer": "research"
+        },
+        {
+          "id": "B02-RW-U08-W-885534c19",
+          "before": "For example, a Japanese ",
+          "after": " found that a drug made from sea sponges helps treat several types of cancer.",
+          "answer": "study"
+        },
+        {
+          "id": "B02-RW-U08-W-fd0a4950b",
+          "before": "Some experts ",
+          "after": " + that clause.",
+          "answer": "suggest"
+        },
+        {
+          "id": "B02-RW-U08-W-5bdcd3c0d",
+          "before": "In the end, there are no facts that ",
+          "after": " the idea of life on other planets.",
+          "answer": "support"
+        }
+      ]
+    }
+  ]
+}

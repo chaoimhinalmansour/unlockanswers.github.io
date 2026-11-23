@@ -1,0 +1,630 @@
+{
+  "unitId": "B2U08",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U08",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B02-RW-U08-L1"
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U08-W-6ef7c4c19",
+      "term": "advance",
+      "pos": "(n)",
+      "ipa": "/ədˈvɑːns/",
+      "definition": "step in the development or improvement of something",
+      "example": "The new battery is an important advance in electric transport.",
+      "exampleMark": "advance",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0373.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e38e1765a6d69fb6853c939c.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-94ec44c4f",
+      "term": "believe",
+      "pos": "(v)",
+      "ipa": "/bɪˈliːv/",
+      "definition": "to think that something is true, or that what somebody says is true",
+      "example": "Some scientists believe that there must be life on other planets because the universe is so big.",
+      "exampleMark": "believe",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0164.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/aaca06ab10b4a9968a197390.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-754159999",
+      "term": "beyond",
+      "pos": "(prep)",
+      "ipa": "/bɪˈjɒnd/",
+      "definition": "on the farther side of. at a farther distance than",
+      "example": "Astronauts have not set foot beyond the moon.",
+      "exampleMark": "beyond",
+      "picture": "practice/data/classroom-vocabulary/media/d8fba6cab69a5df726660c41.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0357.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ac39c6bb629914a91356369b.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-2fc7f1452",
+      "term": "crash",
+      "pos": "(v)",
+      "ipa": "/ˈkræʃ/",
+      "definition": "to be involved in an accident, especially in a vehicle",
+      "example": "A driver can crash if they look at their phone on the road.",
+      "exampleMark": "crash",
+      "picture": "practice/data/classroom-vocabulary/media/d5f11210871f16125e9cb29b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0375.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c104180bd1f2379456bb3c51.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-306631de5",
+      "term": "entrepreneur",
+      "pos": "(n)",
+      "ipa": "/ˌɒn.trə.prəˈnɜː/",
+      "definition": "somebody who starts their own business",
+      "example": "An entrepreneur must understand the risks of a new business.",
+      "exampleMark": "entrepreneur",
+      "picture": "practice/data/classroom-vocabulary/media/8a131cb4b5d2fc0707c3d4c2.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0298.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d3fb902b0a463106d236b840.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-100ec4462",
+      "term": "evidence",
+      "pos": "(n)",
+      "ipa": "/ˈev.ɪ.dəns/",
+      "definition": "something that makes you believe something is true",
+      "example": "However, there is no evidence that there is life on Kepler -22b.",
+      "exampleMark": "evidence",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0376.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/91a29c413de8b4e80ab6f857.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-9dda9754b",
+      "term": "explore",
+      "pos": "(v)",
+      "ipa": "/ɪkˈsplɔː/",
+      "definition": "to travel to a new place to learn about it",
+      "example": "Mariam loves to explore new places.",
+      "exampleMark": "explore",
+      "picture": "practice/data/classroom-vocabulary/media/37bcbbe514059791a4bc5919.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0360.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e2b6712c1aca10002c0903b6.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-e80721793",
+      "term": "private",
+      "pos": "(adj)",
+      "ipa": "/ˈpraɪ.vɪt/",
+      "definition": "related to money or services controlled or supplied by a person or a company and not by the government",
+      "example": "Private companies, instead of public government organizations, are entering the space race.",
+      "exampleMark": "Private",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0366.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7125de6e83deeaa34d681f2e.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-61c9b2b17",
+      "term": "public",
+      "pos": "(adj)",
+      "ipa": "/ˈpʌb.lɪk/",
+      "definition": "related to money or services controlled or supplied by the government and not by a person or a company",
+      "example": "Some people don't think we should use public money, like taxes, to pay for space travel.",
+      "exampleMark": "public",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0368.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f72b8d2b8a89444c255b6587.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-a27297bde",
+      "term": "report",
+      "pos": "(n)",
+      "ipa": "/rɪˈpɔːt/",
+      "definition": "a document that tells us about a subject in detail",
+      "example": "The report explains how much traffic uses the new bridge.",
+      "exampleMark": "report",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0379.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2536911346d04e3d3d94c0d5.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-2c7bf1b77",
+      "term": "research",
+      "pos": "(n)",
+      "ipa": "/rɪˈsɜːtʃ/",
+      "definition": "the detailed investigation of a subject to discover new information or reach a new understanding",
+      "example": "Until research shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+      "exampleMark": "research",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0119.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/183d453ec50a2c815ceb03b0.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-885534c19",
+      "term": "study",
+      "pos": "(v)",
+      "ipa": "/ˈstʌd.i/",
+      "definition": "the activity of examining a subject in detail to discover new information",
+      "example": "For example, a Japanese study found that a drug made from sea sponges helps treat several types of cancer.",
+      "exampleMark": "study",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0380.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/134f079f873a581db9af0b19.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-fd0a4950b",
+      "term": "suggest",
+      "pos": "(v)",
+      "ipa": "/sədʒˈest/",
+      "definition": "to express an idea or plan for somebody to consider",
+      "example": "Some experts suggest + that clause.",
+      "exampleMark": "suggest",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0381.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7fb7113eae3957d83c6818ff.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-5bdcd3c0d",
+      "term": "support",
+      "pos": "(v)",
+      "ipa": "/səpˈɔːt/",
+      "definition": "help show that something is true",
+      "example": "In the end, there are no facts that support the idea of life on other planets.",
+      "exampleMark": "support",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0227.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/923e9ada0433b85eaf6f1bae.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-f8eb525d2",
+      "term": "conditions",
+      "pos": "(n)",
+      "ipa": "/kənˈdɪ.ʃənz/",
+      "definition": "the situation in which people live, work or do things",
+      "example": "Earth has the perfect conditions for life, and it is very unlikely that another planet has exactly the same environment as Earth.",
+      "exampleMark": "conditions",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0374.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2997a5e305fd5bce7f3b648e.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-7e89f2472",
+      "term": "exist",
+      "pos": "(v)",
+      "ipa": "/ɪɡˈzɪst/",
+      "definition": "be real, alive or present",
+      "example": "Life cannot exist without air and water.",
+      "exampleMark": "exist",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0286.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a7da2653c12f24b4ef87ce0b.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-8c4a6b36a",
+      "term": "particular",
+      "pos": "(adj)",
+      "ipa": "/pəˈtɪk.jʊ.lə/",
+      "definition": "used to talk about this and not others",
+      "example": "We chose this particular hotel because it is near the beach.",
+      "exampleMark": "particular",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0377.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ce12c2449ee09d74cf22b075.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-82ffc9435",
+      "term": "prove",
+      "pos": "(v)",
+      "ipa": "/ˈpruːv/",
+      "definition": "show that something is true",
+      "example": "In addition, although some experts argue that life might exist on other planets, they have never found evidence to prove it.",
+      "exampleMark": "prove",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0378.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ffb3d42321049a48fac5f843.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-eff8ec103",
+      "term": "unlikely",
+      "pos": "(adj)",
+      "ipa": "/ʌnˈlaɪ.kli/",
+      "definition": "not expected to happen. not probable",
+      "example": "It is unlikely that everyone will agree.",
+      "exampleMark": "unlikely",
+      "picture": "practice/data/classroom-vocabulary/media/1cffe2a1366c2499677d1237.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0382.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3690137fd2c67fbe4855054f.mp3"
+    },
+    {
+      "id": "B02-RW-U08-W-c37424cc6",
+      "term": "wonder",
+      "pos": "(v)",
+      "ipa": "/ˈwʌn.də/",
+      "definition": "think about something and try to understand it",
+      "example": "I wonder why the river rises so quickly after rain.",
+      "exampleMark": "wonder",
+      "picture": "practice/data/classroom-vocabulary/media/10a94dd9e8e2dd84fb24ad00.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0383.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f79ccea947c66d6570f4b293.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to think that something is true, or that what somebody says is true"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/d8fba6cab69a5df726660c41.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d5f11210871f16125e9cb29b.webp"
+        },
+        {
+          "key": "D",
+          "text": "step in the development or improvement of something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-6ef7c4c19",
+          "prompt": "The new battery is an important advance in electric transport.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-94ec44c4f",
+          "prompt": "Some scientists believe that there must be life on other planets because the universe is so big.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U08-W-754159999",
+          "prompt": "Astronauts have not set foot beyond the moon.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-2fc7f1452",
+          "prompt": "A driver can crash if they look at their phone on the road.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/37bcbbe514059791a4bc5919.webp"
+        },
+        {
+          "key": "B",
+          "text": "related to money or services controlled or supplied by a person or a company and not by the government"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/8a131cb4b5d2fc0707c3d4c2.webp"
+        },
+        {
+          "key": "D",
+          "text": "somebody that makes you believe something is true"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-306631de5",
+          "prompt": "An entrepreneur must understand the risks of a new business.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-100ec4462",
+          "prompt": "However, there is no evidence that there is life on Kepler -22b.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-9dda9754b",
+          "prompt": "Mariam loves to explore new places.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U08-W-e80721793",
+          "prompt": "Private companies, instead of public government organizations, are entering the space race.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the activity of examining a subject in detail to discover new information"
+        },
+        {
+          "key": "B",
+          "text": "related to money or services controlled or supplied by the government and not by a person or a company"
+        },
+        {
+          "key": "C",
+          "text": "a document that tells us about a subject in detail"
+        },
+        {
+          "key": "D",
+          "text": "the detailed investigation of a subject to discover new information or reach a new understanding"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-61c9b2b17",
+          "prompt": "Some people don't think we should use public money, like taxes, to pay for space travel.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-a27297bde",
+          "prompt": "The report explains how much traffic uses the new bridge.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-2c7bf1b77",
+          "prompt": "Until research shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-885534c19",
+          "prompt": "For example, a Japanese study found that a drug made from sea sponges helps treat several types of cancer.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "help show that something is true"
+        },
+        {
+          "key": "B",
+          "text": "the situation in which people live, work or do things"
+        },
+        {
+          "key": "C",
+          "text": "be real, alive or present"
+        },
+        {
+          "key": "D",
+          "text": "to express an idea or plan for somebody to consider"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-fd0a4950b",
+          "prompt": "Some experts suggest + that clause.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-5bdcd3c0d",
+          "prompt": "In the end, there are no facts that support the idea of life on other planets.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U08-W-f8eb525d2",
+          "prompt": "Earth has the perfect conditions for life, and it is very unlikely that another planet has exactly the same environment as Earth.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U08-W-7e89f2472",
+          "prompt": "Life cannot exist without air and water.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/1cffe2a1366c2499677d1237.webp"
+        },
+        {
+          "key": "B",
+          "text": "think about something and try to understand it"
+        },
+        {
+          "key": "C",
+          "text": "used to talk about this and not others"
+        },
+        {
+          "key": "D",
+          "text": "show that something is true"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-8c4a6b36a",
+          "prompt": "We chose this particular hotel because it is near the beach.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U08-W-82ffc9435",
+          "prompt": "In addition, although some experts argue that life might exist on other planets, they have never found evidence to prove it.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U08-W-eff8ec103",
+          "prompt": "It is unlikely that everyone will agree.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U08-W-c37424cc6",
+          "prompt": "I wonder why the river rises so quickly after rain.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "entrepreneur",
+        "crash",
+        "beyond",
+        "believe",
+        "advance"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-6ef7c4c19",
+          "before": "The new battery is an important ",
+          "after": " in electric transport.",
+          "answer": "advance"
+        },
+        {
+          "id": "B02-RW-U08-W-94ec44c4f",
+          "before": "Some scientists ",
+          "after": " that there must be life on other planets because the universe is so big.",
+          "answer": "believe"
+        },
+        {
+          "id": "B02-RW-U08-W-754159999",
+          "before": "Astronauts have not set foot ",
+          "after": " the moon.",
+          "answer": "beyond"
+        },
+        {
+          "id": "B02-RW-U08-W-2fc7f1452",
+          "before": "A driver can ",
+          "after": " if they look at their phone on the road.",
+          "answer": "crash"
+        },
+        {
+          "id": "B02-RW-U08-W-306631de5",
+          "before": "An ",
+          "after": " must understand the risks of a new business.",
+          "answer": "entrepreneur"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "report",
+        "public",
+        "Private",
+        "explore",
+        "evidence"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-100ec4462",
+          "before": "However, there is no ",
+          "after": " that there is life on Kepler -22b.",
+          "answer": "evidence"
+        },
+        {
+          "id": "B02-RW-U08-W-9dda9754b",
+          "before": "Mariam loves to ",
+          "after": " new places.",
+          "answer": "explore"
+        },
+        {
+          "id": "B02-RW-U08-W-e80721793",
+          "before": "",
+          "after": " companies, instead of public government organizations, are entering the space race.",
+          "answer": "Private"
+        },
+        {
+          "id": "B02-RW-U08-W-61c9b2b17",
+          "before": "Some people don't think we should use ",
+          "after": " money, like taxes, to pay for space travel.",
+          "answer": "public"
+        },
+        {
+          "id": "B02-RW-U08-W-a27297bde",
+          "before": "The ",
+          "after": " explains how much traffic uses the new bridge.",
+          "answer": "report"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "conditions",
+        "support",
+        "suggest",
+        "study",
+        "research"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-2c7bf1b77",
+          "before": "Until ",
+          "after": " shows us hard evidence, we cannot use Kepler -22b to support the idea of life on other planets.",
+          "answer": "research"
+        },
+        {
+          "id": "B02-RW-U08-W-885534c19",
+          "before": "For example, a Japanese ",
+          "after": " found that a drug made from sea sponges helps treat several types of cancer.",
+          "answer": "study"
+        },
+        {
+          "id": "B02-RW-U08-W-fd0a4950b",
+          "before": "Some experts ",
+          "after": " + that clause.",
+          "answer": "suggest"
+        },
+        {
+          "id": "B02-RW-U08-W-5bdcd3c0d",
+          "before": "In the end, there are no facts that ",
+          "after": " the idea of life on other planets.",
+          "answer": "support"
+        },
+        {
+          "id": "B02-RW-U08-W-f8eb525d2",
+          "before": "Earth has the perfect ",
+          "after": " for life, and it is very unlikely that another planet has exactly the same environment as Earth.",
+          "answer": "conditions"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "wonder",
+        "unlikely",
+        "prove",
+        "particular",
+        "exist"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U08-W-7e89f2472",
+          "before": "Life cannot ",
+          "after": " without air and water.",
+          "answer": "exist"
+        },
+        {
+          "id": "B02-RW-U08-W-8c4a6b36a",
+          "before": "We chose this ",
+          "after": " hotel because it is near the beach.",
+          "answer": "particular"
+        },
+        {
+          "id": "B02-RW-U08-W-82ffc9435",
+          "before": "In addition, although some experts argue that life might exist on other planets, they have never found evidence to ",
+          "after": " it.",
+          "answer": "prove"
+        },
+        {
+          "id": "B02-RW-U08-W-eff8ec103",
+          "before": "It is ",
+          "after": " that everyone will agree.",
+          "answer": "unlikely"
+        },
+        {
+          "id": "B02-RW-U08-W-c37424cc6",
+          "before": "I ",
+          "after": " why the river rises so quickly after rain.",
+          "answer": "wonder"
+        }
+      ]
+    }
+  ]
+}

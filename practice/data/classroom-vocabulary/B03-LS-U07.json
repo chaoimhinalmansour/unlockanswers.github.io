@@ -1,0 +1,324 @@
+{
+  "unitId": "B3U07",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U07",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U07-W-d2875e20b",
+      "term": "collaborate",
+      "pos": "(v)",
+      "ipa": "/kəlˈæbərˌeɪt/",
+      "definition": "to work together or with somebody else for a special purpose",
+      "example": "Companies can collaborate with artists.",
+      "exampleMark": "collaborate",
+      "picture": "practice/data/classroom-vocabulary/media/2c2c597ea068dc72ea1264c3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d7548523a377051724e10272.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/64351a269c4b9cb70963b38b.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-2037de437",
+      "term": "collection",
+      "pos": "(n)",
+      "ipa": "/kəlˈɛkʃən/",
+      "definition": "a selection of clothing designs which are sold at particular times of the year",
+      "example": "Aysha's collection was presented during the last Fashion Week in Doha.",
+      "exampleMark": "collection",
+      "picture": "practice/data/classroom-vocabulary/media/f2316698d36a01081af7d7d8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0c962d2c7aa16c5ffc00ea4a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7087aaec136b368da71692da.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-20a70aaf7",
+      "term": "convert",
+      "pos": "(v)",
+      "ipa": "/kənvˈɜːt/",
+      "definition": "to change something into something else",
+      "example": "The town plans to convert the old station into a museum.",
+      "exampleMark": "convert",
+      "picture": "practice/data/classroom-vocabulary/media/fb32fbe3e68f6d767d34ebaf.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d4e0ef42a25be38523dc1cc1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8bfe65772ae91a06b02e8e7c.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-521307ddb",
+      "term": "copyright",
+      "pos": "(n)",
+      "ipa": "/kˈɒpɪrˌaɪt/",
+      "definition": "the legal right to control the use of a design, an artwork, a piece of music, etc.",
+      "example": "Copyright can protect an artist's work.",
+      "exampleMark": "Copyright",
+      "picture": "practice/data/classroom-vocabulary/media/c347d1c4b44ff6a736cb6142.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0509aefbf4109927a06118f4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/af79edbdfd261808aa2253a9.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-ca82520d4",
+      "term": "criticize",
+      "pos": "(v)",
+      "ipa": "/krˈɪtɪsˌaɪz/",
+      "definition": "to express that you believe something or somebody is bad",
+      "example": "Residents began to criticize the plan because it offered no safe places to cross the road.",
+      "exampleMark": "criticize",
+      "picture": "practice/data/classroom-vocabulary/media/13b9c2c64b8c585ed40b7d82.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/117c83a8f1aa59729939046c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2204da6a7099d2501951e24f.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-056f11827",
+      "term": "design",
+      "pos": "(n)",
+      "ipa": "/dɪzˈaɪn/",
+      "definition": "the way in which something is arranged or shaped",
+      "example": "Can you explain why you decided to design fashions for Muslim women?",
+      "exampleMark": "design",
+      "picture": "practice/data/classroom-vocabulary/media/4dff2fc1d80c3053c2e623b7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b712af034aab4c64120c3edd.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/100abf9d76483c6948cacfcd.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-025e6dee0",
+      "term": "ethical",
+      "pos": "(adj)",
+      "ipa": "/ˈɛθɪkəl/",
+      "definition": "relating to what is right or wrong",
+      "example": "The speakers say plagiarism is not ethical.",
+      "exampleMark": "ethical",
+      "picture": "practice/data/classroom-vocabulary/media/196b582527717ca5525c3702.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8493562122f3ce3a2372883e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8e65dcc36d6ce39a6bc90958.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-b6953ddde",
+      "term": "focus on",
+      "pos": "(phr v)",
+      "ipa": "/fˈəʊkəs ˈɒn/",
+      "definition": "to give a lot of attention to one subject or thing",
+      "example": "The designers focus on choosing the right fabric.",
+      "exampleMark": "focus on",
+      "picture": "practice/data/classroom-vocabulary/media/f3f7df504838b727850972c3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d406374e743799cf9fc77711.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bb379748282b8f5c9dfd133a.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-0e7629279",
+      "term": "image",
+      "pos": "(n)",
+      "ipa": "/ˈɪmɪdʒ/",
+      "definition": "a picture or photograph, especially one shown on a computer or television screen",
+      "example": "The doctor showed us an image of the broken bone on a screen.",
+      "exampleMark": "image",
+      "picture": "practice/data/classroom-vocabulary/media/c9d354a1d41a5b2af1d18aa7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f0fbc7ecc1339a69ec0d1321.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7bf751bf8434133df3cdb353.mp3"
+    },
+    {
+      "id": "B03-LS-U07-W-7f55aa895",
+      "term": "practical",
+      "pos": "(adj)",
+      "ipa": "/prˈæktɪkəl/",
+      "definition": "suitable for the situation in which something is used",
+      "example": "Learning to repair clothes is a practical skill.",
+      "exampleMark": "practical",
+      "picture": "practice/data/classroom-vocabulary/media/b6b6f9c3813ab28389d677d8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/57486e2ed8bf8062153d9782.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b2e4c3263375faa110e4e0ef.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/fb32fbe3e68f6d767d34ebaf.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/2c2c597ea068dc72ea1264c3.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/c347d1c4b44ff6a736cb6142.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/f2316698d36a01081af7d7d8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U07-W-d2875e20b",
+          "prompt": "Companies can collaborate with artists.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U07-W-2037de437",
+          "prompt": "Aysha's collection was presented during the last Fashion Week in Doha.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U07-W-20a70aaf7",
+          "prompt": "The town plans to convert the old station into a museum.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U07-W-521307ddb",
+          "prompt": "Copyright can protect an artist's work.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/13b9c2c64b8c585ed40b7d82.webp"
+        },
+        {
+          "key": "B",
+          "text": "the way in which something is arranged or shaped"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/196b582527717ca5525c3702.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U07-W-ca82520d4",
+          "prompt": "Residents began to criticize the plan because it offered no safe places to cross the road.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U07-W-056f11827",
+          "prompt": "Can you explain why you decided to design fashions for Muslim women?",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U07-W-025e6dee0",
+          "prompt": "The speakers say plagiarism is not ethical.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c9d354a1d41a5b2af1d18aa7.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/f3f7df504838b727850972c3.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/b6b6f9c3813ab28389d677d8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U07-W-b6953ddde",
+          "prompt": "The designers focus on choosing the right fabric.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U07-W-0e7629279",
+          "prompt": "The doctor showed us an image of the broken bone on a screen.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U07-W-7f55aa895",
+          "prompt": "Learning to repair clothes is a practical skill.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "convert",
+        "collection",
+        "criticize",
+        "Copyright",
+        "collaborate"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U07-W-d2875e20b",
+          "before": "Companies can ",
+          "after": " with artists.",
+          "answer": "collaborate"
+        },
+        {
+          "id": "B03-LS-U07-W-2037de437",
+          "before": "Aysha's ",
+          "after": " was presented during the last Fashion Week in Doha.",
+          "answer": "collection"
+        },
+        {
+          "id": "B03-LS-U07-W-20a70aaf7",
+          "before": "The town plans to ",
+          "after": " the old station into a museum.",
+          "answer": "convert"
+        },
+        {
+          "id": "B03-LS-U07-W-521307ddb",
+          "before": "",
+          "after": " can protect an artist's work.",
+          "answer": "Copyright"
+        },
+        {
+          "id": "B03-LS-U07-W-ca82520d4",
+          "before": "Residents began to ",
+          "after": " the plan because it offered no safe places to cross the road.",
+          "answer": "criticize"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "image",
+        "focus on",
+        "design",
+        "ethical",
+        "practical"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U07-W-056f11827",
+          "before": "Can you explain why you decided to ",
+          "after": " fashions for Muslim women?",
+          "answer": "design"
+        },
+        {
+          "id": "B03-LS-U07-W-025e6dee0",
+          "before": "The speakers say plagiarism is not ",
+          "after": ".",
+          "answer": "ethical"
+        },
+        {
+          "id": "B03-LS-U07-W-b6953ddde",
+          "before": "The designers ",
+          "after": " choosing the right fabric.",
+          "answer": "focus on"
+        },
+        {
+          "id": "B03-LS-U07-W-0e7629279",
+          "before": "The doctor showed us an ",
+          "after": " of the broken bone on a screen.",
+          "answer": "image"
+        },
+        {
+          "id": "B03-LS-U07-W-7f55aa895",
+          "before": "Learning to repair clothes is a ",
+          "after": " skill.",
+          "answer": "practical"
+        }
+      ]
+    }
+  ]
+}

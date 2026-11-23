@@ -1,0 +1,380 @@
+{
+  "unitId": "B3U06",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U06",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U06-W-f8eb525d2",
+      "term": "conditions",
+      "pos": "(n pl)",
+      "ipa": "/kəndˈɪʃənz/",
+      "definition": "the physical situation that someone or something is in",
+      "example": "Mussels produce a very strong adhesive that works in wet conditions.",
+      "exampleMark": "conditions",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/da6edd51578a80560eb6da45.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0324f41d677c487b56f71a81.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-889112e60",
+      "term": "dehumanize",
+      "pos": "(v)",
+      "ipa": "/dˌiːhjˈuːmənˌaɪz/",
+      "definition": "to remove from a person the special human qualities of independent thought, feeling for other people, etc.",
+      "example": "Stories can dehumanize people by ignoring their feelings and experiences.",
+      "exampleMark": "dehumanize",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5dca90a8e2017632bd35a2bc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/938f3d9164bfc2a84fafb271.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-c0f945ae7",
+      "term": "disorganized",
+      "pos": "(adj)",
+      "ipa": "/dɪsˈɔːɡənˌaɪzd/",
+      "definition": "not planned or organized well",
+      "example": "The event was disorganized and nobody knew where to go.",
+      "exampleMark": "disorganized",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f31b22b41e36eaab980e7af9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ce27de0c175e4cc440836470.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-16e73bca2",
+      "term": "essential",
+      "pos": "(adj)",
+      "ipa": "/ɪsˈɛnʃəl/",
+      "definition": "very important or necessary",
+      "example": "Good preparation is essential.",
+      "exampleMark": "essential",
+      "picture": "practice/data/classroom-vocabulary/media/150cba90a5c705c0e466cf9a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/33f1e392e5650e0f18612c39.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a6efd9f5f692b50fb8c52690.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-557f6ceaf",
+      "term": "harmful",
+      "pos": "(adj)",
+      "ipa": "/hˈɑːmfəl/",
+      "definition": "able to hurt or damage",
+      "example": "The coating blocks harmful rays.",
+      "exampleMark": "harmful",
+      "picture": "practice/data/classroom-vocabulary/media/5e454753b1d3e14886e8762a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3030aa559f1799597d08bcd7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/68d803db1cae8faa2b7e19b7.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-ff3b90993",
+      "term": "illustrate",
+      "pos": "(v)",
+      "ipa": "/ˈɪləstrˌeɪt/",
+      "definition": "to show the meaning or truth of something more clearly, especially by giving examples",
+      "example": "These examples illustrate the idea.",
+      "exampleMark": "illustrate",
+      "picture": "practice/data/classroom-vocabulary/media/04bf5bceba2eb63d0b5c636e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6155e2c7c292698cba447275.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/af9c6f1fd76295a51a0e64a3.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-1aa787fe0",
+      "term": "preview",
+      "pos": "(v)",
+      "ipa": "/prˈiːvjuː/",
+      "definition": "to describe something or be shown before it officially begins",
+      "example": "The presenter will preview the highlights before the show begins.",
+      "exampleMark": "preview",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e3218ef680c6f7e186681035.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b829c5487f7968844db274fb.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-4d55af37d",
+      "term": "range",
+      "pos": "(n)",
+      "ipa": "/rˈeɪndʒ/",
+      "definition": "a set of similar things",
+      "example": "The shop sells a range of tools.",
+      "exampleMark": "range",
+      "picture": "practice/data/classroom-vocabulary/media/17e33bc6f9806f232d8e0570.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a16b719fe6bdcbb2de255e56.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a06810a04d2185dc420a09d8.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-d4a9a3df8",
+      "term": "rethink",
+      "pos": "(v)",
+      "ipa": "/rɪθˈɪŋk/",
+      "definition": "to change what you think about something or what you plan to do",
+      "example": "We need to rethink the plan.",
+      "exampleMark": "rethink",
+      "picture": "practice/data/classroom-vocabulary/media/1c4c3a7a578e185731791152.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/03df60b58c9f4157a0b53ee6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/46a0a9311ca67c56cb82ec28.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-3ed950b3c",
+      "term": "translate",
+      "pos": "(v)",
+      "ipa": "/trænslˈeɪt/",
+      "definition": "to change written or spoken words from one language to another",
+      "example": "Can this software translate a document from French to English?",
+      "exampleMark": "translate",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9dceed98282c4dd264140493.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/02fd7665516df171fa457be4.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-e1a6f0b6f",
+      "term": "unlimited",
+      "pos": "(adj)",
+      "ipa": "/ʌnlˈɪmɪtɪd/",
+      "definition": "without end or restriction",
+      "example": "As these examples illustrate, biomimicry appears to have an unlimited number of applications.",
+      "exampleMark": "unlimited",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9237929544ee4d8e0a6a95d8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/23feabb863ac074bd9b5d376.mp3"
+    },
+    {
+      "id": "B03-RW-U06-W-752bb3ff1",
+      "term": "unsafe",
+      "pos": "(adj)",
+      "ipa": "/ʌnsˈeɪf/",
+      "definition": "dangerous",
+      "example": "The bridge is unsafe because several of its boards are broken.",
+      "exampleMark": "unsafe",
+      "picture": "practice/data/classroom-vocabulary/media/1515900278e79c21a3650d43.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a8473f5f0413d93bce0b997e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/33104cbd45e22187ff0f2715.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "not planned or organized well"
+        },
+        {
+          "key": "B",
+          "text": "to remove from a person the special human qualities of independent thought, feeling for other people, etc."
+        },
+        {
+          "key": "C",
+          "text": "the physical situation that someone or something is in"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/150cba90a5c705c0e466cf9a.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U06-W-f8eb525d2",
+          "prompt": "Mussels produce a very strong adhesive that works in wet conditions.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U06-W-889112e60",
+          "prompt": "Stories can dehumanize people by ignoring their feelings and experiences.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U06-W-c0f945ae7",
+          "prompt": "The event was disorganized and nobody knew where to go.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U06-W-16e73bca2",
+          "prompt": "Good preparation is essential.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to describe something or be shown before it officially begins"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/04bf5bceba2eb63d0b5c636e.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/5e454753b1d3e14886e8762a.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/17e33bc6f9806f232d8e0570.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U06-W-557f6ceaf",
+          "prompt": "The coating blocks harmful rays.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U06-W-ff3b90993",
+          "prompt": "These examples illustrate the idea.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U06-W-1aa787fe0",
+          "prompt": "The presenter will preview the highlights before the show begins.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U06-W-4d55af37d",
+          "prompt": "The shop sells a range of tools.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "without end or restriction"
+        },
+        {
+          "key": "B",
+          "text": "to change written or spoken words from one language to another"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/1c4c3a7a578e185731791152.webp"
+        },
+        {
+          "key": "D",
+          "text": "dangerous"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U06-W-d4a9a3df8",
+          "prompt": "We need to rethink the plan.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U06-W-3ed950b3c",
+          "prompt": "Can this software translate a document from French to English?",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U06-W-e1a6f0b6f",
+          "prompt": "As these examples illustrate, biomimicry appears to have an unlimited number of applications.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U06-W-752bb3ff1",
+          "prompt": "The bridge is unsafe because several of its boards are broken.",
+          "answer": "D"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "essential",
+        "illustrate",
+        "dehumanize",
+        "disorganized",
+        "harmful",
+        "conditions"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U06-W-f8eb525d2",
+          "before": "Mussels produce a very strong adhesive that works in wet ",
+          "after": ".",
+          "answer": "conditions"
+        },
+        {
+          "id": "B03-RW-U06-W-889112e60",
+          "before": "Stories can ",
+          "after": " people by ignoring their feelings and experiences.",
+          "answer": "dehumanize"
+        },
+        {
+          "id": "B03-RW-U06-W-c0f945ae7",
+          "before": "The event was ",
+          "after": " and nobody knew where to go.",
+          "answer": "disorganized"
+        },
+        {
+          "id": "B03-RW-U06-W-16e73bca2",
+          "before": "Good preparation is ",
+          "after": ".",
+          "answer": "essential"
+        },
+        {
+          "id": "B03-RW-U06-W-557f6ceaf",
+          "before": "The coating blocks ",
+          "after": " rays.",
+          "answer": "harmful"
+        },
+        {
+          "id": "B03-RW-U06-W-ff3b90993",
+          "before": "These examples ",
+          "after": " the idea.",
+          "answer": "illustrate"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "unlimited",
+        "preview",
+        "range",
+        "translate",
+        "unsafe",
+        "rethink"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U06-W-1aa787fe0",
+          "before": "The presenter will ",
+          "after": " the highlights before the show begins.",
+          "answer": "preview"
+        },
+        {
+          "id": "B03-RW-U06-W-4d55af37d",
+          "before": "The shop sells a ",
+          "after": " of tools.",
+          "answer": "range"
+        },
+        {
+          "id": "B03-RW-U06-W-d4a9a3df8",
+          "before": "We need to ",
+          "after": " the plan.",
+          "answer": "rethink"
+        },
+        {
+          "id": "B03-RW-U06-W-3ed950b3c",
+          "before": "Can this software ",
+          "after": " a document from French to English?",
+          "answer": "translate"
+        },
+        {
+          "id": "B03-RW-U06-W-e1a6f0b6f",
+          "before": "As these examples illustrate, biomimicry appears to have an ",
+          "after": " number of applications.",
+          "answer": "unlimited"
+        },
+        {
+          "id": "B03-RW-U06-W-752bb3ff1",
+          "before": "The bridge is ",
+          "after": " because several of its boards are broken.",
+          "answer": "unsafe"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,656 @@
+{
+  "unitId": "B2U07",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U07",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U07-W-7afb6295c",
+      "term": "blind",
+      "pos": "(adj)",
+      "ipa": "/blˈaɪnd/",
+      "definition": "not able to see",
+      "example": "Ben was blind, but he learnt how to find his way.",
+      "exampleMark": "blind",
+      "picture": "practice/data/classroom-vocabulary/media/3b06bac437f355a65a131c8a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/895d68b75b1ca8f2bef44d57.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e3fd6c7c87775c6a099d8081.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-2ec3d0c75",
+      "term": "calm",
+      "pos": "(adj)",
+      "ipa": "/kˈɑːm/",
+      "definition": "relaxed and not worried, frightened or excited",
+      "example": "She stayed calm when the lift stopped moving.",
+      "exampleMark": "calm",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2676f103eadc105533cd8d83.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/619696f5a9291a4a6dde364b.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-a31a61e94",
+      "term": "clever",
+      "pos": "(adj)",
+      "ipa": "/klˈɛvɐ/",
+      "definition": "able to learn and understand things quickly and easily",
+      "example": "She's very clever, though – she's the best in her class at Maths and Science.",
+      "exampleMark": "clever",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2ab20000e725b1a331df0939.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/82cf09d2d8d41d7305795d5f.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-39a449bf0",
+      "term": "confident",
+      "pos": "(adj)",
+      "ipa": "/kˈɒnfɪdənt/",
+      "definition": "certain about your ability to do things well",
+      "example": "Megan: Well, Rebekah is very confident and makes new friends easily.",
+      "exampleMark": "confident",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9fde007f80c6ebe1b0e03700.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/34e32e4448a89d916ca677f1.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-d2a26f03a",
+      "term": "difficult",
+      "pos": "(adj)",
+      "ipa": "/dˈɪfɪkəlt/",
+      "definition": "not friendly or easy to deal with",
+      "example": "Do you think finding gold is difficult?",
+      "exampleMark": "difficult",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6ae87b315f8ed44b5ff98b59.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2bdca3a7b95fac79d14ca01b.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-5f04a8843",
+      "term": "dream",
+      "pos": "(n)",
+      "ipa": "/drˈiːm/",
+      "definition": "something that you really want to do, be or have in the future",
+      "example": "Her dream is to open a restaurant.",
+      "exampleMark": "dream",
+      "picture": "practice/data/classroom-vocabulary/media/cf8fe405850866e409d04e11.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ba8d829a78d65364259d9ef0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b7076fd72339d60c5757d3a4.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-41209342f",
+      "term": "friendly",
+      "pos": "(adj)",
+      "ipa": "/frˈɛndlɪ/",
+      "definition": "behaving in a pleasant, kind way towards somebody",
+      "example": "The shop assistant was friendly and helped us find the right size.",
+      "exampleMark": "friendly",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/61ccee354fe320ed8a54cec6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e98c7a972e639dff65bfe596.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-0bd087061",
+      "term": "incredible",
+      "pos": "(adj)",
+      "ipa": "/ɪŋkrˈɛdɪbəl/",
+      "definition": "impossible or very difficult to believe. amazing",
+      "example": "She has an incredible memory.",
+      "exampleMark": "incredible",
+      "picture": "practice/data/classroom-vocabulary/media/ad9b9aeb50212782dc8ea356.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/da7ec5a3ea06f577ba8a750d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c93f3468e5b0acff7ffc88e3.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-646247ecf",
+      "term": "inspire",
+      "pos": "(v)",
+      "ipa": "/ɪnspˈaɪə/",
+      "definition": "to make other people feel that they want to do something",
+      "example": "Your hard work can inspire other students.",
+      "exampleMark": "inspire",
+      "picture": "practice/data/classroom-vocabulary/media/1f3484e515a6cb4ebb70f1d8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f337e6217e6d9a57dd3ee334.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4ba2a5897d6a2fd991897355.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-065e43c05",
+      "term": "intelligent",
+      "pos": "(adj)",
+      "ipa": "/ɪntˈɛlɪdʒənt/",
+      "definition": "able to learn and understand things easily. clever",
+      "example": "She is intelligent and learns quickly.",
+      "exampleMark": "intelligent",
+      "picture": "practice/data/classroom-vocabulary/media/2c1d6beb8bba2fd74170a1a9.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/287beef3bcb8e3523d9745c5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/db04afa64a7ecb2e66f3e38a.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-1078cf414",
+      "term": "lazy",
+      "pos": "(adj)",
+      "ipa": "/lˈeɪzɪ/",
+      "definition": "Somebody who is lazy does not like working or using any effort.",
+      "example": "She can be a bit lazy and doesn't help around the house, so I usually do her jobs for her.",
+      "exampleMark": "lazy",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6923b3fb838c7dd5733697a6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/da07d7a9345d95c2a6cad684.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-fcb60bc53",
+      "term": "operation",
+      "pos": "(n)",
+      "ipa": "/ˌɒpərˈeɪʃən/",
+      "definition": "the process when doctors cut your body to repair it or to take something out",
+      "example": "After a few months, he had an operation to remove the cancer.",
+      "exampleMark": "operation",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/49001b5d5882f8eeb79d28e9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/41b4cf0d89d3ad42bfcde3e7.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-b1b0b8de8",
+      "term": "patient",
+      "pos": "(adj)",
+      "ipa": "/pˈeɪʃənt/",
+      "definition": "able to stay calm and not get angry, especially when something takes a long time",
+      "example": "Please be patient while the computer restarts.",
+      "exampleMark": "patient",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8cdf22615ec1e79d99442498.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ce29243faf32dfbe7b940db7.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-c5e8cfa79",
+      "term": "reliable",
+      "pos": "(adj)",
+      "ipa": "/rɪlˈaɪəbəl/",
+      "definition": "able to be trusted or believed",
+      "example": "Our old bus is reliable and rarely arrives late.",
+      "exampleMark": "reliable",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1f40bd26f0efe3797b8b735d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2d8b270f6be6dc58c8179159.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-14012cd1b",
+      "term": "respect",
+      "pos": "(v)",
+      "ipa": "/rɪspˈɛkt/",
+      "definition": "to like or to have a very good opinion of somebody because of their knowledge, achievements, etc.",
+      "example": "I respect my teacher because she helps everyone.",
+      "exampleMark": "respect",
+      "picture": "practice/data/classroom-vocabulary/media/46d450d7b62e8a25cf72b89b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6fa967865c76e1ff7f70b4a0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/83addd9625df1e1ad088e39d.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-27a851b0b",
+      "term": "sensible",
+      "pos": "(adj)",
+      "ipa": "/sˈɛnsɪbəl/",
+      "definition": "showing good judgement",
+      "example": "Driving slowly on icy roads is a sensible choice.",
+      "exampleMark": "sensible",
+      "picture": "practice/data/classroom-vocabulary/media/dcd52cd7df32169e924b689d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/626ec87a9b35ebdd112f72f5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6689a636e8309997ce6118f1.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-df399330d",
+      "term": "shy",
+      "pos": "(adj)",
+      "ipa": "/ʃˈaɪ/",
+      "definition": "not confident, especially about meeting or talking to new people",
+      "example": "Lucy is quite shy and finds it hard to talk to people.",
+      "exampleMark": "shy",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/caf588badc2c478c02e4a138.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/50a938ecd1aeb40d524be988.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-5514ae81c",
+      "term": "stupid",
+      "pos": "(adj)",
+      "ipa": "/stjˈuːpɪd/",
+      "definition": "silly or not intelligent",
+      "example": "It was a stupid mistake to delete the only copy.",
+      "exampleMark": "stupid",
+      "picture": "practice/data/classroom-vocabulary/media/970cc8e5ddd91ea8968e9a2f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/136823902f4843ffe3c4c5d6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/41dc0faf5c9f87e0435207a5.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-b842d5967",
+      "term": "talent",
+      "pos": "(n)",
+      "ipa": "/tˈælənt/",
+      "definition": "a natural ability to do something well",
+      "example": "She has a talent for music.",
+      "exampleMark": "talent",
+      "picture": "practice/data/classroom-vocabulary/media/e5aa3ecc1f1c756e718cbb38.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/70410371af18c0fcd3c17696.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e06d629c3813486f4731e95d.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-b100212cb",
+      "term": "talented",
+      "pos": "(adj)",
+      "ipa": "/tˈæləntɪd/",
+      "definition": "showing natural ability in a particular area",
+      "example": "She's a very talented singer, too.",
+      "exampleMark": "talented",
+      "picture": "practice/data/classroom-vocabulary/media/83dbdbb190aab77935268761.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/21af580fe290d7a8245eb22d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b142efcdc3b5045ffc6d9419.mp3"
+    },
+    {
+      "id": "B02-RW-U07-W-94efdd6f6",
+      "term": "train",
+      "pos": "(v)",
+      "ipa": "/trˈeɪn/",
+      "definition": "to prepare for a job, activity or sport by learning skills or by exercise",
+      "example": "The players train every morning.",
+      "exampleMark": "train",
+      "picture": "practice/data/classroom-vocabulary/media/0e8064d4e2d5c0afab60ac59.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7fe02f9b6e47a83bd096f97c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f6243c899d5ddb966ca2c02b.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "certain about your ability to do things well"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/3b06bac437f355a65a131c8a.webp"
+        },
+        {
+          "key": "C",
+          "text": "able to learn and understand things quickly and easily"
+        },
+        {
+          "key": "D",
+          "text": "relaxed and not worried, frightened or excited"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-7afb6295c",
+          "prompt": "Ben was blind, but he learnt how to find his way.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-2ec3d0c75",
+          "prompt": "She stayed calm when the lift stopped moving.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U07-W-a31a61e94",
+          "prompt": "She's very clever, though – she's the best in her class at Maths and Science.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U07-W-39a449bf0",
+          "prompt": "Megan: Well, Rebekah is very confident and makes new friends easily.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/ad9b9aeb50212782dc8ea356.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/cf8fe405850866e409d04e11.webp"
+        },
+        {
+          "key": "C",
+          "text": "not friendly or easy to deal with"
+        },
+        {
+          "key": "D",
+          "text": "behaving in a pleasant, kind way towards somebody"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-d2a26f03a",
+          "prompt": "Do you think finding gold is difficult?",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U07-W-5f04a8843",
+          "prompt": "Her dream is to open a restaurant.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-41209342f",
+          "prompt": "The shop assistant was friendly and helped us find the right size.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U07-W-0bd087061",
+          "prompt": "She has an incredible memory.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/2c1d6beb8bba2fd74170a1a9.webp"
+        },
+        {
+          "key": "B",
+          "text": "Somebody who is lazy does not like working or using any effort."
+        },
+        {
+          "key": "C",
+          "text": "the process when doctors cut your body to repair it or to take something out"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/1f3484e515a6cb4ebb70f1d8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-646247ecf",
+          "prompt": "Your hard work can inspire other students.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U07-W-065e43c05",
+          "prompt": "She is intelligent and learns quickly.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U07-W-1078cf414",
+          "prompt": "She can be a bit lazy and doesn't help around the house, so I usually do her jobs for her.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-fcb60bc53",
+          "prompt": "After a few months, he had an operation to remove the cancer.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "able to be trusted or believed"
+        },
+        {
+          "key": "B",
+          "text": "able to stay calm and not get angry, especially when something takes a long time"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/46d450d7b62e8a25cf72b89b.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-b1b0b8de8",
+          "prompt": "Please be patient while the computer restarts.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-c5e8cfa79",
+          "prompt": "Our old bus is reliable and rarely arrives late.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U07-W-14012cd1b",
+          "prompt": "I respect my teacher because she helps everyone.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/970cc8e5ddd91ea8968e9a2f.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/dcd52cd7df32169e924b689d.webp"
+        },
+        {
+          "key": "C",
+          "text": "not confident, especially about meeting or talking to new people"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-27a851b0b",
+          "prompt": "Driving slowly on icy roads is a sensible choice.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-df399330d",
+          "prompt": "Lucy is quite shy and finds it hard to talk to people.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U07-W-5514ae81c",
+          "prompt": "It was a stupid mistake to delete the only copy.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/e5aa3ecc1f1c756e718cbb38.webp"
+        },
+        {
+          "key": "B",
+          "text": "showing natural ability in a particular area"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/0e8064d4e2d5c0afab60ac59.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-b842d5967",
+          "prompt": "She has a talent for music.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U07-W-b100212cb",
+          "prompt": "She's a very talented singer, too.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U07-W-94efdd6f6",
+          "prompt": "The players train every morning.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "blind",
+        "clever",
+        "confident",
+        "friendly",
+        "dream",
+        "calm",
+        "difficult"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-7afb6295c",
+          "before": "Ben was ",
+          "after": ", but he learnt how to find his way.",
+          "answer": "blind"
+        },
+        {
+          "id": "B02-RW-U07-W-2ec3d0c75",
+          "before": "She stayed ",
+          "after": " when the lift stopped moving.",
+          "answer": "calm"
+        },
+        {
+          "id": "B02-RW-U07-W-a31a61e94",
+          "before": "She's very ",
+          "after": ", though – she's the best in her class at Maths and Science.",
+          "answer": "clever"
+        },
+        {
+          "id": "B02-RW-U07-W-39a449bf0",
+          "before": "Megan: Well, Rebekah is very ",
+          "after": " and makes new friends easily.",
+          "answer": "confident"
+        },
+        {
+          "id": "B02-RW-U07-W-d2a26f03a",
+          "before": "Do you think finding gold is ",
+          "after": "?",
+          "answer": "difficult"
+        },
+        {
+          "id": "B02-RW-U07-W-5f04a8843",
+          "before": "Her ",
+          "after": " is to open a restaurant.",
+          "answer": "dream"
+        },
+        {
+          "id": "B02-RW-U07-W-41209342f",
+          "before": "The shop assistant was ",
+          "after": " and helped us find the right size.",
+          "answer": "friendly"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "inspire",
+        "patient",
+        "intelligent",
+        "operation",
+        "incredible",
+        "reliable",
+        "lazy"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-0bd087061",
+          "before": "She has an ",
+          "after": " memory.",
+          "answer": "incredible"
+        },
+        {
+          "id": "B02-RW-U07-W-646247ecf",
+          "before": "Your hard work can ",
+          "after": " other students.",
+          "answer": "inspire"
+        },
+        {
+          "id": "B02-RW-U07-W-065e43c05",
+          "before": "She is ",
+          "after": " and learns quickly.",
+          "answer": "intelligent"
+        },
+        {
+          "id": "B02-RW-U07-W-1078cf414",
+          "before": "She can be a bit ",
+          "after": " and doesn't help around the house, so I usually do her jobs for her.",
+          "answer": "lazy"
+        },
+        {
+          "id": "B02-RW-U07-W-fcb60bc53",
+          "before": "After a few months, he had an ",
+          "after": " to remove the cancer.",
+          "answer": "operation"
+        },
+        {
+          "id": "B02-RW-U07-W-b1b0b8de8",
+          "before": "Please be ",
+          "after": " while the computer restarts.",
+          "answer": "patient"
+        },
+        {
+          "id": "B02-RW-U07-W-c5e8cfa79",
+          "before": "Our old bus is ",
+          "after": " and rarely arrives late.",
+          "answer": "reliable"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "sensible",
+        "train",
+        "talent",
+        "stupid",
+        "respect",
+        "shy",
+        "talented"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U07-W-14012cd1b",
+          "before": "I ",
+          "after": " my teacher because she helps everyone.",
+          "answer": "respect"
+        },
+        {
+          "id": "B02-RW-U07-W-27a851b0b",
+          "before": "Driving slowly on icy roads is a ",
+          "after": " choice.",
+          "answer": "sensible"
+        },
+        {
+          "id": "B02-RW-U07-W-df399330d",
+          "before": "Lucy is quite ",
+          "after": " and finds it hard to talk to people.",
+          "answer": "shy"
+        },
+        {
+          "id": "B02-RW-U07-W-5514ae81c",
+          "before": "It was a ",
+          "after": " mistake to delete the only copy.",
+          "answer": "stupid"
+        },
+        {
+          "id": "B02-RW-U07-W-b842d5967",
+          "before": "She has a ",
+          "after": " for music.",
+          "answer": "talent"
+        },
+        {
+          "id": "B02-RW-U07-W-b100212cb",
+          "before": "She's a very ",
+          "after": " singer, too.",
+          "answer": "talented"
+        },
+        {
+          "id": "B02-RW-U07-W-94efdd6f6",
+          "before": "The players ",
+          "after": " every morning.",
+          "answer": "train"
+        }
+      ]
+    }
+  ]
+}

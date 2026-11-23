@@ -1,0 +1,264 @@
+{
+  "unitId": "B2U02",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U02",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B02-RW-U02-L1"
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U02-W-fc05e0e4f",
+      "term": "celebrate",
+      "pos": "(v)",
+      "ipa": "/ˈsel.ɪ.breɪt/",
+      "definition": "to do something enjoyable because it is a special day",
+      "example": "Coming of Age Day In Japan, people celebrate Coming of Age Day or Seijin Nohi on the second Monday in January.",
+      "exampleMark": "celebrate",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0054.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a8441d77c86ccf6f21b4baea.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-8f2e7cd78",
+      "term": "culture",
+      "pos": "(n)",
+      "ipa": "/ˈkʌl.tʃə/",
+      "definition": "the habits, traditions and beliefs of a country or group of people",
+      "example": "In Chinese culture, long noodles are lucky.",
+      "exampleMark": "culture",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0056.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/438bf1b3406db559dfd2d49d.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-a85f18261",
+      "term": "fireworks",
+      "pos": "(n)",
+      "ipa": "/ˈfaɪə.wɜːks/",
+      "definition": "small objects that explode to make a loud noise and bright colours in the night sky",
+      "example": "We watched fireworks light up the night sky.",
+      "exampleMark": "fireworks",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0050.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1f75f5f26678346d560fbb6d.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-b7b2fb744",
+      "term": "gift",
+      "pos": "(n)",
+      "ipa": "/ˈɡɪft/",
+      "definition": "something that you give to somebody, usually on a special day",
+      "example": "At Chinese New Year, what special gift do families give to each other?",
+      "exampleMark": "gift",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0063.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/725e45b426ee58530e8622fb.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-1ce141634",
+      "term": "lucky",
+      "pos": "(adj)",
+      "ipa": "/ˈlʌk.i/",
+      "definition": "having good things happen to you",
+      "example": "In Chinese culture, long noodles are lucky.",
+      "exampleMark": "lucky",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0080.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/438bf1b3406db559dfd2d49d.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-99d637374",
+      "term": "popular",
+      "pos": "(adj)",
+      "ipa": "/ˈpɒp.jʊ.lə/",
+      "definition": "liked by many people",
+      "example": "The music show is popular with visitors.",
+      "exampleMark": "popular",
+      "picture": "practice/data/classroom-vocabulary/media/aa408146843a7d7be9798b5f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0014.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/44a1e6eff79150a541dc9d24.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-bf5b4b253",
+      "term": "take part",
+      "pos": "(phr v)",
+      "ipa": "/ˈteɪk ˈpɑːt/",
+      "definition": "do an activity with other people",
+      "example": "I want to take part in the race.",
+      "exampleMark": "take part",
+      "picture": "practice/data/classroom-vocabulary/media/c2a53f83d247064ae8f744e4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0074.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/98fb14e618d81725f80cbf8a.mp3"
+    },
+    {
+      "id": "B02-RW-U02-W-c949c0afd",
+      "term": "traditional",
+      "pos": "(adj)",
+      "ipa": "/trəˈdɪ.ʃən.əl/",
+      "definition": "following the ways of behaving or doing things that have continued in a group of people for a long time",
+      "example": "For example, you can taste traditional types of food at the Oman Food Festival.",
+      "exampleMark": "traditional",
+      "picture": "practice/data/classroom-vocabulary/media/c41331d0a7ccc0ef23734d49.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0077.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c86713886ca4cf4a3289eb6e.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the habits, traditions and beliefs of a country or group of people"
+        },
+        {
+          "key": "B",
+          "text": "small objects that explode to make a loud noise and bright colours in the night sky"
+        },
+        {
+          "key": "C",
+          "text": "something that you give to somebody, usually on a special day"
+        },
+        {
+          "key": "D",
+          "text": "to do something enjoyable because it is a special day"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U02-W-fc05e0e4f",
+          "prompt": "Coming of Age Day In Japan, people celebrate Coming of Age Day or Seijin Nohi on the second Monday in January.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U02-W-8f2e7cd78",
+          "prompt": "In Chinese culture, long noodles are lucky.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U02-W-a85f18261",
+          "prompt": "We watched fireworks light up the night sky.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U02-W-b7b2fb744",
+          "prompt": "At Chinese New Year, what special gift do families give to each other?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c2a53f83d247064ae8f744e4.webp"
+        },
+        {
+          "key": "B",
+          "text": "following the ways of behaving or doing things that have continued in a group of people for a long time"
+        },
+        {
+          "key": "C",
+          "text": "having good things happen to you"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/aa408146843a7d7be9798b5f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U02-W-1ce141634",
+          "prompt": "In Chinese culture, long noodles are lucky.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U02-W-99d637374",
+          "prompt": "The music show is popular with visitors.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U02-W-bf5b4b253",
+          "prompt": "I want to take part in the race.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U02-W-c949c0afd",
+          "prompt": "For example, you can taste traditional types of food at the Oman Food Festival.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "gift",
+        "fireworks",
+        "culture",
+        "celebrate"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U02-W-fc05e0e4f",
+          "before": "Coming of Age Day In Japan, people ",
+          "after": " Coming of Age Day or Seijin Nohi on the second Monday in January.",
+          "answer": "celebrate"
+        },
+        {
+          "id": "B02-RW-U02-W-8f2e7cd78",
+          "before": "In Chinese ",
+          "after": ", long noodles are lucky.",
+          "answer": "culture"
+        },
+        {
+          "id": "B02-RW-U02-W-a85f18261",
+          "before": "We watched ",
+          "after": " light up the night sky.",
+          "answer": "fireworks"
+        },
+        {
+          "id": "B02-RW-U02-W-b7b2fb744",
+          "before": "At Chinese New Year, what special ",
+          "after": " do families give to each other?",
+          "answer": "gift"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "traditional",
+        "take part",
+        "popular",
+        "lucky"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U02-W-1ce141634",
+          "before": "In Chinese culture, long noodles are ",
+          "after": ".",
+          "answer": "lucky"
+        },
+        {
+          "id": "B02-RW-U02-W-99d637374",
+          "before": "The music show is ",
+          "after": " with visitors.",
+          "answer": "popular"
+        },
+        {
+          "id": "B02-RW-U02-W-bf5b4b253",
+          "before": "I want to ",
+          "after": " in the race.",
+          "answer": "take part"
+        },
+        {
+          "id": "B02-RW-U02-W-c949c0afd",
+          "before": "For example, you can taste ",
+          "after": " types of food at the Oman Food Festival.",
+          "answer": "traditional"
+        }
+      ]
+    }
+  ]
+}

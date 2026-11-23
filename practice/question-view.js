@@ -3,7 +3,7 @@
 (function () {
   const { escapeHTML: esc, displayAnswer, displayKeys } = window.UnlockRules;
 
-  const { isSpeaking, clipTime } = window.UnlockRecordings;
+  const { isSpeaking, clipTime, requiresRecording = isSpeaking } = window.UnlockRecordings;
   const { controls: screenControls } = window.UnlockScreens;
   const ui = window.UnlockStudentUI;
   const label = (en, zh) => ui ? ui.label(en, zh) : esc(zh);
@@ -143,7 +143,7 @@
   }
 
   function voiceHTML(question, attempt) {
-    if (!isSpeaking(question)) return "";
+    if (!requiresRecording(question)) return "";
     const { first, second, draftRecordings } = attempt;
     const before = first?.recordings?.[question.id];
     const current = second ? second.recordings?.[question.id]
@@ -197,8 +197,12 @@
     const count = question.audio?.length;
     const audioLabel = track ? label("Audio " + track, "录音 " + track)
       : count ? label(count + " audio tracks", count + " 段候选录音") : "";
-    const number = label("Question " + question.number + " " + (kinds[question.kind] || question.kind),
-      "第 " + question.number + " 题 " + question.kind);
+    const vocabulary = question.vocabulary;
+    const stage = vocabulary && window.UnlockClassroomVocabulary.stages[vocabulary.stage];
+    const position = vocabulary ? " " + vocabulary.position + " / " + vocabulary.total : "";
+    const number = stage ? label(stage.english + position, stage.chinese + position)
+      : label("Question " + question.number + " " + (kinds[question.kind] || question.kind),
+        "第 " + question.number + " 题 " + question.kind);
     return '<article class="question question-card" tabindex="-1" id="item-' + esc(question.id) +
       '" data-question="' + esc(question.id) + '"><div class="question-meta"><span class="q-number">' +
       number + '</span><div class="question-tags">' +
@@ -246,7 +250,46 @@
     return card(question, unit, "", "", content);
   }
 
+  function renderWordCard(question, unit, attempt) {
+    const { prompt, picture, wordCard } = question;
+    const start = wordCard.example.indexOf(wordCard.exampleMark);
+    const end = start + wordCard.exampleMark.length;
+    const example = start < 0 ? esc(wordCard.example) : esc(wordCard.example.slice(0, start)) +
+      "<strong>" + esc(wordCard.example.slice(start, end)) + "</strong>" + esc(wordCard.example.slice(end));
+    const samples = [[wordCard.wordAudio, "Play Word", "播放单词"], [wordCard.exampleAudio, "Play Example", "播放例句"]]
+      .filter(([source]) => source).map(([source, english, chinese]) =>
+        '<button type="button" class="button secondary ui-action" data-vocabulary-play>' + label(english, chinese) +
+        '</button><audio hidden preload="none" src="../' + esc(source) + '"></audio>').join("");
+    const image = picture ? '<img class="word-card-picture" src="../' + esc(picture) + '" alt="' + esc(prompt) + '">' : "";
+    const pronunciation = [wordCard.ipa, wordCard.pos].filter(Boolean).join(" ");
+    const instruction = '<p class="question-instruction">' + label("Record the word, then read the whole example sentence.",
+      "先读单词，再读完整的例句，把两部分录在同一段。") + '</p>';
+    const content = '<div class="word-card-read"><div><div lang="en-GB">' + promptHTML(question) +
+      '<p class="word-card-pronunciation">' + esc(pronunciation) + '</p><p>' + esc(wordCard.definition) +
+      '</p><p class="word-card-example">' + example + '</p></div><div class="word-card-samples">' + samples +
+      '</div><p data-vocabulary-audio-status role="status" hidden></p>' + instruction +
+      voiceHTML(question, attempt) + '</div>' + image + '</div>';
+    return card(question, unit, "", "ungraded", content);
+  }
+
+  function renderPictureOptions(question, value, editable) {
+    const id = esc(question.id);
+    const options = question.pictureOptions.map(({ key, text, picture }) => {
+      const image = picture ? '<img src="../' + esc(picture) + '" alt="Picture ' + esc(key) + '">' :
+        '<span class="picture-meaning">' + esc(text) + '</span>';
+      const input = editable ? '<input type="radio" name="' + id + '" data-answer="' + id + '" value="' +
+        esc(key) + '"' + (value === key ? " checked" : "") + ' aria-label="Option ' + esc(key) + '">' : "";
+      const tag = editable ? "label" : "div";
+      return "<" + tag + ' class="vocabulary-picture-option">' + image +
+        '<span class="picture-choice-label">' + input + esc(key) + "</span></" + tag + ">";
+    });
+    return '<div class="vocabulary-picture-options" data-option-count="' + options.length +
+      '" role="group" aria-labelledby="stem-' + id + '">' +
+      options.join("") + "</div>";
+  }
+
   function renderQuestion(question, unit, attempt, summary = "") {
+    if (question.wordCard) return renderWordCard(question, unit, attempt);
     const { first, second, draft } = attempt;
     const firstResult = first?.results[question.id];
     const result = second?.results[question.id];
@@ -288,8 +331,9 @@
       : priorResponse;
     const opinion = opinionNotes(question);
     const editorBelow = Boolean(opinion && !locked && !second);
-    const field = locked || second ? "" : '<div class="control' + (editorBelow ? " opinion-editor" : "") + '">' +
-      (summary || renderInput(question, value)) + "</div>";
+    const field = question.pictureOptions ? renderPictureOptions(question, value, !locked && !second)
+      : locked || second ? "" : '<div class="control' + (editorBelow ? " opinion-editor" : "") + '">' +
+        (summary || renderInput(question, value)) + "</div>";
     const prompt = promptHTML(question, summary && !locked && !second ? label("Summary Completion", "摘要填空") : undefined);
     const content = prompt + questionDetails(question, opinion) + comparison + partialFeedback + (editorBelow ? "" : field);
     const footer = (editorBelow ? field : "") + voiceHTML(question, attempt);

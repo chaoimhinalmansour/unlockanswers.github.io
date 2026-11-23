@@ -1,0 +1,476 @@
+{
+  "unitId": "B3U07",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U07",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U07-W-2c6f8a521",
+      "term": "advertising",
+      "pos": "(n)",
+      "ipa": "/ˈædvətˌaɪzɪŋ/",
+      "definition": "the business of creating or sending out announcements in magazines, on television, etc. to attract shoppers",
+      "example": "The shop spends money on advertising.",
+      "exampleMark": "advertising",
+      "picture": "practice/data/classroom-vocabulary/media/2feb1bc0906980b51f652450.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/478056d6a276ba8c98db845f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/21a4b31319547de75bed8d5d.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-63acf68c4",
+      "term": "brand",
+      "pos": "(n)",
+      "ipa": "/brˈænd/",
+      "definition": "the name of a product, or group of products, made by a company",
+      "example": "I buy the same brand of soap because it works well.",
+      "exampleMark": "brand",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0a40ebf23fa168ee32763682.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c8a061f7a504a5d8df965549.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-52143c6b5",
+      "term": "competitor",
+      "pos": "(n)",
+      "ipa": "/kəmpˈɛtɪtɐ/",
+      "definition": "a business which tries to win or do better than other businesses selling almost the same products",
+      "example": "Our main competitor sells a similar product for a lower price.",
+      "exampleMark": "competitor",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0212e07fe31d43553c393972.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4b67176d70bfb3b9a46e1dc4.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-cb7a82c31",
+      "term": "consumer",
+      "pos": "(n)",
+      "ipa": "/kənsˈuːmɐ/",
+      "definition": "a person who buys a product or service for their own use",
+      "example": "A consumer can compare prices online before buying a phone.",
+      "exampleMark": "consumer",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/31729c1d8bc8f8936810607c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3da0faf78d24beaacbaf307c.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-4768682bf",
+      "term": "controversial",
+      "pos": "(adj)",
+      "ipa": "/kˌɒntrəvˈɜːʃəl/",
+      "definition": "causing disagreement or discussion",
+      "example": "The advertisement became controversial.",
+      "exampleMark": "controversial",
+      "picture": "practice/data/classroom-vocabulary/media/84f2fddeae505d60300b5fef.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/17e54d29d6723dae51bcb782.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/98d3bf37522c5d808e04770e.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-4c6ee71f4",
+      "term": "designer label",
+      "pos": "(n)",
+      "ipa": "/dɪzˈaɪnɐ lˈeɪbəl/",
+      "definition": "a company which makes or designs expensive clothes",
+      "example": "She saved up to buy a jacket from a designer label.",
+      "exampleMark": "designer label",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/326066b8eea3776458bfdfa5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/38f23a55b91b61b01d863a97.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-81cbe4e68",
+      "term": "hesitate",
+      "pos": "(v)",
+      "ipa": "/hˈɛzɪtˌeɪt/",
+      "definition": "to pause before you do or say something, often because you are uncertain or nervous about it",
+      "example": "I often hesitate before speaking when I am not sure of the answer.",
+      "exampleMark": "hesitate",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c8331f7deda127821f72647f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3450b5a7dd3deb43e40bc34f.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-411cd345e",
+      "term": "labour",
+      "pos": "(n)",
+      "ipa": "/lˈeɪbɐ/",
+      "definition": "work",
+      "example": "Building the stone wall took weeks of hard labour.",
+      "exampleMark": "labour",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6877b6a06ed000cd89ef63b0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ca14ca4c89dc9bcb39d0b6b3.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-e6c5b8f13",
+      "term": "manufacture",
+      "pos": "(v)",
+      "ipa": "/mˌænjuːfˈæktʃɐ/",
+      "definition": "to make goods in a large quantity in a factory",
+      "example": "The factory plans to manufacture thousands of bikes this year.",
+      "exampleMark": "manufacture",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1de98e5b0cef17d7a84949c3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9632cd8473f5a01fcba20055.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-001f63800",
+      "term": "manufacturing",
+      "pos": "(n)",
+      "ipa": "/mˌænjuːfˈæktʃərɪŋ/",
+      "definition": "the process of making things, especially in a factory",
+      "example": "Clothing manufacturing provides jobs.",
+      "exampleMark": "manufacturing",
+      "picture": "practice/data/classroom-vocabulary/media/2e606f2f54dbe1ae359815d4.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/23bb1fc2b94ed12a5340eb19.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c30e6c2ea7468e29634a13fa.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-5c9f73af7",
+      "term": "market",
+      "pos": "(n)",
+      "ipa": "/mˈɑːkɪt/",
+      "definition": "the people who might want to buy something, or a part of the world where something is sold",
+      "example": "The used-clothing market is growing rapidly.",
+      "exampleMark": "market",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a49d7167fb1213651e81e297.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/526bbbf2b0ff44ee7185991e.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-cbf35bffc",
+      "term": "overseas",
+      "pos": "(adv)",
+      "ipa": "/ˌəʊvəsˈiːz/",
+      "definition": "in, from, or to another country",
+      "example": "Overseas factories have become safer and more ethical in recent years.",
+      "exampleMark": "Overseas",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/300185ca36aa30662f0ab4ed.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/68c362d6132390e4c7f6fdef.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-e2979e759",
+      "term": "supplier",
+      "pos": "(n)",
+      "ipa": "/səplˈaɪə/",
+      "definition": "a person or company that sells a product or service",
+      "example": "The café gets fresh milk every day from a local supplier.",
+      "exampleMark": "supplier",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3b966db210bbe3aac8bbdbb6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5415d1aabbf8b035eaac9183.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-d387fc8d5",
+      "term": "volume",
+      "pos": "(n)",
+      "ipa": "/vˈɒljuːm/",
+      "definition": "amount of something, especially when it is large",
+      "example": "The volume of second hand clothing is so high that only about 20 % is sold online or in shops.",
+      "exampleMark": "volume",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/229f54847246fbe1b43b86c0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/392e4b11b073f954304eaaaf.mp3"
+    },
+    {
+      "id": "B03-RW-U07-W-da82190af",
+      "term": "working conditions",
+      "pos": "(n pl)",
+      "ipa": "/wˈɜːkɪŋ kəndˈɪʃənz/",
+      "definition": "the situation in which people work, including physical environment, pay and safety",
+      "example": "But working conditions in many offshore factories remain uncomfortable and unsafe.",
+      "exampleMark": "working conditions",
+      "picture": "practice/data/classroom-vocabulary/media/4c94547731b526832710e805.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3bf73b81593b81f07879185b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1ad7031a5bae042a0a3b28ad.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the name of a product, or group of products, made by a company"
+        },
+        {
+          "key": "B",
+          "text": "a business which tries to win or do better than other businesses selling almost the same products"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2feb1bc0906980b51f652450.webp"
+        },
+        {
+          "key": "D",
+          "text": "a person who buys a product or service for their own use"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-2c6f8a521",
+          "prompt": "The shop spends money on advertising.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U07-W-63acf68c4",
+          "prompt": "I buy the same brand of soap because it works well.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U07-W-52143c6b5",
+          "prompt": "Our main competitor sells a similar product for a lower price.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U07-W-cb7a82c31",
+          "prompt": "A consumer can compare prices online before buying a phone.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a company which makes or designs expensive clothes"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/84f2fddeae505d60300b5fef.webp"
+        },
+        {
+          "key": "C",
+          "text": "work"
+        },
+        {
+          "key": "D",
+          "text": "to pause before you do or say something, often because you are uncertain or nervous about it"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-4768682bf",
+          "prompt": "The advertisement became controversial.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U07-W-4c6ee71f4",
+          "prompt": "She saved up to buy a jacket from a designer label.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U07-W-81cbe4e68",
+          "prompt": "I often hesitate before speaking when I am not sure of the answer.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U07-W-411cd345e",
+          "prompt": "Building the stone wall took weeks of hard labour.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the people who might want to buy something, or a part of the world where something is sold"
+        },
+        {
+          "key": "B",
+          "text": "in, from, or to another country"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2e606f2f54dbe1ae359815d4.webp"
+        },
+        {
+          "key": "D",
+          "text": "to make goods in a large quantity in a factory"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-e6c5b8f13",
+          "prompt": "The factory plans to manufacture thousands of bikes this year.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U07-W-001f63800",
+          "prompt": "Clothing manufacturing provides jobs.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U07-W-5c9f73af7",
+          "prompt": "The used-clothing market is growing rapidly.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U07-W-cbf35bffc",
+          "prompt": "Overseas factories have become safer and more ethical in recent years.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the situation in which people work, including physical environment, pay and safety"
+        },
+        {
+          "key": "B",
+          "text": "a person or company that sells a product or service"
+        },
+        {
+          "key": "C",
+          "text": "amount of something, especially when it is large"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-e2979e759",
+          "prompt": "The café gets fresh milk every day from a local supplier.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U07-W-d387fc8d5",
+          "prompt": "The volume of second hand clothing is so high that only about 20 % is sold online or in shops.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U07-W-da82190af",
+          "prompt": "But working conditions in many offshore factories remain uncomfortable and unsafe.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "advertising",
+        "brand",
+        "controversial",
+        "consumer",
+        "competitor"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-2c6f8a521",
+          "before": "The shop spends money on ",
+          "after": ".",
+          "answer": "advertising"
+        },
+        {
+          "id": "B03-RW-U07-W-63acf68c4",
+          "before": "I buy the same ",
+          "after": " of soap because it works well.",
+          "answer": "brand"
+        },
+        {
+          "id": "B03-RW-U07-W-52143c6b5",
+          "before": "Our main ",
+          "after": " sells a similar product for a lower price.",
+          "answer": "competitor"
+        },
+        {
+          "id": "B03-RW-U07-W-cb7a82c31",
+          "before": "A ",
+          "after": " can compare prices online before buying a phone.",
+          "answer": "consumer"
+        },
+        {
+          "id": "B03-RW-U07-W-4768682bf",
+          "before": "The advertisement became ",
+          "after": ".",
+          "answer": "controversial"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "manufacture",
+        "designer label",
+        "hesitate",
+        "labour",
+        "manufacturing"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-4c6ee71f4",
+          "before": "She saved up to buy a jacket from a ",
+          "after": ".",
+          "answer": "designer label"
+        },
+        {
+          "id": "B03-RW-U07-W-81cbe4e68",
+          "before": "I often ",
+          "after": " before speaking when I am not sure of the answer.",
+          "answer": "hesitate"
+        },
+        {
+          "id": "B03-RW-U07-W-411cd345e",
+          "before": "Building the stone wall took weeks of hard ",
+          "after": ".",
+          "answer": "labour"
+        },
+        {
+          "id": "B03-RW-U07-W-e6c5b8f13",
+          "before": "The factory plans to ",
+          "after": " thousands of bikes this year.",
+          "answer": "manufacture"
+        },
+        {
+          "id": "B03-RW-U07-W-001f63800",
+          "before": "Clothing ",
+          "after": " provides jobs.",
+          "answer": "manufacturing"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "Overseas",
+        "supplier",
+        "market",
+        "working conditions",
+        "volume"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U07-W-5c9f73af7",
+          "before": "The used-clothing ",
+          "after": " is growing rapidly.",
+          "answer": "market"
+        },
+        {
+          "id": "B03-RW-U07-W-cbf35bffc",
+          "before": "",
+          "after": " factories have become safer and more ethical in recent years.",
+          "answer": "Overseas"
+        },
+        {
+          "id": "B03-RW-U07-W-e2979e759",
+          "before": "The café gets fresh milk every day from a local ",
+          "after": ".",
+          "answer": "supplier"
+        },
+        {
+          "id": "B03-RW-U07-W-d387fc8d5",
+          "before": "The ",
+          "after": " of second hand clothing is so high that only about 20 % is sold online or in shops.",
+          "answer": "volume"
+        },
+        {
+          "id": "B03-RW-U07-W-da82190af",
+          "before": "But ",
+          "after": " in many offshore factories remain uncomfortable and unsafe.",
+          "answer": "working conditions"
+        }
+      ]
+    }
+  ]
+}

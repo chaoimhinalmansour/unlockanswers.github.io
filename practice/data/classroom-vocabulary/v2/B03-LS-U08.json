@@ -1,0 +1,720 @@
+{
+  "unitId": "B3U08",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U08",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-LS-U08-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U08-W-15cdad7a0",
+      "term": "afford",
+      "pos": "(v)",
+      "ipa": "/əfˈɔːd/",
+      "definition": "to have enough money to buy or do something",
+      "example": "She can afford to buy fresh food.",
+      "exampleMark": "afford",
+      "picture": "practice/data/classroom-vocabulary/media/6bb8a8f109bfd04d5d3c6f4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0729.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3f4723f085bc314158e8fc9e.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-95eb607eb",
+      "term": "borrow money",
+      "pos": "(v phr)",
+      "ipa": "/ˈbɒr.əʊ ˈmʌn.i/",
+      "definition": "to take money and promise to pay it back later",
+      "example": "They had to borrow money to buy equipment for their new café.",
+      "exampleMark": "borrow money",
+      "picture": "practice/data/classroom-vocabulary/media/3f1ad934caecabe1928d20a3.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0730.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3db2d3d8d082b6edf1a8258c.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-b236b19e7",
+      "term": "come up with",
+      "pos": "(phr v)",
+      "ipa": "/ˈkʌm ˌʌp wɪð/",
+      "definition": "to find and produce something that is needed, usually money",
+      "example": "The team needs to come up with enough money for the trip.",
+      "exampleMark": "come up with",
+      "picture": "practice/data/classroom-vocabulary/media/c3158eb7fb69f82107634970.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0731.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/33ca7b793b10e5318e5e0eb6.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-e52ec7a1e",
+      "term": "debt",
+      "pos": "(n)",
+      "ipa": "/ˈdet/",
+      "definition": "money which is owed to somebody else",
+      "example": "He wants to avoid debt.",
+      "exampleMark": "debt",
+      "picture": "practice/data/classroom-vocabulary/media/8744489ea4b6e0d1a8486eba.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0732.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a395427d6dafc8ed0209f8d4.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-8501a34f3",
+      "term": "decision",
+      "pos": "(n)",
+      "ipa": "/dɪˈsɪ.ʒən/",
+      "definition": "a choice that somebody makes after thinking about the options",
+      "example": "His decision to repair the bicycle saves money.",
+      "exampleMark": "decision",
+      "picture": "practice/data/classroom-vocabulary/media/d656e2690fba800113c3e974.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0733.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/503990ed22896f8afedb3e6d.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-808cae8b9",
+      "term": "encourage",
+      "pos": "(v)",
+      "ipa": "/ɪnˈkʌr.ɪdʒ/",
+      "definition": "to make somebody more likely to do something",
+      "example": "Our coach tries to encourage everyone to take part.",
+      "exampleMark": "encourage",
+      "picture": "practice/data/classroom-vocabulary/media/c8849056e5ccdcf947652395.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0158.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2807414c220f473e5198a9db.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-d304547f7",
+      "term": "get into",
+      "pos": "(phr v)",
+      "ipa": "/ɡet ˈɪn.tuː/",
+      "definition": "to become involved in something",
+      "example": "Do not get into debt.",
+      "exampleMark": "get into",
+      "picture": "practice/data/classroom-vocabulary/media/756a4745107da2175b99e841.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0734.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/499a1f1531bf562e89e76726.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-caf1b0c2e",
+      "term": "invest money",
+      "pos": "(v phr)",
+      "ipa": "/ɪnˈvest ˈmʌn.i/",
+      "definition": "to put money into something to try and earn more money",
+      "example": "They decided to invest money in a small business.",
+      "exampleMark": "invest money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0735.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b1bb2d25aa156f3c8c1bbbe0.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-5826e374a",
+      "term": "loan",
+      "pos": "(n)",
+      "ipa": "/ˈləʊn/",
+      "definition": "an amount of money which you borrow and have to pay back",
+      "example": "She took out a loan.",
+      "exampleMark": "loan",
+      "picture": "practice/data/classroom-vocabulary/media/55f6b86fa2a4003bb61aa953.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0736.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a3ab6a8ff846f99c309d3140.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-55375652b",
+      "term": "lose money",
+      "pos": "(v phr)",
+      "ipa": "/ˈluːz ˈmʌn.i/",
+      "definition": "to have less money than you had before",
+      "example": "The shop could lose money if it closes for another week.",
+      "exampleMark": "lose money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0737.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/181c35c97b4897e883f040a1.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-dda759ba9",
+      "term": "make money",
+      "pos": "(v phr)",
+      "ipa": "/ˌmeɪk ˈmʌn.i/",
+      "definition": "to earn money",
+      "example": "They make money by selling vegetables at the market.",
+      "exampleMark": "make money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0738.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ae3deae462a3b92a91e54989.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-fdad8c444",
+      "term": "millionaire",
+      "pos": "(n)",
+      "ipa": "/ˌmɪl.jəˈneː/",
+      "definition": "a person who has more than one million dollars, pounds, etc.",
+      "example": "The article is about a millionaire.",
+      "exampleMark": "millionaire",
+      "picture": "practice/data/classroom-vocabulary/media/42cb1349a5b9fbab69a46fcd.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0739.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/52d0c49f139f2f67f3d3711d.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-5553cb60c",
+      "term": "owe money",
+      "pos": "(v phr)",
+      "ipa": "/ˈəʊ ˈmʌn.i/",
+      "definition": "to have to pay somebody money which you borrowed",
+      "example": "We still owe money to the bank for the car.",
+      "exampleMark": "owe money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0741.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/993ad7c64fe4778402e8dbad.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-394f4494b",
+      "term": "pay a fine",
+      "pos": "(v phr)",
+      "ipa": "/ˈpeɪ ə ˈfaɪn/",
+      "definition": "to pay money as a punishment for not obeying a rule or law",
+      "example": "Anyone who parks here without a permit may have to pay a fine.",
+      "exampleMark": "pay a fine",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0742.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b5d1c9510acbdf12ac62d1f5.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-78ccdb245",
+      "term": "pay in cash",
+      "pos": "(v phr)",
+      "ipa": "/ˈpeɪ ɪn ˈkæʃ/",
+      "definition": "to pay for something with money (not a credit card)",
+      "example": "Some market stalls ask customers to pay in cash.",
+      "exampleMark": "pay in cash",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0743.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/60d3ac1a2b092de84280580b.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-dc9933575",
+      "term": "pay off",
+      "pos": "(phr v)",
+      "ipa": "/ˈpeɪ ˈɒf/",
+      "definition": "to pay the money that you owe",
+      "example": "She used her savings to pay off the loan.",
+      "exampleMark": "pay off",
+      "picture": "practice/data/classroom-vocabulary/media/ec58cf6ec32da6cde0299915.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0744.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0a5ceee48ef70bb7f4f2b83c.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-e86256b27",
+      "term": "payment",
+      "pos": "(n)",
+      "ipa": "/ˈpeɪ.mənt/",
+      "definition": "an amount of money paid",
+      "example": "She makes a payment for her food.",
+      "exampleMark": "payment",
+      "picture": "practice/data/classroom-vocabulary/media/46b87a5667dcb97a1b2b5339.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0745.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/eb1a76d28791bb80c05fb4f7.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-1088d042d",
+      "term": "put aside",
+      "pos": "(phr v)",
+      "ipa": "/ˌpʊt əˈsaɪd/",
+      "definition": "to save something, usually money, for a special purpose",
+      "example": "Put aside money each month.",
+      "exampleMark": "Put aside",
+      "picture": "practice/data/classroom-vocabulary/media/e750f3def49c087436bb8a8a.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0746.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f6e9dc324f537c288522b4df.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-dfea041bb",
+      "term": "raise money",
+      "pos": "(v phr)",
+      "ipa": "/ˈreɪz ˈmʌn.i/",
+      "definition": "to collect money from other people, often for charity",
+      "example": "The class will sell cakes to raise money for the local hospital.",
+      "exampleMark": "raise money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0747.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ca68f3cea107cd22de5181b7.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-47f82ed18",
+      "term": "save money",
+      "pos": "(v phr)",
+      "ipa": "/ˈseɪv ˈmʌn.i/",
+      "definition": "to keep money for use in the future",
+      "example": "I save money every month for university.",
+      "exampleMark": "save money",
+      "picture": "practice/data/classroom-vocabulary/media/7909c2d84ca65f6e93df2511.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0749.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e8e2c625285ad4e30ddc7268.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-86ac911c0",
+      "term": "savings",
+      "pos": "(n pl)",
+      "ipa": "/ˈseɪv.ɪŋz/",
+      "definition": "money you keep, usually in a bank",
+      "example": "If you spend all your savings on a luxury BMW, then you probably aren't rich.",
+      "exampleMark": "savings",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0750.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4737e062d193813087121ce2.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-0f71d5bdf",
+      "term": "spend money",
+      "pos": "(v phr)",
+      "ipa": "/ˈspend ˈmʌn.i/",
+      "definition": "to give money as a payment for something",
+      "example": "To put it another way, they're smart about how to save and spend money.",
+      "exampleMark": "spend money",
+      "picture": "practice/data/classroom-vocabulary/media/48090ecaca3958e443341d4c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0753.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a60d85cf02f224182c39692a.mp3"
+    },
+    {
+      "id": "B03-LS-U08-W-2041aa700",
+      "term": "take out",
+      "pos": "(phr v)",
+      "ipa": "/ˈteɪk ˈaʊt/",
+      "definition": "to arrange to get something from a bank or company",
+      "example": "Don't get into debt or take out bank loans.",
+      "exampleMark": "take out",
+      "picture": "practice/data/classroom-vocabulary/media/499d29d70f918a9403f3bf7b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0754.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/de4a13fdb9954db90e99eb24.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/3f1ad934caecabe1928d20a3.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/c3158eb7fb69f82107634970.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/8744489ea4b6e0d1a8486eba.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/6bb8a8f109bfd04d5d3c6f4c.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-15cdad7a0",
+          "prompt": "She can afford to buy fresh food.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U08-W-95eb607eb",
+          "prompt": "They had to borrow money to buy equipment for their new café.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U08-W-b236b19e7",
+          "prompt": "The team needs to come up with enough money for the trip.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U08-W-e52ec7a1e",
+          "prompt": "He wants to avoid debt.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/756a4745107da2175b99e841.webp"
+        },
+        {
+          "key": "B",
+          "text": "to put money into something to try and earn more money"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d656e2690fba800113c3e974.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/c8849056e5ccdcf947652395.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-8501a34f3",
+          "prompt": "His decision to repair the bicycle saves money.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U08-W-808cae8b9",
+          "prompt": "Our coach tries to encourage everyone to take part.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U08-W-d304547f7",
+          "prompt": "Do not get into debt.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U08-W-caf1b0c2e",
+          "prompt": "They decided to invest money in a small business.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/42cb1349a5b9fbab69a46fcd.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/55f6b86fa2a4003bb61aa953.webp"
+        },
+        {
+          "key": "C",
+          "text": "to have less money than you had before"
+        },
+        {
+          "key": "D",
+          "text": "to earn money"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-5826e374a",
+          "prompt": "She took out a loan.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U08-W-55375652b",
+          "prompt": "The shop could lose money if it closes for another week.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U08-W-dda759ba9",
+          "prompt": "They make money by selling vegetables at the market.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U08-W-fdad8c444",
+          "prompt": "The article is about a millionaire.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to pay money as a punishment for not obeying a rule or law"
+        },
+        {
+          "key": "B",
+          "text": "to pay for something with money (not a credit card)"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/ec58cf6ec32da6cde0299915.webp"
+        },
+        {
+          "key": "D",
+          "text": "to have to pay somebody money which you borrowed"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-5553cb60c",
+          "prompt": "We still owe money to the bank for the car.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U08-W-394f4494b",
+          "prompt": "Anyone who parks here without a permit may have to pay a fine.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U08-W-78ccdb245",
+          "prompt": "Some market stalls ask customers to pay in cash.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U08-W-dc9933575",
+          "prompt": "She used her savings to pay off the loan.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to collect money from other people, often for charity"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/7909c2d84ca65f6e93df2511.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/46b87a5667dcb97a1b2b5339.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/e750f3def49c087436bb8a8a.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-e86256b27",
+          "prompt": "She makes a payment for her food.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U08-W-1088d042d",
+          "prompt": "Put aside money each month.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U08-W-dfea041bb",
+          "prompt": "The class will sell cakes to raise money for the local hospital.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U08-W-47f82ed18",
+          "prompt": "I save money every month for university.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/499d29d70f918a9403f3bf7b.webp"
+        },
+        {
+          "key": "B",
+          "text": "money you keep, usually in a bank"
+        },
+        {
+          "key": "C",
+          "text": "to give money as a payment for something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-86ac911c0",
+          "prompt": "If you spend all your savings on a luxury BMW, then you probably aren't rich.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U08-W-0f71d5bdf",
+          "prompt": "To put it another way, they're smart about how to save and spend money.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U08-W-2041aa700",
+          "prompt": "Don't get into debt or take out bank loans.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "encourage",
+        "decision",
+        "debt",
+        "come up with",
+        "borrow money",
+        "afford"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-15cdad7a0",
+          "before": "She can ",
+          "after": " to buy fresh food.",
+          "answer": "afford"
+        },
+        {
+          "id": "B03-LS-U08-W-95eb607eb",
+          "before": "They had to ",
+          "after": " to buy equipment for their new café.",
+          "answer": "borrow money"
+        },
+        {
+          "id": "B03-LS-U08-W-b236b19e7",
+          "before": "The team needs to ",
+          "after": " enough money for the trip.",
+          "answer": "come up with"
+        },
+        {
+          "id": "B03-LS-U08-W-e52ec7a1e",
+          "before": "He wants to avoid ",
+          "after": ".",
+          "answer": "debt"
+        },
+        {
+          "id": "B03-LS-U08-W-8501a34f3",
+          "before": "His ",
+          "after": " to repair the bicycle saves money.",
+          "answer": "decision"
+        },
+        {
+          "id": "B03-LS-U08-W-808cae8b9",
+          "before": "Our coach tries to ",
+          "after": " everyone to take part.",
+          "answer": "encourage"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "millionaire",
+        "make money",
+        "lose money",
+        "loan",
+        "invest money",
+        "get into"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-d304547f7",
+          "before": "Do not ",
+          "after": " debt.",
+          "answer": "get into"
+        },
+        {
+          "id": "B03-LS-U08-W-caf1b0c2e",
+          "before": "They decided to ",
+          "after": " in a small business.",
+          "answer": "invest money"
+        },
+        {
+          "id": "B03-LS-U08-W-5826e374a",
+          "before": "She took out a ",
+          "after": ".",
+          "answer": "loan"
+        },
+        {
+          "id": "B03-LS-U08-W-55375652b",
+          "before": "The shop could ",
+          "after": " if it closes for another week.",
+          "answer": "lose money"
+        },
+        {
+          "id": "B03-LS-U08-W-dda759ba9",
+          "before": "They ",
+          "after": " by selling vegetables at the market.",
+          "answer": "make money"
+        },
+        {
+          "id": "B03-LS-U08-W-fdad8c444",
+          "before": "The article is about a ",
+          "after": ".",
+          "answer": "millionaire"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "Put aside",
+        "payment",
+        "pay off",
+        "pay in cash",
+        "pay a fine",
+        "owe money"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-5553cb60c",
+          "before": "We still ",
+          "after": " to the bank for the car.",
+          "answer": "owe money"
+        },
+        {
+          "id": "B03-LS-U08-W-394f4494b",
+          "before": "Anyone who parks here without a permit may have to ",
+          "after": ".",
+          "answer": "pay a fine"
+        },
+        {
+          "id": "B03-LS-U08-W-78ccdb245",
+          "before": "Some market stalls ask customers to ",
+          "after": ".",
+          "answer": "pay in cash"
+        },
+        {
+          "id": "B03-LS-U08-W-dc9933575",
+          "before": "She used her savings to ",
+          "after": " the loan.",
+          "answer": "pay off"
+        },
+        {
+          "id": "B03-LS-U08-W-e86256b27",
+          "before": "She makes a ",
+          "after": " for her food.",
+          "answer": "payment"
+        },
+        {
+          "id": "B03-LS-U08-W-1088d042d",
+          "before": "",
+          "after": " money each month.",
+          "answer": "Put aside"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "take out",
+        "spend money",
+        "savings",
+        "save money",
+        "raise money"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U08-W-dfea041bb",
+          "before": "The class will sell cakes to ",
+          "after": " for the local hospital.",
+          "answer": "raise money"
+        },
+        {
+          "id": "B03-LS-U08-W-47f82ed18",
+          "before": "I ",
+          "after": " every month for university.",
+          "answer": "save money"
+        },
+        {
+          "id": "B03-LS-U08-W-86ac911c0",
+          "before": "If you spend all your ",
+          "after": " on a luxury BMW, then you probably aren't rich.",
+          "answer": "savings"
+        },
+        {
+          "id": "B03-LS-U08-W-0f71d5bdf",
+          "before": "To put it another way, they're smart about how to save and ",
+          "after": ".",
+          "answer": "spend money"
+        },
+        {
+          "id": "B03-LS-U08-W-2041aa700",
+          "before": "Don't get into debt or ",
+          "after": " bank loans.",
+          "answer": "take out"
+        }
+      ]
+    }
+  ]
+}

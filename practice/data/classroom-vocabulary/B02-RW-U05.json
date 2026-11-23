@@ -1,0 +1,228 @@
+{
+  "unitId": "B2U05",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U05",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U05-W-9c92ad250",
+      "term": "ancient",
+      "pos": "(adj)",
+      "ipa": "/ˈeɪnʃənt/",
+      "definition": "from a long time ago. very old",
+      "example": "The caber toss is an ancient Scottish sport.",
+      "exampleMark": "ancient",
+      "picture": "practice/data/classroom-vocabulary/media/58bb2892118a7eff9cac7086.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5800210d4f5e5a6641b46403.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/344755260a5163eaba3ad3b4.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-755268f1d",
+      "term": "compete",
+      "pos": "(v)",
+      "ipa": "/kəmpˈiːt/",
+      "definition": "to take part in a race or competition. to try to be more successful than somebody else",
+      "example": "Athletes compete in races around the world.",
+      "exampleMark": "compete",
+      "picture": "practice/data/classroom-vocabulary/media/781a65c9757566e304df3621.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/511d57a98550f0d395d63581.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b835f2f7a3b188e38e3b8779.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-1b44f6dde",
+      "term": "competition",
+      "pos": "(n)",
+      "ipa": "/kˌɒmpətˈɪʃən/",
+      "definition": "an organized event in which people try to win a prize by being the best",
+      "example": "She won first prize in the swimming competition.",
+      "exampleMark": "competition",
+      "picture": "practice/data/classroom-vocabulary/media/e62066bff039a52307705efa.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/36a2f6abc1869ab546ed0246.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/745c6e655308c881cfefa68a.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-1468ebe41",
+      "term": "strange",
+      "pos": "(adj)",
+      "ipa": "/streɪndʒ/",
+      "definition": "not familiar. difficult to understand. different",
+      "example": "The rules seemed strange before I learnt the game.",
+      "exampleMark": "strange",
+      "picture": "practice/data/classroom-vocabulary/media/9972f68b5155b9eca00a2ba3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/327813c273912b0114be26be.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e096a660676f0ef89eb794a1.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-bb500fced",
+      "term": "swimming",
+      "pos": "(n)",
+      "ipa": "/swˈɪmɪŋ/",
+      "definition": "sport where people move through water by moving their body",
+      "example": "Coney Island Polar Bear Plunge People go swimming in the Atlantic Ocean in the winter.",
+      "exampleMark": "swimming",
+      "picture": "practice/data/classroom-vocabulary/media/f802954eefdeda593a78fafe.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d2924745df731ad29ef16991.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/17a2e58d8aa0e6b568186c9e.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-19e57fb7f",
+      "term": "take place",
+      "pos": "(phr v)",
+      "ipa": "/tˈeɪk plˈeɪs/",
+      "definition": "to happen",
+      "example": "The race will take place on Sunday.",
+      "exampleMark": "take place",
+      "picture": "practice/data/classroom-vocabulary/media/00996c4ae11c58f958c35079.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/877238e6dd260ed1113c65df.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b2a14b539c200f57d2fa6f3a.mp3"
+    },
+    {
+      "id": "B02-RW-U05-W-f79352235",
+      "term": "throw",
+      "pos": "(v)",
+      "ipa": "/θrˈəʊ/",
+      "definition": "to send something through the air, pushing it out of your hand",
+      "example": "The players throw the ball to one another.",
+      "exampleMark": "throw",
+      "picture": "practice/data/classroom-vocabulary/media/f46d6c65c66876df9bf2b4e2.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5135e76beab5928e135071ab.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a2dbc8b9aaa485fb8f3d60dd.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/781a65c9757566e304df3621.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/e62066bff039a52307705efa.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/9972f68b5155b9eca00a2ba3.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/58bb2892118a7eff9cac7086.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U05-W-9c92ad250",
+          "prompt": "The caber toss is an ancient Scottish sport.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U05-W-755268f1d",
+          "prompt": "Athletes compete in races around the world.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U05-W-1b44f6dde",
+          "prompt": "She won first prize in the swimming competition.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U05-W-1468ebe41",
+          "prompt": "The rules seemed strange before I learnt the game.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/f46d6c65c66876df9bf2b4e2.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/00996c4ae11c58f958c35079.webp"
+        },
+        {
+          "key": "C",
+          "text": "sport where people move through water by moving their body"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U05-W-bb500fced",
+          "prompt": "Coney Island Polar Bear Plunge People go swimming in the Atlantic Ocean in the winter.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U05-W-19e57fb7f",
+          "prompt": "The race will take place on Sunday.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U05-W-f79352235",
+          "prompt": "The players throw the ball to one another.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "strange",
+        "throw",
+        "compete",
+        "competition",
+        "ancient",
+        "take place",
+        "swimming"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U05-W-9c92ad250",
+          "before": "The caber toss is an ",
+          "after": " Scottish sport.",
+          "answer": "ancient"
+        },
+        {
+          "id": "B02-RW-U05-W-755268f1d",
+          "before": "Athletes ",
+          "after": " in races around the world.",
+          "answer": "compete"
+        },
+        {
+          "id": "B02-RW-U05-W-1b44f6dde",
+          "before": "She won first prize in the swimming ",
+          "after": ".",
+          "answer": "competition"
+        },
+        {
+          "id": "B02-RW-U05-W-1468ebe41",
+          "before": "The rules seemed ",
+          "after": " before I learnt the game.",
+          "answer": "strange"
+        },
+        {
+          "id": "B02-RW-U05-W-bb500fced",
+          "before": "Coney Island Polar Bear Plunge People go ",
+          "after": " in the Atlantic Ocean in the winter.",
+          "answer": "swimming"
+        },
+        {
+          "id": "B02-RW-U05-W-19e57fb7f",
+          "before": "The race will ",
+          "after": " on Sunday.",
+          "answer": "take place"
+        },
+        {
+          "id": "B02-RW-U05-W-f79352235",
+          "before": "The players ",
+          "after": " the ball to one another.",
+          "answer": "throw"
+        }
+      ]
+    }
+  ]
+}

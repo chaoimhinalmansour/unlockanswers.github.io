@@ -1,0 +1,538 @@
+{
+  "unitId": "B3U04",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U04",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U04-W-85a7b4e8d",
+      "term": "appearance",
+      "pos": "(n)",
+      "ipa": "/ɐpˈiərəns/",
+      "definition": "the way someone or something looks",
+      "example": "Clothes can affect a person's appearance.",
+      "exampleMark": "appearance",
+      "picture": "practice/data/classroom-vocabulary/media/a6379eeb5a2fded63404827e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a6379a4094473195bc395038.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9d208b6e9854c03670bb4dea.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-4163f6900",
+      "term": "belief",
+      "pos": "(n)",
+      "ipa": "/bɪlˈiːf/",
+      "definition": "an idea that you are sure is true",
+      "example": "Her belief that practice improves performance encouraged her to train every day.",
+      "exampleMark": "belief",
+      "picture": "practice/data/classroom-vocabulary/media/8174a858ce1fa435aac31a2e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/101037f491eb99016ba61d27.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/74e1afed4852bf6a44dc8769.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-57c8ddb09",
+      "term": "brief",
+      "pos": "(adj)",
+      "ipa": "/brˈiːf/",
+      "definition": "short",
+      "example": "The meeting was brief.",
+      "exampleMark": "brief",
+      "picture": "practice/data/classroom-vocabulary/media/5378da4b71db5def31763e6a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/39b98485b7b1d37f5b0ba87d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/28038cce7c3f7490b775913a.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-92efd0d19",
+      "term": "ceremony",
+      "pos": "(n)",
+      "ipa": "/sˈɛrɪmənɪ/",
+      "definition": "a formal event with special traditions, activities or words, such as a wedding",
+      "example": "The ceremony celebrates an important birthday.",
+      "exampleMark": "ceremony",
+      "picture": "practice/data/classroom-vocabulary/media/4a4778225933a0a19c69e751.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3bbfe95557ff322b10bfc1b1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fd500629c044f93a8ee25f66.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-eb27a3239",
+      "term": "certain",
+      "pos": "(adj)",
+      "ipa": "/sˈɜːtən/",
+      "definition": "used to refer to a particular person or thing without naming or describing them",
+      "example": "There are certain details that we cannot share until the report is published.",
+      "exampleMark": "certain",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/28af5d630e9790e2ea6e729f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b305c8815457d4296854898e.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-94c8c21d0",
+      "term": "common",
+      "pos": "(adj)",
+      "ipa": "/kˈɒmən/",
+      "definition": "happening often or existing in large numbers",
+      "example": "Squirrels are common in this forest.",
+      "exampleMark": "common",
+      "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/599bdf1d574dd762419d5216.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/73eefb09a6b0d5773ce0d96c.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-8f2e7cd78",
+      "term": "culture",
+      "pos": "(n)",
+      "ipa": "/kˈʌltʃɐ/",
+      "definition": "the way of life, especially customs and beliefs, of a group of people",
+      "example": "Learning about a culture takes time.",
+      "exampleMark": "culture",
+      "picture": "practice/data/classroom-vocabulary/media/c1ad3506f6228782261bb261.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d60ef874f57bd1f7af47df9a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/adc26c096b189d5084d1bcbe.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-a3497f3e4",
+      "term": "exchange",
+      "pos": "(v)",
+      "ipa": "/ɪkstʃˈeɪndʒ/",
+      "definition": "to give something to someone, and receive something that they give you",
+      "example": "They exchange business cards.",
+      "exampleMark": "exchange",
+      "picture": "practice/data/classroom-vocabulary/media/60371ffc5c2c4080b53c1e4c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d8650abc26915ec3424e7e6a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e1c4c42ed4e27ef0cd575854.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-ff93c451a",
+      "term": "expect",
+      "pos": "(v)",
+      "ipa": "/ɪkspˈɛkt/",
+      "definition": "to think that something will or should happen",
+      "example": "What do you expect to happen?",
+      "exampleMark": "expect",
+      "picture": "practice/data/classroom-vocabulary/media/2a71759ce7cc10678c0b7a31.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ce924bda313e67a4ea17276d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1c20e2e3a65b3ef61375b735.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-6e69a85ca",
+      "term": "formal",
+      "pos": "(adj)",
+      "ipa": "/fˈɔːməl/",
+      "definition": "(of clothes, behaviour or language) serious or very polite",
+      "example": "They tend to be quite formal, so don't stand too close.",
+      "exampleMark": "formal",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/176b606376d0a67a336b0ea7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1c188f452060415ad5ebdae1.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-35ff71782",
+      "term": "greet",
+      "pos": "(v)",
+      "ipa": "/ɡrˈiːt/",
+      "definition": "to welcome someone with particular words or actions",
+      "example": "Therefore, it is important to greet the oldest or the most senior person first.",
+      "exampleMark": "greet",
+      "picture": "practice/data/classroom-vocabulary/media/57fefb511e859cc870661099.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b085bc08019300101c35d727.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dd16b3ddf5f63998689165c6.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-f2104f952",
+      "term": "huge",
+      "pos": "(adj)",
+      "ipa": "/hjˈuːdʒ/",
+      "definition": "extremely large in size or amount",
+      "example": "A huge crowd filled the square for the concert.",
+      "exampleMark": "huge",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f35812a1a9f7af00166d1cfb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c562e6290a3c5b145ffb99f2.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-e3ff2d9f2",
+      "term": "obvious",
+      "pos": "(adj)",
+      "ipa": "/ˈɒbviəs/",
+      "definition": "easy to understand or see",
+      "example": "It was obvious from the broken window that someone had entered.",
+      "exampleMark": "obvious",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2cfc667e56a2b5f0196d8db1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9ae82a398d21cd58a14a3f5f.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-6a73a9121",
+      "term": "relationship",
+      "pos": "(n)",
+      "ipa": "/rɪlˈeɪʃənʃˌɪp/",
+      "definition": "the way two people or groups feel and behave towards each other",
+      "example": "The grandmother and granddaughter have a close relationship.",
+      "exampleMark": "relationship",
+      "picture": "practice/data/classroom-vocabulary/media/c58b2366bb0195067cae537b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fcf978de49c3832fb74c733b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0f4ab2c9eed83ab4d46be8f8.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-afddd76fc",
+      "term": "separate",
+      "pos": "(adj)",
+      "ipa": "/sˈɛprət/",
+      "definition": "not joined or touching anything else",
+      "example": "The two classes work in separate rooms.",
+      "exampleMark": "separate",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5f3142825249df826fe54631.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f19bf759da25cde96272475b.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-2b3348185",
+      "term": "serious",
+      "pos": "(adj)",
+      "ipa": "/sˈiərɪəs/",
+      "definition": "a serious problem or situation is bad and makes people worry",
+      "example": "The heavy rain caused a serious problem for farmers.",
+      "exampleMark": "serious",
+      "picture": "practice/data/classroom-vocabulary/media/c01a626909294f8c95aa85b0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0247fb82ad74550d382f3320.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0286847834b7c343761f0245.mp3"
+    },
+    {
+      "id": "B03-RW-U04-W-56d99310d",
+      "term": "tradition",
+      "pos": "(n)",
+      "ipa": "/trɐdˈɪʃən/",
+      "definition": "a belief or way of acting that people in a particular society or group have continued to follow for a long time",
+      "example": "The festival is an old tradition.",
+      "exampleMark": "tradition",
+      "picture": "practice/data/classroom-vocabulary/media/a07d654c2c401e5a00a873d0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/56cb8bd019841d90482de291.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/64a044541591f303718f8e67.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/a6379eeb5a2fded63404827e.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/8174a858ce1fa435aac31a2e.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/4a4778225933a0a19c69e751.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/5378da4b71db5def31763e6a.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-85a7b4e8d",
+          "prompt": "Clothes can affect a person's appearance.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U04-W-4163f6900",
+          "prompt": "Her belief that practice improves performance encouraged her to train every day.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U04-W-57c8ddb09",
+          "prompt": "The meeting was brief.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U04-W-92efd0d19",
+          "prompt": "The ceremony celebrates an important birthday.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c1ad3506f6228782261bb261.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/60371ffc5c2c4080b53c1e4c.webp"
+        },
+        {
+          "key": "C",
+          "text": "used to refer to a particular person or thing without naming or describing them"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-eb27a3239",
+          "prompt": "There are certain details that we cannot share until the report is published.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U04-W-94c8c21d0",
+          "prompt": "Squirrels are common in this forest.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U04-W-8f2e7cd78",
+          "prompt": "Learning about a culture takes time.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U04-W-a3497f3e4",
+          "prompt": "They exchange business cards.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "(of clothes, behaviour or language) serious or very polite"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/57fefb511e859cc870661099.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2a71759ce7cc10678c0b7a31.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-ff93c451a",
+          "prompt": "What do you expect to happen?",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U04-W-6e69a85ca",
+          "prompt": "They tend to be quite formal, so don't stand too close.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U04-W-35ff71782",
+          "prompt": "Therefore, it is important to greet the oldest or the most senior person first.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c58b2366bb0195067cae537b.webp"
+        },
+        {
+          "key": "B",
+          "text": "easy to understand or see"
+        },
+        {
+          "key": "C",
+          "text": "extremely large in size or amount"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-f2104f952",
+          "prompt": "A huge crowd filled the square for the concert.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U04-W-e3ff2d9f2",
+          "prompt": "It was obvious from the broken window that someone had entered.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U04-W-6a73a9121",
+          "prompt": "The grandmother and granddaughter have a close relationship.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "not joined or touching anything else"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/a07d654c2c401e5a00a873d0.webp"
+        },
+        {
+          "key": "C",
+          "text": "a serious problem or situation is bad and makes people worry"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-afddd76fc",
+          "prompt": "The two classes work in separate rooms.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U04-W-2b3348185",
+          "prompt": "The heavy rain caused a serious problem for farmers.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U04-W-56d99310d",
+          "prompt": "The festival is an old tradition.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "appearance",
+        "common",
+        "ceremony",
+        "belief",
+        "brief",
+        "certain"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-85a7b4e8d",
+          "before": "Clothes can affect a person's ",
+          "after": ".",
+          "answer": "appearance"
+        },
+        {
+          "id": "B03-RW-U04-W-4163f6900",
+          "before": "Her ",
+          "after": " that practice improves performance encouraged her to train every day.",
+          "answer": "belief"
+        },
+        {
+          "id": "B03-RW-U04-W-57c8ddb09",
+          "before": "The meeting was ",
+          "after": ".",
+          "answer": "brief"
+        },
+        {
+          "id": "B03-RW-U04-W-92efd0d19",
+          "before": "The ",
+          "after": " celebrates an important birthday.",
+          "answer": "ceremony"
+        },
+        {
+          "id": "B03-RW-U04-W-eb27a3239",
+          "before": "There are ",
+          "after": " details that we cannot share until the report is published.",
+          "answer": "certain"
+        },
+        {
+          "id": "B03-RW-U04-W-94c8c21d0",
+          "before": "Squirrels are ",
+          "after": " in this forest.",
+          "answer": "common"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "expect",
+        "formal",
+        "huge",
+        "culture",
+        "exchange",
+        "greet"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-8f2e7cd78",
+          "before": "Learning about a ",
+          "after": " takes time.",
+          "answer": "culture"
+        },
+        {
+          "id": "B03-RW-U04-W-a3497f3e4",
+          "before": "They ",
+          "after": " business cards.",
+          "answer": "exchange"
+        },
+        {
+          "id": "B03-RW-U04-W-ff93c451a",
+          "before": "What do you ",
+          "after": " to happen?",
+          "answer": "expect"
+        },
+        {
+          "id": "B03-RW-U04-W-6e69a85ca",
+          "before": "They tend to be quite ",
+          "after": ", so don't stand too close.",
+          "answer": "formal"
+        },
+        {
+          "id": "B03-RW-U04-W-35ff71782",
+          "before": "Therefore, it is important to ",
+          "after": " the oldest or the most senior person first.",
+          "answer": "greet"
+        },
+        {
+          "id": "B03-RW-U04-W-f2104f952",
+          "before": "A ",
+          "after": " crowd filled the square for the concert.",
+          "answer": "huge"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "obvious",
+        "serious",
+        "relationship",
+        "tradition",
+        "separate"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U04-W-e3ff2d9f2",
+          "before": "It was ",
+          "after": " from the broken window that someone had entered.",
+          "answer": "obvious"
+        },
+        {
+          "id": "B03-RW-U04-W-6a73a9121",
+          "before": "The grandmother and granddaughter have a close ",
+          "after": ".",
+          "answer": "relationship"
+        },
+        {
+          "id": "B03-RW-U04-W-afddd76fc",
+          "before": "The two classes work in ",
+          "after": " rooms.",
+          "answer": "separate"
+        },
+        {
+          "id": "B03-RW-U04-W-2b3348185",
+          "before": "The heavy rain caused a ",
+          "after": " problem for farmers.",
+          "answer": "serious"
+        },
+        {
+          "id": "B03-RW-U04-W-56d99310d",
+          "before": "The festival is an old ",
+          "after": ".",
+          "answer": "tradition"
+        }
+      ]
+    }
+  ]
+}

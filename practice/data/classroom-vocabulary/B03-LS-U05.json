@@ -1,0 +1,746 @@
+{
+  "unitId": "B3U05",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U05",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U05-W-75bb26bc4",
+      "term": "come down with",
+      "pos": "(phr v)",
+      "ipa": "/kˈʌm dˈaʊn wɪð/",
+      "definition": "to get an illness, especially one which is not serious",
+      "example": "People sometimes come down with a cold after a busy week.",
+      "exampleMark": "come down with",
+      "picture": "practice/data/classroom-vocabulary/media/fd4e8b2f652a0407f9b4b221.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ea194331737c4f614ecc25d4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3a944ad7dcca554318309950.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-5f5835513",
+      "term": "cultural",
+      "pos": "(adj)",
+      "ipa": "/kˈʌltʃərəl/",
+      "definition": "relating to the habits, traditions and beliefs of a society",
+      "example": "The trip is a cultural experience.",
+      "exampleMark": "cultural",
+      "picture": "practice/data/classroom-vocabulary/media/24f8e73a792d4c819af3286d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0dd90a9fad505b484d39feee.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/33eee44e863a4bf18ced1a1e.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-70361f815",
+      "term": "cut down on",
+      "pos": "(phr v)",
+      "ipa": "/kˈʌt dˌaʊn ˈɒn/",
+      "definition": "to eat or drink less of something",
+      "example": "I want to cut down on sugary drinks.",
+      "exampleMark": "cut down on",
+      "picture": "practice/data/classroom-vocabulary/media/d939d1c5a7eeed89e2cedd7d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3a3bf5bff7f929da5112c609.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8b5d5d8ce55ff5acdc4ed3ab.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-00d2b766e",
+      "term": "educational",
+      "pos": "(adj)",
+      "ipa": "/ˌɛdʒuːkˈeɪʃənəl/",
+      "definition": "relating to learning",
+      "example": "Culture Cycle is a new concept in travel, educational fitness touring.",
+      "exampleMark": "educational",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/160019688b4d2938d47c8b53.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/93bbcc906092c3da177e262f.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-a62089c71",
+      "term": "emotional",
+      "pos": "(adj)",
+      "ipa": "/ɪmˈəʊʃənəl/",
+      "definition": "relating to feelings",
+      "example": "The film led to an emotional discussion about how the characters felt.",
+      "exampleMark": "emotional",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/37ca5b76950e42976fab3426.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/708e3035058747b1d860c60a.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-33524c3c4",
+      "term": "get over",
+      "pos": "(phr v)",
+      "ipa": "/ɡɛt ˈəʊvɐ/",
+      "definition": "to become healthy again after having an illness",
+      "example": "It took him a week to get over the flu.",
+      "exampleMark": "get over",
+      "picture": "practice/data/classroom-vocabulary/media/c39ca3dd8c16c734399d9b53.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1203b26b1317455945ebcb57.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5be387bbda5137412361a71c.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-54ceacd5d",
+      "term": "give up",
+      "pos": "(phr v)",
+      "ipa": "/ɡˈɪv ˈʌp/",
+      "definition": "to stop a habit, often because it is unhealthy",
+      "example": "Of course, I'm not going to give up exercising or start eating fast food every day.",
+      "exampleMark": "give up",
+      "picture": "practice/data/classroom-vocabulary/media/f501d1e5f602c328334f2eb1.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/317bba37827596cfbc21ec50.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f59ce7ac2d4968433b26018a.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-3800515d4",
+      "term": "habit",
+      "pos": "(n)",
+      "ipa": "/hˈæbɪt/",
+      "definition": "something which you do regularly",
+      "example": "Wearing a helmet is a good habit.",
+      "exampleMark": "habit",
+      "picture": "practice/data/classroom-vocabulary/media/2b397250e46df6008864b5bf.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/dc9de01ffc970e64aa482e90.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/31e5412536274653a812b031.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-8ff90d83c",
+      "term": "illness",
+      "pos": "(n)",
+      "ipa": "/ˈɪlnəs/",
+      "definition": "a disease of the body or mind",
+      "example": "She missed class because of an illness.",
+      "exampleMark": "illness",
+      "picture": "practice/data/classroom-vocabulary/media/1074a6a4cef15179a4289844.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/882ff16ec5e5449c1f32c6e8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8148ca6b0169b3d88b4a1b1e.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-12c175076",
+      "term": "in shape",
+      "pos": "(adj)",
+      "ipa": "/ɪn ʃˈeɪp/",
+      "definition": "physically fit, strong and healthy",
+      "example": "He exercises to stay in shape.",
+      "exampleMark": "in shape",
+      "picture": "practice/data/classroom-vocabulary/media/50baf4d71e11b0206399287d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/69a1d583245d7bb151f860e2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fb8ff22ca913ab402481c983.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-3c29719b2",
+      "term": "intellectual",
+      "pos": "(adj)",
+      "ipa": "/ˌɪntəlˈɛktʃuːəl/",
+      "definition": "relating to your ability to think and understand things, especially complicated ideas",
+      "example": "Would you like to improve your social life, your intellectual performance, your physical fitness and your team building skills?",
+      "exampleMark": "intellectual",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5eb1365d099c02091146b7aa.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/57bb6c6ff3fc59f1306e8ab8.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-5e8aa7184",
+      "term": "join in",
+      "pos": "(phr v)",
+      "ipa": "/dʒˈɔɪn ˈɪn/",
+      "definition": "to agree to become involved in an organized activity",
+      "example": "Would you like to join in the game?",
+      "exampleMark": "join in",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8d0c819a04126873d992fff3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bbf60bea215f2bf8995341ce.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-953e285ae",
+      "term": "overweight",
+      "pos": "(adj)",
+      "ipa": "/ˌəʊvəwˈeɪt/",
+      "definition": "being heavier than you want or than is good for you",
+      "example": "The doctor advises a child who is overweight.",
+      "exampleMark": "overweight",
+      "picture": "practice/data/classroom-vocabulary/media/46467751f3cf0163ad90f6b9.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/abd96e20af75f45bd9042c5f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c10aa38274cbe716660b129a.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-db69db5fb",
+      "term": "personal",
+      "pos": "(adj)",
+      "ipa": "/pˈɜːsənəl/",
+      "definition": "relating to a single person rather than to a group",
+      "example": "She works with a personal tutor.",
+      "exampleMark": "personal",
+      "picture": "practice/data/classroom-vocabulary/media/dc9472da139415ba6499f836.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0af7bc1a14ba73316e476d6c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5dc68e0eabbf9b30306c96d4.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-aa8d71087",
+      "term": "physical",
+      "pos": "(adj)",
+      "ipa": "/fˈɪzɪkəl/",
+      "definition": "relating to the body",
+      "example": "Whether you are looking for physical well -being, increased confidence or a life with less stress, Black Belt Taekwondo has it all.",
+      "exampleMark": "physical",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e923385c643ebb9d7c7770d2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6ab432529c9792104475c31c.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-82ffc9435",
+      "term": "prove",
+      "pos": "(v)",
+      "ipa": "/prˈuːv/",
+      "definition": "to show that something is true",
+      "example": "One example cannot prove a general rule.",
+      "exampleMark": "prove",
+      "picture": "practice/data/classroom-vocabulary/media/3e82d1b4829fcdadf3932c20.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b862c75dd16a9e26ab577a09.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e4285a0dd6150a2f68182801.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-63bb094ca",
+      "term": "relax",
+      "pos": "(v)",
+      "ipa": "/rɪlˈæks/",
+      "definition": "to become less tense or worried",
+      "example": "I relax by listening to music.",
+      "exampleMark": "relax",
+      "picture": "practice/data/classroom-vocabulary/media/66568d3dd65918893f1ddcd5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6efb8b5f45dfa89fdf59e389.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6d02803f48860e8b993d2898.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-7da7b5f7e",
+      "term": "ridiculous",
+      "pos": "(adj)",
+      "ipa": "/rɪdˈɪkjʊləs/",
+      "definition": "stupid or unbelievable and deserving to be laughed at",
+      "example": "That is a ridiculous excuse.",
+      "exampleMark": "ridiculous",
+      "picture": "practice/data/classroom-vocabulary/media/fcc9a0f237d8e1c2a649dd01.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3ff9963b8bb40e0bbd9f921a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c6d48057918a049998c0d63e.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-143e77569",
+      "term": "sign up for",
+      "pos": "(phr v)",
+      "ipa": "/sˈaɪn ˈʌp fɔː/",
+      "definition": "to become involved in an activity with other people",
+      "example": "Students can sign up for the drama club on Monday.",
+      "exampleMark": "sign up for",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f11958125c1b8f82445b2a4a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/145b089924137da2eb1ab210.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-0dbe529c4",
+      "term": "social",
+      "pos": "(adj)",
+      "ipa": "/sˈəʊʃəl/",
+      "definition": "relating to activities in which you meet and spend time with other people",
+      "example": "Would you like to improve your social life, your intellectual performance, your physical fitness and your team building skills?",
+      "exampleMark": "social",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a373586f34b959539fa3eaeb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/57bb6c6ff3fc59f1306e8ab8.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-88cb257c7",
+      "term": "take up",
+      "pos": "(phr v)",
+      "ipa": "/tˈeɪk ˈʌp/",
+      "definition": "to start doing a particular job or activity",
+      "example": "Maybe I'll take up tennis.",
+      "exampleMark": "take up",
+      "picture": "practice/data/classroom-vocabulary/media/eaccc2b19d8be249f1c6578c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0a590f53b1445e558fbd661c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/012f83d14ed5345f3c060e26.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-25d6284a1",
+      "term": "try out for",
+      "pos": "(phr v)",
+      "ipa": "/trˈaɪ ˈaʊt fɔː/",
+      "definition": "to compete for a position on a sports team or a part in a play",
+      "example": "Tim is going to try out for the football team.",
+      "exampleMark": "try out for",
+      "picture": "practice/data/classroom-vocabulary/media/20254e795ed97bbf848cacc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/99e92f526ded8924f9ce238c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/25bb6d41a0ff61710824a772.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-72c567a45",
+      "term": "unhealthy",
+      "pos": "(adj)",
+      "ipa": "/ʌnhˈɛlθɪ/",
+      "definition": "not good for your health. not strong and well",
+      "example": "She wants to change an unhealthy habit.",
+      "exampleMark": "unhealthy",
+      "picture": "practice/data/classroom-vocabulary/media/553ccb0bf86b915073a376c2.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d85ccd62b86ccef3f8e33fee.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5fccda87677cf8e909b759c4.mp3"
+    },
+    {
+      "id": "B03-LS-U05-W-9031305dc",
+      "term": "work out",
+      "pos": "(phr v)",
+      "ipa": "/wˈɜːk ˈaʊt/",
+      "definition": "to exercise in order to make your body stronger",
+      "example": "They work out at the gym.",
+      "exampleMark": "work out",
+      "picture": "practice/data/classroom-vocabulary/media/cb9b4ce4804b0c2e7bf6d0e6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/71947d52ced651292a4d7b4e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f67303bab296f8cdb2c0dbcd.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/24f8e73a792d4c819af3286d.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/fd4e8b2f652a0407f9b4b221.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d939d1c5a7eeed89e2cedd7d.webp"
+        },
+        {
+          "key": "D",
+          "text": "relating to learning"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-75bb26bc4",
+          "prompt": "People sometimes come down with a cold after a busy week.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U05-W-5f5835513",
+          "prompt": "The trip is a cultural experience.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-70361f815",
+          "prompt": "I want to cut down on sugary drinks.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U05-W-00d2b766e",
+          "prompt": "Culture Cycle is a new concept in travel, educational fitness touring.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c39ca3dd8c16c734399d9b53.webp"
+        },
+        {
+          "key": "B",
+          "text": "relating to feelings"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2b397250e46df6008864b5bf.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/f501d1e5f602c328334f2eb1.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-a62089c71",
+          "prompt": "The film led to an emotional discussion about how the characters felt.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U05-W-33524c3c4",
+          "prompt": "It took him a week to get over the flu.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-54ceacd5d",
+          "prompt": "Of course, I'm not going to give up exercising or start eating fast food every day.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U05-W-3800515d4",
+          "prompt": "Wearing a helmet is a good habit.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/50baf4d71e11b0206399287d.webp"
+        },
+        {
+          "key": "B",
+          "text": "relating to your ability to think and understand things, especially complicated ideas"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/1074a6a4cef15179a4289844.webp"
+        },
+        {
+          "key": "D",
+          "text": "to agree to become involved in an organized activity"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-8ff90d83c",
+          "prompt": "She missed class because of an illness.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U05-W-12c175076",
+          "prompt": "He exercises to stay in shape.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-3c29719b2",
+          "prompt": "Would you like to improve your social life, your intellectual performance, your physical fitness and your team building skills?",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U05-W-5e8aa7184",
+          "prompt": "Would you like to join in the game?",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/46467751f3cf0163ad90f6b9.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/dc9472da139415ba6499f836.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/3e82d1b4829fcdadf3932c20.webp"
+        },
+        {
+          "key": "D",
+          "text": "relating to the body"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-953e285ae",
+          "prompt": "The doctor advises a child who is overweight.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-db69db5fb",
+          "prompt": "She works with a personal tutor.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U05-W-aa8d71087",
+          "prompt": "Whether you are looking for physical well -being, increased confidence or a life with less stress, Black Belt Taekwondo has it all.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U05-W-82ffc9435",
+          "prompt": "One example cannot prove a general rule.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to become involved in an activity with other people"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/66568d3dd65918893f1ddcd5.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/fcc9a0f237d8e1c2a649dd01.webp"
+        },
+        {
+          "key": "D",
+          "text": "relating to activities in which you meet and spend time with other people"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-63bb094ca",
+          "prompt": "I relax by listening to music.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U05-W-7da7b5f7e",
+          "prompt": "That is a ridiculous excuse.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U05-W-143e77569",
+          "prompt": "Students can sign up for the drama club on Monday.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-0dbe529c4",
+          "prompt": "Would you like to improve your social life, your intellectual performance, your physical fitness and your team building skills?",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/eaccc2b19d8be249f1c6578c.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/cb9b4ce4804b0c2e7bf6d0e6.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/553ccb0bf86b915073a376c2.webp"
+        },
+        {
+          "key": "D",
+          "text": "to compete for a position on a sports team or a part in a play"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-88cb257c7",
+          "prompt": "Maybe I'll take up tennis.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U05-W-25d6284a1",
+          "prompt": "Tim is going to try out for the football team.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U05-W-72c567a45",
+          "prompt": "She wants to change an unhealthy habit.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U05-W-9031305dc",
+          "prompt": "They work out at the gym.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "educational",
+        "cultural",
+        "cut down on",
+        "emotional",
+        "come down with",
+        "get over"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-75bb26bc4",
+          "before": "People sometimes ",
+          "after": " a cold after a busy week.",
+          "answer": "come down with"
+        },
+        {
+          "id": "B03-LS-U05-W-5f5835513",
+          "before": "The trip is a ",
+          "after": " experience.",
+          "answer": "cultural"
+        },
+        {
+          "id": "B03-LS-U05-W-70361f815",
+          "before": "I want to ",
+          "after": " sugary drinks.",
+          "answer": "cut down on"
+        },
+        {
+          "id": "B03-LS-U05-W-00d2b766e",
+          "before": "Culture Cycle is a new concept in travel, ",
+          "after": " fitness touring.",
+          "answer": "educational"
+        },
+        {
+          "id": "B03-LS-U05-W-a62089c71",
+          "before": "The film led to an ",
+          "after": " discussion about how the characters felt.",
+          "answer": "emotional"
+        },
+        {
+          "id": "B03-LS-U05-W-33524c3c4",
+          "before": "It took him a week to ",
+          "after": " the flu.",
+          "answer": "get over"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "habit",
+        "join in",
+        "give up",
+        "in shape",
+        "intellectual",
+        "illness"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-54ceacd5d",
+          "before": "Of course, I'm not going to ",
+          "after": " exercising or start eating fast food every day.",
+          "answer": "give up"
+        },
+        {
+          "id": "B03-LS-U05-W-3800515d4",
+          "before": "Wearing a helmet is a good ",
+          "after": ".",
+          "answer": "habit"
+        },
+        {
+          "id": "B03-LS-U05-W-8ff90d83c",
+          "before": "She missed class because of an ",
+          "after": ".",
+          "answer": "illness"
+        },
+        {
+          "id": "B03-LS-U05-W-12c175076",
+          "before": "He exercises to stay ",
+          "after": ".",
+          "answer": "in shape"
+        },
+        {
+          "id": "B03-LS-U05-W-3c29719b2",
+          "before": "Would you like to improve your social life, your ",
+          "after": " performance, your physical fitness and your team building skills?",
+          "answer": "intellectual"
+        },
+        {
+          "id": "B03-LS-U05-W-5e8aa7184",
+          "before": "Would you like to ",
+          "after": " the game?",
+          "answer": "join in"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "relax",
+        "prove",
+        "personal",
+        "ridiculous",
+        "overweight",
+        "physical"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-953e285ae",
+          "before": "The doctor advises a child who is ",
+          "after": ".",
+          "answer": "overweight"
+        },
+        {
+          "id": "B03-LS-U05-W-db69db5fb",
+          "before": "She works with a ",
+          "after": " tutor.",
+          "answer": "personal"
+        },
+        {
+          "id": "B03-LS-U05-W-aa8d71087",
+          "before": "Whether you are looking for ",
+          "after": " well -being, increased confidence or a life with less stress, Black Belt Taekwondo has it all.",
+          "answer": "physical"
+        },
+        {
+          "id": "B03-LS-U05-W-82ffc9435",
+          "before": "One example cannot ",
+          "after": " a general rule.",
+          "answer": "prove"
+        },
+        {
+          "id": "B03-LS-U05-W-63bb094ca",
+          "before": "I ",
+          "after": " by listening to music.",
+          "answer": "relax"
+        },
+        {
+          "id": "B03-LS-U05-W-7da7b5f7e",
+          "before": "That is a ",
+          "after": " excuse.",
+          "answer": "ridiculous"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "try out for",
+        "work out",
+        "social",
+        "sign up for",
+        "take up",
+        "unhealthy"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U05-W-143e77569",
+          "before": "Students can ",
+          "after": " the drama club on Monday.",
+          "answer": "sign up for"
+        },
+        {
+          "id": "B03-LS-U05-W-0dbe529c4",
+          "before": "Would you like to improve your ",
+          "after": " life, your intellectual performance, your physical fitness and your team building skills?",
+          "answer": "social"
+        },
+        {
+          "id": "B03-LS-U05-W-88cb257c7",
+          "before": "Maybe I'll ",
+          "after": " tennis.",
+          "answer": "take up"
+        },
+        {
+          "id": "B03-LS-U05-W-25d6284a1",
+          "before": "Tim is going to ",
+          "after": " the football team.",
+          "answer": "try out for"
+        },
+        {
+          "id": "B03-LS-U05-W-72c567a45",
+          "before": "She wants to change an ",
+          "after": " habit.",
+          "answer": "unhealthy"
+        },
+        {
+          "id": "B03-LS-U05-W-9031305dc",
+          "before": "They ",
+          "after": " at the gym.",
+          "answer": "work out"
+        }
+      ]
+    }
+  ]
+}

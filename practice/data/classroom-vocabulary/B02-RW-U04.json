@@ -1,0 +1,504 @@
+{
+  "unitId": "B2U04",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U04",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U04-W-f9e2ef61d",
+      "term": "almost",
+      "pos": "(adv)",
+      "ipa": "/ˈɔːlməʊst/",
+      "definition": "not everything, but very close to it",
+      "example": "It gets almost 12 ,000 millimeters, about 470 inches of rain each year.",
+      "exampleMark": "almost",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/24cc80c4bf89ac3141493745.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ac30b45accfe73263478abf0.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-7c41bee11",
+      "term": "careful",
+      "pos": "(adj)",
+      "ipa": "/kˈeəfəl/",
+      "definition": "paying attention to what you do so that you do not have an accident, make a mistake or damage something",
+      "example": "We'll need to be careful on the way to school.",
+      "exampleMark": "careful",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9630aa7ebaba96ef90566f85.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7a6b39f3079c96758a694baf.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-a28100fa6",
+      "term": "cover",
+      "pos": "(v)",
+      "ipa": "/kˈʌvɐ/",
+      "definition": "to lie, or place, on the surface of something",
+      "example": "During the day, cover your body, head, and face.",
+      "exampleMark": "cover",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/cbc7f8b0d6d4e2066ac7dec2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e88bd5ab41b3c4f42fdc3cb4.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-6e6ec3a65",
+      "term": "dangerous",
+      "pos": "(adj)",
+      "ipa": "/dˈeɪndʒərəs/",
+      "definition": "can harm or hurt somebody or something",
+      "example": "Landslides are dangerous because they can badly damage buildings or even whole villages.",
+      "exampleMark": "dangerous",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2ecb4cae5c01f884ebf2e884.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3214f4bdef4985969fd09ee0.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-110dd32f9",
+      "term": "decrease",
+      "pos": "(n, v)",
+      "ipa": "/dˈiːkriːs/",
+      "definition": "动词指减少或降低。名词指一次减少或减少的幅度。",
+      "example": "Increase and decrease are also verbs.",
+      "exampleMark": "decrease",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2827a166e24e5358e47ca572.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/182c80b18abda44dbf153264.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-aa20c3bf5",
+      "term": "drop",
+      "pos": "(v)",
+      "ipa": "/drˈɒp/",
+      "definition": "to decrease. to fall or go down",
+      "example": "Temperatures drop at night.",
+      "exampleMark": "drop",
+      "picture": "practice/data/classroom-vocabulary/media/83fef9afcdd375e73ad654c0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c681f1fe4024cf49bd651264.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a7348fee82719ad0da9c2b63.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-c52888225",
+      "term": "fall",
+      "pos": "(v)",
+      "ipa": "/fˈɔːl/",
+      "definition": "to become less in number or amount",
+      "example": "The coldest time is at four a .m. when temperatures fall to minus one degree centigrade.",
+      "exampleMark": "fall",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/074f5f7a2c52b8d7cb1b87bf.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f6be0f777358b9973eee99f3.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-f2104f952",
+      "term": "huge",
+      "pos": "(adj)",
+      "ipa": "/hjˈuːdʒ/",
+      "definition": "extremely large in size or amount",
+      "example": "Last night there was a huge storm!",
+      "exampleMark": "huge",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f35812a1a9f7af00166d1cfb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/21047d6a21ba287f2f6884d4.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-f9c9758ad",
+      "term": "increase",
+      "pos": "(n, v)",
+      "ipa": "/ˈɪŋkriːs/",
+      "definition": "动词指增加。名词指一次增加或增加的幅度。",
+      "example": "Increase and decrease are also verbs.",
+      "exampleMark": "Increase",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2c5e362bfd0a1a42c92cb1fc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/182c80b18abda44dbf153264.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-213ed3ea4",
+      "term": "last",
+      "pos": "(v)",
+      "ipa": "/lˈɑːst/",
+      "definition": "to continue for a period of time",
+      "example": "The rain can last for several days.",
+      "exampleMark": "last",
+      "picture": "practice/data/classroom-vocabulary/media/806bcae5be3017dfec555b27.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/35e3e050a86a07f147a43de8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5dc6a861f334209d905adcee.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-71f497789",
+      "term": "lightning",
+      "pos": "(n)",
+      "ipa": "/lˈaɪtnɪŋ/",
+      "definition": "a flash of bright light in the sky during a storm",
+      "example": "We saw lightning during the storm.",
+      "exampleMark": "lightning",
+      "picture": "practice/data/classroom-vocabulary/media/28f6c00d4776cf1a82d24254.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/cefae1dd501be6f98dbfc8c9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/44b1c233e3bd0c1f43d22437.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-e77a31599",
+      "term": "maximum",
+      "pos": "(adj)",
+      "ipa": "/mˈæksɪməm/",
+      "definition": "The maximum amount of something is the largest amount that is allowed or possible.",
+      "example": "The maximum number of passengers on this bus is sixty.",
+      "exampleMark": "maximum",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f65ef9140255530076bb0d30.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/74cf59bd108854a41d38eded.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-bd164fdac",
+      "term": "minimum",
+      "pos": "(adj)",
+      "ipa": "/mˈɪnɪməm/",
+      "definition": "The minimum amount of something is the smallest amount that is allowed or possible.",
+      "example": "The minimum age to join the class is twelve.",
+      "exampleMark": "minimum",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/04d7c531f67eedb4dc8c2802.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ba815ae4c30e8b0e7191254e.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-baff1506c",
+      "term": "reach",
+      "pos": "(v)",
+      "ipa": "/rˈiːtʃ/",
+      "definition": "to arrive somewhere or to get to a particular point",
+      "example": "We should reach the station just before noon.",
+      "exampleMark": "reach",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b9783cf92b807fd8cff9157a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/22134bd2702f58c8816bbc66.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-e5edb94ec",
+      "term": "rise",
+      "pos": "(v)",
+      "ipa": "/rˈaɪz/",
+      "definition": "to increase. to go up",
+      "example": "During the day, the hottest time is between two p .m. and four p .m. when temperatures rise to 33 degrees centigrade.",
+      "exampleMark": "rise",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/639e86f07465878272c5a66d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/316108a8513a926bb7e06fe2.mp3"
+    },
+    {
+      "id": "B02-RW-U04-W-badcfa3c6",
+      "term": "thunder",
+      "pos": "(n)",
+      "ipa": "/θˈʌndɐ/",
+      "definition": "the sudden loud noise that comes after a flash of lightning",
+      "example": "Thunder and lightning can damage electricity cables and stop the power supply.",
+      "exampleMark": "Thunder",
+      "picture": "practice/data/classroom-vocabulary/media/0467b84da5652b52e75292f6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c7b8185692b39d74d2ad707c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/173d236aef410c937862fe9c.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "not everything, but very close to it"
+        },
+        {
+          "key": "B",
+          "text": "paying attention to what you do so that you do not have an accident, make a mistake or damage something"
+        },
+        {
+          "key": "C",
+          "text": "can harm or hurt somebody or something"
+        },
+        {
+          "key": "D",
+          "text": "to lie, or place, on the surface of something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-f9e2ef61d",
+          "prompt": "It gets almost 12 ,000 millimeters, about 470 inches of rain each year.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U04-W-7c41bee11",
+          "prompt": "We'll need to be careful on the way to school.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U04-W-a28100fa6",
+          "prompt": "During the day, cover your body, head, and face.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U04-W-6e6ec3a65",
+          "prompt": "Landslides are dangerous because they can badly damage buildings or even whole villages.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "动词指减少或降低。名词指一次减少或减少的幅度。"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/83fef9afcdd375e73ad654c0.webp"
+        },
+        {
+          "key": "C",
+          "text": "extremely large in size or amount"
+        },
+        {
+          "key": "D",
+          "text": "to become less in number or amount"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-110dd32f9",
+          "prompt": "Increase and decrease are also verbs.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U04-W-aa20c3bf5",
+          "prompt": "Temperatures drop at night.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U04-W-c52888225",
+          "prompt": "The coldest time is at four a .m. when temperatures fall to minus one degree centigrade.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U04-W-f2104f952",
+          "prompt": "Last night there was a huge storm!",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "The maximum amount of something is the largest amount that is allowed or possible."
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/806bcae5be3017dfec555b27.webp"
+        },
+        {
+          "key": "C",
+          "text": "动词指增加。名词指一次增加或增加的幅度。"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/28f6c00d4776cf1a82d24254.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-f9c9758ad",
+          "prompt": "Increase and decrease are also verbs.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U04-W-213ed3ea4",
+          "prompt": "The rain can last for several days.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U04-W-71f497789",
+          "prompt": "We saw lightning during the storm.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U04-W-e77a31599",
+          "prompt": "The maximum number of passengers on this bus is sixty.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "The minimum amount of something is the smallest amount that is allowed or possible."
+        },
+        {
+          "key": "B",
+          "text": "the sudden loud noise that comes after a flash of lightning"
+        },
+        {
+          "key": "C",
+          "text": "to arrive somewhere or to get to a particular point"
+        },
+        {
+          "key": "D",
+          "text": "to increase. to go up"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-bd164fdac",
+          "prompt": "The minimum age to join the class is twelve.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U04-W-baff1506c",
+          "prompt": "We should reach the station just before noon.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U04-W-e5edb94ec",
+          "prompt": "During the day, the hottest time is between two p .m. and four p .m. when temperatures rise to 33 degrees centigrade.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U04-W-badcfa3c6",
+          "prompt": "Thunder and lightning can damage electricity cables and stop the power supply.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "cover",
+        "dangerous",
+        "drop",
+        "decrease",
+        "careful",
+        "almost"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-f9e2ef61d",
+          "before": "It gets ",
+          "after": " 12 ,000 millimeters, about 470 inches of rain each year.",
+          "answer": "almost"
+        },
+        {
+          "id": "B02-RW-U04-W-7c41bee11",
+          "before": "We'll need to be ",
+          "after": " on the way to school.",
+          "answer": "careful"
+        },
+        {
+          "id": "B02-RW-U04-W-a28100fa6",
+          "before": "During the day, ",
+          "after": " your body, head, and face.",
+          "answer": "cover"
+        },
+        {
+          "id": "B02-RW-U04-W-6e6ec3a65",
+          "before": "Landslides are ",
+          "after": " because they can badly damage buildings or even whole villages.",
+          "answer": "dangerous"
+        },
+        {
+          "id": "B02-RW-U04-W-110dd32f9",
+          "before": "Increase and ",
+          "after": " are also verbs.",
+          "answer": "decrease"
+        },
+        {
+          "id": "B02-RW-U04-W-aa20c3bf5",
+          "before": "Temperatures ",
+          "after": " at night.",
+          "answer": "drop"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "huge",
+        "lightning",
+        "fall",
+        "last",
+        "Increase"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-c52888225",
+          "before": "The coldest time is at four a .m. when temperatures ",
+          "after": " to minus one degree centigrade.",
+          "answer": "fall"
+        },
+        {
+          "id": "B02-RW-U04-W-f2104f952",
+          "before": "Last night there was a ",
+          "after": " storm!",
+          "answer": "huge"
+        },
+        {
+          "id": "B02-RW-U04-W-f9c9758ad",
+          "before": "",
+          "after": " and decrease are also verbs.",
+          "answer": "Increase"
+        },
+        {
+          "id": "B02-RW-U04-W-213ed3ea4",
+          "before": "The rain can ",
+          "after": " for several days.",
+          "answer": "last"
+        },
+        {
+          "id": "B02-RW-U04-W-71f497789",
+          "before": "We saw ",
+          "after": " during the storm.",
+          "answer": "lightning"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "Thunder",
+        "maximum",
+        "reach",
+        "minimum",
+        "rise"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U04-W-e77a31599",
+          "before": "The ",
+          "after": " number of passengers on this bus is sixty.",
+          "answer": "maximum"
+        },
+        {
+          "id": "B02-RW-U04-W-bd164fdac",
+          "before": "The ",
+          "after": " age to join the class is twelve.",
+          "answer": "minimum"
+        },
+        {
+          "id": "B02-RW-U04-W-baff1506c",
+          "before": "We should ",
+          "after": " the station just before noon.",
+          "answer": "reach"
+        },
+        {
+          "id": "B02-RW-U04-W-e5edb94ec",
+          "before": "During the day, the hottest time is between two p .m. and four p .m. when temperatures ",
+          "after": " to 33 degrees centigrade.",
+          "answer": "rise"
+        },
+        {
+          "id": "B02-RW-U04-W-badcfa3c6",
+          "before": "",
+          "after": " and lightning can damage electricity cables and stop the power supply.",
+          "answer": "Thunder"
+        }
+      ]
+    }
+  ]
+}

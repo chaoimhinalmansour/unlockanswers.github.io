@@ -1,0 +1,648 @@
+{
+  "unitId": "B2U02",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U02",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U02-W-0bf417044",
+      "term": "activity",
+      "pos": "(n)",
+      "ipa": "/æktˈɪvɪtɪ/",
+      "definition": "something you do for enjoyment, especially an organized event",
+      "example": "It was an exciting activity.",
+      "exampleMark": "activity",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b536747f81ba57fcf1cb0026.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5a396b0b1bd104418622e474.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-5749570a4",
+      "term": "amazing",
+      "pos": "(adj)",
+      "ipa": "/ɐmˈeɪzɪŋ/",
+      "definition": "extremely surprising",
+      "example": "And the people of Harbin do something amazing with their frozen river.",
+      "exampleMark": "amazing",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d1245681d7c2efb83fbe8134.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d93e866ff63f2928e8aeac88.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-dd335b0dc",
+      "term": "attract",
+      "pos": "(v)",
+      "ipa": "/ɐtrˈækt/",
+      "definition": "(of people, things, places, etc.) to pull or draw somebody or something towards them, by the qualities they have, especially good ones",
+      "example": "The lights attract visitors to the festival at night.",
+      "exampleMark": "attract",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/23ad5bfa7c96ceb6d11daaf8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8cbff90c951feca127f1e2b2.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-fc05e0e4f",
+      "term": "celebrate",
+      "pos": "(v)",
+      "ipa": "/sˈɛləbrˌeɪt/",
+      "definition": "to do something fun because it is a special day or because something good has happened",
+      "example": "We celebrate the end of the school year.",
+      "exampleMark": "celebrate",
+      "picture": "practice/data/classroom-vocabulary/media/669752c5d23eab3335afb68e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3818b237eeb9756667be93e7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/cca2deed5c24f7e9972e0b9b.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-8f2e7cd78",
+      "term": "culture",
+      "pos": "(n)",
+      "ipa": "/kˈʌltʃɐ/",
+      "definition": "the habits and traditions of a country or group of people",
+      "example": "Nowadays, around the world, there are many festivals, often based on nature, food, or culture.",
+      "exampleMark": "culture",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d60ef874f57bd1f7af47df9a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b7ea60b54df5a63c464bc4bd.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-540e18149",
+      "term": "enjoy",
+      "pos": "(v)",
+      "ipa": "/ɪndʒˈɔɪ/",
+      "definition": "get pleasure from something",
+      "example": "Instead, people come to enjoy the cherry blossoms and have a picnic under the trees.",
+      "exampleMark": "enjoy",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/cee5a931bd5e446dde92fa34.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fdf1fce6c52106a8a3f84885.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-c32b941d4",
+      "term": "entertainment",
+      "pos": "(n)",
+      "ipa": "/ˌɛntətˈeɪnmənt/",
+      "definition": "shows, films, games or other ways of having fun",
+      "example": "The festival offers entertainment for families.",
+      "exampleMark": "entertainment",
+      "picture": "practice/data/classroom-vocabulary/media/d1021fe19c296758a43e3ce8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2a3fe76c0b2b3557cab0241c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c355ecb92e99f4e85e699c63.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-f11430899",
+      "term": "festival",
+      "pos": "(n)",
+      "ipa": "/fˈɛstɪvəl/",
+      "definition": "a special day or period with its own social activities, food or ceremonies",
+      "example": "Where do you think this festival is?",
+      "exampleMark": "festival",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/73529e57e6c49b6fd9b2858b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f6d71cb0890c04a2e35079ff.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-c405fd111",
+      "term": "frozen",
+      "pos": "(adj)",
+      "ipa": "/frˈəʊzən/",
+      "definition": "(of liquid) turned into ice",
+      "example": "Harbin's river, the Songhua, is completely frozen.",
+      "exampleMark": "frozen",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6de48fcaae7c62b769e9a4e4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6dc207eea05efd4e7b38c1b4.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-38840ba36",
+      "term": "go to an event",
+      "pos": "(phr)",
+      "ipa": "/ɡˌəʊ tʊ ɐn ɪvˈɛnt/",
+      "definition": "去参加一项活动。",
+      "example": "We plan to go to an event at the library this weekend.",
+      "exampleMark": "go to an event",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/45fc817efd1812ce75dbe1ac.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8759bdb2f49d7575606aa91a.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-410e64285",
+      "term": "go to a festival",
+      "pos": "(phr)",
+      "ipa": "/ɡˌəʊ tʊ ɐ fˈɛstɪvəl/",
+      "definition": "参加节庆活动。",
+      "example": "We often go to a festival to hear live music.",
+      "exampleMark": "go to a festival",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/31574f92ea31ce4c89251a7d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8b0854dd675597a654d3d04b.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-7104df65b",
+      "term": "have a celebration",
+      "pos": "(phr)",
+      "ipa": "/hæv ɐ sˌɛləbrˈeɪʃən/",
+      "definition": "to have a social event where a group of people meet to talk, eat, etc., often in order to celebrate a special occasion",
+      "example": "The town will have a celebration when the new park opens.",
+      "exampleMark": "have a celebration",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/20e0b79a1843004db42e3c95.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9d79b0240cacc7bd94b3cdd4.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-7d7fbab53",
+      "term": "have a nice time",
+      "pos": "(phr)",
+      "ipa": "/hæv ɐ nˈaɪs tˈaɪm/",
+      "definition": "to enjoy yourself",
+      "example": "I hope you have a nice time at the party.",
+      "exampleMark": "have a nice time",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/dc6b65418c3aad0fad2ae9cb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e76a92228cbf151acae5d1c0.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-e6ec394dc",
+      "term": "have a party",
+      "pos": "(phr)",
+      "ipa": "/hæv ɐ pˈɑːtɪ/",
+      "definition": "to have a social event where a group of people meet to talk, eat, etc., often in order to celebrate a special occasion",
+      "example": "They plan to have a party for their daughter's birthday.",
+      "exampleMark": "have a party",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3274da24063cfe67cf1cac75.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/930eb328aa891165cf808bf7.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-7061367e6",
+      "term": "have a problem",
+      "pos": "(phr)",
+      "ipa": "/hæv ɐ prˈɒbləm/",
+      "definition": "to be in a situation that needs to be dealt with or solved",
+      "example": "We have a problem because one of the tickets is missing.",
+      "exampleMark": "have a problem",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/950486432238225736beaa3f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/149c5622f7b60e134b801da2.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-eeb5dd491",
+      "term": "have fun",
+      "pos": "(phr)",
+      "ipa": "/hæv fˈʌn/",
+      "definition": "to enjoy yourself",
+      "example": "You can have fun at a car race and cheer for your favourite driver.",
+      "exampleMark": "have fun",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1717132e9ab91fda3da94b1b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/eee5beae2b95a94c01ea3665.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-af09e2fca",
+      "term": "lecture",
+      "pos": "(n)",
+      "ipa": "/lˈɛktʃɐ/",
+      "definition": "a formal talk about a subject",
+      "example": "We listened to a lecture about the sea.",
+      "exampleMark": "lecture",
+      "picture": "practice/data/classroom-vocabulary/media/df13f0e1c49a87c40f1e520d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c76d4b1336fbe51b60cffda5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/502f81ab7d13ee2ea2afa2df.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-3229225bb",
+      "term": "take care (of)",
+      "pos": "(phr)",
+      "ipa": "/tˈeɪk kˈeər ɒv/",
+      "definition": "to be in charge of somebody or something",
+      "example": "She will take care of our cat while we are away.",
+      "exampleMark": "take care of",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/cf8ab734e95e1766f48d9a23.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/36e55984da7423476569c905.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-bf5b4b253",
+      "term": "take part",
+      "pos": "(phr)",
+      "ipa": "/tˈeɪk pˈɑːt/",
+      "definition": "to be involved in an activity with other people",
+      "example": "All the students can take part in the school play.",
+      "exampleMark": "take part",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/bb5ebb2835c75d0bc1a2f147.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0b11298dc72359b4f98f1a8f.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-19e57fb7f",
+      "term": "take place",
+      "pos": "(phr)",
+      "ipa": "/tˈeɪk plˈeɪs/",
+      "definition": "to happen",
+      "example": "The race will take place on Sunday.",
+      "exampleMark": "take place",
+      "picture": "practice/data/classroom-vocabulary/media/00996c4ae11c58f958c35079.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/15d6814b787a9ba654fde318.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b2a14b539c200f57d2fa6f3a.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-bea0ee78c",
+      "term": "take your time",
+      "pos": "(phr)",
+      "ipa": "/tˈeɪk jɔː tˈaɪm/",
+      "definition": "慢慢来，按自己合适的速度做。",
+      "example": "Please take your time and check each answer carefully.",
+      "exampleMark": "take your time",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/048ea8e717c69aa0894561aa.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ffbf9b77b0435d0929c7bb41.mp3"
+    },
+    {
+      "id": "B02-LS-U02-W-c949c0afd",
+      "term": "traditional",
+      "pos": "(adj)",
+      "ipa": "/trɐdˈɪʃənəl/",
+      "definition": "part of older ways of doing things and older ideas that are not modern",
+      "example": "We wear traditional clothes at the festival.",
+      "exampleMark": "traditional",
+      "picture": "practice/data/classroom-vocabulary/media/a943b8be71f39673478c03da.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b066e62de73d09bc3f1ac52f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/790a7a251bb11cf990d5c6a5.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "something you do for enjoyment, especially an organized event"
+        },
+        {
+          "key": "B",
+          "text": "extremely surprising"
+        },
+        {
+          "key": "C",
+          "text": "(of people, things, places, etc.) to pull or draw somebody or something towards them, by the qualities they have, especially good ones"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/669752c5d23eab3335afb68e.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-0bf417044",
+          "prompt": "It was an exciting activity.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U02-W-5749570a4",
+          "prompt": "And the people of Harbin do something amazing with their frozen river.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U02-W-dd335b0dc",
+          "prompt": "The lights attract visitors to the festival at night.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U02-W-fc05e0e4f",
+          "prompt": "We celebrate the end of the school year.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d1021fe19c296758a43e3ce8.webp"
+        },
+        {
+          "key": "B",
+          "text": "the habits and traditions of a country or group of people"
+        },
+        {
+          "key": "C",
+          "text": "a special day or period with its own social activities, food or ceremonies"
+        },
+        {
+          "key": "D",
+          "text": "get pleasure from something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-8f2e7cd78",
+          "prompt": "Nowadays, around the world, there are many festivals, often based on nature, food, or culture.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U02-W-540e18149",
+          "prompt": "Instead, people come to enjoy the cherry blossoms and have a picnic under the trees.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U02-W-c32b941d4",
+          "prompt": "The festival offers entertainment for families.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U02-W-f11430899",
+          "prompt": "Where do you think this festival is?",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "去参加一项活动。"
+        },
+        {
+          "key": "B",
+          "text": "to have a social event where a group of people meet to talk, eat, etc., often in order to celebrate a special occasion"
+        },
+        {
+          "key": "C",
+          "text": "参加节庆活动。"
+        },
+        {
+          "key": "D",
+          "text": "(of liquid) turned into ice"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-c405fd111",
+          "prompt": "Harbin's river, the Songhua, is completely frozen.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U02-W-38840ba36",
+          "prompt": "We plan to go to an event at the library this weekend.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U02-W-410e64285",
+          "prompt": "We often go to a festival to hear live music.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U02-W-7104df65b",
+          "prompt": "The town will have a celebration when the new park opens.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/df13f0e1c49a87c40f1e520d.webp"
+        },
+        {
+          "key": "B",
+          "text": "to be in charge of somebody or something"
+        },
+        {
+          "key": "C",
+          "text": "to be involved in an activity with other people"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-af09e2fca",
+          "prompt": "We listened to a lecture about the sea.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U02-W-3229225bb",
+          "prompt": "She will take care of our cat while we are away.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U02-W-bf5b4b253",
+          "prompt": "All the students can take part in the school play.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/00996c4ae11c58f958c35079.webp"
+        },
+        {
+          "key": "B",
+          "text": "慢慢来，按自己合适的速度做。"
+        },
+        {
+          "key": "C",
+          "text": "part of older ways of doing things and older ideas that are not modern"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-19e57fb7f",
+          "prompt": "The race will take place on Sunday.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U02-W-bea0ee78c",
+          "prompt": "Please take your time and check each answer carefully.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U02-W-c949c0afd",
+          "prompt": "We wear traditional clothes at the festival.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "celebrate",
+        "amazing",
+        "attract",
+        "activity",
+        "enjoy",
+        "culture"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-0bf417044",
+          "before": "It was an exciting ",
+          "after": ".",
+          "answer": "activity"
+        },
+        {
+          "id": "B02-LS-U02-W-5749570a4",
+          "before": "And the people of Harbin do something ",
+          "after": " with their frozen river.",
+          "answer": "amazing"
+        },
+        {
+          "id": "B02-LS-U02-W-dd335b0dc",
+          "before": "The lights ",
+          "after": " visitors to the festival at night.",
+          "answer": "attract"
+        },
+        {
+          "id": "B02-LS-U02-W-fc05e0e4f",
+          "before": "We ",
+          "after": " the end of the school year.",
+          "answer": "celebrate"
+        },
+        {
+          "id": "B02-LS-U02-W-8f2e7cd78",
+          "before": "Nowadays, around the world, there are many festivals, often based on nature, food, or ",
+          "after": ".",
+          "answer": "culture"
+        },
+        {
+          "id": "B02-LS-U02-W-540e18149",
+          "before": "Instead, people come to ",
+          "after": " the cherry blossoms and have a picnic under the trees.",
+          "answer": "enjoy"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "go to an event",
+        "entertainment",
+        "go to a festival",
+        "festival",
+        "have a celebration",
+        "frozen"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-c32b941d4",
+          "before": "The festival offers ",
+          "after": " for families.",
+          "answer": "entertainment"
+        },
+        {
+          "id": "B02-LS-U02-W-f11430899",
+          "before": "Where do you think this ",
+          "after": " is?",
+          "answer": "festival"
+        },
+        {
+          "id": "B02-LS-U02-W-c405fd111",
+          "before": "Harbin's river, the Songhua, is completely ",
+          "after": ".",
+          "answer": "frozen"
+        },
+        {
+          "id": "B02-LS-U02-W-38840ba36",
+          "before": "We plan to ",
+          "after": " at the library this weekend.",
+          "answer": "go to an event"
+        },
+        {
+          "id": "B02-LS-U02-W-410e64285",
+          "before": "We often ",
+          "after": " to hear live music.",
+          "answer": "go to a festival"
+        },
+        {
+          "id": "B02-LS-U02-W-7104df65b",
+          "before": "The town will ",
+          "after": " when the new park opens.",
+          "answer": "have a celebration"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "have a problem",
+        "have a party",
+        "lecture",
+        "have fun",
+        "have a nice time"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-7d7fbab53",
+          "before": "I hope you ",
+          "after": " at the party.",
+          "answer": "have a nice time"
+        },
+        {
+          "id": "B02-LS-U02-W-e6ec394dc",
+          "before": "They plan to ",
+          "after": " for their daughter's birthday.",
+          "answer": "have a party"
+        },
+        {
+          "id": "B02-LS-U02-W-7061367e6",
+          "before": "We ",
+          "after": " because one of the tickets is missing.",
+          "answer": "have a problem"
+        },
+        {
+          "id": "B02-LS-U02-W-eeb5dd491",
+          "before": "You can ",
+          "after": " at a car race and cheer for your favourite driver.",
+          "answer": "have fun"
+        },
+        {
+          "id": "B02-LS-U02-W-af09e2fca",
+          "before": "We listened to a ",
+          "after": " about the sea.",
+          "answer": "lecture"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "take place",
+        "take your time",
+        "take part",
+        "take care of",
+        "traditional"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U02-W-3229225bb",
+          "before": "She will ",
+          "after": " our cat while we are away.",
+          "answer": "take care of"
+        },
+        {
+          "id": "B02-LS-U02-W-bf5b4b253",
+          "before": "All the students can ",
+          "after": " in the school play.",
+          "answer": "take part"
+        },
+        {
+          "id": "B02-LS-U02-W-19e57fb7f",
+          "before": "The race will ",
+          "after": " on Sunday.",
+          "answer": "take place"
+        },
+        {
+          "id": "B02-LS-U02-W-bea0ee78c",
+          "before": "Please ",
+          "after": " and check each answer carefully.",
+          "answer": "take your time"
+        },
+        {
+          "id": "B02-LS-U02-W-c949c0afd",
+          "before": "We wear ",
+          "after": " clothes at the festival.",
+          "answer": "traditional"
+        }
+      ]
+    }
+  ]
+}

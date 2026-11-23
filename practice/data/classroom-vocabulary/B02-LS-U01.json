@@ -1,0 +1,538 @@
+{
+  "unitId": "B2U01",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U01",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U01-W-9c92ad250",
+      "term": "ancient",
+      "pos": "adj.",
+      "ipa": "/ˈeɪnʃənt/",
+      "definition": "from a long time ago; very old",
+      "example": "We visited an ancient building.",
+      "exampleMark": "ancient",
+      "picture": "practice/data/classroom-vocabulary/media/46868201d3b4ebb6d171f517.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5800210d4f5e5a6641b46403.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6c28125845745a5d4b0b73fd.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-2cdbffdca",
+      "term": "apartment",
+      "pos": "n.",
+      "ipa": "/əˈpɑːtmənt/",
+      "definition": "a room or set of rooms in a building for somebody to live in",
+      "example": "My friend lives in an apartment near the station.",
+      "exampleMark": "apartment",
+      "picture": "practice/data/classroom-vocabulary/media/5c3da177ae0ed158d8751ab6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d88aea1ef1134fc6b729b645.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d0057162ff6c477907bdda82.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-699e8ae92",
+      "term": "area",
+      "pos": "n.",
+      "ipa": "/ˈeəriə/",
+      "definition": "a part of a larger place",
+      "example": "This area of the city has many parks.",
+      "exampleMark": "area",
+      "picture": "practice/data/classroom-vocabulary/media/eae2716ffb5824b3e927bdc5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/769aa7b066714de1f8a9bbfb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/95dab45008b6d79678797657.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-2fa1981b4",
+      "term": "bridge",
+      "pos": "n.",
+      "ipa": "/brɪdʒ/",
+      "definition": "something built over a river or road that lets people, cars or trains go across",
+      "example": "We crossed the bridge on foot.",
+      "exampleMark": "bridge",
+      "picture": "practice/data/classroom-vocabulary/media/25a835b88e176a1e359701c3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/797c18f7d14e733328f6a412.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8e867e75c1507e01bad9ae92.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-5d8df9b1d",
+      "term": "capital",
+      "pos": "n.",
+      "ipa": "/ˈkæpɪtəl/",
+      "definition": "the most important city in a country or state, where the government is",
+      "example": "Tokyo is the capital of Japan.",
+      "exampleMark": "capital",
+      "picture": "practice/data/classroom-vocabulary/media/b6420e730102dbbdb907c83b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2630fb54e0fb2b9aa7e51130.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5280eb9c6b8ee9421079e445.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-9dba6a05b",
+      "term": "cave",
+      "pos": "n.",
+      "ipa": "/keɪv/",
+      "definition": "a large hole in the side of a mountain or under the ground",
+      "example": "The cave was cold and dark.",
+      "exampleMark": "cave",
+      "picture": "practice/data/classroom-vocabulary/media/7ee38f018f7a70e7a0ec1b7d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/75972d915ee18f5084eb71ab.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e7a1b663ec6bd40787cc494a.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-fb8df41a1",
+      "term": "cheap",
+      "pos": "adj.",
+      "ipa": "/tʃiːp/",
+      "definition": "not expensive, or costing less than usual",
+      "example": "This café sells cheap meals.",
+      "exampleMark": "cheap",
+      "picture": "practice/data/classroom-vocabulary/media/6541c28299590334e58db295.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/60c52c33b04998c48ddc4022.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/576ad889c510434e31d86007.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-8bd8c4fac",
+      "term": "crowded",
+      "pos": "adj.",
+      "ipa": "/ˈkraʊdɪd/",
+      "definition": "very full of people",
+      "example": "The city centre is crowded with people.",
+      "exampleMark": "crowded",
+      "picture": "practice/data/classroom-vocabulary/media/855f2fa911762e4194cfc144.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e598e31f0301f3017c0399f7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/83805213fb2409881695dc3f.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-e0d587ce0",
+      "term": "expensive",
+      "pos": "adj.",
+      "ipa": "/ɪkˈspensɪv/",
+      "definition": "costing a lot of money",
+      "example": "The hotel is too expensive for us.",
+      "exampleMark": "expensive",
+      "picture": "practice/data/classroom-vocabulary/media/ff74fb67457f47c1a043953c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/35617988f9894b67cbf88e27.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d05a7a83a881b415c81e4910.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-f3c45b69b",
+      "term": "lake",
+      "pos": "n.",
+      "ipa": "/leɪk/",
+      "definition": "a body of water that has land all around it",
+      "example": "We walked around the lake.",
+      "exampleMark": "lake",
+      "picture": "practice/data/classroom-vocabulary/media/7c85f8d42ddb6bec9fee870f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0ff466f67cff9cfb40a72caf.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/54d5035d3182d44358c90ffd.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-b09be85d5",
+      "term": "modern",
+      "pos": "adj.",
+      "ipa": "/ˈmɒdən/",
+      "definition": "relating to the present time and not to the past",
+      "example": "Our school has a modern library.",
+      "exampleMark": "modern",
+      "picture": "practice/data/classroom-vocabulary/media/d97ff482fc54c7166ffe3e11.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/74d56afbdc5640a0c51c24d7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/18651bb8e9bd09c8024ee3d7.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-99d637374",
+      "term": "popular",
+      "pos": "adj.",
+      "ipa": "/ˈpɒpjələ/",
+      "definition": "liked by many people",
+      "example": "The music show is popular with visitors.",
+      "exampleMark": "popular",
+      "picture": "practice/data/classroom-vocabulary/media/aa408146843a7d7be9798b5f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7eebe266dd00bbc2fd15eb86.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/44a1e6eff79150a541dc9d24.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-3dbcdc08e",
+      "term": "recognize",
+      "pos": "v.",
+      "ipa": "/ˈrekəɡnaɪz/",
+      "definition": "to know something because you have seen it before",
+      "example": "I recognize this building from a photograph.",
+      "exampleMark": "recognize",
+      "picture": "practice/data/classroom-vocabulary/media/ad07b8ac69de3135d95d88fa.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c38f2f12bd7916bfb3eeb4d1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7fe641149699f41669d42c1f.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-38464bf08",
+      "term": "rock",
+      "pos": "n.",
+      "ipa": "/rɒk/",
+      "definition": "a hard piece of the material that the Earth is made of",
+      "example": "There are large rocks beside the path.",
+      "exampleMark": "rocks",
+      "picture": "practice/data/classroom-vocabulary/media/490e686287e37bb92b261bf6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a40cc4f2e575a2988d1b08bf.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/841246dcfb152ff25b66ee92.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-9ba97332d",
+      "term": "rural",
+      "pos": "adj.",
+      "ipa": "/ˈrʊərəl/",
+      "definition": "relating to the countryside and not to cities or towns",
+      "example": "This rural area has fields and small villages.",
+      "exampleMark": "rural",
+      "picture": "practice/data/classroom-vocabulary/media/f19f548d3fcfed70916604b3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/28c49471fb335e6f3dcb4a4e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/388808670a65feeb2f077ffe.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-1468ebe41",
+      "term": "strange",
+      "pos": "adj.",
+      "ipa": "/streɪndʒ/",
+      "definition": "different from the usual or normal; unusual or not expected",
+      "example": "The house has a strange shape.",
+      "exampleMark": "strange",
+      "picture": "practice/data/classroom-vocabulary/media/a505c12711df7ffee59bdab5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/327813c273912b0114be26be.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/21fee73c68f7b62de406e8ad.mp3"
+    },
+    {
+      "id": "B02-LS-U01-W-ba7a82a98",
+      "term": "urban",
+      "pos": "adj.",
+      "ipa": "/ˈɜːbən/",
+      "definition": "belonging to or related to a city",
+      "example": "Urban parks give people a place to relax.",
+      "exampleMark": "Urban",
+      "picture": "practice/data/classroom-vocabulary/media/2b8929611ba5c062286a9511.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0563c733736ea7e5c5a0299d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1bf1b05d21bfc40e42253bb8.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/46868201d3b4ebb6d171f517.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/5c3da177ae0ed158d8751ab6.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/25a835b88e176a1e359701c3.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/eae2716ffb5824b3e927bdc5.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-9c92ad250",
+          "prompt": "We visited an ancient building.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U01-W-2cdbffdca",
+          "prompt": "My friend lives in an apartment near the station.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U01-W-699e8ae92",
+          "prompt": "This area of the city has many parks.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U01-W-2fa1981b4",
+          "prompt": "We crossed the bridge on foot.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/7ee38f018f7a70e7a0ec1b7d.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/6541c28299590334e58db295.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/855f2fa911762e4194cfc144.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/b6420e730102dbbdb907c83b.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-5d8df9b1d",
+          "prompt": "Tokyo is the capital of Japan.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U01-W-9dba6a05b",
+          "prompt": "The cave was cold and dark.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U01-W-fb8df41a1",
+          "prompt": "This café sells cheap meals.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U01-W-8bd8c4fac",
+          "prompt": "The city centre is crowded with people.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d97ff482fc54c7166ffe3e11.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/ff74fb67457f47c1a043953c.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/7c85f8d42ddb6bec9fee870f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-e0d587ce0",
+          "prompt": "The hotel is too expensive for us.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U01-W-f3c45b69b",
+          "prompt": "We walked around the lake.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U01-W-b09be85d5",
+          "prompt": "Our school has a modern library.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/ad07b8ac69de3135d95d88fa.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/490e686287e37bb92b261bf6.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/aa408146843a7d7be9798b5f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-99d637374",
+          "prompt": "The music show is popular with visitors.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U01-W-3dbcdc08e",
+          "prompt": "I recognize this building from a photograph.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U01-W-38464bf08",
+          "prompt": "There are large rocks beside the path.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/a505c12711df7ffee59bdab5.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/f19f548d3fcfed70916604b3.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2b8929611ba5c062286a9511.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-9ba97332d",
+          "prompt": "This rural area has fields and small villages.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U01-W-1468ebe41",
+          "prompt": "The house has a strange shape.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U01-W-ba7a82a98",
+          "prompt": "Urban parks give people a place to relax.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "apartment",
+        "bridge",
+        "ancient",
+        "cave",
+        "area",
+        "capital"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-9c92ad250",
+          "before": "The city wall is ",
+          "after": " and dates from Roman times.",
+          "answer": "ancient"
+        },
+        {
+          "id": "B02-LS-U01-W-2cdbffdca",
+          "before": "Their ",
+          "after": " is on the fourth floor of the building.",
+          "answer": "apartment"
+        },
+        {
+          "id": "B02-LS-U01-W-699e8ae92",
+          "before": "This ",
+          "after": " of town has three neighbourhoods.",
+          "answer": "area"
+        },
+        {
+          "id": "B02-LS-U01-W-2fa1981b4",
+          "before": "Walk across the ",
+          "after": " to reach the other side of the river.",
+          "answer": "bridge"
+        },
+        {
+          "id": "B02-LS-U01-W-5d8df9b1d",
+          "before": "The government meets in the country's ",
+          "after": ".",
+          "answer": "capital"
+        },
+        {
+          "id": "B02-LS-U01-W-9dba6a05b",
+          "before": "The hikers took a torch into the dark ",
+          "after": " inside the mountain.",
+          "answer": "cave"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "crowded",
+        "popular",
+        "cheap",
+        "expensive",
+        "lake",
+        "modern"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-fb8df41a1",
+          "before": "The tickets cost only $2 each, so they were very ",
+          "after": " to buy.",
+          "answer": "cheap"
+        },
+        {
+          "id": "B02-LS-U01-W-8bd8c4fac",
+          "before": "The bus was so ",
+          "after": " that there was nowhere to sit.",
+          "answer": "crowded"
+        },
+        {
+          "id": "B02-LS-U01-W-e0d587ce0",
+          "before": "We could not afford the ",
+          "after": " hotel, so we went somewhere cheaper.",
+          "answer": "expensive"
+        },
+        {
+          "id": "B02-LS-U01-W-f3c45b69b",
+          "before": "We swam in the ",
+          "after": ".",
+          "answer": "lake"
+        },
+        {
+          "id": "B02-LS-U01-W-b09be85d5",
+          "before": "The new library has a ",
+          "after": " design with glass walls and digital screens.",
+          "answer": "modern"
+        },
+        {
+          "id": "B02-LS-U01-W-99d637374",
+          "before": "In the survey, the weekend market was the most ",
+          "after": " choice for a day out.",
+          "answer": "popular"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "strange",
+        "rock",
+        "recognize",
+        "urban",
+        "rural"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U01-W-3dbcdc08e",
+          "before": "Do you ",
+          "after": " the building you saw in yesterday's photo?",
+          "answer": "recognize"
+        },
+        {
+          "id": "B02-LS-U01-W-38464bf08",
+          "before": "A heavy piece of ",
+          "after": " fell from the cliff and blocked the road.",
+          "answer": "rock"
+        },
+        {
+          "id": "B02-LS-U01-W-9ba97332d",
+          "before": "We stayed in a ",
+          "after": " village surrounded by farms.",
+          "answer": "rural"
+        },
+        {
+          "id": "B02-LS-U01-W-1468ebe41",
+          "before": "That house looks ",
+          "after": ". It is shaped like a shoe.",
+          "answer": "strange"
+        },
+        {
+          "id": "B02-LS-U01-W-ba7a82a98",
+          "before": "More and more people live in ",
+          "after": " areas such as large cities.",
+          "answer": "urban"
+        }
+      ]
+    }
+  ]
+}

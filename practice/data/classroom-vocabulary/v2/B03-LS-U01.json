@@ -1,0 +1,664 @@
+{
+  "unitId": "B3U01",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U01",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-LS-U01-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U01-W-f930859e3",
+      "term": "abandon",
+      "pos": "(v)",
+      "ipa": "/əˈbæn.dən/",
+      "definition": "to leave somebody or something somewhere, sometimes not returning to get them",
+      "example": "The driver had to abandon the car when the road flooded.",
+      "exampleMark": "abandon",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0396.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/13880e98722c7a7fe819e0f4.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-39ca1c87e",
+      "term": "abuse",
+      "pos": "(n)",
+      "ipa": "/əˈbjuːs/",
+      "definition": "violent or unfair treatment of somebody",
+      "example": "She rescues dogs that have suffered abuse.",
+      "exampleMark": "abuse",
+      "picture": "practice/data/classroom-vocabulary/media/3ff1b6126e73f5f13f4adef4.webp",
+      "wordAudio": "assets/lesson-dictation-audio-v1/18675682425cc2c4c33f.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ca63b36d428f6c63d0f5ac8f.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-6257f84cd",
+      "term": "analyse",
+      "pos": "(v)",
+      "ipa": "/ˈæn.ə.laɪz/",
+      "definition": "to study or examine something in detail, in order to discover more about it",
+      "example": "The researchers will analyse the results before they publish them.",
+      "exampleMark": "analyse",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0398.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9921aae5864f385e976365aa.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-4ab2558b6",
+      "term": "communicate",
+      "pos": "(v)",
+      "ipa": "/kəmˈjuː.nɪ.keɪt/",
+      "definition": "to share information with others by speaking, writing, moving your body or using other signals",
+      "example": "The team uses a shared chat to communicate with colleagues in other countries.",
+      "exampleMark": "communicate",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0399.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8bd31499780e0b53f6ec7551.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-f8eb525d2",
+      "term": "conditions",
+      "pos": "(n pl)",
+      "ipa": "/kənˈdɪ.ʃənz/",
+      "definition": "the situation in which somebody lives or works",
+      "example": "The animals live in good conditions.",
+      "exampleMark": "conditions",
+      "picture": "practice/data/classroom-vocabulary/media/66e886107fd31049f9b381d5.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0374.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4284ae432a70f7432d8c6851.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-f11a107f3",
+      "term": "connect",
+      "pos": "(v)",
+      "ipa": "/kənˈekt/",
+      "definition": "to join two things or places together",
+      "example": "The new bridge will connect the two towns.",
+      "exampleMark": "connect",
+      "picture": "practice/data/classroom-vocabulary/media/9fd05abb23139341389408d9.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0146.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c78fe27eb72cd23adce1ca6b.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-eccec79ca",
+      "term": "cruel",
+      "pos": "(adj)",
+      "ipa": "/ˈkruː.əl/",
+      "definition": "not kind",
+      "example": "It is cruel to keep a dog in a small cage.",
+      "exampleMark": "cruel",
+      "picture": "practice/data/classroom-vocabulary/media/3d69f0d195d382391464f45b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0401.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dd8e13abcc8ed524761ec904.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-541983090",
+      "term": "damage",
+      "pos": "(v)",
+      "ipa": "/ˈdæm.ɪdʒ/",
+      "definition": "to hurt",
+      "example": "Habitat loss sometimes forces elephants to leave the rainforest and go into villages, where they damage crops growing in farmers' fields.",
+      "exampleMark": "damage",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0402.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dbe61b9bea520867c0b41873.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-26fee4170",
+      "term": "debate",
+      "pos": "(v)",
+      "ipa": "/dɪˈbeɪt/",
+      "definition": "to discuss a subject in a formal way",
+      "example": "You are going to listen to a debate about using animals for work.",
+      "exampleMark": "debate",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0403.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/985ea0495a18b1933f69c79f.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-da7630d6a",
+      "term": "depend on",
+      "pos": "(phr v)",
+      "ipa": "/dɪˈpend ˌɒn/",
+      "definition": "to need",
+      "example": "Sea turtles depend on a healthy ocean for food.",
+      "exampleMark": "depend on",
+      "picture": "practice/data/classroom-vocabulary/media/60e67dac2eb515c2ca10de6b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0404.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/56c1e0377497c52e6aa31734.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-7896a9dfa",
+      "term": "endangered",
+      "pos": "(adj)",
+      "ipa": "/ɪnˈdeɪn.dʒəd/",
+      "definition": "at risk of no longer existing",
+      "example": "The organization protects endangered animals.",
+      "exampleMark": "endangered",
+      "picture": "practice/data/classroom-vocabulary/media/e6b61fb0db25d1e7f02c6da0.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0405.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2b1fcdd38ecc17910e8d60e8.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-c6e454d96",
+      "term": "environment",
+      "pos": "(n)",
+      "ipa": "/ɪnˈvaɪ.rən.mənt/",
+      "definition": "the air, land and water where people, animals and plants live",
+      "example": "Plastic waste can damage the environment where these birds live.",
+      "exampleMark": "environment",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0406.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/54d0929f84e1c9c1498417d8.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-968d77ca9",
+      "term": "involve",
+      "pos": "(v)",
+      "ipa": "/ɪnˈvɒlv/",
+      "definition": "if a situation or activity involves something, that thing is a necessary part of it",
+      "example": "How many interviews will the study involve?",
+      "exampleMark": "involve",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0410.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1afaea1190df0cbc1ba4112b.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-00819c0e5",
+      "term": "issue",
+      "pos": "(n)",
+      "ipa": "/ˈɪʃ.juː/",
+      "definition": "a topic or problem which causes concern and discussion",
+      "example": "Animal welfare is an important issue.",
+      "exampleMark": "issue",
+      "picture": "practice/data/classroom-vocabulary/media/1e9f7530e08f2bbb361cd744.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0362.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bb1363116f475e1d7a1bdbdb.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-145969f13",
+      "term": "protect",
+      "pos": "(v)",
+      "ipa": "/prəˈtekt/",
+      "definition": "to keep safe from danger",
+      "example": "These laws protect wild animals.",
+      "exampleMark": "protect",
+      "picture": "practice/data/classroom-vocabulary/media/154cdfa4ba6f395bf5262570.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0413.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/535049e0a6e4bc951aedcc65.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-035294d01",
+      "term": "species",
+      "pos": "(n)",
+      "ipa": "/ˈspiː.ʃiːz/",
+      "definition": "a group of plants or animals which share similar features",
+      "example": "This species lives on open grassland.",
+      "exampleMark": "species",
+      "picture": "practice/data/classroom-vocabulary/media/458dc711637f089b6bf002fa.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0414.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2121db872982362101da08ec.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-6df580aee",
+      "term": "suffer",
+      "pos": "(v)",
+      "ipa": "/ˈsʌf.ə/",
+      "definition": "to feel pain or unhappiness",
+      "example": "Animals suffer when they are treated badly.",
+      "exampleMark": "suffer",
+      "picture": "practice/data/classroom-vocabulary/media/3d69f0d195d382391464f45b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0415.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ef64269f113f5e2f185f3c9a.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-5bdcd3c0d",
+      "term": "support",
+      "pos": "(v)",
+      "ipa": "/səpˈɔːt/",
+      "definition": "to agree with an idea, group or person",
+      "example": "Use examples to support your points and express beliefs.",
+      "exampleMark": "support",
+      "picture": "practice/data/classroom-vocabulary/media/11cc759b58b7059a21e0182d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0227.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/68e7d634be052c154721a1e1.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-8dd6d34de",
+      "term": "survive",
+      "pos": "(v)",
+      "ipa": "/səˈvaɪv/",
+      "definition": "to continue to live, in spite of danger and difficulty",
+      "example": "Animals need food and water to survive.",
+      "exampleMark": "survive",
+      "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0416.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1873135575e95f941f9a3d16.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-4e71a7b91",
+      "term": "threat",
+      "pos": "(n)",
+      "ipa": "/ˈθret/",
+      "definition": "the possibility of trouble, danger or disaster",
+      "example": "Habitat loss is a threat to wildlife.",
+      "exampleMark": "threat",
+      "picture": "practice/data/classroom-vocabulary/media/281442685b9aff61dd88646f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0417.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/789809a3019866c112a98d9c.mp3"
+    },
+    {
+      "id": "B03-LS-U01-W-4a1609e6d",
+      "term": "welfare",
+      "pos": "(n)",
+      "ipa": "/ˈwel.feː/",
+      "definition": "somebody's or something's health and happiness",
+      "example": "The organization works to improve animal welfare.",
+      "exampleMark": "welfare",
+      "picture": "practice/data/classroom-vocabulary/media/aa748d5db43f2701723e88e1.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0418.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/21bb08115cdce951180768a5.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/3ff1b6126e73f5f13f4adef4.webp"
+        },
+        {
+          "key": "B",
+          "text": "to study or examine something in detail, in order to discover more about it"
+        },
+        {
+          "key": "C",
+          "text": "to share information with others by speaking, writing, moving your body or using other signals"
+        },
+        {
+          "key": "D",
+          "text": "to leave somebody or something somewhere, sometimes not returning to get them"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-f930859e3",
+          "prompt": "The driver had to abandon the car when the road flooded.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U01-W-39ca1c87e",
+          "prompt": "She rescues dogs that have suffered abuse.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U01-W-6257f84cd",
+          "prompt": "The researchers will analyse the results before they publish them.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U01-W-4ab2558b6",
+          "prompt": "The team uses a shared chat to communicate with colleagues in other countries.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/3d69f0d195d382391464f45b.webp"
+        },
+        {
+          "key": "B",
+          "text": "to hurt"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/66e886107fd31049f9b381d5.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/9fd05abb23139341389408d9.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-f8eb525d2",
+          "prompt": "The animals live in good conditions.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U01-W-f11a107f3",
+          "prompt": "The new bridge will connect the two towns.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U01-W-eccec79ca",
+          "prompt": "It is cruel to keep a dog in a small cage.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U01-W-541983090",
+          "prompt": "Habitat loss sometimes forces elephants to leave the rainforest and go into villages, where they damage crops growing in farmers' fields.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the air, land and water where people, animals and plants live"
+        },
+        {
+          "key": "B",
+          "text": "to discuss a subject in a formal way"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/60e67dac2eb515c2ca10de6b.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/e6b61fb0db25d1e7f02c6da0.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-26fee4170",
+          "prompt": "You are going to listen to a debate about using animals for work.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U01-W-da7630d6a",
+          "prompt": "Sea turtles depend on a healthy ocean for food.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U01-W-7896a9dfa",
+          "prompt": "The organization protects endangered animals.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U01-W-c6e454d96",
+          "prompt": "Plastic waste can damage the environment where these birds live.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/154cdfa4ba6f395bf5262570.webp"
+        },
+        {
+          "key": "B",
+          "text": "if a situation or activity involves something, that thing is a necessary part of it"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/1e9f7530e08f2bbb361cd744.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-968d77ca9",
+          "prompt": "How many interviews will the study involve?",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U01-W-00819c0e5",
+          "prompt": "Animal welfare is an important issue.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U01-W-145969f13",
+          "prompt": "These laws protect wild animals.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/3d69f0d195d382391464f45b.webp"
+        },
+        {
+          "key": "B",
+          "text": "to agree with an idea, group or person"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/458dc711637f089b6bf002fa.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-035294d01",
+          "prompt": "This species lives on open grassland.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U01-W-6df580aee",
+          "prompt": "Animals suffer when they are treated badly.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U01-W-5bdcd3c0d",
+          "prompt": "Use examples to support your points and express beliefs.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/aa748d5db43f2701723e88e1.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/281442685b9aff61dd88646f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-8dd6d34de",
+          "prompt": "Animals need food and water to survive.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U01-W-4e71a7b91",
+          "prompt": "Habitat loss is a threat to wildlife.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U01-W-4a1609e6d",
+          "prompt": "The organization works to improve animal welfare.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "connect",
+        "conditions",
+        "communicate",
+        "analyse",
+        "abuse",
+        "abandon"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-f930859e3",
+          "before": "The driver had to ",
+          "after": " the car when the road flooded.",
+          "answer": "abandon"
+        },
+        {
+          "id": "B03-LS-U01-W-39ca1c87e",
+          "before": "She rescues dogs that have suffered ",
+          "after": ".",
+          "answer": "abuse"
+        },
+        {
+          "id": "B03-LS-U01-W-6257f84cd",
+          "before": "The researchers will ",
+          "after": " the results before they publish them.",
+          "answer": "analyse"
+        },
+        {
+          "id": "B03-LS-U01-W-4ab2558b6",
+          "before": "The team uses a shared chat to ",
+          "after": " with colleagues in other countries.",
+          "answer": "communicate"
+        },
+        {
+          "id": "B03-LS-U01-W-f8eb525d2",
+          "before": "The animals live in good ",
+          "after": ".",
+          "answer": "conditions"
+        },
+        {
+          "id": "B03-LS-U01-W-f11a107f3",
+          "before": "The new bridge will ",
+          "after": " the two towns.",
+          "answer": "connect"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "endangered",
+        "depend on",
+        "debate",
+        "damage",
+        "cruel"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-eccec79ca",
+          "before": "It is ",
+          "after": " to keep a dog in a small cage.",
+          "answer": "cruel"
+        },
+        {
+          "id": "B03-LS-U01-W-541983090",
+          "before": "Habitat loss sometimes forces elephants to leave the rainforest and go into villages, where they ",
+          "after": " crops growing in farmers' fields.",
+          "answer": "damage"
+        },
+        {
+          "id": "B03-LS-U01-W-26fee4170",
+          "before": "You are going to listen to a ",
+          "after": " about using animals for work.",
+          "answer": "debate"
+        },
+        {
+          "id": "B03-LS-U01-W-da7630d6a",
+          "before": "Sea turtles ",
+          "after": " a healthy ocean for food.",
+          "answer": "depend on"
+        },
+        {
+          "id": "B03-LS-U01-W-7896a9dfa",
+          "before": "The organization protects ",
+          "after": " animals.",
+          "answer": "endangered"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "species",
+        "protect",
+        "issue",
+        "involve",
+        "environment"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-c6e454d96",
+          "before": "Plastic waste can damage the ",
+          "after": " where these birds live.",
+          "answer": "environment"
+        },
+        {
+          "id": "B03-LS-U01-W-968d77ca9",
+          "before": "How many interviews will the study ",
+          "after": "?",
+          "answer": "involve"
+        },
+        {
+          "id": "B03-LS-U01-W-00819c0e5",
+          "before": "Animal welfare is an important ",
+          "after": ".",
+          "answer": "issue"
+        },
+        {
+          "id": "B03-LS-U01-W-145969f13",
+          "before": "These laws ",
+          "after": " wild animals.",
+          "answer": "protect"
+        },
+        {
+          "id": "B03-LS-U01-W-035294d01",
+          "before": "This ",
+          "after": " lives on open grassland.",
+          "answer": "species"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "welfare",
+        "threat",
+        "survive",
+        "support",
+        "suffer"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U01-W-6df580aee",
+          "before": "Animals ",
+          "after": " when they are treated badly.",
+          "answer": "suffer"
+        },
+        {
+          "id": "B03-LS-U01-W-5bdcd3c0d",
+          "before": "Use examples to ",
+          "after": " your points and express beliefs.",
+          "answer": "support"
+        },
+        {
+          "id": "B03-LS-U01-W-8dd6d34de",
+          "before": "Animals need food and water to ",
+          "after": ".",
+          "answer": "survive"
+        },
+        {
+          "id": "B03-LS-U01-W-4e71a7b91",
+          "before": "Habitat loss is a ",
+          "after": " to wildlife.",
+          "answer": "threat"
+        },
+        {
+          "id": "B03-LS-U01-W-4a1609e6d",
+          "before": "The organization works to improve animal ",
+          "after": ".",
+          "answer": "welfare"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,864 @@
+{
+  "unitId": "B2U07",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U07",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U07-W-c979f9eda",
+      "term": "achievement",
+      "pos": "(n)",
+      "ipa": "/ɐtʃˈiːvmənt/",
+      "definition": "something good and successful that you do, usually by working hard",
+      "example": "Usually, a good design isn't just one person's achievement.",
+      "exampleMark": "achievement",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0f30c38d964cb1ae140d4de2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c9a37ed8593863b075d62a4c.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-5749570a4",
+      "term": "amazing",
+      "pos": "(adj)",
+      "ipa": "/ɐmˈeɪzɪŋ/",
+      "definition": "very surprising",
+      "example": "The invention has an amazing design.",
+      "exampleMark": "amazing",
+      "picture": "practice/data/classroom-vocabulary/media/51ed7987784f9aeb5d6f9584.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d1245681d7c2efb83fbe8134.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/65d3edc91b1a1cbe05b95eef.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-aa6897a90",
+      "term": "bored",
+      "pos": "(adj)",
+      "ipa": "/bˈɔːd/",
+      "definition": "feeling unhappy because something is not interesting or because you have nothing to do",
+      "example": "I felt bored after waiting at the station for an hour.",
+      "exampleMark": "bored",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f15179e52660dff07d9c584e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8f39700399a05bcb856dbb4c.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-2c7fba493",
+      "term": "boring",
+      "pos": "(adj)",
+      "ipa": "/ˈbɔːrɪŋ/",
+      "definition": "not interesting or exciting",
+      "example": "He thinks the long lecture is boring.",
+      "exampleMark": "boring",
+      "picture": "practice/data/classroom-vocabulary/media/ca067b25f8266cab4940bb5f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3787e1628fbf79c22fa5ff68.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6e289ad5f1f6bb54de4ba3a0.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-d27c7a190",
+      "term": "complicated",
+      "pos": "(adj)",
+      "ipa": "/kˈɒmplɪkˌeɪtɪd/",
+      "definition": "having a lot of different pieces, in a way that is difficult to understand",
+      "example": "So maybe he liked simple and neat things and not complicated things.",
+      "exampleMark": "complicated",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/78971bb3e8c47a3c3948c69c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/388e103266a1730dca2c9cce.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-056f11827",
+      "term": "design",
+      "pos": "(n)",
+      "ipa": "/dɪzˈaɪn/",
+      "definition": "the way something is planned and made",
+      "example": "The design of the library lets in plenty of light.",
+      "exampleMark": "design",
+      "picture": "practice/data/classroom-vocabulary/media/420396482614052e8b0ed9c8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b712af034aab4c64120c3edd.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/94571b291353ec83d740defd.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-f529c0de3",
+      "term": "excited",
+      "pos": "(adj)",
+      "ipa": "/ɪksˈaɪtɪd/",
+      "definition": "feeling very happy and enthusiastic",
+      "example": "The children were excited about their first trip to the zoo.",
+      "exampleMark": "excited",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d2f4c91097eb50ba3e33d234.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1df991e05b9a179e77fa12b9.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-29324637d",
+      "term": "exciting",
+      "pos": "(adj)",
+      "ipa": "/ɪksˈaɪtɪŋ/",
+      "definition": "making you feel very happy and enthusiastic",
+      "example": "It was an exciting race and the winner finished only a second ahead.",
+      "exampleMark": "exciting",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6fa78b31380e48a06d374cf0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5eacd7ecbe77f361c2376754.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-aeed16102",
+      "term": "fascinated",
+      "pos": "(adj)",
+      "ipa": "/fˈæsɪnˌeɪtɪd/",
+      "definition": "very interested",
+      "example": "She was fascinated by the way the bees built their nest.",
+      "exampleMark": "fascinated",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/216f7ce395bc12aea570838d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f9387bc89c3a9afbd7d9639b.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-f9c83941c",
+      "term": "fascinating",
+      "pos": "(adj)",
+      "ipa": "/fˈæsɪnˌeɪtɪŋ/",
+      "definition": "very interesting",
+      "example": "The guide told us a fascinating story about the old castle.",
+      "exampleMark": "fascinating",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9d57cead79f314de332d0893.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bfb6b4a4a50dbf299612651a.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-9bcaa08fd",
+      "term": "frustrated",
+      "pos": "(adj)",
+      "ipa": "/frʌstrˈeɪtɪd/",
+      "definition": "feeling annoyed or less confident because you cannot achieve what you want",
+      "example": "When he saw something that didn't work well, he got frustrated and worked to improve it.",
+      "exampleMark": "frustrated",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8f13153d170e5fa208a24de6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7fe84aab291fd73c3164de59.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-624f7c0dd",
+      "term": "frustrating",
+      "pos": "(adj)",
+      "ipa": "/frʌstrˈeɪtɪŋ/",
+      "definition": "making you annoyed or less confident because you cannot achieve what you want",
+      "example": "It was frustrating to miss the bus after waiting so long.",
+      "exampleMark": "frustrating",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/887f7b3def7b6fe8f43233b2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5c02e47b7bf0e967ec5d064a.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-ebfb2e9c2",
+      "term": "interested",
+      "pos": "(adj)",
+      "ipa": "/ˈɪntrɛstɪd/",
+      "definition": "not bored",
+      "example": "Also, even though he changed subjects, he was still interested in art as well as designing.",
+      "exampleMark": "interested",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4720486da93eede9959b8edd.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a73f5ca2080edea47927e2d0.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-68f555517",
+      "term": "interesting",
+      "pos": "(adj)",
+      "ipa": "/ˈɪntrəstɪŋ/",
+      "definition": "not boring",
+      "example": "It was an interesting new use for a ball.",
+      "exampleMark": "interesting",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/acecc974d85c400480f05e3e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/04975732dd528fd046a21c78.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-94ac05762",
+      "term": "invention",
+      "pos": "(n)",
+      "ipa": "/ɪnvˈɛnʃən/",
+      "definition": "something made for the first time",
+      "example": "For example, his first invention was a wheelbarrow with a ball for a wheel.",
+      "exampleMark": "invention",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4f4806f7a85cbc6f17cd4873.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6dbf34d22f972e8ae8c274e9.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-71a7ca855",
+      "term": "point",
+      "pos": "(n)",
+      "ipa": "/pˈɔɪnt/",
+      "definition": "an opinion, fact or idea that is said or written",
+      "example": "She made a useful point about the design.",
+      "exampleMark": "point",
+      "picture": "practice/data/classroom-vocabulary/media/109b8f56d080a993e152d852.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/049f8e6444d0b4f604859c71.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d29d62b253f5ee3e89e8e4f9.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-231e65684",
+      "term": "purpose",
+      "pos": "(n)",
+      "ipa": "/pˈɜːpəs/",
+      "definition": "why you do something or why something exists",
+      "example": "The purpose of this chair is to help people sit comfortably.",
+      "exampleMark": "purpose",
+      "picture": "practice/data/classroom-vocabulary/media/aa8ec493e761e12c456d8683.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7d580d3c15d0c663b7d37f36.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/60d8c685262e3a5e72a0394c.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-00174a5cf",
+      "term": "relaxed",
+      "pos": "(adj)",
+      "ipa": "/rɪlˈækst/",
+      "definition": "feeling happy and comfortable because nothing is worrying you",
+      "example": "He felt relaxed after a quiet walk in the park.",
+      "exampleMark": "relaxed",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4974142707548680f8e6fea0.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f04e2c3225e02605029ad472.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-6e93871ac",
+      "term": "relaxing",
+      "pos": "(adj)",
+      "ipa": "/rɪlˈæksɪŋ/",
+      "definition": "making you feel happy and comfortable because nothing is worrying you",
+      "example": "He also liked working on his own projects in his free time and found painting to be relaxing.",
+      "exampleMark": "relaxing",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/bc7f3a1055b7b4d3e97f21c3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a104a5e7efc6edd9cf4f534a.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-3079ecd8c",
+      "term": "remarkable",
+      "pos": "(adj)",
+      "ipa": "/rɪmˈɑːkəbəl/",
+      "definition": "very unusual or noticeable in a way that you admire",
+      "example": "She is a remarkable person who helps many people.",
+      "exampleMark": "remarkable",
+      "picture": "practice/data/classroom-vocabulary/media/1d236733434bee3b1d82a1af.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/35ddbe38facdf6106abd8491.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5bd665c22b34766cf9dbaadf.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-0f7d0d088",
+      "term": "simple",
+      "pos": "(adj)",
+      "ipa": "/sˈɪmpəl/",
+      "definition": "made without extra things that are not needed",
+      "example": "These people designed simple things that have changed our lives and how we do everyday things.",
+      "exampleMark": "simple",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fe56b9ddc4fa28d3521d55b7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/00930f13ad64234836f11538.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-39da98e5c",
+      "term": "surprised",
+      "pos": "(adj)",
+      "ipa": "/səprˈaɪzd/",
+      "definition": "feeling or showing surprise because something has happened that you did not expect",
+      "example": "Spencer was very surprised by the news.",
+      "exampleMark": "surprised",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9f3fc952119126570e97fffb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/307b1841ce358764b33f643c.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-50b8de2eb",
+      "term": "surprising",
+      "pos": "(adj)",
+      "ipa": "/səprˈaɪzɪŋ/",
+      "definition": "not expected and making you feel surprised",
+      "example": "It was surprising to see snow in the middle of summer.",
+      "exampleMark": "surprising",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/63232ac10e830d4ba0de0216.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/532f5d265138dd2d89101d37.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-511e99115",
+      "term": "tired",
+      "pos": "(adj)",
+      "ipa": "/tˈaɪəd/",
+      "definition": "in need of rest or sleep",
+      "example": "I was too tired to cook after a long day at work.",
+      "exampleMark": "tired",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ef6251888500fb1fdf8586ba.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/794bf7858f4b30c5965cd1b5.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-2d1f13d97",
+      "term": "tiring",
+      "pos": "(adj)",
+      "ipa": "/tˈaɪərɪŋ/",
+      "definition": "making you feel in need of rest or sleep",
+      "example": "Walking uphill for three hours was tiring.",
+      "exampleMark": "tiring",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ebe7d6225429185a7e5c7a6c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1116ea2133e493107cec31c2.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-04489a12b",
+      "term": "use",
+      "pos": "(n)",
+      "ipa": "/jˈuːs/",
+      "definition": "a way in which something is used",
+      "example": "The inventor found a new use for the ball.",
+      "exampleMark": "use",
+      "picture": "practice/data/classroom-vocabulary/media/a6d07d4648d0b60f4ab91da5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/aaec021b9fc2e368bfb62bbe.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/01f8118d0faebf9b6288c5c8.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-7c3dc3889",
+      "term": "worried",
+      "pos": "(adj)",
+      "ipa": "/wˈʌrɪd/",
+      "definition": "unhappy because you are thinking about problems or unpleasant things that might happen",
+      "example": "Edison was worried about America's dependence on foreign rubber for tires.",
+      "exampleMark": "worried",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/554a1e463822d304cb80ce49.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c91f1df6b75e6155131fd1aa.mp3"
+    },
+    {
+      "id": "B02-LS-U07-W-52eb4844a",
+      "term": "worrying",
+      "pos": "(adj)",
+      "ipa": "/wˈʌrɪɪŋ/",
+      "definition": "making you feel unhappy and frightened",
+      "example": "The news about the rising river was worrying for people who lived nearby.",
+      "exampleMark": "worrying",
+      "picture": "practice/data/classroom-vocabulary/media/d7eaa4db2653494c3d11f6de.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/db036c35e6c5e787938e2de6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/728ce9b617e58da72725f7a5.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "something good and successful that you do, usually by working hard"
+        },
+        {
+          "key": "B",
+          "text": "feeling unhappy because something is not interesting or because you have nothing to do"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/ca067b25f8266cab4940bb5f.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/51ed7987784f9aeb5d6f9584.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-c979f9eda",
+          "prompt": "Usually, a good design isn't just one person's achievement.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-5749570a4",
+          "prompt": "The invention has an amazing design.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-aa6897a90",
+          "prompt": "I felt bored after waiting at the station for an hour.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U07-W-2c7fba493",
+          "prompt": "He thinks the long lecture is boring.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "making you feel very happy and enthusiastic"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/420396482614052e8b0ed9c8.webp"
+        },
+        {
+          "key": "C",
+          "text": "feeling very happy and enthusiastic"
+        },
+        {
+          "key": "D",
+          "text": "having a lot of different pieces, in a way that is difficult to understand"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-d27c7a190",
+          "prompt": "So maybe he liked simple and neat things and not complicated things.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-056f11827",
+          "prompt": "The design of the library lets in plenty of light.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U07-W-f529c0de3",
+          "prompt": "The children were excited about their first trip to the zoo.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U07-W-29324637d",
+          "prompt": "It was an exciting race and the winner finished only a second ahead.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "very interesting"
+        },
+        {
+          "key": "B",
+          "text": "making you annoyed or less confident because you cannot achieve what you want"
+        },
+        {
+          "key": "C",
+          "text": "feeling annoyed or less confident because you cannot achieve what you want"
+        },
+        {
+          "key": "D",
+          "text": "very interested"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-aeed16102",
+          "prompt": "She was fascinated by the way the bees built their nest.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-f9c83941c",
+          "prompt": "The guide told us a fascinating story about the old castle.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-9bcaa08fd",
+          "prompt": "When he saw something that didn't work well, he got frustrated and worked to improve it.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U07-W-624f7c0dd",
+          "prompt": "It was frustrating to miss the bus after waiting so long.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "not bored"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/109b8f56d080a993e152d852.webp"
+        },
+        {
+          "key": "C",
+          "text": "something made for the first time"
+        },
+        {
+          "key": "D",
+          "text": "not boring"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-ebfb2e9c2",
+          "prompt": "Also, even though he changed subjects, he was still interested in art as well as designing.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-68f555517",
+          "prompt": "It was an interesting new use for a ball.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-94ac05762",
+          "prompt": "For example, his first invention was a wheelbarrow with a ball for a wheel.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U07-W-71a7ca855",
+          "prompt": "She made a useful point about the design.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/aa8ec493e761e12c456d8683.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/1d236733434bee3b1d82a1af.webp"
+        },
+        {
+          "key": "C",
+          "text": "making you feel happy and comfortable because nothing is worrying you"
+        },
+        {
+          "key": "D",
+          "text": "feeling happy and comfortable because nothing is worrying you"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-231e65684",
+          "prompt": "The purpose of this chair is to help people sit comfortably.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-00174a5cf",
+          "prompt": "He felt relaxed after a quiet walk in the park.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-6e93871ac",
+          "prompt": "He also liked working on his own projects in his free time and found painting to be relaxing.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U07-W-3079ecd8c",
+          "prompt": "She is a remarkable person who helps many people.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "made without extra things that are not needed"
+        },
+        {
+          "key": "B",
+          "text": "in need of rest or sleep"
+        },
+        {
+          "key": "C",
+          "text": "not expected and making you feel surprised"
+        },
+        {
+          "key": "D",
+          "text": "feeling or showing surprise because something has happened that you did not expect"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-0f7d0d088",
+          "prompt": "These people designed simple things that have changed our lives and how we do everyday things.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-39da98e5c",
+          "prompt": "Spencer was very surprised by the news.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-50b8de2eb",
+          "prompt": "It was surprising to see snow in the middle of summer.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U07-W-511e99115",
+          "prompt": "I was too tired to cook after a long day at work.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "making you feel in need of rest or sleep"
+        },
+        {
+          "key": "B",
+          "text": "unhappy because you are thinking about problems or unpleasant things that might happen"
+        },
+        {
+          "key": "C",
+          "text": "making you feel unhappy and frightened"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/a6d07d4648d0b60f4ab91da5.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-2d1f13d97",
+          "prompt": "Walking uphill for three hours was tiring.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U07-W-04489a12b",
+          "prompt": "The inventor found a new use for the ball.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U07-W-7c3dc3889",
+          "prompt": "Edison was worried about America's dependence on foreign rubber for tires.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U07-W-52eb4844a",
+          "prompt": "The news about the rising river was worrying for people who lived nearby.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "achievement",
+        "design",
+        "excited",
+        "amazing",
+        "complicated",
+        "boring",
+        "bored"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-c979f9eda",
+          "before": "Usually, a good design isn't just one person's ",
+          "after": ".",
+          "answer": "achievement"
+        },
+        {
+          "id": "B02-LS-U07-W-5749570a4",
+          "before": "The invention has an ",
+          "after": " design.",
+          "answer": "amazing"
+        },
+        {
+          "id": "B02-LS-U07-W-aa6897a90",
+          "before": "I felt ",
+          "after": " after waiting at the station for an hour.",
+          "answer": "bored"
+        },
+        {
+          "id": "B02-LS-U07-W-2c7fba493",
+          "before": "He thinks the long lecture is ",
+          "after": ".",
+          "answer": "boring"
+        },
+        {
+          "id": "B02-LS-U07-W-d27c7a190",
+          "before": "So maybe he liked simple and neat things and not ",
+          "after": " things.",
+          "answer": "complicated"
+        },
+        {
+          "id": "B02-LS-U07-W-056f11827",
+          "before": "The ",
+          "after": " of the library lets in plenty of light.",
+          "answer": "design"
+        },
+        {
+          "id": "B02-LS-U07-W-f529c0de3",
+          "before": "The children were ",
+          "after": " about their first trip to the zoo.",
+          "answer": "excited"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "interesting",
+        "fascinated",
+        "fascinating",
+        "frustrated",
+        "exciting",
+        "interested",
+        "frustrating"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-29324637d",
+          "before": "It was an ",
+          "after": " race and the winner finished only a second ahead.",
+          "answer": "exciting"
+        },
+        {
+          "id": "B02-LS-U07-W-aeed16102",
+          "before": "She was ",
+          "after": " by the way the bees built their nest.",
+          "answer": "fascinated"
+        },
+        {
+          "id": "B02-LS-U07-W-f9c83941c",
+          "before": "The guide told us a ",
+          "after": " story about the old castle.",
+          "answer": "fascinating"
+        },
+        {
+          "id": "B02-LS-U07-W-9bcaa08fd",
+          "before": "When he saw something that didn't work well, he got ",
+          "after": " and worked to improve it.",
+          "answer": "frustrated"
+        },
+        {
+          "id": "B02-LS-U07-W-624f7c0dd",
+          "before": "It was ",
+          "after": " to miss the bus after waiting so long.",
+          "answer": "frustrating"
+        },
+        {
+          "id": "B02-LS-U07-W-ebfb2e9c2",
+          "before": "Also, even though he changed subjects, he was still ",
+          "after": " in art as well as designing.",
+          "answer": "interested"
+        },
+        {
+          "id": "B02-LS-U07-W-68f555517",
+          "before": "It was an ",
+          "after": " new use for a ball.",
+          "answer": "interesting"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "simple",
+        "relaxed",
+        "purpose",
+        "remarkable",
+        "point",
+        "invention",
+        "relaxing"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-94ac05762",
+          "before": "For example, his first ",
+          "after": " was a wheelbarrow with a ball for a wheel.",
+          "answer": "invention"
+        },
+        {
+          "id": "B02-LS-U07-W-71a7ca855",
+          "before": "She made a useful ",
+          "after": " about the design.",
+          "answer": "point"
+        },
+        {
+          "id": "B02-LS-U07-W-231e65684",
+          "before": "The ",
+          "after": " of this chair is to help people sit comfortably.",
+          "answer": "purpose"
+        },
+        {
+          "id": "B02-LS-U07-W-00174a5cf",
+          "before": "He felt ",
+          "after": " after a quiet walk in the park.",
+          "answer": "relaxed"
+        },
+        {
+          "id": "B02-LS-U07-W-6e93871ac",
+          "before": "He also liked working on his own projects in his free time and found painting to be ",
+          "after": ".",
+          "answer": "relaxing"
+        },
+        {
+          "id": "B02-LS-U07-W-3079ecd8c",
+          "before": "She is a ",
+          "after": " person who helps many people.",
+          "answer": "remarkable"
+        },
+        {
+          "id": "B02-LS-U07-W-0f7d0d088",
+          "before": "These people designed ",
+          "after": " things that have changed our lives and how we do everyday things.",
+          "answer": "simple"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "tired",
+        "use",
+        "worried",
+        "worrying",
+        "surprised",
+        "surprising",
+        "tiring"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U07-W-39da98e5c",
+          "before": "Spencer was very ",
+          "after": " by the news.",
+          "answer": "surprised"
+        },
+        {
+          "id": "B02-LS-U07-W-50b8de2eb",
+          "before": "It was ",
+          "after": " to see snow in the middle of summer.",
+          "answer": "surprising"
+        },
+        {
+          "id": "B02-LS-U07-W-511e99115",
+          "before": "I was too ",
+          "after": " to cook after a long day at work.",
+          "answer": "tired"
+        },
+        {
+          "id": "B02-LS-U07-W-2d1f13d97",
+          "before": "Walking uphill for three hours was ",
+          "after": ".",
+          "answer": "tiring"
+        },
+        {
+          "id": "B02-LS-U07-W-04489a12b",
+          "before": "The inventor found a new ",
+          "after": " for the ball.",
+          "answer": "use"
+        },
+        {
+          "id": "B02-LS-U07-W-7c3dc3889",
+          "before": "Edison was ",
+          "after": " about America's dependence on foreign rubber for tires.",
+          "answer": "worried"
+        },
+        {
+          "id": "B02-LS-U07-W-52eb4844a",
+          "before": "The news about the rising river was ",
+          "after": " for people who lived nearby.",
+          "answer": "worrying"
+        }
+      ]
+    }
+  ]
+}

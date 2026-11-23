@@ -1,0 +1,602 @@
+{
+  "unitId": "B3U03",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U03",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-LS-U03-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U03-W-dec073450",
+      "term": "avoid",
+      "pos": "(v)",
+      "ipa": "/əˈvɔɪd/",
+      "definition": "to stay away from something or not allow yourself to do something",
+      "example": "I avoid driving through the city centre at rush hour.",
+      "exampleMark": "avoid",
+      "picture": "practice/data/classroom-vocabulary/media/3bc876f8b22029b2e56d45c1.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0479.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9bcbfb94442fd80f17933ad5.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-0214b4b35",
+      "term": "block",
+      "pos": "(v)",
+      "ipa": "/ˈblɒk/",
+      "definition": "to prevent movement through or past something",
+      "example": "A badly parked van can block the road.",
+      "exampleMark": "block",
+      "picture": "practice/data/classroom-vocabulary/media/8d51d5889e9288c1333d71c1.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0480.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7b5ddd3e13bd7932dc59a579.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-2aeede80b",
+      "term": "control",
+      "pos": "(v)",
+      "ipa": "/kənˈtrəʊl/",
+      "definition": "to limit something",
+      "example": "Can we do anything to control it?",
+      "exampleMark": "control",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0147.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a10bc267a6a8527aa8cf3729.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-d0bf3889e",
+      "term": "cope",
+      "pos": "(v)",
+      "ipa": "/ˈkəʊp/",
+      "definition": "deal successfully with a difficult situation",
+      "example": "She took short breaks to cope with the pressure of the exams.",
+      "exampleMark": "cope",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0483.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/10d92489fdcced3fa79fc720.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-2fc7f1452",
+      "term": "crash",
+      "pos": "(n)",
+      "ipa": "/ˈkræʃ/",
+      "definition": "an accident in which a vehicle hits something",
+      "example": "A crash caused a long delay.",
+      "exampleMark": "crash",
+      "picture": "practice/data/classroom-vocabulary/media/df3a7013c46d781648315251.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0375.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/745df767c8493bda8812585f.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-6928e8493",
+      "term": "extreme",
+      "pos": "(adj)",
+      "ipa": "/ɪkˈstriːm/",
+      "definition": "very severe or bad",
+      "example": "Extreme weather can make travel difficult.",
+      "exampleMark": "Extreme",
+      "picture": "practice/data/classroom-vocabulary/media/0f3a84a2c42d77461be27830.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0484.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/84365ed51326b5476c0443ba.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-7c63de27b",
+      "term": "figure out",
+      "pos": "(phr v)",
+      "ipa": "/ˈfɪɡ.ə ˈaʊt/",
+      "definition": "to think about a problem until you know the answer",
+      "example": "We need to figure out why the machine has stopped.",
+      "exampleMark": "figure out",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0485.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b130a585ec49b5d38d0e3d01.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-7bc555991",
+      "term": "fixed",
+      "pos": "(adj)",
+      "ipa": "/ˈfɪkst/",
+      "definition": "not able to be changed",
+      "example": "They don't have to follow the same fixed timings for the lights all day long, like signals used to do.",
+      "exampleMark": "fixed",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0487.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/48bd560669b5942a4cd42852.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-a9a581005",
+      "term": "impact",
+      "pos": "(n)",
+      "ipa": "/ˈɪmpækt/",
+      "definition": "effect",
+      "example": "Well, a crash on a busy city center road can have a huge impact on all the other roads close by.",
+      "exampleMark": "impact",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/lesson-dictation-audio-v1/c9ba431de815dddf4ff2.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/94180a106ce1dab027be762c.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-9764308d2",
+      "term": "influence",
+      "pos": "(v)",
+      "ipa": "/ˈɪn.flʊ.əns/",
+      "definition": "to affect how somebody acts or thinks",
+      "example": "Transport costs influence how people travel.",
+      "exampleMark": "influence",
+      "picture": "practice/data/classroom-vocabulary/media/d11c7b330a5b2b6515f39bbc.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0488.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3e146b816ab9538513b1da7d.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-982d46d22",
+      "term": "management",
+      "pos": "(n)",
+      "ipa": "/ˈmæn.ɪ.dʒmənt/",
+      "definition": "the control and organization of something",
+      "example": "Good traffic management keeps vehicles moving.",
+      "exampleMark": "management",
+      "picture": "practice/data/classroom-vocabulary/media/3e5459786ea7ae307b7c7cd9.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0490.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/08e8e34b208c14eb2f8afd2b.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-0e43727e1",
+      "term": "measure",
+      "pos": "(v)",
+      "ipa": "/ˈmeʒ.ə/",
+      "definition": "to discover the exact amount or size of something",
+      "example": "Sensors measure how quickly vehicles move.",
+      "exampleMark": "measure",
+      "picture": "practice/data/classroom-vocabulary/media/8d4feb5afb0de953ecff894a.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0491.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fc5ada60dcff5dd344badc69.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-9d4e1e23b",
+      "term": "pass",
+      "pos": "(v)",
+      "ipa": "/ˈpɑːs/",
+      "definition": "to go past something or somebody",
+      "example": "Cars sometimes even drive in the cycle lanes to pass other cars.",
+      "exampleMark": "pass",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0492.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/03cfdd72b85fc6d93f15a32c.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-1b2bf1cea",
+      "term": "prevent",
+      "pos": "(v)",
+      "ipa": "/prɪˈvent/",
+      "definition": "to stop something from happening",
+      "example": "Clear road markings can help prevent accidents.",
+      "exampleMark": "prevent",
+      "picture": "practice/data/classroom-vocabulary/media/b0fe863684c1621ab4e99e81.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0177.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5469a8bc18198306744210fa.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-e3b7c980d",
+      "term": "primary",
+      "pos": "(adj)",
+      "ipa": "/ˈpraɪ.mə.ri/",
+      "definition": "more important than anything else",
+      "example": "Safety is our primary concern.",
+      "exampleMark": "primary",
+      "picture": "practice/data/classroom-vocabulary/media/fcd6be094c7628568a23c4d7.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0493.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/64aac5390a9fd4694e7f666a.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-be6c324c0",
+      "term": "safety",
+      "pos": "(n)",
+      "ipa": "/ˈseɪ.fti/",
+      "definition": "the condition of not being in danger",
+      "example": "So, the biggest issue is safety.",
+      "exampleMark": "safety",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0494.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0236711bf7ab3c37b71015bd.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-2b3348185",
+      "term": "serious",
+      "pos": "(adj)",
+      "ipa": "/ˈsɪə.rɪ.əs/",
+      "definition": "important. bad",
+      "example": "Are the traffic problems so serious they often cause you to be late?",
+      "exampleMark": "serious",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0495.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ea5ee676a342dfe0453cf59f.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-f544e4c95",
+      "term": "solve",
+      "pos": "(v)",
+      "ipa": "/ˈsɒlv/",
+      "definition": "to find a way to fix a problem",
+      "example": "Better routes could help solve the traffic problem.",
+      "exampleMark": "solve",
+      "picture": "practice/data/classroom-vocabulary/media/c902c0fa9bb1415c1e81f94f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0496.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/abeeac55772c1441bc3e0931.mp3"
+    },
+    {
+      "id": "B03-LS-U03-W-bee38fbc7",
+      "term": "trouble",
+      "pos": "(n)",
+      "ipa": "/ˈtrʌ.bəl/",
+      "definition": "problems",
+      "example": "When I was fifteen, I was in trouble with my parents because ...",
+      "exampleMark": "trouble",
+      "picture": "practice/data/classroom-vocabulary/media/2a1dfa4ae86a6e2d22e20423.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0497.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/153aa55d5be45e1c500b8895.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/8d51d5889e9288c1333d71c1.webp"
+        },
+        {
+          "key": "B",
+          "text": "to limit something"
+        },
+        {
+          "key": "C",
+          "text": "deal successfully with a difficult situation"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/3bc876f8b22029b2e56d45c1.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-dec073450",
+          "prompt": "I avoid driving through the city centre at rush hour.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U03-W-0214b4b35",
+          "prompt": "A badly parked van can block the road.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U03-W-2aeede80b",
+          "prompt": "Can we do anything to control it?",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U03-W-d0bf3889e",
+          "prompt": "She took short breaks to cope with the pressure of the exams.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to think about a problem until you know the answer"
+        },
+        {
+          "key": "B",
+          "text": "not able to be changed"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/df3a7013c46d781648315251.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/0f3a84a2c42d77461be27830.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-2fc7f1452",
+          "prompt": "A crash caused a long delay.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U03-W-6928e8493",
+          "prompt": "Extreme weather can make travel difficult.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U03-W-7c63de27b",
+          "prompt": "We need to figure out why the machine has stopped.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U03-W-7bc555991",
+          "prompt": "They don't have to follow the same fixed timings for the lights all day long, like signals used to do.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/8d4feb5afb0de953ecff894a.webp"
+        },
+        {
+          "key": "B",
+          "text": "effect"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d11c7b330a5b2b6515f39bbc.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/3e5459786ea7ae307b7c7cd9.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-a9a581005",
+          "prompt": "Well, a crash on a busy city center road can have a huge impact on all the other roads close by.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U03-W-9764308d2",
+          "prompt": "Transport costs influence how people travel.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U03-W-982d46d22",
+          "prompt": "Good traffic management keeps vehicles moving.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U03-W-0e43727e1",
+          "prompt": "Sensors measure how quickly vehicles move.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/b0fe863684c1621ab4e99e81.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/fcd6be094c7628568a23c4d7.webp"
+        },
+        {
+          "key": "C",
+          "text": "the condition of not being in danger"
+        },
+        {
+          "key": "D",
+          "text": "to go past something or somebody"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-9d4e1e23b",
+          "prompt": "Cars sometimes even drive in the cycle lanes to pass other cars.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U03-W-1b2bf1cea",
+          "prompt": "Clear road markings can help prevent accidents.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U03-W-e3b7c980d",
+          "prompt": "Safety is our primary concern.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U03-W-be6c324c0",
+          "prompt": "So, the biggest issue is safety.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c902c0fa9bb1415c1e81f94f.webp"
+        },
+        {
+          "key": "B",
+          "text": "problems"
+        },
+        {
+          "key": "C",
+          "text": "important. bad"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-2b3348185",
+          "prompt": "Are the traffic problems so serious they often cause you to be late?",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U03-W-f544e4c95",
+          "prompt": "Better routes could help solve the traffic problem.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U03-W-bee38fbc7",
+          "prompt": "When I was fifteen, I was in trouble with my parents because ...",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "crash",
+        "cope",
+        "control",
+        "block",
+        "avoid"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-dec073450",
+          "before": "I ",
+          "after": " driving through the city centre at rush hour.",
+          "answer": "avoid"
+        },
+        {
+          "id": "B03-LS-U03-W-0214b4b35",
+          "before": "A badly parked van can ",
+          "after": " the road.",
+          "answer": "block"
+        },
+        {
+          "id": "B03-LS-U03-W-2aeede80b",
+          "before": "Can we do anything to ",
+          "after": " it?",
+          "answer": "control"
+        },
+        {
+          "id": "B03-LS-U03-W-d0bf3889e",
+          "before": "She took short breaks to ",
+          "after": " with the pressure of the exams.",
+          "answer": "cope"
+        },
+        {
+          "id": "B03-LS-U03-W-2fc7f1452",
+          "before": "A ",
+          "after": " caused a long delay.",
+          "answer": "crash"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "influence",
+        "impact",
+        "fixed",
+        "figure out",
+        "Extreme"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-6928e8493",
+          "before": "",
+          "after": " weather can make travel difficult.",
+          "answer": "Extreme"
+        },
+        {
+          "id": "B03-LS-U03-W-7c63de27b",
+          "before": "We need to ",
+          "after": " why the machine has stopped.",
+          "answer": "figure out"
+        },
+        {
+          "id": "B03-LS-U03-W-7bc555991",
+          "before": "They don't have to follow the same ",
+          "after": " timings for the lights all day long, like signals used to do.",
+          "answer": "fixed"
+        },
+        {
+          "id": "B03-LS-U03-W-a9a581005",
+          "before": "Well, a crash on a busy city center road can have a huge ",
+          "after": " on all the other roads close by.",
+          "answer": "impact"
+        },
+        {
+          "id": "B03-LS-U03-W-9764308d2",
+          "before": "Transport costs ",
+          "after": " how people travel.",
+          "answer": "influence"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "primary",
+        "prevent",
+        "pass",
+        "measure",
+        "management"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-982d46d22",
+          "before": "Good traffic ",
+          "after": " keeps vehicles moving.",
+          "answer": "management"
+        },
+        {
+          "id": "B03-LS-U03-W-0e43727e1",
+          "before": "Sensors ",
+          "after": " how quickly vehicles move.",
+          "answer": "measure"
+        },
+        {
+          "id": "B03-LS-U03-W-9d4e1e23b",
+          "before": "Cars sometimes even drive in the cycle lanes to ",
+          "after": " other cars.",
+          "answer": "pass"
+        },
+        {
+          "id": "B03-LS-U03-W-1b2bf1cea",
+          "before": "Clear road markings can help ",
+          "after": " accidents.",
+          "answer": "prevent"
+        },
+        {
+          "id": "B03-LS-U03-W-e3b7c980d",
+          "before": "Safety is our ",
+          "after": " concern.",
+          "answer": "primary"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "trouble",
+        "solve",
+        "serious",
+        "safety"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U03-W-be6c324c0",
+          "before": "So, the biggest issue is ",
+          "after": ".",
+          "answer": "safety"
+        },
+        {
+          "id": "B03-LS-U03-W-2b3348185",
+          "before": "Are the traffic problems so ",
+          "after": " they often cause you to be late?",
+          "answer": "serious"
+        },
+        {
+          "id": "B03-LS-U03-W-f544e4c95",
+          "before": "Better routes could help ",
+          "after": " the traffic problem.",
+          "answer": "solve"
+        },
+        {
+          "id": "B03-LS-U03-W-bee38fbc7",
+          "before": "When I was fifteen, I was in ",
+          "after": " with my parents because ...",
+          "answer": "trouble"
+        }
+      ]
+    }
+  ]
+}

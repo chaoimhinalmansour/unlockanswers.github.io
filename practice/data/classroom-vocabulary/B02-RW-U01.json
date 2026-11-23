@@ -1,0 +1,622 @@
+{
+  "unitId": "B2U01",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U01",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U01-W-699e8ae92",
+      "term": "area",
+      "pos": "n.",
+      "ipa": "/ˈeəriə/",
+      "definition": "a region or part of a larger place, like a country or city",
+      "example": "This area has several parks and a small lake.",
+      "exampleMark": "area",
+      "picture": "practice/data/classroom-vocabulary/media/4d4637ce26b34f577938d4a6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/769aa7b066714de1f8a9bbfb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/07a9572305cf2615c9ad3766.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-6393bcdfe",
+      "term": "beautiful",
+      "pos": "adj.",
+      "ipa": "/ˈbjuːtɪfəl/",
+      "definition": "very attractive",
+      "example": "The waterfall is beautiful.",
+      "exampleMark": "beautiful",
+      "picture": "practice/data/classroom-vocabulary/media/d70095ef951e3d91bdd09ad4.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4de1a27f727ca0444483842f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4f5edce56cfddc7fe657d3ca.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-2c7fba493",
+      "term": "boring",
+      "pos": "adj.",
+      "ipa": "/ˈbɔːrɪŋ/",
+      "definition": "not interesting or exciting",
+      "example": "He thinks the long lecture is boring.",
+      "exampleMark": "boring",
+      "picture": "practice/data/classroom-vocabulary/media/ca067b25f8266cab4940bb5f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3787e1628fbf79c22fa5ff68.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6e289ad5f1f6bb54de4ba3a0.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-5d8df9b1d",
+      "term": "capital",
+      "pos": "n.",
+      "ipa": "/ˈkæpɪtəl/",
+      "definition": "the most important city in a country or state; where the government is",
+      "example": "We took a train to the capital of the country.",
+      "exampleMark": "capital",
+      "picture": "practice/data/classroom-vocabulary/media/b6420e730102dbbdb907c83b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2630fb54e0fb2b9aa7e51130.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3015f44af788598c7330ac2c.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-fb8df41a1",
+      "term": "cheap",
+      "pos": "adj.",
+      "ipa": "/tʃiːp/",
+      "definition": "not expensive, or costs less than usual",
+      "example": "The bus is a cheap way to travel around the city.",
+      "exampleMark": "cheap",
+      "picture": "practice/data/classroom-vocabulary/media/b9aa8f913866e929359c9a4f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/60c52c33b04998c48ddc4022.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6bc16466f8bcede178de3050.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-8a055cd47",
+      "term": "city centre",
+      "pos": "n.",
+      "ipa": "/ˈsɪti ˌsentə/",
+      "definition": "the main or central part of a city",
+      "example": "Our hotel is near the shops in the city centre.",
+      "exampleMark": "city centre",
+      "picture": "practice/data/classroom-vocabulary/media/890ab124cd3051f1dada8f12.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3522f52bc190f7a20111d2ce.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ade1b2790741d4800010639e.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-6a1cec45e",
+      "term": "clean",
+      "pos": "adj.",
+      "ipa": "/kliːn/",
+      "definition": "not dirty",
+      "example": "The library is clean and tidy.",
+      "exampleMark": "clean",
+      "picture": "practice/data/classroom-vocabulary/media/83381517277dc6494a82cda3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/27bb724a30682788a3fdede3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5cf33442ceb1407f8aafa0cc.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-82bf7e0dd",
+      "term": "countryside",
+      "pos": "n.",
+      "ipa": "/ˈkʌntrisaɪd/",
+      "definition": "land that is not in towns or cities and may have farms and fields",
+      "example": "We went for a walk in the countryside.",
+      "exampleMark": "countryside",
+      "picture": "practice/data/classroom-vocabulary/media/f19f548d3fcfed70916604b3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/41da3c5f30e68c5984fd201a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ec7f86171a351c532d359f79.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-e0d587ce0",
+      "term": "expensive",
+      "pos": "adj.",
+      "ipa": "/ɪkˈspensɪv/",
+      "definition": "costs a lot of money; not cheap",
+      "example": "The restaurant is too expensive for us.",
+      "exampleMark": "expensive",
+      "picture": "practice/data/classroom-vocabulary/media/699406494080536f1863757c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/35617988f9894b67cbf88e27.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/af0d18904f173510eedf78f0.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-b780d252a",
+      "term": "expert",
+      "pos": "n.",
+      "ipa": "/ˈekspɜːt/",
+      "definition": "somebody who has a lot of skill in or a lot of knowledge about something",
+      "example": "My uncle is an expert on old buildings.",
+      "exampleMark": "expert",
+      "picture": "practice/data/classroom-vocabulary/media/f4ce8b3fd6bc17193587cbb0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a532af501734f3b43c9cbbdf.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0051b6c0d3b41688e0e8887f.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-68f555517",
+      "term": "interesting",
+      "pos": "adj.",
+      "ipa": "/ˈɪntrəstɪŋ/",
+      "definition": "Somebody or something that is interesting keeps your attention because they, or it, are unusual, exciting or have lots of ideas.",
+      "example": "The invention is interesting because it solves a problem.",
+      "exampleMark": "interesting",
+      "picture": "practice/data/classroom-vocabulary/media/f694628ab8a3b56a8aa41dc7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/acecc974d85c400480f05e3e.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6c2d1dfedbcbf74e36649144.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-b09be85d5",
+      "term": "modern",
+      "pos": "adj.",
+      "ipa": "/ˈmɒdən/",
+      "definition": "designed and made using the most recent ideas and methods",
+      "example": "The city has a modern train station.",
+      "exampleMark": "modern",
+      "picture": "practice/data/classroom-vocabulary/media/a61dfb285ebb53a13a4ce85b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/74d56afbdc5640a0c51c24d7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b60b0effacc9511484ba4c02.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-e570e577e",
+      "term": "noisy",
+      "pos": "adj.",
+      "ipa": "/ˈnɔɪzi/",
+      "definition": "loud; makes a lot of noise",
+      "example": "The street is noisy because of the buses and cars.",
+      "exampleMark": "noisy",
+      "picture": "practice/data/classroom-vocabulary/media/75b5ac557dfc46ea016523be.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8f7146efaf8467cd920181b3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d62c42d725c095805a69a89a.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-198e7188b",
+      "term": "opportunity",
+      "pos": "n.",
+      "ipa": "/ˌɒpəˈtʃuːnəti/",
+      "definition": "a chance to do or experience something good",
+      "example": "This trip is an opportunity to practise English.",
+      "exampleMark": "opportunity",
+      "picture": "practice/data/classroom-vocabulary/media/27763658956120a29ca91fe4.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ada8b9b21e070fadfa8c8d9b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/07f9e1709cd796801b4fa9a9.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-fee14d3a1",
+      "term": "polluted",
+      "pos": "adj.",
+      "ipa": "/pəˈluːtɪd/",
+      "definition": "damaged or dirty because of harmful materials or waste",
+      "example": "The water is too polluted for people to swim in.",
+      "exampleMark": "polluted",
+      "picture": "practice/data/classroom-vocabulary/media/5476ca11a61050c620f85596.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9855ffd3489c6a5111c96987.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ca8bae2fd95c305ff7af7f01.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-233471efd",
+      "term": "pollution",
+      "pos": "n.",
+      "ipa": "/pəˈluːʃən/",
+      "definition": "damage caused to water, air and land by harmful materials or waste",
+      "example": "Air pollution is a serious problem in some cities.",
+      "exampleMark": "pollution",
+      "picture": "practice/data/classroom-vocabulary/media/a4fd7a804b8264945ae977ef.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0ecea02652d6b514eadc026b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a94ed9d0e2e1e589619d190d.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-db4d33057",
+      "term": "population",
+      "pos": "n.",
+      "ipa": "/ˌpɒpjəˈleɪʃən/",
+      "definition": "the number of people living in a place",
+      "example": "This town has a population of about 50,000.",
+      "exampleMark": "population",
+      "picture": "practice/data/classroom-vocabulary/media/00b72aee90e4e6a625cadfe9.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0750665301b2c56f75108ed4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8c5c9b490e447c7e44cb5267.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-58bdb05d8",
+      "term": "quiet",
+      "pos": "adj.",
+      "ipa": "/ˈkwaɪət/",
+      "definition": "makes little or no noise",
+      "example": "It is quiet in the garden behind the house.",
+      "exampleMark": "quiet",
+      "picture": "practice/data/classroom-vocabulary/media/f893521054c69b7f9ca65240.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/54e823758fc4c7dca698cb26.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/065522e82994ac33f6594458.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-c8ab51895",
+      "term": "traffic",
+      "pos": "n.",
+      "ipa": "/ˈtræfɪk/",
+      "definition": "the cars, trucks and other vehicles using a road",
+      "example": "There is a lot of traffic on this road in the morning.",
+      "exampleMark": "traffic",
+      "picture": "practice/data/classroom-vocabulary/media/6cac466a29ce6c4baaadc2e2.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/95a7dba6c58dac513a89fc04.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3b95a08dad8755ed40f4d004.mp3"
+    },
+    {
+      "id": "B02-RW-U01-W-5377f790a",
+      "term": "ugly",
+      "pos": "adj.",
+      "ipa": "/ˈʌɡli/",
+      "definition": "unpleasant to look at",
+      "example": "The grey smog makes the city look ugly.",
+      "exampleMark": "ugly",
+      "picture": "practice/data/classroom-vocabulary/media/a4fd7a804b8264945ae977ef.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a220f869616b2738ab0b1136.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/29cbf31fbbc2634ac40c9119.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/ca067b25f8266cab4940bb5f.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/d70095ef951e3d91bdd09ad4.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/4d4637ce26b34f577938d4a6.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/b6420e730102dbbdb907c83b.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-699e8ae92",
+          "prompt": "This area has several parks and a small lake.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U01-W-6393bcdfe",
+          "prompt": "The waterfall is beautiful.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U01-W-2c7fba493",
+          "prompt": "He thinks the long lecture is boring.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U01-W-5d8df9b1d",
+          "prompt": "We took a train to the capital of the country.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/83381517277dc6494a82cda3.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/890ab124cd3051f1dada8f12.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/b9aa8f913866e929359c9a4f.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/f19f548d3fcfed70916604b3.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-fb8df41a1",
+          "prompt": "The bus is a cheap way to travel around the city.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U01-W-8a055cd47",
+          "prompt": "Our hotel is near the shops in the city centre.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U01-W-6a1cec45e",
+          "prompt": "The library is clean and tidy.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U01-W-82bf7e0dd",
+          "prompt": "We went for a walk in the countryside.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/f4ce8b3fd6bc17193587cbb0.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/699406494080536f1863757c.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/f694628ab8a3b56a8aa41dc7.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/a61dfb285ebb53a13a4ce85b.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-e0d587ce0",
+          "prompt": "The restaurant is too expensive for us.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U01-W-b780d252a",
+          "prompt": "My uncle is an expert on old buildings.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U01-W-68f555517",
+          "prompt": "The invention is interesting because it solves a problem.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U01-W-b09be85d5",
+          "prompt": "The city has a modern train station.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/a4fd7a804b8264945ae977ef.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/5476ca11a61050c620f85596.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/75b5ac557dfc46ea016523be.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/27763658956120a29ca91fe4.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-e570e577e",
+          "prompt": "The street is noisy because of the buses and cars.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U01-W-198e7188b",
+          "prompt": "This trip is an opportunity to practise English.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U01-W-fee14d3a1",
+          "prompt": "The water at this beach is polluted with rubbish.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U01-W-233471efd",
+          "prompt": "Air pollution is a serious problem in some cities.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/6cac466a29ce6c4baaadc2e2.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/f893521054c69b7f9ca65240.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/00b72aee90e4e6a625cadfe9.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/a4fd7a804b8264945ae977ef.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-db4d33057",
+          "prompt": "This town has a population of about 50,000.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U01-W-58bdb05d8",
+          "prompt": "It is quiet in the garden behind the house.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U01-W-c8ab51895",
+          "prompt": "There is a lot of traffic on this road in the morning.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U01-W-5377f790a",
+          "prompt": "The grey smog makes the city look ugly.",
+          "answer": "D"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "cheap",
+        "city centre",
+        "clean",
+        "beautiful",
+        "capital",
+        "boring",
+        "area"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-699e8ae92",
+          "before": "This ",
+          "after": " of the national park has three lakes.",
+          "answer": "area"
+        },
+        {
+          "id": "B02-RW-U01-W-6393bcdfe",
+          "before": "The waterfall shone in the sunlight. It was ",
+          "after": ".",
+          "answer": "beautiful"
+        },
+        {
+          "id": "B02-RW-U01-W-2c7fba493",
+          "before": "I nearly fell asleep during that ",
+          "after": " film.",
+          "answer": "boring"
+        },
+        {
+          "id": "B02-RW-U01-W-5d8df9b1d",
+          "before": "The president works in the ",
+          "after": " of the country.",
+          "answer": "capital"
+        },
+        {
+          "id": "B02-RW-U01-W-fb8df41a1",
+          "before": "This ticket is ",
+          "after": " enough for anyone in our group to buy.",
+          "answer": "cheap"
+        },
+        {
+          "id": "B02-RW-U01-W-8a055cd47",
+          "before": "The town hall and the main shopping street are right in the ",
+          "after": ".",
+          "answer": "city centre"
+        },
+        {
+          "id": "B02-RW-U01-W-6a1cec45e",
+          "before": "There is no litter on the floor. The station is very ",
+          "after": ".",
+          "answer": "clean"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "countryside",
+        "expensive",
+        "noisy",
+        "expert",
+        "interesting",
+        "opportunity",
+        "modern"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-82bf7e0dd",
+          "before": "On weekends we leave the city and walk through fields in the ",
+          "after": ".",
+          "answer": "countryside"
+        },
+        {
+          "id": "B02-RW-U01-W-e0d587ce0",
+          "before": "That flat costs more than we can pay. It is too ",
+          "after": ".",
+          "answer": "expensive"
+        },
+        {
+          "id": "B02-RW-U01-W-b780d252a",
+          "before": "Ask an ",
+          "after": " on buildings whether this wall is safe to remove.",
+          "answer": "expert"
+        },
+        {
+          "id": "B02-RW-U01-W-68f555517",
+          "before": "I wanted to find out more after that ",
+          "after": " museum talk.",
+          "answer": "interesting"
+        },
+        {
+          "id": "B02-RW-U01-W-b09be85d5",
+          "before": "The old ticket office was replaced by a ",
+          "after": " building with automatic doors.",
+          "answer": "modern"
+        },
+        {
+          "id": "B02-RW-U01-W-e570e577e",
+          "before": "The music was so loud that we left the ",
+          "after": " café.",
+          "answer": "noisy"
+        },
+        {
+          "id": "B02-RW-U01-W-198e7188b",
+          "before": "This exchange programme gives me an ",
+          "after": " to practise Spanish.",
+          "answer": "opportunity"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "pollution",
+        "ugly",
+        "quiet",
+        "traffic",
+        "population",
+        "polluted"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U01-W-fee14d3a1",
+          "before": "The river is ",
+          "after": " with waste from the factory.",
+          "answer": "polluted"
+        },
+        {
+          "id": "B02-RW-U01-W-233471efd",
+          "before": "The factory reduced water ",
+          "after": " by treating its waste.",
+          "answer": "pollution"
+        },
+        {
+          "id": "B02-RW-U01-W-db4d33057",
+          "before": "The island has a ",
+          "after": " of 18,000 people.",
+          "answer": "population"
+        },
+        {
+          "id": "B02-RW-U01-W-58bdb05d8",
+          "before": "Please stay ",
+          "after": " so the students in the next room can hear their teacher.",
+          "answer": "quiet"
+        },
+        {
+          "id": "B02-RW-U01-W-c8ab51895",
+          "before": "We left early to avoid the morning ",
+          "after": " on the motorway.",
+          "answer": "traffic"
+        },
+        {
+          "id": "B02-RW-U01-W-5377f790a",
+          "before": "I think the sculpture is ",
+          "after": ". I don't like its shape or colour.",
+          "answer": "ugly"
+        }
+      ]
+    }
+  ]
+}

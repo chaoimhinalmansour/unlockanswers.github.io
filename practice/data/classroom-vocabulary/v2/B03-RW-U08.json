@@ -1,0 +1,720 @@
+{
+  "unitId": "B3U08",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U08",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-RW-U08-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U08-W-15cdad7a0",
+      "term": "afford",
+      "pos": "(v)",
+      "ipa": "/əfˈɔːd/",
+      "definition": "to be able to buy or do something because you have enough money or time",
+      "example": "Many experts say you should invest only what you can afford to lose.",
+      "exampleMark": "afford",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0729.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/30347ba52ee5095d79765df9.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-49c2c209f",
+      "term": "demand",
+      "pos": "(n)",
+      "ipa": "/dɪˈmɑːnd/",
+      "definition": "the need for something to be sold or supplied",
+      "example": "Demand for homes has increased in this city.",
+      "exampleMark": "Demand",
+      "picture": "practice/data/classroom-vocabulary/media/2c28871068f2c4ccb7363d81.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0755.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/10d91d872154a38e428f1f91.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-8ec4382b3",
+      "term": "economy",
+      "pos": "(n)",
+      "ipa": "/ɪˈkɒ.nə.mi/",
+      "definition": "the system by which a country produces and uses goods and money",
+      "example": "The local economy depends on farming and tourism.",
+      "exampleMark": "economy",
+      "picture": "practice/data/classroom-vocabulary/media/e42060531b4ab76cac1b0dfe.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0084.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/034e41094924c17661b37523.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-06e312501",
+      "term": "employment",
+      "pos": "(n)",
+      "ipa": "/ɪmˈplɔɪ.mənt/",
+      "definition": "the fact of someone being paid to work for a company or organization",
+      "example": "The new factory will provide employment for many local people.",
+      "exampleMark": "employment",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0756.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c2afd2e1c0f2eec56660a12a.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-317b4c3c1",
+      "term": "expenditure",
+      "pos": "(n)",
+      "ipa": "/ɪkˈspen.dɪ.tʃə/",
+      "definition": "the total amount of money that a government or person spends on something",
+      "example": "Housing expenditure can be high.",
+      "exampleMark": "expenditure",
+      "picture": "practice/data/classroom-vocabulary/media/6b10183c879e5e94eec7a9de.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0757.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3fb4ff185979a31efa9572bc.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-43d499143",
+      "term": "financial",
+      "pos": "(adj)",
+      "ipa": "/fɪˈnæn.ʃəl/",
+      "definition": "relating to money or how money is managed",
+      "example": "The company received financial support to open a new office.",
+      "exampleMark": "financial",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0759.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e9fcb13d6fae8c105bde3ab6.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-0f613350b",
+      "term": "income",
+      "pos": "(n)",
+      "ipa": "/ˈɪŋ.kʌm/",
+      "definition": "money that you earn by working, investing or producing goods",
+      "example": "Selling vegetables provides an income for the farmer.",
+      "exampleMark": "income",
+      "picture": "practice/data/classroom-vocabulary/media/98741039c11bba8f8abf145f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0760.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9b4a5855b43aee04620e03b3.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-9d5452c9c",
+      "term": "inequality",
+      "pos": "(n)",
+      "ipa": "/ˌɪn.ɪˈkwɒl.ɪ.ti/",
+      "definition": "the unfair situation in society when some people have more opportunities, money, etc. than other people",
+      "example": "The graph shows income inequality.",
+      "exampleMark": "inequality",
+      "picture": "practice/data/classroom-vocabulary/media/3d3a90c795b1a156fe5a6ce7.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0761.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/603478a8ab4bfd80c1a01bae.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-e483ae542",
+      "term": "interest rate",
+      "pos": "(n)",
+      "ipa": "/ˈɪn.trɪst ˈreɪt/",
+      "definition": "the percentage amount that you pay when you borrow money, or receive when you lend money, for a period of time",
+      "example": "The interest rate on this loan is 4.5%.",
+      "exampleMark": "interest rate",
+      "picture": "practice/data/classroom-vocabulary/media/61de0f9b33f4c0a92b4be495.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0762.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7c2793331a7e7f272b98ce57.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-72527848a",
+      "term": "invest",
+      "pos": "(v)",
+      "ipa": "/ɪnˈvest/",
+      "definition": "to put money, effort, time, etc. into something to make a profit",
+      "example": "Many experts say you should invest only what you can afford to lose.",
+      "exampleMark": "invest",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0763.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/30347ba52ee5095d79765df9.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-ea213780e",
+      "term": "investment",
+      "pos": "(n)",
+      "ipa": "/ɪnˈvest.mənt/",
+      "definition": "something such as stocks or property which you buy in order to make a profit",
+      "example": "Their home is a long-term investment.",
+      "exampleMark": "investment",
+      "picture": "practice/data/classroom-vocabulary/media/425e36f740e5d849574aa3b9.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0528.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4af186b6a63744fe3ac5d4a3.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-5c9f73af7",
+      "term": "market",
+      "pos": "(n)",
+      "ipa": "/ˈmɑː.kɪt/",
+      "definition": "the total number of people who might want to buy something",
+      "example": "He points out that historically, the stock market has brought in significantly higher returns than gold.",
+      "exampleMark": "market",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0702.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/303f89cdf9a6e37f8a3fbfce.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-09f3246f5",
+      "term": "median",
+      "pos": "(adj)",
+      "ipa": "/ˈmiː.dɪ.ən/",
+      "definition": "the median value is the middle one in a set of values arranged in order of size",
+      "example": "If the values are 3, 5 and 9, the median is 5.",
+      "exampleMark": "median",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0764.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5d44d0c9bd4dc42e6c60e724.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-5ac8834cd",
+      "term": "poverty",
+      "pos": "(n)",
+      "ipa": "/ˈpɒv.ə.ti/",
+      "definition": "the condition of being extremely poor",
+      "example": "One aim of the programme is to help families out of poverty.",
+      "exampleMark": "poverty",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0765.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ed8e0d264190f59691638d61.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-18342d1b3",
+      "term": "professional",
+      "pos": "(adj)",
+      "ipa": "/prəˈfeʃ.ən.əl/",
+      "definition": "relating to work that needs special training or education",
+      "example": "The job requires professional training in engineering.",
+      "exampleMark": "professional",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0766.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ac10c8f9fb9c28ea124fccb8.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-d376ca299",
+      "term": "purchase",
+      "pos": "(n)",
+      "ipa": "/ˈpɜː.tʃɪs/",
+      "definition": "something that you buy",
+      "example": "She kept the receipt for her most expensive purchase.",
+      "exampleMark": "purchase",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0767.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/618c50b9e8f56ca6806f7582.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-63143b6f8",
+      "term": "return",
+      "pos": "(n)",
+      "ipa": "/rɪˈtɜːn/",
+      "definition": "profit on money you have invested",
+      "example": "The investment produced a good return.",
+      "exampleMark": "return",
+      "picture": "practice/data/classroom-vocabulary/media/891bab1737fe30d2e462397d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0768.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/56335bb6ff55bdbc4ca23d83.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-abf72c05c",
+      "term": "revenue",
+      "pos": "(n)",
+      "ipa": "/ˈrev.ɪ.njuː/",
+      "definition": "the income that a company or government receives",
+      "example": "The shop earns revenue by selling furniture.",
+      "exampleMark": "revenue",
+      "picture": "practice/data/classroom-vocabulary/media/733377fab1a0bb90fb19b104.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0769.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2e126cf0bdded2d2f9cd10fc.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-007871e28",
+      "term": "stocks and shares",
+      "pos": "(n)",
+      "ipa": "/ˈstɒks ənd ˈʃeːz/",
+      "definition": "parts of a publicly-owned business which can be bought and sold as investments",
+      "example": "She buys stocks and shares.",
+      "exampleMark": "stocks and shares",
+      "picture": "practice/data/classroom-vocabulary/media/76dd9ccadd36aadd9a41716f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0771.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f9f30475ead7f5f2fe38422f.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-076df7153",
+      "term": "supply",
+      "pos": "(n)",
+      "ipa": "/səpˈlaɪ/",
+      "definition": "an amount or quantity of something available to use",
+      "example": "The town stores a supply of clean water for dry months.",
+      "exampleMark": "supply",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0772.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/db9b37333efe5d89102aae9f.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-fc3fb5a92",
+      "term": "valuable",
+      "pos": "(adj)",
+      "ipa": "/ˈvæl.jʊ.bəl/",
+      "definition": "worth a lot of money",
+      "example": "The museum keeps its most valuable painting behind glass.",
+      "exampleMark": "valuable",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0773.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/04764a41107615b88db2df40.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-f32b67c7e",
+      "term": "value",
+      "pos": "(n)",
+      "ipa": "/ˈvæl.juː/",
+      "definition": "how much money something could be sold for",
+      "example": "The value of the house has increased.",
+      "exampleMark": "value",
+      "picture": "practice/data/classroom-vocabulary/media/bc8b91580c1ef2eba6f6d456.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0774.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3eadabd0580c40f179a86d80.mp3"
+    },
+    {
+      "id": "B03-RW-U08-W-7c48ff802",
+      "term": "wealthy",
+      "pos": "(adj)",
+      "ipa": "/ˈwel.θi/",
+      "definition": "having lots of money or possessions. rich",
+      "example": "The wealthy family donated a large sum to the local library.",
+      "exampleMark": "wealthy",
+      "picture": "practice/data/classroom-vocabulary/media/c94b2b6b38a2918c8a515851.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0775.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bb3a5aa77684daa4c471de63.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/2c28871068f2c4ccb7363d81.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/e42060531b4ab76cac1b0dfe.webp"
+        },
+        {
+          "key": "C",
+          "text": "the fact of someone being paid to work for a company or organization"
+        },
+        {
+          "key": "D",
+          "text": "to be able to buy or do something because you have enough money or time"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-15cdad7a0",
+          "prompt": "Many experts say you should invest only what you can afford to lose.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U08-W-49c2c209f",
+          "prompt": "Demand for homes has increased in this city.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U08-W-8ec4382b3",
+          "prompt": "The local economy depends on farming and tourism.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U08-W-06e312501",
+          "prompt": "The new factory will provide employment for many local people.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/98741039c11bba8f8abf145f.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/3d3a90c795b1a156fe5a6ce7.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/6b10183c879e5e94eec7a9de.webp"
+        },
+        {
+          "key": "D",
+          "text": "relating to money or how money is managed"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-317b4c3c1",
+          "prompt": "Housing expenditure can be high.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U08-W-43d499143",
+          "prompt": "The company received financial support to open a new office.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U08-W-0f613350b",
+          "prompt": "Selling vegetables provides an income for the farmer.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U08-W-9d5452c9c",
+          "prompt": "The graph shows income inequality.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the total number of people who might want to buy something"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/61de0f9b33f4c0a92b4be495.webp"
+        },
+        {
+          "key": "C",
+          "text": "to put money, effort, time, etc. into something to make a profit"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/425e36f740e5d849574aa3b9.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-e483ae542",
+          "prompt": "The interest rate on this loan is 4.5%.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U08-W-72527848a",
+          "prompt": "Many experts say you should invest only what you can afford to lose.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U08-W-ea213780e",
+          "prompt": "Their home is a long-term investment.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U08-W-5c9f73af7",
+          "prompt": "He points out that historically, the stock market has brought in significantly higher returns than gold.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the condition of being extremely poor"
+        },
+        {
+          "key": "B",
+          "text": "relating to work that needs special training or education"
+        },
+        {
+          "key": "C",
+          "text": "something that you buy"
+        },
+        {
+          "key": "D",
+          "text": "the median value is the middle one in a set of values arranged in order of size"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-09f3246f5",
+          "prompt": "If the values are 3, 5 and 9, the median is 5.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U08-W-5ac8834cd",
+          "prompt": "One aim of the programme is to help families out of poverty.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U08-W-18342d1b3",
+          "prompt": "The job requires professional training in engineering.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U08-W-d376ca299",
+          "prompt": "She kept the receipt for her most expensive purchase.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/76dd9ccadd36aadd9a41716f.webp"
+        },
+        {
+          "key": "B",
+          "text": "an amount or quantity of something available to use"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/891bab1737fe30d2e462397d.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/733377fab1a0bb90fb19b104.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-63143b6f8",
+          "prompt": "The investment produced a good return.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U08-W-abf72c05c",
+          "prompt": "The shop earns revenue by selling furniture.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U08-W-007871e28",
+          "prompt": "She buys stocks and shares.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U08-W-076df7153",
+          "prompt": "The town stores a supply of clean water for dry months.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "having lots of money or possessions. rich"
+        },
+        {
+          "key": "B",
+          "text": "worth a lot of money"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/bc8b91580c1ef2eba6f6d456.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-fc3fb5a92",
+          "prompt": "The museum keeps its most valuable painting behind glass.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U08-W-f32b67c7e",
+          "prompt": "The value of the house has increased.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U08-W-7c48ff802",
+          "prompt": "The wealthy family donated a large sum to the local library.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "financial",
+        "expenditure",
+        "employment",
+        "economy",
+        "Demand",
+        "afford"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-15cdad7a0",
+          "before": "Many experts say you should invest only what you can ",
+          "after": " to lose.",
+          "answer": "afford"
+        },
+        {
+          "id": "B03-RW-U08-W-49c2c209f",
+          "before": "",
+          "after": " for homes has increased in this city.",
+          "answer": "Demand"
+        },
+        {
+          "id": "B03-RW-U08-W-8ec4382b3",
+          "before": "The local ",
+          "after": " depends on farming and tourism.",
+          "answer": "economy"
+        },
+        {
+          "id": "B03-RW-U08-W-06e312501",
+          "before": "The new factory will provide ",
+          "after": " for many local people.",
+          "answer": "employment"
+        },
+        {
+          "id": "B03-RW-U08-W-317b4c3c1",
+          "before": "Housing ",
+          "after": " can be high.",
+          "answer": "expenditure"
+        },
+        {
+          "id": "B03-RW-U08-W-43d499143",
+          "before": "The company received ",
+          "after": " support to open a new office.",
+          "answer": "financial"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "market",
+        "investment",
+        "invest",
+        "interest rate",
+        "inequality",
+        "income"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-0f613350b",
+          "before": "Selling vegetables provides an ",
+          "after": " for the farmer.",
+          "answer": "income"
+        },
+        {
+          "id": "B03-RW-U08-W-9d5452c9c",
+          "before": "The graph shows income ",
+          "after": ".",
+          "answer": "inequality"
+        },
+        {
+          "id": "B03-RW-U08-W-e483ae542",
+          "before": "The ",
+          "after": " on this loan is 4.5%.",
+          "answer": "interest rate"
+        },
+        {
+          "id": "B03-RW-U08-W-72527848a",
+          "before": "Many experts say you should ",
+          "after": " only what you can afford to lose.",
+          "answer": "invest"
+        },
+        {
+          "id": "B03-RW-U08-W-ea213780e",
+          "before": "Their home is a long-term ",
+          "after": ".",
+          "answer": "investment"
+        },
+        {
+          "id": "B03-RW-U08-W-5c9f73af7",
+          "before": "He points out that historically, the stock ",
+          "after": " has brought in significantly higher returns than gold.",
+          "answer": "market"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "revenue",
+        "return",
+        "purchase",
+        "professional",
+        "poverty",
+        "median"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-09f3246f5",
+          "before": "If the values are 3, 5 and 9, the ",
+          "after": " is 5.",
+          "answer": "median"
+        },
+        {
+          "id": "B03-RW-U08-W-5ac8834cd",
+          "before": "One aim of the programme is to help families out of ",
+          "after": ".",
+          "answer": "poverty"
+        },
+        {
+          "id": "B03-RW-U08-W-18342d1b3",
+          "before": "The job requires ",
+          "after": " training in engineering.",
+          "answer": "professional"
+        },
+        {
+          "id": "B03-RW-U08-W-d376ca299",
+          "before": "She kept the receipt for her most expensive ",
+          "after": ".",
+          "answer": "purchase"
+        },
+        {
+          "id": "B03-RW-U08-W-63143b6f8",
+          "before": "The investment produced a good ",
+          "after": ".",
+          "answer": "return"
+        },
+        {
+          "id": "B03-RW-U08-W-abf72c05c",
+          "before": "The shop earns ",
+          "after": " by selling furniture.",
+          "answer": "revenue"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "wealthy",
+        "value",
+        "valuable",
+        "supply",
+        "stocks and shares"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U08-W-007871e28",
+          "before": "She buys ",
+          "after": ".",
+          "answer": "stocks and shares"
+        },
+        {
+          "id": "B03-RW-U08-W-076df7153",
+          "before": "The town stores a ",
+          "after": " of clean water for dry months.",
+          "answer": "supply"
+        },
+        {
+          "id": "B03-RW-U08-W-fc3fb5a92",
+          "before": "The museum keeps its most ",
+          "after": " painting behind glass.",
+          "answer": "valuable"
+        },
+        {
+          "id": "B03-RW-U08-W-f32b67c7e",
+          "before": "The ",
+          "after": " of the house has increased.",
+          "answer": "value"
+        },
+        {
+          "id": "B03-RW-U08-W-7c48ff802",
+          "before": "The ",
+          "after": " family donated a large sum to the local library.",
+          "answer": "wealthy"
+        }
+      ]
+    }
+  ]
+}

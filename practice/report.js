@@ -3,7 +3,7 @@
 (function () {
   const { escapeHTML: esc, displayAnswer, displayKeys } = window.UnlockRules;
 
-  const { clipTime, isSpeaking } = window.UnlockRecordings;
+  const { clipTime, isSpeaking, requiresRecording = isSpeaking } = window.UnlockRecordings;
 
   const styles = [
     "html{color-scheme:light;background:var(--unlock-shell)}",
@@ -119,12 +119,13 @@
       return media.get(key).id;
     }
 
-    function studentRecording(clip, number, stage) {
+    function studentRecording(clip, question, stage) {
       if (!clip) return null;
       if (!recordings.has(clip.id)) {
         const entry = { id: clip.id, mime: clip.mime, durationMs: clip.durationMs, size: clip.size };
         if (bundled) {
-          const label = "第 " + number + " 题" + takeLabel(stage);
+          const item = question.wordCard ? "词卡 " + question.vocabulary.position : "第 " + question.number + " 题";
+          const label = item + takeLabel(stage);
           const extension = recordingExtensions[clip.mime?.split(";")[0].toLowerCase()];
           if (!extension) throw new Error(label + "的文件格式无法识别。");
           entry.path = "录音/" + label + "." + extension;
@@ -143,7 +144,15 @@
         const label = article.passageTitle || "阅读原文";
         ids.push(material(article, { kind: "passage", label, passages: article.passages }));
       }
-      if (question.picture) ids.push(mediaFile("image", "第 " + question.number + " 题配图", question.picture));
+      if (question.picture) {
+        const label = question.wordCard ? question.prompt + " 词卡配图" : "第 " + question.number + " 题配图";
+        ids.push(mediaFile("image", label, question.picture));
+      }
+      for (const option of question.pictureOptions || []) {
+        if (option.picture) ids.push(mediaFile("image", "词汇配对图片", option.picture));
+      }
+      if (question.wordCard?.wordAudio) ids.push(mediaFile("audio", question.prompt + " 单词示范", question.wordCard.wordAudio));
+      if (question.wordCard?.exampleAudio) ids.push(mediaFile("audio", question.prompt + " 例句示范", question.wordCard.exampleAudio));
       if (item) {
         ids.push(mediaFile("audio", "第 " + item.number + " 题单词音频", words.audioPath(item)));
       } else {
@@ -184,22 +193,32 @@
         const speaking = isSpeaking(question);
         const original = first?.recordings?.[id];
         const revised = second?.recordings?.[id];
-        if (bundled && speaking && (!original || !revised)) {
+        if (bundled && requiresRecording(question) && (!original || !revised)) {
           const stage = original ? "完成时" : "首次";
-          throw new Error("第 " + number + " 题缺少" + stage + "录音。请在原作答浏览器中重试。");
+          const label = question.wordCard ? "词卡 " + question.prompt : "第 " + number + " 题";
+          throw new Error(label + "缺少" + stage + "录音。请在原作答浏览器中重试。");
         }
-        const firstResponse = response(question, first, studentRecording(original, number, "首次"));
-        const finalResponse = response(question, second, studentRecording(revised, number, selfCheckedAt ? "主动重录" : "二次"));
+        const firstResponse = response(question, first, studentRecording(original, question, "首次"));
+        const finalResponse = response(question, second, studentRecording(revised, question, selfCheckedAt ? "主动重录" : "二次"));
         const fields = ["instruction", "notes", "options", "pick", "bank", "summary",
-          "responsePrefix", "fixedStart", "orderedSentences", "matchCase"];
+          "responsePrefix", "fixedStart", "orderedSentences", "matchCase", "vocabulary"];
         const context = Object.fromEntries(fields.filter(field => question[field] !== undefined)
           .map(field => [field, question[field]]));
+        if (question.wordCard) {
+          const { example, exampleMark, pos, ipa, definition } = question.wordCard;
+          context.wordCard = { word: question.prompt, example, exampleMark, pos, ipa, definition };
+        }
+        if (question.pictureOptions) {
+          context.pictureOptions = question.pictureOptions.map(({ key, text, picture }) => ({
+            key, text, materialId: picture ? media.get("image:" + picture)?.id : undefined
+          }));
+        }
         const examples = (question.notes || []).filter(note => /^(?:model|example|sample|参考答案|参考表达|范例)\s*[:：]/i.test(note));
         const correctedKeys = second?.legacyDictationKeys?.[id];
         const reference = correctedKeys ? { ...question, keys: correctedKeys } : question;
         return {
           id, number, type: question.type, kind: question.kind, prompt: question.prompt, ...context, materialIds,
-          textRole: speaking && open ? "speakingNotes" : "answer",
+          textRole: question.wordCard ? "wordCardReading" : speaking && open ? "speakingNotes" : "answer",
           ...(examples.length ? { referenceExamples: examples } : {}),
           answerKey: open ? null : { accepted: reference.keys, text: displayKeys(reference) },
           first: firstResponse, final: finalResponse,
@@ -227,7 +246,8 @@
 
   function recordingPlayer(clip, question, round, reused = false) {
     if (!clip) return "";
-    const label = "第 " + question.number + " 题" + takeLabel(round);
+    const item = question.wordCard ? question.wordCard.word + " 词卡" : "第 " + question.number + " 题";
+    const label = item + takeLabel(round);
     const info = reused ? "沿用首次录音" : takeLabel(round);
     const file = clip.path ? ' src="' + esc(clip.path) + '"' : "";
     const download = clip.path ? '<a href="' + esc(clip.path) + '" download>保存录音文件</a>' : "";
@@ -254,7 +274,15 @@
   function questionDetails(question) {
     const blocks = [question.instruction, ...(question.notes || []), ...(question.summary || [])]
       .filter(Boolean).map(line => '<p>' + esc(line) + '</p>');
-    for (const choices of [question.options, question.bank]) {
+    if (question.wordCard) {
+      blocks.push('<p lang="en-GB"><strong>Example</strong> ' + esc(question.wordCard.example) + '</p>');
+    }
+    if (question.pictureOptions) {
+      const choices = question.pictureOptions.map(({ key, text, materialId }) => '<li>' + esc(key) + ' ' +
+        (materialId ? '<a href="#' + esc(materialId) + '">图片</a>' : esc(text)) + '</li>');
+      blocks.push('<ul>' + choices.join("") + '</ul>');
+    }
+    for (const choices of [question.pictureOptions ? null : question.options, question.bank]) {
       if (choices?.length) {
         blocks.push('<ul>' + choices.map(([id, value]) =>
           '<li>' + esc(id === value ? id : id + ' ' + value) + '</li>').join("") + '</ul>');

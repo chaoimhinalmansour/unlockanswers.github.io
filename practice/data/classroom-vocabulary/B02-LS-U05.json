@@ -1,0 +1,262 @@
+{
+  "unitId": "B2U05",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U05",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U05-W-e79efc452",
+      "term": "champion",
+      "pos": "(n)",
+      "ipa": "/tʃˈæmpiən/",
+      "definition": "somebody who wins a competition",
+      "example": "She became the school chess champion.",
+      "exampleMark": "champion",
+      "picture": "practice/data/classroom-vocabulary/media/98448d016c8df4f11fee274d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b23be8e17b93e0284c6e098f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/66dee04100bd964bc30e5afe.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-755268f1d",
+      "term": "compete",
+      "pos": "(v)",
+      "ipa": "/kəmpˈiːt/",
+      "definition": "to do an activity with others and try to do it better than they do",
+      "example": "One benefit of this sport is that it gives people a chance to compete physically and mentally.",
+      "exampleMark": "compete",
+      "picture": "practice/data/classroom-vocabulary/media/5a000f4384f389da7449d39b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/511d57a98550f0d395d63581.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2505c9278f1378cd9ac1313b.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-1b44f6dde",
+      "term": "competition",
+      "pos": "(n)",
+      "ipa": "/kˌɒmpətˈɪʃən/",
+      "definition": "an organized event in which people try to win by being the best, the fastest, etc.",
+      "example": "The competition will be in Colombia, not in Brazil.",
+      "exampleMark": "competition",
+      "picture": "practice/data/classroom-vocabulary/media/5a000f4384f389da7449d39b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/36a2f6abc1869ab546ed0246.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/be74ea3f678f4d4a5346fe37.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-289944114",
+      "term": "fan",
+      "pos": "(n)",
+      "ipa": "/fˈæn/",
+      "definition": "somebody who likes a famous person, sport, type of music, etc.",
+      "example": "Which sports or teams are you a fan of?",
+      "exampleMark": "fan",
+      "picture": "practice/data/classroom-vocabulary/media/5a000f4384f389da7449d39b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1dffb53136fdf73965f90116.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/792150e0267e9aa5f205de52.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-d7d390bd9",
+      "term": "hit",
+      "pos": "(v)",
+      "ipa": "/hˈɪt/",
+      "definition": "to touch something quickly and forcefully with your hand or an object",
+      "example": "Use the bat to hit the ball.",
+      "exampleMark": "hit",
+      "picture": "practice/data/classroom-vocabulary/media/aa03e130217f3781f180d1c6.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1acdcddf2f059cd41dc8dfe9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d32d3fbdcc3aa9781db7e31d.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-065e43c05",
+      "term": "intelligent",
+      "pos": "(adj)",
+      "ipa": "/ɪntˈɛlɪdʒənt/",
+      "definition": "able to understand and learn well",
+      "example": "An intelligent player plans the next move.",
+      "exampleMark": "intelligent",
+      "picture": "practice/data/classroom-vocabulary/media/fe4732618fce0045073a0275.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/287beef3bcb8e3523d9745c5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7ce2f29b5de0a65d93b99dec.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-eac613655",
+      "term": "kick",
+      "pos": "(v)",
+      "ipa": "/kˈɪk/",
+      "definition": "to hit somebody or something with your foot",
+      "example": "In esports, you don't need to hit a ball like a cricket player or to kick a ball like in football.",
+      "exampleMark": "kick",
+      "picture": "practice/data/classroom-vocabulary/media/5a000f4384f389da7449d39b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e85b2bd9328db73f0225f4aa.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b3f84f4d400a29cb40ab9ca2.mp3"
+    },
+    {
+      "id": "B02-LS-U05-W-0117691d0",
+      "term": "strong",
+      "pos": "(adj)",
+      "ipa": "/strˈɒŋ/",
+      "definition": "physically powerful",
+      "example": "The strong boxer trains every day.",
+      "exampleMark": "strong",
+      "picture": "practice/data/classroom-vocabulary/media/e3a133f26363870dc3fbb06a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d838ecc5561c0498fb82b259.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5c7b03eef9a9a607cff07c64.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "somebody who likes a famous person, sport, type of music, etc."
+        },
+        {
+          "key": "B",
+          "text": "an organized event in which people try to win by being the best, the fastest, etc."
+        },
+        {
+          "key": "C",
+          "text": "to do an activity with others and try to do it better than they do"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/98448d016c8df4f11fee274d.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U05-W-e79efc452",
+          "prompt": "She became the school chess champion.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U05-W-755268f1d",
+          "prompt": "One benefit of this sport is that it gives people a chance to compete physically and mentally.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U05-W-1b44f6dde",
+          "prompt": "The competition will be in Colombia, not in Brazil.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U05-W-289944114",
+          "prompt": "Which sports or teams are you a fan of?",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/aa03e130217f3781f180d1c6.webp"
+        },
+        {
+          "key": "B",
+          "text": "to hit somebody or something with your foot"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/e3a133f26363870dc3fbb06a.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/fe4732618fce0045073a0275.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U05-W-d7d390bd9",
+          "prompt": "Use the bat to hit the ball.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U05-W-065e43c05",
+          "prompt": "An intelligent player plans the next move.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U05-W-eac613655",
+          "prompt": "In esports, you don't need to hit a ball like a cricket player or to kick a ball like in football.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U05-W-0117691d0",
+          "prompt": "The strong boxer trains every day.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "competition",
+        "fan",
+        "champion",
+        "compete"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U05-W-e79efc452",
+          "before": "She became the school chess ",
+          "after": ".",
+          "answer": "champion"
+        },
+        {
+          "id": "B02-LS-U05-W-755268f1d",
+          "before": "One benefit of this sport is that it gives people a chance to ",
+          "after": " physically and mentally.",
+          "answer": "compete"
+        },
+        {
+          "id": "B02-LS-U05-W-1b44f6dde",
+          "before": "The ",
+          "after": " will be in Colombia, not in Brazil.",
+          "answer": "competition"
+        },
+        {
+          "id": "B02-LS-U05-W-289944114",
+          "before": "Which sports or teams are you a ",
+          "after": " of?",
+          "answer": "fan"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "hit",
+        "strong",
+        "kick",
+        "intelligent"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U05-W-d7d390bd9",
+          "before": "Use the bat to ",
+          "after": " the ball.",
+          "answer": "hit"
+        },
+        {
+          "id": "B02-LS-U05-W-065e43c05",
+          "before": "An ",
+          "after": " player plans the next move.",
+          "answer": "intelligent"
+        },
+        {
+          "id": "B02-LS-U05-W-eac613655",
+          "before": "In esports, you don't need to hit a ball like a cricket player or to ",
+          "after": " a ball like in football.",
+          "answer": "kick"
+        },
+        {
+          "id": "B02-LS-U05-W-0117691d0",
+          "before": "The ",
+          "after": " boxer trains every day.",
+          "answer": "strong"
+        }
+      ]
+    }
+  ]
+}

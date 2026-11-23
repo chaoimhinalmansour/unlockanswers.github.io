@@ -1,0 +1,504 @@
+{
+  "unitId": "B2U06",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U06",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U06-W-4f9cac8db",
+      "term": "break",
+      "pos": "(n)",
+      "ipa": "/brˈeɪk/",
+      "definition": "a stop in an activity for a short time",
+      "example": "We took a short break and went outside for some air.",
+      "exampleMark": "break",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/bedb3363315c6bb6a981dc9b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ee539943a4d366f13073dfd9.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-ace6752be",
+      "term": "colleague",
+      "pos": "(n)",
+      "ipa": "/kˈɒliːɡ/",
+      "definition": "somebody who works with you",
+      "example": "My colleague helps me with difficult tasks.",
+      "exampleMark": "colleague",
+      "picture": "practice/data/classroom-vocabulary/media/309a280c8da031e14ebdbe83.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/950cfc257de21942015e64c6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d1a9424019f5498d9d476996.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-b39f008e3",
+      "term": "customer",
+      "pos": "(n)",
+      "ipa": "/kˈʌstəmɐ/",
+      "definition": "somebody who buys goods or services from a business",
+      "example": "The customer asked about the new product.",
+      "exampleMark": "customer",
+      "picture": "practice/data/classroom-vocabulary/media/92314b298e54bfcb3c07a7d5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f42a80b94d40871fc863dd88.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8f66363c4ae38f457c0fa05d.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-ae68448af",
+      "term": "earn",
+      "pos": "(v)",
+      "ipa": "/ˈɜːn/",
+      "definition": "to get money from doing work",
+      "example": "Workers earn money to pay their bills.",
+      "exampleMark": "earn",
+      "picture": "practice/data/classroom-vocabulary/media/e0445e3ce650c4e1446f9ff9.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e971bd5ca3d7f4b5fe906b24.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f139a468d0104215392ab7f3.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-ecdbd35c9",
+      "term": "find out",
+      "pos": "(phr v)",
+      "ipa": "/fˈaɪnd ˈaʊt/",
+      "definition": "to get information about something",
+      "example": "And did you find out the reasons why?",
+      "exampleMark": "find out",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7b7449ac5e347bd2a8824187.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e22a3b2e673172f7129fbb86.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-47ce9d04a",
+      "term": "get by",
+      "pos": "(phr v)",
+      "ipa": "/ɡɛt bˈaɪ/",
+      "definition": "to deal with a situation by having just enough of something",
+      "example": "They had just enough money to get by, so they didn't work as hard as they could.",
+      "exampleMark": "get by",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9d15230e299edb7a2c0e5d35.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/385727ed6e47875998ca7f2d.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-adbee7e1e",
+      "term": "look at",
+      "pos": "(phr v)",
+      "ipa": "/lˈʊk æt/",
+      "definition": "to think about a subject carefully so that you can make a decision about it",
+      "example": "Should we look at your project now?",
+      "exampleMark": "look at",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/281de58c04a3d366c99ca365.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4679bb650e8aedfc6b8b06e4.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-ecb5ba704",
+      "term": "profit",
+      "pos": "(n)",
+      "ipa": "/prˈɒfɪt/",
+      "definition": "money that you make from selling goods or services for more than they cost to make or provide",
+      "example": "The company made a profit this year.",
+      "exampleMark": "profit",
+      "picture": "practice/data/classroom-vocabulary/media/cc0897f9a3df8f2a72ce871e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ce14c0a7253ec0dac7a16bb3.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/36250bf1ec6b3f016b391765.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-98f54143a",
+      "term": "project",
+      "pos": "(n)",
+      "ipa": "/prˈɒdʒɛkt/",
+      "definition": "a piece of work that is for a particular purpose or a detailed study of a topic",
+      "example": "Should we look at your project now?",
+      "exampleMark": "project",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c17cfd6533588c5ad1445373.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4679bb650e8aedfc6b8b06e4.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-66c9cad0a",
+      "term": "run out",
+      "pos": "(phr v)",
+      "ipa": "/rˈʌn ˈaʊt/",
+      "definition": "to not have enough of something",
+      "example": "We might run out of milk if we don't buy more today.",
+      "exampleMark": "run out",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ed860d7ad486c8a5cd246fa4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/57be74df8de7279769db5b6a.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-34b33e00b",
+      "term": "skill",
+      "pos": "(n)",
+      "ipa": "/skˈɪl/",
+      "definition": "the ability to do an activity or job well",
+      "example": "Listening carefully is an important skill for a nurse.",
+      "exampleMark": "skill",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8f751050b962f36ca3f1ea54.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4573ebbf96f184417a19fda4.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-ac5c073ac",
+      "term": "spend time",
+      "pos": "(phr)",
+      "ipa": "/spˈɛnd tˈaɪm/",
+      "definition": "to use time to do something",
+      "example": "We spend time planning each project.",
+      "exampleMark": "spend time",
+      "picture": "practice/data/classroom-vocabulary/media/a1447c1ed246c71a3ad3976e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/957b72a440e7da77b620d500.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0f5c7f58e91956607c05b58c.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-165bd364f",
+      "term": "stress",
+      "pos": "(n)",
+      "ipa": "/strˈɛs/",
+      "definition": "feelings of worry caused by problems",
+      "example": "But now I have a lot of stress about losing money.",
+      "exampleMark": "stress",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2b37d5fac8c5dbca1ad60ec2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d8a085adc9d696fc95deaa2f.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-08b37dce4",
+      "term": "take over",
+      "pos": "(phr v)",
+      "ipa": "/tˈeɪk ˈəʊvɐ/",
+      "definition": "to replace somebody or something",
+      "example": "A new manager will take over when Anna leaves.",
+      "exampleMark": "take over",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c89f66ec47da1519bb8c692c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fb731d62179212eef3c2ff1e.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-8c32a8d7f",
+      "term": "waste time",
+      "pos": "(phr)",
+      "ipa": "/wˈeɪst tˈaɪm/",
+      "definition": "to use time badly",
+      "example": "Long meetings can waste time.",
+      "exampleMark": "waste time",
+      "picture": "practice/data/classroom-vocabulary/media/32a57f77426111be96592b48.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7cf02a460218069346657ce8.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a77e3268ffb4591fdbc6294c.mp3"
+    },
+    {
+      "id": "B02-LS-U06-W-c5a11899d",
+      "term": "write down",
+      "pos": "(phr v)",
+      "ipa": "/rˈaɪt dˈaʊn/",
+      "definition": "to write something on a piece of paper so that you do not forget it",
+      "example": "In some phrasal verbs, such as write down, it is possible to put other words between the verb and the particle.",
+      "exampleMark": "write down",
+      "picture": "practice/data/classroom-vocabulary/media/f75a5f9534cf0caa810d69ee.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/011352ec61db4172eb034aca.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5df61fc6c2d195aa3133642b.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a stop in an activity for a short time"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/309a280c8da031e14ebdbe83.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/e0445e3ce650c4e1446f9ff9.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/92314b298e54bfcb3c07a7d5.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-4f9cac8db",
+          "prompt": "We took a short break and went outside for some air.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U06-W-ace6752be",
+          "prompt": "My colleague helps me with difficult tasks.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U06-W-b39f008e3",
+          "prompt": "The customer asked about the new product.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U06-W-ae68448af",
+          "prompt": "Workers earn money to pay their bills.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to get information about something"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/cc0897f9a3df8f2a72ce871e.webp"
+        },
+        {
+          "key": "C",
+          "text": "to think about a subject carefully so that you can make a decision about it"
+        },
+        {
+          "key": "D",
+          "text": "to deal with a situation by having just enough of something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-ecdbd35c9",
+          "prompt": "And did you find out the reasons why?",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U06-W-47ce9d04a",
+          "prompt": "They had just enough money to get by, so they didn't work as hard as they could.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U06-W-adbee7e1e",
+          "prompt": "Should we look at your project now?",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U06-W-ecb5ba704",
+          "prompt": "The company made a profit this year.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/a1447c1ed246c71a3ad3976e.webp"
+        },
+        {
+          "key": "B",
+          "text": "a piece of work that is for a particular purpose or a detailed study of a topic"
+        },
+        {
+          "key": "C",
+          "text": "the ability to do an activity or job well"
+        },
+        {
+          "key": "D",
+          "text": "to not have enough of something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-98f54143a",
+          "prompt": "Should we look at your project now?",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U06-W-66c9cad0a",
+          "prompt": "We might run out of milk if we don't buy more today.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U06-W-34b33e00b",
+          "prompt": "Listening carefully is an important skill for a nurse.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U06-W-ac5c073ac",
+          "prompt": "We spend time planning each project.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "feelings of worry caused by problems"
+        },
+        {
+          "key": "B",
+          "text": "to write something on a piece of paper so that you do not forget it"
+        },
+        {
+          "key": "C",
+          "text": "to replace somebody or something"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/32a57f77426111be96592b48.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-165bd364f",
+          "prompt": "But now I have a lot of stress about losing money.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U06-W-08b37dce4",
+          "prompt": "A new manager will take over when Anna leaves.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U06-W-8c32a8d7f",
+          "prompt": "Long meetings can waste time.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U06-W-c5a11899d",
+          "prompt": "In some phrasal verbs, such as write down, it is possible to put other words between the verb and the particle.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "colleague",
+        "customer",
+        "break",
+        "earn",
+        "get by",
+        "find out"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-4f9cac8db",
+          "before": "We took a short ",
+          "after": " and went outside for some air.",
+          "answer": "break"
+        },
+        {
+          "id": "B02-LS-U06-W-ace6752be",
+          "before": "My ",
+          "after": " helps me with difficult tasks.",
+          "answer": "colleague"
+        },
+        {
+          "id": "B02-LS-U06-W-b39f008e3",
+          "before": "The ",
+          "after": " asked about the new product.",
+          "answer": "customer"
+        },
+        {
+          "id": "B02-LS-U06-W-ae68448af",
+          "before": "Workers ",
+          "after": " money to pay their bills.",
+          "answer": "earn"
+        },
+        {
+          "id": "B02-LS-U06-W-ecdbd35c9",
+          "before": "And did you ",
+          "after": " the reasons why?",
+          "answer": "find out"
+        },
+        {
+          "id": "B02-LS-U06-W-47ce9d04a",
+          "before": "They had just enough money to ",
+          "after": ", so they didn't work as hard as they could.",
+          "answer": "get by"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "project",
+        "profit",
+        "look at",
+        "run out",
+        "skill"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-adbee7e1e",
+          "before": "Should we ",
+          "after": " your project now?",
+          "answer": "look at"
+        },
+        {
+          "id": "B02-LS-U06-W-ecb5ba704",
+          "before": "The company made a ",
+          "after": " this year.",
+          "answer": "profit"
+        },
+        {
+          "id": "B02-LS-U06-W-98f54143a",
+          "before": "Should we look at your ",
+          "after": " now?",
+          "answer": "project"
+        },
+        {
+          "id": "B02-LS-U06-W-66c9cad0a",
+          "before": "We might ",
+          "after": " of milk if we don't buy more today.",
+          "answer": "run out"
+        },
+        {
+          "id": "B02-LS-U06-W-34b33e00b",
+          "before": "Listening carefully is an important ",
+          "after": " for a nurse.",
+          "answer": "skill"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "write down",
+        "waste time",
+        "spend time",
+        "take over",
+        "stress"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U06-W-ac5c073ac",
+          "before": "We ",
+          "after": " planning each project.",
+          "answer": "spend time"
+        },
+        {
+          "id": "B02-LS-U06-W-165bd364f",
+          "before": "But now I have a lot of ",
+          "after": " about losing money.",
+          "answer": "stress"
+        },
+        {
+          "id": "B02-LS-U06-W-08b37dce4",
+          "before": "A new manager will ",
+          "after": " when Anna leaves.",
+          "answer": "take over"
+        },
+        {
+          "id": "B02-LS-U06-W-8c32a8d7f",
+          "before": "Long meetings can ",
+          "after": ".",
+          "answer": "waste time"
+        },
+        {
+          "id": "B02-LS-U06-W-c5a11899d",
+          "before": "In some phrasal verbs, such as ",
+          "after": ", it is possible to put other words between the verb and the particle.",
+          "answer": "write down"
+        }
+      ]
+    }
+  ]
+}

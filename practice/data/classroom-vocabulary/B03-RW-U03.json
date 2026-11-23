@@ -1,0 +1,606 @@
+{
+  "unitId": "B3U03",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U03",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U03-W-0f12541af",
+      "term": "access",
+      "pos": "(n)",
+      "ipa": "/ˈæksɛs/",
+      "definition": "the method or possibility of getting near to a place or person",
+      "example": "The bus gives people access to the city.",
+      "exampleMark": "access",
+      "picture": "practice/data/classroom-vocabulary/media/cb8d1eed82b9e8b37573ce23.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c1f1e17a8aa5db169ad9f0f9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b6fac225132882a1047dddd4.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-38e4e4b0a",
+      "term": "attempt",
+      "pos": "(v)",
+      "ipa": "/ɐtˈɛmpt/",
+      "definition": "if you make an attempt to do something, you try to do it",
+      "example": "She made an attempt to fix the bike before asking for help.",
+      "exampleMark": "attempt",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0d7d8199a2e4c012e0c2d41c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f37966a3cc78f081a4d56de1.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-2824b7c1a",
+      "term": "commuter",
+      "pos": "(n)",
+      "ipa": "/kəmjˈuːtɐ/",
+      "definition": "someone who travels between home and work, or university, regularly",
+      "example": "The commuter takes a ferry to work.",
+      "exampleMark": "commuter",
+      "picture": "practice/data/classroom-vocabulary/media/4bbef0172cbc6b260c9badc8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1b296905afa80a3590471e61.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f6601b822be8f34f6266783f.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-f11a107f3",
+      "term": "connect",
+      "pos": "(v)",
+      "ipa": "/kənˈɛkt/",
+      "definition": "to join two things or places together",
+      "example": "The new bridge will connect the two towns.",
+      "exampleMark": "connect",
+      "picture": "practice/data/classroom-vocabulary/media/2a331bc29258b6e6e43c8741.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/71add979e3bc969e3ca8e6c1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c78fe27eb72cd23adce1ca6b.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-9cef6dd4b",
+      "term": "consider",
+      "pos": "(v)",
+      "ipa": "/kənsˈɪdɐ/",
+      "definition": "to think carefully about a decision or something you might do",
+      "example": "To do this, you will need to consider the points for and against each solution.",
+      "exampleMark": "consider",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/04689d5a6c023196012cf055.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b13bfca3f7c4798ccc7526b8.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-9b7c68a91",
+      "term": "create",
+      "pos": "(v)",
+      "ipa": "/kriːˈeɪt/",
+      "definition": "to make something new, or invent something",
+      "example": "They create a wooden shelf together.",
+      "exampleMark": "create",
+      "picture": "practice/data/classroom-vocabulary/media/2f9389d9a882c5733d6a0a42.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/860d6600d611eadc6bfdefbe.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/328c8bb385975c6a11245c8e.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-5d2432d46",
+      "term": "cycle",
+      "pos": "(v)",
+      "ipa": "/sˈaɪkəl/",
+      "definition": "骑自行车。cycle lane 中的 cycle 是名词，指自行车。",
+      "example": "One suggestion is to encourage people to cycle more.",
+      "exampleMark": "cycle",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/21521f52355bd9f17bcb87e6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c25942d531514530c13c128e.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-48b18b140",
+      "term": "demonstrate",
+      "pos": "(v)",
+      "ipa": "/dˈɛmənstrˌeɪt/",
+      "definition": "to show or make something clear",
+      "example": "The experiment will demonstrate how plants respond to light.",
+      "exampleMark": "demonstrate",
+      "picture": "practice/data/classroom-vocabulary/media/92759f82474bb59b59e65640.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c997584f68246f85c7338b02.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6fba7abd89338570431f149c.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-0cf1bc84b",
+      "term": "destination",
+      "pos": "(n)",
+      "ipa": "/ˌdestɪˈneɪʃən/",
+      "definition": "the place where someone or something is going",
+      "example": "Our destination is the city centre.",
+      "exampleMark": "destination",
+      "picture": "practice/data/classroom-vocabulary/media/7068ea8df26249443f851269.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3ade9fafe5bcdbc270538de4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/91c4af5666b6a29f1919d778.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-43505540e",
+      "term": "fuel",
+      "pos": "(n)",
+      "ipa": "/fjˈuːəl/",
+      "definition": "燃料。fuel duty 指燃油税。",
+      "example": "Traffic congestion wastes fuel, which in turn produces more carbon dioxide through car exhaust and contributes to the greenhouse effect.",
+      "exampleMark": "fuel",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0afa9518edd8897bd9b8e5c9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/204bc516da03f8fb0871dd6d.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-1785a93e5",
+      "term": "government",
+      "pos": "(n)",
+      "ipa": "/ɡˈʌvənmənt/",
+      "definition": "the group of people that controls a country or city and makes decisions about laws, taxes, education, etc.",
+      "example": "The government introduced new rules for school transport.",
+      "exampleMark": "government",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fecd64ea51e63ac9a3a3f5a7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9e12dcb2a31ef7b40f56bcba.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-1bc80ab6c",
+      "term": "outskirts",
+      "pos": "(n)",
+      "ipa": "/ˈaʊtskɜːts/",
+      "definition": "the outer area of a city or town",
+      "example": "They live on the outskirts of the city.",
+      "exampleMark": "outskirts",
+      "picture": "practice/data/classroom-vocabulary/media/23dea13c12d1132c8cd4713d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4e453e65fa78afe2fc41218a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/83fe8ba79bbe7be677001fba.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-1b2bf1cea",
+      "term": "prevent",
+      "pos": "(v)",
+      "ipa": "/prɪvˈɛnt/",
+      "definition": "to stop something happening or to stop someone doing something",
+      "example": "This cover helps prevent rain from getting into the bag.",
+      "exampleMark": "prevent",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6a8997d8ce019cdde4bfe090.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e69fd48b82e9451c6ff9e404.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-d9c93e5f7",
+      "term": "public transport",
+      "pos": "(n)",
+      "ipa": "/pˈʌblɪk trˈænspɔːt/",
+      "definition": "a system of vehicles, such as buses and trains, which operate at regular times for public use",
+      "example": "Public transport helps people get around.",
+      "exampleMark": "Public transport",
+      "picture": "practice/data/classroom-vocabulary/media/d7f6cfa359f2165642e1b685.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4abd84cfea573062557e4f9b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6524db827218c8d97964d229.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-48c3689f6",
+      "term": "reduce",
+      "pos": "(v)",
+      "ipa": "/rɪdjˈuːs/",
+      "definition": "to make something less",
+      "example": "They can also reduce pollution and traffic and attract tourists.",
+      "exampleMark": "reduce",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/96a5cd5c92a6688f971c3e67.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/737623c8e00a952738ad1624.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-7649a446e",
+      "term": "remain",
+      "pos": "(v)",
+      "ipa": "/rɪmˈeɪn/",
+      "definition": "to stay in the same place or in the same condition",
+      "example": "The gate will remain closed until the work is finished.",
+      "exampleMark": "remain",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/bd2db83a9d964c53b2501d42.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c140006e0e798c22db1df6d1.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-623e76c36",
+      "term": "require",
+      "pos": "(v)",
+      "ipa": "/rɪkwˈaɪə/",
+      "definition": "to need or demand something",
+      "example": "Some repairs require equipment that only a trained worker can use.",
+      "exampleMark": "require",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/230926832fd284461cb07920.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1a908065daeede2c9e59885a.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-891cde22c",
+      "term": "resident",
+      "pos": "(n)",
+      "ipa": "/rˈɛzɪdənt/",
+      "definition": "a person who lives or has their home in a place",
+      "example": "A local resident told us where to find the post office.",
+      "exampleMark": "resident",
+      "picture": "practice/data/classroom-vocabulary/media/47276d91d9d74dfa9a5ea65e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d2b468867f14f8239c93db22.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dea89b43ffa3bdbfedd729ab.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-c1ae3f6a2",
+      "term": "traffic congestion",
+      "pos": "(n)",
+      "ipa": "/trˈæfɪk kəndʒˈɛstʃən/",
+      "definition": "when too many vehicles use a road network and it results in slower speeds, or no movement at all",
+      "example": "Many modern cities have terrible traffic congestion.",
+      "exampleMark": "traffic congestion",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fc564afaa017e71f9982eaf5.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ad89848172d98f5619bc4faa.mp3"
+    },
+    {
+      "id": "B03-RW-U03-W-0b0591061",
+      "term": "vehicle",
+      "pos": "(n)",
+      "ipa": "/vˈiəkəl/",
+      "definition": "any machine which travels on roads, such as cars, buses, etc.",
+      "example": "Every vehicle must stop at the red light.",
+      "exampleMark": "vehicle",
+      "picture": "practice/data/classroom-vocabulary/media/0f2e77e6e78cf7fba8576c13.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/97247354ab25594b2da36aa6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a4736eb1424e46de79b7f606.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/cb8d1eed82b9e8b37573ce23.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/2a331bc29258b6e6e43c8741.webp"
+        },
+        {
+          "key": "C",
+          "text": "if you make an attempt to do something, you try to do it"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/4bbef0172cbc6b260c9badc8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-0f12541af",
+          "prompt": "The bus gives people access to the city.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U03-W-38e4e4b0a",
+          "prompt": "She made an attempt to fix the bike before asking for help.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U03-W-2824b7c1a",
+          "prompt": "The commuter takes a ferry to work.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U03-W-f11a107f3",
+          "prompt": "The new bridge will connect the two towns.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to think carefully about a decision or something you might do"
+        },
+        {
+          "key": "B",
+          "text": "骑自行车。cycle lane 中的 cycle 是名词，指自行车。"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/92759f82474bb59b59e65640.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/2f9389d9a882c5733d6a0a42.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-9cef6dd4b",
+          "prompt": "To do this, you will need to consider the points for and against each solution.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U03-W-9b7c68a91",
+          "prompt": "They create a wooden shelf together.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U03-W-5d2432d46",
+          "prompt": "One suggestion is to encourage people to cycle more.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U03-W-48b18b140",
+          "prompt": "The experiment will demonstrate how plants respond to light.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the group of people that controls a country or city and makes decisions about laws, taxes, education, etc."
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/7068ea8df26249443f851269.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/23dea13c12d1132c8cd4713d.webp"
+        },
+        {
+          "key": "D",
+          "text": "to stop something happening or to stop someone doing something"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-0cf1bc84b",
+          "prompt": "Our destination is the city centre.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U03-W-1785a93e5",
+          "prompt": "The government introduced new rules for school transport.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U03-W-1bc80ab6c",
+          "prompt": "They live on the outskirts of the city.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U03-W-1b2bf1cea",
+          "prompt": "This cover helps prevent rain from getting into the bag.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to stay in the same place or in the same condition"
+        },
+        {
+          "key": "B",
+          "text": "to need or demand something"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d7f6cfa359f2165642e1b685.webp"
+        },
+        {
+          "key": "D",
+          "text": "to make something less"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-d9c93e5f7",
+          "prompt": "Public transport helps people get around.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U03-W-48c3689f6",
+          "prompt": "They can also reduce pollution and traffic and attract tourists.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U03-W-7649a446e",
+          "prompt": "The gate will remain closed until the work is finished.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U03-W-623e76c36",
+          "prompt": "Some repairs require equipment that only a trained worker can use.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "any machine which travels on roads, such as cars, buses, etc."
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/47276d91d9d74dfa9a5ea65e.webp"
+        },
+        {
+          "key": "C",
+          "text": "when too many vehicles use a road network and it results in slower speeds, or no movement at all"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-891cde22c",
+          "prompt": "A local resident told us where to find the post office.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U03-W-c1ae3f6a2",
+          "prompt": "Many modern cities have terrible traffic congestion.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U03-W-0b0591061",
+          "prompt": "Every vehicle must stop at the red light.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "consider",
+        "attempt",
+        "commuter",
+        "cycle",
+        "connect",
+        "access",
+        "create"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-0f12541af",
+          "before": "The bus gives people ",
+          "after": " to the city.",
+          "answer": "access"
+        },
+        {
+          "id": "B03-RW-U03-W-38e4e4b0a",
+          "before": "She made an ",
+          "after": " to fix the bike before asking for help.",
+          "answer": "attempt"
+        },
+        {
+          "id": "B03-RW-U03-W-2824b7c1a",
+          "before": "The ",
+          "after": " takes a ferry to work.",
+          "answer": "commuter"
+        },
+        {
+          "id": "B03-RW-U03-W-f11a107f3",
+          "before": "The new bridge will ",
+          "after": " the two towns.",
+          "answer": "connect"
+        },
+        {
+          "id": "B03-RW-U03-W-9cef6dd4b",
+          "before": "To do this, you will need to ",
+          "after": " the points for and against each solution.",
+          "answer": "consider"
+        },
+        {
+          "id": "B03-RW-U03-W-9b7c68a91",
+          "before": "They ",
+          "after": " a wooden shelf together.",
+          "answer": "create"
+        },
+        {
+          "id": "B03-RW-U03-W-5d2432d46",
+          "before": "One suggestion is to encourage people to ",
+          "after": " more.",
+          "answer": "cycle"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "outskirts",
+        "Public transport",
+        "demonstrate",
+        "destination",
+        "prevent",
+        "government"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-48b18b140",
+          "before": "The experiment will ",
+          "after": " how plants respond to light.",
+          "answer": "demonstrate"
+        },
+        {
+          "id": "B03-RW-U03-W-0cf1bc84b",
+          "before": "Our ",
+          "after": " is the city centre.",
+          "answer": "destination"
+        },
+        {
+          "id": "B03-RW-U03-W-1785a93e5",
+          "before": "The ",
+          "after": " introduced new rules for school transport.",
+          "answer": "government"
+        },
+        {
+          "id": "B03-RW-U03-W-1bc80ab6c",
+          "before": "They live on the ",
+          "after": " of the city.",
+          "answer": "outskirts"
+        },
+        {
+          "id": "B03-RW-U03-W-1b2bf1cea",
+          "before": "This cover helps ",
+          "after": " rain from getting into the bag.",
+          "answer": "prevent"
+        },
+        {
+          "id": "B03-RW-U03-W-d9c93e5f7",
+          "before": "",
+          "after": " helps people get around.",
+          "answer": "Public transport"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "require",
+        "resident",
+        "reduce",
+        "traffic congestion",
+        "vehicle",
+        "remain"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U03-W-48c3689f6",
+          "before": "They can also ",
+          "after": " pollution and traffic and attract tourists.",
+          "answer": "reduce"
+        },
+        {
+          "id": "B03-RW-U03-W-7649a446e",
+          "before": "The gate will ",
+          "after": " closed until the work is finished.",
+          "answer": "remain"
+        },
+        {
+          "id": "B03-RW-U03-W-623e76c36",
+          "before": "Some repairs ",
+          "after": " equipment that only a trained worker can use.",
+          "answer": "require"
+        },
+        {
+          "id": "B03-RW-U03-W-891cde22c",
+          "before": "A local ",
+          "after": " told us where to find the post office.",
+          "answer": "resident"
+        },
+        {
+          "id": "B03-RW-U03-W-c1ae3f6a2",
+          "before": "Many modern cities have terrible ",
+          "after": ".",
+          "answer": "traffic congestion"
+        },
+        {
+          "id": "B03-RW-U03-W-0b0591061",
+          "before": "Every ",
+          "after": " must stop at the red light.",
+          "answer": "vehicle"
+        }
+      ]
+    }
+  ]
+}

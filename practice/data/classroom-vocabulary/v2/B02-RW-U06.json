@@ -1,0 +1,466 @@
+{
+  "unitId": "B2U06",
+  "track": "RW",
+  "source": {
+    "id": "B02-RW-U06",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B02-RW-U06-L1"
+  },
+  "cards": [
+    {
+      "id": "B02-RW-U06-W-8015f1d1f",
+      "term": "advice",
+      "pos": "(n)",
+      "ipa": "/ədˈvaɪs/",
+      "definition": "an opinion that somebody offers you about what you should do",
+      "example": "The quiz gives advice about jobs.",
+      "exampleMark": "advice",
+      "picture": "practice/data/classroom-vocabulary/media/ab4da8e83228eba66551050a.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0159.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c7bc5445bab70566bd1597a4.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-69f45da16",
+      "term": "apply",
+      "pos": "(v)",
+      "ipa": "/əpˈlaɪ/",
+      "definition": "ask officially for something, often in writing",
+      "example": "Before you apply for a job, think about the different types of jobs that people do.",
+      "exampleMark": "apply",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0268.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9ed55ee90a807ee079149d63.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-ace6752be",
+      "term": "colleague",
+      "pos": "(n)",
+      "ipa": "/ˈkɒl.iːɡ/",
+      "definition": "somebody that you work with",
+      "example": "My colleague and I are writing a new computer program.",
+      "exampleMark": "colleague",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0248.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1eca1e8c60b2397f27d956de.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-b39f008e3",
+      "term": "customer",
+      "pos": "(n)",
+      "ipa": "/ˈkʌs.təm.ə/",
+      "definition": "a person who buys things from a shop or business",
+      "example": "The customer wants a new bag.",
+      "exampleMark": "customer",
+      "picture": "practice/data/classroom-vocabulary/media/b2626f74484d61ca161e27f9.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0249.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b14bdd7e58e0493b59c73920.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-eb3c62690",
+      "term": "department",
+      "pos": "(n)",
+      "ipa": "/dɪˈpɑːt.mənt/",
+      "definition": "part of a business or company",
+      "example": "She works in the sales department.",
+      "exampleMark": "department",
+      "picture": "practice/data/classroom-vocabulary/media/cdc871d4097ed452e8352bda.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0269.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4890c9b64d0ed55b27d7289e.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-8915865cf",
+      "term": "employ",
+      "pos": "(v)",
+      "ipa": "/ɪmˈplɔɪ/",
+      "definition": "to pay somebody to work or do a job for you",
+      "example": "The café plans to employ two more cooks this summer.",
+      "exampleMark": "employ",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0270.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8979fd14e34783cceccc3293.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-caf322f0b",
+      "term": "employee",
+      "pos": "(n)",
+      "ipa": "/ˌem.plɔɪˈiː/",
+      "definition": "a worker",
+      "example": "An employee showed us where to collect our tickets.",
+      "exampleMark": "employee",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0271.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/dd47ccd1919a44924ce0ac37.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-54b7e849c",
+      "term": "hobby",
+      "pos": "(n)",
+      "ipa": "/ˈhɒb.i/",
+      "definition": "an activity you do for fun",
+      "example": "Photography is my favourite hobby.",
+      "exampleMark": "hobby",
+      "picture": "practice/data/classroom-vocabulary/media/cc01a34e8c0665d84d6ed141.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0272.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c399dfb18a81e05c7b5d2764.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-1a8565a9d",
+      "term": "manager",
+      "pos": "(n)",
+      "ipa": "/ˈmæn.ɪ.dʒə/",
+      "definition": "the person who organizes or leads a business",
+      "example": "The shop manager decides who works on Saturdays.",
+      "exampleMark": "manager",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0274.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/40d9d4e2e79deb82162f58bf.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-4a95dcc4d",
+      "term": "neat",
+      "pos": "(adj)",
+      "ipa": "/ˈniːt/",
+      "definition": "arranged well, with everything in its place",
+      "example": "My desk is neat.",
+      "exampleMark": "neat",
+      "picture": "practice/data/classroom-vocabulary/media/6352cce63488bad422f37844.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0275.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/29c1fdaf886a45bc0cd09176.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-75afa8723",
+      "term": "occupation",
+      "pos": "(n)",
+      "ipa": "/ˌɒk.jʊˈpeɪ.ʃən/",
+      "definition": "a job or career",
+      "example": "Teaching is a rewarding occupation.",
+      "exampleMark": "occupation",
+      "picture": "practice/data/classroom-vocabulary/media/dcff34dc1ffd51a6e934fd45.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0276.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/24c8e6774a3ddf7e0868aa4a.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-e64274574",
+      "term": "office",
+      "pos": "(n)",
+      "ipa": "/ˈɒf.ɪs/",
+      "definition": "a place in a building where people work",
+      "example": "In 2020, OpenAI opened its office in San Francisco.",
+      "exampleMark": "office",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0277.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6ead7a0b250b4c1f9078a21a.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-0be1787af",
+      "term": "organise",
+      "pos": "(v)",
+      "ipa": "/ˈɔː.ɡən.aɪz/",
+      "definition": "plan or arrange carefully",
+      "example": "Marta likes to organise her schedule at work.",
+      "exampleMark": "organise",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0278.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/86c5bf330235189c80c10888.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-3624db883",
+      "term": "partner",
+      "pos": "(n)",
+      "ipa": "/ˈpɑːt.nə/",
+      "definition": "somebody who runs or owns a business with another person",
+      "example": "This was the same year that Elon Musk left OpenAI, and the company announced it was going to partner with Microsoft Corporation.",
+      "exampleMark": "partner",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0279.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2be24ba641ffc94c90365787.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-38a007151",
+      "term": "product",
+      "pos": "(n)",
+      "ipa": "/ˈprɒd.ʌkt/",
+      "definition": "something a business makes and sells",
+      "example": "The company sells a new cleaning product for kitchen floors.",
+      "exampleMark": "product",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0280.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d32b60b2f6ea8da4c94fcf3c.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-37a5301a8",
+      "term": "result",
+      "pos": "(n)",
+      "ipa": "/rɪˈzʌlt/",
+      "definition": "information that you find out from something, such as an exam, a scientific experiment or a medical test",
+      "example": "The result of the survey was interesting.",
+      "exampleMark": "result",
+      "picture": "practice/data/classroom-vocabulary/media/b24362915f9ea2edc5dac1af.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0281.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f26ca46ccb021ae8ac72ab9a.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-df6ad1903",
+      "term": "run",
+      "pos": "(v)",
+      "ipa": "/ˈrʌn/",
+      "definition": "to manage or operate something",
+      "example": "They run a small restaurant.",
+      "exampleMark": "run",
+      "picture": "practice/data/classroom-vocabulary/media/f7d0036fafc9bb9f4a3693bc.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0282.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0674c66d8bded9f5d4dc98f6.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-20182fbc1",
+      "term": "section",
+      "pos": "(n)",
+      "ipa": "/ˈsek.ʃən/",
+      "definition": "one of the parts that something is divided into",
+      "example": "I read the sport section.",
+      "exampleMark": "section",
+      "picture": "practice/data/classroom-vocabulary/media/64ec45e845e720cc09094682.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0283.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b4da4a5fc54bdcda9f6b205d.mp3"
+    },
+    {
+      "id": "B02-RW-U06-W-eafa3ec6a",
+      "term": "set up",
+      "pos": "(phr v)",
+      "ipa": "/ˈset ˌʌp/",
+      "definition": "to create or establish (something) for a particular purpose",
+      "example": "The company was set up by Elon Musk, Sam Altman, and others in 2015.",
+      "exampleMark": "set up",
+      "picture": "practice/data/classroom-vocabulary/media/a69e3eed95580a46be85c057.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0284.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/035ba842af35db9851de0527.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "ask officially for something, often in writing"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/b2626f74484d61ca161e27f9.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/cc01a34e8c0665d84d6ed141.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/ab4da8e83228eba66551050a.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U06-W-8015f1d1f",
+          "prompt": "The quiz gives advice about jobs.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U06-W-69f45da16",
+          "prompt": "Before you apply for a job, think about the different types of jobs that people do.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U06-W-b39f008e3",
+          "prompt": "The customer wants a new bag.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U06-W-54b7e849c",
+          "prompt": "Photography is my favourite hobby.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "plan or arrange carefully"
+        },
+        {
+          "key": "B",
+          "text": "somebody who runs or owns a business with another person"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/6352cce63488bad422f37844.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/dcff34dc1ffd51a6e934fd45.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U06-W-4a95dcc4d",
+          "prompt": "My desk is neat.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U06-W-75afa8723",
+          "prompt": "Teaching is a rewarding occupation.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U06-W-0be1787af",
+          "prompt": "Marta likes to organise her schedule at work.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-RW-U06-W-3624db883",
+          "prompt": "This was the same year that Elon Musk left OpenAI, and the company announced it was going to partner with Microsoft Corporation.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to create or establish (something) for a particular purpose"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/b24362915f9ea2edc5dac1af.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/f7d0036fafc9bb9f4a3693bc.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/64ec45e845e720cc09094682.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U06-W-37a5301a8",
+          "prompt": "The result of the survey was interesting.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-RW-U06-W-df6ad1903",
+          "prompt": "They run a small restaurant.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-RW-U06-W-20182fbc1",
+          "prompt": "I read the sport section.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-RW-U06-W-eafa3ec6a",
+          "prompt": "The company was set up by Elon Musk, Sam Altman, and others in 2015.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "occupation",
+        "neat",
+        "hobby",
+        "customer",
+        "apply",
+        "advice"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U06-W-8015f1d1f",
+          "before": "The quiz gives ",
+          "after": " about jobs.",
+          "answer": "advice"
+        },
+        {
+          "id": "B02-RW-U06-W-69f45da16",
+          "before": "Before you ",
+          "after": " for a job, think about the different types of jobs that people do.",
+          "answer": "apply"
+        },
+        {
+          "id": "B02-RW-U06-W-b39f008e3",
+          "before": "The ",
+          "after": " wants a new bag.",
+          "answer": "customer"
+        },
+        {
+          "id": "B02-RW-U06-W-54b7e849c",
+          "before": "Photography is my favourite ",
+          "after": ".",
+          "answer": "hobby"
+        },
+        {
+          "id": "B02-RW-U06-W-4a95dcc4d",
+          "before": "My desk is ",
+          "after": ".",
+          "answer": "neat"
+        },
+        {
+          "id": "B02-RW-U06-W-75afa8723",
+          "before": "Teaching is a rewarding ",
+          "after": ".",
+          "answer": "occupation"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "set up",
+        "section",
+        "run",
+        "result",
+        "partner",
+        "organise"
+      ],
+      "rows": [
+        {
+          "id": "B02-RW-U06-W-0be1787af",
+          "before": "Marta likes to ",
+          "after": " her schedule at work.",
+          "answer": "organise"
+        },
+        {
+          "id": "B02-RW-U06-W-3624db883",
+          "before": "This was the same year that Elon Musk left OpenAI, and the company announced it was going to ",
+          "after": " with Microsoft Corporation.",
+          "answer": "partner"
+        },
+        {
+          "id": "B02-RW-U06-W-37a5301a8",
+          "before": "The ",
+          "after": " of the survey was interesting.",
+          "answer": "result"
+        },
+        {
+          "id": "B02-RW-U06-W-df6ad1903",
+          "before": "They ",
+          "after": " a small restaurant.",
+          "answer": "run"
+        },
+        {
+          "id": "B02-RW-U06-W-20182fbc1",
+          "before": "I read the sport ",
+          "after": ".",
+          "answer": "section"
+        },
+        {
+          "id": "B02-RW-U06-W-eafa3ec6a",
+          "before": "The company was ",
+          "after": " by Elon Musk, Sam Altman, and others in 2015.",
+          "answer": "set up"
+        }
+      ]
+    }
+  ]
+}

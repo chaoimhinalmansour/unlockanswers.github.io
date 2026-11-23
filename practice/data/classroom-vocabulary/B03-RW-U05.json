@@ -1,0 +1,594 @@
+{
+  "unitId": "B3U05",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U05",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U05-W-2bb6b986c",
+      "term": "active",
+      "pos": "(adj)",
+      "ipa": "/ˈæktɪv/",
+      "definition": "doing things which involve moving and using energy",
+      "example": "My grandparents stay active by walking.",
+      "exampleMark": "active",
+      "picture": "practice/data/classroom-vocabulary/media/25b10ca06a6263028035f24f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2cbf4afb98d3a49d8481db32.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/05c838987c1ca103ec5aa985.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-fc8ff2cb4",
+      "term": "advertising campaign",
+      "pos": "(n)",
+      "ipa": "/ˈædvətˌaɪzɪŋ kæmpˈeɪn/",
+      "definition": "media projects to convince people to buy a product or change their behaviour",
+      "example": "The company launched an advertising campaign to promote its new bicycle.",
+      "exampleMark": "advertising campaign",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6c057a9a1085da6a984a45ca.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f07dfd210d75529f67217e10.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-55028ebd8",
+      "term": "balanced diet",
+      "pos": "(n)",
+      "ipa": "/bˈælənst dˈaɪət/",
+      "definition": "a daily eating programme which has a healthy mixture of different kinds of food",
+      "example": "Her meal is part of a balanced diet.",
+      "exampleMark": "balanced diet",
+      "picture": "practice/data/classroom-vocabulary/media/adb2b1518855653484d414df.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/33c6de8afe36a05273e1004a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a9355b02b1edb88f86d57899.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-48c88cd1f",
+      "term": "calories",
+      "pos": "(n pl)",
+      "ipa": "/kˈælərɪz/",
+      "definition": "the measurement of the amount of energy found in food",
+      "example": "The label lists the number of calories.",
+      "exampleMark": "calories",
+      "picture": "practice/data/classroom-vocabulary/media/fd7e7050fb18131f77afbf7d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3859731fe16fa407bdebaef7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c5815254021d14503b2ae74c.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-23f43ae94",
+      "term": "campaign",
+      "pos": "(n)",
+      "ipa": "/kæmpˈeɪn/",
+      "definition": "a group of activities designed to motivate people to take action, such as giving money or changing their behaviour",
+      "example": "The campaign encourages people to walk more.",
+      "exampleMark": "campaign",
+      "picture": "practice/data/classroom-vocabulary/media/b2e29cc46f6ae97b7bca8d89.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ba41190edb92272351449362.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/adfd62d84bd173b5977f5255.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-7be4bfd0c",
+      "term": "educational programme",
+      "pos": "(n)",
+      "ipa": "/ˌɛdʒuːkˈeɪʃənəl prˈəʊɡræm/",
+      "definition": "classes or material to teach people about a particular topic",
+      "example": "The museum runs an educational programme about local wildlife.",
+      "exampleMark": "educational programme",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fdbcf33492af302528a6c8ab.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1a877065704af4164991f1db.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-126aa0f74",
+      "term": "healthy lifestyle",
+      "pos": "(n)",
+      "ipa": "/hˈɛlθɪ lˈaɪfstaɪl/",
+      "definition": "a strong and well way of living",
+      "example": "These educate people about the dangers of junk food and the importance of a healthy lifestyle, including a balanced diet.",
+      "exampleMark": "healthy lifestyle",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/860147d91f853034684047fe.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5b069c02c6ade035ecbc5b72.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-1beeab8c1",
+      "term": "heart disease",
+      "pos": "(n)",
+      "ipa": "/hˈɑːt dɪzˈiːz/",
+      "definition": "an illness of the heart",
+      "example": "The article mentions heart disease.",
+      "exampleMark": "heart disease",
+      "picture": "practice/data/classroom-vocabulary/media/d2aef1b3303d4dcc9e9d7232.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/85153ac54dda207616a6e6c6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/090fec0ac1224469239bfce2.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-f51720061",
+      "term": "junk food",
+      "pos": "(n)",
+      "ipa": "/dʒˈʌŋk fˈuːd/",
+      "definition": "food which is unhealthy but quick and easy to eat",
+      "example": "Her teacher discusses junk food in class.",
+      "exampleMark": "junk food",
+      "picture": "practice/data/classroom-vocabulary/media/21592188b2a460fc54203237.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9ceb50c5621756e2fef90425.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/6d2ea43cfd9b648a482f6ff8.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-352f9d142",
+      "term": "life expectancy",
+      "pos": "(n)",
+      "ipa": "/lˈaɪf ɪkspˈɛktənsɪ/",
+      "definition": "how long a person can expect to live",
+      "example": "Obesity can reduce life expectancy and lead to serious illness such as heart disease and diabetes.",
+      "exampleMark": "life expectancy",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/301431bff22be1a21aa7435f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2b9df7a58c5401913294ba70.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-78cd1257c",
+      "term": "moderate",
+      "pos": "(adj)",
+      "ipa": "/mˈɒdərət/",
+      "definition": "not too much and not too little",
+      "example": "She eats a moderate amount of food at lunch.",
+      "exampleMark": "moderate",
+      "picture": "practice/data/classroom-vocabulary/media/aa8e912d3d0a9f2acb0fddb8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/83773bc30dc39171dcac3686.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1b638fed01192aafe9f8d674.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-4f31b4124",
+      "term": "obesity",
+      "pos": "(n)",
+      "ipa": "/əʊbˈiːsətɪ/",
+      "definition": "the condition of weighing more than is healthy",
+      "example": "The report discusses obesity.",
+      "exampleMark": "obesity",
+      "picture": "practice/data/classroom-vocabulary/media/469023669d7750eec6221707.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8343f2d05e6fcdef92d622e1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/71b7dba7b46b2854875eb0fd.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-2422b5a39",
+      "term": "physical activity",
+      "pos": "(n)",
+      "ipa": "/fˈɪzɪkəl æktˈɪvɪtɪ/",
+      "definition": "moving around and doing things",
+      "example": "Gardening is a form of physical activity.",
+      "exampleMark": "physical activity",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2eb6bfe8629f21ea5a44db58.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8cbd765d8e61ecc649b74de2.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-3dbcdc08e",
+      "term": "recognize",
+      "pos": "(v)",
+      "ipa": "/ˈrekəɡnaɪz/",
+      "definition": "to understand. to accept that something is true",
+      "example": "We recognize the importance of sleep.",
+      "exampleMark": "recognize",
+      "picture": "practice/data/classroom-vocabulary/media/156e94759b3d08088fce7e4a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c38f2f12bd7916bfb3eeb4d1.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d4e30e4e266f81bd14bf5282.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-7cc7854ca",
+      "term": "regular exercise",
+      "pos": "(n)",
+      "ipa": "/rˈɛɡjʊlɐr ˈɛksəsˌaɪz/",
+      "definition": "sports or movement that people do at the same time each day, week, month, etc.",
+      "example": "She gets regular exercise by swimming every Monday and Thursday.",
+      "exampleMark": "regular exercise",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/bc710221c28567167c67bf37.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/33f59d45411ad06185893c98.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-ea85d176e",
+      "term": "self-esteem",
+      "pos": "(n)",
+      "ipa": "/sˈɛlfɛstˈiːm/",
+      "definition": "being confident and believing in yourself",
+      "example": "Learning a new skill can improve self-esteem.",
+      "exampleMark": "self-esteem",
+      "picture": "practice/data/classroom-vocabulary/media/b5a18c06d60cf35f34335cc5.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1b8c61a2a21f5f6063895a28.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/24e2f60adc0a3aafe16b6338.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-2b3348185",
+      "term": "serious",
+      "pos": "(adj)",
+      "ipa": "/sˈiərɪəs/",
+      "definition": "bad or dangerous",
+      "example": "The doctors treated a serious illness.",
+      "exampleMark": "serious",
+      "picture": "practice/data/classroom-vocabulary/media/2b70f41d76c4fa672badd0f4.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0247fb82ad74550d382f3320.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/81912a6b3b457b5c2b4ede74.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-c62f38a12",
+      "term": "serious illness",
+      "pos": "(n)",
+      "ipa": "/sˈiərɪəs ˈɪlnəs/",
+      "definition": "a very bad medical problem",
+      "example": "Obesity can reduce life expectancy and lead to serious illness such as heart disease and diabetes.",
+      "exampleMark": "serious illness",
+      "picture": "practice/data/classroom-vocabulary/media/85f223e7dfefffa62c6e4b9c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1e79cb61eafff50dcd94d0dc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2b9df7a58c5401913294ba70.mp3"
+    },
+    {
+      "id": "B03-RW-U05-W-6df580aee",
+      "term": "suffer",
+      "pos": "(v)",
+      "ipa": "/sˈʌfɐ/",
+      "definition": "to experience physical or mental pain",
+      "example": "People can suffer from stress if they work without a break.",
+      "exampleMark": "suffer",
+      "picture": "practice/data/classroom-vocabulary/media/cbd7c2af2ef840fecbe31004.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/87d9729b14aa792c126f0de2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/806f73250561f78637c4f06c.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "media projects to convince people to buy a product or change their behaviour"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/fd7e7050fb18131f77afbf7d.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/adb2b1518855653484d414df.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/25b10ca06a6263028035f24f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-2bb6b986c",
+          "prompt": "My grandparents stay active by walking.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U05-W-fc8ff2cb4",
+          "prompt": "The company launched an advertising campaign to promote its new bicycle.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U05-W-55028ebd8",
+          "prompt": "Her meal is part of a balanced diet.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U05-W-48c88cd1f",
+          "prompt": "The label lists the number of calories.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d2aef1b3303d4dcc9e9d7232.webp"
+        },
+        {
+          "key": "B",
+          "text": "a strong and well way of living"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/b2e29cc46f6ae97b7bca8d89.webp"
+        },
+        {
+          "key": "D",
+          "text": "classes or material to teach people about a particular topic"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-23f43ae94",
+          "prompt": "The campaign encourages people to walk more.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U05-W-7be4bfd0c",
+          "prompt": "The museum runs an educational programme about local wildlife.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U05-W-126aa0f74",
+          "prompt": "These educate people about the dangers of junk food and the importance of a healthy lifestyle, including a balanced diet.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U05-W-1beeab8c1",
+          "prompt": "The article mentions heart disease.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/469023669d7750eec6221707.webp"
+        },
+        {
+          "key": "B",
+          "text": "how long a person can expect to live"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/aa8e912d3d0a9f2acb0fddb8.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/21592188b2a460fc54203237.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-f51720061",
+          "prompt": "Her teacher discusses junk food in class.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U05-W-352f9d142",
+          "prompt": "Obesity can reduce life expectancy and lead to serious illness such as heart disease and diabetes.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U05-W-78cd1257c",
+          "prompt": "She eats a moderate amount of food at lunch.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U05-W-4f31b4124",
+          "prompt": "The report discusses obesity.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "sports or movement that people do at the same time each day, week, month, etc."
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/156e94759b3d08088fce7e4a.webp"
+        },
+        {
+          "key": "C",
+          "text": "moving around and doing things"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/b5a18c06d60cf35f34335cc5.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-2422b5a39",
+          "prompt": "Gardening is a form of physical activity.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U05-W-3dbcdc08e",
+          "prompt": "We recognize the importance of sleep.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U05-W-7cc7854ca",
+          "prompt": "She gets regular exercise by swimming every Monday and Thursday.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U05-W-ea85d176e",
+          "prompt": "Learning a new skill can improve self-esteem.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/cbd7c2af2ef840fecbe31004.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/2b70f41d76c4fa672badd0f4.webp"
+        },
+        {
+          "key": "C",
+          "text": "a very bad medical problem"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-2b3348185",
+          "prompt": "The doctors treated a serious illness.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U05-W-c62f38a12",
+          "prompt": "Obesity can reduce life expectancy and lead to serious illness such as heart disease and diabetes.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U05-W-6df580aee",
+          "prompt": "People can suffer from stress if they work without a break.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "active",
+        "educational programme",
+        "advertising campaign",
+        "healthy lifestyle",
+        "balanced diet",
+        "campaign",
+        "calories"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-2bb6b986c",
+          "before": "My grandparents stay ",
+          "after": " by walking.",
+          "answer": "active"
+        },
+        {
+          "id": "B03-RW-U05-W-fc8ff2cb4",
+          "before": "The company launched an ",
+          "after": " to promote its new bicycle.",
+          "answer": "advertising campaign"
+        },
+        {
+          "id": "B03-RW-U05-W-55028ebd8",
+          "before": "Her meal is part of a ",
+          "after": ".",
+          "answer": "balanced diet"
+        },
+        {
+          "id": "B03-RW-U05-W-48c88cd1f",
+          "before": "The label lists the number of ",
+          "after": ".",
+          "answer": "calories"
+        },
+        {
+          "id": "B03-RW-U05-W-23f43ae94",
+          "before": "The ",
+          "after": " encourages people to walk more.",
+          "answer": "campaign"
+        },
+        {
+          "id": "B03-RW-U05-W-7be4bfd0c",
+          "before": "The museum runs an ",
+          "after": " about local wildlife.",
+          "answer": "educational programme"
+        },
+        {
+          "id": "B03-RW-U05-W-126aa0f74",
+          "before": "These educate people about the dangers of junk food and the importance of a ",
+          "after": ", including a balanced diet.",
+          "answer": "healthy lifestyle"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "junk food",
+        "obesity",
+        "moderate",
+        "life expectancy",
+        "heart disease",
+        "physical activity"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-1beeab8c1",
+          "before": "The article mentions ",
+          "after": ".",
+          "answer": "heart disease"
+        },
+        {
+          "id": "B03-RW-U05-W-f51720061",
+          "before": "Her teacher discusses ",
+          "after": " in class.",
+          "answer": "junk food"
+        },
+        {
+          "id": "B03-RW-U05-W-352f9d142",
+          "before": "Obesity can reduce ",
+          "after": " and lead to serious illness such as heart disease and diabetes.",
+          "answer": "life expectancy"
+        },
+        {
+          "id": "B03-RW-U05-W-78cd1257c",
+          "before": "She eats a ",
+          "after": " amount of food at lunch.",
+          "answer": "moderate"
+        },
+        {
+          "id": "B03-RW-U05-W-4f31b4124",
+          "before": "The report discusses ",
+          "after": ".",
+          "answer": "obesity"
+        },
+        {
+          "id": "B03-RW-U05-W-2422b5a39",
+          "before": "Gardening is a form of ",
+          "after": ".",
+          "answer": "physical activity"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "self-esteem",
+        "serious illness",
+        "serious",
+        "regular exercise",
+        "recognize",
+        "suffer"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U05-W-3dbcdc08e",
+          "before": "We ",
+          "after": " the importance of sleep.",
+          "answer": "recognize"
+        },
+        {
+          "id": "B03-RW-U05-W-7cc7854ca",
+          "before": "She gets ",
+          "after": " by swimming every Monday and Thursday.",
+          "answer": "regular exercise"
+        },
+        {
+          "id": "B03-RW-U05-W-ea85d176e",
+          "before": "Learning a new skill can improve ",
+          "after": ".",
+          "answer": "self-esteem"
+        },
+        {
+          "id": "B03-RW-U05-W-2b3348185",
+          "before": "The doctors treated a ",
+          "after": " illness.",
+          "answer": "serious"
+        },
+        {
+          "id": "B03-RW-U05-W-c62f38a12",
+          "before": "Obesity can reduce life expectancy and lead to ",
+          "after": " such as heart disease and diabetes.",
+          "answer": "serious illness"
+        },
+        {
+          "id": "B03-RW-U05-W-6df580aee",
+          "before": "People can ",
+          "after": " from stress if they work without a break.",
+          "answer": "suffer"
+        }
+      ]
+    }
+  ]
+}

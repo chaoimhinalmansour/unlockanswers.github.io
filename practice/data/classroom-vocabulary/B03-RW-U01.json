@@ -1,0 +1,476 @@
+{
+  "unitId": "B3U01",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U01",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U01-W-5c1b9018b",
+      "term": "affect",
+      "pos": "(v)",
+      "ipa": "/ɐfˈɛkt/",
+      "definition": "to influence or cause something to change",
+      "example": "The virus does not seem to affect gray squirrels, but it is fatal to reds.",
+      "exampleMark": "affect",
+      "picture": "practice/data/classroom-vocabulary/media/ed7e5dbb7381930ce6f20b8f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/acb5fe002fd1e2db286cc838.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/aa58e859f8b8e891edea4b8f.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-4d3d0a8d2",
+      "term": "chemical",
+      "pos": "(n)",
+      "ipa": "/kˈɛmɪkəl/",
+      "definition": "a man-made or natural solid, liquid or gas made by changing atoms",
+      "example": "The factory uses a chemical to remove colour from the material.",
+      "exampleMark": "chemical",
+      "picture": "practice/data/classroom-vocabulary/media/6720da3b2306df0830f70f2e.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/0d2a922a11d887330c26fc8f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/23a43210aeb4fcb111284428.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-94c8c21d0",
+      "term": "common",
+      "pos": "(adj)",
+      "ipa": "/kˈɒmən/",
+      "definition": "happening often or existing in large numbers",
+      "example": "Squirrels are common in this forest.",
+      "exampleMark": "common",
+      "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/599bdf1d574dd762419d5216.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/73eefb09a6b0d5773ce0d96c.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-afbd048a3",
+      "term": "cooperate",
+      "pos": "(v)",
+      "ipa": "/kəʊˈɒpərˌeɪt/",
+      "definition": "to work together for a particular purpose",
+      "example": "People and nations need to cooperate to make sure we protect both of these important animal species.",
+      "exampleMark": "cooperate",
+      "picture": "practice/data/classroom-vocabulary/media/ed7e5dbb7381930ce6f20b8f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/4bdd5ab9caa0bfe50b211719.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0aea71abc6b276059b56d18c.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-541983090",
+      "term": "damage",
+      "pos": "(v)",
+      "ipa": "/dˈæmɪdʒ/",
+      "definition": "to harm or spoil something",
+      "example": "Forest fires can damage animal habitats.",
+      "exampleMark": "damage",
+      "picture": "practice/data/classroom-vocabulary/media/d070b72d189e9fbb0368332b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9db7db1fb51c0756adf055c7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a4be0eeb1ebabd157f2a59dd.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-687001088",
+      "term": "destroy",
+      "pos": "(v)",
+      "ipa": "/dɪstrˈɔɪ/",
+      "definition": "to damage something very badly. to cause it to not exist",
+      "example": "A fire can destroy an animal’s habitat.",
+      "exampleMark": "destroy",
+      "picture": "practice/data/classroom-vocabulary/media/4e1056e27223b1f21bc351d8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e9e1a492a086b54fd1f1c374.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8f9a5604c79a4bf9eb8dcd8e.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-1efedc75a",
+      "term": "due to",
+      "pos": "(phr)",
+      "ipa": "/djˈuː tuː/",
+      "definition": "because of. as a result of",
+      "example": "The river is polluted due to waste from factories.",
+      "exampleMark": "due to",
+      "picture": "practice/data/classroom-vocabulary/media/0955cdecaf2962598476f106.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d857046818d297e715bfc54a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b8a876f764440f99576aef62.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-7896a9dfa",
+      "term": "endangered",
+      "pos": "(adj)",
+      "ipa": "/ɛndˈeɪndʒəd/",
+      "definition": "(of plants and animals) that may disappear soon",
+      "example": "People should protect endangered animals.",
+      "exampleMark": "endangered",
+      "picture": "practice/data/classroom-vocabulary/media/ff53862462a14680cb236315.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/3695bc81c4079641f0c7fa69.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d3ce6c4e8fb4f94ab0a59758.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-11e60b0ea",
+      "term": "natural",
+      "pos": "(adj)",
+      "ipa": "/nˈætʃərəl/",
+      "definition": "as found in nature. not made or caused by people",
+      "example": "The animals live in their natural environment.",
+      "exampleMark": "natural",
+      "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/d5eebae240a8a8e19ac9cccc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/868dfbde7521a8747d58baa9.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-5f07350b2",
+      "term": "pollute",
+      "pos": "(v)",
+      "ipa": "/pəlˈuːt/",
+      "definition": "to make the air, water or land dirty and unhealthy",
+      "example": "Factories must not pollute the river.",
+      "exampleMark": "pollute",
+      "picture": "practice/data/classroom-vocabulary/media/debe241acdb6d83f2261dc0f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/832a31567bc873de8882ae6f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4d2f6994c627436fb7177698.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-145969f13",
+      "term": "protect",
+      "pos": "(v)",
+      "ipa": "/prətˈɛkt/",
+      "definition": "to keep something or someone safe from damage or injury",
+      "example": "We need to protect animals and their habitats.",
+      "exampleMark": "protect",
+      "picture": "practice/data/classroom-vocabulary/media/eb803d0ba075d27cb119d80f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/ede180815537db460a921498.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/58b97e014bdb42a0f62be74d.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-4ab69d1f4",
+      "term": "provide",
+      "pos": "(v)",
+      "ipa": "/prəvˈaɪd/",
+      "definition": "to give someone something that they need",
+      "example": "They can also provide funding for animal sanctuaries and zoos.",
+      "exampleMark": "provide",
+      "picture": "practice/data/classroom-vocabulary/media/ed7e5dbb7381930ce6f20b8f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/194cc12a0ded067b8ba7db0f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/383399d04e03e9934c129955.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-3cacc7bfa",
+      "term": "replace",
+      "pos": "(v)",
+      "ipa": "/rɪplˈeɪs/",
+      "definition": "to take the place of something, or to put something in the place of something or someone else",
+      "example": "As a result, they may replace or damage native plants and animals which live in the same environment.",
+      "exampleMark": "replace",
+      "picture": "practice/data/classroom-vocabulary/media/b9aa208248665cde3ce4de84.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a0a3cac190a97158169a0a04.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ddf78095e03396386a4c3be0.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-035294d01",
+      "term": "species",
+      "pos": "(n)",
+      "ipa": "/spˈiːsiːz/",
+      "definition": "a group of plants or animals which are the same in some way",
+      "example": "Cleaning the river helps protect many species.",
+      "exampleMark": "species",
+      "picture": "practice/data/classroom-vocabulary/media/055fd893521ece7848c5829b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/1d8ae18093372f78074733ce.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/9a4349256da0e3beb6d4e5c7.mp3"
+    },
+    {
+      "id": "B03-RW-U01-W-8dd6d34de",
+      "term": "survive",
+      "pos": "(v)",
+      "ipa": "/səvˈaɪv/",
+      "definition": "to stay alive. to continue to exist, especially after an injury or threat",
+      "example": "Some animals can survive very cold winters.",
+      "exampleMark": "survive",
+      "picture": "practice/data/classroom-vocabulary/media/7070a31bef78e790bd559051.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/04c45b2921172ae729ada914.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/58fe6fa4ec51ae735f1a5ff7.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to work together for a particular purpose"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/6720da3b2306df0830f70f2e.webp"
+        },
+        {
+          "key": "D",
+          "text": "to influence or cause something to change"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-5c1b9018b",
+          "prompt": "The virus does not seem to affect gray squirrels, but it is fatal to reds.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U01-W-4d3d0a8d2",
+          "prompt": "The factory uses a chemical to remove colour from the material.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U01-W-94c8c21d0",
+          "prompt": "Squirrels are common in this forest.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U01-W-afbd048a3",
+          "prompt": "People and nations need to cooperate to make sure we protect both of these important animal species.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/4e1056e27223b1f21bc351d8.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/d070b72d189e9fbb0368332b.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/0955cdecaf2962598476f106.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/ff53862462a14680cb236315.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-541983090",
+          "prompt": "Forest fires can damage animal habitats.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U01-W-687001088",
+          "prompt": "A fire can destroy an animal’s habitat.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U01-W-1efedc75a",
+          "prompt": "The river is polluted due to waste from factories.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U01-W-7896a9dfa",
+          "prompt": "People should protect endangered animals.",
+          "answer": "D"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/eb803d0ba075d27cb119d80f.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/ce6e69b4f70f1760ddd766f0.webp"
+        },
+        {
+          "key": "C",
+          "text": "to give someone something that they need"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/debe241acdb6d83f2261dc0f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-11e60b0ea",
+          "prompt": "The animals live in their natural environment.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U01-W-5f07350b2",
+          "prompt": "Factories must not pollute the river.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U01-W-145969f13",
+          "prompt": "We need to protect animals and their habitats.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U01-W-4ab69d1f4",
+          "prompt": "They can also provide funding for animal sanctuaries and zoos.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/b9aa208248665cde3ce4de84.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/055fd893521ece7848c5829b.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/7070a31bef78e790bd559051.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-3cacc7bfa",
+          "prompt": "As a result, they may replace or damage native plants and animals which live in the same environment.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U01-W-035294d01",
+          "prompt": "Cleaning the river helps protect many species.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U01-W-8dd6d34de",
+          "prompt": "Some animals can survive very cold winters.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "damage",
+        "common",
+        "cooperate",
+        "affect",
+        "chemical"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-5c1b9018b",
+          "before": "The virus does not seem to ",
+          "after": " gray squirrels, but it is fatal to reds.",
+          "answer": "affect"
+        },
+        {
+          "id": "B03-RW-U01-W-4d3d0a8d2",
+          "before": "The factory uses a ",
+          "after": " to remove colour from the material.",
+          "answer": "chemical"
+        },
+        {
+          "id": "B03-RW-U01-W-94c8c21d0",
+          "before": "Squirrels are ",
+          "after": " in this forest.",
+          "answer": "common"
+        },
+        {
+          "id": "B03-RW-U01-W-afbd048a3",
+          "before": "People and nations need to ",
+          "after": " to make sure we protect both of these important animal species.",
+          "answer": "cooperate"
+        },
+        {
+          "id": "B03-RW-U01-W-541983090",
+          "before": "Forest fires can ",
+          "after": " animal habitats.",
+          "answer": "damage"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "endangered",
+        "pollute",
+        "due to",
+        "destroy",
+        "natural"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-687001088",
+          "before": "A fire can ",
+          "after": " an animal’s habitat.",
+          "answer": "destroy"
+        },
+        {
+          "id": "B03-RW-U01-W-1efedc75a",
+          "before": "The river is polluted ",
+          "after": " waste from factories.",
+          "answer": "due to"
+        },
+        {
+          "id": "B03-RW-U01-W-7896a9dfa",
+          "before": "People should protect ",
+          "after": " animals.",
+          "answer": "endangered"
+        },
+        {
+          "id": "B03-RW-U01-W-11e60b0ea",
+          "before": "The animals live in their ",
+          "after": " environment.",
+          "answer": "natural"
+        },
+        {
+          "id": "B03-RW-U01-W-5f07350b2",
+          "before": "Factories must not ",
+          "after": " the river.",
+          "answer": "pollute"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "survive",
+        "replace",
+        "species",
+        "provide",
+        "protect"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U01-W-145969f13",
+          "before": "We need to ",
+          "after": " animals and their habitats.",
+          "answer": "protect"
+        },
+        {
+          "id": "B03-RW-U01-W-4ab69d1f4",
+          "before": "They can also ",
+          "after": " funding for animal sanctuaries and zoos.",
+          "answer": "provide"
+        },
+        {
+          "id": "B03-RW-U01-W-3cacc7bfa",
+          "before": "As a result, they may ",
+          "after": " or damage native plants and animals which live in the same environment.",
+          "answer": "replace"
+        },
+        {
+          "id": "B03-RW-U01-W-035294d01",
+          "before": "Cleaning the river helps protect many ",
+          "after": ".",
+          "answer": "species"
+        },
+        {
+          "id": "B03-RW-U01-W-8dd6d34de",
+          "before": "Some animals can ",
+          "after": " very cold winters.",
+          "answer": "survive"
+        }
+      ]
+    }
+  ]
+}

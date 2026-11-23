@@ -1,0 +1,354 @@
+{
+  "unitId": "B3U02",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U02",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-LS-U02-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U02-W-816d63e63",
+      "term": "alternative",
+      "pos": "(adj)",
+      "ipa": "/ɔːlˈtɜː.nə.tɪv/",
+      "definition": "different from what is usual or traditional",
+      "example": "Today I want to explain some alternative solutions which may help reduce some of the problems related to climate change.",
+      "exampleMark": "alternative",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0356.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/eca6ae23efd51a1e84ce444e.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-58076e412",
+      "term": "crisis",
+      "pos": "(n)",
+      "ipa": "/ˈkraɪ.sɪs/",
+      "definition": "a very dangerous or difficult situation",
+      "example": "Some people think hydroponics is the perfect solution to the world food crisis.",
+      "exampleMark": "crisis",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0444.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e7fc8f44582d789edb75ed84.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-ac58bf0f8",
+      "term": "disaster",
+      "pos": "(n)",
+      "ipa": "/dɪˈzɑːs.tə/",
+      "definition": "a terrible accident which causes a lot of damage",
+      "example": "If there is a nuclear disaster, our children will be exposed to radiation.",
+      "exampleMark": "disaster",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0445.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bc8535b3a5ba52c38540f771.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-0b599ed91",
+      "term": "environmental",
+      "pos": "(adj)",
+      "ipa": "/ɪnˌvaɪ.rənˈmen.təl/",
+      "definition": "relating to the air, water and land",
+      "example": "Then we'll briefly discuss how this type of farming could solve some of the environmental problems we are facing.",
+      "exampleMark": "environmental",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0446.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/53122f8e3382f18c04ca028c.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-1eb7d5c22",
+      "term": "limited",
+      "pos": "(adj)",
+      "ipa": "/ˈlɪm.ɪ.tɪd/",
+      "definition": "small in amount or number",
+      "example": "Fresh water is a limited resource.",
+      "exampleMark": "limited",
+      "picture": "practice/data/classroom-vocabulary/media/bc2c485a1e0459cbc2e13744.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0447.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f4669c6f43af13c8815c68a9.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-75f7a6e01",
+      "term": "long-term",
+      "pos": "(adj)",
+      "ipa": "/ˌlɒŋˈtɜːm/",
+      "definition": "continuing for a long time",
+      "example": "We need a long-term solution.",
+      "exampleMark": "long-term",
+      "picture": "practice/data/classroom-vocabulary/media/ba10510a2d91a8b5937e613f.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0448.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/260fa88f526d694784e2fac0.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-4ab69d1f4",
+      "term": "provide",
+      "pos": "(v)",
+      "ipa": "/prəˈvaɪd/",
+      "definition": "to give something",
+      "example": "Every turbine can provide power for 3,000 homes.",
+      "exampleMark": "provide",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0429.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8c07d3556ac2ae9db300931f.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-7a1047389",
+      "term": "resource",
+      "pos": "(n)",
+      "ipa": "/rɪˈzɔːs/",
+      "definition": "something you have and can use",
+      "example": "The university library is a useful resource for new students.",
+      "exampleMark": "resource",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0450.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c21c4d9cfb68bca0f751c90a.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-11a110bbe",
+      "term": "risk",
+      "pos": "(n)",
+      "ipa": "/ˈrɪsk/",
+      "definition": "the possibility of something bad happening",
+      "example": "We discussed the risk of getting lost.",
+      "exampleMark": "risk",
+      "picture": "practice/data/classroom-vocabulary/media/2740b0009bb9f4a75e335d2d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0451.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4a71707ccb73b4f754a4c8f9.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-00f97cb50",
+      "term": "solution",
+      "pos": "(n)",
+      "ipa": "/səˈluː.ʃən/",
+      "definition": "a way of solving a problem",
+      "example": "The first solution uses solar energy to grow food in the desert.",
+      "exampleMark": "solution",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0370.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3b8ff123ed3f7c995d9b2f50.mp3"
+    },
+    {
+      "id": "B03-LS-U02-W-317f1e761",
+      "term": "system",
+      "pos": "(n)",
+      "ipa": "/ˈsɪs.tɪm/",
+      "definition": "a way of doing things",
+      "example": "We'll discuss some possible problems with this system.",
+      "exampleMark": "system",
+      "picture": "practice/data/classroom-vocabulary/media/d01d25f9c3ff06580b044e9d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0452.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0bb915732d981c0104f5e94f.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a very dangerous or difficult situation"
+        },
+        {
+          "key": "B",
+          "text": "a terrible accident which causes a lot of damage"
+        },
+        {
+          "key": "C",
+          "text": "relating to the air, water and land"
+        },
+        {
+          "key": "D",
+          "text": "different from what is usual or traditional"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U02-W-816d63e63",
+          "prompt": "Today I want to explain some alternative solutions which may help reduce some of the problems related to climate change.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U02-W-58076e412",
+          "prompt": "Some people think hydroponics is the perfect solution to the world food crisis.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U02-W-ac58bf0f8",
+          "prompt": "If there is a nuclear disaster, our children will be exposed to radiation.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-LS-U02-W-0b599ed91",
+          "prompt": "Then we'll briefly discuss how this type of farming could solve some of the environmental problems we are facing.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to give something"
+        },
+        {
+          "key": "B",
+          "text": "something you have and can use"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/bc2c485a1e0459cbc2e13744.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/ba10510a2d91a8b5937e613f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U02-W-1eb7d5c22",
+          "prompt": "Fresh water is a limited resource.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U02-W-75f7a6e01",
+          "prompt": "We need a long-term solution.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U02-W-4ab69d1f4",
+          "prompt": "Every turbine can provide power for 3,000 homes.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U02-W-7a1047389",
+          "prompt": "The university library is a useful resource for new students.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a way of solving a problem"
+        },
+        {
+          "key": "B",
+          "text": "a way of doing things"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/2740b0009bb9f4a75e335d2d.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U02-W-11a110bbe",
+          "prompt": "We discussed the risk of getting lost.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U02-W-00f97cb50",
+          "prompt": "The first solution uses solar energy to grow food in the desert.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U02-W-317f1e761",
+          "prompt": "We'll discuss some possible problems with this system.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "long-term",
+        "limited",
+        "environmental",
+        "disaster",
+        "crisis",
+        "alternative"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U02-W-816d63e63",
+          "before": "Today I want to explain some ",
+          "after": " solutions which may help reduce some of the problems related to climate change.",
+          "answer": "alternative"
+        },
+        {
+          "id": "B03-LS-U02-W-58076e412",
+          "before": "Some people think hydroponics is the perfect solution to the world food ",
+          "after": ".",
+          "answer": "crisis"
+        },
+        {
+          "id": "B03-LS-U02-W-ac58bf0f8",
+          "before": "If there is a nuclear ",
+          "after": ", our children will be exposed to radiation.",
+          "answer": "disaster"
+        },
+        {
+          "id": "B03-LS-U02-W-0b599ed91",
+          "before": "Then we'll briefly discuss how this type of farming could solve some of the ",
+          "after": " problems we are facing.",
+          "answer": "environmental"
+        },
+        {
+          "id": "B03-LS-U02-W-1eb7d5c22",
+          "before": "Fresh water is a ",
+          "after": " resource.",
+          "answer": "limited"
+        },
+        {
+          "id": "B03-LS-U02-W-75f7a6e01",
+          "before": "We need a ",
+          "after": " solution.",
+          "answer": "long-term"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "system",
+        "solution",
+        "risk",
+        "resource",
+        "provide"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U02-W-4ab69d1f4",
+          "before": "Every turbine can ",
+          "after": " power for 3,000 homes.",
+          "answer": "provide"
+        },
+        {
+          "id": "B03-LS-U02-W-7a1047389",
+          "before": "The university library is a useful ",
+          "after": " for new students.",
+          "answer": "resource"
+        },
+        {
+          "id": "B03-LS-U02-W-11a110bbe",
+          "before": "We discussed the ",
+          "after": " of getting lost.",
+          "answer": "risk"
+        },
+        {
+          "id": "B03-LS-U02-W-00f97cb50",
+          "before": "The first ",
+          "after": " uses solar energy to grow food in the desert.",
+          "answer": "solution"
+        },
+        {
+          "id": "B03-LS-U02-W-317f1e761",
+          "before": "We'll discuss some possible problems with this ",
+          "after": ".",
+          "answer": "system"
+        }
+      ]
+    }
+  ]
+}

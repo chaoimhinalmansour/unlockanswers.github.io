@@ -1,0 +1,664 @@
+{
+  "unitId": "B3U02",
+  "track": "RW",
+  "source": {
+    "id": "B03-RW-U02",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B03-RW-U02-L1"
+  },
+  "cards": [
+    {
+      "id": "B03-RW-U02-W-846e2a86e",
+      "term": "absorb",
+      "pos": "(v)",
+      "ipa": "/əbˈzɔːb/",
+      "definition": "to take in a liquid or gas through a surface and hold it",
+      "example": "Tree roots absorb water from the soil.",
+      "exampleMark": "absorb",
+      "picture": "practice/data/classroom-vocabulary/media/107ef79d5630a77c87e0b7a8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0453.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/88573401b390abf3606e819c.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-80ff69d5f",
+      "term": "annual",
+      "pos": "(adj)",
+      "ipa": "/ˈæn.jʊ.əl/",
+      "definition": "happening or produced once a year",
+      "example": "Volunteers join an annual tree-planting event.",
+      "exampleMark": "annual",
+      "picture": "practice/data/classroom-vocabulary/media/6670de17282edca8bb5a51f2.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0454.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b7b85eeabdafb4407f0817c4.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-ffa2fbc77",
+      "term": "atmosphere",
+      "pos": "(n)",
+      "ipa": "/ˈæt.mə.sfɪə/",
+      "definition": "the layer of gases around the Earth",
+      "example": "Smoke entered the atmosphere.",
+      "exampleMark": "atmosphere",
+      "picture": "practice/data/classroom-vocabulary/media/3b185fb2ec9547a5e2646dbb.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0215.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/373c1d7b07e51bd4b6c15676.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-ccadf5de3",
+      "term": "cause",
+      "pos": "(n)",
+      "ipa": "/ˈkɔːz/",
+      "definition": "someone or something that makes something happen",
+      "example": "Habitat loss is a cause of species extinction.",
+      "exampleMark": "cause",
+      "picture": "practice/data/classroom-vocabulary/media/d6a8370f1ded90710fa09c97.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0166.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/e44abd6c4d9b8dca4962eb35.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-bb064b232",
+      "term": "challenge",
+      "pos": "(n)",
+      "ipa": "/ˈtʃæl.ɪndʒ/",
+      "definition": "something that is difficult and that tests someone's ability or determination",
+      "example": "The biggest challenge we all face is to prevent further environmental disasters.",
+      "exampleMark": "challenge",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0241.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4ab8bfe3da406e35f6aae970.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-9d7ccb904",
+      "term": "climate",
+      "pos": "(n)",
+      "ipa": "/ˈklaɪ.mɪt/",
+      "definition": "the general weather conditions usually found in a particular place",
+      "example": "The island has a warm climate.",
+      "exampleMark": "climate",
+      "picture": "practice/data/classroom-vocabulary/media/d9933d5f0248575112089214.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0455.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1f8e9d6ad8b1314fc27105a6.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-97d3d178c",
+      "term": "consequences",
+      "pos": "(n pl)",
+      "ipa": "/ˈkɒn.sɪ.kwən.sɪz/",
+      "definition": "the results of an action or situation, especially bad results",
+      "example": "The storm had serious consequences for families living by the river.",
+      "exampleMark": "consequences",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0456.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/12a09bd7a4672c572cbad8db.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-d810ca965",
+      "term": "constant",
+      "pos": "(adj)",
+      "ipa": "/ˈkɒn.stənt/",
+      "definition": "happening a lot or all the time",
+      "example": "This constant reuse of land leads to heavy erosion, the loss of the top layer of soil which protects the ground.",
+      "exampleMark": "constant",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0457.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b951b95756327cc40fe6fed6.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-4a0857a7b",
+      "term": "contribute to",
+      "pos": "(phr v)",
+      "ipa": "/kənˈtrɪb.juːt tə/",
+      "definition": "to be one of the causes of an event or a situation",
+      "example": "In this way, the rainforests actually contribute to global warming instead of helping to solve it.",
+      "exampleMark": "contribute to",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0459.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/77b4e7e687f126df3598ec41.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-a07d95e6d",
+      "term": "ecosystem",
+      "pos": "(n)",
+      "ipa": "/ˈiː.kəʊˌsɪs.tɪm/",
+      "definition": "all the living things in an area and the effect they have on each other and the environment",
+      "example": "A small pond is an ecosystem.",
+      "exampleMark": "ecosystem",
+      "picture": "practice/data/classroom-vocabulary/media/dac6a323d6e9cf48059a4da9.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0461.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a99963053a4190a9b62105d5.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-68d1dae1a",
+      "term": "effect",
+      "pos": "(n)",
+      "ipa": "/ɪfˈekt/",
+      "definition": "result. a change which happens because of a cause",
+      "example": "One serious effect of deforestation is climate change.",
+      "exampleMark": "effect",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0358.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a26202f1950c46b17866b0d3.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-c96529e4c",
+      "term": "farming",
+      "pos": "(n)",
+      "ipa": "/ˈfɑːm.ɪŋ/",
+      "definition": "the job of working on a farm or organizing work on a farm",
+      "example": "Farming is important to the local economy.",
+      "exampleMark": "Farming",
+      "picture": "practice/data/classroom-vocabulary/media/c080c578cc1490a531c54780.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0462.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/39a9a5790cbc6a0e18ff91a5.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-e0696a2ef",
+      "term": "fossil fuel",
+      "pos": "(n)",
+      "ipa": "/ˈfɒs.əl ˈfjuː.əl/",
+      "definition": "a source of energy like coal, gas and petroleum, that was formed inside the Earth millions of years ago",
+      "example": "Coal is a fossil fuel that formed from ancient plants.",
+      "exampleMark": "fossil fuel",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0463.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/f9e9083415f990ca23cbac18.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-246910c60",
+      "term": "global warming",
+      "pos": "(n)",
+      "ipa": "/ˈɡləʊ.bəl ˈwɔːm.ɪŋ/",
+      "definition": "an increase in the Earth's temperature because of pollution",
+      "example": "The article discusses global warming.",
+      "exampleMark": "global warming",
+      "picture": "practice/data/classroom-vocabulary/media/638df5d314dbb80086d55ac5.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0174.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c77e37fc69e0e7191bb12aad.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-b6d219be9",
+      "term": "greenhouse gas",
+      "pos": "(n)",
+      "ipa": "/ˈɡriːn.haʊs ˈɡæs/",
+      "definition": "a gas which makes the air around the Earth warmer",
+      "example": "Methane is a greenhouse gas.",
+      "exampleMark": "greenhouse gas",
+      "picture": "practice/data/classroom-vocabulary/media/38aacb46b362cbf5294e44bb.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0464.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ec36ba1ad6389e78907e6230.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-00819c0e5",
+      "term": "issue",
+      "pos": "(n)",
+      "ipa": "/ˈɪʃ.juː/",
+      "definition": "an important subject or problem that people are discussing",
+      "example": "Access to clean water is an important issue in the region.",
+      "exampleMark": "issue",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0362.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a5aed873b12acbe9c7a2678a.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-42f7b07db",
+      "term": "logging",
+      "pos": "(n)",
+      "ipa": "/ˈlɒɡ.ɪŋ/",
+      "definition": "the activity or business of cutting down trees for wood",
+      "example": "Illegal logging can destroy forest habitats.",
+      "exampleMark": "logging",
+      "picture": "practice/data/classroom-vocabulary/media/47e85a9262181915b501246d.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0465.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2d98b1bbcdfc0d2ff07c019f.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-5226c8758",
+      "term": "predict",
+      "pos": "(v)",
+      "ipa": "/prɪˈdɪkt/",
+      "definition": "to say what you think will happen in the future",
+      "example": "Scientists use data to predict changes in the climate.",
+      "exampleMark": "predict",
+      "picture": "practice/data/classroom-vocabulary/media/4d19fe3d0540dc148b79fb52.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0466.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fbd3aa1b4e44e3835088d2c1.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-7a7ef5b1b",
+      "term": "rainforest",
+      "pos": "(n)",
+      "ipa": "/ˈreɪnˌfɒr.ɪst/",
+      "definition": "a forest in a tropical area with a rainfall of 250 cm or more per year",
+      "example": "Many species live in the rainforest.",
+      "exampleMark": "rainforest",
+      "picture": "practice/data/classroom-vocabulary/media/b0a79b8880ef3feb3d2c0e3e.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0467.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/603916bde35c9d0e54858761.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-84ce7eb39",
+      "term": "threaten",
+      "pos": "(v)",
+      "ipa": "/ˈθret.ən/",
+      "definition": "to be likely to damage or harm something",
+      "example": "New construction can threaten wetland habitats.",
+      "exampleMark": "threaten",
+      "picture": "practice/data/classroom-vocabulary/media/d2f6571f43d8dc7291a9cc51.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0468.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d366c837f2bdb994eecc995b.mp3"
+    },
+    {
+      "id": "B03-RW-U02-W-48075864b",
+      "term": "trend",
+      "pos": "(n)",
+      "ipa": "/ˈtrend/",
+      "definition": "a general development or change in a situation",
+      "example": "There is a growing trend towards working from home.",
+      "exampleMark": "trend",
+      "picture": "practice/data/classroom-vocabulary/media/66f59b775801abf6812d81f4.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0469.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/11f54e485fd7519bd9335651.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/6670de17282edca8bb5a51f2.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/3b185fb2ec9547a5e2646dbb.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d6a8370f1ded90710fa09c97.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/107ef79d5630a77c87e0b7a8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-846e2a86e",
+          "prompt": "Tree roots absorb water from the soil.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U02-W-80ff69d5f",
+          "prompt": "Volunteers join an annual tree-planting event.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U02-W-ffa2fbc77",
+          "prompt": "Smoke entered the atmosphere.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U02-W-ccadf5de3",
+          "prompt": "Habitat loss is a cause of species extinction.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "the results of an action or situation, especially bad results"
+        },
+        {
+          "key": "B",
+          "text": "happening a lot or all the time"
+        },
+        {
+          "key": "C",
+          "text": "something that is difficult and that tests someone's ability or determination"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/d9933d5f0248575112089214.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-bb064b232",
+          "prompt": "The biggest challenge we all face is to prevent further environmental disasters.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U02-W-9d7ccb904",
+          "prompt": "The island has a warm climate.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U02-W-97d3d178c",
+          "prompt": "The storm had serious consequences for families living by the river.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U02-W-d810ca965",
+          "prompt": "This constant reuse of land leads to heavy erosion, the loss of the top layer of soil which protects the ground.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/c080c578cc1490a531c54780.webp"
+        },
+        {
+          "key": "B",
+          "text": "to be one of the causes of an event or a situation"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/dac6a323d6e9cf48059a4da9.webp"
+        },
+        {
+          "key": "D",
+          "text": "result. a change which happens because of a cause"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-4a0857a7b",
+          "prompt": "In this way, the rainforests actually contribute to global warming instead of helping to solve it.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U02-W-a07d95e6d",
+          "prompt": "A small pond is an ecosystem.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U02-W-68d1dae1a",
+          "prompt": "One serious effect of deforestation is climate change.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-RW-U02-W-c96529e4c",
+          "prompt": "Farming is important to the local economy.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/38aacb46b362cbf5294e44bb.webp"
+        },
+        {
+          "key": "B",
+          "text": "a source of energy like coal, gas and petroleum, that was formed inside the Earth millions of years ago"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/638df5d314dbb80086d55ac5.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-e0696a2ef",
+          "prompt": "Coal is a fossil fuel that formed from ancient plants.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U02-W-246910c60",
+          "prompt": "The article discusses global warming.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U02-W-b6d219be9",
+          "prompt": "Methane is a greenhouse gas.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/47e85a9262181915b501246d.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/4d19fe3d0540dc148b79fb52.webp"
+        },
+        {
+          "key": "C",
+          "text": "an important subject or problem that people are discussing"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-00819c0e5",
+          "prompt": "Access to clean water is an important issue in the region.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U02-W-42f7b07db",
+          "prompt": "Illegal logging can destroy forest habitats.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-RW-U02-W-5226c8758",
+          "prompt": "Scientists use data to predict changes in the climate.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "a general development or change in a situation"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/b0a79b8880ef3feb3d2c0e3e.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d2f6571f43d8dc7291a9cc51.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-7a7ef5b1b",
+          "prompt": "Many species live in the rainforest.",
+          "answer": "B"
+        },
+        {
+          "id": "B03-RW-U02-W-84ce7eb39",
+          "prompt": "New construction can threaten wetland habitats.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-RW-U02-W-48075864b",
+          "prompt": "There is a growing trend towards working from home.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "climate",
+        "challenge",
+        "cause",
+        "atmosphere",
+        "annual",
+        "absorb"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-846e2a86e",
+          "before": "Tree roots ",
+          "after": " water from the soil.",
+          "answer": "absorb"
+        },
+        {
+          "id": "B03-RW-U02-W-80ff69d5f",
+          "before": "Volunteers join an ",
+          "after": " tree-planting event.",
+          "answer": "annual"
+        },
+        {
+          "id": "B03-RW-U02-W-ffa2fbc77",
+          "before": "Smoke entered the ",
+          "after": ".",
+          "answer": "atmosphere"
+        },
+        {
+          "id": "B03-RW-U02-W-ccadf5de3",
+          "before": "Habitat loss is a ",
+          "after": " of species extinction.",
+          "answer": "cause"
+        },
+        {
+          "id": "B03-RW-U02-W-bb064b232",
+          "before": "The biggest ",
+          "after": " we all face is to prevent further environmental disasters.",
+          "answer": "challenge"
+        },
+        {
+          "id": "B03-RW-U02-W-9d7ccb904",
+          "before": "The island has a warm ",
+          "after": ".",
+          "answer": "climate"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "effect",
+        "ecosystem",
+        "contribute to",
+        "constant",
+        "consequences"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-97d3d178c",
+          "before": "The storm had serious ",
+          "after": " for families living by the river.",
+          "answer": "consequences"
+        },
+        {
+          "id": "B03-RW-U02-W-d810ca965",
+          "before": "This ",
+          "after": " reuse of land leads to heavy erosion, the loss of the top layer of soil which protects the ground.",
+          "answer": "constant"
+        },
+        {
+          "id": "B03-RW-U02-W-4a0857a7b",
+          "before": "In this way, the rainforests actually ",
+          "after": " global warming instead of helping to solve it.",
+          "answer": "contribute to"
+        },
+        {
+          "id": "B03-RW-U02-W-a07d95e6d",
+          "before": "A small pond is an ",
+          "after": ".",
+          "answer": "ecosystem"
+        },
+        {
+          "id": "B03-RW-U02-W-68d1dae1a",
+          "before": "One serious ",
+          "after": " of deforestation is climate change.",
+          "answer": "effect"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "issue",
+        "greenhouse gas",
+        "global warming",
+        "fossil fuel",
+        "Farming"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-c96529e4c",
+          "before": "",
+          "after": " is important to the local economy.",
+          "answer": "Farming"
+        },
+        {
+          "id": "B03-RW-U02-W-e0696a2ef",
+          "before": "Coal is a ",
+          "after": " that formed from ancient plants.",
+          "answer": "fossil fuel"
+        },
+        {
+          "id": "B03-RW-U02-W-246910c60",
+          "before": "The article discusses ",
+          "after": ".",
+          "answer": "global warming"
+        },
+        {
+          "id": "B03-RW-U02-W-b6d219be9",
+          "before": "Methane is a ",
+          "after": ".",
+          "answer": "greenhouse gas"
+        },
+        {
+          "id": "B03-RW-U02-W-00819c0e5",
+          "before": "Access to clean water is an important ",
+          "after": " in the region.",
+          "answer": "issue"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "trend",
+        "threaten",
+        "rainforest",
+        "predict",
+        "logging"
+      ],
+      "rows": [
+        {
+          "id": "B03-RW-U02-W-42f7b07db",
+          "before": "Illegal ",
+          "after": " can destroy forest habitats.",
+          "answer": "logging"
+        },
+        {
+          "id": "B03-RW-U02-W-5226c8758",
+          "before": "Scientists use data to ",
+          "after": " changes in the climate.",
+          "answer": "predict"
+        },
+        {
+          "id": "B03-RW-U02-W-7a7ef5b1b",
+          "before": "Many species live in the ",
+          "after": ".",
+          "answer": "rainforest"
+        },
+        {
+          "id": "B03-RW-U02-W-84ce7eb39",
+          "before": "New construction can ",
+          "after": " wetland habitats.",
+          "answer": "threaten"
+        },
+        {
+          "id": "B03-RW-U02-W-48075864b",
+          "before": "There is a growing ",
+          "after": " towards working from home.",
+          "answer": "trend"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,404 @@
+{
+  "unitId": "B2U04",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U04",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U04-W-246d1dc75",
+      "term": "angry",
+      "pos": "(adj)",
+      "ipa": "/ˈæŋɡrɪ/",
+      "definition": "having a strong feeling that makes you want to shout at somebody or hurt them",
+      "example": "For example, some people get angry in very hot weather.",
+      "exampleMark": "angry",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c2d6fb683c54e87015514bbf.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c197519d2fd44865ca2a88eb.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-ccadf5de3",
+      "term": "cause",
+      "pos": "(v)",
+      "ipa": "/kˈɔːz/",
+      "definition": "to make something happen, especially something bad",
+      "example": "Dry conditions can cause problems for farmers.",
+      "exampleMark": "cause",
+      "picture": "practice/data/classroom-vocabulary/media/55a8aa07064962aeb38af4e3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/07d4b4cec5a56f98ebeabe89.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/62759236f0930619b3bc87e3.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-85d8d76ba",
+      "term": "cool",
+      "pos": "(adj)",
+      "ipa": "/kˈuːl/",
+      "definition": "slightly cold. of a low temperature",
+      "example": "The air is cool this morning.",
+      "exampleMark": "cool",
+      "picture": "practice/data/classroom-vocabulary/media/68fa60d15ad7bae41d934566.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/213ac1aaf9d2b0fb9c032e0a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/73bff74f88b0365dcd73b14a.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-10e90e2be",
+      "term": "cut down",
+      "pos": "(phr v)",
+      "ipa": "/kˈʌt dˈaʊn/",
+      "definition": "to make a tree or other plant fall to the ground by cutting it near the bottom",
+      "example": "So we keep making global warming worse every time we cut down trees.",
+      "exampleMark": "cut down",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/28c48b40c7352a7e9658d0e4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/811c96f8b6aaa0b83b3b1ea2.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-ef926a852",
+      "term": "dry",
+      "pos": "(adj)",
+      "ipa": "/drˈaɪ/",
+      "definition": "without water or liquid",
+      "example": "The ground is dry because it has not rained.",
+      "exampleMark": "dry",
+      "picture": "practice/data/classroom-vocabulary/media/4bee5a0341a5bacea20093b3.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/50766e55bd5a0dfb635b9ff6.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7da162e7c7598309b725e9f3.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-173d91684",
+      "term": "energy",
+      "pos": "(n)",
+      "ipa": "/ˈɛnədʒɪ/",
+      "definition": "the power and ability to do something or be active",
+      "example": "I have more energy after a good night’s sleep.",
+      "exampleMark": "energy",
+      "picture": "practice/data/classroom-vocabulary/media/dcab3926b42356f9912244fd.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b06948eb4fa023499fa6ae8b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5127030a7d2b5bbd3d26028b.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-e0371aa0d",
+      "term": "forest fire",
+      "pos": "(n)",
+      "ipa": "/fˈɒrɪst fˈaɪə/",
+      "definition": "a fire burning in an area of land with many trees, that is difficult to control and sometimes spreads quickly",
+      "example": "A forest fire damaged many trees on the hillside.",
+      "exampleMark": "forest fire",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/94bb1fbf12217b1cf98aaea4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/c90a89bb6b7c33e670653442.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-246910c60",
+      "term": "global warming",
+      "pos": "(n)",
+      "ipa": "/ɡlˈəʊbəl wˈɔːmɪŋ/",
+      "definition": "an increase in the temperature of the air around the world because of pollution",
+      "example": "Forests are important for slowing down global warming because of the work that trees do for us.",
+      "exampleMark": "global warming",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/7249bd8380dfa0f1d98d1f26.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/bd0154720f0139e5b9768a98.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-f98975039",
+      "term": "humid",
+      "pos": "(adj)",
+      "ipa": "/hjˈuːmɪd/",
+      "definition": "having a lot of moisture in the air",
+      "example": "It is hot and humid in summer.",
+      "exampleMark": "humid",
+      "picture": "practice/data/classroom-vocabulary/media/6cc63365459dd9243aae5a44.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/635bbd783d8c5faefd69a9ca.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/fee73fda4b5cc5ebe8b74ea4.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-866e90dff",
+      "term": "prefer",
+      "pos": "(v)",
+      "ipa": "/prɪfˈɜː/",
+      "definition": "to choose or want one thing instead of another",
+      "example": "I prefer cool weather to hot weather.",
+      "exampleMark": "prefer",
+      "picture": "practice/data/classroom-vocabulary/media/8c92dfd520feb541dbf8e779.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/21d87230720735f826555207.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/339c183523e2a8ce4fe4bfbd.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-1b2bf1cea",
+      "term": "prevent",
+      "pos": "(v)",
+      "ipa": "/prɪvˈɛnt/",
+      "definition": "to stop something happening or to stop somebody doing something",
+      "example": "A locked gate can prevent people from walking onto the tracks.",
+      "exampleMark": "prevent",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6a8997d8ce019cdde4bfe090.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7021693c06edf33cf34cb867.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-13a4a1131",
+      "term": "save",
+      "pos": "(v)",
+      "ipa": "/sˈeɪv/",
+      "definition": "to bring something back to good condition. to keep something from harm",
+      "example": "Many people believe that governments need to save the rainforests so that they'll still be around in the future.",
+      "exampleMark": "save",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5e6964cb1e7baf3c0ec289ae.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d758ac4f475ab529370a66e2.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-589ceff36",
+      "term": "upset",
+      "pos": "(adj)",
+      "ipa": "/ʌpsˈɛt/",
+      "definition": "unhappy or worried because something unpleasant has happened",
+      "example": "She was upset about the bad news.",
+      "exampleMark": "upset",
+      "picture": "practice/data/classroom-vocabulary/media/4d6b7174bafce8debc368cfc.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6ccf0bdf25764f11fefe89cc.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a64e610a7dcf4aade7f4f401.mp3"
+    },
+    {
+      "id": "B02-LS-U04-W-bdd9876c0",
+      "term": "wildlife",
+      "pos": "(n)",
+      "ipa": "/wˈaɪldlaɪf/",
+      "definition": "animals, birds and plants living in their natural environment",
+      "example": "We saw a lot of wildlife on our walk, including deer and birds.",
+      "exampleMark": "wildlife",
+      "picture": "practice/data/classroom-vocabulary/media/16a497e521d299c2efcf679d.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/53ff9fb831ba683de1bda1b7.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a4d396283bd12eda280091d2.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "having a strong feeling that makes you want to shout at somebody or hurt them"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/4bee5a0341a5bacea20093b3.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/68fa60d15ad7bae41d934566.webp"
+        },
+        {
+          "key": "D",
+          "text": "to make a tree or other plant fall to the ground by cutting it near the bottom"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U04-W-246d1dc75",
+          "prompt": "For example, some people get angry in very hot weather.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U04-W-85d8d76ba",
+          "prompt": "The air is cool this morning.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U04-W-10e90e2be",
+          "prompt": "So we keep making global warming worse every time we cut down trees.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U04-W-ef926a852",
+          "prompt": "The ground is dry because it has not rained.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/dcab3926b42356f9912244fd.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/8c92dfd520feb541dbf8e779.webp"
+        },
+        {
+          "key": "C",
+          "text": "a fire burning in an area of land with many trees, that is difficult to control and sometimes spreads quickly"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/6cc63365459dd9243aae5a44.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U04-W-173d91684",
+          "prompt": "I have more energy after a good night’s sleep.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U04-W-e0371aa0d",
+          "prompt": "A forest fire damaged many trees on the hillside.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U04-W-f98975039",
+          "prompt": "It is hot and humid in summer.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U04-W-866e90dff",
+          "prompt": "I prefer cool weather to hot weather.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "to bring something back to good condition. to keep something from harm"
+        },
+        {
+          "key": "B",
+          "text": "to stop something happening or to stop somebody doing something"
+        },
+        {
+          "key": "C",
+          "text": "animals, birds and plants living in their natural environment"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/4d6b7174bafce8debc368cfc.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U04-W-1b2bf1cea",
+          "prompt": "A locked gate can prevent people from walking onto the tracks.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U04-W-13a4a1131",
+          "prompt": "Many people believe that governments need to save the rainforests so that they'll still be around in the future.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U04-W-589ceff36",
+          "prompt": "She was upset about the bad news.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U04-W-bdd9876c0",
+          "prompt": "We saw a lot of wildlife on our walk, including deer and birds.",
+          "answer": "C"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "cool",
+        "cut down",
+        "dry",
+        "energy",
+        "forest fire",
+        "angry"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U04-W-246d1dc75",
+          "before": "For example, some people get ",
+          "after": " in very hot weather.",
+          "answer": "angry"
+        },
+        {
+          "id": "B02-LS-U04-W-85d8d76ba",
+          "before": "The air is ",
+          "after": " this morning.",
+          "answer": "cool"
+        },
+        {
+          "id": "B02-LS-U04-W-10e90e2be",
+          "before": "So we keep making global warming worse every time we ",
+          "after": " trees.",
+          "answer": "cut down"
+        },
+        {
+          "id": "B02-LS-U04-W-ef926a852",
+          "before": "The ground is ",
+          "after": " because it has not rained.",
+          "answer": "dry"
+        },
+        {
+          "id": "B02-LS-U04-W-173d91684",
+          "before": "I have more ",
+          "after": " after a good night’s sleep.",
+          "answer": "energy"
+        },
+        {
+          "id": "B02-LS-U04-W-e0371aa0d",
+          "before": "A ",
+          "after": " damaged many trees on the hillside.",
+          "answer": "forest fire"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "prevent",
+        "prefer",
+        "wildlife",
+        "save",
+        "humid",
+        "upset"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U04-W-f98975039",
+          "before": "It is hot and ",
+          "after": " in summer.",
+          "answer": "humid"
+        },
+        {
+          "id": "B02-LS-U04-W-866e90dff",
+          "before": "I ",
+          "after": " cool weather to hot weather.",
+          "answer": "prefer"
+        },
+        {
+          "id": "B02-LS-U04-W-1b2bf1cea",
+          "before": "A locked gate can ",
+          "after": " people from walking onto the tracks.",
+          "answer": "prevent"
+        },
+        {
+          "id": "B02-LS-U04-W-13a4a1131",
+          "before": "Many people believe that governments need to ",
+          "after": " the rainforests so that they'll still be around in the future.",
+          "answer": "save"
+        },
+        {
+          "id": "B02-LS-U04-W-589ceff36",
+          "before": "She was ",
+          "after": " about the bad news.",
+          "answer": "upset"
+        },
+        {
+          "id": "B02-LS-U04-W-bdd9876c0",
+          "before": "We saw a lot of ",
+          "after": " on our walk, including deer and birds.",
+          "answer": "wildlife"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,478 @@
+{
+  "unitId": "B2U08",
+  "track": "LS",
+  "source": {
+    "id": "B02-LS-U08",
+    "lesson": 1,
+    "version": 2,
+    "dictationId": "B02-LS-U08-L1"
+  },
+  "cards": [
+    {
+      "id": "B02-LS-U08-W-816d63e63",
+      "term": "alternative",
+      "pos": "(n)",
+      "ipa": "/ɔːlˈtɜː.nə.tɪv/",
+      "definition": "one of two or more things you can choose between",
+      "example": "So for me, an alternative would be to bring in thinkers from different industries to discuss different ways to pay.",
+      "exampleMark": "alternative",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0356.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/323b36850d708c883b017b13.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-754159999",
+      "term": "beyond",
+      "pos": "(prep)",
+      "ipa": "/bɪˈjɒnd/",
+      "definition": "on the other side of something",
+      "example": "The spacecraft travelled beyond the moon.",
+      "exampleMark": "beyond",
+      "picture": "practice/data/classroom-vocabulary/media/d9ed6b03c981fdea485d094b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0357.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/45f5c3dd1024feae568a1127.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-68d1dae1a",
+      "term": "effect",
+      "pos": "(n)",
+      "ipa": "/ɪfˈekt/",
+      "definition": "a change, reaction or result that is caused by something",
+      "example": "The new bus route had a positive effect on travel times.",
+      "exampleMark": "effect",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0358.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/0ac4edb60495ab750d9fbb95.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-9dda9754b",
+      "term": "explore",
+      "pos": "(v)",
+      "ipa": "/ɪkˈsplɔː/",
+      "definition": "to travel around a place to find out what is there",
+      "example": "Humans first began to explore near space in 1957, when the Soviets sent the first human -made satellite, Sputnik one, into space.",
+      "exampleMark": "explore",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0360.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4ef1d787a48bc08695ffd03b.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-a9a581005",
+      "term": "impact",
+      "pos": "(n)",
+      "ipa": "/ˈɪmpækt/",
+      "definition": "the effect that a person, event or situation has on somebody or something",
+      "example": "The storm had a big impact on local businesses.",
+      "exampleMark": "impact",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/lesson-dictation-audio-v1/c9ba431de815dddf4ff2.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b4f8da6fe2551cc923c081f5.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-00819c0e5",
+      "term": "issue",
+      "pos": "(n)",
+      "ipa": "/ˈɪʃ.juː/",
+      "definition": "an important topic or problem that people are discussing",
+      "example": "However, in this episode, we're looking at the issue of space debris, or space junk.",
+      "exampleMark": "issue",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0362.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b268689669a09b391af8843c.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-7da33f497",
+      "term": "journey",
+      "pos": "(n)",
+      "ipa": "/ˈdʒɜː.ni/",
+      "definition": "a long trip from one place to another",
+      "example": "The journey to Mars would take a long time.",
+      "exampleMark": "journey",
+      "picture": "practice/data/classroom-vocabulary/media/1a6314785dfa3e7c00c1ab9c.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0363.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7bc0b6ee852bc7f7813bcd67.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-14eb14ece",
+      "term": "option",
+      "pos": "(n)",
+      "ipa": "/ˈɒp.ʃən/",
+      "definition": "a choice",
+      "example": "Is having the government pay really the only option for paying for space exploration?",
+      "exampleMark": "option",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0364.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/72032b70aada5f50b0183d43.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-c8fb554a6",
+      "term": "planet",
+      "pos": "(n)",
+      "ipa": "/ˈplæn.ɪt/",
+      "definition": "a large, round object in space that moves around the sun or another star",
+      "example": "Earth is the planet where we live.",
+      "exampleMark": "planet",
+      "picture": "practice/data/classroom-vocabulary/media/c0e1f72e3bf957b0aac2f80b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0365.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/8541387116fa645164ca6191.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-e80721793",
+      "term": "private",
+      "pos": "(adj)",
+      "ipa": "/ˈpraɪ.vɪt/",
+      "definition": "controlled by a person or a company and not by the government",
+      "example": "A private company helped pay for the project.",
+      "exampleMark": "private",
+      "picture": "practice/data/classroom-vocabulary/media/c43e921593a7136603e38e30.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0366.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/5d4fea450299343bcd9c5602.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-a5a0d15d4",
+      "term": "problem",
+      "pos": "(n)",
+      "ipa": "/ˈprɒb.ləm/",
+      "definition": "a situation that causes difficulties and needs to be solved",
+      "example": "We need to find a way to solve this problem.",
+      "exampleMark": "problem",
+      "picture": "practice/data/classroom-vocabulary/media/c7f477800928602cee2d0598.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0367.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b830ceac53a3583acefb06f1.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-362932003",
+      "term": "satellite",
+      "pos": "(n)",
+      "ipa": "/ˈsæt.əl.aɪt/",
+      "definition": "an object that is sent into space around the Earth to receive and send information",
+      "example": "Humans first began to explore near space in 1957, when the Soviets sent the first human -made satellite, Sputnik one, into space.",
+      "exampleMark": "satellite",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0369.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4ef1d787a48bc08695ffd03b.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-00f97cb50",
+      "term": "solution",
+      "pos": "(n)",
+      "ipa": "/səˈluː.ʃən/",
+      "definition": "the answer to the problem",
+      "example": "Many people would like to find a solution to space junk if they could.",
+      "exampleMark": "solution",
+      "picture": "practice/data/classroom-vocabulary/media/840cf406d78096804306e2ed.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0370.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/ce16b1b136bd916fbddcbcc8.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-b0e44b656",
+      "term": "spacecraft",
+      "pos": "(n)",
+      "ipa": "/ˈspeɪ.skrɑːft/",
+      "definition": "a vehicle that can travel into space",
+      "example": "The spacecraft carries scientific instruments.",
+      "exampleMark": "spacecraft",
+      "picture": "practice/data/classroom-vocabulary/media/55ab3c6d3e0f8a8f607229a8.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0371.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/4a6d58cae8ca56ccc60af39c.mp3"
+    },
+    {
+      "id": "B02-LS-U08-W-c6359a796",
+      "term": "surface",
+      "pos": "(n)",
+      "ipa": "/ˈsɜː.fɪs/",
+      "definition": "the top or outside part of something",
+      "example": "There are rocks on the surface of Mars.",
+      "exampleMark": "surface",
+      "picture": "practice/data/classroom-vocabulary/media/b88a76b6d39dfa389852d40b.webp",
+      "wordAudio": "assets/word-dictation-en-gb-v1/w0372.wav",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a9f611096d52079e3e9c6252.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/d9ed6b03c981fdea485d094b.webp"
+        },
+        {
+          "key": "B",
+          "text": "a change, reaction or result that is caused by something"
+        },
+        {
+          "key": "C",
+          "text": "to travel around a place to find out what is there"
+        },
+        {
+          "key": "D",
+          "text": "one of two or more things you can choose between"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-816d63e63",
+          "prompt": "So for me, an alternative would be to bring in thinkers from different industries to discuss different ways to pay.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U08-W-754159999",
+          "prompt": "The spacecraft travelled beyond the moon.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U08-W-68d1dae1a",
+          "prompt": "The new bus route had a positive effect on travel times.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U08-W-9dda9754b",
+          "prompt": "Humans first began to explore near space in 1957, when the Soviets sent the first human -made satellite, Sputnik one, into space.",
+          "answer": "C"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/1a6314785dfa3e7c00c1ab9c.webp"
+        },
+        {
+          "key": "B",
+          "text": "a choice"
+        },
+        {
+          "key": "C",
+          "text": "the effect that a person, event or situation has on somebody or something"
+        },
+        {
+          "key": "D",
+          "text": "an important topic or problem that people are discussing"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-a9a581005",
+          "prompt": "The storm had a big impact on local businesses.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U08-W-00819c0e5",
+          "prompt": "However, in this episode, we're looking at the issue of space debris, or space junk.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U08-W-7da33f497",
+          "prompt": "The journey to Mars would take a long time.",
+          "answer": "A"
+        },
+        {
+          "id": "B02-LS-U08-W-14eb14ece",
+          "prompt": "Is having the government pay really the only option for paying for space exploration?",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "text": "an object that is sent into space around the Earth to receive and send information"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/c0e1f72e3bf957b0aac2f80b.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/c43e921593a7136603e38e30.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/c7f477800928602cee2d0598.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-c8fb554a6",
+          "prompt": "Earth is the planet where we live.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U08-W-e80721793",
+          "prompt": "A private company helped pay for the project.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U08-W-a5a0d15d4",
+          "prompt": "We need to find a way to solve this problem.",
+          "answer": "D"
+        },
+        {
+          "id": "B02-LS-U08-W-362932003",
+          "prompt": "Humans first began to explore near space in 1957, when the Soviets sent the first human -made satellite, Sputnik one, into space.",
+          "answer": "A"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/b88a76b6d39dfa389852d40b.webp"
+        },
+        {
+          "key": "B",
+          "text": "the answer to the problem"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/55ab3c6d3e0f8a8f607229a8.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-00f97cb50",
+          "prompt": "Many people would like to find a solution to space junk if they could.",
+          "answer": "B"
+        },
+        {
+          "id": "B02-LS-U08-W-b0e44b656",
+          "prompt": "The spacecraft carries scientific instruments.",
+          "answer": "C"
+        },
+        {
+          "id": "B02-LS-U08-W-c6359a796",
+          "prompt": "There are rocks on the surface of Mars.",
+          "answer": "A"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "impact",
+        "explore",
+        "effect",
+        "beyond",
+        "alternative"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-816d63e63",
+          "before": "So for me, an ",
+          "after": " would be to bring in thinkers from different industries to discuss different ways to pay.",
+          "answer": "alternative"
+        },
+        {
+          "id": "B02-LS-U08-W-754159999",
+          "before": "The spacecraft travelled ",
+          "after": " the moon.",
+          "answer": "beyond"
+        },
+        {
+          "id": "B02-LS-U08-W-68d1dae1a",
+          "before": "The new bus route had a positive ",
+          "after": " on travel times.",
+          "answer": "effect"
+        },
+        {
+          "id": "B02-LS-U08-W-9dda9754b",
+          "before": "Humans first began to ",
+          "after": " near space in 1957, when the Soviets sent the first human -made satellite, Sputnik one, into space.",
+          "answer": "explore"
+        },
+        {
+          "id": "B02-LS-U08-W-a9a581005",
+          "before": "The storm had a big ",
+          "after": " on local businesses.",
+          "answer": "impact"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "private",
+        "planet",
+        "option",
+        "journey",
+        "issue"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-00819c0e5",
+          "before": "However, in this episode, we're looking at the ",
+          "after": " of space debris, or space junk.",
+          "answer": "issue"
+        },
+        {
+          "id": "B02-LS-U08-W-7da33f497",
+          "before": "The ",
+          "after": " to Mars would take a long time.",
+          "answer": "journey"
+        },
+        {
+          "id": "B02-LS-U08-W-14eb14ece",
+          "before": "Is having the government pay really the only ",
+          "after": " for paying for space exploration?",
+          "answer": "option"
+        },
+        {
+          "id": "B02-LS-U08-W-c8fb554a6",
+          "before": "Earth is the ",
+          "after": " where we live.",
+          "answer": "planet"
+        },
+        {
+          "id": "B02-LS-U08-W-e80721793",
+          "before": "A ",
+          "after": " company helped pay for the project.",
+          "answer": "private"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "surface",
+        "spacecraft",
+        "solution",
+        "satellite",
+        "problem"
+      ],
+      "rows": [
+        {
+          "id": "B02-LS-U08-W-a5a0d15d4",
+          "before": "We need to find a way to solve this ",
+          "after": ".",
+          "answer": "problem"
+        },
+        {
+          "id": "B02-LS-U08-W-362932003",
+          "before": "Humans first began to explore near space in 1957, when the Soviets sent the first human -made ",
+          "after": ", Sputnik one, into space.",
+          "answer": "satellite"
+        },
+        {
+          "id": "B02-LS-U08-W-00f97cb50",
+          "before": "Many people would like to find a ",
+          "after": " to space junk if they could.",
+          "answer": "solution"
+        },
+        {
+          "id": "B02-LS-U08-W-b0e44b656",
+          "before": "The ",
+          "after": " carries scientific instruments.",
+          "answer": "spacecraft"
+        },
+        {
+          "id": "B02-LS-U08-W-c6359a796",
+          "before": "There are rocks on the ",
+          "after": " of Mars.",
+          "answer": "surface"
+        }
+      ]
+    }
+  ]
+}

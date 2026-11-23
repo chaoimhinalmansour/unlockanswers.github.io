@@ -1,0 +1,476 @@
+{
+  "unitId": "B3U04",
+  "track": "LS",
+  "source": {
+    "id": "B03-LS-U04",
+    "lesson": 1
+  },
+  "cards": [
+    {
+      "id": "B03-LS-U04-W-cab5b6e0a",
+      "term": "acceptable",
+      "pos": "(adj)",
+      "ipa": "/ɐksˈɛptəbəl/",
+      "definition": "satisfactory and able to be agreed to or approved of. good enough",
+      "example": "Is a handmade card an acceptable gift?",
+      "exampleMark": "acceptable",
+      "picture": "practice/data/classroom-vocabulary/media/9a8cea001e96609f26ccef1a.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/5546c31488fd514441613ecb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/97967f97e93e18fb8385fcba.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-c0e57121e",
+      "term": "agreement",
+      "pos": "(n)",
+      "ipa": "/ɐɡrˈiːmənt/",
+      "definition": "the situation in which people have the same opinion, or in which they approve of or accept something",
+      "example": "We reached an agreement about the gift budget.",
+      "exampleMark": "agreement",
+      "picture": "practice/data/classroom-vocabulary/media/aa4838a3f956a4c12afb650f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/fd97480b13d2548eba7d6543.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/64637bc987bfbaac9c34cd61.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-9280ae13a",
+      "term": "anniversary",
+      "pos": "(n)",
+      "ipa": "/ˌænɪvˈɜːsərɪ/",
+      "definition": "the day on which an important event happened in a previous year",
+      "example": "Today is my grandparents' wedding anniversary.",
+      "exampleMark": "anniversary",
+      "picture": "practice/data/classroom-vocabulary/media/31f38a3f4d8caacf7fdd8d90.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f7b7fcf657e3f2df03ddb651.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/b98563b48393e9e9a927b062.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-b7bdf51b8",
+      "term": "celebration",
+      "pos": "(n)",
+      "ipa": "/sˌɛləbrˈeɪʃən/",
+      "definition": "doing something to mark a special day or event",
+      "example": "Have you ever experienced a celebration in another country?",
+      "exampleMark": "celebration",
+      "picture": "practice/data/classroom-vocabulary/media/6ca80e59dd5df932fe3e6d7b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/6638096075a7bf840ed21e65.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/56ca8a5c6a0471421a9947b0.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-f8ef5300a",
+      "term": "commercial",
+      "pos": "(adj)",
+      "ipa": "/kəmˈɜːʃəl/",
+      "definition": "relating to buying and selling things",
+      "example": "Some people think festivals have become too commercial.",
+      "exampleMark": "commercial",
+      "picture": "practice/data/classroom-vocabulary/media/0b6861ccc8a6d3ee01355ea2.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e819f3963af687ccbfc8783c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d2611fd0db8822d86235ea8e.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-46088adef",
+      "term": "die out",
+      "pos": "(phr v)",
+      "ipa": "/dˈaɪ ˈaʊt/",
+      "definition": "to become rare and then disappear",
+      "example": "Some local traditions may die out if nobody practises them.",
+      "exampleMark": "die out",
+      "picture": "practice/data/classroom-vocabulary/media/33ad12a833804689f189efb8.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/51cf397251b2dc350e51f555.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/510ce738707f80758cb3963d.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-ea2091be3",
+      "term": "endless",
+      "pos": "(adj)",
+      "ipa": "/ˈɛndləs/",
+      "definition": "continuing for a long time and never finishing, or never seeming to finish",
+      "example": "The holiday shopping seemed endless.",
+      "exampleMark": "endless",
+      "picture": "practice/data/classroom-vocabulary/media/14043df8a0ec2a2f8be33a5c.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/2b586849e12ff2089c5f8312.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/63285ed759ad64e39e4fc0bb.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-5006ed024",
+      "term": "event",
+      "pos": "(n)",
+      "ipa": "/ɪvˈɛnt/",
+      "definition": "anything which happens, especially something important or unusual",
+      "example": "The community is preparing for a cultural event.",
+      "exampleMark": "event",
+      "picture": "practice/data/classroom-vocabulary/media/c241689a0acb7bd97e9d0b8f.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/da29d39d106ec29801180a21.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/149e3e40ceab191ab5c1261d.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-cd738ebdb",
+      "term": "generation",
+      "pos": "(n)",
+      "ipa": "/dʒˌɛnərˈeɪʃən/",
+      "definition": "all the people of about the same age within a society or a family",
+      "example": "Grandparents belong to an older generation.",
+      "exampleMark": "generation",
+      "picture": "practice/data/classroom-vocabulary/media/c58b2366bb0195067cae537b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/e6c3a5b6ff8770a386cb928c.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2a3f5149a65a7b442dc883bc.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-4b7392910",
+      "term": "helpful",
+      "pos": "(adj)",
+      "ipa": "/hˈɛlpfəl/",
+      "definition": "willing to help",
+      "example": "Our neighbours were helpful when we prepared the celebration.",
+      "exampleMark": "helpful",
+      "picture": "practice/data/classroom-vocabulary/media/4d1994ad98d965604f4976fa.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b898218835ad14bf13e6f60d.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2bef16578acb71267d701246.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-c0af471bf",
+      "term": "interact",
+      "pos": "(v)",
+      "ipa": "/ˌɪntərˈækt/",
+      "definition": "to communicate and do things with somebody or something",
+      "example": "We interact with relatives online.",
+      "exampleMark": "interact",
+      "picture": "practice/data/classroom-vocabulary/media/414085f4262861f01cf78056.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/77e18e3e202f0f910423dae4.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/7f4909256db428c3b9f5d11b.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-a5fa3a3db",
+      "term": "modernize",
+      "pos": "(v)",
+      "ipa": "/mˈɒdənˌaɪz/",
+      "definition": "to make something more modern",
+      "example": "The council will modernize the library by adding new computers.",
+      "exampleMark": "modernize",
+      "picture": "practice/data/classroom-vocabulary/media/9650d934dcbce3cf9f287937.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/f2a562d94cca56d1eb156494.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/feabd50e637c88709a16f455.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-7872fa0a3",
+      "term": "multicultural",
+      "pos": "(adj)",
+      "ipa": "/mˌʌltɪkˈʌltʃərəl/",
+      "definition": "including people who have many different customs and beliefs",
+      "example": "The festival brings a multicultural community together.",
+      "exampleMark": "multicultural",
+      "picture": "practice/data/classroom-vocabulary/media/596b898c666698de674c2624.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/085e62c32c1bbe2d47b123c2.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/04d58dd1ee06a32c2b95c041.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-84eeb8492",
+      "term": "occasion",
+      "pos": "(n)",
+      "ipa": "/əkˈeɪʒən/",
+      "definition": "a special event or ceremony",
+      "example": "The graduation ceremony was a special occasion for the family.",
+      "exampleMark": "occasion",
+      "picture": "practice/data/classroom-vocabulary/media/fe323b62e8c08d6c691531f9.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/9450af2953c33b5599c55aad.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/d24cd320bb8288e490577dd6.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-0574d7efa",
+      "term": "political",
+      "pos": "(adj)",
+      "ipa": "/pəlˈɪtɪkəl/",
+      "definition": "relating to the activities of the government",
+      "example": "The new laws were discussed at a political meeting.",
+      "exampleMark": "political",
+      "picture": "practice/data/classroom-vocabulary/media/6ca80e59dd5df932fe3e6d7b.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/8435f4d15c596b73492acc55.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/737caf542219d267b6964f38.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-94509ddf8",
+      "term": "prevention",
+      "pos": "(n)",
+      "ipa": "/prɪvˈɛnʃən/",
+      "definition": "ways of stopping something happening or stopping somebody doing something",
+      "example": "Accident prevention is important at crowded festivals.",
+      "exampleMark": "prevention",
+      "picture": "practice/data/classroom-vocabulary/media/609e9a515623192cdfe11363.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/070e6c0f1d0b0ac60c8f204a.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/a5c5cb39f55921e41d62c69f.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-0dbe529c4",
+      "term": "social",
+      "pos": "(adj)",
+      "ipa": "/sˈəʊʃəl/",
+      "definition": "relating to a large group of people who live together in an organized way",
+      "example": "Greeting guests is an important social custom.",
+      "exampleMark": "social",
+      "picture": "practice/data/classroom-vocabulary/media/1051f2638d7fa50acd2666ab.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a373586f34b959539fa3eaeb.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/1a7af8ee40d23b46db4b6879.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-ab7323ab9",
+      "term": "specialize",
+      "pos": "(v)",
+      "ipa": "/spˈɛʃəlˌaɪz/",
+      "definition": "to spend most of your time studying one particular subject or doing one type of business",
+      "example": "Some shops specialize in traditional cakes.",
+      "exampleMark": "specialize",
+      "picture": "practice/data/classroom-vocabulary/media/d17f0eeae9a2c373304367b7.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/a40d197b855b584c95f258e9.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/2e6be79088f3c70feee20b72.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-ff5497aac",
+      "term": "strengthen",
+      "pos": "(v)",
+      "ipa": "/strˈɛŋθən/",
+      "definition": "to become stronger or make something become stronger",
+      "example": "Sharing a meal can strengthen family relationships.",
+      "exampleMark": "strengthen",
+      "picture": "practice/data/classroom-vocabulary/media/d5d7f0e74c2902459b47fa30.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/c1d86535bce2794ada28df2b.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/96c8b7245a5ef854efec8a91.mp3"
+    },
+    {
+      "id": "B03-LS-U04-W-c949c0afd",
+      "term": "traditional",
+      "pos": "(adj)",
+      "ipa": "/trɐdˈɪʃənəl/",
+      "definition": "following the customs or ways of behaving that have continued in a group of people or society for a long time",
+      "example": "We prepare traditional food for the festival.",
+      "exampleMark": "traditional",
+      "picture": "practice/data/classroom-vocabulary/media/8cc4da841c4c78075094af11.webp",
+      "wordAudio": "practice/data/classroom-vocabulary/media/b066e62de73d09bc3f1ac52f.mp3",
+      "exampleAudio": "practice/data/classroom-vocabulary/media/3f332640329b37fbd92a4e48.mp3"
+    }
+  ],
+  "matching": [
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/0b6861ccc8a6d3ee01355ea2.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/14043df8a0ec2a2f8be33a5c.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/aa4838a3f956a4c12afb650f.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/9a8cea001e96609f26ccef1a.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U04-W-cab5b6e0a",
+          "prompt": "Is a handmade card an acceptable gift?",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U04-W-c0e57121e",
+          "prompt": "We reached an agreement about the gift budget.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U04-W-f8ef5300a",
+          "prompt": "Some people think festivals have become too commercial.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U04-W-ea2091be3",
+          "prompt": "The holiday shopping seemed endless.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/9650d934dcbce3cf9f287937.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/fe323b62e8c08d6c691531f9.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/4d1994ad98d965604f4976fa.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/c241689a0acb7bd97e9d0b8f.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U04-W-5006ed024",
+          "prompt": "The community is preparing for a cultural event.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U04-W-4b7392910",
+          "prompt": "Our neighbours were helpful when we prepared the celebration.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U04-W-a5fa3a3db",
+          "prompt": "The council will modernize the library by adding new computers.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U04-W-84eeb8492",
+          "prompt": "The graduation ceremony was a special occasion for the family.",
+          "answer": "B"
+        }
+      ]
+    },
+    {
+      "options": [
+        {
+          "key": "A",
+          "picture": "practice/data/classroom-vocabulary/media/609e9a515623192cdfe11363.webp"
+        },
+        {
+          "key": "B",
+          "picture": "practice/data/classroom-vocabulary/media/8cc4da841c4c78075094af11.webp"
+        },
+        {
+          "key": "C",
+          "picture": "practice/data/classroom-vocabulary/media/d5d7f0e74c2902459b47fa30.webp"
+        },
+        {
+          "key": "D",
+          "picture": "practice/data/classroom-vocabulary/media/d17f0eeae9a2c373304367b7.webp"
+        }
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U04-W-94509ddf8",
+          "prompt": "Accident prevention is important at crowded festivals.",
+          "answer": "A"
+        },
+        {
+          "id": "B03-LS-U04-W-ab7323ab9",
+          "prompt": "Some shops specialize in traditional cakes.",
+          "answer": "D"
+        },
+        {
+          "id": "B03-LS-U04-W-ff5497aac",
+          "prompt": "Sharing a meal can strengthen family relationships.",
+          "answer": "C"
+        },
+        {
+          "id": "B03-LS-U04-W-c949c0afd",
+          "prompt": "We prepare traditional food for the festival.",
+          "answer": "B"
+        }
+      ]
+    }
+  ],
+  "fill": [
+    {
+      "bank": [
+        "helpful",
+        "endless",
+        "acceptable",
+        "commercial",
+        "event",
+        "agreement"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U04-W-cab5b6e0a",
+          "before": "Is a handmade card an ",
+          "after": " gift?",
+          "answer": "acceptable"
+        },
+        {
+          "id": "B03-LS-U04-W-c0e57121e",
+          "before": "We reached an ",
+          "after": " about the gift budget.",
+          "answer": "agreement"
+        },
+        {
+          "id": "B03-LS-U04-W-f8ef5300a",
+          "before": "Some people think festivals have become too ",
+          "after": ".",
+          "answer": "commercial"
+        },
+        {
+          "id": "B03-LS-U04-W-ea2091be3",
+          "before": "The holiday shopping seemed ",
+          "after": ".",
+          "answer": "endless"
+        },
+        {
+          "id": "B03-LS-U04-W-5006ed024",
+          "before": "The community is preparing for a cultural ",
+          "after": ".",
+          "answer": "event"
+        },
+        {
+          "id": "B03-LS-U04-W-4b7392910",
+          "before": "Our neighbours were ",
+          "after": " when we prepared the celebration.",
+          "answer": "helpful"
+        }
+      ]
+    },
+    {
+      "bank": [
+        "specialize",
+        "traditional",
+        "prevention",
+        "occasion",
+        "modernize",
+        "strengthen"
+      ],
+      "rows": [
+        {
+          "id": "B03-LS-U04-W-a5fa3a3db",
+          "before": "The council will ",
+          "after": " the library by adding new computers.",
+          "answer": "modernize"
+        },
+        {
+          "id": "B03-LS-U04-W-84eeb8492",
+          "before": "The graduation ceremony was a special ",
+          "after": " for the family.",
+          "answer": "occasion"
+        },
+        {
+          "id": "B03-LS-U04-W-94509ddf8",
+          "before": "Accident ",
+          "after": " is important at crowded festivals.",
+          "answer": "prevention"
+        },
+        {
+          "id": "B03-LS-U04-W-ab7323ab9",
+          "before": "Some shops ",
+          "after": " in traditional cakes.",
+          "answer": "specialize"
+        },
+        {
+          "id": "B03-LS-U04-W-ff5497aac",
+          "before": "Sharing a meal can ",
+          "after": " family relationships.",
+          "answer": "strengthen"
+        },
+        {
+          "id": "B03-LS-U04-W-c949c0afd",
+          "before": "We prepare ",
+          "after": " food for the festival.",
+          "answer": "traditional"
+        }
+      ]
+    }
+  ]
+}

@@ -9,6 +9,10 @@
     return /\/S_(?:H[123]|STP)\//.test(question.id);
   }
 
+  function requiresRecording(question) {
+    return question.vocabulary?.stage === "cards" || isSpeaking(question);
+  }
+
   function openDatabase() {
     if (!window.indexedDB) return Promise.reject(new Error("当前浏览器无法保存录音。"));
     if (!connection) {
@@ -195,5 +199,5 @@
     }
   }
 
-  window.UnlockRecordings = { isSpeaking, begin, timeText, clipTime, url, dataURL, read };
+  window.UnlockRecordings = { isSpeaking, requiresRecording, begin, timeText, clipTime, url, dataURL, read };
 })();
