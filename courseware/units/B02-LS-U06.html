@@ -187,20 +187,23 @@ function businessAdviceContextHTML(c,p) {
  }
  return '<section class="business-prelisten" lang="en">'+view+'</section>';
 }
-const businessNotesStyle = "<style>\n.business-listening-notes {\n  width:min(100%,878px);\n  aspect-ratio:1586 / 992;\n  position:relative;\n  margin-inline:auto;\n  background:url(assets/business-notes-tablet-v2.png) center / 100% 100% no-repeat;\n  flex:none;\n  box-sizing:border-box;\n  font-size:18px;\n  line-height:1.25;\n}\n.business-notes-screen {\n  position:absolute;\n  /* Match the opening of the display on the original generated image. */\n  inset:8.8% 6.15% 7.85% 6.05%;\n  box-sizing:border-box;\n  padding:12px 14px;\n  border-radius:11px;\n  background:#fff;\n}\n.business-listening-notes h2 {\n  margin:0;\n  padding-bottom:8px;\n  border-bottom:1px solid #d7dce4;\n  font-size:21px;\n  line-height:1.25;\n}\n.business-notes-columns {\n  display:grid;\n  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);\n  gap:12px;\n  margin-top:10px;\n}\n.business-notes-column{min-width:0}\n.business-notes-column+.business-notes-column {\n  border-inline-start:1px solid #d7dce4;\n  padding-inline-start:10px;\n}\n.business-notes-group+.business-notes-group{margin-top:15px}\n.business-notes-group h3 {\n  margin:0 0 5px;\n  font-size:19px;\n  line-height:1.25;\n}\n.business-notes-group ul {\n  margin:0;\n  padding-inline-start:1.18em;\n}\n.business-notes-group li{text-wrap:pretty}\n.business-notes-group li+li{margin-top:3px}\n.business-notes-group li ul {\n  margin-top:4px;\n  list-style-type:circle;\n}\n.business-notes-group li ul{padding-inline-start:.8em}\n.business-notes-slot {\n  display:inline-flex;\n  align-items:baseline;\n  gap:.28em;\n  white-space:nowrap;\n}\n.business-notes-slot[data-notes-blank=\"2\"]{--notes-gap-width:5.1em}\n.business-notes-slot:is([data-notes-blank=\"7\"],[data-notes-blank=\"10\"]) {\n  --notes-gap-width:4.9em;\n}\n.business-notes-slot[data-notes-blank=\"4\"]{--notes-gap-width:5.25em}\n.business-notes-slot[data-notes-blank=\"11\"]{--notes-gap-width:7.25em}\n.business-notes-number {\n  font-size:14px;\n  font-weight:var(--bold);\n  color:var(--blue);\n}\n.business-notes-gap {\n  box-sizing:border-box;\n  inline-size:var(--notes-gap-width,4.5em);\n  border-bottom:1px solid var(--blue);\n  padding-inline:3px;\n  text-align:center;\n}\n/* Keep the same baseline for empty and as-yet unrevealed blanks. */\n.business-notes-gap:empty::before{content:\"\u00a0\"}\n.business-notes-phrase{white-space:nowrap}\n.business-notes-alternatives {\n  margin:8px 0 0;\n  font-size:.87em;\n}\n</style>";
+const businessNotesStyle = "<style>\n.business-listening-notes {\n  width:min(100%,878px);\n  aspect-ratio:1586 / 992;\n  position:relative;\n  margin-inline:auto;\n  background:url(assets/business-notes-tablet-v2.png) center / 100% 100% no-repeat;\n  flex:none;\n  box-sizing:border-box;\n  font-size:18px;\n  line-height:1.25;\n}\n.business-listening-notes[data-course-revealed]{zoom:.94}\n.business-notes-screen {\n  position:absolute;\n  /* Match the opening of the display on the original generated image. */\n  inset:8.8% 6.15% 7.85% 6.05%;\n  box-sizing:border-box;\n  padding:12px 14px;\n  border-radius:11px;\n  background:#fff;\n}\n.business-listening-notes h2 {\n  margin:0;\n  padding-bottom:8px;\n  border-bottom:1px solid #d7dce4;\n  font-size:21px;\n  line-height:1.25;\n}\n.business-notes-columns {\n  display:grid;\n  grid-template-columns:minmax(0,.94fr) minmax(0,1.06fr);\n  gap:12px;\n  margin-top:10px;\n}\n.business-notes-column{min-width:0}\n.business-notes-column+.business-notes-column {\n  border-inline-start:1px solid #d7dce4;\n  padding-inline-start:10px;\n}\n.business-notes-group+.business-notes-group{margin-top:15px}\n.business-notes-group h3 {\n  margin:0 0 5px;\n  font-size:19px;\n  line-height:1.25;\n}\n.business-notes-group ul {\n  margin:0;\n  padding-inline-start:1.18em;\n}\n.business-notes-group li{text-wrap:pretty}\n.business-notes-group li+li{margin-top:3px}\n.business-notes-group li ul {\n  margin-top:4px;\n  list-style-type:circle;\n}\n.business-notes-group li ul{padding-inline-start:.8em}\n.business-notes-slot {\n  display:inline-flex;\n  align-items:baseline;\n  gap:.28em;\n  white-space:nowrap;\n}\n.business-notes-slot[data-notes-blank=\"2\"]{--notes-gap-width:5.1em}\n.business-notes-slot:is([data-notes-blank=\"7\"],[data-notes-blank=\"10\"]) {\n  --notes-gap-width:4.9em;\n}\n.business-notes-slot[data-notes-blank=\"4\"]{--notes-gap-width:5.25em}\n.business-notes-slot[data-notes-blank=\"11\"]{--notes-gap-width:7.25em}\n.business-notes-number {\n  font-size:14px;\n  font-weight:var(--bold);\n  color:var(--blue);\n}\n.business-notes-gap {\n  box-sizing:border-box;\n  inline-size:var(--notes-gap-width,4.5em);\n  border-bottom:1px solid var(--blue);\n  padding-inline:3px;\n  text-align:center;\n}\n/* Keep the same baseline for empty and as-yet unrevealed blanks. */\n.business-notes-gap:empty::before{content:\"\u00a0\"}\n.business-notes-phrase{white-space:nowrap}\n.business-notes-alternatives {\n  margin:8px 0 0;\n  font-size:.87em;\n}\n</style>";
 const businessNotesHeadings = "B02-LS-U06-question:b3018";
 const businessNotesDetails = "B02-LS-U06-question:b3019";
+const businessNotesReference = "B02-LS-U06-question:b3021";
 
 const businessNotesBlank = /\((\d+)\)\s+_{2,}/;
 function usesBusinessListeningNotes(c) {
- return c.id===businessNotesHeadings || c.id===businessNotesDetails;
+ return c.id===businessNotesHeadings || c.id===businessNotesDetails || c.id===businessNotesReference;
 }
 
-function businessListeningNotesHTML(c,p) {
+function businessListeningNotesHTML(c) {
  const headings=classroom.byId.get(businessNotesHeadings);
  const worksheet=headings.coursePages.flatMap((_,part)=>coursePageBlocks(headings,part));
  const answers=new Map();
- const answerBlocks=c.id===businessNotesDetails?[...worksheet,...coursePageBlocks(c,p)]:worksheet;
+ const details=classroom.byId.get(businessNotesDetails);
+ const answerBlocks=c.id===businessNotesHeadings?worksheet:
+   [...worksheet,...details.coursePages.flatMap((_,part)=>coursePageBlocks(details,part))];
  for(const block of answerBlocks){
   const number=businessNotesBlank.exec(block.text??block.prompt??"")?.[1];
   const value=block.answer?.values?.[0]??block.answer?.answer;
@@ -235,14 +238,15 @@ function businessListeningNotesHTML(c,p) {
  const left=[workers,costs].map(group=>subsection(group,listItems(group.items))).join("");
  const right=subsection(customers,listItems([onlineSales])+'<li>'+renderLine(website)+
   '<ul>'+listItems(websiteDetails)+'</ul></li>');
- return '<section class="business-listening-notes" lang="en-GB" aria-labelledby="business-notes-title">'+
+ const revealed=c.id===businessNotesReference?' data-course-revealed':'';
+ return '<section class="business-listening-notes"'+revealed+' lang="en-GB" aria-labelledby="business-notes-title">'+
   '<div class="business-notes-screen"><h2 id="business-notes-title">'+heading+
   '</h2><div class="business-notes-columns">'+
   '<div class="business-notes-column">'+left+'</div><div class="business-notes-column">'+right+
   alternatives.join("")+'</div></div></div></section>';
 }
 function content(c,p,b){
- if(usesBusinessListeningNotes(c))return businessListeningNotesHTML(c,p);
+ if(usesBusinessListeningNotes(c))return businessListeningNotesHTML(c);
  if(c.businessAdviceContext)return businessAdviceContextHTML(c,p);
  if(c.workplaceActivity)return workplaceActivityHTML(c);
  if(c.stageSkill)return classroomStage.renderSkill(c,p);
