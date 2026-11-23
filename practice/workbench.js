@@ -59,8 +59,9 @@
       esc(vocabulary.id) + '"' + activeVocabulary + ">" + label("Vocabulary", "词汇学练") + "</button>" : "";
     const chips = questionStops(worksheet, visible).filter(q => !q.vocabulary).map(q => {
       if (isDictation(worksheet, q)) {
-        const beginning = worksheet.dictationItems?.[0]?.number ?? 1;
-        const ending = worksheet.dictationItems?.at(-1)?.number ?? worksheet.dictation.count;
+        const items = worksheet.dictationItems;
+        const beginning = items?.[0]?.number ?? 1;
+        const ending = items?.[items.length - 1]?.number ?? worksheet.dictation.count;
         const range = "听写 " + beginning + (ending === beginning ? "" : " 至 " + ending);
         const active = isDictation(worksheet, current) ? ' aria-current="step"' : "";
         const title = q.homeworkDictation
@@ -96,7 +97,8 @@
     if (question?.vocabulary) return "";
     if (question?.picture) {
       const numbers = worksheet.questions.filter(q => q.picture === question.picture).map(q => q.number);
-      const range = numbers.length > 1 ? "第 " + numbers[0] + " 至 " + numbers.at(-1) + " 题共用图片"
+      const last = numbers[numbers.length - 1];
+      const range = numbers.length > 1 ? "第 " + numbers[0] + " 至 " + last + " 题共用图片"
         : "第 " + numbers[0] + " 题配图";
       return '<section class="material-card picture-material' + (preferences.largePicture ? " expanded" : "") +
         '"><div class="rail-head"><h2 class="aside-title">' + label("Image", "看图材料") + '</h2>' +
@@ -104,7 +106,7 @@
         preferences.largePicture + '">' + (preferences.largePicture ? label("Reduce", "收起图片") : label("Enlarge", "放大图片")) +
         '</button></div><figure><img src="../' + esc(question.picture) +
         '" alt="Image for this exercise 题组配图"><figcaption>' +
-        label(numbers.length > 1 ? "Questions " + numbers[0] + " to " + numbers.at(-1) : "Question " + numbers[0], range) +
+        label(numbers.length > 1 ? "Questions " + numbers[0] + " to " + last : "Question " + numbers[0], range) +
         "</figcaption></figure></section>";
     }
     const source = readingSource(worksheet, question);
@@ -190,7 +192,7 @@
     const wordMode = view.wordDictation && isDictation(worksheet, current);
     const source = wordMode ? "" : material(worksheet, current, { largePicture });
     const rail = navigation(worksheet, visible, attempt, current, all, answered);
-    const summary = current ? summaryBlock(worksheet.questions, current, attempt, editable) : "";
+    const summary = current ? summaryBlock(worksheet.sheet.questions, current, attempt, editable) : "";
     const question = teaching ? renderReviewQuestion(current, worksheet.unit, summary) :
       wordMode ? '<section class="question-card word-dictation-card" aria-label="逐词听写">' +
         '<div class="word-dictation" data-word-dictation tabindex="0"></div></section>' :

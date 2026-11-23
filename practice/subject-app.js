@@ -113,10 +113,8 @@
       try {
         const latest = storedAttempt(key) || newAttempt();
         if (latest.sequence !== state.attempt.sequence) {
-          configureAttempt(latest);
-          pickFocus(state.focus);
-          state.notice = label("The latest responses from another window have loaded.", "这个练习已在另一个窗口更新。已载入最新作答。");
-          render();
+          showStoredAttempt(latest, { focus: state.focus,
+            notice: label("The latest responses from another window have loaded.", "这个练习已在另一个窗口更新。已载入最新作答。") });
           return false;
         }
         localStorage.setItem(key, JSON.stringify(next));
@@ -217,13 +215,16 @@
     return Boolean(worksheet?.dictationItems.length && (!attempt.first || attempt.wordDictation));
   }
 
+  function selectedVocabularyVersion(attempt) {
+    return attempt.first && !attempt.classroomVocabulary ? null : classroomVocabulary.versionFor(attempt);
+  }
+
   function configureAttempt(attempt) {
     const worksheet = state.worksheet;
     state.attempt = attempt;
     // Vocabulary answers and recordings stay bound to the questions shown for that attempt.
-    worksheet.vocabularyVersion = classroomVocabulary.versionFor(attempt);
-    const prefix = attempt.first && !attempt.classroomVocabulary
-      ? [] : worksheet.vocabularySections[worksheet.vocabularyVersion];
+    worksheet.vocabularyVersion = selectedVocabularyVersion(attempt);
+    const prefix = worksheet.vocabularyVersion === null ? [] : worksheet.vocabularySections[worksheet.vocabularyVersion];
     worksheet.vocabularyQuestions = prefix.flatMap(section => section.questions);
     const homework = homeworkDictation.plan(worksheet.unit, worksheet.code, attempt);
     worksheet.homework = homework;
@@ -467,10 +468,10 @@
       onFinish: (feedback, english) => {
         const next = state.worksheet.homework
           ? unfinishedVocabulary() || questionsInView().find(q => !isDictation(state.worksheet, q))
-          : sheet.questions.find(q => q.number > items.at(-1).number && !isDictation(state.worksheet, q));
+          : sheet.questions.find(q => q.number > items[items.length - 1].number && !isDictation(state.worksheet, q));
         if (!next) return false;
         state.notice = label(english, feedback);
-        goToQuestion(next.id, true);
+        goToQuestion(next.id, { keepNotice: true });
         return true;
       }
     });
@@ -522,30 +523,47 @@
     }
   }
 
-  async function openWorksheet(code, rememberedView = {}) {
+  async function openWorksheet(code, rememberedView = {}, notice = "") {
     const meta = currentMeta();
     if (!allowsWorksheet(meta, code) || (state.opening && !state.opening.failed)) return;
     const opening = createOpening(meta, code, rememberedView);
     state.opening = opening;
-    state.notice = "";
+    state.notice = notice;
     render(true);
     try {
-      const [unit, currentVocabulary, previousVocabulary] = await Promise.all([
+      const vocabularySections = {};
+      async function loadVocabulary(version) {
+        if (version === null) return;
+        try {
+          vocabularySections[version] = await classroomVocabulary.load(meta, code, opening.signal, version);
+        } catch (error) {
+          const activeVersion = selectedVocabularyVersion(worksheetAttempt(meta, code).attempt);
+          if (opening.signal.aborted || version === activeVersion) throw error;
+        }
+      }
+      let saved = worksheetAttempt(meta, code);
+      const [unit] = await Promise.all([
         loadUnit(meta, opening.signal),
-        classroomVocabulary.load(meta, code, opening.signal),
-        classroomVocabulary.load(meta, code, opening.signal, 1)
+        loadVocabulary(selectedVocabularyVersion(saved.attempt))
       ]);
+      // Another tab can reset the exercise while its resources are loading.
+      while (opening === state.opening) {
+        saved = worksheetAttempt(meta, code);
+        const version = selectedVocabularyVersion(saved.attempt);
+        if (version === null || vocabularySections[version]) break;
+        await loadVocabulary(version);
+      }
       if (opening !== state.opening) return;
       const sheet = { ...unit.sheets[code], key: code };
       const questions = sheet.questions;
       if (!questions?.length) throw new Error("Worksheet unavailable");
-      const { baseKey, key, attempt } = worksheetAttempt(meta, code);
+      const { baseKey, key, attempt } = saved;
       state.worksheet = {
         baseKey, key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
         dictation: window.UNLOCK_DICTATION?.[meta.id]?.[code],
         originalDictationItems: questions.filter(q => q.kind === "单词听写")
           .map(q => words.makeItem(q.id, q.number, q.keys[0], q.keys)),
-        vocabularySections: { 1: previousVocabulary, 2: currentVocabulary }
+        vocabularySections
       };
       configureAttempt(attempt);
       state.all = Boolean(rememberedView.all);
@@ -588,16 +606,26 @@
     }
   }
 
+  function showStoredAttempt(attempt, { notice, focus, scrollTop = false }) {
+    const { code, vocabularySections } = state.worksheet;
+    const version = selectedVocabularyVersion(attempt);
+    if (version !== null && !vocabularySections[version]) {
+      openWorksheet(code, { focus, all: state.all }, notice);
+      return;
+    }
+    configureAttempt(attempt);
+    state.notice = notice;
+    pickFocus(focus);
+    if (scrollTop) saveNavigation();
+    render(scrollTop);
+  }
+
   function showAttempt(key, notice = "") {
     state.worksheet.key = key;
-    configureAttempt(getAttempt(key));
     state.all = false;
     state.largePicture = false;
     state.readingOffset = 0;
-    state.notice = notice;
-    pickFocus();
-    saveNavigation();
-    render(true);
+    showStoredAttempt(getAttempt(key), { notice, scrollTop: true });
   }
 
   function resetExercise() {
@@ -643,7 +671,7 @@
     dialog.showModal();
   }
 
-  function goToQuestion(id, keepNotice = false) {
+  function goToQuestion(id, { keepNotice = false, focusBlank = false } = {}) {
     const question = state.worksheet?.byId.get(id);
     if (!question) return;
     if (!questionsInView().includes(question)) {
@@ -658,8 +686,8 @@
     const item = document.getElementById("item-" + question.id);
     const field = item?.querySelector("[data-dictation-answer]");
     const wordControl = app.querySelector("[data-wd-play], .wd-meaning-question #wd-heading, .wd-review h2");
-    (wordControl || field || item)?.focus({ preventScroll: true });
     const activeBlank = field || item?.querySelector(".summary-blank.current input");
+    (wordControl || (focusBlank ? activeBlank : field) || item)?.focus({ preventScroll: true });
     if (activeBlank) screens.reveal(activeBlank);
   }
 
@@ -719,7 +747,7 @@
     state.notice = state.worksheet.homework
       ? label("Finish the dictation and Chinese meanings before submitting.", "请完成词汇听写和中文义选择后再提交。")
       : label("Finish the dictation before submitting.", "请完成本组听写后再提交练习。");
-    goToQuestion(missing.id, true);
+    goToQuestion(missing.id, { keepNotice: true });
     return true;
   }
 
@@ -727,7 +755,7 @@
     const pending = unfinishedVocabulary();
     if (!pending) return false;
     state.notice = label("Finish the vocabulary practice before submitting.", "请先完成课堂词汇学练。");
-    goToQuestion(pending.id, true);
+    goToQuestion(pending.id, { keepNotice: true });
     return true;
   }
 
@@ -737,7 +765,7 @@
     if (!missing.length) return false;
     state.notice = label("Record the remaining " + missing.length + " speaking responses before submitting.",
       "还有 " + missing.length + " 道口语题需要录音。请录完后提交。");
-    goToQuestion(missing[0].id, true);
+    goToQuestion(missing[0].id, { keepNotice: true });
     return true;
   }
 
@@ -794,7 +822,7 @@
     const missing = state.worksheet.questions.find(q => isRequired(q) && !hasResponse(q));
     if (missing) {
       state.notice = label("Finish the required corrections before submitting.", "请完成所有待订正的客观题，再次提交。");
-      goToQuestion(missing.id, true);
+      goToQuestion(missing.id, { keepNotice: true });
       return;
     }
     const draft = { ...state.attempt.draft };
@@ -1068,7 +1096,8 @@
     } else if (d.questionId) {
       goToQuestion(d.questionId);
     } else if (d.questionNumber) {
-      goToQuestion(state.worksheet?.byNumber.get(Number(d.questionNumber))?.id);
+      const id = state.worksheet?.byNumber.get(Number(d.questionNumber))?.id;
+      goToQuestion(id, { focusBlank: button.classList.contains("summary-blank") });
     } else if (d.step) {
       const { stops, index } = navigationPosition();
       const target = stops[index + Number(d.step)];
@@ -1110,7 +1139,7 @@
 
   window.addEventListener("storage", event => {
     const worksheet = state.worksheet;
-    if (voiceJob || !worksheet) return;
+    if (voiceJob || !worksheet || state.opening) return;
     if (event.key === attemptPointer(worksheet.baseKey)) {
       const key = activeAttemptKey(worksheet.baseKey);
       if (key !== worksheet.key) showAttempt(key, resetNotice);
@@ -1119,10 +1148,8 @@
     if (event.key !== worksheet.key) return;
     const updated = getAttempt(event.key);
     if (updated.sequence !== state.attempt.sequence) {
-      configureAttempt(updated);
-      pickFocus(state.focus);
-      state.notice = label("This assignment was updated in another window.", "这份作业已在另一个窗口更新。");
-      render();
+      showStoredAttempt(updated, { focus: state.focus,
+        notice: label("This assignment was updated in another window.", "这份作业已在另一个窗口更新。") });
     }
   });
 

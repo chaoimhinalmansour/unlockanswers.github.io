@@ -255,11 +255,12 @@
     } catch {}
     const [lastBook, lastUnit, lastTrack, lastLesson] = preference;
     const book = [deepLink.book, lastBook, assignedBooks[student.level], 1]
-      .find(number => Number.isInteger(number) && Object.hasOwn(data.books, number));
+      .find(number => Number.isInteger(number) && data.books[number]);
     $("student-name").textContent = student.name;
     $("book-select").value = String(book);
-    $("track-select").value = Object.hasOwn(trackNames, deepLink.track) ? deepLink.track
-      : Object.hasOwn(trackNames, lastTrack) ? lastTrack : "LS";
+    const isTrack = value => Object.prototype.hasOwnProperty.call(trackNames, value);
+    $("track-select").value = isTrack(deepLink.track) ? deepLink.track
+      : isTrack(lastTrack) ? lastTrack : "LS";
     $("lesson-select").value = [1, 2].includes(deepLink.lesson) ? String(deepLink.lesson)
       : [1, 2].includes(lastLesson) ? String(lastLesson) : "1";
     loadUnits(book, deepLink.number || lastUnit);

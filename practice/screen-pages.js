@@ -88,8 +88,8 @@
   }
 
   function reveal(node) {
-    const pane = node.closest("[data-screen-view]");
-    if (!pane || pane === node) return;
+    const pane = node.parentElement?.closest("[data-screen-view]");
+    if (!pane?.clientHeight) return;
     const viewport = pane.getBoundingClientRect();
     const item = node.getBoundingClientRect();
     if (item.bottom > viewport.bottom - 8 || item.top < viewport.top) {
@@ -123,16 +123,32 @@
     if (nav) update(event.target, nav);
   });
 
+  function fitActiveEditor() {
+    const editor = document.activeElement;
+    const editable = editor?.matches("textarea[data-answer], input[data-answer]") &&
+      (editor instanceof HTMLTextAreaElement || editor.type === "text");
+    const compact = surface.classList.contains("tight-workspace") && surface.classList.contains("in-worksheet") &&
+      matchMedia("(any-pointer: coarse)").matches && editable && surface.contains(editor);
+    surface.classList.toggle("editing-answer", Boolean(compact));
+    if (compact) {
+      refresh();
+      reveal(editor);
+    }
+  }
+
   function fitViewport() {
     const viewport = window.visualViewport;
     const height = Math.floor(viewport?.scale === 1 ? viewport.height : window.innerHeight);
     surface.style.setProperty("--screen-height", height + "px");
     surface.classList.toggle("short-workspace", height < 680);
     surface.classList.toggle("tight-workspace", height < 480);
+    fitActiveEditor();
     openNotesIfRoom();
     refresh();
   }
 
+  surface.addEventListener("focusin", fitActiveEditor);
+  surface.addEventListener("focusout", () => requestAnimationFrame(fitActiveEditor));
   window.addEventListener("resize", fitViewport);
   window.visualViewport?.addEventListener("resize", fitViewport);
   fitViewport();

@@ -156,6 +156,7 @@
   function mount(root, { items, read, draft = () => "", save, onProgress, onFinish, positionTarget }) {
     const listeners = new AbortController();
     const options = { signal: listeners.signal };
+    const touchScreen = matchMedia("(any-pointer: coarse)");
     let current, audio, starting, playing, refreshedSelection;
     let previous = "";
     let previousEnglish = "";
@@ -184,7 +185,7 @@
       const output = root.querySelector("[data-wd-choice]");
       const spelling = assemble(current, order);
       if (origin && order.length) {
-        const added = current.parts[order.at(-1)].trim();
+        const added = current.parts[order[order.length - 1]].trim();
         const piece = document.createElement("span");
         piece.className = "wd-added-piece";
         piece.textContent = added;
@@ -200,10 +201,30 @@
       if (focusNext) (root.querySelector("[data-wd-piece]:not(:disabled)") || submit).focus({ preventScroll: true });
     }
 
+    function fitCompactCard() {
+      const viewport = window.visualViewport;
+      const height = viewport?.scale === 1 ? viewport.height : window.innerHeight;
+      const compact = touchScreen.matches && height < 480;
+      root.classList.toggle("wd-compact", compact);
+      if (!compact) return;
+
+      if (positionTarget) {
+        const top = root.getBoundingClientRect().top - (viewport?.offsetTop || 0);
+        const available = Math.max(120, Math.floor(height - Math.max(0, top) - 8));
+        root.style.setProperty("--wd-compact-height", available + "px");
+      }
+
+      const editor = root.querySelector("[data-wd-input]:focus");
+      if (!editor) return;
+      const content = editor.closest(".wd-content");
+      const hidden = editor.getBoundingClientRect().bottom - content.getBoundingClientRect().bottom;
+      if (hidden > 0) content.scrollTop += hidden + 4;
+    }
+
     function questionHeader(heading, position, focus, className = "") {
       return '<form class="wd-question' + className + (focus ? " unlock-card-enter" : "") +
         '" data-word-number="' + current.number +
-        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading">' +
+        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading"><div class="wd-content">' +
         (positionTarget ? "" : '<p class="wd-position">' + position + "</p>") +
         '<div class="wd-heading-line"><h2 id="wd-heading" tabindex="-1">' + heading + "</h2>";
     }
@@ -221,7 +242,7 @@
       root.innerHTML = questionHeader(heading, position, focus, " wd-meaning-question") +
         '<p class="wd-feedback">' + label(englishOutcomes[spelling], outcomes[spelling]) + '</p></div>' +
         '<p lang="en" class="wd-meaning-term">' + esc(current.word) + '</p>' + context +
-        '<fieldset class="wd-meaning-choices" aria-label="中文释义选项">' + options + '</fieldset>' +
+        '<fieldset class="wd-meaning-choices" aria-label="中文释义选项">' + options + '</fieldset></div>' +
         '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' +
         label("Submit Meaning", "提交词义") + "</button></form>";
       if (focus) root.querySelector("#wd-heading").focus({ preventScroll: true });
@@ -254,7 +275,7 @@
       }
       const attemptNo = state.attempts.length;
       const syllableStep = attemptNo === 2;
-      const last = state.attempts.at(-1);
+      const last = state.attempts[attemptNo - 1];
       let feedback = previous ? label(previousEnglish, previous) : "";
       if (syllableStep) feedback = label("Choose the syllables in order.", "两次拼写未通过，请按顺序选出音节。");
       else if (attemptNo) feedback = last.result === "case"
@@ -278,7 +299,7 @@
         '<div class="wd-listen"><audio hidden preload="none" src="../' + esc(audioPath(current)) + '"></audio>' +
         '<button type="button" class="wd-button wd-play ui-action" data-wd-play>' + label("Play Audio", "播放音频") + '</button>' +
         '<p class="wd-note" data-wd-play-note role="status">' + label("Replay anytime.", "可重复播放。") + '</p></div>' +
-        '<div class="wd-fields">' + fields + '</div>' +
+        '<div class="wd-fields">' + fields + '</div></div>' +
         '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' + label("Submit", "提交") + '</button></form>';
       const player = root.querySelector("audio");
       audio = player;
@@ -312,6 +333,10 @@
       starting = true;
       button.setAttribute("aria-disabled", "true");
       button.style.setProperty("--wd-audio-progress", "0");
+      setLabel(note, "Loading audio.", "正在加载音频。");
+      const loadingTimeout = setTimeout(() => {
+        if (player === audio && starting) player.load();
+      }, 10000);
       try {
         if (player.error) player.load();
         player.currentTime = 0;
@@ -325,6 +350,7 @@
       } catch {
         if (player === audio) setLabel(note, "The audio could not play. Try again.", "音频未能播放，请重试。");
       } finally {
+        clearTimeout(loadingTimeout);
         if (player === audio) {
           starting = false;
           if (!playing) button.removeAttribute("aria-disabled");
@@ -332,18 +358,18 @@
       }
     }
 
-    root.addEventListener("input", event => {
+    function saveSpellingDraft(event) {
       if (!event.target.matches("[data-wd-input]")) return;
       saveRecord({ ...record(), draft: event.target.value });
-    }, options);
+    }
 
-    root.addEventListener("change", event => {
+    function saveMeaningChoice(event) {
       if (event.target.matches("[data-wd-meaning]")) {
         saveRecord({ ...record(), meaningDraft: event.target.value });
       }
-    }, options);
+    }
 
-    root.addEventListener("click", event => {
+    function handleWordControl(event) {
       const button = event.target.closest("button");
       if (!current || !button) return;
       if (button.hasAttribute("data-wd-play")) {
@@ -357,12 +383,12 @@
       const origin = undo ? undefined : button.getBoundingClientRect();
       const order = undo ? state.order.slice(0, -1) : [...state.order, piece];
       if (saveRecord({ ...state, order })) updateSyllables(!undo || !order.length, origin);
-    }, options);
+    }
 
-    root.addEventListener("submit", event => {
+    function submitResponse(event) {
       if (!event.target.matches(".wd-question")) return;
       event.preventDefault();
-      if (!current || starting) return;
+      if (!current) return;
       const state = record();
       let next;
       const meaning = current.meaningQuestion;
@@ -402,13 +428,30 @@
         if (items.every(item => complete(item, read())) && onFinish?.(previous, previousEnglish)) return;
       }
       paint(true);
-    }, options);
+    }
 
+    root.addEventListener("input", saveSpellingDraft);
+    root.addEventListener("change", saveMeaningChoice);
+    root.addEventListener("click", handleWordControl);
+    root.addEventListener("submit", submitResponse);
+    window.addEventListener("resize", fitCompactCard);
+    window.visualViewport?.addEventListener("resize", fitCompactCard);
     paint(false);
+    fitCompactCard();
     return () => {
       listeners.abort();
+      root.removeEventListener("input", saveSpellingDraft);
+      root.removeEventListener("change", saveMeaningChoice);
+      root.removeEventListener("click", handleWordControl);
+      root.removeEventListener("submit", submitResponse);
+      window.removeEventListener("resize", fitCompactCard);
+      window.visualViewport?.removeEventListener("resize", fitCompactCard);
+      root.classList.remove("wd-compact");
+      root.style.removeProperty("--wd-compact-height");
       if (positionTarget) positionTarget.hidden = true;
-      audio?.pause();
+      const player = audio;
+      audio = null;
+      player?.pause();
       audio = null;
     };
   }

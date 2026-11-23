@@ -219,9 +219,24 @@ html:has(#practice-surface.in-worksheet) {
 .tight-workspace.in-worksheet .question-card .voice-field { margin-top: 4px; }
 .tight-workspace.in-worksheet .question-meta { margin-bottom: 3px; }
 
-@media (pointer: coarse) {
-  .in-worksheet:not(.tight-workspace) .question-chip { min-width: 38px; min-height: 38px; }
-  .screen-pages button { min-height: 32px; }
+@media (any-pointer: coarse) {
+  .in-worksheet:not(.tight-workspace) .question-chip { min-width: 44px; min-height: 44px; }
+  .screen-pages button { min-height: 44px; }
+  .student-practice .short-workspace.in-worksheet .question-rail { flex-wrap: nowrap; }
+  .student-practice .short-workspace.in-worksheet .question-chips {
+    min-width: 0;
+    flex: 1;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-block: 2px;
+  }
+  .student-practice .short-workspace.in-worksheet .question-chip { flex: none; }
+  .student-practice .tight-workspace.in-worksheet.editing-answer
+    :is(.session-title, .session-tools, .page-context, [data-action="reset-exercise"], .question-rail, .question-meta) {
+    display: none;
+  }
+  .student-practice .in-worksheet :is(.question-pane > .screen-view, .reading-text) { overflow-y: auto; }
+  .student-practice .in-worksheet :is(button, .option, .vocabulary-picture-option) { touch-action: manipulation; }
 }
 @media (670px < width <= 860px) {
   .in-worksheet .workspace.with-material:not(.wide-picture) {
