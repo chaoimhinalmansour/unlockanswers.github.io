@@ -19,6 +19,7 @@
   const listening = window.UnlockListening;
   const dictation = window.UnlockDictation;
   const words = window.UnlockWordDictation;
+  const homeworkDictation = window.UnlockHomeworkDictation;
   const motion = window.UnlockMotion;
   const screens = window.UnlockScreens;
   const recordings = window.UnlockRecordings;
@@ -108,7 +109,7 @@
       try {
         const latest = storedAttempt(key) || newAttempt();
         if (latest.sequence !== state.attempt.sequence) {
-          state.attempt = latest;
+          configureAttempt(latest);
           pickFocus(state.focus);
           state.notice = label("The latest responses from another window have loaded.", "这个练习已在另一个窗口更新。已载入最新作答。");
           render();
@@ -212,6 +213,20 @@
     return Boolean(worksheet?.dictationItems.length && (!attempt.first || attempt.wordDictation));
   }
 
+  function configureAttempt(attempt) {
+    const { worksheet } = state;
+    state.attempt = attempt;
+    const homework = homeworkDictation.plan(worksheet.unit, worksheet.code, attempt);
+    worksheet.homework = homework;
+    worksheet.dictationItems = homework?.questions || worksheet.originalDictationItems;
+    const sections = [worksheet.sheet];
+    if (homework) sections.push({ name: "词汇听写和中文义", questions: homework.questions });
+    const numbered = sections.flatMap(section => section.questions);
+    worksheet.byNumber = new Map(numbered.map(question => [question.number, question]));
+    worksheet.sections = sections;
+    worksheet.questions = numbered;
+  }
+
   function questionsInView() {
     const { attempt, worksheet, all } = state;
     if (!attempt.first || attempt.second || all) return worksheet.questions;
@@ -268,7 +283,7 @@
         ? label("Self-check complete.", "已完成自检。") : label("Responses saved.", "已记录作答。") };
       const first = stats.first + " / " + stats.objective;
       const second = stats.second + " / " + stats.objective;
-      const dictationNote = usesWordDictation();
+      const dictationNote = usesWordDictation() && !worksheet.homework;
       return { name: "客观题答对", english: "Objective Items Correct", now: stats.second, max: stats.objective,
         detail: label("First " + first + ", second " + second + (dictationNote ? " (full spellings count)" : ""),
           "首次 " + first + "，二次 " + second + (dictationNote ? "（听写按完整拼写计）" : "")) };
@@ -319,7 +334,7 @@
       worksheet: { id, revision, book, unit, code: worksheet.code },
       dictationItems: worksheet.dictationItems,
       groupAudio: wordMode ? undefined : worksheet.dictation?.file.replace(/\.mp3$/, "-countdown.mp3"),
-      sections: worksheet.sections.map(section => ({ ...section, name: sectionName(section.key) }))
+      sections: worksheet.sections.map(section => ({ ...section, name: section.name ?? sectionName(section.key) }))
     }));
   }
 
@@ -403,6 +418,7 @@
       draft: item => state.attempt.draft[item.id],
       save: (item, record) => saveAttempt({
         ...state.attempt,
+        ...(state.worksheet.homework ? { homeworkDictationSeed: state.worksheet.homework.seed } : {}),
         sequence: state.attempt.sequence + 1,
         wordDictation: { ...state.attempt.wordDictation, [item.id]: record }
       }),
@@ -480,12 +496,10 @@
       state.worksheet = {
         baseKey, key, code, title: unitLabel(meta) + " " + subjectTitle(code), unit, sheet,
         dictation: window.UNLOCK_DICTATION?.[meta.id]?.[code],
-        dictationItems: questions.filter(q => q.kind === "单词听写")
+        originalDictationItems: questions.filter(q => q.kind === "单词听写")
           .map(q => words.makeItem(q.id, q.number, q.keys[0], q.keys)),
-        sections: [sheet], questions, byId: new Map(questions.map(q => [q.id, q])),
-        byNumber: new Map(questions.map(q => [q.number, q]))
       };
-      state.attempt = attempt;
+      configureAttempt(attempt);
       state.all = Boolean(rememberedView.all);
       state.largePicture = false;
       state.readingOffset = 0;
@@ -527,7 +541,7 @@
 
   function showAttempt(key, notice = "") {
     state.worksheet.key = key;
-    state.attempt = getAttempt(key);
+    configureAttempt(getAttempt(key));
     state.all = false;
     state.largePicture = false;
     state.readingOffset = 0;
@@ -591,7 +605,7 @@
     render(true);
     const item = document.getElementById("item-" + question.id);
     const field = item?.querySelector("[data-dictation-answer]");
-    const wordControl = app.querySelector("[data-wd-play], .wd-review h2");
+    const wordControl = app.querySelector("[data-wd-play], .wd-meaning-question #wd-heading, .wd-review h2");
     (wordControl || field || item)?.focus({ preventScroll: true });
     const activeBlank = field || item?.querySelector(".summary-blank.current input");
     if (activeBlank) screens.reveal(activeBlank);
@@ -650,7 +664,9 @@
     if (!usesWordDictation()) return false;
     const missing = state.worksheet.dictationItems.find(item => !words.complete(item, state.attempt.wordDictation));
     if (!missing) return false;
-    state.notice = label("Finish the dictation before submitting.", "请完成本组听写后再提交练习。");
+    state.notice = state.worksheet.homework
+      ? label("Finish the dictation and Chinese meanings before submitting.", "请完成词汇听写和中文义选择后再提交。")
+      : label("Finish the dictation before submitting.", "请完成本组听写后再提交练习。");
     goToQuestion(missing.number, true);
     return true;
   }
@@ -1029,7 +1045,7 @@
     if (event.key !== worksheet.key) return;
     const updated = getAttempt(event.key);
     if (updated.sequence !== state.attempt.sequence) {
-      state.attempt = updated;
+      configureAttempt(updated);
       pickFocus(state.focus);
       state.notice = label("This assignment was updated in another window.", "这份作业已在另一个窗口更新。");
       render();

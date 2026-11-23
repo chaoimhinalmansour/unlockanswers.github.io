@@ -57,8 +57,11 @@
         const ending = worksheet.dictationItems?.at(-1)?.number ?? worksheet.dictation.count;
         const range = "听写 " + beginning + (ending === beginning ? "" : " 至 " + ending);
         const active = isDictation(worksheet, current) ? ' aria-current="step"' : "";
+        const title = q.homeworkDictation
+          ? label("Word Dictation", "词汇听写")
+          : label("Dictation " + beginning + (ending === beginning ? "" : " to " + ending), range);
         return '<button type="button" class="question-chip dictation-chip" data-dictation-nav data-question-number="' +
-          q.number + '"' + active + ">" + label("Dictation " + beginning + (ending === beginning ? "" : " to " + ending), range) + "</button>";
+          q.number + '"' + active + ">" + title + "</button>";
       }
       const [style, name] = attempt ? questionState(q, attempt, answered(q)) : ["", ""];
       const accessibleName = "第 " + q.number + " 题" + (name ? "，" + name : "");
@@ -66,7 +69,9 @@
         '" aria-label="' + accessibleName + '"' + (q === current ? ' aria-current="step"' : "") +
         ">" + q.number + "</button>";
     }).join("");
-    const firstResults = correction ? Object.values(attempt.first.results) : [];
+    const supplemental = new Set((worksheet.dictationItems || []).filter(item => item.homeworkDictation).map(item => item.id));
+    const firstResults = correction ? Object.entries(attempt.first.results)
+      .filter(([id]) => !supplemental.has(id)).map(([, result]) => result) : [];
     const gradeable = firstResults.filter(result => result !== "ungraded");
     const score = gradeable.filter(result => result === "correct").length + " / " + gradeable.length;
     const firstScore = gradeable.length ? '<p class="rail-score">' +

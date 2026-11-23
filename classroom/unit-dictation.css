@@ -84,63 +84,6 @@
 }
 #classroom-word-panel .wd-heading-line h2 { font-size: 1.125rem; line-height: 1.25; }
 
-#classroom-word-panel .wd-meaning-question { gap: 12px; }
-.wd-meaning-question .wd-meaning-term {
-  color: var(--unlock-ink);
-  font-size: clamp(22px, 4vw, 30px);
-  font-weight: 700;
-  line-height: 1.25;
-  overflow-wrap: anywhere;
-}
-.wd-meaning-choices {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px;
-  width: min(100%, 38rem);
-  min-width: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-}
-.wd-meaning-option {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  min-width: 0;
-  min-height: 48px;
-  margin: 0;
-  padding: 8px 11px;
-  border: 1px solid var(--unlock-line);
-  border-radius: 11px;
-  text-align: start;
-  line-height: 1.45;
-  cursor: pointer;
-}
-.wd-meaning-option:hover { background: var(--unlock-shell); }
-.wd-meaning-option:has(input:checked) {
-  border-color: var(--unlock-blue);
-  background: var(--unlock-selected);
-}
-.wd-meaning-option:has(input:focus-visible) {
-  outline: 2px solid var(--unlock-blue);
-  outline-offset: 2px;
-}
-.wd-meaning-option input[type="radio"] {
-  flex: 0 0 1rem;
-  width: 1rem;
-  height: 1rem;
-  min-height: 0;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  accent-color: var(--unlock-blue);
-}
-.wd-meaning-option input[type="radio"]:focus-visible { outline: none; }
-.wd-meaning-option span { min-width: 0; overflow-wrap: anywhere; }
-.wd-report-meaning { grid-column: 1 / -1; }
-@media (max-width: 520px) {
-  .wd-meaning-choices { grid-template-columns: minmax(0, 1fr); }
-}
 @media (max-width: 640px) {
   .student-classroom:has(#practice:not([hidden])) .top-inner { padding-block: 8px; }
   .student-classroom:has(#practice:not([hidden])) main { padding-inline: 16px; }

@@ -67,6 +67,7 @@
 
   function summary(questions, attempt) {
     return questions.reduce((total, question) => {
+      if (question.homeworkDictation) return total;
       if (question.type === "open") return { ...total, open: total.open + 1 };
       return {
         objective: total.objective + 1, open: total.open,
