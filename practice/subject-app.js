@@ -367,7 +367,10 @@
     const legacyDictation = !usesWordDictation() && worksheet?.dictation ? worksheet : null;
     const firstDictation = Boolean(legacyDictation && !state.attempt.first);
     const replayQuestions = legacyDictation && state.attempt.first && !state.attempt.second
-      ? worksheet.questions.filter(q => isDictation(worksheet, q) && editable(q)) : [];
+      ? worksheet.questions.filter(q => isDictation(worksheet, q) && editable(q)).map(question => {
+        const item = worksheet.dictationItems.find(term => term.id === question.id);
+        return item ? { ...question, dictationAudio: words.audioPath(item) } : question;
+      }) : [];
     const playing = dictation.update(legacyDictation, Boolean(legacyDictation && groupShown), firstDictation, replayQuestions);
     listening.update(worksheet, groupShown || playing ? null : current, state.student);
     if (!working) {
@@ -619,6 +622,7 @@
   function capture(draft, clips = {}, round = 0) {
     const answers = {};
     const results = {};
+    const legacyDictationKeys = {};
     for (const question of state.worksheet.questions) {
       if (usesWordDictation() && isDictation(state.worksheet, question)) {
         const checked = words.spellingRound(state.attempt.wordDictation?.[question.id], round);
@@ -628,9 +632,18 @@
       }
       const value = draft[question.id] ?? (["multi", "order"].includes(question.type) ? [] : "");
       answers[question.id] = Array.isArray(value) ? [...value] : value;
+      if (round && isDictation(state.worksheet, question)) {
+        const item = state.worksheet.dictationItems.find(term => term.id === question.id);
+        if (item?.locale === "en-GB" && state.attempt.first.results[question.id] !== "correct") {
+          legacyDictationKeys[question.id] = item.keys;
+          results[question.id] = judge({ ...question, keys: item.keys }, value);
+          continue;
+        }
+      }
       results[question.id] = judge(question, value);
     }
-    return { time: new Date().toISOString(), answers, results, recordings: { ...clips } };
+    return { time: new Date().toISOString(), answers, results, recordings: { ...clips },
+      ...(Object.keys(legacyDictationKeys).length ? { legacyDictationKeys } : {}) };
   }
 
   function needsMoreDictation() {

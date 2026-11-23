@@ -257,7 +257,7 @@
         ? track(key, config.file.replace(/\.mp3$/, "-countdown.mp3"), audioLeadIn) : null;
       const replays = new Map();
       for (const question of replayQuestions) {
-        const file = worksheet.unit.audio[question.audio?.[0]]?.file;
+        const file = question.dictationAudio || worksheet.unit.audio[question.audio?.[0]]?.file;
         if (file) replays.set(question.id, track(key + ":" + encodeURIComponent(question.id), file));
       }
       session = key ? { key, group, replays, shown: false } : null;

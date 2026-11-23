@@ -8,6 +8,7 @@
     createOpening, renderOpening, readResource, loadUnit } = window.UnlockPracticeCatalog;
   const { render: renderWorkbench, readingSource } = window.UnlockWorkbench;
   const { renderSolution, markEvidence } = window.UnlockWorksheet;
+  const words = window.UnlockWordDictation;
   const screens = window.UnlockScreens;
   const listening = window.UnlockListening;
   const surface = document.getElementById("practice-surface");
@@ -157,8 +158,16 @@
           !guide.every((item, index) => item.id === sheet.questions[index].id)) {
         throw new Error("Teacher questions do not match this worksheet");
       }
+      const audio = { ...unit.audio };
+      const solutions = guide.map((solution, index) => {
+        const question = sheet.questions[index];
+        if (question.kind !== "单词听写") return solution;
+        const item = words.makeItem(question.id, question.number, question.keys[0], question.keys);
+        for (const id of question.audio || []) audio[id] = { ...audio[id], file: words.audioPath(item) };
+        return { ...solution, answer: item.keys.join(" / ") };
+      });
       state.worksheet = {
-        key: meta.id + ":" + code, code, unit, sheet, questions: sheet.questions, guide,
+        key: meta.id + ":" + code, code, unit: { ...unit, audio }, sheet, questions: sheet.questions, guide: solutions,
         evidence: meta.unit === specialUnit ? guide.map(item => item.marks)
           : evidence?.length === sheet.questions.length ? evidence : null
       };

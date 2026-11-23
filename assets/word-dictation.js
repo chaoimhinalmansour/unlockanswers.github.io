@@ -26,11 +26,23 @@
   function makeItem(id, number, word, keys) {
     const prepared = source[normalized(keys[0])];
     if (!prepared) throw new Error("Missing dictation audio or syllables for " + id);
-    return { id, number, word, keys, audio: prepared.audio, parts: prepared.parts };
+    const spelling = prepared.spelling || word;
+    const accepted = prepared.spelling ? [...new Set([prepared.spelling, ...keys.slice(1)])] : keys;
+    return {
+      id, number, word: spelling, keys: accepted, audio: prepared.audio, parts: prepared.parts,
+      ipa: prepared.ipa, locale: prepared.ipa ? "en-GB" : "en-US", revisedParts: prepared.revisedParts,
+      original: { word, keys }
+    };
   }
 
   function audioPath(item) {
-    return "assets/word-dictation-v1/" + item.audio + ".wav";
+    const directory = item.locale === "en-GB" ? "word-dictation-en-gb-v1" : "word-dictation-v1";
+    return "assets/" + directory + "/" + item.audio + ".wav";
+  }
+
+  function recordedItem(item, record) {
+    if (item.locale !== "en-GB" || record?.locale === "en-GB") return item;
+    return { ...item, ...item.original, locale: "en-US", ipa: undefined };
   }
 
   function checkSpelling(item, typed) {
@@ -77,6 +89,10 @@
     return order;
   }
 
+  function newSelection(item) {
+    return { offered: shuffledParts(item), order: [], partsKey: item.parts.join("|") };
+  }
+
   function outcomeCounts(items, records) {
     const counts = { first: 0, second: 0, assisted: 0, incorrect: 0 };
     for (const item of items) {
@@ -100,6 +116,7 @@
     const [first, second] = record.attempts;
     const syllables = record.syllables;
     const plays = Number(record.plays) || 0;
+    item = recordedItem(item, record);
     const heading = bilingual
       ? copy("Word " + item.number + " " + item.word, "第 " + item.number + " 题")
       : '第 ' + item.number + ' 题 <span lang="en">' + esc(item.word) + '</span>';
@@ -124,16 +141,23 @@
   function mount(root, { items, read, draft = () => "", save, onProgress, onFinish }) {
     const listeners = new AbortController();
     const options = { signal: listeners.signal };
-    let current, audio, starting, playing;
+    let current, audio, starting, playing, refreshedSelection;
     let previous = "";
     let previousEnglish = "";
 
     function record() {
-      return read()?.[current.id] || { ...empty, draft: draft(current) || "" };
+      const saved = read()?.[current.id] || { ...empty, draft: draft(current) || "" };
+      if (saved.attempts.length !== 2 || saved.syllables) return saved;
+      const partsChanged = saved.partsKey == null
+        ? current.revisedParts
+        : saved.partsKey !== current.parts.join("|");
+      if (!partsChanged) return saved;
+      refreshedSelection ??= newSelection(current);
+      return { ...saved, ...refreshedSelection };
     }
 
     function saveRecord(next) {
-      if (!save(current, next)) return false;
+      if (!save(current, { ...next, locale: current.locale })) return false;
       onProgress?.();
       return true;
     }
@@ -164,6 +188,7 @@
     function paint(focus) {
       audio?.pause();
       audio = null;
+      refreshedSelection = undefined;
       starting = playing = false;
       root.scrollTop = 0;
       current = items.find(item => !complete(item, read()));
@@ -292,8 +317,7 @@
         const attempts = [...state.attempts, { text: typed, result }];
         next = { ...state, draft: "", attempts };
         if (attempts.length === 2 && result !== "correct") {
-          next.offered = shuffledParts(current);
-          next.order = [];
+          Object.assign(next, newSelection(current));
         }
       } else {
         if (state.order.length !== current.parts.length) return;
@@ -321,5 +345,5 @@
     };
   }
 
-  window.UnlockWordDictation = { makeItem, audioPath, checkSpelling, complete, outcome, spellingRound, summary, recordHTML, mount };
+  window.UnlockWordDictation = { makeItem, audioPath, recordedItem, checkSpelling, complete, outcome, spellingRound, summary, recordHTML, mount };
 })();

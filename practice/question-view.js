@@ -281,8 +281,10 @@
     const priorResponse = lengthyDraft ? '<details class="previous-draft"><summary>' +
       (notesOnly ? label("View First Notes", "查看首次口语笔记") : label("View First Response", "查看首次作答")) + "</summary><p>" +
       esc(displayAnswer(question, firstValue)) + "</p></details>" : firstLine;
+    const correctedKeys = second?.legacyDictationKeys?.[question.id];
+    const reference = correctedKeys ? { ...question, keys: correctedKeys } : question;
     const comparison = second ? '<div class="answer-comparison">' + firstLine + secondLine +
-      (question.type === "open" ? "" : answerLine("正确答案", displayKeys(question), "key", "Correct Answer")) + "</div>"
+      (question.type === "open" ? "" : answerLine("正确答案", displayKeys(reference), "key", "Correct Answer")) + "</div>"
       : priorResponse;
     const opinion = opinionNotes(question);
     const editorBelow = Boolean(opinion && !locked && !second);

@@ -66,7 +66,7 @@
       const second = first && Array.isArray(record.second) ? answers(record.second, count) : null;
       const wordDictation = record.wordDictation && typeof record.wordDictation === "object" ? record.wordDictation : undefined;
       return { sequence: record.sequence, draft: answers(record.draft, count), first, second,
-        wordDictation, completedAt: record.completedAt };
+        wordDictation, completedAt: record.completedAt, correctionLocale: record.correctionLocale };
     } catch {
       return null;
     }
@@ -103,8 +103,17 @@
     return true;
   }
 
-  function right(index, value) {
-    return judge({ type: "text", keys: current.unit.items[index].keys }, value) === "correct";
+  function correctionKey(item, first, locale) {
+    if (locale !== "en-GB") return item.original;
+    const alreadyCorrect = judge({ type: "text", keys: item.original.keys }, first) === "correct";
+    return alreadyCorrect ? item.original : item;
+  }
+
+  function right(index, value, corrected = false) {
+    const item = current.wordItems[index];
+    const { first, correctionLocale } = current.attempt;
+    const answer = corrected ? correctionKey(item, first[index], correctionLocale) : item.original;
+    return judge({ type: "text", keys: answer.keys }, value) === "correct";
   }
 
   function required() {
@@ -240,14 +249,15 @@
   }
 
   function answerRow(index, needsCorrection) {
-    const { attempt, unit } = current;
+    const { attempt } = current;
     const number = index + 1;
     const row = element("li", undefined, "answer-row");
     if (attempt.second) {
-      const correct = right(index, attempt.second[index]);
+      const correct = right(index, attempt.second[index], true);
       const tag = element("span", correct ? "答对" : "待巩固", correct ? "answer-tag correct" : "answer-tag needs-work");
       const heading = element("h3", "第 " + number + " 题");
-      const answer = line("答案", unit.items[index].word);
+      const key = correctionKey(current.wordItems[index], attempt.first[index], attempt.correctionLocale);
+      const answer = line("答案", key.word);
       row.append(heading, tag, line("首次", attempt.first[index]), line("二次", attempt.second[index]), answer);
     } else if (attempt.first && !needsCorrection) {
       row.append(element("h3", "第 " + number + " 题"),
@@ -285,10 +295,10 @@
   function updateProgress() {
     const { attempt, unit } = current;
     const remaining = required();
-    const score = values => values.filter((value, index) => right(index, value)).length;
+    const score = (values, corrected = false) => values.filter((value, index) => right(index, value, corrected)).length;
     const count = remaining.filter(index => attempt.draft[index].trim()).length;
     const text = attempt.second ? "首次答对 " + score(attempt.first) + " / " + unit.items.length +
-      "，二次答对 " + score(attempt.second) + " / " + unit.items.length
+      "，二次答对 " + score(attempt.second, true) + " / " + unit.items.length
       : attempt.first ? "已订正 " + count + " / " + remaining.length
       : "已填写 " + count + " / " + unit.items.length;
     if ($("progress").textContent !== text) $("progress").textContent = text;
@@ -310,17 +320,20 @@
           sections: [{ name: "听写作答记录", questions: wordItems }]
         });
       }
-      const questions = wordItems.map(item => ({
+      const questions = wordItems.map((item, index) => ({
         id: item.id, number: item.number, kind: "单词听写", prompt: "听写第 " + item.number + " 题",
-        type: "text", keys: item.keys, audio: [item.id]
+        type: "text", keys: correctionKey(item, attempt.first[index], attempt.correctionLocale).keys, audio: [item.id]
       }));
-      const capture = (values, time) => ({
+      const capture = (values, time, corrected = false) => ({
         time, answers: Object.fromEntries(questions.map((q, index) => [q.id, values[index]])),
-        results: Object.fromEntries(questions.map((q, index) => [q.id, judge(q, values[index])]))
+        results: Object.fromEntries(questions.map((q, index) => {
+          const keys = corrected ? q.keys : wordItems[index].original.keys;
+          return [q.id, judge({ ...q, keys }, values[index])];
+        }))
       });
       return window.UnlockReport.prepare({
         student: learner, title, worksheet, tracks: playbackSheet.unit.audio,
-        attempt: { completedAt: attempt.completedAt, first: capture(attempt.first), second: capture(attempt.second, attempt.completedAt) },
+        attempt: { completedAt: attempt.completedAt, first: capture(attempt.first), second: capture(attempt.second, attempt.completedAt, true) },
         sections: [{ name: "听写作答记录", questions }]
       });
     });
@@ -408,7 +421,8 @@
       return;
     }
     const second = attempt.draft.map((value, index) => right(index, attempt.first[index]) ? attempt.first[index] : value);
-    if (saveAttempt({ second, completedAt: new Date().toISOString() })) {
+    const correctionLocale = current.wordItems[0].locale;
+    if (saveAttempt({ second, correctionLocale, completedAt: new Date().toISOString() })) {
       render();
       $("phase-title").focus();
     }

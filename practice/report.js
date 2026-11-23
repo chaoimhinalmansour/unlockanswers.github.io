@@ -90,7 +90,8 @@
   }) {
     const { first, second, wordDictation, selfCheckedAt, completedAt } = attempt;
     const words = window.UnlockWordDictation;
-    const wordItems = wordDictation ? dictationItems.filter(item => words.complete(item, wordDictation)) : [];
+    const wordItems = wordDictation ? dictationItems.filter(item => words.complete(item, wordDictation))
+      .map(item => words.recordedItem(item, wordDictation[item.id])) : [];
     const wordsById = new Map(wordItems.map(item => [item.id, item]));
     const media = new Map();
     const recordings = new Map();
@@ -171,7 +172,7 @@
           const dictation = wordDictation[id];
           return {
             id, number, type: "dictation", kind: "单词听写", prompt: item.word,
-            answerKey: { accepted: item.keys, text: item.word }, materialIds,
+            answerKey: { accepted: item.keys, text: item.word, ipa: item.ipa, language: item.locale }, materialIds,
             dictation: { attempts: dictation.attempts, syllables: dictation.syllables ?? null,
               plays: Number(dictation.plays) || 0, outcome: words.outcome(dictation) }
           };
@@ -191,11 +192,13 @@
         const context = Object.fromEntries(fields.filter(field => question[field] !== undefined)
           .map(field => [field, question[field]]));
         const examples = (question.notes || []).filter(note => /^(?:model|example|sample|参考答案|参考表达|范例)\s*[:：]/i.test(note));
+        const correctedKeys = second?.legacyDictationKeys?.[id];
+        const reference = correctedKeys ? { ...question, keys: correctedKeys } : question;
         return {
           id, number, type: question.type, kind: question.kind, prompt: question.prompt, ...context, materialIds,
           textRole: speaking && open ? "speakingNotes" : "answer",
           ...(examples.length ? { referenceExamples: examples } : {}),
-          answerKey: open ? null : { accepted: question.keys, text: displayKeys(question) },
+          answerKey: open ? null : { accepted: reference.keys, text: displayKeys(reference) },
           first: firstResponse, final: finalResponse,
           selfCheck: selfCheckedAt && (open || speaking) ? {
             completedAt: selfCheckedAt,
