@@ -1,0 +1,87 @@
+@font-face {
+  font-family: "Source Han Sans SC";
+  src: url("assets/fonts/SourceHanSansSC-Regular.ttf") format("truetype");
+  font-weight: 400 599;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Source Han Sans SC";
+  src: url("assets/fonts/SourceHanSansSC-Bold.ttf") format("truetype");
+  font-weight: 600 900;
+  font-display: swap;
+}
+
+html, body.student-writing-review { font-family: "Source Han Sans SC", sans-serif; }
+.student-writing-review :is(button, input, select) { font-family: inherit; }
+.student-writing-review [hidden] { display: none !important; }
+.student-writing-review .site-header .writing-header { gap: 18px; }
+.review-account { display: flex; flex-wrap: wrap; justify-content: end; align-items: center; gap: 8px 16px; }
+#writing-notice { margin: 12px 0; }
+
+.writing-selects, .writing-login {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 22px;
+  align-items: end;
+  padding: 0 0 20px;
+  border-bottom: 1px solid var(--unlock-line);
+  margin-bottom: 24px;
+}
+.writing-field { display: grid; gap: 5px; min-width: 120px; }
+.writing-field label { font-size: .92rem; font-weight: 700; }
+.writing-field select, .writing-field input {
+  min-height: 44px;
+  padding: 8px 12px;
+  border: 1px solid var(--unlock-line);
+  border-radius: 9px;
+  width: 100%;
+  background: var(--unlock-white);
+  color: var(--unlock-ink);
+}
+.writing-field select { padding-right: 25px; }
+.topic-field { flex: 1; max-width: 540px; }
+.writing-login { max-width: 740px; border: 0; }
+.writing-login .writing-field { flex: 1; }
+.student-writing-review :is(a, button, input, select, summary):focus-visible {
+  outline: 2px solid var(--unlock-blue);
+  outline-offset: 3px;
+}
+
+.student-writing-review #task-prompt { white-space: pre-wrap; line-height: 1.7; }
+.student-writing-review .question-chart {
+  width: 100%; max-width: 720px; max-height: none; height: auto;
+}
+.student-writing-review .figures.single { grid-template-columns: minmax(0, 740px); }
+.student-writing-review .figures figure { align-self: start; }
+.question-original { margin-top: 5px; font-size: .88rem; }
+.question-original img { display: block; width: auto; max-width: 100%; height: auto; margin: 10px auto 2px; }
+#review-pending { padding: 14px 16px; border: 1px solid var(--unlock-line); border-radius: 10px; }
+
+.student-writing-review .notes { display: grid; gap: 8px; }
+.student-writing-review .note-body { padding: 10px 11px; }
+.student-writing-review .note-body .note-reason { display: block; margin-top: 4px; }
+.note-link { max-width: 100%; }
+.pin { margin-left: 3px; }
+.phrase { scroll-margin-top: 16px; }
+.actual-feedback section { margin-bottom: 16px; }
+.actual-feedback h3 { margin-bottom: 9px; }
+.actual-feedback ol, .actual-feedback ul { margin: 0; padding-inline-start: 1.5em; }
+.actual-feedback li + li { margin-top: 9px; }
+.actual-feedback .quote { margin-top: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+.feedback-examples { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.feedback-examples > div { min-width: 0; }
+.writing-note {
+  padding: 11px 14px;
+  border: 1px solid var(--unlock-line);
+  border-radius: 10px;
+  margin: 8px 0 0;
+}
+.writing-note + .writing-note { margin-top: 10px; }
+.writing-note pre { margin: 0; font: inherit; white-space: pre-wrap; overflow-wrap: anywhere; }
+
+@media (max-width: 620px) {
+  .writing-selects { gap: 12px; }
+  .topic-field, .writing-login .writing-field { flex-basis: 100%; max-width: none; }
+  .feedback-examples { grid-template-columns: 1fr; }
+  .site-header .review-account { gap: 6px 12px; }
+}

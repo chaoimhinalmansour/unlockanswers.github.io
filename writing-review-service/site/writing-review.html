@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>写作复盘 | UNLOCK</title>
+  <link rel="stylesheet" href="assets/theme.css">
+  <link rel="stylesheet" href="writing-review.css">
+  <link rel="stylesheet" href="assets/student-ui.css">
+  <link rel="stylesheet" href="writing-review-cases.css">
+  <script defer src="assets/student-ui.js"></script>
+  <script defer src="writing-review.js"></script>
+</head>
+<body class="student-ui student-writing-review">
+  <header class="site-header">
+    <div class="writing-header">
+      <span class="ui-brand" lang="en">UNLOCK</span>
+      <nav class="review-account ui-site-nav" aria-label="平台导航">
+        <span id="review-account-name"></span>
+        <a class="ui-nav" href="index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh">返回工作区</small></span></a>
+        <button type="button" class="ui-nav" id="review-sign-out" hidden><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh">退出登录</small></span></button>
+      </nav>
+    </div>
+  </header>
+  <main class="page">
+    <section class="hero">
+      <p class="kicker" lang="en">IELTS Academic Writing</p>
+      <h1 id="writing-review-title" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Writing Review</span><small class="ui-zh">写作复盘</small></span></h1>
+    </section>
+    <p id="writing-notice" role="status">正在打开写作复盘。</p>
+    <form class="writing-login" id="writing-login" hidden>
+      <div class="writing-field">
+        <label for="writing-account">复盘账号</label>
+        <input id="writing-account" name="account" required autocomplete="username" maxlength="40">
+      </div>
+      <div class="writing-field">
+        <label for="writing-password">复盘密码</label>
+        <input id="writing-password" name="password" type="password" required autocomplete="current-password" maxlength="512">
+      </div>
+      <button type="submit" class="ui-action ui-primary">进入复盘</button>
+    </form>
+    <section id="writing-review-content" hidden aria-labelledby="writing-review-title">
+      <div class="writing-selects">
+        <div class="writing-field" id="student-field" hidden>
+          <label for="writing-student">学生</label>
+          <select id="writing-student"></select>
+        </div>
+        <div class="writing-field topic-field">
+          <label for="writing-topic">题目</label>
+          <select id="writing-topic"></select>
+        </div>
+      </div>
+      <article class="review" id="writing-article" aria-labelledby="task-title" hidden>
+        <header class="task-header">
+          <div><p class="kicker" id="task-label"></p><h2 id="task-title"></h2></div>
+        </header>
+        <details id="task-material" class="material">
+          <summary id="material-title"></summary>
+          <div id="task-prompt" lang="en"></div>
+          <div id="task-figures" class="figures"></div>
+        </details>
+        <p id="review-pending" role="status" hidden>原稿待补。复盘将在原稿核对后补齐。</p>
+        <div id="review-panels" hidden>
+      <div class="view-tabs" role="tablist" aria-label="复盘内容">
+        <button type="button" id="tab-source" role="tab" data-view="source" aria-selected="true" aria-controls="panel-source"><span class="ui-label"><span class="ui-en" lang="en">Annotated Draft</span><small class="ui-zh" lang="zh-CN">原文批改</small></span></button>
+        <button type="button" id="tab-thought" role="tab" data-view="thought" aria-selected="false" aria-controls="panel-thought" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Reasoning</span><small class="ui-zh" lang="zh-CN">思维复盘</small></span></button>
+        <button type="button" id="tab-language" role="tab" data-view="language" aria-selected="false" aria-controls="panel-language" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Language</span><small class="ui-zh" lang="zh-CN">表达讲评</small></span></button>
+        <button type="button" id="tab-summary" role="tab" data-view="summary" aria-selected="false" aria-controls="panel-summary" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Takeaways</span><small class="ui-zh" lang="zh-CN">本次小结</small></span></button>
+      </div>
+      <section id="panel-source" role="tabpanel" aria-labelledby="tab-source"></section>
+      <section id="panel-thought" role="tabpanel" aria-labelledby="tab-thought" hidden></section>
+      <section id="panel-language" role="tabpanel" aria-labelledby="tab-language" hidden></section>
+      <section id="panel-summary" role="tabpanel" aria-labelledby="tab-summary" hidden></section>
+        </div>
+        <p id="review-status" class="sr-only" aria-live="polite"></p>
+      </article>
+    </section>
+    <noscript><p>请启用 JavaScript 后打开写作复盘。</p></noscript>
+  </main>
+</body>
+</html>
