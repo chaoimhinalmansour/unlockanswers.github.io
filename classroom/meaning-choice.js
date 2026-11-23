@@ -29,7 +29,7 @@
     return a.keys.some(key => b.keys.includes(key));
   }
 
-  function pickThree(list, usedGroups, related) {
+  function pickThree(list, usedLabels, usedWords, related) {
     const tooClose = (a, b) => sameGloss(a, b) || related[a.id]?.includes(b.id);
     for (const [i, a] of list.entries()) {
       for (let j = i + 1; j < list.length; j++) {
@@ -39,9 +39,11 @@
           const c = list[k];
           if (tooClose(a, c) || tooClose(b, c)) continue;
           const group = [a, b, c];
-          const key = group.map(term => term.label).sort().join("|");
-          if (usedGroups.has(key)) continue;
-          usedGroups.add(key);
+          const labelKey = group.map(term => term.label).sort().join("|");
+          const wordKey = group.map(term => term.id).sort().join("|");
+          if (usedLabels.has(labelKey) || usedWords.has(wordKey)) continue;
+          usedLabels.add(labelKey);
+          usedWords.add(wordKey);
           return group;
         }
       }
@@ -49,29 +51,52 @@
     return null;
   }
 
+  function shownMeaning(term, lesson) {
+    const { pos, text, byLesson } = term;
+    return byLesson?.[lesson] || { pos, text };
+  }
+
+  function sameLessonMeaning(scope, id) {
+    const term = units[scope].terms.find(row => row.id === id);
+    const first = shownMeaning(term, 1);
+    const second = shownMeaning(term, 2);
+    return first.pos === second.pos && first.text === second.text;
+  }
+
   function buildQuestions(unit, items, seed) {
     const scope = unit.id.slice(0, -3);
     const { terms, related = {} } = units[scope];
-    const pool = terms.map(({ id, pos, text, byLesson }) => {
-      const shown = byLesson?.[unit.lesson] || { pos, text };
-      return { id, ...shown, label: shown.pos + " " + shown.text, keys: glossKeys(shown.text) };
-    });
-    const byId = new Map(pool.map(term => [term.id, term]));
+    const lessonPools = new Map();
+
+    function poolFor(lesson) {
+      if (!lessonPools.has(lesson)) {
+        const pool = terms.map(term => {
+          const shown = shownMeaning(term, lesson);
+          return { id: term.id, ...shown, label: shown.pos + " " + shown.text, keys: glossKeys(shown.text) };
+        });
+        lessonPools.set(lesson, { pool, byId: new Map(pool.map(term => [term.id, term])) });
+      }
+      return lessonPools.get(lesson);
+    }
+
     const random = randomFor(seed);
-    const usedGroups = new Set();
+    const usedLabels = new Set();
+    const usedWords = new Set();
     const usedTimes = new Map();
     const lastUsedAt = new Map();
     const questions = new Map();
     let previous = new Set();
     for (const [index, item] of items.entries()) {
-      const answer = byId.get(item.id);
-      const blocked = new Set([item.id, ...(related[item.id] || [])]);
+      const { pool, byId } = poolFor(item.meaningLesson || unit.lesson);
+      const wordId = item.wordId || item.id;
+      const answer = byId.get(wordId);
+      const blocked = new Set([wordId, ...(related[wordId] || [])]);
       const eligible = pool.filter(term => !blocked.has(term.id) && !sameGloss(answer, term));
       const ranked = shuffled(eligible, random).sort((a, b) =>
         (usedTimes.get(a.id) || 0) - (usedTimes.get(b.id) || 0) ||
         (lastUsedAt.get(a.id) ?? -1) - (lastUsedAt.get(b.id) ?? -1));
       const fresh = ranked.filter(term => !previous.has(term.id));
-      const distractors = pickThree(fresh, usedGroups, related) || pickThree(ranked, usedGroups, related);
+      const distractors = pickThree(fresh, usedLabels, usedWords, related) || pickThree(ranked, usedLabels, usedWords, related);
       if (!distractors) throw new Error("Insufficient distinct Chinese meanings for " + item.id);
       previous = new Set(distractors.map(term => term.id));
       for (const id of previous) {
@@ -85,5 +110,5 @@
     return questions;
   }
 
-  window.UnlockMeaningChoice = { buildQuestions };
+  window.UnlockMeaningChoice = { buildQuestions, sameLessonMeaning };
 })();

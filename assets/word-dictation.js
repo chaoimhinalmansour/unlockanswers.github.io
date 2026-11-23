@@ -211,13 +211,16 @@
     function paintMeaning(state, position, focus) {
       const heading = label("Choose the Chinese Meaning", "选择中文义");
       const spelling = outcome(state);
+      const lesson = current.meaningContextLesson;
+      const context = lesson ? '<p class="wd-note">' +
+        label("Lesson " + lesson + " usage", "第 " + lesson + " 节用法") + "</p>" : "";
       const options = current.meaningQuestion.options.map(option =>
         '<label class="wd-meaning-option"><input type="radio" name="wd-meaning" value="' + esc(option.id) +
         '" data-wd-meaning required' + (state.meaningDraft === option.id ? " checked" : "") +
         '><span lang="zh-CN"><b lang="en">' + esc(option.pos) + "</b> " + esc(option.text) + "</span></label>").join("");
       root.innerHTML = questionHeader(heading, position, focus, " wd-meaning-question") +
         '<p class="wd-feedback">' + label(englishOutcomes[spelling], outcomes[spelling]) + '</p></div>' +
-        '<p lang="en" class="wd-meaning-term">' + esc(current.word) + '</p>' +
+        '<p lang="en" class="wd-meaning-term">' + esc(current.word) + '</p>' + context +
         '<fieldset class="wd-meaning-choices" aria-label="中文释义选项">' + options + '</fieldset>' +
         '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' +
         label("Submit Meaning", "提交词义") + "</button></form>";

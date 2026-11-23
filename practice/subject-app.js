@@ -418,7 +418,10 @@
       draft: item => state.attempt.draft[item.id],
       save: (item, record) => saveAttempt({
         ...state.attempt,
-        ...(state.worksheet.homework ? { homeworkDictationSeed: state.worksheet.homework.seed } : {}),
+        ...(state.worksheet.homework ? {
+          homeworkDictationSeed: state.worksheet.homework.seed,
+          homeworkDictationLayout: state.worksheet.homework.layout
+        } : {}),
         sequence: state.attempt.sequence + 1,
         wordDictation: { ...state.attempt.wordDictation, [item.id]: record }
       }),
