@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>课堂反馈 | UNLOCK</title>
+  <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
+  <link rel="stylesheet" href="classroom-feedback.css?v=20261123-feedback-review">
+  <script defer src="../practice/students.js?v=20261120-portraits"></script>
+  <script defer src="../assets/session.js?v=20261123-teacher-feedback"></script>
+  <script defer src="classroom-feedback.js?v=20261123-feedback-review"></script>
+</head>
+<body>
+  <div id="feedback-page" hidden>
+    <header class="feedback-header">
+      <div class="feedback-header-inner">
+        <div class="feedback-brand"><strong>UNLOCK</strong><span>教师工作区</span></div>
+        <nav class="feedback-nav" aria-label="教师端导航">
+          <a href="../index.html">返回工作区</a>
+          <button type="button" id="feedback-sign-out">退出登录</button>
+        </nav>
+      </div>
+    </header>
+    <main class="feedback-main">
+      <h1>课堂反馈</h1>
+      <form id="feedback-form">
+        <fieldset class="feedback-session" aria-labelledby="feedback-session-title">
+          <legend id="feedback-session-title">课次信息</legend>
+          <div class="feedback-grid">
+            <label class="feedback-field">日期
+              <input id="feedback-date" type="date" required>
+            </label>
+            <label class="feedback-field">教学周
+              <input id="feedback-week" type="number" inputmode="numeric" min="1" step="1" required>
+            </label>
+            <label class="feedback-field">科目
+              <select id="feedback-subject" required>
+                <option value="">请选择科目</option>
+                <option>听力</option>
+                <option>口语</option>
+                <option>阅读</option>
+                <option>写作</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+        <section class="feedback-class" aria-labelledby="feedback-class-title">
+          <h2 id="feedback-class-title">学生反馈</h2>
+          <div class="feedback-roster">
+            <label class="feedback-field">从名单选择学生
+              <select id="feedback-roster">
+                <option value="">请选择学生</option>
+              </select>
+            </label>
+            <div class="feedback-roster-actions">
+              <button type="button" id="feedback-add" class="feedback-button" disabled>添加学生</button>
+              <p id="feedback-roster-count" class="feedback-roster-count" role="status">已添加 0 名学生</p>
+            </div>
+          </div>
+          <div id="feedback-removal" class="feedback-removal" hidden>
+            <p id="feedback-removal-message" role="status"></p>
+            <button type="button" id="feedback-undo" class="feedback-button">撤销移除</button>
+          </div>
+          <div id="feedback-students" class="feedback-students"></div>
+        </section>
+        <div class="feedback-actions">
+          <button type="submit" id="feedback-export" class="feedback-button feedback-primary" disabled>导出 PDF</button>
+          <p>在打印窗口选择「另存为 PDF」。</p>
+        </div>
+      </form>
+      <dialog id="feedback-review" class="feedback-review" aria-labelledby="feedback-review-title" aria-describedby="feedback-review-help">
+        <h2 id="feedback-review-title">导出前核对</h2>
+        <p id="feedback-review-help">以下栏目仍待评或未填写。核对后，可以按当前内容导出。</p>
+        <ul id="feedback-review-list" class="feedback-review-list"></ul>
+        <div class="feedback-review-actions">
+          <button type="button" id="feedback-review-back" class="feedback-button" autofocus>返回填写</button>
+          <button type="button" id="feedback-review-export" class="feedback-button feedback-primary">继续导出 PDF</button>
+        </div>
+      </dialog>
+    </main>
+  </div>
+  <article id="feedback-paper"></article>
+</body>
+</html>

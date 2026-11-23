@@ -28,6 +28,7 @@
     ],
     teacher: [
       { title: "教学与讲评", text: "按册、单元和科目查看答案与解析。", url: "practice/teaching.html" },
+      { title: "课堂反馈", text: "按课次记录学生表现并导出 PDF。", url: "feedback/index.html" },
       writing,
       { title: "课堂课件", text: "选好册次和课节后，直接打开课堂画面。", url: "courseware/index.html?view=classroom" },
       { title: "课件后台", text: "按册次和课节查看活动目录、课件及配套材料。", url: "courseware/index.html?view=backstage" }
