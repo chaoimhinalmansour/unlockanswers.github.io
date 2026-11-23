@@ -23,19 +23,19 @@
   const englishChecks = { correct: "Correct", incorrect: "Incorrect", case: "Capitalization error" };
   const empty = { plays: 0, draft: "", attempts: [] };
 
-  function makeItem(id, number, word, keys) {
-    const prepared = source[normalized(keys[0])];
+  function makeItem(id, number, word, keys, prepared = source[normalized(keys[0])]) {
     if (!prepared) throw new Error("Missing dictation audio or syllables for " + id);
     const spelling = prepared.spelling || word;
     const accepted = prepared.spelling ? [...new Set([prepared.spelling, ...keys.slice(1)])] : keys;
     return {
-      id, number, word: spelling, keys: accepted, audio: prepared.audio, parts: prepared.parts,
+      id, number, word: spelling, keys: accepted, audio: prepared.audio, file: prepared.file, parts: prepared.parts,
       ipa: prepared.ipa, locale: prepared.ipa ? "en-GB" : "en-US", revisedParts: prepared.revisedParts,
       original: { word, keys }
     };
   }
 
   function audioPath(item) {
+    if (item.file) return item.file;
     const directory = item.locale === "en-GB" ? "word-dictation-en-gb-v1" : "word-dictation-v1";
     return "assets/" + directory + "/" + item.audio + ".wav";
   }
@@ -138,7 +138,7 @@
       items.map(item => recordHTML(item, records?.[item.id], "", Boolean(ui))).join("") + "</div>";
   }
 
-  function mount(root, { items, read, draft = () => "", save, onProgress, onFinish }) {
+  function mount(root, { items, read, draft = () => "", save, onProgress, onFinish, positionTarget }) {
     const listeners = new AbortController();
     const options = { signal: listeners.signal };
     let current, audio, starting, playing, refreshedSelection;
@@ -193,6 +193,7 @@
       root.scrollTop = 0;
       current = items.find(item => !complete(item, read()));
       if (!current) {
+        if (positionTarget) positionTarget.hidden = true;
         root.innerHTML = reviewHTML(items, read());
         if (focus) root.querySelector("h2").focus({ preventScroll: true });
         return;
@@ -217,12 +218,18 @@
           'aria-describedby="wd-case" value="' + esc(state.draft) + '">' +
           '<p id="wd-case" class="wd-note">' +
           label("Use lowercase, uppercase, or an initial capital.", "可用全小写、全大写或仅首字母大写。") + '</p>';
+      const number = items.indexOf(current) + 1;
+      const position = label("Word " + number + " of " + items.length,
+        "第 " + number + " 题，共 " + items.length + " 题");
+      if (positionTarget) {
+        if (positionTarget.innerHTML !== position) positionTarget.innerHTML = position;
+        positionTarget.hidden = false;
+      }
       root.innerHTML = '<form class="wd-question' + (focus ? " unlock-card-enter" : "") +
         '" data-word-number="' + current.number +
-        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading"><p class="wd-position">' +
-        label("Word " + (items.indexOf(current) + 1) + " of " + items.length,
-          "第 " + (items.indexOf(current) + 1) + " 题，共 " + items.length + " 题") +
-        '</p><div class="wd-heading-line"><h2 id="wd-heading">' +
+        '" data-question="' + esc(current.id) + '" aria-labelledby="wd-heading">' +
+        (positionTarget ? "" : '<p class="wd-position">' + position + "</p>") +
+        '<div class="wd-heading-line"><h2 id="wd-heading">' +
         (syllableStep ? label("Arrange Syllables", "拼接音节") : attemptNo ? label("Try Again", "再拼写一次")
           : label("Listen and Spell", "听音拼写")) +
         '</h2><p class="wd-feedback" role="status">' + feedback + '</p></div>' +
@@ -340,6 +347,7 @@
     paint(false);
     return () => {
       listeners.abort();
+      if (positionTarget) positionTarget.hidden = true;
       audio?.pause();
       audio = null;
     };

@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Classroom | UNLOCK</title>
   <link rel="stylesheet" href="classroom.css?v=20261120-black-white">
-  <link rel="stylesheet" href="unit-dictation.css?v=20261120-work-package">
+  <link rel="stylesheet" href="unit-dictation.css?v=20261123-lesson-dictation">
   <link rel="stylesheet" href="../assets/word-dictation.css?v=20261120-black-white">
   <link rel="stylesheet" href="../assets/student-ui.css?v=20261120-black-white">
   <script defer src="../assets/student-ui.js?v=20261120-student-ui"></script>
@@ -15,20 +15,22 @@
   <script defer src="../practice/rules.js?v=20261117-5"></script>
   <script defer src="../assets/word-dictation-en-gb.js?v=20261123"></script>
   <script defer src="../assets/soft-motion.js?v=20261119-tcd-1"></script>
-  <script defer src="../assets/word-dictation.js?v=20261123-en-gb"></script>
+  <script defer src="../assets/word-dictation.js?v=20261123-lesson-dictation"></script>
   <script defer src="../practice/recordings.js?v=20261120-work-package"></script>
   <script defer src="../practice/report.js?v=20261123-en-gb"></script>
   <script defer src="../assets/vendor/fflate-0.8.2.min.js"></script>
   <script defer src="../assets/work-package.js?v=20261120-student-ui"></script>
   <script defer src="../practice/screen-pages.js?v=20261120-student-ui"></script>
   <script defer src="unit-dictation-data.js?v=20261119"></script>
+  <script defer src="lesson-dictation-data.js?v=20261123-lesson-dictation"></script>
   <script defer src="../practice/dictation-playback.js?v=20261123-en-gb"></script>
-  <script defer src="unit-dictation.js?v=20261123-en-gb"></script>
+  <script defer src="unit-dictation.js?v=20261123-lesson-dictation"></script>
 </head>
 <body id="practice-surface" class="student-ui student-classroom">
   <header class="top">
     <div class="top-inner">
       <span class="brand ui-brand">UNLOCK</span>
+      <span class="classroom-module ui-label"><span class="ui-en" lang="en">Classroom</span><small class="ui-zh" lang="zh-CN">单元课堂</small></span>
       <nav id="account" class="account ui-site-nav" aria-label="Platform navigation 平台导航" hidden>
         <span id="student-name"></span>
         <a class="ui-nav" href="../index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh" lang="zh-CN">返回工作区</small></span></a>
@@ -42,8 +44,14 @@
     </section>
     <div id="classwork" hidden>
       <section id="picker" class="card picker" aria-label="选择单元">
-        <p id="book-label" class="book-label"></p>
         <form id="unit-form">
+          <label class="dictation-select dictation-book" for="book-select">
+            <span class="ui-label"><span class="ui-en" lang="en">Book</span><small class="ui-zh" lang="zh-CN">册次</small></span>
+            <select id="book-select">
+              <option value="1">Book 1</option><option value="2">Book 2</option>
+              <option value="3">Book 3</option><option value="4">Book 4</option><option value="5">Book 5</option>
+            </select>
+          </label>
           <fieldset class="unit-select-field">
             <legend><span class="ui-label"><span class="ui-en" lang="en">Units</span><small class="ui-zh" lang="zh-CN">单元</small></span></legend>
             <div id="unit-options" class="unit-options"></div>
@@ -51,16 +59,41 @@
           <div class="unit-preview">
             <h2 id="unit-preview-title"></h2>
             <h3><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
-            <p id="unit-word-count" class="muted"></p>
+            <div class="dictation-filters">
+              <label class="dictation-select" for="track-select">
+                <span class="ui-label"><span class="ui-en" lang="en">Track</span><small class="ui-zh" lang="zh-CN">分册</small></span>
+                <select id="track-select">
+                  <option value="LS">LS 听说</option>
+                  <option value="RW">RW 读写</option>
+                </select>
+              </label>
+              <label class="dictation-select" for="lesson-select">
+                <span class="ui-label"><span class="ui-en" lang="en">Lesson</span><small class="ui-zh" lang="zh-CN">课次</small></span>
+                <select id="lesson-select">
+                  <option value="1">Lesson 1 第 1 节</option>
+                  <option value="2">Lesson 2 第 2 节</option>
+                </select>
+              </label>
+            </div>
+            <p id="unit-word-count" class="muted" role="status"></p>
             <button class="primary ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Start Dictation</span><small class="ui-zh" lang="zh-CN">开始听写</small></span></button>
+            <button id="previous-dictation" class="ui-nav" type="button" hidden><span class="ui-label"><span class="ui-en" lang="en">Previous Unit Dictation</span><small class="ui-zh" lang="zh-CN">查看旧版整单元听写</small></span></button>
           </div>
         </form>
         <p id="availability" class="notice" role="status"></p>
       </section>
       <section id="practice" class="card worksheet" hidden aria-labelledby="phase-title">
-        <button id="back-units" type="button" class="ui-nav ui-back back-units" aria-label="Back to the Classroom unit list 返回单元课堂目录"><span class="ui-label"><span class="ui-en" lang="en">Back</span><small class="ui-zh" lang="zh-CN">返回上一级</small></span></button>
-        <p id="set-title" class="eyebrow"></p>
-        <h2 id="phase-title" tabindex="-1"></h2>
+        <header class="classroom-worksheet-head">
+          <div class="classroom-worksheet-location">
+            <button id="back-units" type="button" class="ui-nav ui-back back-units" aria-label="Back to the Classroom unit list 返回单元课堂目录"><span class="ui-label"><span class="ui-en" lang="en">Back</span><small class="ui-zh" lang="zh-CN">返回上一级</small></span></button>
+            <p id="set-title" class="eyebrow"></p>
+            <p id="set-lesson" class="eyebrow"></p>
+          </div>
+          <div class="classroom-worksheet-title">
+            <h2 id="phase-title" tabindex="-1"></h2>
+            <p id="classroom-word-position" role="status" hidden></p>
+          </div>
+        </header>
         <p id="directions" class="muted directions"></p>
         <div id="classroom-report" hidden></div>
         <div id="classroom-word-panel" class="word-dictation" hidden></div>

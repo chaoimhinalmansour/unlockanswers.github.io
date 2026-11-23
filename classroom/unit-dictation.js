@@ -12,14 +12,16 @@
   const $ = id => document.getElementById(id);
   const { setLabel, topicTranslation } = window.UnlockStudentUI;
   const copy = (id, english, chinese) => setLabel($(id), english, chinese);
-  const data = window.UNLOCK_CLASSROOM_UNITS;
+  const data = window.UNLOCK_LESSON_DICTATION;
+  const previousUnits = window.UNLOCK_CLASSROOM_UNITS.books;
   const playback = window.UnlockDictation;
   const words = window.UnlockWordDictation;
   const intro = document.querySelector(".intro");
   const { judge } = window.UnlockRules;
   const download = window.UnlockWorkPackage.downloadControl("primary");
-  const books = { L1: 2, L2: 3 };
-  const unitSession = "unlock.classroom.unit.v3:" + encodeURIComponent(storageName(student));
+  const assignedBooks = { L1: 2, L2: 3 };
+  const selectionSession = "unlock.classroom.lesson-selection.v1:" + encodeURIComponent(storageName(student));
+  const trackNames = { LS: "听说", RW: "读写" };
   const drafts = new Map();
   const maxAnswerLength = 160;
   let current = null;
@@ -50,7 +52,10 @@
 
   function attemptKey(unit) {
     const name = [storageName(student), student.level, student.adminClass].map(encodeURIComponent).join(":");
-    return ["unlock.classroom.whole-dictation.v2", name, books[student.level], unit.number, unit.revision].join(":");
+    const scope = [name, unit.book, unit.number];
+    return (unit.track
+      ? ["unlock.classroom.lesson-dictation.v1", ...scope, unit.track, unit.lesson, unit.revision]
+      : ["unlock.classroom.whole-dictation.v2", ...scope, unit.revision]).join(":");
   }
 
   function answers(value, count) {
@@ -146,7 +151,9 @@
     updatePlayback();
     $("practice").hidden = true;
     $("picker").hidden = false;
-    remember(unitSession, "");
+    const url = new URL(location.href);
+    for (const key of ["book", "unit", "track", "lesson", "previous"]) url.searchParams.delete(key);
+    history.replaceState(null, "", url);
     updateUnitPreview();
   }
 
@@ -171,54 +178,102 @@
     return $("unit-options").querySelector('input[name="unit"]:checked');
   }
 
+  function selectedBook() {
+    return Number($("book-select").value);
+  }
+
   function selectedUnitData() {
-    const number = Number(selectedUnit()?.value);
-    return data.books[books[student.level]]?.units.find(unit => unit.number === number);
+    return data.books[selectedBook()]?.find(unit => unit.number === Number(selectedUnit()?.value));
+  }
+
+  function assessment(unit, track, lesson, book) {
+    const set = unit?.sets.find(item => item.track === track && item.lesson === lesson);
+    return set ? { ...set, book, number: unit.number, topic: unit.topic } : null;
+  }
+
+  function currentSelection() {
+    return assessment(selectedUnitData(), $("track-select").value, Number($("lesson-select").value), selectedBook());
+  }
+
+  function previousSelection(book, number) {
+    const unit = previousUnits[book]?.units.find(item => item.number === number);
+    if (!unit) return null;
+    const candidate = { ...unit, book };
+    const attempt = loadAttempt(attemptKey(candidate), unit.items.length);
+    return attempt.sequence ? candidate : null;
+  }
+
+  function loadUnits(book, preferred) {
+    const units = data.books[book];
+    const initial = units.find(unit => unit.number === preferred) || units[0];
+    $("unit-options").replaceChildren(...units.map(unit => unitChoice(unit, initial.number)));
+  }
+
+  function selectionFromUrl() {
+    const params = new URLSearchParams(location.search);
+    const book = Number(params.get("book"));
+    const number = Number(params.get("unit"));
+    const track = params.get("track");
+    const lesson = Number(params.get("lesson"));
+    const unit = data.books[book]?.find(item => item.number === number);
+    const previous = params.get("previous") === "1";
+    return {
+      book, number, track, lesson, hasSelection: ["book", "unit", "track", "lesson", "previous"].some(k => params.has(k)),
+      open: previous ? previousSelection(book, number) : assessment(unit, track, lesson, book)
+    };
   }
 
   function updateUnitPreview() {
-    const unit = selectedUnitData();
+    const unit = currentSelection();
+    const action = $("unit-form").querySelector('button[type="submit"]');
+    action.disabled = !unit;
     if (!unit) return;
     copy("unit-preview-title", unitLabel(unit), topicTranslation(unit.topic));
     const count = unit.items.length;
     copy("unit-word-count", count + " words and phrases", "共 " + count + " 个单词和短语");
     const attempt = loadAttempt(attemptKey(unit), count);
-    const completed = attempt.second || unit.items.every((_, i) => words.outcome(attempt.wordDictation?.[String(i + 1)]));
-    const action = $("unit-form").querySelector("button");
+    const completed = unit.items.every(item => words.complete(item, attempt.wordDictation));
     if (completed) setLabel(action, "View Report", "查看结果");
     else if (attempt.sequence) setLabel(action, "Resume Dictation", "继续听写");
     else setLabel(action, "Start Dictation", "开始听写");
+    $("previous-dictation").hidden = !previousSelection(unit.book, unit.number);
+    remember(selectionSession, JSON.stringify([unit.book, unit.number, unit.track, unit.lesson]));
   }
 
   function openClassroom() {
-    const previousName = session("unlock.classroom.student.v1");
-    const sameStudent = previousName && [student.name, student.storageName].includes(previousName);
-    const historicUnit = sameStudent ? session("unlock.classroom.unit.v2") : null;
-    const rememberedUnit = Number(session(unitSession) ?? historicUnit);
-    showPicker();
+    const deepLink = selectionFromUrl();
+    let preference = [];
+    try {
+      const remembered = JSON.parse(session(selectionSession) || "[]");
+      if (Array.isArray(remembered)) preference = remembered;
+    } catch {}
+    const [lastBook, lastUnit, lastTrack, lastLesson] = preference;
+    const book = [deepLink.book, lastBook, assignedBooks[student.level], 1]
+      .find(number => Number.isInteger(number) && Object.hasOwn(data.books, number));
+    $("student-name").textContent = student.name;
+    $("book-select").value = String(book);
+    $("track-select").value = Object.hasOwn(trackNames, deepLink.track) ? deepLink.track
+      : Object.hasOwn(trackNames, lastTrack) ? lastTrack : "LS";
+    $("lesson-select").value = [1, 2].includes(deepLink.lesson) ? String(deepLink.lesson)
+      : [1, 2].includes(lastLesson) ? String(lastLesson) : "1";
+    loadUnits(book, deepLink.number || lastUnit);
     $("classwork").hidden = false;
     $("account").hidden = false;
-    $("availability").textContent = "";
-    $("student-name").textContent = student.name;
-    const book = books[student.level];
-    const units = data.books[book]?.units || [];
-    $("book-label").textContent = book ? "Book " + book : student.level;
-    $("unit-form").hidden = !units.length;
-    if (!units.length) {
-      copy("availability", "No pre-class dictation for this level yet.", "当前级别暂无可用的课前听写。");
-      return;
+    if (deepLink.open) openUnit(deepLink.open, false);
+    else {
+      if (deepLink.hasSelection) {
+        copy("availability", "Choose a book, unit, track and lesson to start.",
+          "请选择册次、单元、分册和课次后开始听写。");
+      }
+      updateUnitPreview();
     }
-    const unit = units.find(item => item.number === rememberedUnit);
-    const selected = unit?.number || units[0].number;
-    $("unit-options").replaceChildren(...units.map(item => unitChoice(item, selected)));
-    updateUnitPreview();
-    if (unit) openUnit(unit);
   }
 
-  function openUnit(unit) {
-    const book = books[student.level];
+  function openUnit(unit, updateUrl = true) {
     const key = attemptKey(unit);
-    const wordItems = unit.items.map((item, index) => words.makeItem(String(index + 1), index + 1, item.word, item.keys));
+    const wordItems = unit.items.map((item, index) => unit.track
+      ? words.makeItem(item.id, index + 1, item.word, item.keys, data.pronunciations[item.pronunciation])
+      : words.makeItem(String(index + 1), index + 1, item.word, item.keys));
     const audio = Object.fromEntries(wordItems.map(item => [item.id, {
       file: words.audioPath(item), label: "第 " + item.number + " 题单词音频"
     }]));
@@ -226,11 +281,30 @@
       key, unit, showAll: false, attempt: loadAttempt(key, unit.items.length),
       wordItems, worksheet: { key, dictation: { file: unit.file, count: unit.items.length }, unit: { audio } }
     };
-    remember(unitSession, String(unit.number));
+    if (updateUrl) {
+      const url = new URL(location.href);
+      url.searchParams.set("book", String(unit.book));
+      url.searchParams.set("unit", String(unit.number));
+      if (unit.track) {
+        url.searchParams.set("track", unit.track);
+        url.searchParams.set("lesson", String(unit.lesson));
+        url.searchParams.delete("previous");
+      } else {
+        url.searchParams.delete("track");
+        url.searchParams.delete("lesson");
+        url.searchParams.set("previous", "1");
+      }
+      history.replaceState(null, "", url);
+    }
     intro.hidden = true;
     $("picker").hidden = true;
     $("practice").hidden = false;
-    $("set-title").textContent = "Book " + book + " " + unitLabel(unit);
+    $("set-title").textContent = "Book " + unit.book + " " + unitLabel(unit);
+    if (unit.track) {
+      copy("set-lesson", unit.track + " Lesson " + unit.lesson, trackNames[unit.track] + "第 " + unit.lesson + " 节");
+    } else {
+      copy("set-lesson", "Previous Unit Dictation", "旧版整单元听写");
+    }
     $("save-status").textContent = "";
     render();
     const play = $("classroom-word-panel").querySelector("[data-wd-play]");
@@ -308,11 +382,13 @@
     const { key, unit, wordItems, attempt, worksheet: playbackSheet } = current;
     const legacy = Boolean(attempt.first);
     if (legacy ? !attempt.second : !wordItems.every(item => words.complete(item, attempt.wordDictation))) return;
-    const title = $("set-title").textContent + " 课前听写";
+    const title = $("set-title").textContent + (unit.track ? " " + unit.track + " Lesson " + unit.lesson : "") + " 课前听写";
     const learner = student;
-    const book = books[learner.level];
-    const worksheet = { id: "B" + book + "U" + String(unit.number).padStart(2, "0"),
-      revision: unit.revision, book, unit: unit.number, code: "CLASSROOM_DICTATION" };
+    const worksheet = {
+      id: unit.id || "B" + unit.book + "U" + String(unit.number).padStart(2, "0"),
+      revision: unit.revision, book: unit.book, unit: unit.number, code: "CLASSROOM_DICTATION"
+    };
+    if (unit.track) Object.assign(worksheet, { track: unit.track, lesson: unit.lesson });
     download.show($("classroom-report"), key + ":" + attempt.sequence, () => {
       if (!legacy) {
         return window.UnlockReport.prepare({
@@ -354,6 +430,7 @@
     const { wordItems } = current;
     unmountWordPanel = words.mount($("classroom-word-panel"), {
       items: wordItems, read: () => current.attempt.wordDictation,
+      positionTarget: $("classroom-word-position"),
       draft: item => current.attempt.draft[item.number - 1],
       save: (item, record) => {
         const wordDictation = { ...current.attempt.wordDictation, [item.id]: record };
@@ -461,10 +538,20 @@
     copy("save-status", "This dictation was updated in another window.", "这份听写已在另一个窗口更新。");
   });
 
-  $("unit-options").addEventListener("change", updateUnitPreview);
+  $("book-select").addEventListener("change", () => {
+    loadUnits(selectedBook(), Number(selectedUnit()?.value));
+    updateUnitPreview();
+  });
+  $("unit-form").addEventListener("change", event => {
+    if (event.target !== $("book-select")) updateUnitPreview();
+  });
   $("unit-form").addEventListener("submit", event => {
     event.preventDefault();
-    const unit = selectedUnitData();
+    const unit = currentSelection();
+    if (unit) openUnit(unit);
+  });
+  $("previous-dictation").addEventListener("click", () => {
+    const unit = previousSelection(selectedBook(), Number(selectedUnit()?.value));
     if (unit) openUnit(unit);
   });
   $("back-units").addEventListener("click", () => {

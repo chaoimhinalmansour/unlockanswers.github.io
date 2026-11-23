@@ -44,7 +44,49 @@
   }
   .unit-choice input:active + .unit-choice-body { transform: translateY(1px) scale(.985); }
 }
-.back-units { margin-bottom: 12px; }
+.student-classroom:has(#practice:not([hidden])) :is(.top-inner, main) { max-width: 1320px; }
+.student-classroom:has(#practice:not([hidden])) .top-inner {
+  min-height: 53px;
+  padding-block: 0;
+  column-gap: 12px;
+}
+.student-classroom:has(#practice:not([hidden])) main { padding: 10px 42px 32px; }
+.top-inner .classroom-module { font-size: .84rem; font-weight: 700; }
+.student-classroom:not(:has(#practice:not([hidden]))) .classroom-module { display: none; }
+#practice.worksheet { padding-block: 0; }
+.classroom-worksheet-head { display: grid; gap: 6px; }
+.classroom-worksheet-location {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0 14px;
+}
+.classroom-worksheet-location .eyebrow { margin: 0; }
+.classroom-worksheet-title {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+}
+.classroom-worksheet-title h2 { font-size: clamp(23px, 3vw, 32px); line-height: 1.18; }
+#classroom-word-position {
+  margin: 0 0 0 auto;
+  font-size: .875rem;
+  font-variant-numeric: tabular-nums;
+  text-align: end;
+}
+#classroom-word-position .ui-en { font-weight: 700; }
+#classroom-word-panel .wd-question {
+  width: 100%;
+  padding: 24px clamp(12px, 3vw, 32px);
+  border: 1px solid var(--unlock-line);
+}
+#classroom-word-panel .wd-heading-line h2 { font-size: 1.125rem; line-height: 1.25; }
+@media (max-width: 640px) {
+  .student-classroom:has(#practice:not([hidden])) .top-inner { padding-block: 8px; }
+  .student-classroom:has(#practice:not([hidden])) main { padding-inline: 16px; }
+}
 .directions { margin-top: 8px; }
 .attempt-toolbar {
   position: sticky;
@@ -129,3 +171,32 @@
 #classroom-report { display:flex; align-items:center; flex-wrap:wrap; gap:6px 12px; }
 #classroom-report[hidden] { display:none; }
 .package-status { color:var(--unlock-secondary); font-size:13px; }
+
+.dictation-select {
+  display: inline-grid;
+  gap: 5px;
+  min-width: 0;
+  font-weight: 600;
+}
+.dictation-select select {
+  min-height: 42px;
+  max-width: 100%;
+  padding: 7px 10px;
+  border: 1px solid currentColor;
+  border-radius: 7px;
+  background: var(--surface, #fff);
+  color: inherit;
+  font: inherit;
+}
+.dictation-book {
+  display: inline-flex;
+  grid-column: 1 / -1;
+  align-items: center;
+  justify-self: start;
+  gap: 12px;
+  margin: 0;
+}
+.dictation-book select { min-width: 118px; }
+.dictation-filters { display: flex; flex-wrap: wrap; gap: 12px 18px; }
+#previous-dictation:not([hidden]) { display: block; margin-top: 12px; }
+#set-lesson { margin: 0; }
