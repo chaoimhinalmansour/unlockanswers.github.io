@@ -221,14 +221,21 @@
     worksheet.dictationItems = homework?.questions || worksheet.originalDictationItems;
     const sections = [worksheet.sheet];
     if (homework) sections.push({ name: "词汇听写和中文义", questions: homework.questions });
-    const numbered = sections.flatMap(section => section.questions);
+    const numbered = [...(homework?.questions || []), ...worksheet.sheet.questions];
     worksheet.byNumber = new Map(numbered.map(question => [question.number, question]));
     worksheet.sections = sections;
     worksheet.questions = numbered;
   }
 
+  function homeworkDictationPending() {
+    const { worksheet, attempt } = state;
+    return Boolean(worksheet?.homework && attempt && !attempt.first &&
+      worksheet.homework.questions.some(item => !words.complete(item, attempt.wordDictation)));
+  }
+
   function questionsInView() {
     const { attempt, worksheet, all } = state;
+    if (homeworkDictationPending()) return worksheet.homework.questions;
     if (!attempt.first || attempt.second || all) return worksheet.questions;
     return worksheet.questions.filter(q => isRequired(q) || selfCheckQuestion(q));
   }
@@ -240,7 +247,8 @@
   function pickFocus(number) {
     const visible = questionsInView();
     const preferred = visible.find(q => q.number === number);
-    state.focus = (preferred || visible[0])?.number ?? null;
+    const next = visible.find(q => !q.homeworkDictation) || visible[0];
+    state.focus = (preferred || next)?.number ?? null;
   }
 
   function hasResponse(question) {
@@ -378,7 +386,8 @@
     const worksheet = working ? state.worksheet : null;
     const current = working ? focusedQuestion() : null;
     const groupShown = isDictation(worksheet, current);
-    dock.hidden = !working;
+    const doingHomeworkDictation = working && homeworkDictationPending();
+    dock.hidden = !working || doingHomeworkDictation;
     const legacyDictation = !usesWordDictation() && worksheet?.dictation ? worksheet : null;
     const firstDictation = Boolean(legacyDictation && !state.attempt.first);
     const replayQuestions = legacyDictation && state.attempt.first && !state.attempt.second
@@ -388,7 +397,7 @@
       }) : [];
     const playing = dictation.update(legacyDictation, Boolean(legacyDictation && groupShown), firstDictation, replayQuestions);
     listening.update(worksheet, groupShown || playing ? null : current, state.student);
-    if (!working) {
+    if (!working || doingHomeworkDictation) {
       operations.innerHTML = "";
       return;
     }
@@ -427,7 +436,9 @@
       }),
       onProgress: updateProgress,
       onFinish: (feedback, english) => {
-        const next = questions.find(q => q.number > items.at(-1).number && !isDictation(state.worksheet, q));
+        const next = state.worksheet.homework
+          ? questionsInView().find(q => !isDictation(state.worksheet, q))
+          : questions.find(q => q.number > items.at(-1).number && !isDictation(state.worksheet, q));
         if (!next) return false;
         state.notice = label(english, feedback);
         goToQuestion(next.number, true);
@@ -600,7 +611,10 @@
   function goToQuestion(number, keepNotice = false) {
     const question = state.worksheet.byNumber.get(number);
     if (!question) return;
-    if (!questionsInView().includes(question)) state.all = true;
+    if (!questionsInView().includes(question)) {
+      if (!state.attempt.first) return;
+      state.all = true;
+    }
     if (!keepNotice) state.notice = "";
     if (focusedQuestion()?.picture !== question.picture) state.largePicture = false;
     state.focus = number;
