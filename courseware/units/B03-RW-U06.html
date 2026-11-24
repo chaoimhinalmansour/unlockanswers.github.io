@@ -73,7 +73,7 @@ const textbookSix = {
  relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01"
 };
 const textbookSixStyles = {
- [textbookSix.analysis]:"unit6-analysis",
+ [textbookSix.analysis]:"unit6-analysis unit6-tablet-example",
  [textbookSix.example]:"unit6-tablet-example",
  [textbookSix.remember]:"unit6-inventions",
  [textbookSix.apply]:"unit6-t-chart",
@@ -117,12 +117,9 @@ const textbookSixCss = [
     ["lightweight\nportable\nfast start-up","no physical keyboard\ntoo small for working on multiple documents\nuncomfortable to use for long periods of time"]
   ]}
  ]}];
+ analysis.flow.pages[0].blocks.push(...example.flow.pages[0].blocks);
  const lesson=V.lessonFlow.lessons.find(item=>item.steps.some(step=>step.id===textbookSix.analysis));
- const first=lesson.steps.findIndex(step=>step.id===textbookSix.example);
- const second=lesson.steps.findIndex(step=>step.id===textbookSix.analysis);
- if(first>=0&&first<second) {
-  [lesson.steps[first],lesson.steps[second]]=[lesson.steps[second],lesson.steps[first]];
- }
+ lesson.steps=lesson.steps.filter(step=>step.id!==textbookSix.example);
  const cell=(text,header=false,colspan=1)=>({text,header,colspan,rowspan:1});
  const remember=classroom.byId.get(textbookSix.remember);
  remember.stagePhase="REMEMBER";
