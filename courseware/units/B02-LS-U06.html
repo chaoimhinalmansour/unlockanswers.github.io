@@ -452,10 +452,7 @@ function screen(c,p,revision){
   '<button type="button" data-vocabulary-link="'+esc(id)+'">'+(kind==="glossary"?"词汇":"词框")+'</button>').join("")+
   (history.at(-1)?.vocabulary===c.id?'<button type="button" data-vocabulary-return>返回本题</button>':"");
  const photoPage=isOpening?c.flow.pages[p].photo?.sourcePage:null;
- const source=c.id===businessSpeakingCases.pairwork?
-  originalButton(c,143,"题目原页<br><span class='business-original-page-number'>第 143 页</span>")+
-  originalButton(c,190,"任务原页<br><span class='business-original-page-number'>第 190 页</span>"):
-  c.id===businessSpeakingCases.discuss?
+ const source=c.id===businessSpeakingCases.discuss?
   c.pages.map(page=>originalButton(c,page,"题目原页<br><span class='business-original-page-number'>第 "+page+" 页</span>")).join(""):
   c.pages.length?originalButton(c,printedReading??c.pages[0],c.flow?"教材原页":"题目原页")+
   (readingPage&&!c.flow?originalButton(c,readingPage.sourcePage,"材料原页"):"")+
