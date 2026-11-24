@@ -128,6 +128,7 @@ const textbookSix = {
  apply:"B03-RW-U06-question:b5100",
  chartWriting:"B03-RW-U06-question:b5114",
  introduction:"B03-RW-U06-classroom:teaching:B03-RW-p142-01",
+ writingPlan:"B03-RW-U06-question:b5122",
  analyze:"B03-RW-U06-question:b5101",
  relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01",
  nonDefining:"B03-RW-U06-classroom:teaching:B03-RW-p140-01",
@@ -144,6 +145,7 @@ const textbookSixStyles = {
  [textbookSix.apply]:"unit6-t-chart",
  [textbookSix.chartWriting]:"unit6-chart-writing",
  [textbookSix.introduction]:"unit6-introduction",
+ [textbookSix.writingPlan]:"unit6-writing-plan",
  [textbookSix.relative]:"unit6-relative",
  [textbookSix.nonDefining]:"unit6-relative",
  [textbookSix.nonDefiningExercise]:"unit6-non-defining-exercise",
@@ -189,6 +191,11 @@ const textbookSixCss = [
  ".unit6-introduction .stage-native-lesson em,.unit6-introduction .stage-examples{color:#1d4770;font-style:italic}",
  ".unit6-introduction .stage-native-columns:nth-last-child(3){font-size:17px;line-height:1.25}",
  ".unit6-introduction .stage-native-columns:nth-last-child(2){margin-top:-4px}",
+ ".unit6-writing-plan .course-copy{display:grid;grid-template-columns:11.4em minmax(0,1fr);align-items:baseline;column-gap:12px;margin:0 0 16px 1.95em}",
+ ".unit6-writing-plan .course-copy + .course-copy{margin-top:0}",
+ ".unit6-writing-plan .course-gap{position:relative;min-width:0;text-align:left;padding:0 2px 4px;white-space:pre-line}",
+ "body:not([data-course-revealed]) .unit6-writing-plan .course-gap{border-bottom-color:transparent}",
+ "body:not([data-course-revealed]) .unit6-writing-plan .course-gap::before{content:'';position:absolute;inset-block-start:1.07em;inset-inline-start:0;width:min(100%,16em);border-block-start:1px solid #657185}",
  ".unit6-relative-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,265px);gap:25px;align-items:center;width:100%}",
  ".unit6-relative-layout .stage-native-lesson{width:100%;min-width:0}",
  ".unit6-relative .stage-examples p,.unit6-classmate-example .course-copy em,.unit6-dependent-prepositions .stage-examples p{color:#1d4770;font-style:italic}",
@@ -264,6 +271,16 @@ const textbookSixCss = [
   ...item,answer:{mode:"line",answer:modelSentences[index].join("\n")}
  }))];
  classroom.byId.get(textbookSix.analyze).stagePhase="ANALYZE";
+ const writingPlan=classroom.byId.get(textbookSix.writingPlan);
+ writingPlan.instruction=writingPlan.instruction.replace("essay's","essay’s");
+ const introductionNotes=[
+  ["Hook: ____","The first mobile phones appeared in 1973. They were the size of a brick, and they weren’t very smart."],
+  ["Background information: ____","history\nstatistics"],
+  ["Thesis statement: ____","In many ways, smartphones have made our lives better and easier, but they have also had some negative effects."]
+ ];
+ writingPlan.coursePages=[introductionNotes.map(([text,answer])=>({
+  kind:"text",text,answer:{mode:"blanks",values:[answer]}
+ }))];
  const relative=classroom.byId.get(textbookSix.relative);
  const nonDefining=classroom.byId.get(textbookSix.nonDefining);
  nonDefining.flow.pages[0].blocks[1]={kind:"examples",lines:[
