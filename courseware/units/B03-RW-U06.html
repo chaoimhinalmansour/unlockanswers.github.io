@@ -71,7 +71,12 @@ const textbookSix = {
  apply:"B03-RW-U06-question:b5100",
  analyze:"B03-RW-U06-question:b5101",
  relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01",
- relativeExercise:"B03-RW-U06-question:b5104"
+ nonDefining:"B03-RW-U06-classroom:teaching:B03-RW-p140-01",
+ nonDefiningExercise:"B03-RW-U06-question:b5109",
+ dependentPrepositions:"B03-RW-U06-classroom:teaching:B03-RW-p140-02",
+ relativeExercise:"B03-RW-U06-question:b5104",
+ sentenceJoin:"B03-RW-U06-question:b5105",
+ classmateExample:"B03-RW-U06-question:b5106"
 };
 const textbookSixStyles = {
  [textbookSix.analysis]:"unit6-analysis unit6-tablet-example",
@@ -79,7 +84,12 @@ const textbookSixStyles = {
  [textbookSix.remember]:"unit6-inventions",
  [textbookSix.apply]:"unit6-t-chart",
  [textbookSix.relative]:"unit6-relative",
- [textbookSix.relativeExercise]:"unit6-relative-exercise"
+ [textbookSix.nonDefining]:"unit6-relative",
+ [textbookSix.nonDefiningExercise]:"unit6-non-defining-exercise",
+ [textbookSix.dependentPrepositions]:"unit6-dependent-prepositions",
+ [textbookSix.relativeExercise]:"unit6-relative-exercise",
+ [textbookSix.sentenceJoin]:"unit6-sentence-join",
+ [textbookSix.classmateExample]:"unit6-classmate-example"
 };
 const textbookWritingTask = '<div class="unit6-writing-task">'+
  '<p>At the end of this unit, you will write an explanatory essay. Look at this unit’s writing task below.</p>'+
@@ -104,9 +114,15 @@ const textbookSixCss = [
  ".unit6-t-chart .course-table td:empty{height:248px}",
  ".unit6-relative-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,265px);gap:25px;align-items:center;width:100%}",
  ".unit6-relative-layout .stage-native-lesson{width:100%;min-width:0}",
- ".unit6-relative .stage-examples p{color:#1d4770;font-style:italic}",
- ".unit6-relative .stage-examples strong{color:inherit}",
+ ".unit6-relative .stage-examples p,.unit6-classmate-example .course-copy em,.unit6-dependent-prepositions .stage-examples p{color:#1d4770;font-style:italic}",
+ ".unit6-relative .stage-examples strong,.unit6-classmate-example .course-copy em strong{color:inherit}",
+ ".unit6-classmate-example .course-exercise-copy > .course-copy{margin-inline-start:1.95em}",
+ ".unit6-classmate-example .course-exercise-copy > .course-copy + .course-copy{margin-top:0}",
+ ".unit6-classmate-example .course-copy u{display:inline-block;min-width:5em;border-bottom:1pt solid #657185;text-decoration:none}",
  ".unit6-relative-exercise .course-item:first-child [data-course-underline]{text-decoration:underline;text-underline-offset:.12em}",
+ ".unit6-non-defining-exercise .course-item strong,.unit6-dependent-prepositions .stage-examples strong{color:var(--course-table-purple,#7b3d88);font-weight:700}",
+ ".unit6-sentence-join .course-answer-value{display:block;margin:5px 0 0;padding-bottom:3px}",
+ ".unit6-sentence-join .course-item p:has(> .course-answer-value)::after{content:'';display:block;border-bottom:1pt solid #657185}",
  ".unit6-seeds{box-sizing:border-box;position:relative;width:100%;aspect-ratio:1;border:2px solid #21774c;border-radius:50%;text-align:center;padding-top:14%;font-size:20px;line-height:1.25}",
  ".unit6-seed-selection{box-sizing:border-box;position:absolute;display:grid;place-items:center;right:10%;bottom:9%;width:60%;aspect-ratio:1;border:2px solid #21774c;border-radius:50%;padding:15px;font-size:19px;line-height:1.25}"
 ].join("");
@@ -143,6 +159,10 @@ const textbookSixCss = [
  ]}]];
  classroom.byId.get(textbookSix.analyze).stagePhase="ANALYZE";
  const relative=classroom.byId.get(textbookSix.relative);
+ const nonDefining=classroom.byId.get(textbookSix.nonDefining);
+ nonDefining.flow.pages[0].blocks[1]={kind:"examples",lines:[
+  "Eagles’ eyes contain a yellow oil. <strong>Can you tell me a little bit more about the oil?</strong> The oil filters out harmful radiation. → Eagles’ eyes contain a yellow oil, which filters out harmful radiation."
+ ]};
  const relativeExercise=classroom.byId.get(textbookSix.relativeExercise);
  const workedExample=relativeExercise.coursePages[0][0];
  const firstUnderline=coursePublishedAnswers[relativeExercise.id].rows[workedExample.id].parts[0];
@@ -151,6 +171,41 @@ const textbookSixCss = [
  relativeExercise.coursePages[0]=relativeExercise.coursePages[0].map(item=>({
   ...item,prompt:item.prompt.replace(/(Which [^?]+[?])$/,"<em>$1</em>")
  }));
+ const joinExercise=classroom.byId.get(textbookSix.sentenceJoin);
+ const joinAnswers=new Map(joinExercise.courseAnswer.text.split(/\n(?=[0-9]+  )/)
+  .map(entry=>entry.replace(/\s+/g," ").match(/^([0-9]+) (.+)$/))
+  .filter(Boolean).map(([,label,answer])=>[label,answer]));
+ const joinItems=joinExercise.coursePages[0];
+ if(joinItems.every(item=>joinAnswers.has(item.label))){
+  coursePublishedAnswers[joinExercise.id]={rewriteKey:"",rows:Object.fromEntries(joinItems.map(item=>
+   [item.id,{mode:"line",answer:joinAnswers.get(item.label)}]))};
+  joinExercise.courseRevealLabel="答案";
+ }
+ const classmateExample=classroom.byId.get(textbookSix.classmateExample);
+ const [,modelSentence,sentenceStarter]=classmateExample.coursePages[0];
+ modelSentence.text="<em>"+modelSentence.text.replace("who always arrives late.","<strong>who always arrives late.</strong>")+"</em>";
+ sentenceStarter.text=sentenceStarter.text.replace(/____$/,"<u></u>.");
+ const nonDefiningExercise=classroom.byId.get(textbookSix.nonDefiningExercise);
+ const nounPhrases=["deep learning","The adhesive produced by the mussels","a new kind of window","Several celebrities"];
+ const relativeClauseAnswers=coursePublishedAnswers[nonDefiningExercise.id].rows;
+ nonDefiningExercise.coursePages[0]=nonDefiningExercise.coursePages[0].map((item,index)=>{
+  const answer=relativeClauseAnswers[item.id];
+  const clauseStart=answer.parts[0].start;
+  const prefix=item.prompt.slice(0,clauseStart).replace(nounPhrases[index],phrase=>"<strong>"+phrase+"</strong>");
+  const offset=prefix.length-clauseStart;
+  answer.parts=answer.parts.map(part=>({...part,start:part.start+offset,end:part.end+offset}));
+  return {...item,prompt:prefix+item.prompt.slice(clauseStart)};
+ });
+ const dependentPrepositions=classroom.byId.get(textbookSix.dependentPrepositions);
+ dependentPrepositions.flow.pages[0].blocks=[
+  {kind:"paragraph",text:"Some nouns appear with specific prepositions. These are called <em>dependent prepositions</em>."},
+  {kind:"columns",ratios:[0.28485,0.71515],cells:["increase in<br>difference between","impact on<br>reason for"]},
+  {kind:"paragraph",text:"At the start of a sentence, writers often use nouns with dependent prepositions to introduce the advantages and disadvantages of a topic."},
+  {kind:"examples",lines:[
+   "An <strong>advantage of</strong> the adhesive made by mussels is that it can be used underwater.",
+   "One of the main <strong>problems with</strong> deepfake technology is that it can be misused."
+  ]}
+ ];
  relative.flow.pages=[{blocks:[
   {kind:"paragraph",text:"Use <em>defining relative clauses</em> to identify or describe nouns without starting a new sentence. A defining relative clause gives information about the noun that is necessary to understand the sentence. It answers the question: <em>Which X?</em> Defining relative clauses begin with <em>that</em> or <em>which</em> for things. Use <em>that</em> or <em>who</em> for people."},
   {kind:"paragraph",text:"Look at these sentences from Reading 1 on page 129."},

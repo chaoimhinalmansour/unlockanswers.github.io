@@ -789,11 +789,14 @@ function coursePanels(c,p) {
  };
  const referenceAnswers=referenceIsInline(c)&&/data-course-(?:answer-target|correct-choice)/.test(courseTaskHTML(c,p));
   if (coursePageBlocks(c,p).some(courseHasPlacement)||referenceAnswers) {
-  buttons.push('<button type="button" data-course-reveal aria-pressed="false">核对</button>');
+  const revealLabel=esc(c.courseRevealLabel??"核对");
+  buttons.push('<button type="button" data-course-reveal aria-pressed="false">'+revealLabel+'</button>');
  }
  if (c.courseMaterials.length) control("material","材料",courseMaterialsHTML(c));
  const answer=coursePublishedAnswers?.[c.id]?.rewriteKey??c.courseAnswer?.text;
- if (answer) control("answer","答案",courseAnswerHTML(answer));
+ const answerPanel=answer?'<section class="course-inline-answer" id="course-inline-answer" hidden aria-label="答案" tabindex="0">'+
+  courseAnswerHTML(answer)+'</section>':"";
+ if(answerPanel)buttons.push('<button type="button" data-course-answer-toggle aria-controls="course-inline-answer" aria-expanded="false">答案</button>');
  buttons.push(courseQuestionVideoButton(c));
  const media=courseRemainingMedia(c);
  if (media.length) {
@@ -803,7 +806,7 @@ function coursePanels(c,p) {
   control("media",label,media.map(asset=>'<section class="course-media-entry"><h3>'+esc(asset.title)+'</h3>'+
    courseMediaPlayer(asset)+'</section>').join(""));
  }
- return {rail:buttons.join(""),panels:drawers.join(""),media};
+ return {rail:buttons.join(""),panels:drawers.join("")+answerPanel,media};
 }
 
 function courseBindCaptions(player, config) {
@@ -858,6 +861,14 @@ function wireCourseTools(doc,c) {
    close();opener?.focus({preventScroll:true});
   }
  });
+ const answerToggle=doc.querySelector("[data-course-answer-toggle]");
+ const answerPanel=doc.getElementById("course-inline-answer");
+ if(answerToggle&&answerPanel)answerToggle.onclick=()=>{
+  const show=answerPanel.hidden;
+  if(show)close();
+  answerPanel.hidden=!show;
+  answerToggle.setAttribute("aria-expanded",String(show));
+ };
  const reveal=doc.querySelector("[data-course-reveal]");
  if(reveal) reveal.onclick=()=>{
   const show=reveal.getAttribute("aria-pressed")!=="true";

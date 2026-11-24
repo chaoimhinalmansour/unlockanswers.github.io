@@ -32,6 +32,9 @@
 .course-material-block .course-source-figure{max-height:476px;height:450px;margin:12px 0}
 .course-answer-copy,.course-material-copy{font-size:21px;line-height:1.42}
 .course-answer-copy p+p{margin-top:8px}
+.slide-area:has(> .course-inline-answer:not([hidden])){display:flex;flex-direction:column}
+.slide-area:has(> .course-inline-answer:not([hidden])) > :first-child{flex:1;min-height:0;height:auto;overflow:auto}
+.course-inline-answer{flex:none;max-height:40%;overflow:auto;margin:0 var(--slide-inset-x) var(--slide-inset-bottom);padding:8px 0 0;border-top:1pt solid var(--line,#657185);color:var(--blue)}
 .course-source-links{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
 .course-source-links a{color:var(--blue);font-size:17px}
 .course-player{width:100%;min-height:0}
