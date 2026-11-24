@@ -279,6 +279,10 @@
 
     const ticket = code === null ? workspaceAccess.currentTicket() : null;
     if (code === null && !ticket) {
+      if (platform.current()?.role === "teacher") {
+        location.replace(workspaceAccess.teacherSignInUrl(location.href));
+        return;
+      }
       notice.textContent = signInNotice;
       return;
     }
@@ -313,7 +317,7 @@
     const backToWorkspace = Boolean(workspaceId && workspaceStillMatches(workspaceId));
     clearView();
     if (backToWorkspace) {
-      location.assign(new URL("index.html?entry=20261124-r3", location.href));
+      location.assign(new URL("index.html?entry=20261124-teacher-workspace", location.href));
       return;
     }
     notice.textContent = "已退出复盘。再次查看时，请打开你的专属链接。";

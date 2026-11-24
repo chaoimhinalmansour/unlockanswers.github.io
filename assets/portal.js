@@ -20,6 +20,7 @@
   const requestedRole = params.get("role");
   const next = params.get("next");
   const roster = window.UNLOCK_STUDENTS || [];
+  const writingEntry = "20261124-teacher-workspace";
   const writing = { title: "写作复盘", text: "查看原文批注、评分和讲评。", url: "writing-review.html" };
   const cards = {
     student: [
@@ -273,11 +274,25 @@
     notice.hidden = !english;
   }
 
-  function workspaceCard(item, canOpenWriting) {
+  function isReviewTarget(target) {
+    return target?.pathname.endsWith("/" + writing.url);
+  }
+
+  function requiresTeacherGrant(active) {
+    return active?.role === "teacher" && isReviewTarget(session.destination(next, "teacher")) &&
+      !writingWorkspace.currentTicket();
+  }
+
+  function workspaceCard(item, role, canOpenWriting) {
     const card = document.createElement("a");
     card.className = "workspace-card";
-    card.href = item.url === writing.url && canOpenWriting ? item.url + "?entry=20261124-r3" : item.url;
-    if (item.url === writing.url && !canOpenWriting) {
+    card.href = item.url;
+    if (item.url === writing.url) {
+      const review = item.url + "?entry=" + writingEntry;
+      if (canOpenWriting) card.href = review;
+      else if (role === "teacher") card.href = writingWorkspace.teacherSignInUrl(review);
+    }
+    if (item.url === writing.url && role === "student" && !canOpenWriting) {
       card.addEventListener("click", event => {
         event.preventDefault();
         showWorkspaceNotice("Sign in to UNLOCK with your personal link to open Writing Review.",
@@ -307,7 +322,8 @@
       session.signOut("student", next);
       return;
     }
-    if (active) {
+    const renewingTeacher = requiresTeacherGrant(active);
+    if (active && !renewingTeacher) {
       const returnTo = session.destination(next, active.role);
       if (returnTo) {
         location.replace(returnTo);
@@ -325,7 +341,7 @@
       if (teacher) title.textContent = "教师工作区";
       else setLabel(title, "Student Workspace", "学生工作区");
       document.getElementById("workspace-cards").replaceChildren(...cards[active.role].map(
-        item => workspaceCard(item, Boolean(writingTicket))
+        item => workspaceCard(item, active.role, Boolean(writingTicket))
       ));
       const otherRole = /^(student|teacher)$/.test(requestedRole) && requestedRole !== active.role;
       const needsTeacher = requestedRole === "teacher";
@@ -339,7 +355,10 @@
       login.hidden = false;
       form.reset();
       renderPortraitShading();
-      showMessage("");
+      if (renewingTeacher) {
+        showMessage("Sign in again with the teacher password to open Writing Review.",
+                    "请用教师密码重新登录一次，即可打开写作复盘。");
+      } else showMessage("");
     }
   }
 
@@ -353,19 +372,24 @@
   form.addEventListener("submit", async event => {
     event.preventDefault();
     if (submit.disabled) return;
+    const activeAtStart = session.current();
+    const renewingTeacher = requiresTeacherGrant(activeAtStart);
+    if (activeAtStart && !renewingTeacher) return;
     const name = selectedName();
     const entered = password.value;
     submit.disabled = true;
     showMessage("");
     try {
       const teacher = await session.matchesPassword(entered, expectedTeacher);
-      if (name !== selectedName() || entered !== password.value || session.current()) return;
+      if (personalLogin || name !== selectedName() || entered !== password.value || session.current()?.id !== activeAtStart?.id) return;
       const person = teacher ? undefined : roster.find(item => item.name === name);
       const studentPassword = englishName(person);
-      if (!teacher && (!studentPassword || entered.trim() !== studentPassword)) {
+      if (!teacher && (renewingTeacher || !studentPassword || entered.trim() !== studentPassword)) {
         showMessage(
-          person ? "Check your selected portrait and password." : "Students, select a portrait. Teachers, check your password.",
-          person ? "请检查所选人物和英文名密码。" : "学生请先选人物，教师请检查密码。"
+          renewingTeacher ? "Check the teacher password." :
+            person ? "Check your selected portrait and password." : "Students, select a portrait. Teachers, check your password.",
+          renewingTeacher ? "请检查教师密码。" :
+            person ? "请检查所选人物和英文名密码。" : "学生请先选人物，教师请检查密码。" 
         );
         password.setAttribute("aria-invalid", "true");
         password.focus();
@@ -373,12 +397,27 @@
         return;
       }
       const role = teacher ? "teacher" : "student";
-      if (!session.signIn(role, person)) {
+      let teacherWriting;
+      if (teacher) {
+        try {
+          teacherWriting = await writingWorkspace.openTeacherGrant(entered);
+        } catch {
+          if (isReviewTarget(session.destination(next, role))) {
+            showMessage("Writing Review is temporarily unavailable. Please try again.",
+                        "暂时无法打开写作复盘，请稍后重试。");
+            return;
+          }
+        }
+        if (personalLogin || name !== selectedName() || entered !== password.value || session.current()?.id !== activeAtStart?.id) return;
+      }
+      if (!session.signIn(role, person, teacherWriting)) {
         showMessage("Allow this site to save your login and try again.", "请允许此网站保存登录状态，再试一次。");
         return;
       }
       password.value = "";
-      location.replace(session.destination(next, role) || session.signInUrl());
+      const home = session.signInUrl();
+      if (teacher) home.searchParams.set("entry", writingEntry);
+      location.replace(session.destination(next, role) || home);
     } catch {
       showMessage("Open the website or local preview to sign in.", "请通过网站或本机预览地址登录。");
     } finally {

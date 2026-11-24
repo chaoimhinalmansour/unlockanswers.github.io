@@ -101,9 +101,12 @@
     return active;
   }
 
-  function signIn(role, person) {
+  function signIn(role, person, teacherWriting) {
     const id = Array.from(crypto.getRandomValues(new Uint32Array(4))).join("-");
-    return update({ id, role, student: person ? person.storageName ?? person.name : undefined });
+    return update({
+      id, role, student: person ? person.storageName ?? person.name : undefined,
+      teacherWriting: role === "teacher" ? teacherWriting : undefined
+    });
   }
 
   function signOut(role, target) {
