@@ -182,6 +182,325 @@ courseTaskHTML=function(c,p) {
   '<h3 lang="zh-CN">视频答案</h3>'+courseAnswerHTML(videoText)+'</section>';
 };
 
+{
+ const worldWorkReading = "B02-RW-U06-classroom:material:RW-M03";
+ const previousCourseFlow = courseFlowHTML;
+ const worldWorkQuiz = `<article class="work-quiz" lang="en-GB" aria-labelledby="work-quiz-title">
+  <style>
+.slide-area > .content:has(> .work-quiz),
+.stage > .content:has(> .work-quiz) {
+  padding: 10px 0 12px;
+  gap: 0;
+}
+.slide-area > .content:has(> .work-quiz) {
+  padding-inline-start: 16px;
+}
+.work-quiz {
+  --work-ink: #182b33;
+  --work-teal: #0c6173;
+  --work-rule: #c7ddde;
+  --work-vocab: #733981;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  width: calc(100% - 56px);
+  margin: 0 auto;
+  color: var(--work-ink);
+  background: #fff;
+  border: 1px solid var(--work-rule);
+  border-radius: 11px;
+  font-size: 17px;
+  line-height: 1.20;
+}
+.work-quiz :is(p, h1, h2, ul, ol) { margin: 0; }
+.work-quiz :is(ul, ol) { padding: 0; list-style: none; }
+.work-quiz .site-tabs {
+  background: #22373d;
+  border-radius: 10px 10px 0 0;
+  color: #dceeee;
+}
+.work-quiz .site-tabs ul {
+  display: flex;
+  align-items: stretch;
+  gap: 22px;
+  min-height: 26px;
+  padding: 0 18px;
+  font-size: 14px;
+  letter-spacing: .025em;
+}
+.work-quiz .site-tabs li {
+  display: grid;
+  place-items: center;
+  border-block-end: 2px solid transparent;
+  white-space: nowrap;
+}
+.work-quiz .site-tabs [aria-current="page"] {
+  color: #fff;
+  border-color: #ffe073;
+  font-weight: 700;
+}
+.work-quiz .quiz-hero {
+  min-height: 96px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 416px;
+  align-items: stretch;
+  background: #116c7c;
+}
+.work-quiz .quiz-hero h1 {
+  align-self: center;
+  padding: 8px 20px 10px;
+  color: #fff;
+  font-size: 41px;
+  line-height: 1.02;
+  letter-spacing: .012em;
+  font-weight: 800;
+}
+.work-quiz .quiz-hero h1 span {
+  display: block;
+  color: #ffea86;
+  margin-block-end: 3px;
+  letter-spacing: .005em;
+  font-size: 18px;
+  font-weight: 650;
+}
+.work-quiz .quiz-photo {
+  display: block;
+  width: 100%;
+  height: 96px;
+  object-fit: cover;
+  object-position: center 23%;
+}
+.work-quiz .quiz-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 142px;
+  gap: 18px;
+  align-items: center;
+  padding: 5px 17px;
+  background: #fff;
+  border-block-end: 1px solid var(--work-rule);
+}
+.work-quiz .quiz-intro-copy {
+  display: grid;
+  align-content: start;
+  gap: 3px;
+  min-width: 0;
+  line-height: 1.14;
+}
+.work-quiz .quiz-jobs {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, auto);
+  gap: 2px 18px;
+  width: min(660px, 100%);
+}
+.work-quiz .quiz-jobs li {
+  display: grid;
+  grid-template-columns: 19px minmax(0, 1fr);
+  gap: 4px;
+  align-items: center;
+}
+.work-quiz .quiz-number {
+  display: inline-grid;
+  place-items: center;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  color: #263b39;
+  background: #ffe885;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+.work-quiz .quiz-vocab { color: var(--work-vocab); font-weight: 700; }
+.work-quiz .quiz-letters { color: var(--work-teal); font-weight: 700; }
+.work-quiz .quiz-questions {
+  display: grid;
+  grid-template-columns: 1.095fr 1.03fr .80fr 1.075fr;
+  gap: 15px;
+  padding: 8px 17px;
+}
+.work-quiz .quiz-question {
+  min-width: 0;
+  padding-inline-start: 12px;
+  border-inline-start: 1px solid var(--work-rule);
+}
+.work-quiz .quiz-question:first-child {
+  padding-inline-start: 0;
+  border-inline-start: 0;
+}
+.work-quiz .quiz-question h2 {
+  display: grid;
+  grid-template-columns: 19px minmax(0, 1fr);
+  gap: 6px;
+  align-items: start;
+  min-height: 40px;
+  margin-block-end: 5px;
+  font-size: 17px;
+  line-height: 1.18;
+  font-weight: 700;
+}
+.work-quiz .quiz-options label {
+  display: grid;
+  grid-template-columns: 14px 11px minmax(0, 1fr);
+  gap: 5px;
+  align-items: start;
+  padding: 1.25px 2px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.work-quiz .quiz-options input {
+  appearance: none;
+  box-sizing: border-box;
+  width: 14px;
+  height: 14px;
+  margin: 3px 0 0;
+  border: 1.5px solid #237689;
+  border-radius: 2px;
+  background: #fff;
+  cursor: pointer;
+}
+.work-quiz .quiz-options input:checked {
+  background: #17697c;
+  box-shadow: inset 0 0 0 2px #fff;
+}
+.work-quiz .quiz-options label:has(input:checked) { background: #e8f6f6; }
+.work-quiz .quiz-options input:focus-visible {
+  outline: 2px solid #0b5365;
+  outline-offset: 2px;
+}
+.work-quiz .quiz-results-note {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  justify-self: center;
+  box-sizing: border-box;
+  width: 128px;
+  height: 128px;
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  color: #3c3419;
+  background: #ffeb76;
+  font-size: 15px;
+  line-height: 1.19;
+  font-weight: 500;
+}
+.work-quiz .quiz-results-note > span {
+  white-space: nowrap;
+  letter-spacing: -.14px;
+  transform: rotate(3deg);
+}
+.work-quiz .quiz-results {
+  display: grid;
+  grid-template-columns: 1.12fr 1.04fr 1fr .84fr;
+  gap: 12px;
+  padding: 0 17px 8px;
+}
+.work-quiz .quiz-result {
+  min-width: 0;
+  padding: 7px 9px 6px;
+  border-block-start: 2px solid #d9bd65;
+  border-radius: 4px;
+  background: #fffcf3;
+  line-height: 1.16;
+}
+.work-quiz .quiz-result h2 {
+  margin-block-end: 4px;
+  color: #3c3419;
+  font-size: 17px;
+  line-height: 1.15;
+  font-weight: 750;
+}
+</style>
+  <nav class="site-tabs" aria-label="Website navigation"><ul><li>Home</li><li>About Us</li><li>News</li><li aria-current="page">Quiz</li><li>Contact Us</li><li>More</li></ul></nav>
+  <header class="quiz-hero">
+    <h1 id="work-quiz-title"><span>Are you ready for the</span> WORLD OF WORK?</h1>
+    <img class="quiz-photo" width="2179" height="722" alt="A woman working in a workshop" src="../../visuals/b02-rw-u06-world-of-work-banner.png">
+  </header>
+  <div class="quiz-intro">
+    <div class="quiz-intro-copy">
+      <p>Do you know what kind of job you want? Before you <strong class="quiz-vocab">apply</strong> for a job, think about the different types of jobs that people do. There are four main types of jobs:</p>
+      <ol class="quiz-jobs" aria-label="Types of jobs">
+        <li><span class="quiz-number" aria-hidden="true">1</span> <span>jobs with people</span></li>
+        <li><span class="quiz-number" aria-hidden="true">2</span> <span>jobs with information</span></li>
+        <li><span class="quiz-number" aria-hidden="true">3</span> <span>jobs with things</span></li>
+        <li><span class="quiz-number" aria-hidden="true">4</span> <span>jobs with ideas</span></li>
+      </ol>
+      <p>What kind of work would be best for you? Take our quiz and find out about the kind of work you would enjoy. For each question, choose the best answer for you: <span class="quiz-letters">a, b, c or d.</span></p>
+    </div>
+    <p class="quiz-results-note" id="work-results-note">
+      <span>Check your<br>
+      <strong class="quiz-vocab">results</strong> and read<br>
+      the advice to find<br>
+      <strong class="quiz-vocab">occupations</strong> you<br>
+      would like.</span>
+    </p>
+  </div>
+  <div class="quiz-questions" aria-label="Quiz questions">
+    <section class="quiz-question" role="group" aria-labelledby="work-q1">
+      <h2 id="work-q1"><span class="quiz-number">1</span> <span>What do you like to do in the evenings?</span></h2>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="work-q1" value="a"><span class="quiz-letters">a</span> <span>meet friends or go to a party</span></label></li>
+        <li><label><input type="radio" name="work-q1" value="b"><span class="quiz-letters">b</span> <span>stay at home and surf the internet</span></label></li>
+        <li><label><input type="radio" name="work-q1" value="c"><span class="quiz-letters">c</span> <span>play sports or practise a hobby like a musical instrument or photography</span></label></li>
+        <li><label><input type="radio" name="work-q1" value="d"><span class="quiz-letters">d</span> <span>go to the cinema</span></label></li>
+      </ul>
+    </section>
+    <section class="quiz-question" role="group" aria-labelledby="work-q2">
+      <h2 id="work-q2"><span class="quiz-number">2</span> <span>Which sections of a news website do you look at first?</span></h2>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="work-q2" value="a"><span class="quiz-letters">a</span> <span>advice page or letters to the editor</span></label></li>
+        <li><label><input type="radio" name="work-q2" value="b"><span class="quiz-letters">b</span> <span>news</span></label></li>
+        <li><label><input type="radio" name="work-q2" value="c"><span class="quiz-letters">c</span> <span>sport</span></label></li>
+        <li><label><input type="radio" name="work-q2" value="d"><span class="quiz-letters">d</span> <span>TV, music, books and art</span></label></li>
+      </ul>
+    </section>
+    <section class="quiz-question" role="group" aria-labelledby="work-q3">
+      <h2 id="work-q3"><span class="quiz-number">3</span> <span>What do you like to do at an event?</span></h2>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="work-q3" value="a"><span class="quiz-letters">a</span> <span>meet new people</span></label></li>
+        <li><label><input type="radio" name="work-q3" value="b"><span class="quiz-letters">b</span> <span>discuss the latest news</span></label></li>
+        <li><label><input type="radio" name="work-q3" value="c"><span class="quiz-letters">c</span> <span>help with the food and drinks</span></label></li>
+        <li><label><input type="radio" name="work-q3" value="d"><span class="quiz-letters">d</span> <span>sing songs and tell jokes</span></label></li>
+      </ul>
+    </section>
+    <section class="quiz-question" role="group" aria-labelledby="work-q4">
+      <h2 id="work-q4"><span class="quiz-number">4</span> <span>What do you prefer to do on a day off?</span></h2>
+      <ul class="quiz-options">
+        <li><label><input type="radio" name="work-q4" value="a"><span class="quiz-letters">a</span> <span>have coffee with friends</span></label></li>
+        <li><label><input type="radio" name="work-q4" value="b"><span class="quiz-letters">b</span> <span><strong class="quiz-vocab">organize</strong> your books and cupboards</span></label></li>
+        <li><label><input type="radio" name="work-q4" value="c"><span class="quiz-letters">c</span> <span>work in the garden or clean the house</span></label></li>
+        <li><label><input type="radio" name="work-q4" value="d"><span class="quiz-letters">d</span> <span>write poetry, make music or draw pictures</span></label></li>
+      </ul>
+    </section>
+  </div>
+  <div class="quiz-results" aria-labelledby="work-results-note">
+    <section class="quiz-result" aria-labelledby="work-a">
+      <h2 id="work-a">Mostly ‘a’ answers:</h2>
+      <p>You are friendly, kind and interested in other people. You would enjoy a job working with children, with <strong class="quiz-vocab">customers</strong> in a shop or on a team with <strong class="quiz-vocab">colleagues</strong>. Possible jobs are: teacher, waiter, police officer.</p>
+    </section>
+    <section class="quiz-result" aria-labelledby="work-b">
+      <h2 id="work-b">Mostly ‘b’ answers:</h2>
+      <p>You are neat, you are good at planning and you like learning new things. You would enjoy a job working with information. Possible jobs are: university professor, computer programmer, librarian.</p>
+    </section>
+    <section class="quiz-result" aria-labelledby="work-c">
+      <h2 id="work-c">Mostly ‘c’ answers:</h2>
+      <p>You are practical, you are good at sports and you like working with your hands. You would enjoy a job working with things. Possible jobs are: construction worker, engineer, farmer.</p>
+    </section>
+    <section class="quiz-result" aria-labelledby="work-d">
+      <h2 id="work-d">Mostly ‘d’ answers:</h2>
+      <p>You are creative, you are good at music and art and you like books. You would enjoy a job working with ideas. Possible jobs are: artist, writer, singer.</p>
+    </section>
+  </div>
+</article>`;
+ courseFlowHTML = function(c, page) {
+  if (c.id === worldWorkReading && c.flow.pages[page]?.sourcePage === 129) {
+   return worldWorkQuiz;
+  }
+  return previousCourseFlow(c, page);
+ };
+}
+
 function content(c,p,b){
  if(c.id==="B02-RW-U06-question:b3819"){
   return "<style>\n.content > .business-definitions {\n display:grid;\n align-content:start;\n row-gap:11px;\n margin-inline-start:1.95em;\n overflow:visible;\n overflow-wrap:normal;\n line-height:1.26;\n}\n.business-definitions > .course-item {\n grid-template-columns:1.4em minmax(0,1fr);\n gap:8px;\n margin:0;\n}\n.business-definitions .course-options {\n display:grid;\n grid-template-columns:repeat(2,minmax(0,1fr));\n align-items:start;\n column-gap:32px;\n margin-block:2px 0;\n}\n.business-definitions .course-options li { padding-inline-start:0; }\n.business-definitions p strong { color:var(--course-table-purple,#7b3d88); }\n.slide-area:has(> .course-inline-answer:not([hidden])) > .content:has(> .business-definitions) {\n padding-block-end:10px;\n overflow:visible;\n}\n.slide-area:has(> .content > .business-definitions) > .course-inline-answer {\n margin-block-end:10px;\n}\n</style>"+'<div class="course-exercise-copy business-definitions">'+
