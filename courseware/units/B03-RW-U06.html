@@ -150,6 +150,115 @@ const textbookSixCss = [
   ]}
  ]}];
 }
+{
+ const readingId="B03-RW-U06-classroom:material:RW-M04";
+ const baseCourseFlow=courseFlowHTML;
+ const featureStyle=`
+.content:has(> .deepfakes-feature) {
+ padding:10px 13px 12px 19px;
+ gap:0;
+}
+.deepfakes-feature {
+ flex:1;
+ display:flex;
+ min-height:0;
+ overflow:clip;
+ padding:6px 19px 10px;
+ background:#fff;
+ color:var(--ink);
+}
+.deepfakes-feature-columns {
+ flex:1;
+ min-height:0;
+ display:grid;
+ grid-template-columns:repeat(2,minmax(0,1fr));
+ grid-template-rows:minmax(0,1fr);
+ column-gap:32px;
+ font-size:17px;
+ line-height:1.16;
+}
+.deepfakes-feature-column {min-width:0}
+.deepfakes-feature-column [data-print-paragraph]+[data-print-paragraph] {margin-top:8px}
+.deepfakes-feature-heading {
+ display:flex;
+ align-items:baseline;
+ gap:16px;
+ margin:0 0 13px;
+ text-align:left;
+}
+.deepfakes-feature-heading h1 {
+ color:#00545f;
+ font-size:38px;
+ font-weight:var(--bold);
+ line-height:1.07;
+ letter-spacing:.045em;
+}
+.deepfakes-feature-heading p {
+ color:#aa1130;
+ font-size:15px;
+ font-weight:var(--bold);
+ line-height:1.18;
+ letter-spacing:.14em;
+}
+.deepfakes-feature-number {
+ color:#aa1130;
+ display:inline-block;
+ margin-inline-end:5px;
+ font-size:21px;
+ font-weight:var(--bold);
+ line-height:.88;
+ font-variant-numeric:tabular-nums;
+}
+.deepfakes-feature-illustration {
+ width:546px;
+ margin:0 0 10px;
+}
+.deepfakes-feature-illustration img {
+ display:block;
+ width:100%;
+ height:auto;
+}
+`;
+ const emphasis=[
+  [["image","strong"],["deepfake","em"]],
+  [["appearance","strong"],["movement","strong"]],
+  [["security","strong"]],
+  [["privacy","strong"],["personal","strong"]],
+  [["spread","strong"]],
+  []
+ ];
+
+ function readingParagraph(text, index) {
+  const content=emphasis[index-1].reduce((html,[word,tag])=>
+   html.replace(new RegExp("\\b"+word+"\\b"),"<"+tag+">"+word+"</"+tag+">"),esc(text));
+  const number='<span class="deepfakes-feature-number">'+index+'</span> ';
+  return '<p data-print-paragraph="'+index+'">'+number+'<span class="deepfakes-feature-text">'+content+'</span></p>';
+ }
+
+ function deepfakesFeatureHTML(c) {
+  const paragraphs=(c.courseReading?.text??"").trim().split(/\n+/);
+  if(paragraphs.length!==6||!paragraphs.every((text,i)=>text.startsWith((i+1)+" "))) return "";
+  const [first,second,third,fourth,fifth,sixth]=paragraphs.map(line=>line.slice(2));
+  const intro='<header class="deepfakes-feature-heading">'+
+   '<h1 id="deepfakes-feature-title">DEEPFAKES</h1><p>BENEFIT OR THREAT?</p></header>';
+  const picture='<figure class="deepfakes-feature-illustration">'+
+   '<img src="../../visuals/deepfakes-mona-lisa-process.png" width="1092" height="360" alt="The Mona Lisa, facial landmarks, and the same portrait with Donald Trump’s face"></figure>';
+  const left=readingParagraph(first,1)+readingParagraph(second,2)+readingParagraph(third,3);
+  const right=readingParagraph(fourth,4)+readingParagraph(fifth,5)+readingParagraph(sixth,6);
+  return '<article class="deepfakes-feature" lang="en-GB" aria-labelledby="deepfakes-feature-title">'+
+   '<style>'+featureStyle+'</style><div class="deepfakes-feature-columns">'+
+   '<div class="deepfakes-feature-column">'+intro+left+'</div>'+
+   '<div class="deepfakes-feature-column">'+picture+right+'</div></div></article>';
+ }
+
+ courseFlowHTML=function(c,page) {
+  if(c.id===readingId&&c.flow.pages[page]?.sourcePage===133) {
+   const feature=deepfakesFeatureHTML(c);
+   if(feature) return feature;
+  }
+  return baseCourseFlow(c,page);
+ };
+}
 const primary=V.fixtures, cases=classroom.cases;
 const frame=document.getElementById("preview");
 const sequenceView=document.getElementById("sequence-view");
