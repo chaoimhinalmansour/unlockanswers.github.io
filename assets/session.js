@@ -3,6 +3,7 @@
 (function () {
   const site = new URL("../", document.currentScript.src);
   const sessionKey = "unlock.session.v1";
+  const writingKey = "unlock.writing.access.v1";
   const roles = ["student", "teacher"];
   const pages = new Map([
     ["practice/index.html", ["student"]],
@@ -38,6 +39,7 @@
     try {
       if (!storage) return false;
       storage.setItem(sessionKey, JSON.stringify(value));
+      try { window.sessionStorage.removeItem(writingKey); } catch {}
       return true;
     } catch {
       return false;
@@ -115,5 +117,5 @@
     return Array.from(new Uint8Array(digest), byte => byte.toString(16).padStart(2, "0")).join("") === expected;
   }
 
-  window.UnlockSession = { current, student, destination, signInUrl, requireSession, signIn, signOut, watch, matchesPassword };
+  window.UnlockSession = { current, student, destination, signInUrl, requireSession, signIn, signOut, watch, matchesPassword, writingKey };
 })();

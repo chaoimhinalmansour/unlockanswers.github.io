@@ -2,6 +2,7 @@
 
 (function () {
   const session = window.UnlockSession;
+  const writingWorkspace = window.UnlockWritingWorkspace;
   const { setLabel } = window.UnlockStudentUI;
   const expectedTeacher = "1f81fc017f9006f147330dd5e9072b98074791e9e759d3fbddfc16cab073950d";
   const form = document.getElementById("login-form");
@@ -19,7 +20,7 @@
   const requestedRole = params.get("role");
   const next = params.get("next");
   const roster = window.UNLOCK_STUDENTS || [];
-  const writing = { title: "写作复盘", text: "用专属链接查看原文批注、评分和讲评。", url: "writing-review.html" };
+  const writing = { title: "写作复盘", text: "查看原文批注、评分和讲评。", url: "writing-review.html" };
   const cards = {
     student: [
       { english: "Classroom", title: "单元课堂", description: "In-class exercises by unit.", text: "各单元的课堂练习。", url: "classroom/index.html" },
@@ -266,10 +267,23 @@
     if (!english) password.removeAttribute("aria-invalid");
   }
 
-  function workspaceCard(item) {
+  function showWorkspaceNotice(english, chinese) {
+    const notice = document.getElementById("workspace-notice");
+    setLabel(notice, english, chinese);
+    notice.hidden = !english;
+  }
+
+  function workspaceCard(item, canOpenWriting) {
     const card = document.createElement("a");
     card.className = "workspace-card";
     card.href = item.url;
+    if (item.url === writing.url && !canOpenWriting) {
+      card.addEventListener("click", event => {
+        event.preventDefault();
+        showWorkspaceNotice("Sign in to UNLOCK with your personal link to open Writing Review.",
+                            "请用你的个人登录链接进入 UNLOCK，再点「写作复盘」。");
+      });
+    }
     const title = document.createElement("h2");
     const text = document.createElement("p");
     if (item.english) {
@@ -283,7 +297,10 @@
     return card;
   }
 
+  let personalLogin;
+
   function render() {
+    if (personalLogin) return;
     const active = session.current();
     const person = session.student(active);
     if (active?.role === "student" && !person) {
@@ -301,18 +318,19 @@
       workspace.hidden = false;
       header.hidden = false;
       account.hidden = false;
-      document.getElementById("account-name").textContent = teacher ? "教师" : person.name;
+      const writingTicket = writingWorkspace?.currentTicket();
+      document.getElementById("account-name").textContent = teacher ? "教师" : writingTicket?.viewer.name || person.name;
       workspace.dataset.role = active.role;
       const title = document.getElementById("workspace-title");
       if (teacher) title.textContent = "教师工作区";
       else setLabel(title, "Student Workspace", "学生工作区");
-      document.getElementById("workspace-cards").replaceChildren(...cards[active.role].map(workspaceCard));
-      const notice = document.getElementById("workspace-notice");
+      document.getElementById("workspace-cards").replaceChildren(...cards[active.role].map(
+        item => workspaceCard(item, Boolean(writingTicket))
+      ));
       const otherRole = /^(student|teacher)$/.test(requestedRole) && requestedRole !== active.role;
       const needsTeacher = requestedRole === "teacher";
-      setLabel(notice, otherRole ? "Sign out to use a " + (needsTeacher ? "teacher" : "student") + " account." : "",
+      showWorkspaceNotice(otherRole ? "Sign out to use a " + (needsTeacher ? "teacher" : "student") + " account." : "",
         "请退出当前账号后以" + (needsTeacher ? "教师" : "学生") + "身份登录。");
-      notice.hidden = !otherRole;
       document.title = (teacher ? "教师工作区" : "Student Workspace") + " | UNLOCK";
     } else {
       workspace.hidden = true;
@@ -372,6 +390,43 @@
     const target = session.destination(next, requestedRole);
     session.signOut(target ? requestedRole : undefined, target);
   });
+  async function openPersonalLogin() {
+    const code = writingWorkspace?.takeLoginCode() ?? null;
+    if (code === null) {
+      render();
+      return;
+    }
+    personalLogin?.abort();
+    const opening = new AbortController();
+    personalLogin = opening;
+    workspace.hidden = true;
+    header.hidden = true;
+    account.hidden = true;
+    login.hidden = false;
+    submit.disabled = true;
+    showMessage("Signing in with your personal link.", "正在登录 UNLOCK。");
+    let failed;
+    try {
+      await writingWorkspace.signIn(code, opening.signal);
+    } catch (error) {
+      failed = error;
+    }
+    if (personalLogin !== opening) return;
+    personalLogin = null;
+    submit.disabled = false;
+    render();
+    if (failed) {
+      const storageBlocked = failed.message === "session-storage-unavailable";
+      const english = storageBlocked ? "Allow this browser to save the login in this tab and try again." :
+        "Open the original personal sign-in link and try again.";
+      const chinese = storageBlocked ? "请允许浏览器在此标签页保存登录状态后重试。" :
+        "请重新打开收到的个人登录链接。";
+      if (workspace.hidden) showMessage(english, chinese);
+      else showWorkspaceNotice(english, chinese);
+    }
+  }
+
   session.watch(render);
-  render();
+  window.addEventListener("hashchange", openPersonalLogin);
+  openPersonalLogin();
 })();
