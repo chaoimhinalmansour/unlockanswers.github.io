@@ -451,6 +451,36 @@ const textbookSixCss = [
   return baseCourseFlow(c,page);
  };
 }
+{
+ const writingPlanId="B03-RW-U06-question:b5121";
+ const criticalThinkingChartId="B03-RW-U06-question:b5100";
+ const beforeWritingPlan=courseTaskHTML;
+ const chartStyle=typeof textbookSixCss==="string"?textbookSixCss:`
+.unit6-t-chart .course-table {
+ --course-table-border:#83388b;
+ --line:var(--course-table-border);
+ table-layout:fixed;
+}
+.unit6-t-chart .course-table th{background:#83388b;color:#fff;text-align:center}
+.unit6-t-chart .course-table th+th{border-left-color:#fff}
+.unit6-t-chart .course-table tr:has(th+th) th:first-child{border-right-color:#fff}
+.unit6-t-chart .course-table td:empty{height:248px}
+`;
+ courseTaskHTML=function(c,p) {
+  if(c.id!==writingPlanId) return beforeWritingPlan(c,p);
+  const source=classroom.related(c).find(entry=>entry.target.id===criticalThinkingChartId)?.target;
+  const tables=source?.coursePages?.length?coursePageBlocks(source,0).filter(block=>block.kind==="table"):[];
+  if(!tables.length) return beforeWritingPlan(c,p);
+  const start='<div class="course-exercise-copy unit6-t-chart writing-plan-reference" data-referenced-chart="'+
+   esc(source.id)+'"><style>'+chartStyle+'</style>';
+  if(typeof inventionChartsHTML==="function") return start+inventionChartsHTML(tables,true)+'</div>';
+  const [table]=tables;
+  const [name,headings,...entries]=table.rows;
+  const title=name.map(cell=>({...cell,text:cell.text.replace(/_{4,}/,"____________________")}));
+  const rows=[title,headings.map(cell=>({...cell,header:true})),...entries];
+  return start+courseBlockHTML({...table,rows})+'</div>';
+ };
+}
 const primary=V.fixtures, cases=classroom.cases;
 const frame=document.getElementById("preview");
 const sequenceView=document.getElementById("sequence-view");
