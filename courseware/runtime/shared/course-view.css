@@ -13,8 +13,11 @@
 .course-option-labels li{display:flex;gap:9px}
 .course-option-label{color:var(--blue);min-width:1.2em}
 .course-table-frame{overflow-x:auto;max-width:100%;margin:7px 0 9px}
-.course-table{border-collapse:collapse;width:100%;font-size:20px;line-height:1.35;table-layout:auto}
-.course-table th,.course-table td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top;min-width:35px}
+.slide-area table,.slide-area table :is(th,td){border:1pt solid var(--course-table-border,var(--line,#657185))}
+.slide-area table{border-collapse:collapse}
+.slide-area .table-area:has(> table){border:0;border-radius:0}
+.course-table{width:100%;font-size:20px;line-height:1.35;table-layout:auto}
+.course-table th,.course-table td{padding:7px 10px;text-align:left;vertical-align:top;min-width:35px}
 .course-table th{background:#edf3fb;font-weight:var(--bold)}
 .course-table td:empty{height:35px}
 .course-split,.course-reading{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:25px}
