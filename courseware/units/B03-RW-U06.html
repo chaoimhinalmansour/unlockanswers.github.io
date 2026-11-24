@@ -70,14 +70,16 @@ const textbookSix = {
  remember:"B03-RW-U06-question:b5098",
  apply:"B03-RW-U06-question:b5100",
  analyze:"B03-RW-U06-question:b5101",
- relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01"
+ relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01",
+ relativeExercise:"B03-RW-U06-question:b5104"
 };
 const textbookSixStyles = {
  [textbookSix.analysis]:"unit6-analysis unit6-tablet-example",
  [textbookSix.example]:"unit6-tablet-example",
  [textbookSix.remember]:"unit6-inventions",
  [textbookSix.apply]:"unit6-t-chart",
- [textbookSix.relative]:"unit6-relative"
+ [textbookSix.relative]:"unit6-relative",
+ [textbookSix.relativeExercise]:"unit6-relative-exercise"
 };
 const textbookWritingTask = '<div class="unit6-writing-task">'+
  '<p>At the end of this unit, you will write an explanatory essay. Look at this unit’s writing task below.</p>'+
@@ -104,6 +106,7 @@ const textbookSixCss = [
  ".unit6-relative-layout .stage-native-lesson{width:100%;min-width:0}",
  ".unit6-relative .stage-examples p{color:#1d4770;font-style:italic}",
  ".unit6-relative .stage-examples strong{color:inherit}",
+ ".unit6-relative-exercise .course-item:first-child [data-course-underline]{text-decoration:underline;text-underline-offset:.12em}",
  ".unit6-seeds{box-sizing:border-box;position:relative;width:100%;aspect-ratio:1;border:2px solid #21774c;border-radius:50%;text-align:center;padding-top:14%;font-size:20px;line-height:1.25}",
  ".unit6-seed-selection{box-sizing:border-box;position:absolute;display:grid;place-items:center;right:10%;bottom:9%;width:60%;aspect-ratio:1;border:2px solid #21774c;border-radius:50%;padding:15px;font-size:19px;line-height:1.25}"
 ].join("");
@@ -140,6 +143,14 @@ const textbookSixCss = [
  ]}]];
  classroom.byId.get(textbookSix.analyze).stagePhase="ANALYZE";
  const relative=classroom.byId.get(textbookSix.relative);
+ const relativeExercise=classroom.byId.get(textbookSix.relativeExercise);
+ const workedExample=relativeExercise.coursePages[0][0];
+ const firstUnderline=coursePublishedAnswers[relativeExercise.id].rows[workedExample.id].parts[0];
+ const printedExampleStart=workedExample.prompt.indexOf("robots that are able to do dangerous work.");
+ if(printedExampleStart>=0)firstUnderline.start=printedExampleStart;
+ relativeExercise.coursePages[0]=relativeExercise.coursePages[0].map(item=>({
+  ...item,prompt:item.prompt.replace(/(Which [^?]+[?])$/,"<em>$1</em>")
+ }));
  relative.flow.pages=[{blocks:[
   {kind:"paragraph",text:"Use <em>defining relative clauses</em> to identify or describe nouns without starting a new sentence. A defining relative clause gives information about the noun that is necessary to understand the sentence. It answers the question: <em>Which X?</em> Defining relative clauses begin with <em>that</em> or <em>which</em> for things. Use <em>that</em> or <em>who</em> for people."},
   {kind:"paragraph",text:"Look at these sentences from Reading 1 on page 129."},
