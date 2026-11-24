@@ -126,6 +126,8 @@ const textbookSix = {
  example:"B03-RW-U06-classroom:resource:b5097",
  remember:"B03-RW-U06-question:b5098",
  apply:"B03-RW-U06-question:b5100",
+ chartWriting:"B03-RW-U06-question:b5114",
+ introduction:"B03-RW-U06-classroom:teaching:B03-RW-p142-01",
  analyze:"B03-RW-U06-question:b5101",
  relative:"B03-RW-U06-classroom:teaching:B03-RW-p139-01",
  nonDefining:"B03-RW-U06-classroom:teaching:B03-RW-p140-01",
@@ -140,6 +142,8 @@ const textbookSixStyles = {
  [textbookSix.example]:"unit6-tablet-example",
  [textbookSix.remember]:"unit6-inventions",
  [textbookSix.apply]:"unit6-t-chart",
+ [textbookSix.chartWriting]:"unit6-chart-writing",
+ [textbookSix.introduction]:"unit6-introduction",
  [textbookSix.relative]:"unit6-relative",
  [textbookSix.nonDefining]:"unit6-relative",
  [textbookSix.nonDefiningExercise]:"unit6-non-defining-exercise",
@@ -162,13 +166,29 @@ const textbookSixCss = [
  ".unit6-tablet-example .stage-native-lesson th + th{border-left-color:#fff}",
  ".unit6-tablet-example .stage-native-lesson thead th{border-bottom-color:#fff}.unit6-tablet-example .stage-native-lesson tbody tr:first-child th{border-top-color:#fff}",
  ".unit6-tablet-example .stage-native-lesson tr:has(th + th) th:first-child{border-right-color:#fff}",
- ".unit6-inventions .course-table,.unit6-t-chart .course-table{--course-table-border:#83388b;table-layout:fixed}",
- ".unit6-inventions .course-table th,.unit6-t-chart .course-table th{background:#83388b;color:#fff;text-align:center}",
+ ".unit6-inventions .course-table,.unit6-invention-charts .course-table{--course-table-border:#83388b;table-layout:fixed}",
+ ".unit6-inventions .course-table th,.unit6-invention-charts .course-table th{background:#83388b;color:#fff;text-align:center}",
  ".unit6-inventions .course-table :is(th,td):first-child{width:33%}",
  ".unit6-inventions .course-table tr:not(:last-child) th:first-child{border-bottom-color:#fff}.unit6-inventions .course-table tr + tr th:first-child{border-top-color:#fff}",
- ".unit6-inventions .course-table th + th,.unit6-t-chart .course-table th + th{border-left-color:#fff}",
- ".unit6-inventions .course-table tr:has(th + th) th:first-child,.unit6-t-chart .course-table tr:has(th + th) th:first-child{border-right-color:#fff}",
- ".unit6-t-chart .course-table td:empty{height:248px}",
+ ".unit6-inventions .course-table th + th,.unit6-invention-charts .course-table th + th{border-left-color:#fff}",
+ ".unit6-inventions .course-table tr:has(th + th) th:first-child,.unit6-invention-charts .course-table tr:has(th + th) th:first-child{border-right-color:#fff}",
+ ".unit6-invention-charts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start;gap:24px}",
+ ".unit6-invention-charts .course-table-frame{margin:0}",
+ ".unit6-invention-charts .course-table tbody tr:last-child td{height:232px;white-space:pre-line}",
+ ".unit6-chart-writing .course-copy{margin:0 0 5px;color:var(--ink,#1b2430);font-size:18px;font-weight:700}",
+ ".unit6-chart-writing{gap:12px}",
+ ".unit6-chart-writing .course-item{margin-block:6px 0}",
+ ".unit6-chart-writing .course-item p{font-size:20px;line-height:1.3}",
+ ".unit6-chart-writing .course-answer-value{display:block;margin:2px 0 0;white-space:pre-line}",
+ ".unit6-introduction .stage-native-lesson{width:100%;display:flex;flex-direction:column;gap:7px;font-size:19.5px;line-height:1.34}",
+ ".unit6-introduction .stage-skill-title{font-size:27px;line-height:1.17;margin:0 0 4px}",
+ ".unit6-introduction .stage-native-lesson p{margin:0;font-size:inherit;line-height:inherit}",
+ ".unit6-introduction .stage-native-columns{column-gap:14px;row-gap:0;margin:0}",
+ ".unit6-introduction .stage-examples{display:grid;row-gap:3px;margin:0}",
+ ".unit6-introduction .stage-native-lesson strong{color:var(--course-table-purple,#7b3d88);font-weight:700}",
+ ".unit6-introduction .stage-native-lesson em,.unit6-introduction .stage-examples{color:#1d4770;font-style:italic}",
+ ".unit6-introduction .stage-native-columns:nth-last-child(3){font-size:17px;line-height:1.25}",
+ ".unit6-introduction .stage-native-columns:nth-last-child(2){margin-top:-4px}",
  ".unit6-relative-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(220px,265px);gap:25px;align-items:center;width:100%}",
  ".unit6-relative-layout .stage-native-lesson{width:100%;min-width:0}",
  ".unit6-relative .stage-examples p,.unit6-classmate-example .course-copy em,.unit6-dependent-prepositions .stage-examples p{color:#1d4770;font-style:italic}",
@@ -207,13 +227,42 @@ const textbookSixCss = [
   [cell("medicine",true),cell("CT scanner, insulin pump,")],
   ...["home","space","transport","entertainment","computers","agriculture"].map(area=>[cell(area,true),cell("")])
  ]}]];
+ const driverlessCars={
+  name:"driverless cars",
+  advantages:["comfortable and relaxing","no need to worry about driving","potentially fewer accidents"],
+  disadvantages:["less fun for people who enjoy driving","reliance on technology","questions about navigation"]
+ };
+ const tablets={
+  name:"tablet computers",
+  advantages:["easy to use and fun","many apps for work and entertainment","smaller and easier to carry than a laptop"],
+  disadvantages:["can be expensive","can break easily","larger and less portable than a phone"]
+ };
+ const chartNotes=notes=>({...cell(""),answer:{mode:"suffix",answer:notes.join("\n")}});
+ const inventionChart=invention=>({
+  kind:"table",rows:[
+   [{...cell("invention: ____",false,2),answer:{mode:"blanks",values:[invention.name]}}],
+   [cell("advantages",true),cell("disadvantages",true)],
+   [chartNotes(invention.advantages),chartNotes(invention.disadvantages)]
+  ]
+ });
  const apply=classroom.byId.get(textbookSix.apply);
  apply.stagePhase="APPLY";
- apply.coursePages=[[{kind:"table",rows:[
-  [cell("invention: ____________________",false,2)],
-  [cell("advantages",true),cell("disadvantages",true)],
-  [cell(""),cell("")]
- ]}]];
+ apply.coursePages=[[inventionChart(driverlessCars),inventionChart(tablets)]];
+
+ const chartWriting=classroom.byId.get(textbookSix.chartWriting);
+ const modelSentences=[
+  [
+   "A real benefit of tablet computers is that they offer many apps for work and entertainment.",
+   "One good thing about tablet computers is that they are smaller and easier to carry than laptops."
+  ],
+  [
+   "The main disadvantage of tablet computers is that they can be expensive.",
+   "One point against tablet computers is that they can break easily."
+  ]
+ ];
+ chartWriting.coursePages=[chartWriting.coursePages[0].map((item,index)=>({
+  ...item,answer:{mode:"line",answer:modelSentences[index].join("\n")}
+ }))];
  classroom.byId.get(textbookSix.analyze).stagePhase="ANALYZE";
  const relative=classroom.byId.get(textbookSix.relative);
  const nonDefining=classroom.byId.get(textbookSix.nonDefining);
@@ -263,6 +312,27 @@ const textbookSixCss = [
    "One of the main <strong>problems with</strong> deepfake technology is that it can be misused."
   ]}
  ];
+
+ const introduction=classroom.byId.get(textbookSix.introduction);
+ const thesisColumns=[0.11,0.89];
+ introduction.flow.pages=[{blocks:[
+  {kind:"paragraph",text:"The first, or introductory, paragraph of an essay usually has three parts:"},
+  {kind:"columns",ratios:[0.24,0.38,0.38],cells:["a hook","background information","a thesis statement"]},
+  {kind:"paragraph",text:"The <strong>hook</strong> is a statement, definition or question at the beginning of the paragraph. Its purpose is to get the reader interested in the topic so he or she will want to keep reading. A good hook can be an interesting question, a surprising fact or statistic, a request to the reader to imagine a situation, a definition, something another person said, etc. For example:"},
+  {kind:"examples",lines:[
+   "In 2019, Americans spent an average of 97 hours sitting in traffic. Imagine what we could do with all that time if we did not need to commute.",
+   "Many nations are in danger of running out of water. However, a company has invented a machine which turns water from the air into water you can drink."
+  ]},
+  {kind:"paragraph",text:"<strong>Background information</strong> helps readers understand the essay. Background information can include an explanation of words or phrases, historical information, data and statistics or a general explanation of the topic."},
+  {kind:"examples",lines:["This is an electronic suit with robot arms and legs which follows the wearer’s movements."]},
+  {kind:"paragraph",text:"The <strong>thesis statement</strong> is usually the last sentence of the introduction. It tells the reader how the essay will be developed. A thesis statement has two parts: a topic and a point of view. For example:"},
+  {kind:"columns",ratios:thesisColumns,cells:["topic","point of view"]},
+  {kind:"columns",ratios:thesisColumns,cells:[
+   "<em><u>Flying cars</u></em>",
+   "<em>may reduce congestion on the ground, but they may create additional problems, such as congestion in the air and pollution.</em>"
+  ]},
+  {kind:"paragraph",text:"This thesis statement informs the reader that the topic, flying cars, will be followed by both advantages and disadvantages of flying cars."}
+ ]}];
  relative.flow.pages=[{blocks:[
   {kind:"paragraph",text:"Use <em>defining relative clauses</em> to identify or describe nouns without starting a new sentence. A defining relative clause gives information about the noun that is necessary to understand the sentence. It answers the question: <em>Which X?</em> Defining relative clauses begin with <em>that</em> or <em>which</em> for things. Use <em>that</em> or <em>who</em> for people."},
   {kind:"paragraph",text:"Look at these sentences from Reading 1 on page 129."},
@@ -484,7 +554,20 @@ function referenceIsInline(c){
   !c.provided&&!c.items.length&&!c.supportText&&!c.activeMaterials?.length;
 }
 
+function inventionChartsHTML(blocks,showReference=false){
+ return '<div class="unit6-invention-charts"'+(showReference?" data-course-revealed":"")+'>'+
+  blocks.map(courseBlockHTML).join("")+'</div>';
+}
+
 function content(c,p,b){
+ if(c.id===textbookSix.apply){
+  return '<div class="course-exercise-copy">'+inventionChartsHTML(coursePageBlocks(c,p))+'</div>';
+ }
+ if(c.id===textbookSix.chartWriting){
+  const source=classroom.byId.get(textbookSix.apply);
+  return '<div class="course-exercise-copy"><p class="course-copy">第 138 页练习 2 的参考表</p>'+
+   inventionChartsHTML(coursePageBlocks(source,0),true)+coursePageBlocks(c,p).map(courseBlockHTML).join("")+'</div>';
+ }
  if(c.id===textbookSix.analysis)return textbookWritingTask+classroomStage.renderSkill(c,p);
  if(c.id===textbookSix.relative)return '<div class="unit6-relative-layout">'+classroomStage.renderSkill(c,p)+textbookRelativeDiagram+'</div>';
  if(c.stageSkill)return classroomStage.renderSkill(c,p);
