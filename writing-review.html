@@ -1,73 +1,67 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
-  <link rel="stylesheet" href="assets/theme.css?v=20261120-black-white">
   <meta charset="utf-8">
+  <meta name="referrer" content="no-referrer">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self'; style-src 'self'; font-src 'self'; img-src 'self' blob:; form-action 'none'; base-uri 'none'; object-src 'none'">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Writing Review | UNLOCK</title>
-  <link rel="stylesheet" href="writing-review.css?v=20261120-black-white">
-  <script defer src="assets/student-ui.js?v=20261120-student-ui"></script>
-  <script defer src="practice/students.js?v=20261118-roster"></script>
-  <script defer src="assets/session.js?v=20261120-session"></script>
-  <script defer src="writing-review-gate.js?v=20261120-student-ui"></script>
-  <style>
-    #writing-review-content[hidden],#writing-entry[hidden]{display:none!important}
-    .writing-entry {padding-top:32px}
-    .writing-entry h1 {font-size:clamp(28px,4vw,38px);margin:0 0 14px}
-    .review-account {display:flex;align-items:center;justify-content:flex-end;flex-wrap:wrap;gap:4px 14px}
-    .review-account[hidden]{display:none}
-    .writing-password-form {max-width:600px;background:var(--unlock-shell);border-radius:22px;padding:24px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px}
-    .writing-password-form label {grid-column:1/-1;font-weight:600}
-    .writing-password-form input {width:100%;min-height:44px;padding:9px 12px;font:inherit;border:1px solid var(--unlock-line);background:var(--unlock-white);color:var(--unlock-ink);border-radius:9px}
-    .writing-password-form button {border:0;background:var(--unlock-blue);color:var(--unlock-white);min-height:44px;padding:9px 18px;border-radius:22px;font:inherit;cursor:pointer}
-    .writing-password-form :is(input,button):focus-visible {outline:3px solid var(--unlock-blue);outline-offset:3px}
-    #writing-entry-message {grid-column:1/-1;font-size:14px;margin:0;color:var(--unlock-ink)}
-    #writing-entry-message:empty {display:none}
-    @media(max-width:480px){.writing-password-form{grid-template-columns:1fr;padding:18px}.writing-password-form button{justify-self:start}}
-  </style>
-  <link rel="stylesheet" href="assets/student-ui.css?v=20261120-black-white">
+  <title>写作复盘 | UNLOCK</title>
+  <link rel="stylesheet" href="assets/theme.css">
+  <link rel="stylesheet" href="writing-review.css">
+  <link rel="stylesheet" href="assets/student-ui.css">
+  <link rel="stylesheet" href="writing-review-live/20261124-r1/review.css">
+  <script defer src="assets/student-ui.js"></script>
+  <script defer src="practice/students.js"></script>
+  <script defer src="assets/session.js"></script>
+  <script defer src="writing-review-live/20261124-r1/access.js"></script>
+  <script defer src="writing-review-live/20261124-r1/review.js"></script>
 </head>
 <body class="student-ui student-writing-review">
   <header class="site-header">
-    <div>
-      <span class="ui-brand">UNLOCK</span>
-      <nav class="review-account ui-site-nav" id="review-account" aria-label="Platform navigation 平台导航" hidden>
+    <div class="writing-header">
+      <span class="ui-brand" lang="en">UNLOCK</span>
+      <nav class="review-account ui-site-nav" aria-label="平台导航">
         <span id="review-account-name"></span>
-        <a class="ui-nav" href="index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh" lang="zh-CN">返回工作区</small></span></a>
-        <button type="button" class="ui-nav" id="review-sign-out"><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh" lang="zh-CN">退出登录</small></span></button>
+        <a class="ui-nav" href="index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh">返回工作区</small></span></a>
+        <button type="button" class="ui-nav" id="review-sign-out" hidden><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh">退出登录</small></span></button>
       </nav>
     </div>
   </header>
-  <main class="page writing-entry" id="writing-entry" hidden>
-    <h1 class="ui-page-title"><span class="ui-label"><span class="ui-en" lang="en">Writing Review</span><small class="ui-zh" lang="zh-CN">写作复盘</small></span></h1>
-    <form class="writing-password-form" id="writing-password-form">
-      <label for="writing-password"><span class="ui-label"><span class="ui-en" lang="en">Resource Password</span><small class="ui-zh" lang="zh-CN">资料密码</small></span></label>
-      <input id="writing-password" type="password" required autocomplete="current-password">
-      <button type="submit" class="ui-action ui-primary"><span class="ui-label"><span class="ui-en" lang="en">Open Review</span><small class="ui-zh" lang="zh-CN">进入复盘</small></span></button>
-      <p id="writing-entry-message" role="status"></p>
-    </form>
-  </main>
-  <noscript><p class="page"><span class="ui-label"><span class="ui-en" lang="en">Enable JavaScript to open Writing Review.</span><small class="ui-zh" lang="zh-CN">请启用 JavaScript 后打开写作复盘。</small></span></p></noscript>
-  <main class="page" id="writing-review-content" hidden>
+  <main class="page">
     <section class="hero">
-      <p class="kicker">IELTS Academic Writing</p>
-      <h1 id="writing-review-title" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Writing Review</span><small class="ui-zh" lang="zh-CN">写作复盘</small></span></h1>
-      <p><span class="ui-label"><span class="ui-en" lang="en">Read the annotated drafts and plan your next revision.</span><small class="ui-zh" lang="zh-CN">从原文批注回看思路和表达，找出下一稿要练的地方。</small></span></p>
+      <p class="kicker" lang="en">IELTS Academic Writing</p>
+      <h1 id="writing-review-title" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Writing Review</span><small class="ui-zh">写作复盘</small></span></h1>
     </section>
-    <nav class="sample-list" aria-label="写作复盘样例">
-      <button type="button" data-sample="task1" aria-pressed="true"><span>Task 1</span><strong><span class="ui-label"><span class="ui-en" lang="en">Commuting Modes and Travel Times</span><small class="ui-zh" lang="zh-CN">通勤方式与通勤时间</small></span></strong></button>
-      <button type="button" data-sample="task2" aria-pressed="false"><span>Task 2</span><strong><span class="ui-label"><span class="ui-en" lang="en">Public Transport and Spending on Roads</span><small class="ui-zh" lang="zh-CN">公共交通与道路投入</small></span></strong></button>
-    </nav>
-    <article class="review" aria-labelledby="task-title">
-      <header class="task-header">
-        <div><p class="kicker" id="task-label"></p><h2 id="task-title"></h2></div>
-        <span class="sample-tag"><span class="ui-label"><span class="ui-en" lang="en">Sample</span><small class="ui-zh" lang="zh-CN">自制样例</small></span></span>
-      </header>
-      <details id="task-material" class="material">
-        <summary id="material-title"><span class="ui-label"><span class="ui-en" lang="en">Task and Charts</span><small class="ui-zh" lang="zh-CN">题目与图表</small></span></summary>
-        <div id="task-prompt" lang="en"></div>
-        <div id="task-figures" class="figures"></div>
-      </details>
+    <p id="writing-notice" role="status">正在打开写作复盘。</p>
+    <form class="writing-login" id="writing-login" hidden>
+      <div class="writing-field">
+        <label for="writing-password" id="writing-password-label">复盘查看码</label>
+        <input id="writing-password" type="password" required autocomplete="off" spellcheck="false" autocapitalize="none" maxlength="60">
+      </div>
+      <button type="submit" class="ui-action ui-primary">进入复盘</button>
+    </form>
+    <section id="writing-review-content" hidden aria-labelledby="writing-review-title">
+      <div class="writing-selects">
+        <div class="writing-field" id="student-field" hidden>
+          <label for="writing-student">学生</label>
+          <select id="writing-student"></select>
+        </div>
+        <div class="writing-field topic-field">
+          <label for="writing-topic">题目</label>
+          <select id="writing-topic"></select>
+        </div>
+      </div>
+      <article class="review" id="writing-article" aria-labelledby="task-title" hidden>
+        <header class="task-header">
+          <div><p class="kicker" id="task-label"></p><h2 id="task-title"></h2></div>
+        </header>
+        <details id="task-material" class="material">
+          <summary id="material-title"></summary>
+          <div id="task-prompt" lang="en"></div>
+          <div id="task-figures" class="figures"></div>
+        </details>
+        <p id="review-pending" role="status" hidden>原稿待补。复盘将在原稿核对后补齐。</p>
+        <div id="review-panels" hidden>
       <div class="view-tabs" role="tablist" aria-label="复盘内容">
         <button type="button" id="tab-source" role="tab" data-view="source" aria-selected="true" aria-controls="panel-source"><span class="ui-label"><span class="ui-en" lang="en">Annotated Draft</span><small class="ui-zh" lang="zh-CN">原文批改</small></span></button>
         <button type="button" id="tab-thought" role="tab" data-view="thought" aria-selected="false" aria-controls="panel-thought" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Reasoning</span><small class="ui-zh" lang="zh-CN">思维复盘</small></span></button>
@@ -78,9 +72,11 @@
       <section id="panel-thought" role="tabpanel" aria-labelledby="tab-thought" hidden></section>
       <section id="panel-language" role="tabpanel" aria-labelledby="tab-language" hidden></section>
       <section id="panel-summary" role="tabpanel" aria-labelledby="tab-summary" hidden></section>
-      <p id="review-status" class="sr-only" aria-live="polite"></p>
-      <noscript><span class="ui-label"><span class="ui-en" lang="en">Enable JavaScript to read the drafts and comments.</span><small class="ui-zh" lang="zh-CN">请启用 JavaScript 以查看样稿和批注。</small></span></noscript>
-    </article>
+        </div>
+        <p id="review-status" class="sr-only" aria-live="polite"></p>
+      </article>
+    </section>
+    <noscript><p>请启用 JavaScript 后打开写作复盘。</p></noscript>
   </main>
 </body>
 </html>
