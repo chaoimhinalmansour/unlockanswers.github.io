@@ -19,7 +19,7 @@
   const requestedRole = params.get("role");
   const next = params.get("next");
   const roster = window.UNLOCK_STUDENTS || [];
-  const writing = { title: "写作复盘", text: "使用资料密码查看原文批注和讲评。", url: "writing-review.html" };
+  const writing = { title: "写作复盘", text: "用专属链接查看原文批注、评分和讲评。", url: "writing-review.html" };
   const cards = {
     student: [
       { english: "Classroom", title: "单元课堂", description: "In-class exercises by unit.", text: "各单元的课堂练习。", url: "classroom/index.html" },

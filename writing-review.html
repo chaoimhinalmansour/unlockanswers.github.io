@@ -11,10 +11,8 @@
   <link rel="stylesheet" href="assets/student-ui.css">
   <link rel="stylesheet" href="writing-review-live/20261124-r1/review.css">
   <script defer src="assets/student-ui.js"></script>
-  <script defer src="practice/students.js"></script>
-  <script defer src="assets/session.js"></script>
-  <script defer src="writing-review-live/20261124-r1/access.js"></script>
-  <script defer src="writing-review-live/20261124-r1/review.js"></script>
+  <script defer src="writing-review-live/20261124-r2/access.js"></script>
+  <script defer src="writing-review-live/20261124-r2/review.js"></script>
 </head>
 <body class="student-ui student-writing-review">
   <header class="site-header">
@@ -23,7 +21,7 @@
       <nav class="review-account ui-site-nav" aria-label="平台导航">
         <span id="review-account-name"></span>
         <a class="ui-nav" href="index.html"><span class="ui-label"><span class="ui-en" lang="en">Workspace</span><small class="ui-zh">返回工作区</small></span></a>
-        <button type="button" class="ui-nav" id="review-sign-out" hidden><span class="ui-label"><span class="ui-en" lang="en">Sign Out</span><small class="ui-zh">退出登录</small></span></button>
+        <button type="button" class="ui-nav" id="review-close" hidden><span class="ui-label"><span class="ui-en" lang="en">Close Review</span><small class="ui-zh">退出复盘</small></span></button>
       </nav>
     </div>
   </header>
@@ -32,14 +30,7 @@
       <p class="kicker" lang="en">IELTS Academic Writing</p>
       <h1 id="writing-review-title" tabindex="-1"><span class="ui-label"><span class="ui-en" lang="en">Writing Review</span><small class="ui-zh">写作复盘</small></span></h1>
     </section>
-    <p id="writing-notice" role="status">正在打开写作复盘。</p>
-    <form class="writing-login" id="writing-login" hidden>
-      <div class="writing-field">
-        <label for="writing-password" id="writing-password-label">复盘查看码</label>
-        <input id="writing-password" type="password" required autocomplete="off" spellcheck="false" autocapitalize="none" maxlength="60">
-      </div>
-      <button type="submit" class="ui-action ui-primary">进入复盘</button>
-    </form>
+    <p id="writing-notice" role="status">请打开你的专属链接，查看写作复盘。</p>
     <section id="writing-review-content" hidden aria-labelledby="writing-review-title">
       <div class="writing-selects">
         <div class="writing-field" id="student-field" hidden>
