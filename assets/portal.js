@@ -276,7 +276,7 @@
   function workspaceCard(item, canOpenWriting) {
     const card = document.createElement("a");
     card.className = "workspace-card";
-    card.href = item.url;
+    card.href = item.url === writing.url && canOpenWriting ? item.url + "?entry=20261124-r3" : item.url;
     if (item.url === writing.url && !canOpenWriting) {
       card.addEventListener("click", event => {
         event.preventDefault();
