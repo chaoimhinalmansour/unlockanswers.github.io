@@ -179,7 +179,7 @@
   }
 
   function renderTopic({ topic, review }) {
-    byId("task-label").textContent = "Task " + topic.task + " " + topic.date;
+    byId("task-label").textContent = "Task " + topic.task;
     setLabel(byId("task-title"), topic.en, topic.title);
     setLabel(byId("material-title"), topic.figures.length ? "Task and Charts" : "Writing Prompt",
       topic.figures.length ? "题目与图表" : "写作题目");
@@ -236,11 +236,21 @@
     byId("review-close").hidden = false;
     byId("student-field").hidden = session.viewing !== "teacher";
     studentPicker.replaceChildren(...(session.students || []).map(name => new Option(name, name)));
-    topicPicker.replaceChildren(...session.topics.map(topic => new Option(
-      topic.date + "  Task " + topic.task + "  " + topic.title, topic.id
-    )));
+    const taskGroups = new Map();
+    for (const topic of session.topics) {
+      const task = "Task " + topic.task;
+      if (!taskGroups.has(task)) {
+        const group = document.createElement("optgroup");
+        group.label = task;
+        taskGroups.set(task, group);
+      }
+      taskGroups.get(task).append(new Option(task + " " + topic.title, topic.id));
+    }
+    const groups = [...taskGroups.values()].sort((a, b) => a.label.localeCompare(b.label));
+    topicPicker.replaceChildren(...groups);
     const target = new URLSearchParams(location.search).get("topic");
-    if (session.topics.some(topic => topic.id === target)) topicPicker.value = target;
+    const selected = session.topics.find(topic => topic.id === target) ?? session.topics[0];
+    if (selected) topicPicker.value = selected.id;
     byId("writing-review-content").hidden = false;
     openTopic();
   }
