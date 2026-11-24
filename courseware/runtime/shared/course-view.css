@@ -412,3 +412,45 @@
 }
 
 .objectives-legend .objectives-frequency { flex: 0 0 .76em; }
+
+/* Shared typography for exercise headings and answer labels. */
+body[data-course-exercise] {
+ --exercise-inner-blue:#2355b1;
+ --exercise-marker-size:21px;
+}
+body[data-course-exercise] .course-numbered-instruction > .course-exercise-number {
+ color:#000;
+ font-size:var(--exercise-marker-size);
+ font-weight:700;
+ line-height:1.48;
+}
+body[data-course-exercise] .top .course-exercise-caption {
+ color:#000;
+ font-size:14px;
+ font-weight:400;
+}
+.course-item:not(.course-item-wide-label) {
+ align-items:baseline;
+}
+body[data-course-exercise] .content .course-inner-ordinal {
+ color:var(--exercise-inner-blue);
+ font-size:var(--exercise-marker-size);
+ font-weight:400;
+ line-height:1.42;
+ font-variant-numeric:tabular-nums;
+}
+body[data-course-exercise] .content ol > li::marker {
+ color:var(--exercise-inner-blue);
+ font-size:var(--exercise-marker-size);
+ font-weight:400;
+}
+.content > .course-numbered-instruction + .course-exercise-copy > .course-item:not(.course-item-wide-label):has(> .num:not(:empty)) {
+ margin-inline-start:1.95em;
+}
+.course-numbered-copy > div > .course-copy {
+ margin:0;
+}
+body[data-course-exercise] .content :is(.inline-status-item,.inline-judgments > li):has(> .inline-anchor + .course-inner-ordinal) {
+ grid-template-columns:38px 32px minmax(0,1fr);
+ column-gap:10px;
+}

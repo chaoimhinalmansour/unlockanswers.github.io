@@ -184,7 +184,214 @@ const classroomStage = (() => {
     document.getElementById("stage-only").focus({preventScroll:true});
   }
 
-  function connect(doc) {
+  function exerciseOrdinalPrefix(text) {
+    const match = /^[ \t]*(\(?([0-9]{1,2})([a-z])?\)?[.)]?|\(?([a-z])\)?[.)]?|\([ivxlcdm]{2,6}\)|[ivxlcdm]{2,6}[.)])[ \t\u00a0]+(?=\S)/i.exec(text);
+    if (!match) return null;
+    const label = match[1];
+    const suffix = (match[3] ?? match[4] ?? "").toLowerCase();
+    return {
+      label, length: match[0].length,
+      number: match[2] === undefined ? null : Number(match[2]),
+      suffix, explicit: /[().]/.test(label),
+    };
+  }
+
+  function confirmedOrdinalLabels(entries) {
+    const groups = new Map();
+    for (const entry of entries) {
+      const group = entry.number === null ? "alphabetic" : entry.suffix ? "item " + entry.number : "decimal";
+      const rank = entry.suffix ? entry.suffix.charCodeAt(0) : entry.number;
+      if (rank === null) continue;
+      if (!groups.has(group)) groups.set(group, new Map());
+      const labels = groups.get(group);
+      if (!labels.has(rank)) labels.set(rank, new Set());
+      labels.get(rank).add(entry.label.toLowerCase());
+    }
+    const confirmed = new Set();
+    for (const labels of groups.values()) {
+      for (const [rank, values] of labels) {
+        if (!labels.has(rank - 1) && !labels.has(rank + 1)) continue;
+        for (const label of values) confirmed.add(label);
+      }
+    }
+    return confirmed;
+  }
+
+  function takeOrdinalPrefix(doc, paragraph, length) {
+    const walker = doc.createTreeWalker(paragraph, NodeFilter.SHOW_TEXT);
+    let text = walker.nextNode();
+    while (text) {
+      if (text.length && text.parentElement.closest(".course-gap,[data-course-answer-target]")) return false;
+      if (length <= text.length) break;
+      length -= text.length;
+      text = walker.nextNode();
+    }
+    if (!text) return false;
+    const range = doc.createRange();
+    range.setStart(paragraph, 0);
+    range.setEnd(text, length);
+    range.deleteContents();
+    return true;
+  }
+
+  const reviewedOrdinalPrefixes = {
+    b1318: ["1 - one picture"],
+    b1354: [
+      "1 Dale: OK, so we need a place",
+      "7 Hakan: My sister's a lawyer",
+      "13 Hakan: I think we should have a modern design",
+    ],
+    b2132: ["3 To: Chuanwei"],
+    b2183: ["1 What is the normal order"],
+    b2715: ["1 Sometimes the information"],
+    b3884: ["1 look for a job"],
+    b3978: ["1 because they help"],
+    b4076: ["1 The moon is too cold"],
+    b4101: ["1 I need lots of money"],
+    b4110: ["1 Space exploration is very expensive."],
+    b4394: ["1 Fines for driving in cycle lanes"],
+    b5106: ["1 ... is the student"],
+    b6179: ["1 I'm afraid we might be trying"],
+    b7480: ["1 Methods of printing replacement body parts"],
+    b8020: ["1 two different kinds of cultivated meat"],
+    b8231: ["1 Circle the statements that express the main ideas."],
+    b8233: ["1 Write one example each of the facts"],
+    b8549: ["1 The restaurant offered unlimited free delivery"],
+    b8741: ["1 Form noun + noun compound nouns"],
+    b8931: ["1 Physical aspects were found to play an important role"],
+  };
+
+  reviewedOrdinalPrefixes.b1356 = reviewedOrdinalPrefixes.b1354;
+
+  function markInlineOrdinal(doc, node, start, length) {
+    node = node.splitText(start);
+    node.splitText(length);
+    const label = doc.createElement("span");
+    label.className = "course-inline-ordinal course-inner-ordinal";
+    node.before(label);
+    label.append(node);
+  }
+
+  function markAnswerSlotNumbers(doc, area) {
+    for (const paragraph of area.querySelectorAll("p.course-copy:has(> .course-gap)")) {
+      const gaps = [...paragraph.querySelectorAll(":scope > .course-gap")];
+      const labels = gaps.map(gap => gap.previousSibling);
+      const parallelSlots = labels.length > 1 && labels.every((node, index) =>
+        node?.nodeType === Node.TEXT_NODE && node.data.trim() === String(index + 1));
+      const pattern = parallelSlots ? /^\s*(\d{1,2})\s*$/ :
+        /(?:^|\s)(\((?:\d{1,2}[a-z]?|[a-z])\))\s*$/i;
+      for (const node of labels) {
+        if (node?.nodeType !== Node.TEXT_NODE) continue;
+        const match = pattern.exec(node.data);
+        if (match) markInlineOrdinal(doc, node, node.data.lastIndexOf(match[1]), match[1].length);
+      }
+    }
+  }
+
+  function restorePrintedQuestionRows(doc, area, id) {
+    const starter = {
+      b2622: "1 What are possible positives of the events in the poster above? COL 2 ",
+      b3503: "1 How old are the users? 2 What are the users' interests?",
+    }[id];
+    const repeated = {
+      b1025: ["9", "Write the verbs from the box in the ideas map. Use Exercise 6 on page 68 to help you."],
+      b1049: ["3", "Make a survey for a student interview."],
+    }[id];
+    if (!starter && !repeated && id !== "b4394" && id !== "b3563") return;
+    const heading = area.querySelector(".course-numbered-instruction");
+    const repeatedInstructionVisible = repeated && heading?.firstElementChild?.textContent === repeated[0] &&
+      heading.lastElementChild.textContent.replace(/\s+/g, " ").trim().startsWith(repeated[1]);
+    for (const paragraph of area.querySelectorAll("p.course-copy")) {
+      const node = paragraph.firstChild;
+      if (paragraph.childNodes.length !== 1 || node.nodeType !== Node.TEXT_NODE) continue;
+      if (repeatedInstructionVisible && node.data.trim() === repeated.join(" ")) {
+        paragraph.remove();
+        continue;
+      }
+      if (id === "b3563" && node.data.trim() === "1 2 3 4") {
+        for (const match of [...node.data.matchAll(/\d/g)].reverse()) {
+          markInlineOrdinal(doc, node, match.index, match[0].length);
+        }
+      }
+      if (id === "b4394" && node.data.startsWith("1 - drivers avoid hitting cyclists")) {
+        node.data = node.data.slice(2);
+      }
+      if (!starter || !node.data.startsWith(starter)) continue;
+      const entries = id === "b2622" ? node.data.split(" COL ") :
+        node.data.split(/ (?=2 What are the users' interests\?)/);
+      const rows = entries.map(text => {
+        const row = paragraph.cloneNode(false);
+        row.textContent = text;
+        return row;
+      });
+      paragraph.replaceWith(...rows);
+    }
+  }
+
+  function prepareExerciseNumbers(doc, exercise) {
+    if (!exercise?.ex || !exercise.id?.includes("-question:")) return;
+    const area = doc.querySelector(".content");
+    if (!area) return;
+    doc.body.setAttribute("data-course-exercise", "");
+    const id = exercise.id.split(":").at(-1);
+    restorePrintedQuestionRows(doc, area, id);
+    markAnswerSlotNumbers(doc, area);
+    const activity = doc.querySelector(".top-activity");
+    if (/^Ex\s+\d/i.test(activity?.textContent.trim() ?? "")) activity.classList.add("course-exercise-caption");
+    const sourceInstruction = area.querySelector("[data-original-instruction]")?.textContent ?? exercise.instruction;
+    const cleaned = value => (value ?? "").replace(/\s+/g, " ").trim();
+    const instruction = cleaned(sourceInstruction);
+    const prefix = text => {
+      const match = exerciseOrdinalPrefix(text);
+      return match && cleaned(text.slice(match.length)) !== instruction ? match : null;
+    };
+    const fromBook = confirmedOrdinalLabels((exercise.coursePages ?? [])
+      .flatMap((_, page) => coursePageBlocks(exercise, page))
+      .filter(block => block.kind === "text").map(block => prefix(block.text)).filter(Boolean));
+
+    const knownItems = new Set((exercise.items ?? []).map(item =>
+      String(item.label).toLowerCase() + "\0" + cleaned(item.prompt)));
+    const paragraphsByParent = new Map();
+    for (const paragraph of area.querySelectorAll("p.course-copy")) {
+      if (paragraph.closest(".course-item")) continue;
+      if (paragraph.firstChild?.matches?.(".course-gap") ||
+          (paragraph.firstElementChild?.classList.contains("course-inline-ordinal") && !paragraph.firstChild.textContent.trim())) continue;
+      const ordinal = prefix(paragraph.textContent);
+      if (!ordinal) continue;
+      const wording = cleaned(paragraph.textContent.slice(ordinal.length));
+      if (/^[\d,.%°\s]+$/.test(wording)) continue;
+      const parent = paragraph.parentElement;
+      if (!paragraphsByParent.has(parent)) paragraphsByParent.set(parent, []);
+      paragraphsByParent.get(parent).push({ paragraph, ordinal, wording });
+    }
+    for (const entries of paragraphsByParent.values()) {
+      const onPage = confirmedOrdinalLabels(entries.map(entry => entry.ordinal));
+      for (const { paragraph, ordinal, wording } of entries) {
+        const key = ordinal.label.toLowerCase();
+        const isKnownItem = knownItems.has(key + "\0" + wording);
+        const isBlankRow = /^_{2,}$/.test(wording);
+        const printed = (reviewedOrdinalPrefixes[id] ?? []).some(prefix => cleaned(paragraph.textContent).startsWith(prefix));
+        if (!ordinal.explicit && !onPage.has(key) && !fromBook.has(key) && !isKnownItem && !isBlankRow && !printed) continue;
+        if (!takeOrdinalPrefix(doc, paragraph, ordinal.length)) continue;
+        const row = doc.createElement("div");
+        row.className = "course-item course-numbered-copy";
+        const number = doc.createElement("span");
+        number.className = "num course-inline-ordinal";
+        number.textContent = ordinal.label;
+        const prose = doc.createElement("div");
+        paragraph.replaceWith(row);
+        row.append(number, prose);
+        prose.append(paragraph);
+      }
+    }
+    const serial = /^(?:\(?[0-9]{1,2}[a-z]?\)?[.)]?|\(?[a-z]\)?[.)]?|\(?[ivxlcdm]{2,6}\)?[.)]?)$/i;
+    for (const number of area.querySelectorAll(".num,.course-option-label,.option-label,.option-letter,.options .letter,.business-discuss-step-number,.business-pair-step-number")) {
+      if (serial.test(number.textContent.trim())) number.classList.add("course-inner-ordinal");
+    }
+  }
+
+  function connect(doc, exercise = cases[current]) {
+    prepareExerciseNumbers(doc, exercise);
     const courseware = window.UnlockCourseware;
     const rail = courseware?.classroom ? doc.querySelector(".rail") : null;
     if (rail && !rail.querySelector("[data-stage-workspace-return]")) {
