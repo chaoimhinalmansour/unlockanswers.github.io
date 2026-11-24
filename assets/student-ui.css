@@ -97,29 +97,7 @@ body.student-ui button.ui-action:disabled {
 .student-ui .login-message { padding-block-start: 5px; font-size: .81rem; }
 .student-ui .portal-brand .ui-label { margin-inline-start: .26em; vertical-align: middle; font-size: .8rem; }
 .student-ui #portal-sign-out { padding: 4px 0; color: var(--unlock-ink); }
-.workspace-home[data-role="student"] .workspace-cards {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(14px, 3vw, 34px);
-}
-.workspace-home[data-role="student"] .workspace-card {
-  padding: 21px 10px 23px;
-  border: solid var(--unlock-line);
-  border-width: 1px 0 0;
-  border-radius: 0;
-  background: var(--unlock-white);
-  box-shadow: none;
-  min-height: 150px;
-}
-.workspace-home[data-role="student"] .workspace-card:hover { border-color: var(--unlock-blue); }
-.workspace-home[data-role="student"] .workspace-card h2 {
-  margin-bottom: 13px;
-  font-size: clamp(1.3rem, 2.4vw, 1.8rem);
-}
-.workspace-home[data-role="student"] .workspace-card p { font-size: .96rem; }
-@media (max-width: 670px) {
-  .workspace-home[data-role="student"] .workspace-cards { grid-template-columns: minmax(0, 1fr); gap: 0; }
-  .workspace-home[data-role="student"] .workspace-card { min-height: 0; }
-}
+
 @media (max-height: 440px) {
   .student-ui #login-form {
     --login-title-size: clamp(32px, 8vh, 50px);
