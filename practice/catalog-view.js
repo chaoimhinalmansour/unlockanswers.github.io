@@ -101,7 +101,7 @@
 
   function renderDirectoryBack() {
     return '<button type="button" class="ui-nav ui-back" data-action="directory" ' +
-      'aria-label="Back to the Unit Practice directory 返回单元练习目录">' + label("Back", "返回上一级") + '</button>';
+      'aria-label="Back to the Unit Practice directory 返回单元练习目录">' + label("Back", "返回") + '</button>';
   }
 
   function renderOpening(opening, teaching = false) {
