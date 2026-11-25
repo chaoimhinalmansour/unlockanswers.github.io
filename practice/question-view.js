@@ -256,19 +256,28 @@
     const end = start + wordCard.exampleMark.length;
     const example = start < 0 ? esc(wordCard.example) : esc(wordCard.example.slice(0, start)) +
       "<strong>" + esc(wordCard.example.slice(start, end)) + "</strong>" + esc(wordCard.example.slice(end));
-    const samples = [[wordCard.wordAudio, "Play Word", "播放单词"], [wordCard.exampleAudio, "Play Example", "播放例句"]]
-      .filter(([source]) => source).map(([source, english, chinese]) =>
-        '<button type="button" class="button secondary ui-action" data-vocabulary-play>' + label(english, chinese) +
-        '</button><audio hidden preload="none" src="../' + esc(source) + '"></audio>').join("");
+    const sample = (source, english, chinese) => source ?
+      '<div class="word-card-samples"><button type="button" class="button secondary ui-action" data-vocabulary-play>' +
+      label(english, chinese) + '</button><audio hidden preload="none" src="../' + esc(source) + '"></audio></div>' : "";
+    const sectionTitle = (english, chinese) =>
+      '<h3 class="word-card-section-title">' + label(english, chinese) + '</h3>';
     const image = picture ? '<img class="word-card-picture" src="../' + esc(picture) + '" alt="' + esc(prompt) + '">' : "";
     const pronunciation = [wordCard.ipa, wordCard.pos].filter(Boolean).join(" ");
-    const instruction = '<p class="question-instruction">' + label("Record the word, then read the whole example sentence.",
-      "先读单词，再读完整的例句，把两部分录在同一段。") + '</p>';
-    const content = '<div class="word-card-read"><div><div lang="en-GB">' + promptHTML(question) +
-      '<p class="word-card-pronunciation">' + esc(pronunciation) + '</p><p>' + esc(wordCard.definition) +
-      '</p><p class="word-card-example">' + example + '</p></div><div class="word-card-samples">' + samples +
-      '</div><p data-vocabulary-audio-status role="status" hidden></p>' + instruction +
-      voiceHTML(question, attempt) + '</div>' + image + '</div>';
+    const instruction = '<p class="word-card-directions">' + label(
+      "Make one recording. Say the word on its own first, then read the full example sentence aloud.",
+      "在同一段录音里，先单独读一遍单词，再从头到尾读一遍例句。") + '</p>';
+    const content = '<div class="word-card-read"><div class="word-card-copy">' +
+      '<div class="word-card-inline"><div lang="en-GB">' + promptHTML(question) +
+      '<p class="word-card-pronunciation">' + esc(pronunciation) + '</p></div>' +
+      sample(wordCard.wordAudio, "Play Word", "播放单词") + '</div>' +
+      '<div class="word-card-meaning">' + sectionTitle("Meaning", "释义") +
+      '<p lang="en-GB">' + esc(wordCard.definition) + '</p></div>' +
+      '<section class="word-card-example-panel"><div class="word-card-inline"><div>' +
+      sectionTitle("Example Sentence", "例句") + '<p class="word-card-example" lang="en-GB">' + example + '</p></div>' +
+      sample(wordCard.exampleAudio, "Play Example", "播放例句") + '</div></section>' +
+      '<p data-vocabulary-audio-status role="status" hidden></p>' +
+      '<section class="word-card-recording">' + sectionTitle("Recording Task", "录音任务") +
+      instruction + voiceHTML(question, attempt) + '</section></div>' + image + '</div>';
     return card(question, unit, "", "ungraded", content);
   }
 
