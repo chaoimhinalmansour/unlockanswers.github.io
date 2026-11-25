@@ -629,6 +629,8 @@ function screen(c,p,revision){
   '<button type="button" data-vocabulary-link="'+esc(id)+'">'+(kind==="glossary"?"词汇":"词框")+'</button>').join("")+
   (history.at(-1)?.vocabulary===c.id?'<button type="button" data-vocabulary-return>返回本题</button>':"");
  const photoPage=isOpening?c.flow.pages[p].photo?.sourcePage:null;
+ const businessReadingScope=c.id==="B02-RW-U06-question:b3865"?
+  instructionHTML(c).replace("</span></p>",' <small class="business-reading-scope" style="color:#345493;white-space:nowrap">(Reading 1 Only)</small></span></p>'):null;
  const source=c.pages.length?originalButton(c,printedReading??c.pages[0],c.flow?"教材原页":"题目原页")+
   (readingPage&&!c.flow?originalButton(c,readingPage.sourcePage,"材料原页"):"")+
   (photoPage&&photoPage!==c.pages[0]?originalButton(c,photoPage,"配图原页"):""):"";
@@ -641,7 +643,7 @@ function screen(c,p,revision){
   (printedReading?'教材第 '+printedReading+' 页':c.pages.length?'教材第 '+esc(c.pages.join("、"))+' 页':"")+classroomStage.count(p,binding.chunks.length)+'</div>'+audio+'</header>'+
   '<nav class="rail" aria-label="课堂工具"><button type="button" data-move="-1">上一页</button><button type="button" data-move="1">下一页</button><div class="rail-gap"></div>'+
   source+(c.playback?.launchInline?"":lessonRailHTML(c))+course.rail+vocabTools+reader+record+related+classroomStage.back(c,history.at(-1))+'</nav><article class="page"><div class="slide-area">'+
-  (readingPage?readingScreen(c,readingPage):'<div class="content'+contentClass+'">'+(isOpening||isGlossary||c.stageSkill||c.businessOpener?"":c.id==="B02-RW-U06-question:b3861"?instructionHTML(c).replace("write N","write <em>N</em>").replace("and V next","and <em>V</em> next").replace("before business?","before <em>business</em>?"):instructionHTML(c))+content(c,p,binding)+'</div>')+
+  (readingPage?readingScreen(c,readingPage):'<div class="content'+contentClass+'">'+(isOpening||isGlossary||c.stageSkill||c.businessOpener?"":c.id==="B02-RW-U06-question:b3861"?instructionHTML(c).replace("write N","write <em>N</em>").replace("and V next","and <em>V</em> next").replace("before business?","before <em>business</em>?"):businessReadingScope??instructionHTML(c))+content(c,p,binding)+'</div>')+
   inlineProofHTML(c)+video+readerHTML(c)+recordDrawerHTML(c)+course.panels+(related?referenceDrawerHTML(c):"")+'</div></article></div></body></html>';
 }
 function resultFor(c){return (c.comparison?comparisonResults:c.flow?lessonResults:results)[c.id];}
