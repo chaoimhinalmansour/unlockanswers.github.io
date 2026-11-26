@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>课堂反馈 | UNLOCK</title>
   <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
-  <link rel="stylesheet" href="classroom-feedback-8a4beb5afd9fb389.css">
+  <link rel="stylesheet" href="classroom-feedback-6d5900a42337c720.css">
   <script defer src="../practice/students.js?v=20261120-portraits"></script>
   <script defer src="../assets/session.js?v=e211f3deae4b33a7"></script>
-  <script defer src="classroom-feedback-17653e4b3d8a0011.js"></script>
+  <script defer src="classroom-feedback-41cbfc4279f5a8af.js"></script>
 </head>
 <body>
   <div id="feedback-page" hidden>
@@ -56,26 +56,41 @@
           <div id="feedback-students" class="feedback-students"></div>
         </section>
         <div class="feedback-actions">
-          <label class="feedback-field">导出范围
-            <select id="feedback-export-scope" disabled>
-              <option value="all">全部已添加科目的学生</option>
-            </select>
-          </label>
-          <button type="submit" id="feedback-export" class="feedback-button feedback-primary" disabled>导出 PDF</button>
-          <div class="feedback-export-help">
-            <p id="feedback-export-status" role="status" hidden></p>
-            <p>在打印窗口选择「另存为 PDF」。</p>
-          </div>
+          <button type="submit" id="feedback-export" class="feedback-button feedback-primary"
+            aria-haspopup="dialog" aria-controls="feedback-review" disabled>导出 PDF</button>
+          <p id="feedback-export-status" role="status" hidden></p>
         </div>
       </form>
-      <dialog id="feedback-review" class="feedback-review" aria-labelledby="feedback-review-title" aria-describedby="feedback-review-help">
-        <h2 id="feedback-review-title">导出前核对</h2>
-        <p id="feedback-review-help">以下栏目仍待评或未填写。核对后，可以按当前内容导出。</p>
-        <ul id="feedback-review-list" class="feedback-review-list"></ul>
-        <div class="feedback-review-actions">
-          <button type="button" id="feedback-review-back" class="feedback-button" autofocus>返回填写</button>
-          <button type="button" id="feedback-review-export" class="feedback-button feedback-primary">继续导出 PDF</button>
-        </div>
+      <dialog id="feedback-review" class="feedback-review" aria-labelledby="feedback-review-title">
+        <form id="feedback-review-form" class="feedback-review-form">
+          <header class="feedback-review-header">
+            <h2 id="feedback-review-title">导出 PDF</h2>
+            <label class="feedback-field" for="feedback-export-scope">导出范围
+              <select id="feedback-export-scope" required autofocus>
+                <option value="" selected disabled>请选择导出范围</option>
+              </select>
+            </label>
+          </header>
+          <div id="feedback-review-body" class="feedback-review-body" hidden>
+            <section id="feedback-absence-review" class="feedback-review-section" aria-labelledby="feedback-absence-title" hidden>
+              <h3 id="feedback-absence-title">未到课或请假</h3>
+              <p id="feedback-absence-help" hidden>请核对以下评语，勾选确认后继续导出。</p>
+              <ul id="feedback-absence-list" class="feedback-absence-list"></ul>
+            </section>
+            <section id="feedback-review-pending" class="feedback-review-section" aria-labelledby="feedback-pending-title" hidden>
+              <h3 id="feedback-pending-title">待评或未填写</h3>
+              <p>核对后，可以按当前内容导出。</p>
+              <ul id="feedback-review-list" class="feedback-review-list"></ul>
+            </section>
+          </div>
+          <footer class="feedback-review-footer">
+            <p>在打印窗口选择「另存为 PDF」。</p>
+            <div class="feedback-review-actions">
+              <button type="button" id="feedback-review-back" class="feedback-button">返回填写</button>
+              <button type="submit" id="feedback-review-export" class="feedback-button feedback-primary" disabled>继续导出 PDF</button>
+            </div>
+          </footer>
+        </form>
       </dialog>
     </main>
   </div>
