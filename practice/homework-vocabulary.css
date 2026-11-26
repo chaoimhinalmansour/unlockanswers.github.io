@@ -1,0 +1,249 @@
+#practice-surface.in-worksheet:has(.homework-header) { grid-template-columns: minmax(0, 1fr); }
+
+#practice-surface.in-worksheet .assignment-header.homework-header {
+  display: grid;
+  grid-template-columns: max-content max-content minmax(0, 1fr) minmax(0, max-content) minmax(108px, 202px) max-content;
+  grid-template-areas: "identity tabs . phase progress actions";
+  align-items: center;
+  column-gap: clamp(8px, 1.1vw, 16px);
+  margin-block-end: 8px;
+  padding-block: 0 4px;
+  border-block-end: 0;
+}
+.homework-header .assignment-identity { grid-area: identity; white-space: nowrap; }
+.homework-header .assignment-title {
+  display: block;
+  inline-size: 9.6rem;
+}
+.homework-header .assignment-title h1 { font-size: 23px; }
+.homework-header .assignment-title .page-context { color: var(--ink); }
+.homework-header .assignment-tabs { grid-area: tabs; }
+.homework-header .assignment-phase { grid-area: phase; }
+.homework-header .assignment-phase .state-label { white-space: normal; }
+.homework-header .work-progress { grid-area: progress; }
+.homework-header .assignment-actions { grid-area: actions; }
+.homework-header .assignment-action-list { gap: 0; }
+#practice-surface.in-worksheet .homework-header .assignment-tabs .question-chip {
+  padding-inline: 11px;
+  border: 1px solid var(--ink);
+  border-radius: 9px;
+}
+#practice-surface.in-worksheet .homework-header .assignment-tabs .question-chip[aria-current="step"] {
+  border-color: var(--accent);
+}
+.homework-header .assignment-tabs .question-chip:disabled { opacity: .65; }
+.homework-header [data-action="reset-exercise"] { color: var(--accent); }
+.homework-header .work-progress .work-progress-line { font-size: .84rem; }
+.homework-header .work-progress-line strong { font-variant-numeric: tabular-nums; }
+
+.hw-vocab-shell {
+  --hw-green: #145c31;
+  --hw-green-bg: #e8f6ec;
+  --hw-red: #962828;
+  --hw-red-bg: #fff0f0;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  flex: 0 1 auto;
+  block-size: clamp(19rem, calc(100dvh - 14.7rem), 39rem);
+  min-block-size: 0;
+  min-inline-size: 0;
+  padding: 14px 17px 15px;
+  border: 1px solid var(--ink);
+  border-radius: 12px;
+  font-size: 14px;
+}
+.hw-vocab-scroll {
+  /* Keep focus outlines inside the scrollport without moving the content. */
+  margin: -6px;
+  padding: 6px;
+  min-block-size: 0;
+  min-inline-size: 0;
+  overflow: auto;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+.hw-vocab-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.hw-vocab-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 6px 14px;
+  min-block-size: 46px;
+}
+.hw-vocab-heading h2 { font-size: clamp(19px, 2vw, 23px); }
+.hw-vocab-heading h2 .ui-zh { color: var(--ink); font-weight: 400; font-size: 12px; }
+.hw-vocab-counter { flex: 0 0 auto; font-weight: 650; font-variant-numeric: tabular-nums; }
+[data-hw-step="cards"] .hw-vocab-heading h2 { font-size: 14px; font-weight: 700; }
+.hw-vocab-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(180px, 1fr);
+  align-items: start;
+  gap: clamp(20px, 5.8vw, 84px);
+}
+.hw-vocab-layout.hw-vocab-one-column { grid-template-columns: minmax(0,1fr); }
+.hw-vocab-layout > div { min-inline-size: 0; overflow-wrap: anywhere; }
+.hw-vocab-picture {
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  justify-self: center;
+  margin-block-start: 2px;
+}
+.hw-word-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, .82fr) max-content;
+  grid-template-areas: "term translation play" "ipa ipa ipa";
+  align-items: center;
+  gap: 1px clamp(7px, 1.25vw, 18px);
+  margin-block-end: 17px;
+}
+.hw-word-head h3 { grid-area: term; font-size: clamp(27px, 3vw, 32px); overflow-wrap: anywhere; }
+.hw-word-head .hw-word-translation { grid-area: translation; font-size: clamp(16px, 1.6vw, 21px); }
+.hw-word-head [data-hw-action="play-word"] { grid-area: play; }
+.hw-word-ipa { grid-area: ipa; font-weight: 650; font-size: 15px; }
+.hw-vocab-label { font-size: 15px; color: var(--unlock-secondary); font-weight: 700; }
+.hw-word-definition { margin-block: 6px 13px; }
+.hw-word-example {
+  border: 1px solid var(--line);
+  border-inline-start: 3px solid #5d7192;
+  border-radius: 9px;
+  padding: 10px 13px;
+  background: #edf2f8;
+}
+.hw-example-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 9px;
+  margin-block-end: 6px;
+}
+.hw-word-example > :lang(en-GB) { font-size: 16px; }
+.hw-example-translation { margin-block-start: 6px; }
+.hw-vocab-reveal { visibility: visible; opacity: 1; transition: opacity 180ms ease-out; }
+.hw-vocab-reveal[aria-hidden="true"] { visibility: hidden; opacity: 0; }
+.hw-vocab-target { font-size: clamp(19px, 2vw, 23px); font-weight: 700; }
+.hw-vocab-instruction { margin-block: 1px 10px; }
+.hw-vocab-audio-status { color: var(--hw-red); }
+.hw-vocab-options { display: grid; gap: 8px; margin-block: 10px 0; }
+.hw-vocab-options[data-hw-options="meaning"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hw-vocab-options[data-hw-options="syllables"] { display: flex; flex-wrap: wrap; }
+.hw-vocab-option,
+.hw-syllable-slot {
+  min-inline-size: 38px;
+  min-block-size: 40px;
+  padding: 5px 11px;
+  border: 1px solid var(--ink);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--ink);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+  transition: background-color 170ms ease-out, border-color 170ms ease-out, color 170ms ease-out;
+}
+[data-hw-options="match"] .hw-vocab-option { text-align: start; }
+.hw-vocab-option:hover:not(:disabled) { border-color: var(--accent); }
+.hw-vocab-option[aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
+.hw-vocab-shell :is(.hw-vocab-option,.hw-syllable-slot,.text-input)[data-result="correct"] {
+  color: var(--hw-green);
+  border-color: var(--hw-green);
+  background: var(--hw-green-bg);
+}
+.hw-vocab-shell :is(.hw-vocab-option,.hw-syllable-slot,.text-input)[data-result="wrong"] {
+  color: var(--hw-red);
+  border-color: var(--hw-red);
+  background: var(--hw-red-bg);
+}
+.hw-syllable-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 10px;
+  margin-block-start: 8px;
+}
+.hw-syllable-order { display: flex; flex-wrap: wrap; gap: 5px; }
+.hw-syllable-slot {
+  display: grid;
+  place-items: center;
+  min-block-size: 35px;
+  min-inline-size: 48px;
+  padding-inline: 6px;
+  border-color: var(--line);
+  background: var(--surface);
+}
+.hw-syllable-tile { animation: hw-vocab-fade 180ms ease-out both; }
+@keyframes hw-vocab-fade { from { opacity: .35; } to { opacity: 1; } }
+@keyframes hw-vocab-arrive {
+  from { opacity: .3; transform: translateY(5px) scale(.92); }
+  to { opacity: 1; transform: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .hw-syllable-tile { animation: hw-vocab-arrive 210ms cubic-bezier(.2, .75, .35, 1) both; }
+}
+.hw-vocab-feedback { min-block-size: 1.55em; margin-block: 9px 4px; }
+.hw-vocab-shell [data-hw-spelling] { margin-block-start: 9px; }
+.hw-vocab-shell [data-hw-spelling] label { display: block; }
+.hw-vocab-shell [data-hw-spelling] .text-input {
+  display: block;
+  inline-size: min(100%, 34rem);
+  min-block-size: 44px;
+  margin-block: 5px 9px;
+  border-color: var(--ink);
+}
+.hw-vocab-shell [data-hw-spelling] .text-input:focus-visible { outline-offset: 3px; }
+.hw-vocab-record { margin-block: 6px; padding-block-start: 8px; border-block-start: 1px solid var(--line); }
+.hw-vocab-record-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-block-start: 5px; }
+.hw-vocab-record-actions audio { width: min(100%, 265px); height: 36px; }
+.hw-vocab-shell [data-hw-action^="play-"] { --student-action-width: auto; padding-inline: 11px; }
+.hw-vocab-shell [data-hw-action^="play-"][aria-pressed="true"] { border-color: var(--accent); background: var(--tint); }
+.hw-vocab-footer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: end;
+  gap: 10px;
+  border-block-start: 1px solid var(--line);
+  padding-block-start: 10px;
+  margin-block-start: 14px;
+}
+.hw-vocab-footer .ui-action { --student-action-width: min(100%, 10rem); justify-self: start; }
+.hw-vocab-footer .ui-action:last-child { justify-self: end; }
+body.student-ui .hw-vocab-shell button.ui-primary:disabled {
+  border: 1px solid #747474;
+  background: #747474;
+  color: white;
+}
+
+@media (max-width: 869px) {
+  #practice-surface.in-worksheet .assignment-header.homework-header {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) max-content;
+    grid-template-areas: "identity identity actions" "tabs tabs tabs" "phase progress progress";
+    row-gap: 6px;
+  }
+  .homework-header .assignment-title { inline-size: auto; }
+  .homework-header .assignment-title h1 { font-size: 21px; }
+  .homework-header .assignment-tabs { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .homework-header .assignment-tabs .question-chip { inline-size: 100%; }
+  .homework-header .work-progress { min-inline-size: 0; }
+}
+@media (max-width: 639px) {
+  .hw-vocab-shell {
+    block-size: clamp(18rem, calc(100dvh - 16rem), 36rem);
+    padding: 10px 10px 11px;
+  }
+  .hw-vocab-layout { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .hw-vocab-picture { width: min(100%, 267px); max-block-size: 164px; }
+  .hw-vocab-layout:has(.hw-vocab-instruction) .hw-vocab-picture { grid-row: 1; max-block-size: 118px; }
+  .hw-vocab-heading { min-block-size: 40px; }
+  .hw-word-head { margin-block-end: 9px; }
+  .hw-word-head h3 { font-size: clamp(21px, 6.8vw, 28px); }
+  .hw-word-head .hw-word-translation { font-size: 16px; }
+  .hw-vocab-shell [data-hw-action^="play-"] { padding-inline: 6px; }
+  .hw-vocab-footer { padding-block-start: 8px; margin-block-start: 9px; }
+}
+
+
+@media (max-width: 359px) {
+  #practice-surface:has(.homework-header) .masthead-inner { column-gap: 6px; }
+  #practice-surface:has(.homework-header) .brandline .section-label { display: none; }
+  #practice-surface:has(.homework-header) .header-actions { min-inline-size: 0; justify-content: flex-end; gap: 4px 10px; }
+  #practice-surface:has(.homework-header) .ui-site-nav { gap: 10px; }
+}
