@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>课堂反馈 | UNLOCK</title>
   <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
-  <link rel="stylesheet" href="classroom-feedback-d992733a59dfe65c.css">
+  <link rel="stylesheet" href="classroom-feedback-8a4beb5afd9fb389.css">
   <script defer src="../practice/students.js?v=20261120-portraits"></script>
   <script defer src="../assets/session.js?v=e211f3deae4b33a7"></script>
-  <script defer src="classroom-feedback-b337d2c24bf8a8f0.js"></script>
+  <script defer src="classroom-feedback-17653e4b3d8a0011.js"></script>
 </head>
 <body>
   <div id="feedback-page" hidden>
@@ -35,7 +35,7 @@
                 <input id="feedback-week" type="number" inputmode="numeric" min="1" step="1">
               </label>
             </div>
-            <p class="feedback-field-hint">沿用默认值的科目会随这里更新。</p>
+            <p class="feedback-field-hint">各科可沿用默认日期和教学周，也可单独设置。</p>
           </fieldset>
           <fieldset class="feedback-session">
             <legend>学生名单</legend>
@@ -58,11 +58,14 @@
         <div class="feedback-actions">
           <label class="feedback-field">导出范围
             <select id="feedback-export-scope" disabled>
-              <option value="">全部学生</option>
+              <option value="all">全部已添加科目的学生</option>
             </select>
           </label>
           <button type="submit" id="feedback-export" class="feedback-button feedback-primary" disabled>导出 PDF</button>
-          <p>在打印窗口选择「另存为 PDF」。</p>
+          <div class="feedback-export-help">
+            <p id="feedback-export-status" role="status" hidden></p>
+            <p>在打印窗口选择「另存为 PDF」。</p>
+          </div>
         </div>
       </form>
       <dialog id="feedback-review" class="feedback-review" aria-labelledby="feedback-review-title" aria-describedby="feedback-review-help">
