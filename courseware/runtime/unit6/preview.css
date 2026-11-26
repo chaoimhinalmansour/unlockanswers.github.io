@@ -315,7 +315,8 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
   text-underline-offset:3px;
 }
 
-.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p130-01"]) .stage-examples strong {
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p130-01"]) .stage-examples strong,
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p131-01"]) .stage-examples strong {
   color:var(--course-table-purple);
 }
 
