@@ -25,6 +25,134 @@ const classroomStage = (() => {
     }
   }
 
+  const printedWatchChoices = {
+    "B01-RW-U07-question:b2250": {answer:"b", stem:"This video is about"},
+    "B02-LS-U06-question:b2968": {answer:"a", stem:"Upskilling is important because ..."},
+    "B02-LS-U07-question:b3069": {answer:"c"},
+    "B02-RW-U03-question:b3484": {answer:"b"},
+    "B02-RW-U06-question:b3814": {answer:"a"},
+    "B03-RW-U06-question:b5046": {answer:"2", key:true},
+    "B04-RW-U01-question:b6587": {answer:"2"},
+    "B04-RW-U02-question:b6689": {answer:"2"},
+    "B04-RW-U07-question:b7262": {answer:"3"},
+    "B04-RW-U08-question:b7165": {answer:"3"},
+    "B05-LS-U01-question:b7356": {answer:"a"},
+    "B05-LS-U05-question:b7776": {answer:"b"},
+    "B05-LS-U09-question:b8997": {answer:"a", key:true},
+    "B05-RW-U02-question:b8302": {answer:"2"},
+  };
+  const printedWatchChecklists = {
+    "B03-RW-U04-question:b5534": {labels:["□","□","□","□","□","□","□"], correct:[0,1,3,6]},
+    "B05-RW-U01-question:b8201": {labels:["a","b","c","d","e"], correct:[2,3,4]},
+    "B05-RW-U05-question:b8601": {labels:["1","2","3","4"], correct:[0,2]},
+  };
+  const printedWatchBanks = new Set(["B02-LS-U05-question:b2859","B02-RW-U03-question:b3478"]);
+  const printedWatchBullets = "B05-RW-U01-question:b8196";
+
+  function installPrintedWatchPages(exercise, pages, key) {
+    const review = coursePublishedAnswers[exercise.id] ?? {rows:{}};
+    // The old skip positions apply only to the unrevised pages.
+    coursePublishedAnswers[exercise.id] = {...review, displayPages:pages, skipTextBlocks:[]};
+    if (key) coursePublishedAnswers[exercise.id].rewriteKey = key;
+  }
+
+  function alignPrintedWatchExercise(exercise) {
+    if (exercise.id === "B03-RW-U04-question:b5538") {
+      const corrected = text => text.replace("the modem and the traditional", "the modern and the traditional");
+      exercise.items = exercise.items.map(row => ({...row, prompt:corrected(row.prompt)}));
+      exercise.coursePages = exercise.coursePages.map(page => page.map(block =>
+        block.kind === "text" ? {...block, text:corrected(block.text)} : block));
+      if (exercise.provided) exercise.provided = corrected(exercise.provided);
+    }
+    const solo = printedWatchChoices[exercise.id];
+    const checklist = printedWatchChecklists[exercise.id];
+    const bank = printedWatchBanks.has(exercise.id);
+    if (!solo && !checklist && !bank && exercise.id !== printedWatchBullets) return;
+    const item = exercise.items?.find(row => row.options?.length);
+    if (!item || typeof coursePublishedAnswers === "undefined") return;
+    const options = item.options.map(courseOption);
+
+    if (solo) {
+      const numeric = /^\d+$/.test(solo.answer);
+      const choices = options.map(({text}, index) => ({
+        text, label:numeric ? String(index + 1) : String.fromCharCode(97 + index)
+      }));
+      const correct = choices.findIndex(option => option.label === solo.answer);
+      if (correct < 0) return;
+      installPrintedWatchPages(exercise, [[{
+        ...item, kind:"item", label:"", showLabel:false, prompt:solo.stem ?? "", options:choices, stackOptions:true,
+        answer:{mode:"choice", option:correct}
+      }]], solo.key ? solo.answer : undefined);
+    } else if (checklist && options.length === checklist.labels.length) {
+      const rows = options.map(({text}, index) => ({
+        kind:"item", id:exercise.items[index].id, label:checklist.labels[index], prompt:text, options:[],
+        answer:checklist.correct.includes(index) ? {mode:"mark"} : undefined
+      }));
+      installPrintedWatchPages(exercise, [rows]);
+    } else if (bank) {
+      const middle = Math.ceil(options.length / 2);
+      const rows = [options.slice(0,middle), options.slice(middle)].map(row => row.map(({text}) => ({text})));
+      installPrintedWatchPages(exercise, [[{kind:"table", rows}]]);
+    } else if (exercise.id === printedWatchBullets && exercise.coursePages) {
+      const bullets = options.map(({text}) => ({label:"•", text}));
+      const pages = exercise.coursePages.map(page => page.map(block =>
+        block.id === item.id ? {...block, options:bullets, stackOptions:true} : block));
+      installPrintedWatchPages(exercise, pages);
+    }
+  }
+
+  const videoReviewExercises = {
+    "B01-LS-U05": "B01-LS-U05-question:b1197",
+    "B01-LS-U06": "B01-LS-U06-question:b1311",
+    "B02-LS-U01": "B02-LS-U01-question:b2434",
+  };
+  const printedWatchPhases = {
+    "B04-LS-U04-question:b6065": "UNDERSTANDING MAIN IDEAS",
+    "B04-LS-U04-question:b6066": "UNDERSTANDING DETAIL",
+  };
+
+  function reviseWatchAndListen(data, unitId) {
+    const flow = data.lessonFlow;
+    const video = flow?.entries?.find(entry => entry.id === unitId + "-classroom:video" && entry.flow?.kind === "video");
+    const playback = video?.playback;
+    const asset = data.classroomMedia?.[playback?.mediaId];
+    const source = playback?.src ?? asset?.src;
+    if (!source || typeof classroomVideoProfiles === "undefined" || !classroomVideoProfiles[unitId]) return;
+
+    // The viewing resource stays in the model and opens from the current exercise.
+    for (const lesson of flow.lessons) {
+      lesson.steps = lesson.steps.filter(step => step.id !== video.id);
+      for (const step of lesson.steps) {
+        const phase = printedWatchPhases[step.id];
+        if (phase) step.context = {...step.context, phaseTitle:phase};
+      }
+    }
+
+    for (const exercise of data.fixtures) {
+      const phase = printedWatchPhases[exercise.id];
+      if (phase) exercise.context = {...exercise.context, phaseTitle:phase};
+      if (exercise.id === videoReviewExercises[unitId]) {
+        const media = exercise.courseMedia ?? [];
+        if (!media.some(entry => entry.type === "video" && entry.src === source)) {
+          const title = playback.title ?? asset?.title ?? "Watch and listen";
+          exercise.courseMedia = [...media, {type:"video", title, src:source}];
+        }
+      }
+      if (exercise.id === "B02-RW-U01-question:b3257") exercise.watchVideoEvidenceOnly = true;
+      if (exercise.id === "B03-LS-U02-question:b4252") {
+        exercise.instruction = exercise.instruction.replace(/ Watch again\. Write T \(true\) or F \(false\)\.$/, "");
+      }
+      if (exercise.id === "B03-LS-U08-question:b4852") {
+        exercise.courseMedia = (exercise.courseMedia ?? []).filter(entry => entry.type !== "video" || entry.src !== source);
+      }
+      if (exercise.id === "B04-LS-U04-question:b6066") {
+        exercise.references = (exercise.references ?? []).filter(ref => ref.id !== "B04-LS-U04-question:b6065");
+      }
+    }
+
+    if (unitId === "B04-LS-U04") video.context = {...video.context, phaseTitle:"WHILE WATCHING"};
+  }
+
   function installTeaching(routes) {
     const definition = document.getElementById("fixture-data");
     if (!definition) return;
@@ -34,8 +162,13 @@ const classroomStage = (() => {
     const first = flow?.entries?.[0]?.id ?? "";
     const unitId = first.match(/^(B\d{2}-(?:LS|RW)-U\d{2})-/)?.[1];
     const supplement = routes[unitId];
-    if (!supplement) return;
+    if (supplement) installLessonSupplement(flow, supplement);
+    reviseWatchAndListen(data, unitId);
+    for (const exercise of data.fixtures ?? []) alignPrintedWatchExercise(exercise);
+    definition.textContent = JSON.stringify(data);
+  }
 
+  function installLessonSupplement(flow, supplement) {
     const byLesson = new Map(supplement.lessons.map(lesson => [lesson.key, lesson]));
     for (const lesson of flow.lessons) {
       const patch = byLesson.get(lesson.key);
@@ -64,7 +197,6 @@ const classroomStage = (() => {
         if (title) step.label = title;
       }
     }
-    definition.textContent = JSON.stringify(data);
   }
 
   function heading(caseData, current) {
@@ -391,6 +523,12 @@ const classroomStage = (() => {
   }
 
   function connect(doc, exercise = cases[current]) {
+    if (doc.querySelector('[data-course-video-return]')) {
+      for (const button of doc.querySelectorAll('.rail [data-move]')) button.hidden = true;
+    } else if (exercise?.watchVideoEvidenceOnly) {
+      const videoButton = doc.querySelector('[data-course-unit-video]');
+      if (videoButton) videoButton.hidden = true;
+    }
     prepareExerciseNumbers(doc, exercise);
     const courseware = window.UnlockCourseware;
     const rail = courseware?.classroom ? doc.querySelector(".rail") : null;
