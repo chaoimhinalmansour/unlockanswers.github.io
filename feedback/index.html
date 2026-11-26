@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>课堂反馈 | UNLOCK</title>
   <link rel="stylesheet" href="../assets/theme.css?v=20261120-black-white">
-  <link rel="stylesheet" href="classroom-feedback.css?v=20261123-feedback-review">
+  <link rel="stylesheet" href="classroom-feedback-f00ed49dfefcd2f9.css">
   <script defer src="../practice/students.js?v=20261120-portraits"></script>
   <script defer src="../assets/session.js?v=e211f3deae4b33a7"></script>
-  <script defer src="classroom-feedback.js?v=20261123-feedback-review"></script>
+  <script defer src="classroom-feedback-76e80f1207a1ab77.js"></script>
 </head>
 <body>
   <div id="feedback-page" hidden>
@@ -23,40 +23,32 @@
     </header>
     <main class="feedback-main">
       <h1>课堂反馈</h1>
-      <form id="feedback-form">
-        <fieldset class="feedback-session" aria-labelledby="feedback-session-title">
-          <legend id="feedback-session-title">课次信息</legend>
-          <div class="feedback-grid">
-            <label class="feedback-field">日期
-              <input id="feedback-date" type="date" required>
-            </label>
-            <label class="feedback-field">教学周
-              <input id="feedback-week" type="number" inputmode="numeric" min="1" step="1" required>
-            </label>
-            <label class="feedback-field">科目
-              <select id="feedback-subject" required>
-                <option value="">请选择科目</option>
-                <option>听力</option>
-                <option>口语</option>
-                <option>阅读</option>
-                <option>写作</option>
-              </select>
-            </label>
-          </div>
-        </fieldset>
-        <section class="feedback-class" aria-labelledby="feedback-class-title">
-          <h2 id="feedback-class-title">学生反馈</h2>
-          <div class="feedback-roster">
-            <label class="feedback-field">从名单选择学生
-              <select id="feedback-roster">
+      <form id="feedback-form" novalidate>
+        <div class="feedback-setup">
+          <fieldset class="feedback-session">
+            <legend>默认课次信息</legend>
+            <div class="feedback-lesson-meta">
+              <label class="feedback-field">日期
+                <input id="feedback-date" type="date">
+              </label>
+              <label class="feedback-field">教学周
+                <input id="feedback-week" type="number" inputmode="numeric" min="1" step="1">
+              </label>
+            </div>
+            <p class="feedback-field-hint">沿用默认值的科目会随这里更新。</p>
+          </fieldset>
+          <fieldset class="feedback-session">
+            <legend>学生名单</legend>
+            <div class="feedback-roster">
+              <select id="feedback-roster" aria-label="从名单选择学生">
                 <option value="">请选择学生</option>
               </select>
-            </label>
-            <div class="feedback-roster-actions">
-              <button type="button" id="feedback-add" class="feedback-button" disabled>添加学生</button>
-              <p id="feedback-roster-count" class="feedback-roster-count" role="status">已添加 0 名学生</p>
+              <button type="button" id="feedback-add" class="feedback-button feedback-primary" disabled>添加学生</button>
             </div>
-          </div>
+            <p id="feedback-roster-count" class="feedback-field-hint" role="status">已添加 0 名学生</p>
+          </fieldset>
+        </div>
+        <section class="feedback-class" aria-label="学生反馈">
           <div id="feedback-removal" class="feedback-removal" hidden>
             <p id="feedback-removal-message" role="status"></p>
             <button type="button" id="feedback-undo" class="feedback-button">撤销移除</button>
@@ -64,6 +56,11 @@
           <div id="feedback-students" class="feedback-students"></div>
         </section>
         <div class="feedback-actions">
+          <label class="feedback-field">导出范围
+            <select id="feedback-export-scope" disabled>
+              <option value="">全部学生</option>
+            </select>
+          </label>
           <button type="submit" id="feedback-export" class="feedback-button feedback-primary" disabled>导出 PDF</button>
           <p>在打印窗口选择「另存为 PDF」。</p>
         </div>
