@@ -62,6 +62,8 @@ function createUnit6Pilot({cases}) {
   const listeningNotesId = unit + "-question:b4657";
   const listeningReferencesId = unit + "-question:b4661";
   const rewatchId = unit + "-question:b4648";
+  const makeWordBankId = unit + "-question:b4670";
+  const makeWordBank = wordBank(cases.find(c => c.id === makeWordBankId).provided.trim().split(/\s+/), true);
   const makeLesson = cases.find(c => c.id === unit + "-classroom:teaching:B03-LS-p132-01");
   const makeExamples = makeLesson?.flow?.pages[0]?.blocks?.find(block => block.kind === "definitions");
   if (makeExamples) {
@@ -270,6 +272,7 @@ function createUnit6Pilot({cases}) {
   }
 
   function task(c,p) {
+    if (c.id === makeWordBankId) return makeWordBank;
     if (c.id === listeningNotesId) return listeningNotesProjection();
     if (c.id === listeningMatchId) return listeningMatchProjection();
     if (c.id === listeningFillId) {
@@ -531,6 +534,10 @@ function createUnit6Pilot({cases}) {
       '.reference-sheet:has(> header [data-original-case="'+inventionsId+'"]) .course-reference-copy > .course-exercise-copy'
     );
     if (reference) reference.insertAdjacentHTML("beforebegin", inventionsPhotoGallery());
+    const makeWordBankReference = doc.querySelector(
+      '.reference-sheet:has(> header [data-original-case="'+makeWordBankId+'"]) .course-reference-copy > .course-exercise-copy'
+    );
+    if (makeWordBankReference) makeWordBankReference.innerHTML = makeWordBank;
     bindSequentialReview(doc,c,p);
     if (c.id === listeningMainId || c.id === listeningNotesId) bindTrackScript(doc);
   }
