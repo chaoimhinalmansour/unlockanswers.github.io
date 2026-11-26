@@ -353,3 +353,9 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
 .shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p132-01"]) .stage-definition-list dd strong {
   color:var(--course-table-purple);
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4673"]) .content .course-exercise-copy > .course-copy:only-child {
+  margin-inline-start:calc(var(--number-width) + var(--number-gap));
+  color:var(--blue);
+  font-style:italic;
+}
