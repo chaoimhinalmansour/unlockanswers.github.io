@@ -318,3 +318,7 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
 .shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p130-01"]) .stage-examples strong {
   color:var(--course-table-purple);
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4661"]) .content .course-item :is(strong,b) {
+  color:var(--course-table-purple);
+}
