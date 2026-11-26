@@ -272,7 +272,9 @@ function createUnit6Pilot({cases}) {
     if (c.id !== knowledgeId && c.id !== photoId) return courseTaskHTML(c,p);
     const content = coursePageBlocks(c,p).map(courseBlockHTML).join("");
     const left = '<div class="u6-split-copy">'+numberedInstruction(c)+'<div class="course-exercise-copy">'+content+'</div></div>';
-    return split(left,c.id === photoId ? photos(c) : originalPage(c),c.id === photoId ? "photos" : "knowledge");
+    if (c.id === photoId) return split(left,photos(c),"photos");
+    const visual = c.courseVisualAdapted ? c.courseVisuals?.[0] : null;
+    return split(left,visual ? courseSourceImage(visual) : originalPage(c),"knowledge");
   }
 
   function bindTrackScript(doc) {
