@@ -4,22 +4,13 @@
   const source = document.currentScript;
   const id = source.dataset.wordlist;
   const root = new URL("../assets/unlock-vocabulary/", source.src);
-  const toolbar = document.querySelector(".stage-nav-tools") ||
-    document.querySelector("[data-courseware-catalog]")?.parentElement;
-  if (!toolbar || toolbar.querySelector("[data-course-vocabulary]")) return;
 
   const style = document.createElement("link");
   style.rel = "stylesheet";
   style.href = new URL("courseware-cards.css", root);
   document.head.append(style);
 
-  const launch = document.createElement("button");
-  launch.type = "button";
-  launch.dataset.courseVocabulary = "";
-  launch.textContent = "词汇词卡";
-  toolbar.append(launch);
   const frame = document.querySelector("#preview");
-  let opener = launch;
 
   const dialog = document.createElement("dialog");
   dialog.className = "unit-wordlist-dialog";
@@ -135,8 +126,7 @@
     host.replaceChildren(copy, image);
   }
 
-  async function open(event) {
-    if (event?.currentTarget?.hasAttribute("data-course-vocabulary")) opener = event.currentTarget;
+  async function open() {
     if (!dialog.open) dialog.showModal();
     if (bank) {
       status.textContent = "";
@@ -169,7 +159,6 @@
     }
   }
 
-  launch.addEventListener("click", open);
   picker.addEventListener("change", () => showCard(Number(picker.value)));
   nav.addEventListener("click", event => {
     const step = event.target.closest("[data-step]");
@@ -179,8 +168,6 @@
     request?.abort();
     request = undefined;
     stopAudio();
-    if (opener.isConnected) opener.focus();
-    else frame?.contentDocument?.querySelector("[data-course-vocabulary]")?.focus();
   });
   function spelling(text) {
     return text.normalize("NFC").toLowerCase().replace(/[‘’]/g, "'").replace(/\s+/g, " ").trim();
@@ -231,21 +218,10 @@
 
   function bindFrame() {
     const doc = frame?.contentDocument;
-    if (!doc?.body) return;
-    const rail = doc.querySelector(".rail");
-    if (rail && !rail.querySelector("[data-course-vocabulary]")) {
-      const openInFrame = doc.createElement("button");
-      openInFrame.type = "button";
-      openInFrame.dataset.courseVocabulary = "";
-      openInFrame.textContent = launch.textContent;
-      openInFrame.addEventListener("click", open);
-      rail.append(openInFrame);
-    }
-    if (doc.querySelector("[data-flow-word]")) {
-      loadBank().then(data => {
-        if (frame.contentDocument === doc) refreshDeck(doc, data);
-      }).catch(() => {});
-    }
+    if (!doc?.querySelector("[data-flow-word]")) return;
+    loadBank().then(data => {
+      if (frame.contentDocument === doc) refreshDeck(doc, data);
+    }).catch(() => {});
   }
 
   frame?.addEventListener("load", bindFrame);
