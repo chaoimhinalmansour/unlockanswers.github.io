@@ -464,3 +464,7 @@ body[data-course-exercise] .content :is(.inline-status-item,.inline-judgments > 
 /* Book 3 Unit 6, page 134: purple table header. */
 :root{--course-table-purple:#7b3d88}
 :is(.course-reading-copy,[data-print-paragraph]) :is(strong,b){color:var(--course-table-purple)}
+
+.top .top-task > .top-phase {
+ color:#3a56aa;
+}

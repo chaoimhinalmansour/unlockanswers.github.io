@@ -715,7 +715,7 @@ function screen(c,p,revision){
  const source=c.pages.length?originalButton(c,printedReading??c.pages[0],c.flow?"教材原页":"题目原页")+
   (readingPage&&!c.flow?originalButton(c,readingPage.sourcePage,"材料原页"):"")+
   (photoPage&&photoPage!==c.pages[0]?originalButton(c,photoPage,"配图原页"):""):"";
- return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><base href="'+esc(base)+'"><link rel="stylesheet" href="assets/classroom-typography.css"><link rel="stylesheet" href="prototype-style.css"><link rel="stylesheet" href="../shared/course-view.css?v=20261124-table-borders"><link rel="stylesheet" href="'+classroomStage.sheet+'">'+tableStyle+textbookStyle+'</head><body data-revision="'+revision+'">'+
+ return '<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><base href="'+esc(base)+'"><link rel="stylesheet" href="assets/classroom-typography.css"><link rel="stylesheet" href="prototype-style.css"><link rel="stylesheet" href="../shared/course-view.css?v=20261126-phase-title-blue"><link rel="stylesheet" href="'+classroomStage.sheet+'">'+tableStyle+textbookStyle+'</head><body data-revision="'+revision+'">'+
   '<div class="shell" style="transform:none"><header class="top"><div class="top-context"><div class="identity"><strong>Book '+classroom.bookNumber(c)+'</strong><span>Unit '+esc(c.unit??1)+(isOpening?" "+trackLabel(c.track):" "+esc(c.topic??"Places"))+'</span></div>'+
   '<span class="top-module">'+esc(heading.module)+'</span></div><div class="top-task">'+
   (heading.phase?'<span class="top-phase">'+esc(heading.phase)+'</span>':"")+

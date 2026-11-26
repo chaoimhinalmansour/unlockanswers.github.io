@@ -247,9 +247,12 @@ function createUnit6Pilot({cases}) {
         topics.at(-1).blocks.push(block);
       }
     }
-    const content = topics.map(({title,blocks}) =>
-      '<section class="u6-note-topic"><h2>'+esc(title)+'</h2>'+blocks.map(courseBlockHTML).join("")+'</section>'
-    ).join("");
+    const content = topics.map(({title,blocks},index) => {
+      const headingId = "u6-note-topic-title-"+(index+1);
+      return '<section class="u6-note-topic" aria-labelledby="'+headingId+'">'
+        +'<h2 id="'+headingId+'">'+esc(title)+'</h2>'
+        +'<div class="u6-note-copy">'+blocks.map(courseBlockHTML).join("")+'</div></section>';
+    }).join("");
     return '<div class="u6-listening-notes" lang="en-GB">'+content+'</div>';
   }
 
