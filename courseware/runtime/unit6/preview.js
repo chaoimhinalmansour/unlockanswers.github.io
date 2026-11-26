@@ -62,6 +62,13 @@ function createUnit6Pilot({cases}) {
   const listeningNotesId = unit + "-question:b4657";
   const listeningReferencesId = unit + "-question:b4661";
   const rewatchId = unit + "-question:b4648";
+  const makeLesson = cases.find(c => c.id === unit + "-classroom:teaching:B03-LS-p132-01");
+  const makeExamples = makeLesson?.flow?.pages[0]?.blocks?.find(block => block.kind === "definitions");
+  if (makeExamples) {
+    makeExamples.rows = makeExamples.rows.map(([meaning,example]) => [
+      meaning.replace(/:?$/, ":"), example.startsWith("<em>") ? example : "<em>" + example + "</em>"
+    ]);
+  }
   const rewatchCase = cases.find(c => c.id === rewatchId);
   const wholeRewatch = rewatchCase.coursePages.flatMap((_, p) => coursePageBlocks(rewatchCase, p));
   const inventions = cases.find(c => c.id === inventionsId);

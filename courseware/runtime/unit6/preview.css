@@ -346,3 +346,10 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
   margin-top:4px;
   color:var(--blue);
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p132-01"]) .stage-definition-list dd {
+  color:var(--blue);
+}
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p132-01"]) .stage-definition-list dd strong {
+  color:var(--course-table-purple);
+}
