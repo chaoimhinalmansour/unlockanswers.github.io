@@ -26,7 +26,9 @@
   <script defer src="../practice/dictation-playback.js?v=20261123-en-gb"></script>
   <script defer src="lesson-meanings.js?v=20261123-1"></script>
   <script defer src="meaning-choice.js?v=20261123-cumulative-dictation"></script>
-  <script defer src="unit-dictation.js?v=20261123-tablet-audit"></script>
+  <link rel="stylesheet" href="preclass-vocabulary-7d3bd1ede11aa0f8.css">
+  <script defer src="preclass-vocabulary-8fe87800b74b4c51.js"></script>
+  <script defer src="unit-dictation-3f9631b91bc9fb61.js"></script>
 </head>
 <body id="practice-surface" class="student-ui student-classroom">
   <header class="top">
@@ -60,13 +62,20 @@
           </fieldset>
           <div class="unit-preview">
             <h2 id="unit-preview-title"></h2>
-            <h3><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
+            <h3 id="picker-practice-title"><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
             <div class="dictation-filters">
               <label class="dictation-select" for="track-select">
                 <span class="ui-label"><span class="ui-en" lang="en">Track</span><small class="ui-zh" lang="zh-CN">分册</small></span>
                 <select id="track-select">
                   <option value="LS">LS 听说</option>
                   <option value="RW">RW 读写</option>
+                </select>
+              </label>
+              <label class="dictation-select" id="week-filter" for="week-select" hidden>
+                <span class="ui-label"><span class="ui-en" lang="en">Week</span><small class="ui-zh" lang="zh-CN">单元周次</small></span>
+                <select id="week-select">
+                  <option value="1">Week 1 第 1 周</option>
+                  <option value="2">Week 2 第 2 周</option>
                 </select>
               </label>
               <label class="dictation-select" for="lesson-select">
@@ -79,6 +88,7 @@
             </div>
             <p id="unit-word-count" class="muted" role="status"></p>
             <button class="primary ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Start Dictation</span><small class="ui-zh" lang="zh-CN">开始听写</small></span></button>
+            <button id="previous-lesson" class="ui-nav" type="button" hidden><span class="ui-label"><span class="ui-en" lang="en">Resume Previous Dictation</span><small class="ui-zh" lang="zh-CN">继续旧版听写</small></span></button>
             <button id="previous-dictation" class="ui-nav" type="button" hidden><span class="ui-label"><span class="ui-en" lang="en">Previous Unit Dictation</span><small class="ui-zh" lang="zh-CN">查看旧版整单元听写</small></span></button>
           </div>
         </form>
@@ -98,6 +108,7 @@
         </header>
         <p id="directions" class="muted directions"></p>
         <div id="classroom-report" hidden></div>
+        <div id="preclass-panel" hidden></div>
         <div id="classroom-word-panel" class="word-dictation" hidden></div>
         <div id="legacy-unit-attempt" hidden>
           <div class="attempt-toolbar">
