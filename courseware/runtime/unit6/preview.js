@@ -155,18 +155,24 @@ function createUnit6Pilot({cases}) {
       +'</aside>';
   }
 
-  function inventionsDiscussion(c) {
-    const {src, width:nativeWidth} = c.courseVisuals[0];
-    const photos = [
-      {box:[22,385,216,176], alt:"the compass"},
-      {box:[247,385,216,176], alt:"making paper"},
-      {box:[473,385,216,176], alt:"printing"}
-    ];
-    const gallery = photos.map(photo => '<figure class="u6-photo-card">'
-      +cropHTML({...photo,src,nativeWidth})+'</figure>').join("");
+  const inventionPhotos = [
+    {"file":"p132-compass-textbook-300dpi.jpg","width":648,"height":528,"alt":"Brass pocket compass"},
+    {"file":"p132-making-paper-textbook-300dpi.jpg","width":648,"height":528,"alt":"A sheet of handmade paper with rolled paper"},
+    {"file":"p132-printing-textbook-300dpi.jpg","width":648,"height":528,"alt":"Woodblock printing plate on printed paper"},
+  ];
+
+  function inventionsPhotoGallery() {
+    const photos = inventionPhotos.map(({file,width,height,alt}) =>
+      '<figure class="u6-photo-card"><img src="../../media/lesson-art/B03-LS-U06/'+esc(file)+
+      '" width="'+width+'" height="'+height+'" alt="'+esc(alt)+'" decoding="async"></figure>'
+    );
+    return '<aside class="u6-discussion-photos" aria-label="教材照片">'+photos.join("")+'</aside>';
+  }
+
+  function inventionsDiscussion() {
     const questions = inventionQuestions.map(courseBlockHTML).join("");
-    return '<div class="u6-discussion" lang="en-GB"><aside class="u6-discussion-photos" aria-label="教材照片">'
-      +gallery+'</aside><div class="course-exercise-copy">'+questions+'</div></div>';
+    return '<div class="u6-discussion" lang="en-GB">'+inventionsPhotoGallery()+
+      '<div class="course-exercise-copy">'+questions+'</div></div>';
   }
 
   function listeningMatchProjection() {
@@ -267,7 +273,7 @@ function createUnit6Pilot({cases}) {
       const text = '<div class="course-exercise-copy">'+coursePageBlocks(c,p).map(courseBlockHTML).join("")+'</div>';
       return split(text,listeningPhotos(c),"listening");
     }
-    if (c.id === inventionsId) return inventionsDiscussion(c);
+    if (c.id === inventionsId) return inventionsDiscussion();
     if (c.id === summaryId) return watchSummary(c,p);
     if (c.id === rewatchId) {
       return '<div class="course-exercise-copy u6-rewatch">'+wholeRewatch.map(courseBlockHTML).join("")+'</div>';
@@ -514,6 +520,10 @@ function createUnit6Pilot({cases}) {
 
   function wire(doc,c,p) {
     alignQuestionNumbers(doc,c);
+    const reference = doc.querySelector(
+      '.reference-sheet:has(> header [data-original-case="'+inventionsId+'"]) .course-reference-copy > .course-exercise-copy'
+    );
+    if (reference) reference.insertAdjacentHTML("beforebegin", inventionsPhotoGallery());
     bindSequentialReview(doc,c,p);
     if (c.id === listeningMainId || c.id === listeningNotesId) bindTrackScript(doc);
   }
