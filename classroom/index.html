@@ -27,8 +27,10 @@
   <script defer src="lesson-meanings.js?v=20261123-1"></script>
   <script defer src="meaning-choice.js?v=20261123-cumulative-dictation"></script>
   <link rel="stylesheet" href="preclass-vocabulary-7d3bd1ede11aa0f8.css">
-  <script defer src="preclass-vocabulary-8fe87800b74b4c51.js"></script>
-  <script defer src="unit-dictation-3f9631b91bc9fb61.js"></script>
+  <script defer src="../assets/unlock-vocabulary/catalog.js"></script>
+  <script defer src="../assets/unlock-vocabulary/bank.js"></script>
+  <script defer src="preclass-and-classroom-vocabulary-f083e1ad14596b1f.js"></script>
+  <script defer src="unit-vocabulary-chooser-ada46f0c79a625bb.js"></script>
 </head>
 <body id="practice-surface" class="student-ui student-classroom">
   <header class="top">
@@ -64,6 +66,13 @@
             <h2 id="unit-preview-title"></h2>
             <h3 id="picker-practice-title"><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
             <div class="dictation-filters">
+              <label class="dictation-select" for="vocabulary-mode">
+                <span class="ui-label"><span class="ui-en" lang="en">Practice</span><small class="ui-zh" lang="zh-CN">练习场景</small></span>
+                <select id="vocabulary-mode">
+                  <option value="preclass">课前词汇学练</option>
+                  <option value="classroom">课堂词汇练习</option>
+                </select>
+              </label>
               <label class="dictation-select" for="track-select">
                 <span class="ui-label"><span class="ui-en" lang="en">Track</span><small class="ui-zh" lang="zh-CN">分册</small></span>
                 <select id="track-select">

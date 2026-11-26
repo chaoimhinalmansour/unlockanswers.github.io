@@ -28,6 +28,13 @@
     } else {
       document.title = document.title.replace(/课堂课件$/, title);
       for (const back of document.querySelectorAll("[data-courseware-catalog]")) back.href = catalog.href;
+      const unit = /\/units\/(B0[1-5]-(?:LS|RW)-U\d{2})\.html$/.exec(current.pathname)?.[1];
+      if (unit) {
+        const runtime = document.createElement("script");
+        runtime.src = new URL("vocabulary-wordcards.js", root);
+        runtime.dataset.wordlist = unit;
+        document.head.append(runtime);
+      }
     }
     document.documentElement.removeAttribute("data-courseware-pending");
   }, { once: true });

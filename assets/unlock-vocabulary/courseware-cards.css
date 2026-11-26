@@ -1,0 +1,56 @@
+.unit-wordlist-dialog {
+  width: min(960px, calc(100% - 24px));
+  max-height: calc(100% - 24px);
+  padding: 22px;
+  color: #182238;
+  background: #fff;
+  border: 1px solid #b8c4d2;
+  border-radius: 12px;
+  box-shadow: 0 14px 40px #0c1d3840;
+  font-family: system-ui, sans-serif;
+  overflow: auto;
+}
+.unit-wordlist-dialog::backdrop { background: #17283c99; }
+.unit-wordlist-dialog header, .unit-wordlist-dialog [data-wordlist-select] {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+}
+.unit-wordlist-dialog header { justify-content: space-between; }
+.unit-wordlist-dialog h2, .unit-wordlist-dialog h3, .unit-wordlist-dialog h4 { margin: 0; }
+.unit-wordlist-dialog h2 { font-size: clamp(20px, 4vw, 28px); }
+.unit-wordlist-dialog h3 { font-size: clamp(25px, 5vw, 38px); overflow-wrap: anywhere; }
+.unit-wordlist-dialog button, .unit-wordlist-dialog select {
+  min-height: 38px;
+  border: 1px solid #acbfd2;
+  border-radius: 7px;
+  background: #f5f8fc;
+  padding: 5px 10px;
+  font: inherit;
+  color: inherit;
+}
+.unit-wordlist-dialog select { max-width: min(48vw, 380px); }
+.unit-wordlist-dialog button:not(:disabled) { cursor: pointer; }
+.unit-wordlist-dialog button:focus-visible, .unit-wordlist-dialog select:focus-visible {
+  outline: 3px solid #215ab3;
+  outline-offset: 2px;
+}
+.unit-wordlist-dialog [data-wordlist-select][hidden] { display: none; }
+.unit-wordlist-dialog [data-wordlist-card] {
+  display: grid;
+  grid-template-columns: 1fr minmax(0, 40%);
+  align-items: center;
+  gap: 22px;
+  margin: 18px 0 0;
+}
+.unit-wordlist-dialog article p { margin: 8px 0; line-height: 1.5; }
+.unit-wordlist-dialog article section { margin: 14px 0; }
+.unit-wordlist-dialog article section h4 { font-size: 14px; margin-bottom: 3px; }
+.unit-wordlist-dialog audio { width: 100%; height: 38px; display: block; }
+.unit-wordlist-dialog img { width: 100%; max-height: 480px; object-fit: contain; border-radius: 8px; }
+@media (max-width: 600px) {
+  .unit-wordlist-dialog { padding: 14px; }
+  .unit-wordlist-dialog [data-wordlist-card] { grid-template-columns: 1fr; gap: 10px; }
+  .unit-wordlist-dialog img { max-height: 250px; }
+}
