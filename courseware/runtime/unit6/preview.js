@@ -71,6 +71,26 @@ function createUnit6Pilot({cases}) {
       meaning.replace(/:?$/, ":"), example.startsWith("<em>") ? example : "<em>" + example + "</em>"
     ]);
   }
+  const passiveLesson = cases.find(c => c.id === unit + "-classroom:teaching:B03-LS-p134-01");
+  if (passiveLesson) {
+    function styleExample(line, italicNote = false) {
+      const noteStart = line.indexOf(" (");
+      const sentence = noteStart < 0 ? line : line.slice(0, noteStart);
+      const note = noteStart < 0 ? "" : line.slice(noteStart + 1);
+      const explanation = note && italicNote ? "<em>" + note + "</em>" : note;
+      return "<em>" + sentence + "</em>" + (explanation ? " " + explanation : "");
+    }
+    for (const block of passiveLesson.flow.pages.flatMap(page => page.blocks)) {
+      if (block.kind === "definitions") {
+        block.rows = block.rows.map(([label, line]) => [label.replace(/:?$/, ":"), styleExample(line)]);
+      } else if (block.kind === "examples") {
+        block.lines = block.lines.map(line => styleExample(line, true));
+      } else if (block.kind === "paragraph") {
+        block.text = block.text.replace("as a <em>result</em>", "<em>as a result</em>")
+          .replace("**be + past participle**", "<em>be + past participle</em>");
+      }
+    }
+  }
   const rewatchCase = cases.find(c => c.id === rewatchId);
   const wholeRewatch = rewatchCase.coursePages.flatMap((_, p) => coursePageBlocks(rewatchCase, p));
   const inventions = cases.find(c => c.id === inventionsId);

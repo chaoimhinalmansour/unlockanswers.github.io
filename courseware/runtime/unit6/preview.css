@@ -359,3 +359,12 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
   color:var(--blue);
   font-style:italic;
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p134-01"]) .stage-definition-list dd > em:first-child,
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p134-01"]) .stage-examples p > em:first-child {
+  color:var(--blue);
+}
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p134-01"]) .stage-definition-list dd > em:first-child strong,
+.shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p134-01"]) .stage-examples p > em:first-child strong {
+  color:var(--course-table-purple);
+}
