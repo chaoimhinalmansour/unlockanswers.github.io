@@ -66,6 +66,25 @@
 .word-dictation .wd-note { font-size: 14px; line-height: 1.5; color: var(--unlock-secondary); }
 .word-dictation .wd-feedback { color: var(--unlock-ink); font-size: 14px; }
 .word-dictation .wd-feedback:empty { display: none; }
+.wd-a11y {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.wd-answer-result {
+  display: inline-block;
+  max-width: 100%;
+  padding: 2px 8px;
+  border: 1px solid currentColor;
+  border-radius: 6px;
+  overflow-wrap: anywhere;
+}
+.wd-answer-result[data-result="correct"] { color: #2e5e3e; background-color: #eaf4ed; }
+.wd-answer-result[data-result="incorrect"] { color: #8d302d; background-color: #f8eeee; }
 .wd-listen, .wd-fields { display: grid; justify-items: center; gap: 6px; }
 .wd-fields { width: min(100%, 27rem); }
 .wd-fields label { margin: 0; font-size: 14px; font-weight: 650; }

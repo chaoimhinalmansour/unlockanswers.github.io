@@ -253,8 +253,7 @@
       (kind === "syllables" ? slots : "") + optionsHTML(kind, card)
       : spellingHTML(stage, card, record, readonly);
     return '<div class="hw-vocab-layout' + (hasPicture ? "" : " hw-vocab-one-column") + '"><div>' +
-      exercise + '<p class="hw-vocab-feedback" data-hw-feedback role="status">' +
-      '<span data-hw-retry></span><span class="vocab-a11y" data-hw-verdict></span></p>' +
+      exercise + '<p class="vocab-a11y" data-hw-verdict role="status"></p>' +
       (kind === "syllables" ? solution : "") +
       "</div>" + (hasPicture ? imageHTML(card) : "") + "</div>";
   }
@@ -318,12 +317,11 @@
       const latest = answers.at(-1);
       const right = answers.length > 0 && correct(kind, card, latest);
       const status = find("[data-hw-verdict]");
-      const display = find("[data-hw-retry]");
       const result = !answers.length ? "" : (right ? "作答正确。" : "作答错误。");
       const retry = answers.length === 1 && !gradedNow
         ? (kind === "syllables" ? "请按顺序重选红色位置的音节。" : "请再试一次。") : "";
-      if (status.textContent !== result) status.textContent = result;
-      if (display.textContent !== retry) display.textContent = retry;
+      const message = [result, retry].filter(Boolean).join(" ");
+      if (status.textContent !== message) status.textContent = message;
     }
 
     function paintSyllables(card, record, gradedNow) {

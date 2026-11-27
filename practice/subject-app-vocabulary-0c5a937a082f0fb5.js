@@ -598,12 +598,12 @@
         wordDictation: { ...state.attempt.wordDictation, [item.id]: record }
       }),
       onProgress: updateProgress,
-      onFinish: (feedback, english) => {
+      onFinish: (feedback, english, answer) => {
         const next = state.worksheet.homework
           ? unfinishedVocabulary() || questionsInView().find(q => !isDictation(state.worksheet, q))
           : sheet.questions.find(q => q.number > items[items.length - 1].number && !isDictation(state.worksheet, q));
         if (!next) return false;
-        state.notice = label(english, feedback);
+        state.notice = '<span class="wd-a11y">' + label(english, feedback) + '</span>' + answer;
         goToQuestion(next.id, { keepNotice: true });
         return true;
       }

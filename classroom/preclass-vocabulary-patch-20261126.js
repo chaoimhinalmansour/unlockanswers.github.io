@@ -408,8 +408,8 @@
       revealPronunciations(card, done);
       const result = response ? response.correct ? "答对了。" : "答错了。" : "";
       const nextAction = response && !done ? "再试一次。" : "";
-      feedback.innerHTML = '<p class="vocab-a11y">' + esc(result) + '</p><p class="pcv-result">' +
-        esc(nextAction) + "</p>" + hint;
+      feedback.innerHTML = '<p class="vocab-a11y">' + esc([result, nextAction].filter(Boolean).join(" ")) +
+        "</p>" + hint;
       find("#pcv-next").disabled = !done;
       if (focusAfter) focus(focusAfter);
     }

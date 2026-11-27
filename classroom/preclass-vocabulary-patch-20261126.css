@@ -151,7 +151,6 @@ body.student-ui #preclass-panel :is(button.pcv-chip, .pcv-tile.is-used) {
 }
 
 .pcv-feedback { margin-block-start: 7px; min-block-size: 112px; overflow-wrap: anywhere; }
-.pcv-result { min-block-size: 1.4em; margin: 0 0 5px; }
 .pcv-attempt { display: flex; align-items: center; flex-wrap: wrap; gap: 3px; margin-block: 4px; }
 .pcv-attempt span { min-inline-size: 5.6rem; font-size: .85rem; }
 .pcv-attempt .pcv-chip {
@@ -299,7 +298,6 @@ body.student-ui #preclass-panel .pcv-option:is(.is-correct, .is-incorrect) { bor
   position: absolute; inline-size: 1px; block-size: 1px; margin: -1px;
   clip-path: inset(50%); white-space: nowrap; overflow: hidden;
 }
-.pcv-result:empty { min-block-size: 1.3em; }
 
 /* The picture frame is set by the exercise and viewport. */
 .pcv-picture:not(:empty) {

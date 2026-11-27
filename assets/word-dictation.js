@@ -153,6 +153,15 @@
       items.map(item => recordHTML(item, records?.[item.id], "", Boolean(ui))).join("") + "</div>";
   }
 
+  function markedAnswer(answer, result) {
+    return '<span class="wd-answer-result" data-result="' + result + '">' + esc(answer) + "</span>";
+  }
+
+  function answerFeedback(spoken, answer) {
+    return '<p class="wd-feedback" role="status">' +
+      (spoken ? '<span class="wd-a11y">' + spoken + '</span>' : "") + answer + "</p>";
+  }
+
   function mount(root, { items, read, draft = () => "", save, onProgress, onFinish, positionTarget }) {
     const listeners = new AbortController();
     const options = { signal: listeners.signal };
@@ -160,6 +169,7 @@
     let current, audio, starting, playing, refreshedSelection;
     let previous = "";
     let previousEnglish = "";
+    let previousAnswer = "";
 
     function record() {
       const saved = read()?.[current.id] || { ...empty, draft: draft(current) || "" };
@@ -239,9 +249,10 @@
         '<label class="wd-meaning-option"><input type="radio" name="wd-meaning" value="' + esc(option.id) +
         '" data-wd-meaning required' + (state.meaningDraft === option.id ? " checked" : "") +
         '><span lang="zh-CN"><b lang="en">' + esc(option.pos) + "</b> " + esc(option.text) + "</span></label>").join("");
+      const markedSyllables = spelling === "incorrect" ? markedAnswer(state.syllables.parts.join(" "), "incorrect") : "";
       root.innerHTML = questionHeader(heading, position, focus, " wd-meaning-question") +
-        '<p class="wd-feedback">' + label(englishOutcomes[spelling], outcomes[spelling]) + '</p></div>' +
-        '<p lang="en" class="wd-meaning-term">' + esc(current.word) + '</p>' + context +
+        answerFeedback(label(englishOutcomes[spelling], outcomes[spelling]), markedSyllables) + '</div>' +
+        '<p lang="en" class="wd-meaning-term">' + markedAnswer(current.word, "correct") + '</p>' + context +
         '<fieldset class="wd-meaning-choices" aria-label="中文释义选项">' + options + '</fieldset></div>' +
         '<button type="submit" class="wd-button wd-primary ui-action ui-primary" data-wd-submit>' +
         label("Submit Meaning", "提交词义") + "</button></form>";
@@ -277,10 +288,11 @@
       const syllableStep = attemptNo === 2;
       const last = state.attempts[attemptNo - 1];
       let feedback = previous ? label(previousEnglish, previous) : "";
-      if (syllableStep) feedback = label("Choose the syllables in order.", "两次拼写未通过，请按顺序选出音节。");
-      else if (attemptNo) feedback = last.result === "case"
+      if (syllableStep) feedback = label("Choose the syllables in order.", "请按顺序选出音节。");
+      else if (last) feedback = last.result === "case"
         ? label("Check capitalization and try again.", "上一次大小写形式有误，请再拼写一次。")
         : label("That spelling was incorrect. Try again.", "上一次拼写有误，请再试一次。");
+      const answer = last ? markedAnswer(last.text, "incorrect") : previousAnswer;
       const fields = syllableStep
         ? '<div class="wd-pieces" aria-label="可选音节">' + state.offered.map(index =>
           '<button type="button" class="wd-button wd-piece" lang="en" data-wd-piece="' + index + '">' +
@@ -292,10 +304,9 @@
           'aria-describedby="wd-case" value="' + esc(state.draft) + '">' +
           '<p id="wd-case" class="wd-note">' +
           label("Use lowercase, uppercase, or an initial capital.", "可用全小写、全大写或仅首字母大写。") + '</p>';
-      const heading = syllableStep ? label("Arrange Syllables", "拼接音节") : attemptNo
-        ? label("Try Again", "再拼写一次") : label("Listen and Spell", "听音拼写");
+      const heading = syllableStep ? label("Arrange Syllables", "拼接音节") : label("Listen and Spell", "听音拼写");
       root.innerHTML = questionHeader(heading, position, focus) +
-        '<p class="wd-feedback" role="status">' + feedback + '</p></div>' +
+        answerFeedback(feedback, answer) + '</div>' +
         '<div class="wd-listen"><audio hidden preload="none" src="../' + esc(audioPath(current)) + '"></audio>' +
         '<button type="button" class="wd-button wd-play ui-action" data-wd-play>' + label("Play Audio", "播放音频") + '</button>' +
         '<p class="wd-note" data-wd-play-note role="status">' + label("Replay anytime.", "可重复播放。") + '</p></div>' +
@@ -425,7 +436,12 @@
           : meaningResult === "incorrect" ? "的正确中文义是「" + next.meaning.answer + "」。" : outcomes[result] + "。");
         previousEnglish = "Word " + current.number + ". " + (meaningResult === "correct" ? "Correct meaning."
           : meaningResult === "incorrect" ? "The correct meaning is " + next.meaning.answer + "." : englishOutcomes[result] + ".");
-        if (items.every(item => complete(item, read())) && onFinish?.(previous, previousEnglish)) return;
+        const checked = next.meaning?.selected || (next.syllables ? assemble(current, state.order) : next.attempts.at(-1).text);
+        const expected = next.meaning?.answer || current.word;
+        const wrong = meaningResult ? meaningResult === "incorrect" : result === "incorrect";
+        previousAnswer = wrong ? markedAnswer(checked, "incorrect") + " " + markedAnswer(expected, "correct")
+          : markedAnswer(checked, "correct");
+        if (items.every(item => complete(item, read())) && onFinish?.(previous, previousEnglish, previousAnswer)) return;
       }
       paint(true);
     }
