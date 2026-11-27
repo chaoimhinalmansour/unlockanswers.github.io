@@ -56,9 +56,19 @@ function ideasMapHTML({topic, branches, questions}) {
     '<strong class="u6-ideas-map-topic">'+esc(topic)+'</strong>'+nodes+'</figure></div>';
 }
 
+function inventionGalleryHTML({photos}) {
+  const figures = photos.map(photo => {
+    const [,,width,height] = photo.box;
+    return '<figure><figcaption>'+esc(photo.caption)+'</figcaption>'+
+      '<div class="u6-photo-card" style="aspect-ratio:'+width+'/'+height+'">'+cropHTML(photo)+'</div></figure>';
+  }).join("");
+  return '<div class="u6-invention-gallery" lang="en-GB">'+figures+'</div>';
+}
+
 const courseBlockBeforeUnit6 = courseBlockHTML;
 courseBlockHTML = function(block) {
   if (block.kind === "ideas-map") return ideasMapHTML(block);
+  if (block.kind === "invention-gallery") return inventionGalleryHTML(block);
   if (block.kind !== "jigsaw-notes") return courseBlockBeforeUnit6(block);
   const marks = block.fields.map(field =>
     '<span class="u6-jigsaw-underline" data-course-correct-choice data-jigsaw-mark="'+esc(field.label)+
