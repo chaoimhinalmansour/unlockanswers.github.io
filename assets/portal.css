@@ -51,7 +51,6 @@ h1 { font-size: clamp(31px, 4vw, 42px); line-height: 1.2; font-weight: 750; }
 
 .portal-main:has(#login:not([hidden])) { padding: 0; }
 html:has(#login:not([hidden])) {
-  overflow: hidden;
   overscroll-behavior: none;
 }
 body:has(#login:not([hidden])) { min-height: 0; }
@@ -70,19 +69,21 @@ body:has(#login:not([hidden])) { min-height: 0; }
 #login-form {
   --login-height: 100vh;
   --login-scale: .7;
-  --login-title-size: clamp(50px, 8.2vw, 130px);
-  --login-title-gap: clamp(26px, 4.2vw, 60px);
+  /* Fit the login controls into the space above the full-width painting. */
+  --login-entry-space: calc(var(--login-height) - 100vw * 504 / 1536);
+  --login-title-gap: clamp(16px, min(4.2vw, calc(var(--login-entry-space) * .16)), 60px);
   --login-control-height: calc(clamp(46px, 4.65vw, 71px) * var(--login-scale));
   --login-message-height: 31px;
   --login-top-padding: clamp(16px, 2.4vh, 27px);
-  --login-bottom-padding: clamp(28px, 5vh, 60px);
-  --login-entry-height: calc(
-    var(--login-title-size) * .96 + var(--login-title-gap) + var(--login-control-height) +
-    var(--login-message-height) + var(--login-top-padding) + var(--login-bottom-padding)
+  --login-bottom-padding: clamp(16px, min(5vh, calc(var(--login-entry-space) * .10)), 60px);
+  --login-title-room: calc(
+    var(--login-entry-space) - var(--login-title-gap) - var(--login-control-height) -
+    var(--login-message-height) - var(--login-top-padding) - var(--login-bottom-padding)
   );
+  --login-title-size: clamp(42px, min(8.2vw, calc(var(--login-title-room) / .96)), 130px);
   display: grid;
-  grid-template-rows: minmax(0, 1fr) auto;
-  block-size: var(--login-height);
+  grid-template-rows: minmax(min-content, 1fr) auto;
+  min-block-size: var(--login-height);
 }
 @supports (height: 100dvh) {
   #login-form { --login-height: 100dvh; }
@@ -142,11 +143,11 @@ body:has(#login:not([hidden])) { min-height: 0; }
 
 .portrait-stage {
   position: relative;
-  inline-size: min(100%, 1536px, max(0px, calc((var(--login-height) - var(--login-entry-height)) * 1536 / 504)));
+  inline-size: 100%;
   /* Frame the lower painting without including the mockup controls. */
   aspect-ratio: 1536 / 504;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   min-inline-size: 0;
   border: 0;
   background: url("login-portraits-christmas-20261127.png") center bottom / 100% auto no-repeat;
@@ -239,13 +240,6 @@ body:has(#login:not([hidden])) { min-height: 0; }
   #login-form { --login-control-height: max(44px, calc(clamp(46px, 4.65vw, 71px) * var(--login-scale))); }
   #login-password, .login-submit { font-size: max(16px, calc(clamp(16px, 1.85vw, 28px) * var(--login-scale))); }
 }
-@media (max-height: 600px) {
-  #login-form {
-    --login-title-size: clamp(42px, 8.2vw, 90px);
-    --login-title-gap: clamp(16px, 4.2vh, 26px);
-  }
-}
-
 .workspace-home { width: 100%; max-width: 1040px; margin: 0 auto; }
 .workspace-home h1 { margin-bottom: 28px; }
 .workspace-notice {
