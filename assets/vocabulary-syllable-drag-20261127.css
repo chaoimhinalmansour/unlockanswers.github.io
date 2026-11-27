@@ -1,0 +1,86 @@
+.vocab-syllable-board {
+  --syllable-line: var(--unlock-line, #d5dae3);
+  --syllable-ink: var(--unlock-ink, #131722);
+  --syllable-blue: var(--unlock-blue, #3a56aa);
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.vocab-syllable-tray,
+.vocab-syllable-pool {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 7px;
+  max-inline-size: 100%;
+}
+
+.vocab-syllable-tray { margin-block: 10px 7px; }
+.vocab-syllable-pool { padding-block: 2px 6px; }
+
+.vocab-syllable-board :is(button, .vocab-syllable-preview) {
+  box-sizing: border-box;
+  min-inline-size: 44px;
+  max-inline-size: 100%;
+  min-block-size: 44px;
+  padding: 5px 10px;
+  border: 1px solid var(--syllable-line);
+  border-radius: 8px;
+  background: var(--unlock-white, #fff);
+  color: var(--syllable-ink);
+  font: inherit;
+  font-weight: 650;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.vocab-syllable-tray button {
+  inline-size: min(100%, max(44px, calc(var(--syllable-tile-ch, 4) * 1ch + 1.2rem)));
+}
+
+.vocab-syllable-tray button[data-filled="false"] {
+  border-style: dashed;
+  background: var(--unlock-shell, #f5f7fb);
+}
+
+.vocab-syllable-board button[data-result="correct"] {
+  color: var(--pcv-correct-ink, var(--hw-green, #1e603e));
+  background: var(--pcv-correct-bg, var(--hw-green-bg, #e7f4eb));
+  border-color: currentColor;
+}
+
+.vocab-syllable-board button[data-result="wrong"] {
+  color: var(--pcv-incorrect-ink, var(--hw-red, #a33131));
+  background: var(--pcv-incorrect-bg, var(--hw-red-bg, #fff0ef));
+  border-color: currentColor;
+}
+
+.vocab-syllable-board :is([data-syllable-option], [data-syllable-slot][data-filled="true"]):not(:disabled) {
+  cursor: grab;
+  touch-action: none;
+}
+
+.vocab-syllable-pool [data-used="true"] { visibility: hidden; }
+.vocab-syllable-pool button:disabled:not([data-used="true"]) { opacity: .6; }
+.vocab-syllable-board [data-dragging] { opacity: .36; }
+
+.vocab-syllable-board button:focus-visible,
+.vocab-syllable-board [data-drop-target],
+.vocab-syllable-board [data-picked-up] {
+  outline: 2px solid var(--syllable-blue);
+  outline-offset: 1px;
+}
+
+.vocab-syllable-board .vocab-syllable-preview {
+  position: absolute;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  border-color: var(--syllable-blue);
+  box-shadow: 0 3px 9px rgb(0 0 0 / .19);
+}
+
+.vocab-syllable-board .vocab-syllable-preview[hidden] { display: none; }
