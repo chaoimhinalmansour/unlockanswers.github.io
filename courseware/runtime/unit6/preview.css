@@ -402,3 +402,34 @@ body[data-course-revealed] .shell:has(
 .shell:has(.rail [data-original-case="B03-LS-U06-question:b4686"]) .content .course-item:has(.course-options-grid) {
   margin-block-end:6px;
 }
+
+:is(
+  .shell:has(.rail [data-original-case="B03-LS-U06-question:b4690"]) .content,
+  .reference-sheet:has(> header [data-original-case="B03-LS-U06-question:b4690"]) .course-reference-copy
+) > .course-exercise-copy > .course-copy:first-child {
+  position:relative;
+  box-sizing:border-box;
+  width:min(88%,52em);
+  margin:0 auto 16px;
+  padding:12px 18px;
+  border-radius:14px;
+  background:#d9edf9;
+  text-align:center;
+}
+:is(
+  .shell:has(.rail [data-original-case="B03-LS-U06-question:b4690"]) .content,
+  .reference-sheet:has(> header [data-original-case="B03-LS-U06-question:b4690"]) .course-reference-copy
+) > .course-exercise-copy > .course-copy:first-child::before {
+  content:"";
+  position:absolute;
+  inset-block-start:9px;
+  inset-inline-start:-15px;
+  width:16px;
+  height:20px;
+  background:inherit;
+  clip-path:polygon(0 0,100% 36%,100% 100%);
+}
+
+.reference-sheet:has(> header [data-original-case="B03-LS-U06-question:b4690"]) .course-reference-copy > .course-exercise-copy {
+  margin-block-start:12px;
+}
