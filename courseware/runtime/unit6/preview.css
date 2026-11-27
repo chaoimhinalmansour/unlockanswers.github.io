@@ -386,3 +386,11 @@ body[data-course-revealed] .shell:has(
   font-style:italic;
   font-weight:normal;
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4680"]) .content .course-exercise-copy > .course-copy > em {
+  color:var(--blue);
+}
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4680"]) .content .course-exercise-copy .course-item strong {
+  color:var(--course-table-purple);
+}
