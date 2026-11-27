@@ -380,3 +380,9 @@ body[data-course-revealed] .shell:has(
   outline:none;
   text-decoration:none;
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4679"]) .content .course-example-result,
+.reference-sheet:has(> header [data-original-case="B03-LS-U06-question:b4679"]) .course-example-result {
+  font-style:italic;
+  font-weight:normal;
+}
