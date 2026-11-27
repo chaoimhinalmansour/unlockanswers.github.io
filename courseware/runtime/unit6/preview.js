@@ -44,9 +44,22 @@ const unit6Track61 = [
   {"start": 284.28, "end": 289.4, "en": "Now, let's move to the next room, which is all about medieval medicine.", "zh": "现在，我们去下一个展室，那里介绍的是中世纪医学。"}
 ];
 
-const courseBlockBeforeJigsawNotes = courseBlockHTML;
+function ideasMapHTML({topic, branches, questions}) {
+  const prompts = questions.map(courseItemHTML).join("");
+  const nodes = branches.map(({position, label}) =>
+    '<span class="u6-ideas-map-branch" data-branch-position="'+esc(position)+'">'+esc(label)+'</span>').join("");
+  return '<div class="u6-ideas-map-layout" lang="en-GB"><div class="u6-ideas-map-prompts">'+prompts+'</div>'+
+    '<figure class="u6-ideas-map" aria-label="Ideas map">'+
+    '<span class="u6-ideas-map-line" data-connection="left" aria-hidden="true"></span>'+
+    '<span class="u6-ideas-map-line" data-connection="right" aria-hidden="true"></span>'+
+    '<span class="u6-ideas-map-line" data-connection="horizontal" aria-hidden="true"></span>'+
+    '<strong class="u6-ideas-map-topic">'+esc(topic)+'</strong>'+nodes+'</figure></div>';
+}
+
+const courseBlockBeforeUnit6 = courseBlockHTML;
 courseBlockHTML = function(block) {
-  if (block.kind !== "jigsaw-notes") return courseBlockBeforeJigsawNotes(block);
+  if (block.kind === "ideas-map") return ideasMapHTML(block);
+  if (block.kind !== "jigsaw-notes") return courseBlockBeforeUnit6(block);
   const marks = block.fields.map(field =>
     '<span class="u6-jigsaw-underline" data-course-correct-choice data-jigsaw-mark="'+esc(field.label)+
     '" aria-hidden="true" style="left:'+field.left+'%;top:'+field.top+'%;width:'+field.width+'%"></span>').join("");
@@ -64,9 +77,8 @@ function createUnit6Pilot({cases}) {
   const strongFormsId = unit + "-question:b4664";
   const inventionsId = unit + "-question:b4666";
   const passiveExtractsId = unit + "-question:b4676";
-  const ideasMapId = unit + "-question:b4707";
   const speakingOrderId = unit + "-question:b4725";
-  const numberedCopy = new Set([listeningPhotosId, strongFormsId, inventionsId, passiveExtractsId, ideasMapId]);
+  const numberedCopy = new Set([listeningPhotosId, strongFormsId, inventionsId, passiveExtractsId]);
   const listeningFillId = unit + "-question:b4653";
   const listeningMatchId = unit + "-question:b4654";
   const listeningMainId = unit + "-question:b4656";
