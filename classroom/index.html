@@ -26,11 +26,12 @@
   <script defer src="../practice/dictation-playback.js?v=20261123-en-gb"></script>
   <script defer src="lesson-meanings.js?v=20261123-1"></script>
   <script defer src="meaning-choice.js?v=20261123-cumulative-dictation"></script>
-  <link rel="stylesheet" href="preclass-vocabulary-7d3bd1ede11aa0f8.css">
+  <link rel="stylesheet" href="preclass-vocabulary-patch-20261126.css">
   <script defer src="../assets/unlock-vocabulary/catalog.js"></script>
-  <script defer src="../assets/unlock-vocabulary/bank.js"></script>
-  <script defer src="preclass-and-classroom-vocabulary-f083e1ad14596b1f.js"></script>
-  <script defer src="unit-vocabulary-chooser-ada46f0c79a625bb.js"></script>
+  <script defer src="../assets/unlock-vocabulary/bank-patch-20261126.js"></script>
+  <script defer src="../assets/vocabulary-patch-20261126.js"></script>
+  <script defer src="preclass-vocabulary-patch-20261126.js"></script>
+  <script defer src="unit-dictation-patch-20261126.js"></script>
 </head>
 <body id="practice-surface" class="student-ui student-classroom">
   <header class="top">
@@ -51,21 +52,14 @@
     <div id="classwork" hidden>
       <section id="picker" class="card picker" aria-label="选择单元">
         <form id="unit-form">
-          <label class="dictation-select dictation-book" for="book-select">
-            <span class="ui-label"><span class="ui-en" lang="en">Book</span><small class="ui-zh" lang="zh-CN">册次</small></span>
-            <select id="book-select">
-              <option value="1">Book 1</option><option value="2">Book 2</option>
-              <option value="3">Book 3</option><option value="4">Book 4</option><option value="5">Book 5</option>
-            </select>
-          </label>
-          <fieldset class="unit-select-field">
-            <legend><span class="ui-label"><span class="ui-en" lang="en">Units</span><small class="ui-zh" lang="zh-CN">单元</small></span></legend>
-            <div id="unit-options" class="unit-options"></div>
-          </fieldset>
-          <div class="unit-preview">
-            <h2 id="unit-preview-title"></h2>
-            <h3 id="picker-practice-title"><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
-            <div class="dictation-filters">
+          <div class="dictation-filters">
+            <label class="dictation-select" for="book-select">
+              <span class="ui-label"><span class="ui-en" lang="en">Book</span><small class="ui-zh" lang="zh-CN">册次</small></span>
+              <select id="book-select">
+                <option value="1">Book 1</option><option value="2">Book 2</option>
+                <option value="3">Book 3</option><option value="4">Book 4</option><option value="5">Book 5</option>
+              </select>
+            </label>
               <label class="dictation-select" for="vocabulary-mode">
                 <span class="ui-label"><span class="ui-en" lang="en">Practice</span><small class="ui-zh" lang="zh-CN">练习场景</small></span>
                 <select id="vocabulary-mode">
@@ -94,11 +88,22 @@
                   <option value="2">Lesson 2 第 2 节</option>
                 </select>
               </label>
-            </div>
+          </div>
+          <fieldset class="unit-select-field">
+            <legend><span class="ui-label"><span class="ui-en" lang="en">Units</span><small class="ui-zh" lang="zh-CN">单元</small></span></legend>
+            <div id="unit-options" class="unit-options"></div>
+          </fieldset>
+          <div class="unit-preview">
+            <h2 id="unit-preview-title"></h2>
+            <h3 id="picker-practice-title"><span class="ui-label"><span class="ui-en" lang="en">Pre-Class Dictation</span><small class="ui-zh" lang="zh-CN">课前听写</small></span></h3>
             <p id="unit-word-count" class="muted" role="status"></p>
-            <button class="primary ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Start Dictation</span><small class="ui-zh" lang="zh-CN">开始听写</small></span></button>
-            <button id="previous-lesson" class="ui-nav" type="button" hidden><span class="ui-label"><span class="ui-en" lang="en">Resume Previous Dictation</span><small class="ui-zh" lang="zh-CN">继续旧版听写</small></span></button>
-            <button id="previous-dictation" class="ui-nav" type="button" hidden><span class="ui-label"><span class="ui-en" lang="en">Previous Unit Dictation</span><small class="ui-zh" lang="zh-CN">查看旧版整单元听写</small></span></button>
+            <div class="unit-launch-actions">
+              <button class="primary ui-action ui-primary" type="submit"><span class="ui-label"><span class="ui-en" lang="en">Start Dictation</span><small class="ui-zh" lang="zh-CN">开始听写</small></span></button>
+              <label id="preclass-autoplay-setting" class="preclass-autoplay" hidden>
+                <input id="preclass-autoplay" type="checkbox">
+                <span class="ui-label"><span class="ui-en" lang="en">Play audio automatically</span><small class="ui-zh" lang="zh-CN">自动播放音频</small></span>
+              </label>
+            </div>
           </div>
         </form>
         <p id="availability" class="notice" role="status"></p>
