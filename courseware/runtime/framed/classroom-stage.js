@@ -3,7 +3,7 @@
 const classroomStage = (() => {
   const width = 1280;
   const height = 720;
-  const slideSheet = new URL("classroom-slide.css", document.currentScript.src).href;
+  const slideSheet = new URL("classroom-slide.css?v=20261127-shared-skills", document.currentScript.src).href;
 
   function applyEx12Presentation(data) {
     const exercise = data.fixtures?.find(caseData => caseData.id === "B01-LS-U02-question:b907");
@@ -280,9 +280,10 @@ const classroomStage = (() => {
 
   function renderSkill(caseData, page) {
     const part = caseData.flow.pages[page];
+    const skillsClass = (caseData.stageTeaching ?? "SKILLS") === "SKILLS" ? " stage-skills" : "";
     const title = '<h1 class="stage-skill-title">'+esc(caseData.instruction)+'</h1>';
     if (part.blocks) {
-      return '<section class="stage-skill-copy stage-native-lesson" lang="en-GB">'
+      return '<section class="stage-skill-copy stage-native-lesson'+skillsClass+'" lang="en-GB">'
         +title+part.blocks.map(nativeTeaching).join("")+'</section>';
     }
     if (part.image) {
@@ -297,7 +298,7 @@ const classroomStage = (() => {
     const content = part.table ? markup(part.table) : part.paragraphs.map(text =>
       '<p>'+courseText(text)+'</p>'
     ).join("");
-    return '<section class="stage-skill-copy" lang="en-GB">'+title+content+'</section>';
+    return '<section class="stage-skill-copy'+skillsClass+'" lang="en-GB">'+title+content+'</section>';
   }
 
   function exitStage(event) {

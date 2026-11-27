@@ -102,6 +102,13 @@ function createUnit6Pilot({cases}) {
       }
     }
   }
+  const lectureOrganization = cases.find(c => c.id === unit + "-classroom:teaching:B03-LS-p138-01");
+  const transitionPhrase = /(?:First, we’ll discuss|I’d like to start by talking about|Next, I will discuss|Now I’d like to talk about)/g;
+  for (const block of lectureOrganization?.flow?.pages[0]?.blocks ?? []) {
+    if (block.kind === "examples") {
+      block.lines = block.lines.map(line => line.replace(transitionPhrase, "**$&**"));
+    }
+  }
   const rewatchCase = cases.find(c => c.id === rewatchId);
   const wholeRewatch = rewatchCase.coursePages.flatMap((_, p) => coursePageBlocks(rewatchCase, p));
   const inventions = cases.find(c => c.id === inventionsId);

@@ -168,3 +168,26 @@
 
 /* A gallery in a previous-exercise drawer has no fixed task-row height. */
 .reference-sheet > .native-gallery { min-height:260px; }
+
+.stage-skill-copy.stage-skills {
+  background:#fff;
+  color:#000;
+}
+
+.stage-skills .stage-skill-title {
+  color:#000;
+  font-weight:700;
+}
+
+.stage-skills .stage-examples > p:not(:has(em, i)) {
+  font-style:italic;
+}
+
+.stage-skills :is(p,dd,td,.stage-grid-cell) :is(strong,b) {
+  color:var(--course-table-purple,#7b3d88);
+  font-weight:700;
+}
+
+.shell:has(.stage-skills) .top-task > .top-activity:only-child {
+  color:#3a56aa;
+}
