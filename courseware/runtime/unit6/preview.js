@@ -44,6 +44,17 @@ const unit6Track61 = [
   {"start": 284.28, "end": 289.4, "en": "Now, let's move to the next room, which is all about medieval medicine.", "zh": "现在，我们去下一个展室，那里介绍的是中世纪医学。"}
 ];
 
+const courseBlockBeforeJigsawNotes = courseBlockHTML;
+courseBlockHTML = function(block) {
+  if (block.kind !== "jigsaw-notes") return courseBlockBeforeJigsawNotes(block);
+  const marks = block.fields.map(field =>
+    '<span class="u6-jigsaw-underline" data-course-correct-choice data-jigsaw-mark="'+esc(field.label)+
+    '" aria-hidden="true" style="left:'+field.left+'%;top:'+field.top+'%;width:'+field.width+'%"></span>').join("");
+  const [,,width,height] = block.photo.box;
+  return '<figure class="u6-jigsaw-notes" lang="en-GB" style="--jigsaw-ratio:'+(width/height)+
+    '">'+cropHTML(block.photo,marks)+'</figure>';
+};
+
 function createUnit6Pilot({cases}) {
   const unit = "B03-LS-U06";
   const knowledgeId = unit + "-question:b4639";
@@ -464,6 +475,8 @@ function createUnit6Pilot({cases}) {
       groups.get(group).push({target,choice});
     }
     const steps = [...groups.values()];
+    const noteMarks = [...content.querySelectorAll(".u6-jigsaw-underline")];
+    if (noteMarks.length) steps.unshift(noteMarks.map(target => ({target,choice:true})));
     if (!steps.length) return;
     let count = 0;
     const refresh = () => {
@@ -472,7 +485,9 @@ function createUnit6Pilot({cases}) {
       button.dataset.u6ReviewSteps = String(count);
       button.textContent = count === steps.length ? "收起" : count > 0 ? "下一项" : "核对";
       button.setAttribute("aria-pressed",String(count > 0));
-      button.setAttribute("aria-label",count === steps.length ? "收起本页核对内容" : "原位揭示第 "+(count+1)+" 项");
+      const next = count + (noteMarks.length ? 0 : 1);
+      const revealLabel = noteMarks.length && count === 0 ? "标出笔记中的八处错误" : "原位揭示第 "+next+" 项";
+      button.setAttribute("aria-label",count === steps.length ? "收起本页核对内容" : revealLabel);
     };
     button.onclick = () => {
       count = count === steps.length ? 0 : count + 1;

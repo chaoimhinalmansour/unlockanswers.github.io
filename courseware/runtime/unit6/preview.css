@@ -433,3 +433,31 @@ body[data-course-revealed] .shell:has(
 .reference-sheet:has(> header [data-original-case="B03-LS-U06-question:b4690"]) .course-reference-copy > .course-exercise-copy {
   margin-block-start:12px;
 }
+
+.course-exercise-copy:has(> .u6-jigsaw-notes) {
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  grid-template-rows:auto repeat(4,auto);
+  grid-auto-flow:column;
+  align-content:start;
+  gap:8px 38px;
+}
+.u6-jigsaw-notes {
+  grid-column:1/-1;
+  grid-row:1;
+  position:relative;
+  margin:0 0 8px;
+}
+.u6-jigsaw-notes .native-view {width:100%;aspect-ratio:var(--jigsaw-ratio)}
+.u6-jigsaw-notes .native-crop {border-radius:0}
+.course-exercise-copy:has(> .u6-jigsaw-notes) > .course-item {margin:0}
+.course-exercise-copy:has(> .u6-jigsaw-notes) .course-gap {width:min(100%,400px)}
+.u6-jigsaw-underline {
+  position:absolute;
+  display:none;
+  height:0;
+  border-bottom:2px solid var(--course-table-purple);
+  pointer-events:none;
+}
+body[data-course-revealed] .u6-jigsaw-underline,
+.u6-jigsaw-underline[data-u6-choice-shown] {display:block;background:transparent;outline:none}
