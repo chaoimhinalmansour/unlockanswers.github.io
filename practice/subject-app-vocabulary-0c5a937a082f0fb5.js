@@ -630,6 +630,7 @@
     if (priorPassage) state.readingOffset = priorPassage.scrollTop;
     const questionOffset = scrollTop ? 0 : app.querySelector("#question-screen")?.scrollTop || 0;
     surface.classList.toggle("in-worksheet", working);
+    surface.classList.toggle("in-directory", !state.worksheet && !state.opening);
     app.innerHTML = notice + storage + content;
     mountDownload();
     if (working && scrollTop) app.querySelector(".workspace-question .screen-content")?.classList.add("unlock-card-enter");
@@ -1198,6 +1199,20 @@
 
   app.addEventListener("change", event => {
     const input = event.target;
+    const filter = input.dataset.directoryFilter;
+    if (filter === "book" || filter === "unit") {
+      const book = filter === "book" ? Number(input.value) : state.book;
+      const selectedUnit = input.value === specialUnit ? specialUnit : Number(input.value);
+      const unit = filter === "book" ? 1 : selectedUnit;
+      if (!availableBooks.includes(book) || !findMeta(book, unit)) return;
+      state.book = book;
+      state.unit = unit;
+      state.notice = "";
+      saveNavigation();
+      render();
+      app.querySelector('[data-directory-filter="' + filter + '"]')?.focus({ preventScroll: true });
+      return;
+    }
     if (!input.matches('select[data-answer],input[type="radio"][data-answer],input[type="checkbox"][data-answer]')) return;
     const item = state.worksheet?.byId.get(input.dataset.answer);
     if (!editable(item)) return;
@@ -1243,7 +1258,7 @@
     }
     if (button.hasAttribute("data-record-start")) { startVoice(button); return; }
     if (button.hasAttribute("data-record-stop")) { stopVoice(); return; }
-    if (voiceJob && (d.task || d.unit || d.book || d.questionId || d.questionNumber || d.step || d.action || "vocabularyPlay" in d)) {
+    if (voiceJob && (d.task || d.questionId || d.questionNumber || d.step || d.action || "vocabularyPlay" in d)) {
       voiceMessage(voiceJob.id, "请先结束当前录音，再切换或提交。");
       voiceField(voiceJob.id)?.querySelector("[data-record-stop]:not([hidden])")?.focus();
       return;
@@ -1259,27 +1274,6 @@
         status.innerHTML = label("Could not play this sample.", "示范音频暂时无法播放。");
         status.hidden = false;
       });
-    } else if (d.book) {
-      const book = Number(d.book);
-      if (!availableBooks.includes(book) || !findMeta(book, 1)) return;
-      state.book = book;
-      state.unit = 1;
-      state.notice = "";
-      saveNavigation();
-      render();
-      app.querySelector('[data-book="' + book + '"]')?.focus({ preventScroll: true });
-    } else if (d.unit) {
-      state.unit = Number(d.unit);
-      state.notice = "";
-      saveNavigation();
-      render();
-      app.querySelector('[data-unit="' + d.unit + '"]')?.focus({ preventScroll: true });
-    } else if (d.action === "special") {
-      state.unit = specialUnit;
-      state.notice = "";
-      saveNavigation();
-      render();
-      app.querySelector('[data-action="special"]')?.focus({ preventScroll: true });
     } else if (d.task) {
       openWorksheet(d.task);
     } else if (d.action === "retry-open" && state.opening?.failed) {

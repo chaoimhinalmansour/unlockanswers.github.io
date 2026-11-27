@@ -53,40 +53,56 @@
       actions + "</div></section>";
   }
 
+  function directorySelect(field, title, translation, options, selected) {
+    return '<label class="directory-filter">' + label(title, translation) +
+      '<select data-directory-filter="' + field + '">' + options.map(([value, name]) =>
+        '<option value="' + esc(value) + '"' + (value === selected ? " selected" : "") + '>' +
+        esc(name) + '</option>'
+      ).join("") + '</select></label>';
+  }
+
+  function renderStudentDirectory(meta, availableBooks, units, special, tracks) {
+    const isSpecial = meta.unit === specialUnit;
+    const bookOptions = availableBooks.map(book => [book, "Book " + book]);
+    const unitOptions = units.map(item => [item.unit, "Unit " + unitNumber(item.unit)]);
+    if (special) unitOptions.push([specialUnit, "Midterm Practice 期中特别练习"]);
+    const section = "Unit " + unitNumber(meta.unit);
+    const topic = isSpecial ? label("Midterm Practice", "期中特别练习")
+      : meta.readingOnly ? label(section, "第 " + unitNumber(meta.unit) + " 单元")
+      : label(section + " " + meta.topic, ui?.topicTranslation(meta.topic));
+    return '<section class="catalog practice-directory" aria-labelledby="practice-directory-title">' +
+      '<div class="catalog-head"><h1 id="practice-directory-title" class="ui-page-title">' +
+      label("Unit Practice", "单元练习") + '</h1></div><div class="directory-filters">' +
+      directorySelect("book", "Book", "册次", bookOptions, meta.book) +
+      directorySelect("unit", "Unit", "单元", unitOptions, meta.unit) +
+      '</div><div class="unit-heading"><h2>' + topic + '</h2></div>' +
+      '<div class="catalog-grid">' + tracks + '</div></section>';
+  }
+
   function renderDirectory(meta, activityFor, availableBooks = []) {
-    const teaching = !activityFor;
     const special = findMeta(meta.book, specialUnit);
     const isSpecial = meta.unit === specialUnit;
+    const unitMetas = catalog.filter(item => item.book === meta.book);
+    const tracks = Object.entries(subjects).filter(([skill]) => !meta.readingOnly || skill === "R")
+      .map(([skill, title]) => subjectCard(skill, title, activityFor, isSpecial)).join("");
+    if (activityFor) return renderStudentDirectory(meta, availableBooks, unitMetas, special, tracks);
+
     const specialButton = special ? '<button type="button" data-action="special" aria-pressed="' + isSpecial + '">' +
-      (teaching ? esc(special.topic) : label("Midterm Practice", "期中特别练习")) + '</button>' : "";
+      esc(special.topic) + '</button>' : "";
     const section = isSpecial ? "Book " + meta.book : "Unit " + unitNumber(meta.unit);
-    const units = catalog.filter(item => item.book === meta.book).map(item =>
+    const units = unitMetas.map(item =>
       '<button type="button" data-unit="' + item.unit + '" aria-pressed="' + (item.unit === meta.unit) +
       '">Unit ' + unitNumber(item.unit) + "</button>"
     ).join("");
-    const bookNumbers = teaching ? [...new Set(catalog.map(item => item.book))] : availableBooks;
+    const bookNumbers = [...new Set(catalog.map(item => item.book))];
     const books = bookNumbers.length ? '<nav class="unit-picker book-picker" aria-label="Books 教材">' +
       bookNumbers.map(book =>
         '<button type="button" data-book="' + book + '" aria-pressed="' + (book === meta.book) +
         '">Book ' + book + "</button>"
       ).join("") + "</nav>" : "";
-    const tracks = Object.entries(subjects).filter(([skill]) => !meta.readingOnly || skill === "R")
-      .map(([skill, title]) => subjectCard(skill, title, activityFor, isSpecial)).join("");
-    if (!teaching) {
-      const topic = isSpecial ? label("Midterm Practice", "期中特别练习")
-        : meta.readingOnly ? label(section, "第 " + unitNumber(meta.unit) + " 单元")
-        : label(section + " " + meta.topic, ui?.topicTranslation(meta.topic));
-      return '<section class="catalog"><div class="catalog-head"><h1 class="ui-page-title">' +
-        label("Unit Practice", "单元练习") + '</h1><p>Book ' + meta.book + '</p></div>' +
-        books + '<nav class="unit-picker directory-picker" aria-label="Units 单元">' + units + specialButton + '</nav>' +
-        '<div class="unit-heading"><h2>' + topic + '</h2></div><div class="catalog-grid">' +
-        tracks +
-        "</div></section>";
-    }
     return '<section class="catalog"><div class="catalog-head"><h1>Book ' + meta.book +
-      (teaching ? " 讲评目录" : " 作业目录") + "</h1><p>" +
-      (teaching ? "选择练习和科目，打开讲评。" : "选择练习和科目，开始作答。") +
-      '</p></div>' + books + '<nav class="unit-picker" aria-label="选择单元">' + units + '</nav>' +
+      ' 讲评目录</h1><p>选择练习和科目，打开讲评。</p></div>' +
+      books + '<nav class="unit-picker" aria-label="选择单元">' + units + '</nav>' +
       (specialButton ? '<nav class="unit-picker special-picker" aria-label="特别练习">' + specialButton + '</nav>' : "") +
       '<div class="unit-heading"><span>' + esc(section) + "</span><h2>" +
       esc(meta.topic) + '</h2></div><div class="catalog-grid">' +

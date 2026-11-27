@@ -1,0 +1,101 @@
+#practice-surface.in-directory :is(.masthead-inner, .site-main) {
+  max-width: 1160px;
+  padding-inline: 28px;
+}
+
+#practice-surface.in-directory .masthead-inner {
+  min-height: 60px;
+}
+
+#practice-surface.in-directory .site-main {
+  padding-block: 35px 36px;
+}
+
+.in-directory .brandline .section-label,
+.in-directory .identity-info > span {
+  display: none;
+}
+
+.in-directory .identity-info strong {
+  font-weight: 400;
+}
+
+.in-directory .header-actions {
+  column-gap: 24px;
+}
+
+.student-practice #practice-surface .practice-directory .ui-page-title {
+  font-size: clamp(1.5rem, 2.3vw, 2rem);
+}
+
+.practice-directory .ui-page-title .ui-zh {
+  margin-block-start: 2px;
+  font-size: .8rem;
+}
+
+.practice-directory .directory-filters {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 13rem));
+  gap: 16px;
+}
+
+.practice-directory .directory-filter {
+  display: grid;
+  gap: 6px;
+  font-size: .875rem;
+  font-weight: 650;
+}
+
+.practice-directory select {
+  min-width: 0;
+  padding-block: 7px;
+}
+
+#practice-surface .practice-directory .unit-heading {
+  padding: 2px 0 0;
+}
+
+.practice-directory .unit-heading h2 {
+  font-size: 1.25rem;
+}
+
+.practice-directory .unit-heading .ui-label {
+  display: inline-grid;
+  margin: 0;
+}
+
+.practice-directory .unit-heading .ui-en {
+  margin: 0;
+  font-size: inherit;
+}
+
+#practice-surface .practice-directory .catalog-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: 16px;
+}
+
+.student-practice #practice-surface .practice-directory .track h2 {
+  font-size: 1.25rem;
+}
+
+.practice-directory .assignment-list {
+  gap: 6px;
+}
+
+.student-practice #practice-surface .practice-directory .assignment-button {
+  min-height: 46px;
+  padding: 5px 10px;
+  border-color: var(--line);
+  border-radius: 8px;
+}
+
+.student-practice #practice-surface .practice-directory .assignment-button:hover {
+  border-color: var(--accent);
+}
+
+@media (max-width: 760px) {
+  #practice-surface .practice-directory .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
