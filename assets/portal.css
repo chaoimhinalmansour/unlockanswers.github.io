@@ -141,7 +141,6 @@ body:has(#login:not([hidden])) { min-height: 0; }
 }
 
 .portrait-stage {
-  --portrait-art: url("login-portraits-20261120.png");
   position: relative;
   inline-size: min(100%, 1536px, max(0px, calc((var(--login-height) - var(--login-entry-height)) * 1536 / 504)));
   /* Frame the lower painting without including the mockup controls. */
@@ -150,7 +149,7 @@ body:has(#login:not([hidden])) { min-height: 0; }
   margin: 0 auto;
   min-inline-size: 0;
   border: 0;
-  background: var(--portrait-art) center bottom / 100% auto no-repeat;
+  background: url("login-portraits-christmas-20261127.png") center bottom / 100% auto no-repeat;
 }
 .portrait-stage::before {
   content: "";
@@ -161,27 +160,8 @@ body:has(#login:not([hidden])) { min-height: 0; }
   background: linear-gradient(var(--unlock-white), transparent);
   pointer-events: none;
 }
-.portrait-options, .portrait-option, .portrait-focus, .portrait-painting, .portrait-shading { position: absolute; inset: 0; }
-.portrait-option, .portrait-focus, .portrait-shading, .portrait-label { pointer-events: none; }
-.portrait-focus {
-  filter: drop-shadow(0 10px 10px rgb(22 16 10 / 26%));
-  opacity: 0;
-}
-.portrait-painting {
-  background: var(--portrait-art) center bottom / 100% auto no-repeat;
-  filter: brightness(1.16);
-  -webkit-mask-image: radial-gradient(ellipse 11.5% 46% at var(--light-center) 43%, #000 28%, transparent 100%);
-  mask-image: radial-gradient(ellipse 11.5% 46% at var(--light-center) 43%, #000 28%, transparent 100%);
-}
-.portrait-shading {
-  inline-size: 100%;
-  block-size: 100%;
-  z-index: 2;
-  opacity: 0;
-}
-.portrait-stage:has(.portrait-hit:checked) .portrait-shading {
-  opacity: .5;
-}
+.portrait-options, .portrait-option { position: absolute; inset: 0; }
+.portrait-option { pointer-events: none; }
 .portrait-target {
   position: absolute;
   inset-block: 0;
@@ -193,34 +173,17 @@ body:has(#login:not([hidden])) { min-height: 0; }
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
 }
-.portrait-label {
-  position: absolute;
-  z-index: 3;
-  inset-inline-start: var(--light-center);
-  inset-block: -6px calc(100% - var(--head-top));
-  inline-size: 0;
-  opacity: 0;
-}
-.portrait-label::before, .portrait-label::after {
-  content: "";
-  position: absolute;
-  inset-inline-start: 0;
-  transform: translateX(-50%);
-}
-.portrait-label::before {
-  inset-block: 0 4px;
-  border-inline-start: 1px solid var(--unlock-ink);
-}
-.portrait-label::after {
-  inset-block-end: 0;
-  border-inline: 3px solid transparent;
-  border-block-start: 5px solid var(--unlock-ink);
+.portrait-hit:focus-visible + .portrait-target {
+  outline: 2px solid var(--unlock-ink);
+  outline-offset: -3px;
 }
 .portrait-name {
+  display: none;
   position: absolute;
-  inset-inline-start: 0;
-  inset-block-end: 100%;
-  transform: translateX(-50%);
+  z-index: 2;
+  inset-inline-start: var(--name-center);
+  inset-block-start: calc(var(--head-top) - 6px);
+  transform: translate(-50%, -100%);
   padding: 2px 6px;
   border-radius: 4px;
   background: rgb(17 17 17 / 88%);
@@ -229,58 +192,44 @@ body:has(#login:not([hidden])) { min-height: 0; }
   font-weight: 600;
   white-space: nowrap;
 }
-.portrait-hit:checked ~ .portrait-focus,
-.portrait-hit:checked ~ .portrait-label { opacity: 1; }
-.portrait-hit:focus-visible ~ .portrait-label { opacity: 1; }
-.portrait-options:not(:has(.portrait-hit:checked)) .portrait-hit:focus-visible ~ .portrait-focus { opacity: 1; }
-.portrait-hit:focus-visible ~ .portrait-label .portrait-name {
-  outline: 2px solid var(--unlock-ink);
-  outline-offset: 2px;
-}
-@media (hover: hover) {
-  .portrait-target:hover ~ .portrait-label { opacity: 1; }
-  .portrait-options:not(:has(.portrait-hit:checked)) .portrait-target:hover ~ .portrait-focus { opacity: 1; }
-}
-@media (prefers-reduced-motion: no-preference) {
-  .portrait-focus, .portrait-shading, .portrait-label { transition: opacity 170ms ease; }
-}
+.portrait-hit:checked ~ .portrait-name { display: block; }
 
-/* Hit areas and name pointers align with the visible crop. */
+/* Hit areas and names align with the visible crop. */
 [data-portrait-slot="1"] {
   --hit-start: 0%;
   --hit-width: 16.4%;
-  --light-center: 10%;
-  --head-top: 11.5%;
+  --name-center: 10.2%;
+  --head-top: 8.6%;
 }
 [data-portrait-slot="2"] {
   --hit-start: 16.4%;
   --hit-width: 16.85%;
-  --light-center: 26.6%;
-  --head-top: 9.3%;
+  --name-center: 27.2%;
+  --head-top: 10%;
 }
 [data-portrait-slot="3"] {
   --hit-start: 33.25%;
   --hit-width: 14.95%;
-  --light-center: 40.5%;
-  --head-top: 15%;
+  --name-center: 40%;
+  --head-top: 11%;
 }
 [data-portrait-slot="4"] {
   --hit-start: 48.2%;
   --hit-width: 19.9%;
-  --light-center: 57.5%;
-  --head-top: 8.1%;
+  --name-center: 56.4%;
+  --head-top: 6.3%;
 }
 [data-portrait-slot="5"] {
   --hit-start: 68.1%;
   --hit-width: 14.5%;
-  --light-center: 75.6%;
-  --head-top: 12.4%;
+  --name-center: 74.7%;
+  --head-top: 14%;
 }
 [data-portrait-slot="6"] {
   --hit-start: 82.6%;
   --hit-width: 17.4%;
-  --light-center: 92.1%;
-  --head-top: 8%;
+  --name-center: 92.1%;
+  --head-top: 8.8%;
 }
 
 @media (max-width: 600px) {
