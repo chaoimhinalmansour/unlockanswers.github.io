@@ -45,15 +45,17 @@ const unit6Track61 = [
 ];
 
 function ideasMapHTML({topic, branches, questions}) {
-  const prompts = questions.map(courseItemHTML).join("");
+  const standalone = questions.length === 0;
   const nodes = branches.map(({position, label}) =>
     '<span class="u6-ideas-map-branch" data-branch-position="'+esc(position)+'">'+esc(label)+'</span>').join("");
-  return '<div class="u6-ideas-map-layout" lang="en-GB"><div class="u6-ideas-map-prompts">'+prompts+'</div>'+
-    '<figure class="u6-ideas-map" aria-label="Ideas map">'+
+  const diagram = '<figure class="u6-ideas-map'+(standalone?' u6-ideas-map-standalone':'')+'" lang="en-GB" aria-label="Ideas map">'+
     '<span class="u6-ideas-map-line" data-connection="left" aria-hidden="true"></span>'+
     '<span class="u6-ideas-map-line" data-connection="right" aria-hidden="true"></span>'+
     '<span class="u6-ideas-map-line" data-connection="horizontal" aria-hidden="true"></span>'+
-    '<strong class="u6-ideas-map-topic">'+esc(topic)+'</strong>'+nodes+'</figure></div>';
+    '<strong class="u6-ideas-map-topic">'+esc(topic)+'</strong>'+nodes+'</figure>';
+  if (standalone) return diagram;
+  const prompts = questions.map(courseItemHTML).join("");
+  return '<div class="u6-ideas-map-layout" lang="en-GB"><div class="u6-ideas-map-prompts">'+prompts+'</div>'+diagram+'</div>';
 }
 
 function inventionGalleryHTML({photos}) {

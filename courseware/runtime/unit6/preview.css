@@ -495,7 +495,7 @@ body[data-course-revealed] .u6-jigsaw-underline,
 .u6-ideas-map-line[data-connection="left"],
 .u6-ideas-map-line[data-connection="right"] {
   inset-block:26.5%;
-  inline-size:2px;
+  inline-size:var(--map-line-width,2px);
   transform:translateX(-50%);
 }
 
@@ -505,7 +505,7 @@ body[data-course-revealed] .u6-jigsaw-underline,
 .u6-ideas-map-line[data-connection="horizontal"] {
   inset-inline:28.5%;
   inset-block-start:50%;
-  block-size:2px;
+  block-size:var(--map-line-width,2px);
   transform:translateY(-50%);
 }
 
@@ -544,8 +544,8 @@ body[data-course-revealed] .u6-jigsaw-underline,
   position:absolute;
   inset-inline-start:var(--join-x);
   inset-block-start:var(--join-y);
-  inline-size:9px;
-  block-size:9px;
+  inline-size:var(--map-dot-size,9px);
+  block-size:var(--map-dot-size,9px);
   border-radius:50%;
   background:var(--map-purple);
   transform:translate(-50%,-50%);
@@ -621,4 +621,28 @@ body[data-course-revealed] .u6-jigsaw-underline,
 .course-reference-copy .u6-invention-gallery {
   width:min(100%,400px);
   margin-block-start:6px;
+}
+
+.u6-ideas-map-standalone {
+  --map-line-width:3px;
+  --map-dot-size:13px;
+  width:min(100%,980px);
+  margin-inline:auto;
+  aspect-ratio:2.1;
+  font-size:22px;
+}
+
+.u6-ideas-map-standalone .u6-ideas-map-topic {
+  padding:15px 18px;
+  font-size:27px;
+}
+
+.u6-ideas-map-standalone .u6-ideas-map-branch {
+  padding-block-start:11px;
+  border-width:1.5px;
+}
+
+.course-reference-copy .u6-ideas-map-standalone {
+  width:min(100%,840px);
+  margin-block-start:8px;
 }
