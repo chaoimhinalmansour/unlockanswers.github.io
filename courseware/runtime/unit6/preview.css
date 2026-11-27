@@ -368,3 +368,15 @@ audio::-webkit-media-controls-panel { background-color:var(--paper); }
 .shell:has(.rail [data-original-case="B03-LS-U06-classroom:teaching:B03-LS-p134-01"]) .stage-examples p > em:first-child strong {
   color:var(--course-table-purple);
 }
+
+body[data-course-revealed] .shell:has(
+  .rail [data-original-case="B03-LS-U06-question:b4676"],
+  .rail [data-original-case="B03-LS-U06-question:b4677"],
+  .rail [data-original-case="B03-LS-U06-question:b4678"]
+) .content span[data-course-correct-choice] {
+  color:var(--course-table-purple);
+  font-weight:var(--bold);
+  background:transparent;
+  outline:none;
+  text-decoration:none;
+}
