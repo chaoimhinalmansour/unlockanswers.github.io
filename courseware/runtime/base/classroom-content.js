@@ -71,7 +71,7 @@ function classroomExerciseNumber(c) {
 }
 
 function instructionHTML(c,showNumber=true) {
- if (c.exerciseVocabulary||c.classroomVideo||c.flow?.kind==="reading") return "";
+ if (c.exerciseVocabulary||c.flow?.reviewGlossaryPages||c.classroomVideo||c.flow?.kind==="reading") return "";
  const number=classroomExerciseNumber(c);
  let wording=c.instruction??"";
  if (c.module==="WATCH AND LISTEN") wording=wording.replace(/^\s*[▶►]\s*/,"");
@@ -360,6 +360,8 @@ function classroomFlowHTML(c,p) {
     return '<div class="v-item" data-flow-word="'+esc(row.id)+'"><span class="num">'+esc(row.label)+'</span><div>'+sentence+'</div></div>';
    }).join("")+'</div>';
   case "word-review":
+   if (flow.reviewGlossaryPages) return '<div class="exercise-glossary word-review-glossary">'+
+    flowGlossaryHTML(flow.reviewGlossaryPages[p])+'</div>';
    return '<ul class="flow-word-review" style="--word-review-rows:'+Math.ceil(content.length/3)+'">'+
     content.map(({id,form})=>'<li data-wordlist-form="'+esc(id)+'">'+esc(form)+'</li>').join("")+'</ul>';
   case "dictation":

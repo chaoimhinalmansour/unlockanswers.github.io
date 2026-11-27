@@ -5,8 +5,48 @@
  * keep their own source pages, even when they appear inside another exercise.
  * These bindings are shared by the renderer and the validation page.
  */
+
+function prepareVocabularyReviews(entries) {
+ const cardsByForm = new Map();
+ for (const entry of entries) {
+  if (entry.flow?.kind !== "cards") continue;
+  for (const card of entry.flow.pages.flat()) {
+   for (const form of card.placement?.forms ?? []) cardsByForm.set(form.id, card);
+  }
+ }
+ for (const entry of entries) {
+  if (entry.flow?.kind !== "word-review") continue;
+  const forms = entry.flow.pages.flat();
+  const glossary = forms.map(form => {
+   const card = cardsByForm.get(form.id);
+   if (!card || card.term !== form.form || !card.pos?.trim() || !card.definition?.trim()) return null;
+   const label = card.pos.trim();
+   const pos = label.startsWith("(") ? label : "(" + label.replace(/\.$/, "") + ")";
+   return {
+    term: form.form,
+    pos,
+    definition: card.definition,
+    wordAudio: card.term,
+    cardWord: true,
+    // The classroom stage can finish assigning a card's recording after the base model is built.
+    get pronunciation() { return card.wordVoice; }
+   };
+  });
+  if (!glossary.length || glossary.some(row => row === null)) continue;
+  const pages = [];
+  const vocabulary = [];
+  for (let start = 0; start < forms.length; start += 6) {
+   pages.push(forms.slice(start, start + 6));
+   vocabulary.push(glossary.slice(start, start + 6));
+  }
+  entry.flow.pages = pages;
+  entry.flow.reviewGlossaryPages = vocabulary;
+ }
+}
+
 function buildClassroomModel(data) {
  const active = data.lessonFlow?.entries ?? [];
+ prepareVocabularyReviews(active);
  const activeIds = new Set(active.map(c=>c.id));
  const glossaryEntries = data.taskGlossaries?.entries ?? [];
  const cases = [...data.fixtures, ...(data.reuseFixtures ?? []), ...active, ...(data.unitOpenings?.entries ?? []),

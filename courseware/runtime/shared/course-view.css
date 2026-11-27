@@ -259,6 +259,20 @@
 .exercise-glossary .flow-glossary-term strong {font-size:33px}
 .exercise-glossary .flow-glossary-entry dd:empty {display:none}
 
+.word-review-glossary {
+ --blue:#2355b1;
+ --line:#dbe4f2;
+ --pale:#eaf1ff;
+}
+.word-review-glossary .flow-glossary-entry {border-bottom-color:var(--line)}
+.word-review-glossary .flow-glossary-entry[data-column-start] {border-top:3px solid var(--blue)}
+.word-review-glossary .flow-glossary-term small,
+.exercise-glossary.word-review-glossary .flow-pronounce {color:var(--blue)}
+.exercise-glossary.word-review-glossary .flow-pronounce {border-color:var(--blue)}
+.word-review-glossary .flow-pronounce:is(:hover,[aria-pressed=true]) {background:var(--pale)}
+.word-review-glossary .flow-pronounce:enabled:hover {text-decoration:none}
+.shell:has(.word-review-glossary) .rail-gap {border-top-color:#dbe4f2}
+
 .course-original-reading {
  height:100%;
  width:100%;
