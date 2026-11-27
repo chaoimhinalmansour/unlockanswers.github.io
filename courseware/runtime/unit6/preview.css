@@ -394,3 +394,11 @@ body[data-course-revealed] .shell:has(
 .shell:has(.rail [data-original-case="B03-LS-U06-question:b4680"]) .content .course-exercise-copy .course-item strong {
   color:var(--course-table-purple);
 }
+
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4686"]) .content .course-options-grid {
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  margin-block:1px 2px;
+}
+.shell:has(.rail [data-original-case="B03-LS-U06-question:b4686"]) .content .course-item:has(.course-options-grid) {
+  margin-block-end:6px;
+}
