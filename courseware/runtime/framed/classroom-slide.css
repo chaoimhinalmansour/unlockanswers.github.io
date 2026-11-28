@@ -191,3 +191,23 @@
 .shell:has(.stage-skills) .top-task > .top-activity:only-child {
   color:#3a56aa;
 }
+/* Keep all lesson-start matching pictures at the same size as a four-option grid. */
+.flow-match-pictures[data-lesson-picture-match] {
+  grid-template-columns: none;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, calc((100% - 45px) / 4));
+  justify-content: center;
+}
+
+.flow-match-pictures[data-lesson-picture-match] .flow-visual {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border: 1px solid var(--line);
+}
+
+.flow-match-pictures[data-lesson-picture-match] .flow-visual > img {
+  object-fit: cover;
+}
+
+

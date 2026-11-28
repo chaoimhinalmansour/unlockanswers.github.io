@@ -344,7 +344,8 @@ function classroomFlowHTML(c,p) {
   case "cards":
    return '<div class="flow-wordcards">'+content.map(flowWordCardHTML).join("")+'</div>';
   case "match":
-   return '<div class="flow-match-pictures" data-match-columns="'+content.visuals.length+'">'+content.visuals.map((visual,i)=>
+   return '<div class="flow-match-pictures" data-match-columns="'+content.visuals.length+'"'+
+    (flow.lessonPictureMatch?' data-lesson-picture-match':'')+'>'+content.visuals.map((visual,i)=>
     '<figure>'+flowVisualHTML(visual)+'<figcaption>'+String.fromCharCode(65+i)+'</figcaption></figure>').join("")+
     '</div><div class="flow-questions">'+content.rows.map(row=>'<div class="flow-match-row" data-flow-word="'+esc(row.id)+'"><span class="num">'+esc(row.label)+'</span>'+
     '<p>'+flowMarks(row.prompt)+'</p>'+inlineAnswer(answers.get(row.label),row.answer,"status")+'</div>').join("")+'</div>';
